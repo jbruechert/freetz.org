@@ -7,7 +7,7 @@ Eine Beschreibung sowie eine kurzen historischen Überblick über Freetz findet 
 [[BR]]
 === Was brauche ich um ein Freetz-Image erstellen zu können? ===
 0.) Sichern wichtiger (Zugangs-)Daten, z.B. Internet Service Provider, WLAN, VoIP, Telefonliste, etc.[[BR]]
-1.) [ftp://ftp.avm.de/fritz.box Aktuelles Recovery-Image] für deine Box bereithalten z.B. [ftp://ftp.avm.de/fritz.box/fritzbox.fon_wlan_7170/x_misc/deutsch/ 7170] oder [ftp://ftp.avm.de/fritz.box/fritzbox.fon_wlan_7270/x_misc/deutsch/ 7270].[[BR]]
+1.) Aktuelles Recovery-Image für deine Box bereithalten. Für ältere Modelle findet man diese im 'x_misc' Ordner des jeweiligen Modells [ftp://ftp.avm.de/archive/fritz.box/ hier], für neuere Modelle im 'recover' Odner [ftp://ftp.avm.de/fritzbox/ hier].[[BR]]
 /!\ Nach einem fehlgeschlagenen Firmware-Update kommst du nicht mehr ins Internet, um dir ein Recovery-Image zu besorgen.[[BR]] 
 2a.) Ein natives Linux-Betriebssytem, z.B. [http://www.ubuntu.com/ Ubuntu] (Einsteiger), Fedora (Fortgeschrittener) oder Debian (Universalist).[[BR]]
 oder[[BR]]

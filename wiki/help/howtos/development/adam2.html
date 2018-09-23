@@ -224,7 +224,7 @@ Die Liste ist bis zu 3 KB gross und fängt immer mit dem String <tt>unknown</tt>
 Obwohl die HWR-Liste auch in aktuellen Recoveries enhalten ist pflegt AVM sie seit HWR 190 nicht weiter. Recoveries höherer Werte haben zusätzlich den Zuordnungseintrag für das unterstützte Modell im <tt>.data</tt> Segment, die HWR gefolgt von mehreren Nullbytes gefolgt vom Namen. Da bei allen neueren Recoveries das <tt>.data</tt> Segment mit der nullterminierten HWR anfängt kann diese als Suchstring in den letzten 256 KB des Segments genutzt werden. Ob und wie bei diesen Recoveries Fremdmodelle mit HWR &gt; 190 erkannt werden muss noch geprüft werden. 
 </p>
 <p>
-Bei der Analyse von 419 Recoveries mit obigem Wissen wurde <a class="attachment" href="/attachment/wiki/help/howtos/development/adam2/hwr.txt" title="Anhang 'hwr.txt' in help/howtos/development/adam2">diese Häufigkeitsverteilung</a><a class="trac-rawlink" href="/raw-attachment/wiki/help/howtos/development/adam2/hwr.txt" title="Download">​</a> (tab delimited csv) ermittelt. Um Konsistenzfehler auszumaskieren enthält die Liste nur Zuordnungen die in mindesten 5 Recoveries gefunden wurden. Die Zähler für HWR &gt; 190 wurden zuvor mit 10 multipliziert.
+Bei der Analyse von mehr als 1000 Recoveries mit obigem Wissen wurde <a class="attachment" href="/attachment/wiki/help/howtos/development/adam2/hwr.2.txt" title="Anhang 'hwr.2.txt' in help/howtos/development/adam2">diese Häufigkeitsverteilung</a><a class="trac-rawlink" href="/raw-attachment/wiki/help/howtos/development/adam2/hwr.2.txt" title="Download">​</a> (tab delimited csv) ermittelt. Um Konsistenzfehler auszumaskieren enthält die Liste nur Zuordnungen die in mindesten 5 Recoveries gefunden wurden. Die Zähler für HWR &gt; 190 wurden zuvor mit 10 multipliziert.
 </p>
 <p>
 Die HWR am Anfang des <tt>.data</tt> Segments ist Teil einer Struktur, die in jeder Recovery mit Kernel 2.6 zu finden ist. Bei neueren Recoveries findet sie sich an Offset 0, bei älteren an Offset 64 (0x40). Sie Struktur enthält die unterstützte HWR an Offset 0, die Sprache an Offset 16 (0x10) und die mit Leerzeichen getrennte Liste der unterstützten Brandings an Offset 32 (0x20). Dies ist sehr nützlich da z.B. EWE Recoveries nicht am Dateinamen erkennbar sind. Ein vierter String dessen genauer Zweck noch unklar ist fängt normalerweise an Offset 0x30 an und verschiebt sich um jeweils 8 Bytes wenn der Brandings-String länger als 8 Bytes ist. Bei Congstar (und vermutlich auch Telekom) Recoveries enthält er <tt>tcom</tt>, bei allen anderen enthält er unabhängig von Sprache und Anbieter immer <tt>avm</tt>.
@@ -254,22 +254,28 @@ Für einige dieser Modelle könnte Freetz ein EVA Update einer anderen Box Alien
 </div>
           
           <div class="trac-modifiedby">
-            <span><a href="adam2%3Faction=diff&amp;version=65.html" title="Version 65 von hippie2000: XRef Brandings + 2 Labor-Recoveries mit Boatloader-Inkonsistenz">zuletzt geändert</a> <a class="timeline" href="/timeline?from=2014-01-22T23%3A21%3A17Z&amp;precision=second" title="Siehe Journal am 22.01.2014 23:21:17">vor 4 Jahren</a></span>
-            <span class="trac-print">Zuletzt geändert am 22.01.2014 23:21:17</span>
+            <span><a href="adam2%3Faction=diff&amp;version=66.html" title="Version 66 von hippie2000: Aktuelle HWR-Liste aus über 1000 Recoveries">zuletzt geändert</a> <a class="timeline" href="/timeline?from=2018-07-29T09%3A14%3A54Z&amp;precision=second" title="Siehe Journal am 29.07.2018 09:14:54">vor 8 Wochen</a></span>
+            <span class="trac-print">Zuletzt geändert am 29.07.2018 09:14:54</span>
           </div>
         
         
       </div>
       
     <div id="attachments">
-        <h3 class="foldable">Anhänge <span class="trac-count">(1)</span></h3>
+        <h3 class="foldable">Anhänge <span class="trac-count">(2)</span></h3>
         <div>
           <ul>
               <li>
     <a href="/attachment/wiki/help/howtos/development/adam2/hwr.txt" title="Anhang ansehen">hwr.txt</a><a href="/raw-attachment/wiki/help/howtos/development/adam2/hwr.txt" class="trac-rawlink" title="Download">​</a>
        (<span title="4106 Byte">4.0 KB</span>) -
-      hinzugefügt von <em>hippie2000</em> <a class="timeline" href="/timeline?from=2014-01-19T21%3A15%3A59Z&amp;precision=second" title="Siehe Journal am 19.01.2014 21:15:59">vor 4 Jahren</a>.
+      hinzugefügt von <em>hippie2000</em> <a class="timeline" href="/timeline?from=2014-01-19T21%3A15%3A59Z&amp;precision=second" title="Siehe Journal am 19.01.2014 21:15:59">vor 5 Jahren</a>.
                 <q>Komplette HWR-Liste aller 419 bekannten Recoveries, CSV</q>
+              </li>
+              <li>
+    <a href="/attachment/wiki/help/howtos/development/adam2/hwr.2.txt" title="Anhang ansehen">hwr.2.txt</a><a href="/raw-attachment/wiki/help/howtos/development/adam2/hwr.2.txt" class="trac-rawlink" title="Download">​</a>
+       (<span title="4436 Byte">4.3 KB</span>) -
+      hinzugefügt von <em>hippie2000</em> <a class="timeline" href="/timeline?from=2018-07-29T09%3A11%3A42Z&amp;precision=second" title="Siehe Journal am 29.07.2018 09:11:42">vor 8 Wochen</a>.
+                <q>Aktualisierte HWR Liste</q>
               </li>
           </ul>
           <p>
@@ -295,7 +301,7 @@ Für einige dieser Modelle könnte Freetz ein EVA Update einer anderen Box Alien
       <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
       <p class="left">Betrieben mit <a href="/about"><strong>Trac 1.0.1</strong></a><br />
         von <a href="http://www.edgewall.org/">Edgewall Software</a>.</p>
-      <p class="right"><div class="field" align="right"><form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_donations"/><input type="hidden" name="business" value="spenden@freetz.org"/><input type="hidden" name="item_name" value="Freetz Entwickler-Team"/><input type="hidden" name="no_shipping" value="1"/><input type="hidden" name="return" value=""/><input type="hidden" name="cn" value="Name oder IPPF-Pseudonym"/><input type="hidden" name="currency_code" value="EUR"/><input type="hidden" name="tax" value="0"/><input type="hidden" name="lc" value="DE"/><input type="hidden" name="bn" value="PP-DonationsBF"/><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Zahlen Sie mit PayPal - schnell, kostenlos und sicher!"/><img alt="" border="0" src="/pixel.gif" width="1" height="1"/></form></div></p>
+      <p class="right"><div class="field" align="right"><form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_donations"/><input type="hidden" name="business" value="spenden@freetz.org"/><input type="hidden" name="item_name" value="Freetz Entwickler-Team"/><input type="hidden" name="no_shipping" value="1"/><input type="hidden" name="return" value="http://freetz.org"/><input type="hidden" name="cn" value="Name oder IPPF-Pseudonym"/><input type="hidden" name="currency_code" value="EUR"/><input type="hidden" name="tax" value="0"/><input type="hidden" name="lc" value="DE"/><input type="hidden" name="bn" value="PP-DonationsBF"/><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Zahlen Sie mit PayPal - schnell, kostenlos und sicher!"/><img alt="" border="0" src="/pixel.gif" width="1" height="1"/></form></div></p>
     </div>
   </body>
 </html>
