@@ -1,0 +1,14 @@
+packages/callmonitor/actions/vdr
+================================
+.. _VDR:
+
+VDR
+===
+
+VDR: Video Disk Recorder,
+`​http://www.cadsoft.de/vdr/ <http://www.cadsoft.de/vdr/>`__
+
+.. code:: wiki
+
+     vdr [OPTION]... [MESSAGE]
+     (default_vdr)

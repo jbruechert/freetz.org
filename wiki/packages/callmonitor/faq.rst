@@ -1,0 +1,14 @@
+packages/callmonitor/faq
+========================
+.. _Callmonitor-FAQ:
+
+Callmonitor-FAQ
+===============
+
+.. _KannichdasErgebnisderRückwärtssucheauchaufmeinemDECT-Telefonsehen:
+
+Kann ich das Ergebnis der Rückwärtssuche auch auf meinem DECT-Telefon sehen?
+----------------------------------------------------------------------------
+
+Nein. Es gibt momentan keine bekannte Möglichkeit, in die
+Anrufsignalisierung über DECT einzugreifen.

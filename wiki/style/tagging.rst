@@ -1,0 +1,9 @@
+style/tagging
+=============
+.. _Tagging:
+
+Tagging
+=======
+
+Im Webinterface wird über AVM's "Fritz" Logo der Schriftzug "Freetz MOD"
+gelegt
