@@ -20,13 +20,13 @@ Der Parameter -g (GECOS field) ist eine Beschreibung des Benutzers.
 |Warning| Dieses Feld darf nicht auf *box user* oder *ftp user* gesetzt
 werden, da der Benutzer sonst beim Neustart verloren geht.
 
-.. code:: wiki
+.. code:: bash
 
    adduser freetzuser -G users -h "/var/media/ftp" -g "freetzuser" [-s /bin/sh]
 
 Anschließend kann ein Password für den Benutzer gesetzt werden:
 
-.. code:: wiki
+.. code:: bash
 
    root@fritz:/var/mod/root# adduser freetzuser -G users -h "/var/media/ftp" -g "freetzuser"
    Changing password for freetzuser
@@ -38,14 +38,14 @@ Dieses Verfahren ist für jeden weiteren Benutzer zu wiederholen. Nachdem
 die gewünschten Benutzer angelegt wurden sind die Änderungen noch
 rebootfest abzuspeichern. Dies geschieht durch die folgenden Befehle:
 
-.. code:: wiki
+.. code:: bash
 
    modusers save
    modsave flash
 
 Die Benutzer können wie folgt überprüft werden:
 
-.. code:: wiki
+.. code:: bash
 
    root@fritz:/var/mod/root# cat /etc/passwd
    root:x:0:0:root:/mod/root:/bin/sh
@@ -79,7 +79,7 @@ Vorgehen
 | 1.) Man speichert den Inhalt des Nachfolgenden Textes als User.sh auf
   seinen PC
 
-.. code:: wiki
+.. code:: bash
 
    cat > /var/tmp/passwd << 'EOF'
    root:x:0:0:root:/mod/root:/bin/sh
@@ -107,7 +107,7 @@ Vorgehen
 5.) Folgenden Eintrag in der rc.custom erzeugen (Pfad und Dateiname
 entpsrechend anpassen):
 
-.. code:: wiki
+.. code:: bash
 
    /var/media/ftp/uStor01/user.sh
 

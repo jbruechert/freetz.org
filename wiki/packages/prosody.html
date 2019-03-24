@@ -577,12 +577,22 @@ geringe Systemauslastung.</em>“</p>
 <div class="section" id="konfiguration">
 <span id="id1"></span><h2>Konfiguration<a class="headerlink" href="#konfiguration" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Zunächst kopieren wir uns die Beispielkonfiguration aus /var/mod/etc/:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">prosody</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">lua</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">prosody</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">lua</span>
+</pre></div>
+</div>
 <p>Diese können wir dann mit vi bearbeiten:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vi</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">prosody</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">lua</span>
+</pre></div>
+</div>
 <div class="section" id="virtualhost-hinzufugen">
 <span id="virtualhosthinzufugen"></span><h3>VirtualHost hinzufügen<a class="headerlink" href="#virtualhost-hinzufugen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Zunächst sollte man einen VirtualHost konfigurieren, dazu verändert man
 man die „example.com“ in die gewünschte Domain und entfernt das enabled
 = false</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VirtualHost</span> <span class="s2">&quot;example.com&quot;</span>
+        <span class="n">enabled</span> <span class="o">=</span> <span class="n">false</span> <span class="o">--</span> <span class="n">Remove</span> <span class="n">this</span> <span class="n">line</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">this</span> <span class="n">host</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="ssl-verwenden">
 <span id="sslverwenden"></span><h3>SSL verwenden<a class="headerlink" href="#ssl-verwenden" title="Link zu dieser Überschrift">¶</a></h3>
@@ -591,6 +601,12 @@ Schlüssel, diese kann man mit OpenSSL erstellen und auf ein externes
 Speichermedium (z.B. USB-Stick) auf die FritzBox übertragen.</p>
 <p>Die Pfade dazu müssen in der prosody.cfg.lua entsprechend verändert
 werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssl</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;/var/media/ftp/uStor01/certs/localhost.key&quot;</span><span class="p">;</span>
+                <span class="n">certificate</span> <span class="o">=</span> <span class="s2">&quot;/var/media/ftp/uStor01/certs/localhost.crt&quot;</span><span class="p">;</span>
+                <span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="ins-internet-freigeben">
 <span id="insinternetfreigeben"></span><h3>Ins Internet freigeben<a class="headerlink" href="#ins-internet-freigeben" title="Link zu dieser Überschrift">¶</a></h3>
@@ -607,42 +623,132 @@ deaktiviert. Dies kann man in der prosody.lua.cfg temporär ändern, indem
 man false bei Allow registration auf true setzt. Danach kann man sich
 mit einem XMPP-Client registrieren.</p>
 <p>Alternativ kann man mit der Shell Benutzer erstellen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prosodyctl</span> <span class="n">adduser</span> <span class="p">[</span><span class="n">Benutzer</span><span class="p">]</span><span class="o">@</span><span class="p">[</span><span class="n">Domain</span><span class="p">]</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="posix-aktivieren">
 <span id="posixaktivieren"></span><h3>POSIX aktivieren<a class="headerlink" href="#posix-aktivieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Damit man prosody als Hintergrundprozess ausführen kann und damit man
 logging aktivieren kann, muss POSIX aktiviert werden.</p>
 <p>Zunächst aktiviert man das Modul in der prosody.cfg.lua:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modules_enabled</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="o">--</span> <span class="n">andere</span> <span class="n">Module</span>
+     <span class="s2">&quot;posix&quot;</span><span class="p">;</span> <span class="o">--</span> <span class="n">mod_posix</span> <span class="n">aktivieren</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
 <p>Zusätzlich wird noch ein pid-File benötigt, dazu fügen wir in der
 prosody.cfg.lua an:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pidfile</span> <span class="o">=</span> <span class="s2">&quot;/var/tmp/flash/mod/prosody.pid&quot;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="daten-extern-speichern">
 <span id="datenexternspeichern"></span><h3>Daten extern speichern<a class="headerlink" href="#daten-extern-speichern" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Damit die Benutzerdateien nicht auf der FritzBox sondern auf einem
 externen Medium gespeichert werden, erstellt man eine symbolische
 Verlinkung:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">prosody</span><span class="o">/</span><span class="n">data</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">prosody</span><span class="o">/</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="benutzerhinzufugen1">
 <span id="id2"></span><h3>Benutzer hinzufügen<a class="headerlink" href="#benutzerhinzufugen1" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Damit prosody nicht mit root-Rechten geöffnet werden muss, wird ein
 anderer Benutzer benötigt. Diesen kann man mithilfe der Shell erstellen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addgroup</span> <span class="n">prosody</span>
+<span class="n">adduser</span> <span class="o">-</span><span class="n">G</span> <span class="n">prosody</span> <span class="n">prosody</span>
+<span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="n">prosody</span><span class="p">:</span><span class="n">prosody</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">prosody</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="bei-systemstart-ausfuhren">
 <span id="beisystemstartausfuhren"></span><h3>Bei Systemstart ausführen<a class="headerlink" href="#bei-systemstart-ausfuhren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Wenn man die Daten nicht extern speichert, reicht es, wenn mit vi
 /tmp/flash/mod/rc.custom folgendes hinzufügt:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prosodyctl</span> <span class="n">start</span>
+</pre></div>
+</div>
 <p>Wenn man die Daten extern speichert, sollte man in das Verzeichnis
 /var/tmp/flash/mod wechseln und dort die folgenden Dateien anlegen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>root@fritz:/var/tmp/flash/mod# vi rc.prosody
+#!/bin/sh
+
+start() {
+        /usr/bin/prosodyctl start
+}
+
+stop() {
+        /usr/bin/prosodyctl stop
+}
+
+case $1 in
+        &quot;&quot;|start)
+                start
+                ;;
+        stop)
+                stop
+                ;;
+        *)
+                echo &quot;Usage: $0 [start|stop]&quot; 1&gt;&amp;2
+                exit 1
+                ;;
+esac
+
+exit 0
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>root@fritz:/var/tmp/flash/mod# vi rc.external
+#!/bin/sh
+case $1 in
+        load)
+                ;;
+        unload)
+                sh /etc/init.d/rc.ngircd stop
+                sh /etc/init.d/rc.prosody stop
+                ;;
+esac
+
+eventadd 1 &quot;Running custom rc.external done.&quot;
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@fritz</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">mod</span><span class="c1"># vi /var/tmp/flash/onlinechanged-cgi</span>
+<span class="n">case</span> <span class="s2">&quot;$1&quot;</span> <span class="ow">in</span>
+ <span class="n">start</span><span class="p">)</span>
+   <span class="c1"># Kommandos beim Start des Routers</span>
+   <span class="c1"># ggf. sollten hier die Entraege von online) stehen</span>
+   <span class="p">;;</span>
+ <span class="n">online</span><span class="p">)</span>
+   <span class="c1"># Kommandos wenn der Router online geht (zB Zwangstrennung)</span>
+   <span class="c1">#</span>
+      <span class="n">sleep</span> <span class="mi">2</span><span class="p">;</span>
+      <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">prosody</span> <span class="n">start</span><span class="p">;</span>
+   <span class="p">;;</span>
+ <span class="n">offline</span><span class="p">)</span>
+   <span class="c1"># Kommandos wenn der Router offline geht (zB Zwangstrennung)</span>
+     <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">prosody</span> <span class="n">stop</span><span class="p">;</span>
+     <span class="n">sleep</span> <span class="mi">2</span><span class="p">;</span>
+   <span class="p">;;</span>
+<span class="n">esac</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="anderungen-speichern">
 <span id="anderungenspeichern"></span><h3>Änderungen speichern<a class="headerlink" href="#anderungen-speichern" title="Link zu dieser Überschrift">¶</a></h3>
 <p><img alt="Warning" src="../../_images/exclamation9.png" /> Damit diese Änderung beim Neustart erhalten bleibt müssen diese
 gespeichert werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modsave</span> <span class="nb">all</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="prosody-ausfuhren">
 <span id="prosodyausfuhren"></span><h2>Prosody ausführen<a class="headerlink" href="#prosody-ausfuhren" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Prosody kann auch manuell gestartet werden mit:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prosodyctl</span> <span class="n">start</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="links">
 <span id="id3"></span><h2>Links<a class="headerlink" href="#links" title="Link zu dieser Überschrift">¶</a></h2>

@@ -24,7 +24,7 @@ Quick compare
 #. Minimal menuconfig, including libraries, excluding *pthread*,
    *md5sum*
 
-.. code:: wiki
+.. code:: bash
 
    -rwxr-xr-x    1 root     root        105788 Apr 25 20:29 hiawatha
    -rwxr-xr-x    1 root     root        150324 Apr 25 10:56 lighttpd
@@ -41,7 +41,7 @@ Security
 
 You might want to add this or similar to the extra configuration:
 
-.. code:: wiki
+.. code:: bash
 
    BanOnGarbage = 300
    BanOnMaxPerIP = 60
@@ -51,7 +51,7 @@ You might want to add this or similar to the extra configuration:
 
 And you might want to limit the number of simultaneous connections too:
 
-.. code:: wiki
+.. code:: bash
 
    ConnectionsTotal = 5
    ConnectionsPerIP = 3

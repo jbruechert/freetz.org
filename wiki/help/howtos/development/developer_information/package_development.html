@@ -566,10 +566,15 @@
 <p>Freetz provides a package configuration framework easing implementation
 and allows settings to be stored persistently. Packages must provide two
 files to use the framework:</p>
-<ol class="arabic simple">
-<li>/etc/default.$package/$package.cfg — This file must contain all
+<ol class="arabic">
+<li><p class="first">/etc/default.$package/$package.cfg — This file must contain all
 configuration settings as exported shell variables; each variable has
-to start with the capitalized package name. Example:</li>
+to start with the capitalized package name. Example:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PACKAGE_VAR1</span><span class="o">=</span><span class="s1">&#39;var1&#39;</span>
+<span class="n">export</span> <span class="n">PACKAGE_VAR2</span><span class="o">=</span><span class="s1">&#39;var2&#39;</span>
+</pre></div>
+</div>
+</li>
 </ol>
 <ol class="arabic simple" start="2">
 <li>/usr/lib/cgi-bin/$package.cgi — This is the cgi file used for package

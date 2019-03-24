@@ -582,11 +582,58 @@ files</a>, and first
 compile the library, but we can just as well let Freetz do that work for
 us.</p>
 <p>Compile an image with at least libxml2 selected:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span>
+<span class="n">make</span> <span class="n">menuconfig</span>
+<span class="n">Shared</span> <span class="n">libraries</span>  <span class="o">---&gt;</span> <span class="n">XML</span> <span class="o">&amp;</span> <span class="n">XSLT</span>  <span class="o">---&gt;</span> <span class="p">[</span><span class="n">X</span><span class="p">]</span> <span class="n">libxml2</span> <span class="p">(</span><span class="n">libxml2</span><span class="o">.</span><span class="n">so</span><span class="p">)</span>
+<span class="n">make</span>
+</pre></div>
+</div>
 <p>Verify the library file and include files are available:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">freetz</span><span class="o">/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span><span class="n">toolchain</span><span class="o">/</span><span class="n">target</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">libxml2</span><span class="o">/</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">la</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">freetz</span><span class="o">/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span><span class="n">toolchain</span><span class="o">/</span><span class="n">target</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libxml2</span><span class="o">*</span>
+</pre></div>
+</div>
 <p>The first ls should show the sub-directory <code class="docutils literal notranslate"><span class="pre">libxml</span></code>, and the second ls
 a number of lines with one being `libxml2.so.2.9.1‘ (or later), a a few
 symlinks pointing to this file.</p>
 <p>Now lets manual compile this application.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir nzbget
+cd ~/freetz-trunk-11230/nzbget/
+wget http://sourceforge.net/projects/nzbget/files/nzbget-11.0.tar.gz
+tar xfvz nzbget-11.0.tar.gz
+cd nzbget-11.0
+less README
+export CC=&quot;mipsel-linux-gcc&quot;
+export CXX=&quot;mipsel-linux-uclibc-g++-wrapper&quot;
+export PATH=/home/freetz/freetz-trunk/toolchain/target/bin/:$PATH
+export LIBS=&quot;-L~/freetz-trunk/libxml2/libxml2-2.9.1/builds/usr/lib/&quot;
+export CPPFLAGS=&quot;-I~/freetz-trunk/libxml2/libxml2-2.9.1/builds/usr/include/&quot;
+export libxml2_CFLAGS=/home/freetz/freetz-trunk/toolchain/target/include/libxml2/
+export libxml2_LIBS=/home/freetz/freetz-trunk/toolchain/target/lib/
+
+./configure \
+--prefix=/usr \
+--build=i686-pc-linux-gnu \
+--host=mipsel-linux \
+--with-libxml2-includes=/home/freetz/freetz-trunk/toolchain/target/include/libxml2/ \
+--with-libxml2-libraries=/home/freetz/freetz-trunk/toolchain/target/lib/ \
+--disable-curses \
+--disable-parcheck \
+--disable-tls \
+--disable-gzip
+
+vi ParCoordinator.cpp
+    add the following line somewhere between the existing include lines, e.g. somewhere above line 38 (but not between an if/endif):
+    #include &lt;ctype.h&gt;
+make
+
+ls -la nzbget *
+file nzbget *
+mipsel-linux-strip nzbget
+ls -la nzbget *
+file nzbget *
+</pre></div>
+</div>
 <blockquote>
 <div><sup>*</sup> Optional, to see the impact of stripping. The file command
 should also show the executable is a MIPS executable.</div></blockquote>
@@ -596,6 +643,10 @@ this package. This will remove all generated files.</div>
 <div class="line">(For packages involving a .config file you might want to save that
 file to a save location, because make clean often will also delete
 this file. But this is not applicable for nzbget.)</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span><span class="n">nzbget</span><span class="o">/</span><span class="n">nzbget</span><span class="o">-</span><span class="mf">11.0</span><span class="o">/</span>
+<span class="n">make</span> <span class="n">clean</span>
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">The Freetz environment makes use of „<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code>“ of each package
@@ -609,16 +660,92 @@ what happens giving a „<code class="docutils literal notranslate"><span class=
 <p>In this example we will create the directory and file structure ourself.</p>
 <p>For each new package a directory under ~/freetz-trunk/make/ should be
 created with a minimum of two files:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>`--make
+     `--&lt;package-name&gt;
+           |-- Config.in
+            `-- &lt;package-name&gt;.mk
+</pre></div>
+</div>
 <p>Optional there are more directories and files in case e.g. patches are
 needed.</p>
 <div class="line-block">
 <div class="line">Lets create the directory structure and the two files for NZBget:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">freetz</span><span class="o">/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span>
+<span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span><span class="n">make</span><span class="o">/</span><span class="n">nzbget</span><span class="o">/</span><span class="n">patches</span><span class="o">/</span>
+<span class="n">vi</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span><span class="n">make</span><span class="o">/</span><span class="n">nzbget</span><span class="o">/</span><span class="n">Config</span><span class="o">.</span><span class="ow">in</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="n">FREETZ_PACKAGE_NZBGET</span>
+        <span class="nb">bool</span> <span class="s2">&quot;nzbget 11.0&quot;</span>
+        <span class="n">select</span> <span class="n">FREETZ_LIB_libxml2</span>
+        <span class="n">default</span> <span class="n">n</span>
+        <span class="n">help</span>
+                <span class="n">NZBGet</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">cross</span><span class="o">-</span><span class="n">platform</span> <span class="n">binary</span> <span class="n">newsgrabber</span> <span class="k">for</span> <span class="n">nzb</span> <span class="n">files</span><span class="p">,</span> <span class="n">written</span> <span class="ow">in</span> <span class="n">C</span><span class="o">++.</span>
+                <span class="n">It</span> <span class="n">supports</span> <span class="n">client</span><span class="o">/</span><span class="n">server</span> <span class="n">mode</span><span class="p">,</span> <span class="n">automatic</span> <span class="n">par</span><span class="o">-</span><span class="n">check</span><span class="o">/-</span><span class="n">repair</span> <span class="ow">and</span> <span class="n">web</span><span class="o">-</span><span class="n">interface</span><span class="o">.</span>
+                <span class="n">NZBGet</span> <span class="n">requires</span> <span class="n">low</span> <span class="n">system</span> <span class="n">resources</span> <span class="ow">and</span> <span class="n">runs</span> <span class="n">great</span> <span class="n">on</span> <span class="n">routers</span><span class="p">,</span> <span class="n">NAS</span><span class="o">-</span><span class="n">devices</span> <span class="ow">and</span> <span class="n">media</span> <span class="n">players</span><span class="o">.</span>
+</pre></div>
+</div>
 <p>The indents should be replaced with tabs.</p>
 <p><code class="docutils literal notranslate"><span class="pre">vi</span> <span class="pre">~/freetz-trunk/make/nzbget/nzbget.mk</span></code></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$(call PKG_INIT_BIN, 11.0)
+$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+$(PKG)_SOURCE_MD5:=4f00039cc36e50fe68fc75e37b5a0406
+$(PKG)_SITE:=http://sourceforge.net/projects/$(pkg)/files/
+
+$(PKG)_BINARY:=$($(PKG)_DIR)/nzbget
+$(PKG)_TARGET_BINARY:=$($(PKG)_DEST_DIR)/usr/bin/nzbget
+$(PKG)_CATEGORY:=Unstable
+
+$(PKG)_DEPENDS_ON += libxml2
+
+$(PKG)_CONFIGURE_OPTIONS += --with-libxml2-includes=$(TARGET_TOOLCHAIN_STAGING_DIR)/include/libxml2/
+$(PKG)_CONFIGURE_OPTIONS += --with-libxml2-libraries=$(TARGET_TOOLCHAIN_STAGING_DIR)/lib/
+$(PKG)_CONFIGURE_OPTIONS += --disable-curses
+$(PKG)_CONFIGURE_OPTIONS += --disable-parcheck
+$(PKG)_CONFIGURE_OPTIONS += --disable-tls
+$(PKG)_CONFIGURE_OPTIONS += --disable-gzip
+
+$(PKG_SOURCE_DOWNLOAD)
+$(PKG_UNPACKED)
+$(PKG_CONFIGURED_CONFIGURE)
+
+$($(PKG)_BINARY): $($(PKG)_DIR)/.configured
+        $(SUBMAKE) -C $(NZBGET_DIR) \
+                CXX=&quot;$(TARGET_CXX)&quot;
+
+$($(PKG)_TARGET_BINARY): $($(PKG)_BINARY)
+        $(INSTALL_BINARY_STRIP)
+
+$(pkg):
+
+$(pkg)-precompiled: $($(PKG)_TARGET_BINARY)
+
+$(pkg)-clean:
+        -$(SUBMAKE) -C $(NZBGET_DIR) clean
+
+$(pkg)-uninstall:
+        $(RM) $(NZBGET_TARGET_BINARY)
+
+$(PKG_FINISH)
+</pre></div>
+</div>
 <p>The indents should be replaced with tabs.</p>
 <p>We also need to add a small patch file to add the one missing include.</p>
 <p><code class="docutils literal notranslate"><span class="pre">vi</span> <span class="pre">make/nzbget/patches/100-ParCoordinator_ctype.h.patch</span></code></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span> <span class="o">-</span><span class="n">dur</span> <span class="n">ParCoordinator</span><span class="o">.</span><span class="n">cpp</span><span class="o">.</span><span class="n">orig</span> <span class="n">ParCoordinator</span><span class="o">.</span><span class="n">cpp</span>
+<span class="o">---</span> <span class="n">ParCoordinator</span><span class="o">.</span><span class="n">cpp</span><span class="o">.</span><span class="n">orig</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">18</span> <span class="mi">23</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mf">41.720138807</span> <span class="o">+</span><span class="mi">0100</span>
+<span class="o">+++</span> <span class="n">ParCoordinator</span><span class="o">.</span><span class="n">cpp</span>      <span class="mi">2013</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">18</span> <span class="mi">23</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mf">18.700129701</span> <span class="o">+</span><span class="mi">0100</span>
+<span class="o">@@</span> <span class="o">-</span><span class="mi">35</span><span class="p">,</span><span class="mi">6</span> <span class="o">+</span><span class="mi">35</span><span class="p">,</span><span class="mi">7</span> <span class="o">@@</span>
+ <span class="c1">#include &lt;string.h&gt;</span>
+ <span class="c1">#include &lt;stdio.h&gt;</span>
+ <span class="c1">#include &lt;stdarg.h&gt;</span>
+<span class="o">+</span><span class="c1">#include &lt;ctype.h&gt;</span>
+ <span class="c1">#ifdef WIN32</span>
+ <span class="c1">#include &lt;direct.h&gt;</span>
+ <span class="c1">#else</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="create-new-image-with-added-package">
 <span id="createnewimagewithaddedpackage"></span><h2>Create new image with added package<a class="headerlink" href="#create-new-image-with-added-package" title="Link zu dieser Überschrift">¶</a></h2>
@@ -640,17 +767,29 @@ there, this can be easily solved with a reboot.</p>
 <span id="id1"></span><h2>Testing<a class="headerlink" href="#testing" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Lets see if „<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code>“ works as expected. This should bring the
 state back to like it was before the „<code class="docutils literal notranslate"><span class="pre">make</span></code>“ command.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span>
+<span class="n">make</span> <span class="n">clean</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="preparing-new-package-for-public-integration-to-freetz-trunk">
 <span id="preparingnewpackageforpublicintegrationtofreetztrunk"></span><h2>Preparing New Package for Public Integration to Freetz Trunk<a class="headerlink" href="#preparing-new-package-for-public-integration-to-freetz-trunk" title="Link zu dieser Überschrift">¶</a></h2>
 <p>In order to create a file which displays the changes which would be
 needed in freetz to add your package, issue the following commands:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">add</span> <span class="n">make</span><span class="o">/</span><span class="n">nzbget</span>
+<span class="n">svn</span> <span class="n">diff</span> <span class="o">./</span><span class="n">make</span> <span class="o">&gt;</span> <span class="n">patchfile</span>
+</pre></div>
+</div>
 <p>In our case „patchfile“ may be called „nzbget“. Please note that there
 is no need for an extension here. You may only need an extension (e.g.
 .txt) for uploading it in the IPPF, because else it would not be
 recognized as a valid file for upload.</p>
 <p>In addition you could even create a ready (and compressed) package of
 the two files which you had edited above:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="n">cfz</span> <span class="n">nzbget</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="n">make</span><span class="o">/</span><span class="n">nzbget</span> <span class="o">--</span><span class="n">exclude</span> <span class="o">.</span><span class="n">svn</span>
+<span class="n">tar</span> <span class="n">tfz</span> <span class="n">nzbget</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>Tags</li>
 <li><a class="reference external" href="/tags/development">development</a></li>

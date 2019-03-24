@@ -570,16 +570,25 @@ weiterhilft, weil eine restriktive Firewall im Wege steht…</p>
 <span id="id1"></span><h2>Setup<a class="headerlink" href="#setup" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Folgendes bei <code class="docutils literal notranslate"><span class="pre">forwardrules</span></code> der ar7.cfg eintragen um Pings aus dem
 Internet zuzulassen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;icmp 0.0.0.0 0.0.0.0 0 # PTunnel&quot;</span>
+</pre></div>
+</div>
 <p>Or use <a class="reference external" href="avm-firewall.html">AVM-Firewall</a> from revision 6794 to do the
 same from a web interface.</p>
 <p>Capturing packets (<a class="reference external" href="http://www.tcpdump.org/pcap3_man.html">​libpcap</a>)
 from interface <em>dsl</em> doesn’t work (packets are fragmented), but from
 interface <em>lan</em> does:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ptunnel</span> <span class="o">-</span><span class="n">c</span> <span class="n">lan</span>
+</pre></div>
+</div>
 <p>(Error message if using dsl: „<em>Received fragmented packet - unable to
 reconstruct! This error usually occurs because pcap is used on devices
 that are not wlan or ethernet.</em>“)</p>
 <p>The web interface of pingtunnel (from revision 6792) uses the following
 options if you don’t specify extra options:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">c</span> <span class="n">lan</span> <span class="o">-</span><span class="n">syslog</span> <span class="o">-</span><span class="n">x</span> <span class="o">&lt;</span><span class="n">password</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>For maximum flexibility <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">lan</span> <span class="pre">-syslog</span></code> is omitted if you specify
 extra options.</p>
 <p>Be sure to specify enough tunnels when tunneling <code class="docutils literal notranslate"><span class="pre">http</span></code> traffic with
@@ -595,7 +604,16 @@ version when using passwords!</p>
 <p>Also realize that ICMP traffic makes it to the internal net of the box
 if you configure ICMP forwarding.</p>
 <p>It is easily overlooked, but you can tighten security with these option:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">da</span><span class="p">:</span> <span class="n">Set</span> <span class="n">remote</span> <span class="n">proxy</span> <span class="n">destination</span> <span class="n">address</span> <span class="k">if</span> <span class="n">client</span>
+     <span class="n">Restrict</span> <span class="n">to</span> <span class="n">only</span> <span class="n">this</span> <span class="n">destination</span> <span class="n">address</span> <span class="k">if</span> <span class="n">server</span>
+<span class="o">-</span><span class="n">dp</span><span class="p">:</span> <span class="n">Set</span> <span class="n">remote</span> <span class="n">proxy</span> <span class="n">destionation</span> <span class="n">port</span> <span class="k">if</span> <span class="n">client</span>
+     <span class="n">Restrict</span> <span class="n">to</span> <span class="n">only</span> <span class="n">this</span> <span class="n">destination</span> <span class="n">port</span> <span class="k">if</span> <span class="n">server</span>
+</pre></div>
+</div>
 <p>You can restrict access to for example Polipo? like this:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">da</span> <span class="n">localhost</span> <span class="o">-</span><span class="n">dp</span> <span class="mi">8123</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="weiterfuhrende-links">
 <span id="weiterfuhrendelinks"></span><h2>Weiterführende Links<a class="headerlink" href="#weiterfuhrende-links" title="Link zu dieser Überschrift">¶</a></h2>

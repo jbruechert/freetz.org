@@ -637,6 +637,17 @@ Root Mode“ auch möglich, das Dateisystem direkt (fix und fertig
 entpackt, Schritte 1, 3, 4) auf den USB-Stick zu kopieren, sofern dieser
 am PC angeschlossen oder über NFS erreichbar ist. Erstere Variante ist
 vermutlich die häufigere und sieht so aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Freetz</span> <span class="n">Configuration</span>
+<span class="o">====================</span>
+
+<span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Show</span> <span class="n">advanced</span> <span class="n">options</span>
+<span class="o">--&gt;</span> <span class="n">Advanced</span> <span class="n">options</span>
+    <span class="o">--&gt;</span> <span class="n">Build</span> <span class="n">system</span> <span class="n">options</span>
+        <span class="o">--&gt;</span> <span class="n">Firmware</span> <span class="n">packaging</span> <span class="p">(</span><span class="n">fwmod</span><span class="p">)</span> <span class="n">special</span> <span class="n">options</span>
+            <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Skip</span> <span class="n">packing</span> <span class="n">modified</span> <span class="n">firmware</span>
+            <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Pack</span> <span class="n">file</span> <span class="n">system</span> <span class="n">into</span> <span class="n">archive</span> <span class="p">(</span><span class="n">USB</span> <span class="n">root</span> <span class="n">mode</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="einbinden-von-partitionen">
 <span id="einbindenvonpartitionen"></span><h2>Einbinden von Partitionen<a class="headerlink" href="#einbinden-von-partitionen" title="Link zu dieser Überschrift">¶</a></h2>
@@ -659,8 +670,16 @@ gesetzt. Beim Upgrade / Recover der Firmware kann dies zu Problemen
 führen, daher <strong>MUSS vor dem Firmware-Update bzw Recover die
 usbroot-Funktion wieder deaktiviert werden‘‚‘, wahlweise über das Freetz
 Webinterface oder aus der Shell mit:</strong></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="n">kernel_args</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">urlader</span><span class="o">/</span><span class="n">environment</span>
+<span class="n">echo</span> <span class="n">kernel_args1</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">urlader</span><span class="o">/</span><span class="n">environment</span>
+</pre></div>
+</div>
 <p>Bemerkt man dies zu spät (Die Box startet als Beispiel gleich nach 5
 Sekunden neu) helfen die ADAM2 Befehle:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quote</span> <span class="n">SETENV</span> <span class="n">kernel_args</span>
+<span class="n">quote</span> <span class="n">SETENV</span> <span class="n">kernel_args1</span>
+</pre></div>
+</div>
 <p>Sollte es nach den beiden Befehlen immernoch nicht helfen, so führt man
 ein Recover aus und flasht danach ein Freetz <strong>ohne jediglichen Umfang</strong>
 (ohne Packages sowie <strong>ohne</strong> usbroot) über das AVM-WebInterface auf die

@@ -213,26 +213,26 @@ Trunk, Branches, Tags?
   Tag 2.0 werden.
 | Auschecken einer stabilen Version:
 
-.. code:: wiki
+.. code:: bash
 
    svn co http://svn.freetz.org/branches/freetz-stable-2.0 freetz-stable-2.0
 
 Auschecken eines Tags:
 
-.. code:: wiki
+.. code:: bash
 
    svn co http://svn.freetz.org/tags/freetz-1.2 freetz-1.2
 
 Nach Erscheinen des neuen Tag 2.0 wird dieser dann wie folgt
 ausgecheckt:
 
-.. code:: wiki
+.. code:: bash
 
    svn co http://svn.freetz.org/tags/freetz-2.0 freetz-2.0
 
 Auschecken einer Entwicklerversion (trunk):
 
-.. code:: wiki
+.. code:: bash
 
    svn co http://svn.freetz.org/trunk freetz-trunk
 
@@ -884,7 +884,7 @@ Nach dem Flashen ist das AVM-Webinterface nicht mehr erreichbar
    mittels nvi, nmcedit oder nnano editiert werden. So sollte es
    aussehen:
 
-   .. code:: wiki
+   .. code:: bash
 
       # cat tr069.cfg
       /*
@@ -911,7 +911,7 @@ Nach dem Flashen ist das AVM-Webinterface nicht mehr erreichbar
    Um heraus zu finden, ob die problematischen OpenSSL-Libs ins Image
    eingebunden werden, kann man folgenden Befehl ausführen:
 
-   .. code:: wiki
+   .. code:: bash
 
       oliver@ubuntu:~/fritzbox/freetz/trunk$ grep -E  "libssl|libcrypto" .config
       FREETZ_LIB_libcrypto=y
@@ -936,7 +936,7 @@ Nach dem Flashen ist das AVM-Webinterface nicht mehr erreichbar
    es den Befehl *make config-clean-deps* bzw. *make
    config-clean-deps-keep-busybox*.
 
-   .. code:: wiki
+   .. code:: bash
 
       oliver@ubuntu:~/fritzbox/freetz/trunk$ make config-clean-deps
       Step 1: temporarily deactivate all kernel modules, shared libraries and optional BusyBox applets ... DONE
@@ -1179,13 +1179,13 @@ Konfiguration in der aktuellen Sicherheitsstufe nicht verfügbar!
 
    Ermitteln der aktuellen Sicherheitsstufe (hier: Freetz-1.1.4):
 
-   .. code:: wiki
+   .. code:: bash
 
       cat /tmp/flash/security
 
    **Freetz-1.1.x und älter:**
 
-   .. code:: wiki
+   .. code:: bash
 
       echo 0 > /tmp/flash/security <--- Bsp. #1: Setzen von Stufe "0" (keine Restriktionen, VORSICHT!)
       modsave                      <--- Speichern der neuen Sicherheitsstufe
@@ -1195,14 +1195,14 @@ Konfiguration in der aktuellen Sicherheitsstufe nicht verfügbar!
    **Ab Freetz-1.2.x und SVN-trunk
    ≥\ **\ `r3318 </changeset/3318>`__\ **:**
 
-   .. code:: wiki
+   .. code:: bash
 
       echo 1 > /tmp/flash/mod/security <--- Bsp. #2: Setzen von Stufe "1" (Konfigurationsdateien editierbar)
       modsave                          <--- Speichern der neuen Sicherheitsstufe
 
    Erlaubte Werte mit Erläuterung (Default: 2):
 
-   .. code:: wiki
+   .. code:: bash
 
       # 0 : no restrictions
       # 1 : only configuration files without shell commands might be edited
@@ -1215,7 +1215,7 @@ Wie deaktiviere ich das Passwort für die Freetz-Webseite?
 
    Folgende Befehle auf der Konsole ausführen:
 
-   .. code:: wiki
+   .. code:: bash
 
       touch /tmp/flash/webcfg_conf
       chmod +x /tmp/flash/webcfg_conf
@@ -1246,25 +1246,25 @@ Wie ändere ich das Passwort für die Freetz-Webseite sofern ich es vergessen un
 
    Erstmal das Freetz-Webif stoppen:
 
-   .. code:: wiki
+   .. code:: bash
 
       /etc/init.d/rc.webcfg stop
 
    Dann mit vi in der Datei mod.cfg die Zeile, die mit export
    MOD_HTTPD_PASSWD beginnt, wie folgt abändern:
 
-   .. code:: wiki
+   .. code:: bash
 
       vi /var/mod/etc/conf/mod.cfg
 
-   .. code:: wiki
+   .. code:: bash
 
       export MOD_HTTPD_PASSWD='$1$$zO6d3zi9DefdWLMB.OHaO.'
 
    | Speichern der Änderung: 1x ESC drücken und ``:wq`` eingeben.
    | Nun wieder das Freetz-Webif starten:
 
-   .. code:: wiki
+   .. code:: bash
 
       /etc/init.d/rc.webcfg start
 
@@ -1285,7 +1285,7 @@ Wie ändere ich das root-Passwort?
 
    Folgende Befehle auf der Konsole ausführen:
 
-   .. code:: wiki
+   .. code:: bash
 
       passwd
       modusers save
@@ -1334,7 +1334,7 @@ Probleme im Betrieb
    folgendermaßen erhöht werden, man sollte aber den Füllstand des TFFS
    im Auge behalten:
 
-   .. code:: wiki
+   .. code:: bash
 
       modconf set mod MOD_LIMIT=<bytes>
       modconf save mod
@@ -1393,7 +1393,7 @@ Sonstiges
    | An freetz-linux anmelden
    | Die smb.conf öffnen mit:
 
-   .. code:: wiki
+   .. code:: bash
 
       sudo nano /etc/samba/smb.conf
 
@@ -1402,7 +1402,7 @@ Sonstiges
 
    Und zum Schluss Samba neu starten:
 
-   .. code:: wiki
+   .. code:: bash
 
       sudo /etc/init.d/samba restart
 
@@ -1416,7 +1416,7 @@ Wie finde ich die IP meiner Virtuellen Maschine
 | Nach Eingabe von **ifconfig** sollte folgende Anzeige in der VM zu
   sehen sein.
 
-.. code:: wiki
+.. code:: bash
 
    eth0      Link encap:Ethernet  Hardware Adresse 08:00:27:45:53:49
              inet Adresse:192.168.XXX.203  Bcast:192.168.XXX.255  Maske:255.255.255.0

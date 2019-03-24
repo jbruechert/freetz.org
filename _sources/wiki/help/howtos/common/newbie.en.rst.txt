@@ -172,7 +172,7 @@ The next step is to find out which ip is assigned to our Freetz-Linux
 since we need it to get access via putty in the next step. To check,
 type in: **ifconfig**. This should bring up the following text.
 
-.. code:: wiki
+.. code:: bash
 
    eth0      Link encap:Ethernet  HWaddr 00:11:22:33:44:55
              inet addr:192.168.178.30  Bcast:192.168.178.255  Mask:255.255.255.0

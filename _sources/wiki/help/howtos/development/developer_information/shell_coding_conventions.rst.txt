@@ -291,7 +291,7 @@ Quoting
 
 Quick review of the quoting basics:
 
-.. code:: wiki
+.. code:: bash
 
    single quotes ('') mean quote but do not expand variable or backquote substitutions.
    Double quotes ("") mean quote but allow expansion.

@@ -27,7 +27,7 @@ die Box optimal genutzt werden.
 Syntax
 ------
 
-.. code:: wiki
+.. code:: bash
 
    Usage: trickle [-hvVs] [-d <rate>] [-u <rate>] [-w <length>] [-t <seconds>]
                   [-l <length>] [-n <path>] command ...
@@ -44,7 +44,7 @@ Syntax
            -L <ms>      Set latency to <ms> milliseconds
            -P <path>    Preload the specified .so instead of the default one
 
-.. code:: wiki
+.. code:: bash
 
    Usage: trickled [-hvVfs] [-d <rate>] [-u <rate>] [-t <seconds>] [-l <length>]
                    [-p <priority>] [-c <file>] [-n <path>] [-N <seconds>]
@@ -71,11 +71,11 @@ Beispiele für die Benutzung von trickle
 
 **1. Über einen Proxy:**
 
-.. code:: wiki
+.. code:: bash
 
    trickle -s -u 20 -d 100 /var/mod/etc/init.d/rc.privoxy start
 
-.. code:: wiki
+.. code:: bash
 
    wget -e "http_proxy = http://192.168.127.253:8118" http://speedtest.netcologne.de/test_10mb.bin
    --2010-02-21 10:07:58--  http://speedtest.netcologne.de/test_10mb.bin
@@ -88,7 +88,7 @@ Beispiele für die Benutzung von trickle
 
 **2. Direkt auf die Anwendung:**
 
-.. code:: wiki
+.. code:: bash
 
    trickle -s -u 50 -d 70 wget http://speedtest.netcologne.de/test_10mb.bin
    --2010-03-06 22:54:02--  http://speedtest.netcologne.de/test_10mb.bin
@@ -104,7 +104,7 @@ Beispiele für die Benutzung von trickle
 
 **Auslastung der Box (aus top):**
 
-.. code:: wiki
+.. code:: bash
 
    2660  1901 root     S     3028  10%   2% wget http://speedtest.netcologne.de/test_10mb.bin
 

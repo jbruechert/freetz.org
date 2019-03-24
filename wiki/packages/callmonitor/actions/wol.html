@@ -558,6 +558,18 @@
 unterstützt — dient das in <a class="reference external" href="../../../index.html">Freetz</a> vorhandene
 Programm <code class="docutils literal notranslate"><span class="pre">ether-wake</span></code>. Zur Benutzung sei auf dessen Online-Hilfe
 verwiesen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span> <span class="n">ether</span><span class="o">-</span><span class="n">wake</span> <span class="p">[</span><span class="o">-</span><span class="n">b</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">i</span> <span class="n">iface</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span> <span class="n">aa</span><span class="p">:</span><span class="n">bb</span><span class="p">:</span><span class="n">cc</span><span class="p">:</span><span class="n">dd</span><span class="p">[:</span><span class="n">ee</span><span class="p">:</span><span class="n">ff</span><span class="p">]]</span> <span class="n">MAC</span>
+
+<span class="n">Send</span> <span class="n">a</span> <span class="n">magic</span> <span class="n">packet</span> <span class="n">to</span> <span class="n">wake</span> <span class="n">up</span> <span class="n">sleeping</span> <span class="n">machines</span><span class="o">.</span>
+<span class="n">MAC</span> <span class="n">must</span> <span class="n">be</span> <span class="n">a</span> <span class="n">station</span> <span class="n">address</span> <span class="p">(</span><span class="mi">00</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">22</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">55</span><span class="p">)</span> <span class="ow">or</span>
+    <span class="n">a</span> <span class="n">hostname</span> <span class="k">with</span> <span class="n">a</span> <span class="n">known</span> <span class="s1">&#39;ethers&#39;</span> <span class="n">entry</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+        <span class="o">-</span><span class="n">b</span>              <span class="n">Send</span> <span class="n">wake</span><span class="o">-</span><span class="n">up</span> <span class="n">packet</span> <span class="n">to</span> <span class="n">the</span> <span class="n">broadcast</span> <span class="n">address</span>
+        <span class="o">-</span><span class="n">i</span> <span class="n">iface</span>        <span class="n">Use</span> <span class="n">interface</span> <span class="n">ifname</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">the</span> <span class="n">default</span> <span class="s2">&quot;eth0&quot;</span>
+        <span class="o">-</span><span class="n">p</span> <span class="k">pass</span> <span class="n">Append</span> <span class="n">the</span> <span class="n">four</span> <span class="ow">or</span> <span class="n">six</span> <span class="n">byte</span> <span class="n">password</span> <span class="n">PW</span> <span class="n">to</span> <span class="n">the</span> <span class="n">packet</span>
+</pre></div>
+</div>
 </div>
 
 

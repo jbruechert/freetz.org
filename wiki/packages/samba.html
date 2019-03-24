@@ -816,11 +816,22 @@ werden. <em>0</em>: Lese- und Schreibzugriff</li>
 Freigabe anzeigt.</li>
 </ul>
 <p><strong>Beispiel:</strong></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">Videos</span> <span class="n">hdd1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">Videos</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">Bilder</span> <span class="n">hdd1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">Bilder</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">Musik</span> <span class="n">hdd1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">Musik</span>
+</pre></div>
+</div>
 <p>Bei Nutzung eines USB-Speichers ist zu beachten, dass die Zugriffsrechte
 entsprechend gesetzt sein müssen. Wurde der Speicher an einem
 Fremdrechner z. B. mit ext2 oder ext3 formatiert, sind oft keine
 Schreibrechte und auch nicht <code class="docutils literal notranslate"><span class="pre">ftpuser</span></code> als Eigentümer gesetzt. In der
 FRITZBox kann das mit folgenden Kommandos korrigiert werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="o">-</span><span class="n">R</span> <span class="mi">777</span> <span class="n">uStor01</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chown</span> <span class="n">ftpuser</span> <span class="o">-</span><span class="n">R</span> <span class="n">uStor01</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="einstellungen-samba-erweitert">
 <span id="einstellungensambaerweitert"></span><h4>Einstellungen → Samba Erweitert<a class="headerlink" href="#einstellungen-samba-erweitert" title="Link zu dieser Überschrift">¶</a></h4>
@@ -836,6 +847,15 @@ für Samba definieren: Der eingegebene Text wird verbatim ans Ende der
 <div class="line-block">
 <div class="line">Für Performanceverbesserungen kann folgendes unter ‚Erweitert‘
 eingetragen werden:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">socket</span> <span class="n">options</span> <span class="o">=</span> <span class="n">TCP_NODELAY</span> <span class="n">IPTOS_LOWDELAY</span>
+<span class="n">read</span> <span class="n">raw</span> <span class="o">=</span> <span class="n">yes</span>
+<span class="n">write</span> <span class="n">raw</span> <span class="o">=</span> <span class="n">yes</span>
+<span class="n">oplocks</span> <span class="o">=</span> <span class="n">yes</span>
+<span class="nb">max</span> <span class="n">xmit</span> <span class="o">=</span> <span class="mi">65535</span>
+<span class="n">dead</span> <span class="n">time</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">getwd</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">yes</span>
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">Nichtexperten können diese Einstellung einfach leer lassen.</div>

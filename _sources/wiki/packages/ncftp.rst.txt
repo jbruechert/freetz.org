@@ -51,7 +51,7 @@ Wie starte ich NcFTP?
 Als erstes schreibt man ein Skript z.B. **upload.sh** mit folgendem
 Inhalt:
 
-.. code:: wiki
+.. code:: bash
 
    nohup ncftpput -u XXX -p XXX remote-host /remote/path/ /local/path/*
 
@@ -63,13 +63,13 @@ upload.sh**.
 Wie ist der Befehl im upload.sh-Skript aufgebaut?
 -------------------------------------------------
 
-.. code:: wiki
+.. code:: bash
 
    nohup ncftpput -u (Username) -p (Password) -m (Adresse des FTP-Servers) /(Zielordner auf dem FTP)/ /(Pfad zum lokalen/eigenen Ordner)/*
 
 Beispiel:
 
-.. code:: wiki
+.. code:: bash
 
    nohup ncftpput -u freetz -p mypass -m mustermann.no-ip.org /Uploads/ /var/media/ftp/uStor01/User/Mustermann/Downloads/*
 
@@ -81,13 +81,13 @@ Beispiel:
 Wie sieht der Befehl für ein download.sh Skript aus?
 ----------------------------------------------------
 
-.. code:: wiki
+.. code:: bash
 
    nohup ncftpget -u (Username) -p (Password) (Ziel-FTP) (local-Verzeichnis) /(remote-Verzeichnis)/*
 
 Beispiel:
 
-.. code:: wiki
+.. code:: bash
 
    nohup ncftpget -u freetz -p mypass mustermann.no-ip.org /var/media/ftp/uStor01/Downloads /Downloads/*
 
@@ -100,13 +100,13 @@ Falls nicht der Standard-Port (21) genutzt werden soll kann man den
 gewünschten Port über den Parameter **-P xx** angeben. Der angegebene
 Port sollte natürlich zu dem Port passen auf dem der Server hört.
 
-.. code:: wiki
+.. code:: bash
 
    nohup ncftpput -u (Username) -p (Password) -P (Ziel-Port) -m (Adresse des FTP-Servers) /(Zielordner auf dem FTP)/ /(Pfad zum lokalen/eigenen Ordner)/*
 
 Beispiel:
 
-.. code:: wiki
+.. code:: bash
 
    nohup ncftpput -u freetz -p mypass -P 1234 -m mustermann.no-ip.org /Uploads/ /var/media/ftp/uStor01/User/Mustermann/Downloads/*
 

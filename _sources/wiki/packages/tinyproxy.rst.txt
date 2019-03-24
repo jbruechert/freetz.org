@@ -31,7 +31,7 @@ URL blocking
 -  Check option *FilterURLs*
 -  Add URL's to text box *content of filter file*
 
-.. code:: wiki
+.. code:: bash
 
    doubleclick\.net
    googleadservices\.com

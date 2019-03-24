@@ -632,10 +632,18 @@ bleibt wird wie komplette Statusbox nicht angezeigt.</p>
 <span id="id7"></span><h1>Namensauflösung<a class="headerlink" href="#namensauflosung" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Für eine dynamisch wechselnde Namensauflösung zwischen Mobilfunk und
 herkömmlicher Verbindung empfiehlt sich folgendes:</p>
-<ul class="simple">
-<li>Bei dnsmasq im Feld „Zusätzliche Kommandozeilen-Optionen (für
-Experten)“ dies eintragen:</li>
-<li>alternativ falls OpenDNS bevorzugt wird</li>
+<ul>
+<li><p class="first">Bei dnsmasq im Feld „Zusätzliche Kommandozeilen-Optionen (für
+Experten)“ dies eintragen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">avm</span><span class="o">-</span><span class="n">resolv</span><span class="o">.</span><span class="n">conf</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ppp</span><span class="o">/</span><span class="n">resolv</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">alternativ falls OpenDNS bevorzugt wird</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ppp</span><span class="o">/</span><span class="n">resolv</span><span class="o">.</span><span class="n">conf</span> <span class="o">-</span><span class="n">S</span> <span class="mf">208.67</span><span class="o">.</span><span class="mf">220.220</span> <span class="o">-</span><span class="n">S</span> <span class="mf">208.67</span><span class="o">.</span><span class="mf">222.222</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -644,6 +652,15 @@ Experten)“ dies eintragen:</li>
 <div class="section" id="firewall-routing-nat">
 <span id="firewallroutingnat"></span><h1>Firewall, Routing &amp; NAT<a class="headerlink" href="#firewall-routing-nat" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Um Masquerading zu aktivieren sind folgende Befehle nötig:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modprobe</span> <span class="n">ipt_state</span>
+<span class="n">modprobe</span> <span class="n">ipt_MASQUERADE</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">m</span> <span class="n">state</span> <span class="o">--</span><span class="n">state</span> <span class="n">ESTABLISHED</span><span class="p">,</span><span class="n">RELATED</span>   <span class="o">-</span><span class="n">i</span> <span class="n">ppp0</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span>                                        <span class="o">-</span><span class="n">i</span> <span class="n">ppp0</span> <span class="o">-</span><span class="n">j</span> <span class="n">DROP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">FORWARD</span> <span class="o">-</span><span class="n">m</span> <span class="n">state</span> <span class="o">--</span><span class="n">state</span> <span class="n">ESTABLISHED</span><span class="p">,</span><span class="n">RELATED</span> <span class="o">-</span><span class="n">i</span> <span class="n">ppp0</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">FORWARD</span>                                      <span class="o">-</span><span class="n">i</span> <span class="n">ppp0</span> <span class="o">-</span><span class="n">j</span> <span class="n">DROP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">A</span> <span class="n">POSTROUTING</span>                           <span class="o">-</span><span class="n">o</span> <span class="n">ppp0</span> <span class="o">-</span><span class="n">j</span> <span class="n">MASQUERADE</span>
+</pre></div>
+</div>
 <p>Hierzu werden die iptables-Module <em>state</em> und <em>MASQUERADE</em> benötigt.</p>
 <p><img alt="Warning" src="../../_images/exclamation9.png" /> Diese lassen (ließen?) Boxen mit altem Kernel 2.6.13.1 wie zB die
 7170 nach einer gewissen Zeit rebooten, siehe Ticket

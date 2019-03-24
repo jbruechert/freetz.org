@@ -630,7 +630,24 @@ usually <code class="docutils literal notranslate"><span class="pre">~/freetz-tr
 <p>In make menuconfig, select your hardware type (e.g. 7170), and after
 setting the Level of user competence to Expert you can look around in
 ‚Toolchain options‘, but no changes are normally needed.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ make menuconfig
+       Level of user competence (Expert)  ---&gt;
+       Hardware type (7170)  ---&gt;
+       Firmware language (en - international)  ---&gt;
+       Toolchain options  ---&gt;
+                 No changes needed
+</pre></div>
+</div>
 <p>Then create your toolchain:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ make toolchain
+
+(for older revisions:)
+FINISHED: toolchain/kernel/ - glibc compiler for the kernel
+          toolchain/target/ - uClibc compiler for the userspace
+(for later revisions:)
+FINISHED: new download toolchains can be found in dl/
+</pre></div>
+</div>
 <p>In order to build your new package manually (without integration in the
 freetz build system), you should see that your toolchain is also
 included in the search path.</p>
@@ -767,6 +784,15 @@ the package) is located at
 <code class="docutils literal notranslate"><span class="pre">/mod/etc/default.&lt;package&gt;/&lt;package&gt;.cfg</span></code>.</div>
 <div class="line">This is a static file containing a pre-defined value (can be empty)
 for each variable (config parameter) in the following format:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>export &lt;PACKAGE&gt;_&lt;VARIABLE1&gt;=’&lt;value1&gt;’
+export &lt;PACKAGE&gt;_&lt;VARIABLE2&gt;=’&lt;value2&gt;’
+export &lt;PACKAGE&gt;_&lt;VARIABLE3&gt;=’&lt;value3&gt;’
+.
+.
+.
+export &lt; PACKAGE&gt;_&lt;VARIABLEn&gt;=’&lt;valuen&gt;’
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">These are also the values that will be used if you revert back to the

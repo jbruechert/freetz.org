@@ -561,6 +561,13 @@ Box entfernen will, sich das Dateisystem aber nicht „unmounten“ lässt,
 weil es noch in Benutzung ist („still in use“) - mount sagt einem ja
 nur, dass dem so sei, gibt aber keine Details bekannt.</p>
 <p>Beispiel:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># lsof /var</span>
+<span class="n">COMMAND</span>     <span class="n">PID</span>     <span class="n">USER</span>   <span class="n">FD</span>   <span class="n">TYPE</span> <span class="n">DEVICE</span> <span class="n">SIZE</span><span class="o">/</span><span class="n">OFF</span>     <span class="n">NODE</span> <span class="n">NAME</span>
+<span class="n">syslogd</span>     <span class="mi">350</span>     <span class="n">root</span>    <span class="mi">5</span><span class="n">w</span>  <span class="n">VREG</span>  <span class="mi">222</span><span class="p">,</span><span class="mi">5</span>        <span class="mi">0</span> <span class="mi">440818</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">adm</span><span class="o">/</span><span class="n">messages</span>
+<span class="n">syslogd</span>     <span class="mi">350</span>     <span class="n">root</span>    <span class="mi">6</span><span class="n">w</span>  <span class="n">VREG</span>  <span class="mi">222</span><span class="p">,</span><span class="mi">5</span>   <span class="mi">339098</span>   <span class="mi">6248</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">syslog</span>
+<span class="n">cron</span>        <span class="mi">353</span>     <span class="n">root</span>  <span class="n">cwd</span>   <span class="n">VDIR</span>  <span class="mi">222</span><span class="p">,</span><span class="mi">5</span>      <span class="mi">512</span> <span class="mi">254550</span> <span class="o">/</span><span class="n">var</span> <span class="o">--</span> <span class="n">atjobs</span>
+</pre></div>
+</div>
 <p>Weitere Informationen finden sich u.a. bei
 <a class="reference external" href="http://en.wikipedia.org/wiki/Lsof">​Wikipedia</a>.</p>
 <ul class="simple">

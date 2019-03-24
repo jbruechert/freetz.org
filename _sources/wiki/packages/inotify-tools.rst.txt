@@ -174,7 +174,7 @@ Ausgabeformat
 Was steht nun drin in ``/var/iw.log`` bzw. wie sieht es aus? Ein kleiner
 Ausschnitt:
 
-.. code:: wiki
+.. code:: bash
 
    /etc/,"CLOSE_NOWRITE,CLOSE",.subversion
    /lib/,"CLOSE_NOWRITE,CLOSE",libgcc_s.so.1
@@ -270,7 +270,7 @@ Konsolidierung des großen Logs übernimmt. Die konsolidierte Liste der
 Dateien wird regelmäßig aktualisiert in ``/var/iw-unique.log``, wo man
 sie jederzeit einsehen kann. Sie sieht in etwa so aus (Ausschnitt):
 
-.. code:: wiki
+.. code:: bash
 
    /
    /etc/.subversion

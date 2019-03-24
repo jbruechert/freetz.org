@@ -13,7 +13,7 @@ entnommen werden.
 
 Minimal *named.conf*:
 
-.. code:: wiki
+.. code:: bash
 
    options {
        directory "/var/media/ftp/uFlash/bind";
@@ -29,7 +29,7 @@ Minimal *named.conf*:
 
 Minimal zone file */var/media/ftp/uFlash/bind/example.org*:
 
-.. code:: wiki
+.. code:: bash
 
    $TTL 300
    @       IN      SOA     @ example.org. (

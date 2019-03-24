@@ -84,7 +84,7 @@ eine aussagekräftige Portfreigabe erstellt, z.B. "MeineFreigabe". Diese
 kann in der im vi geöffneten /var/tmp/ar7.cfg gesucht werden mit
 /MeineFreigabe.
 
-.. code:: wiki
+.. code:: bash
 
      cat /var/flash/ar7.cfg > /var/tmp/ar7.cfg
      vi /var/tmp/ar7.cfg
@@ -119,7 +119,7 @@ kann in der im vi geöffneten /var/tmp/ar7.cfg gesucht werden mit
    und der richtigen Port-Nummer. Zu beachten ist, dass die Zeilen mit
    "," abzuschließen sind, die letzte Zeile mit ";":
 
-.. code:: wiki
+.. code:: bash
 
      ## falls es **nicht** die letzte Zeile ist so,
      ## wenn es **die letzte** ist, bitte ein ";" statt des ","
@@ -157,7 +157,7 @@ Die einfachste Variante ist der Betrieb mit statischem Schlüssel:
 
 Hier mal ein Beispiel mit folgenden Daten:
 
-.. code:: wiki
+.. code:: bash
 
      Server-IP 192.168.200.1
      Client-IP 192.168.200.2
@@ -173,7 +173,7 @@ In der GUI wäre der Server dann so zu konfigurieren:
 Eine passende Windows-Client-Konfiguration dazu, die sich auf die Box
 verbinden kann:
 
-.. code:: wiki
+.. code:: bash
 
      remote meinserver.dyndns.org
      proto udp
@@ -256,7 +256,7 @@ Zuordnung der Schlüssel und Zertifikate auf der Box:
 Ebenfalls wieder eine Client-Konfiguration dazu, die sich mit diesem
 Server verbinden könnte:
 
-.. code:: wiki
+.. code:: bash
 
      remote meinserver.dyndns.org
      proto udp
@@ -316,7 +316,7 @@ oben beschriebenen Verfahren geändert werden muß. Unter dem Punkt
 
 Also wieder:
 
-.. code:: wiki
+.. code:: bash
 
      cat /var/flash/ar7.cfg > /var/tmp/ar7.cfg
      vi /var/tmp/ar7.cfg
@@ -324,7 +324,7 @@ Also wieder:
 Dann suchen nach /brinterfaces und den Eintrag "tap0" vor dem Semikolon
 einfügen.
 
-.. code:: wiki
+.. code:: bash
 
      brinterfaces {
                    name = "lan";
@@ -340,7 +340,7 @@ einfügen.
 
 Zum Abschluß noch mal
 
-.. code:: wiki
+.. code:: bash
 
      cat /var/tmp/ar7.cfg > /var/flash/ar7.cfg
      reboot
@@ -355,7 +355,7 @@ dann folgendermaßen aussehen:
 
 Die Windows-Client-Konfiguration dazu sieht so aus:
 
-.. code:: wiki
+.. code:: bash
 
      client
      dev tap
@@ -439,11 +439,11 @@ Daher der Apell, tastet euch langsam an das ganze heran!
      läuft) sollten so (spätestens nach zehn Sekunden) die
      Startmeldungen Hinweise auf den Fehler bringen.:
 
-   .. code:: wiki
+   .. code:: bash
 
         # die .../openvpn*.conf wird erst beim Starten des Dienstes erstellt und beim Stoppen gelöscht!
 
-   .. code:: wiki
+   .. code:: bash
 
         cat /mod/etc/openvpn*.conf | grep -v daemon > /var/tmp/ovpn.conf
         openvpn /var/tmp/ovpn.conf &
@@ -483,7 +483,7 @@ Verschlüsselungsalgorithmus erfolg über die "Cipher" Auswahlbox.
 Momentan sind dort diese Cipher wählbar, in Klammern jeweils die OpenVPN
 Bezeichnung, wie sie aus dem OpenSSL übernommen wurde:
 
-.. code:: wiki
+.. code:: bash
 
    Blowfish (BF-CBC)
    AES 128 (AES-128-CBC)
@@ -495,7 +495,7 @@ nachzugehen, habe ich mal mit ``openssl speed des aes blowfish`` einen
 "Leistungsvergleich" der Verfahren auf einem Speedport 701 gemacht (nur
 für die wählbaren Optionen):
 
-.. code:: wiki
+.. code:: bash
 
    The 'numbers' are in 1000s of bytes per second processed.
    type              16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes
@@ -511,7 +511,7 @@ tiefergehende Vergleiche der Algorithmen sei z.B. auf
 
 Zum Vergleich die Zahlen von einer 7320:
 
-.. code:: wiki
+.. code:: bash
 
    The 'numbers' are in 1000s of bytes per second processed.
    type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes
@@ -524,7 +524,7 @@ Zum Vergleich die Zahlen von einer 7320:
 
 … und von einer 7390:
 
-.. code:: wiki
+.. code:: bash
 
    The 'numbers' are in 1000s of bytes per second processed.
    type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes
@@ -548,7 +548,7 @@ to specific a DNS server using openVPN, but that didn' work. Eventually
 I fixed this problem by using iptables to re-route DNS to the local DNS
 server (dnsmasq) like this:
 
-.. code:: wiki
+.. code:: bash
 
    iptables -A PREROUTING -i tun0 -p tcp -m tcp --dport 53 -j DNAT --to-destination 192.168.178.1
    iptables -A PREROUTING -i tun0 -p udp -m udp --dport 53 -j DNAT --to-destination 192.168.178.1
@@ -592,7 +592,7 @@ sich Clients verbinden, zu denen Netze geroutet werden sollen. Damit das
 funktioniert muss neben dem "normalen" Routing auch das interne Routing
 des Servers konfiguriert werden, der dazu "iroute" Einträge benötigt.
 
-.. code:: wiki
+.. code:: bash
 
    mode server
    tls-server
@@ -619,7 +619,7 @@ client-connect Skript genutzt (ähnlich wie die "erweiterte Clientconfig"
 der "alten GUI"). Die Idee/Anwendung sollte selbsterklärend sein (hoffe
 ich):
 
-.. code:: wiki
+.. code:: bash
 
    #!/bin/sh
    CLIENTS='name:ip maske:netz1 maske1; netz2 maske2

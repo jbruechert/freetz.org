@@ -38,7 +38,7 @@ Konfiguration
 
 #. Erzeugen der Keys auf dem PC (unter Linux):
 
-   .. code:: wiki
+   .. code:: bash
 
       openssl genrsa 1024 > host.key
       openssl req -new -x509 -nodes -sha1 -days 365 -key host.key > host.cert
@@ -48,7 +48,7 @@ Konfiguration
 
 3. Die gewünschten Services hinzufügen. Zum Beispiel:
 
-   .. code:: wiki
+   .. code:: bash
 
       0.0.0.0:4433 127.0.0.1:81 Freetz-Webinterface
 
@@ -61,7 +61,7 @@ Konfiguration
 Zertifikate auf der Box erzeugen
 --------------------------------
 
-.. code:: wiki
+.. code:: bash
 
    xrelayd -f -K 1024 -p host.key -U "CN=localhost" -p host.key -A host.cert
    cat host.key > /tmp/flash/.xrelayd/key.pem

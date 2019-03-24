@@ -618,6 +618,17 @@ benötigt.</div>
 </div>
 <p>Um die Umleitung zu aktivieren folgendes ausführen (Konsole oder
 rc.custom):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modprobe</span> <span class="n">ip_tables</span>
+<span class="n">modprobe</span> <span class="n">iptable_filter</span>
+<span class="n">modprobe</span> <span class="n">x_tables</span>
+<span class="n">modprobe</span> <span class="n">xt_tcpudp</span>
+<span class="n">modprobe</span> <span class="n">ipt_REDIRECT</span>
+<span class="n">modprobe</span> <span class="n">ip_nat</span>
+<span class="n">modprobe</span> <span class="n">iptable_nat</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">A</span> <span class="n">PREROUTING</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">-</span><span class="n">i</span> <span class="n">lan</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">80</span> <span class="o">-</span><span class="n">j</span> <span class="n">REDIRECT</span> <span class="o">--</span><span class="n">to</span> <span class="mi">8118</span>
+<span class="p">[</span> <span class="o">-</span><span class="n">z</span> <span class="s2">&quot;$(grep accept-intercepted-requests /var/mod/etc/privoxy/config)&quot;</span> <span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">echo</span> <span class="s2">&quot;accept-intercepted-requests 1&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">privoxy</span><span class="o">/</span><span class="n">config</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="werbefilter">
 <span id="id3"></span><h2>Werbefilter<a class="headerlink" href="#werbefilter" title="Link zu dieser Überschrift">¶</a></h2>
@@ -630,10 +641,39 @@ des Firefox-Plugins AdBlockPlus zuzugreifen.</div>
 Fritz.Box etwas eng. Deswegen ist es nützliche die Listen beim Start
 der Fritz.Box neu zu laden.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>URL=&quot;http://adblockplus.mozdev.org/easylist/easylist.txt&quot;
+ACTION=/var/tmp/flash/privoxy/user.action
+FILTER=/var/tmp/flash/privoxy/user.filter
+FILE=$(basename ${URL})
+LIST=${FILE%\.*}
+wget -qO ${FILE} ${URL}
+echo -e &quot;{ +block{${LIST}} }&quot; &gt; ${ACTION}
+sed &#39;/^!.*/d;1,1 d;/^@@.*/d;/\$.*/d;/#/d;s/\./\\./g;s/\?/\\?/g;s/\*/.*/g;s/(/\\(/g;s/)/\\)/g;s/\[/\\[/g;s/\]/\\]/g;s/\^/[\/\&amp;:\?=_]/g;s/^||/\./g;s/^|/^/g;s/|$/\$/g;/|/d&#39; ${FILE} &gt;&gt; ${ACTION}
+echo &quot;FILTER: ${LIST} Tag filter of ${LIST}&quot; &gt; ${FILTER}
+sed &#39;/^#/!d;s/^##//g;s/^#\(.*\)\[.*\]\[.*\]*/s|&lt;([a-zA-Z0-9]+)\\s+.*id=.?\1.*&gt;.*&lt;\/\\1&gt;||g/g;s/^#\(.*\)/s|&lt;([a-zA-Z0-9]+)\\s+.*id=.?\1.*&gt;.*&lt;\/\\1&gt;||g/g;s/^\.\(.*\)/s|&lt;([a-zA-Z0-9]+)\\s+.*class=.?\1.*&gt;.*&lt;\/\\1&gt;||g/g;s/^a\[\(.*\)\]/s|&lt;a.*\1.*&gt;.*&lt;\/a&gt;||g/g;s/^\([a-zA-Z0-9]*\)\.\(.*\)\[.*\]\[.*\]*/s|&lt;\1.*class=.?\2.*&gt;.*&lt;\/\1&gt;||g/g;s/^\([a-zA-Z0-9]*\)#\(.*\):.*[:[^:]]*[^:]*/s|&lt;\1.*id=.?\2.*&gt;.*&lt;\/\1&gt;||g/g;s/^\([a-zA-Z0-9]*\)#\(.*\)/s|&lt;\1.*id=.?\2.*&gt;.*&lt;\/\1&gt;||g/g;s/^\[\([a-zA-Z]*\).=\(.*\)\]/s|\1^=\2&gt;||g/g;s/\^/[\/\&amp;:\?=_]/g;s/\.\([a-zA-Z0-9]\)/\\.\1/g&#39; ${FILE} &gt;&gt; ${FILTER}
+echo &quot;{ +filter{${LIST}} }&quot; &gt;&gt; ${ACTION}
+echo &quot;*&quot; &gt;&gt; ${ACTION}
+echo &quot;{ -block }&quot; &gt;&gt; ${ACTION}
+sed &#39;/^@@.*/!d;s/^@@//g;/\$.*/d;/#/d;s/\./\\./g;s/\?/\\?/g;s/\*/.*/g;s/(/\\(/g;s/)/\\)/g;s/\[/\\[/g;s/\]/\\]/g;s/\^/[\/\&amp;:\?=_]/g;s/^||/\./g;s/^|/^/g;s/|$/\$/g;/|/d&#39; ${FILE} &gt;&gt; ${ACTION}
+echo &quot;{ -block +handle-as-image }&quot; &gt;&gt; ${ACTION}
+sed &#39;/^@@.*/!d;s/^@@//g;/\$.*image.*/!d;s/\$.*image.*//g;/#/d;s/\./\\./g;s/\?/\\?/g;s/\*/.*/g;s/(/\\(/g;s/)/\\)/g;s/\[/\\[/g;s/\]/\\]/g;s/\^/[\/\&amp;:\?=_]/g;s/^||/\./g;s/^|/^/g;s/|$/\$/g;/|/d&#39; ${FILE} &gt;&gt; ${ACTION}
+</pre></div>
+</div>
 <p>Nähere Infos unter:
 <a class="reference external" href="http://andrwe.org/doku.php/scripting/bash/privoxy-blocklist">​http://andrwe.org/doku.php/scripting/bash/privoxy-blocklist</a></p>
 <p>If you want to store the action and filter file external in stead of
 flash:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ACTION</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uFlash</span><span class="o">/</span><span class="n">privoxy</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">action</span>
+<span class="n">FILTER</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uFlash</span><span class="o">/</span><span class="n">privoxy</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">filter</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">privoxy</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">filter</span>
+<span class="n">rm</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">privoxy</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">action</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uFlash</span><span class="o">/</span><span class="n">privoxy</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">filter</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">privoxy</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">filter</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uFlash</span><span class="o">/</span><span class="n">privoxy</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">action</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">privoxy</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">action</span>
+<span class="n">modsave</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="installation">
 <span id="id4"></span><h2>Installation<a class="headerlink" href="#installation" title="Link zu dieser Überschrift">¶</a></h2>

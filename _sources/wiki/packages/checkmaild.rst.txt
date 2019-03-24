@@ -47,7 +47,7 @@ Skript-Funktion
 Ab Version 0.4 gibt es zusätzlich die Möglichkeit einer Skript-Funktion.
 Diese ist wie folgt zu benutzen (GMX als Beispiel):
 
-.. code:: wiki
+.. code:: bash
 
    /mod/etc/maillog.cfg 0 2 1 "GMX" "8d3451bca04e6c2f227257baa821c4b7" "14.Sep" "10:09" "User <user@gmx.de>" "Betreff"]
 

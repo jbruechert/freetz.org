@@ -565,6 +565,13 @@ abgewählt wurden, werden nicht automatisch mit abgewählt. Um nach der
 Abwahl diverser Pakete auch die nicht mehr benötigten libs zu entfernen
 (damit das Image nachher auch tatsächlich nicht zu groß wird) gibt es
 folgende <em>make</em>-Targets:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Unnötige Libs und Busybox-Applets deselektieren</span>
+<span class="n">make</span> <span class="n">config</span><span class="o">-</span><span class="n">clean</span><span class="o">-</span><span class="n">deps</span>
+
+<span class="c1"># Oder nur unnötige Libs deselektieren, Busybox-Applets in Ruhe lassen</span>
+<span class="n">make</span> <span class="n">config</span><span class="o">-</span><span class="n">clean</span><span class="o">-</span><span class="n">deps</span><span class="o">-</span><span class="n">keep</span><span class="o">-</span><span class="n">busybox</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="liste-der-bibliotheken">
 <span id="listederbibliotheken"></span><h2>Liste der Bibliotheken<a class="headerlink" href="#liste-der-bibliotheken" title="Link zu dieser Überschrift">¶</a></h2>

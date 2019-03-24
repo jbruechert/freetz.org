@@ -564,6 +564,9 @@
 Optionen (s.o.) Port, Username und Passwort übergeben. Das XBMC stellt
 die Nachricht dann in einem kleinen Fenster dar, das automatisch
 geschlossen wird.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xboxmessage</span> <span class="p">(</span><span class="n">default_xboxmessage</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>Die XBox erlaubt mit <code class="docutils literal notranslate"><span class="pre">xboxmessage</span></code> keine Kommas in den Nachrichten.
 Der Titel der Nachricht kann über die Umgebungsvariable
 <code class="docutils literal notranslate"><span class="pre">XBOX_CAPTION=&quot;Telefonanruf&quot;</span></code> beeinflusst werden.</p>
@@ -575,6 +578,43 @@ die jeweilige Datei unter <code class="docutils literal notranslate"><span class
 <code class="docutils literal notranslate"><span class="pre">skin\Project</span> <span class="pre">Mayhem</span> <span class="pre">III\PAL16x9\</span></code> zuständig. Folgende Überarbeitung
 der „PAL“-Datei erreicht ein brauchbares Ergebnis (nur geänderte
 Zeilen):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+  <span class="o">&lt;</span><span class="n">coordinates</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">system</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">system</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">posx</span><span class="o">&gt;</span><span class="mi">275</span><span class="o">&lt;/</span><span class="n">posx</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">posy</span><span class="o">&gt;</span><span class="mi">420</span><span class="o">&lt;/</span><span class="n">posy</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">coordinates</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">animation</span> <span class="n">effect</span><span class="o">=</span><span class="s2">&quot;slide&quot;</span> <span class="n">time</span><span class="o">=</span><span class="s2">&quot;5000&quot;</span> <span class="n">start</span><span class="o">=</span><span class="s2">&quot;300,0&quot;</span><span class="o">&gt;</span><span class="n">WindowOpen</span><span class="o">&lt;/</span><span class="n">animation</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">animation</span> <span class="n">effect</span><span class="o">=</span><span class="s2">&quot;slide&quot;</span> <span class="n">time</span><span class="o">=</span><span class="s2">&quot;5000&quot;</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;300,0&quot;</span><span class="o">&gt;</span><span class="n">WindowClose</span><span class="o">&lt;/</span><span class="n">animation</span><span class="o">&gt;</span>
+<span class="o">...</span>
+    <span class="o">&lt;</span><span class="n">control</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span><span class="n">Popup</span> <span class="n">Kai</span> <span class="n">Toast</span> <span class="n">Dialog</span> <span class="n">Background</span><span class="o">&lt;/</span><span class="n">description</span><span class="o">&gt;</span>
+      <span class="o">...</span>
+      <span class="o">&lt;</span><span class="n">width</span><span class="o">&gt;</span><span class="mi">400</span><span class="o">&lt;/</span><span class="n">width</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">height</span><span class="o">&gt;</span><span class="mi">125</span><span class="o">&lt;/</span><span class="n">height</span><span class="o">&gt;</span>
+<span class="o">...</span>
+    <span class="o">&lt;</span><span class="n">control</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span><span class="n">avatar</span><span class="o">&lt;/</span><span class="n">description</span><span class="o">&gt;</span>
+      <span class="o">...</span>
+      <span class="o">&lt;</span><span class="n">posx</span><span class="o">&gt;</span><span class="mi">40</span><span class="o">&lt;/</span><span class="n">posx</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">posy</span><span class="o">&gt;</span><span class="mi">25</span><span class="o">&lt;/</span><span class="n">posy</span><span class="o">&gt;</span>
+<span class="o">...</span>
+    <span class="o">&lt;</span><span class="n">control</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span><span class="n">Caption</span> <span class="n">Label</span><span class="o">&lt;/</span><span class="n">description</span><span class="o">&gt;</span>
+      <span class="o">...</span>
+      <span class="o">&lt;</span><span class="n">posx</span><span class="o">&gt;</span><span class="mi">46</span><span class="o">&lt;/</span><span class="n">posx</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">posy</span><span class="o">&gt;</span><span class="mi">30</span><span class="o">&lt;/</span><span class="n">posy</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">width</span><span class="o">&gt;</span><span class="mi">305</span><span class="o">&lt;/</span><span class="n">width</span><span class="o">&gt;</span>
+<span class="o">...</span>
+    <span class="o">&lt;</span><span class="n">control</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span><span class="n">Description</span> <span class="n">Button</span><span class="o">&lt;/</span><span class="n">description</span><span class="o">&gt;</span>
+      <span class="o">...</span>
+      <span class="o">&lt;</span><span class="n">posx</span><span class="o">&gt;</span><span class="mi">46</span><span class="o">&lt;/</span><span class="n">posx</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">posy</span><span class="o">&gt;</span><span class="mi">46</span><span class="o">&lt;/</span><span class="n">posy</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">width</span><span class="o">&gt;</span><span class="mi">305</span><span class="o">&lt;/</span><span class="n">width</span><span class="o">&gt;</span>
+<span class="o">...</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="weitere-moglichkeiten">
 <span id="weiteremoglichkeiten"></span><h2>Weitere Möglichkeiten<a class="headerlink" href="#weitere-moglichkeiten" title="Link zu dieser Überschrift">¶</a></h2>

@@ -568,16 +568,25 @@ genaue Syntax sich auf der soeben angegebenen Seite findet. Damit die
 deutschsprachigen Seiten das Argument <code class="docutils literal notranslate"><span class="pre">heading=Inhaltsverzeichnis</span></code> -
 als Beispiel für ein einfaches Inhaltsverzeichnis für die aktuell
 bearbeitete Seite sähe das dann so aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">TOC</span><span class="p">(</span><span class="n">heading</span><span class="o">=</span><span class="n">Inhaltsverzeichnis</span><span class="p">)]]</span>
+</pre></div>
+</div>
 <div class="section" id="unterseiten-einbeziehen">
 <span id="unterseiteneinbeziehen"></span><h2>Unterseiten einbeziehen<a class="headerlink" href="#unterseiten-einbeziehen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Es lassen sich auch Unterseiten (oder ganz andere Seiten) mit
 einbeziehen, sodass ein Inhaltsverzeichnis entsteht, welches mehrere
 Artikel überspannt. Hierzu gibt man die zu indizierenden Seiten explizit
 an:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">TOC</span><span class="p">(</span><span class="n">help</span><span class="o">/</span><span class="n">wikiedit</span><span class="p">,</span><span class="n">help</span><span class="o">/</span><span class="n">wikiedit</span><span class="o">/</span><span class="n">toc</span><span class="p">,</span><span class="n">help</span><span class="o">/</span><span class="n">wikiedit</span><span class="o">/</span><span class="n">goodies</span><span class="p">,</span><span class="n">heading</span><span class="o">=</span><span class="n">Inhaltsverzeichnis</span><span class="p">)]]</span>
+</pre></div>
+</div>
 <p>etwa würde die angegebenen Seiten in das automatische Inhaltsverzeichnis
 einbeziehen. Da man auf diese Art allerdings jedesmal, wenn eine neue
 Unterseite angelegt wird, das TOC-Makro auf allen beteiligten Seiten
 wieder anpassen müsste, geht das auch einfacher:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">TOC</span><span class="p">(</span><span class="n">help</span><span class="o">/</span><span class="n">wikiedit</span><span class="p">,</span><span class="n">help</span><span class="o">/</span><span class="n">wikiedit</span><span class="o">/*</span><span class="p">,</span><span class="n">heading</span><span class="o">=</span><span class="n">Inhaltsverzeichnis</span><span class="p">)]]</span>
+</pre></div>
+</div>
 <p>Das ist der Vorteil eines hierarchischen Wikis: Das <em>WildCard</em> „*“
 greift nicht zu weit um sich, sondern bleibt beim Thema.</p>
 </div>
@@ -591,6 +600,9 @@ maximale Tiefe der vom TOC-Makro anzuzeigenden Überschriften ebenfalls
 einschränken, wozu der Parameter <code class="docutils literal notranslate"><span class="pre">depth</span></code> herangezogen werden kann.
 Soll das TOC-Makro also beispielsweise nur die Überschriften der Ebenen
 1 und 2 anzeigen, sähe das so aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">TOC</span><span class="p">(</span><span class="n">help</span><span class="o">/</span><span class="n">wikiedit</span><span class="p">,</span><span class="n">help</span><span class="o">/</span><span class="n">wikiedit</span><span class="o">/*</span><span class="p">,</span><span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">heading</span><span class="o">=</span><span class="n">Inhaltsverzeichnis</span><span class="p">)]]</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="mehrere-toc-blocke">
 <span id="mehreretocblocke"></span><h2>Mehrere TOC Blöcke<a class="headerlink" href="#mehrere-toc-blocke" title="Link zu dieser Überschrift">¶</a></h2>
@@ -605,6 +617,9 @@ es ziemlich dämlich aussieht.</p>
 darum geht, die Überschriften aufzulisten - und es nicht unbedingt der
 „schöne gelbe Kasten da rechts“ sein muss, bietet das Keyword <code class="docutils literal notranslate"><span class="pre">inline</span></code>
 hier Abhilfe:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">TOC</span><span class="p">(</span><span class="n">help</span><span class="o">/</span><span class="n">wikiedit</span><span class="p">,</span><span class="n">help</span><span class="o">/</span><span class="n">wikiedit</span><span class="o">/*</span><span class="p">,</span><span class="n">inline</span><span class="p">,</span><span class="n">noheading</span><span class="p">)]]</span>
+</pre></div>
+</div>
 <p>wäre etwa geeignet, den entsprechenden Index mitten im Artikel - also
 so, als hätte man die einzelnen Punkte mit ihren Links selbst abgetippt
 - darzustellen.</p>

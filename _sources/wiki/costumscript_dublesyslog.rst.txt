@@ -17,7 +17,7 @@ Schritte zur Lösung, kann übersprungen werden…
 
 Ich habe erst einmal mit
 
-.. code:: wiki
+.. code:: bash
 
    # syslogd -h
    syslogd: invalid option -- h
@@ -41,7 +41,7 @@ Ich habe erst einmal mit
 
 angeschaut was denn der BusyBox syslogd so bietet und dann mit
 
-.. code:: wiki
+.. code:: bash
 
    # ps w | grep syslog
     4718 root      3256 S    {busybox} syslogd -L -C2048
@@ -51,7 +51,7 @@ geschaut wie er denn gerade so läuft. Durch editieren der Option
 (variable SYSLOGD_EXPERT_OPTIONS) habe ich es dann zu folgenden Status
 gebracht:
 
-.. code:: wiki
+.. code:: bash
 
    root@FB:/var/mod/root# ps w | grep syslog
     4718 root      3256 S    {busybox} syslogd -L -C2048 -O /var/media/ftp/uStor01/log/messages -b 20 -s 20048
@@ -86,7 +86,7 @@ scriebt.
 Also hier die Anleitung zur Editierung der rc.costum ueber die shell:
 ---------------------------------------------------------------------
 
-.. code:: wiki
+.. code:: bash
 
    #fritzbox rc.custom ohne webinterface anlegen
    touch /tmp/flash/mod/rc.custom
@@ -106,7 +106,7 @@ mountpoint man durch ``mount`` erfährt) schon einhängt bevor freetz den
 rc.custom ausführt, also getreu nach der Anleitung zur editierung der
 der rc.custum sie in folgenden Zustand versetzt:
 
-.. code:: wiki
+.. code:: bash
 
    cat /tmp/flash/mod/rc.custom
    echo testtest >> /var/media/ftp/uStor01/testlog
@@ -123,7 +123,7 @@ geht zu meiner…
 …Lösung:
 --------
 
-.. code:: wiki
+.. code:: bash
 
    ////////////////
    /tmp/flash/my/logtostick: (die datei muss natürlich auch das recht zum ausführen erhalten und in den flash permanentisiert werden...)

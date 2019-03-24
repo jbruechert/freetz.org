@@ -608,7 +608,16 @@ Wiki</a></div>
 <div class="line">After the following step you can configure the packages you want to
 have included in your image.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">menuconfig</span>
+</pre></div>
+</div>
 <p>Make sure the following is selected:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Show</span> <span class="n">advanced</span> <span class="n">options</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Package</span> <span class="n">selection</span>  <span class="o">---&gt;</span>  <span class="n">Testing</span>  <span class="o">---&gt;</span>    <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Inadyn</span><span class="o">-</span><span class="n">mt</span> <span class="mf">02.24</span><span class="o">.</span><span class="mi">36</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="setup-in-freetz-web-interface">
 <span id="setupinfreetzweb-interface"></span><h2>Setup in Freetz web-interface<a class="headerlink" href="#setup-in-freetz-web-interface" title="Link zu dieser Überschrift">¶</a></h2>
@@ -624,6 +633,9 @@ seconds.</div>
 </div>
 <p>If you have enabled the syslog you can verify the syslog messages. E.g.
 via a telnet or ssh connection you can using the following command:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logread</span>
+</pre></div>
+</div>
 <p>Or via the Freetz web interface: Status &gt; Syslog You can filter on
 INADYN to show only Inadyn related messages. You will see that the every
 10 minutes by default the IP address is verified for changes. Only if

@@ -564,12 +564,18 @@ Protocol</a>) nennt.</p>
 wiederum selbst lauschen muss, eine Nachricht gesendet. Snarl zeigt
 diese vom Callmonitor über SNP übermittelte Benachrichtigung dann an.</p>
 <p>Also z. B. so:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>echo -n &quot;type=SNP#?version=1.0#?action=notification#?title=Anruf#?text=${SOURCE}#?timeout=20&quot;$&#39;\r\n&#39; | nc IP 9887
+</pre></div>
+</div>
 <p>(buehmann hat in diesem
 <a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=216938">​Thread</a>
 gezeigt, wie es geht. Danke!)</p>
 <div class="section" id="listener-eintrag">
 <h1>Listener-Eintrag:<a class="headerlink" href="#listener-eintrag" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Der Listener-Eintrag im Callmonitor kann dazu z.B. so aussehen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>in:request ^ ^ echo -n &quot;type=SNP#?version=1.0#?action=notification#?title=eingehender Anruf#?text=von ${SOURCE} - ($SOURCE_NAME)${LF}für ${DEST_NAME} - (${DEST_DISP})${LF}#?timeout=20#?icon=C:\pic.png&quot;$&#39;\r\n&#39; | nc 192.168.178.20 9887
+</pre></div>
+</div>
 </div>
 <div class="section" id="screenshots">
 <h1>Screenshots:<a class="headerlink" href="#screenshots" title="Link zu dieser Überschrift">¶</a></h1>

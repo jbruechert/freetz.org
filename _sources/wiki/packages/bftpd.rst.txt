@@ -14,7 +14,7 @@ einem Passwort zu schützen, kann man wie folgt vorgehen:
 -  In einer Shell (serielle Konsole, telnet oder dropbear) das Passwort
    für den Benutzer ftp ändern:
 
-   .. code:: wiki
+   .. code:: bash
 
       modpasswd ftp
 
@@ -40,7 +40,7 @@ werden.
 Auf dieser Seite kann man sich die für die ``/var/tmp/passwd``
 benötigten Zeilen mit Benutzer und Passwort erzeugen lassen:
 
-.. code:: wiki
+.. code:: bash
 
    http://home.flash.net/cgi-bin/pw.pl
 
@@ -48,7 +48,7 @@ Alternativ geht das auch mit dem Unix/Linux Kommando ``htpasswd``.
 
 Die Syntax sieht dann wie folgt aus:
 
-.. code:: wiki
+.. code:: bash
 
    echo "user1:pass1:1000:1:ftp user:/var/media/ftp:/bin/sh" >> /var/tmp/passwd
    echo "user2:pass2:1000:1:ftp user:/var/media/ftp:/bin/sh" >> /var/tmp/passwd

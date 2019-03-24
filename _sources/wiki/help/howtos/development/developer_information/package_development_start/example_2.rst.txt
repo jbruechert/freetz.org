@@ -23,7 +23,7 @@ Build manually
 | You can look with ``echo $PATH`` what the current search path variable
   is.
 
-.. code:: wiki
+.. code:: bash
 
    mkdir par2cmdline
    cd par2cmdline
@@ -55,7 +55,7 @@ Build manually
 Next you might want to see that "``make clean``" properly works for this
 package. This will (should) remove all generated files during ``make``.
 
-.. code:: wiki
+.. code:: bash
 
    cd ~/freetz-trunk/par2cmdline/par2cmdline-0.4/
    make clean
@@ -76,7 +76,7 @@ ourselves.
 For each new package a directory under ~/freetz-trunk/make/ should be
 created with a minimum of two files:
 
-.. code:: wiki
+.. code:: bash
 
    `--make
         `--<package-name>
@@ -88,13 +88,13 @@ needed like with par2cmdline.
 
 Lets create the directory structure and the two files for Par2cmdline:
 
-.. code:: wiki
+.. code:: bash
 
    cd /home/freetz/freetz-trunk/
    mkdir –p /home/freetz/freetz-trunk/make/par2cmdline/patches/
    vi /home/freetz/freetz-trunk/make/par2cmdline/Config.in
 
-.. code:: wiki
+.. code:: bash
 
    config FREETZ_PACKAGE_PAR2CMDLINE
            bool "par2cmdline 0.4"
@@ -109,7 +109,7 @@ par2cmdline, and $(PKG) with be PAR2CMDLINE.
 
 ``vi /home/freetz/freetz-trunk/make/par2cmdline/par2cmdline.mk``
 
-.. code:: wiki
+.. code:: bash
 
    $(call PKG_INIT_BIN, 0.4)
    $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
@@ -145,7 +145,7 @@ par2cmdline, and $(PKG) with be PAR2CMDLINE.
 
 | The indents should be replaced with tabs.
 
-.. code:: wiki
+.. code:: bash
 
    wget http://sourceforge.net/p/parchive/bugs/_discuss/thread/e9911edb/b6aa/attachment/par2cmdline-0.4-gcc4.patch -O 100-gcc4.patch
    mv 100-gcc4.patch make/par2cmdline/patches/
@@ -156,13 +156,13 @@ par2cmdline, and $(PKG) with be PAR2CMDLINE.
 
 Explanation of the lines:
 
-.. code:: wiki
+.. code:: bash
 
    $(call PKG_INIT_BIN, 0.4)
 
 | From this line the package version is determined. In this case 0.4
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
 
@@ -170,21 +170,21 @@ Explanation of the lines:
   downloaded and used further. Here it will be
   PAR2CMDLINE_SOURCE:=par2cmdline-0.4.tar.gz
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_SOURCE_MD5:=1551b63e57e3c232254dc62073b723a9
 
 | This is the md5 hash value to verify successful download.
   PAR2CMDLINE_SOURCE_MD5:=1551b63e57e3c232254dc62073b723a9
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_SITE:=http://sourceforge.net/projects/parchive/files/$(pkg)/$($(PKG)_VERSION)/
 
 | The download url. PAR2CMDLINE_SITE:=
   `​http://sourceforge.net/projects/parchive/files/par2cmdline/0.4/ <http://sourceforge.net/projects/parchive/files/par2cmdline/0.4/>`__
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_BINARY:=$($(PKG)_DIR)/par2
 
@@ -194,7 +194,7 @@ Explanation of the lines:
 | (source/target-mipsel_gcc-4.6.4_uClibc-0.9.32.1/par2cmdline-0.4/ is
   where the source is unpacked before it is compiled)
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_TARGET_BINARY:=$($(PKG)_DEST_DIR)/usr/sbin/par2
 
@@ -202,7 +202,7 @@ Explanation of the lines:
   saved. PAR2CMDLINE_TARGET_BINARY:=
   packages/target-mipsel_gcc-4.6.4_uClibc-0.9.32.1/par2cmdline-0.4/root/usr/sbin/par2
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_CATEGORY:=Unstable
 
@@ -211,21 +211,21 @@ Explanation of the lines:
 | The following options are possible ‘Unstable’, ‘Web interfaces’, and
   ‘Debug helpers’.
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG_SOURCE_DOWNLOAD)
 
 | This line triggers the download of the package. It will be downloaded
   to ./dl/par2cmdline-0.4.tar.gz
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG_UNPACKED)
 
 | This line not only unpack the download, but also applies any patches
   that are available in make/par2cmdline/patch/\*
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG_CONFIGURED_CONFIGURE)
 
@@ -234,14 +234,14 @@ Explanation of the lines:
 
 The lines below have the structure of Makefiles:
 
-.. code:: wiki
+.. code:: bash
 
    target: dependencies
    [tab] system command
 
 | 
 
-.. code:: wiki
+.. code:: bash
 
    $($(PKG)_BINARY): $($(PKG)_DIR)/.configured
            $(SUBMAKE) -C $(PAR2CMDLINE_DIR) \
@@ -257,7 +257,7 @@ source/target-mipsel_gcc-4.6.4_uClibc-0.9.32.1/par2cmdline-0.4/.configured
 
 | 
 
-.. code:: wiki
+.. code:: bash
 
    $($(PKG)_TARGET_BINARY): $($(PKG)_BINARY)
            $(INSTALL_BINARY_STRIP)
@@ -268,20 +268,20 @@ source/target-mipsel_gcc-4.6.4_uClibc-0.9.32.1/par2cmdline-0.4/.configured
   packages/target-mipsel_gcc-4.6.4_uClibc-0.9.32.1/par2cmdline-0.4/root/usr/sbin/par2
   : source/target-mipsel_gcc-4.6.4_uClibc-0.9.32.1/par2cmdline-0.4/par2
 
-.. code:: wiki
+.. code:: bash
 
    $(pkg):
 
 | par2cmdline:
 
-.. code:: wiki
+.. code:: bash
 
    $(pkg)-precompiled: $($(PKG)_TARGET_BINARY)
 
 | par2cmdline-precompiled:
   packages/target-mipsel_gcc-4.6.4_uClibc-0.9.32.1/par2cmdline-0.4/root/usr/sbin/par2
 
-.. code:: wiki
+.. code:: bash
 
    $(pkg)-clean:
            -$(SUBMAKE) -C $(PAR2CMDLINE_DIR) clean
@@ -293,7 +293,7 @@ par2cmdline-clean:
 
 | 
 
-.. code:: wiki
+.. code:: bash
 
    $(pkg)-uninstall:
            $(RM) $(PAR2CMDLINE_TARGET_BINARY)
@@ -305,7 +305,7 @@ par2cmdline-uninstall:
 
 | 
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG_FINISH)
 
@@ -335,7 +335,7 @@ Testing
 Lets see if "``make clean``" works as expected. This should bring the
 state back to like it was before the "``make``" command.
 
-.. code:: wiki
+.. code:: bash
 
    cd ~/freetz-trunk/
    make clean
@@ -348,7 +348,7 @@ Preparing New Package for Public Integration to Freetz Trunk
 In order to create a file which displays the changes which would be
 needed in freetz to add your package, issue the following commands:
 
-.. code:: wiki
+.. code:: bash
 
    svn add make/par2cmdline
    svn diff ./make > patchfile
@@ -361,7 +361,7 @@ recognized as a valid file for upload.
 In addition you could even create a ready (and compressed) package of
 the two files which you had edited above:
 
-.. code:: wiki
+.. code:: bash
 
    tar cfz par2cmdline.tar.gz make/par2cmdline --exclude .svn
    tar tfz par2cmdline.tar.gz

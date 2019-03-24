@@ -119,7 +119,7 @@ Kurz-Anleitung um ein bestehendes Package anzupassen
 
 -  Erstelle in diesem Ordner die Date Makefile mit dem Inhalt:
 
-   .. code:: wiki
+   .. code:: bash
 
       BINARY=plugin_name
       OBJS=plugin_name.o

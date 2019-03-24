@@ -567,6 +567,22 @@ und nach jeder geänderten Zeile. Diese dienen als Referenz, so dass der
 Patch auch noch angewendet werden kann falls an der zu patchenden Datei
 eine Änderung vorgenommen wurde und die Zeilennummern nicht mehr korrekt
 sind.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dieser</span> <span class="n">Patch</span> <span class="n">ist</span> <span class="n">ein</span> <span class="n">Beispiel</span> <span class="n">und</span> <span class="n">fügt</span> <span class="n">menuconfig</span> <span class="n">einen</span> <span class="n">neuen</span> <span class="n">Eintrag</span> <span class="n">hinzu</span><span class="o">.</span>
+
+<span class="n">Index</span><span class="p">:</span> <span class="n">make</span><span class="o">/</span><span class="n">Config</span><span class="o">.</span><span class="ow">in</span>
+<span class="o">===================================================================</span>
+<span class="o">---</span> <span class="n">make</span><span class="o">/</span><span class="n">Config</span><span class="o">.</span><span class="ow">in</span>   <span class="p">(</span><span class="n">Revision</span> <span class="mi">7307</span><span class="p">)</span>
+<span class="o">+++</span> <span class="n">make</span><span class="o">/</span><span class="n">Config</span><span class="o">.</span><span class="ow">in</span>   <span class="p">(</span><span class="n">Arbeitskopie</span><span class="p">)</span>
+<span class="o">@@</span> <span class="o">-</span><span class="mi">51</span><span class="p">,</span><span class="mi">6</span> <span class="o">+</span><span class="mi">51</span><span class="p">,</span><span class="mi">7</span> <span class="o">@@</span>
+ <span class="n">source</span> <span class="n">make</span><span class="o">/</span><span class="n">netcat</span><span class="o">/</span><span class="n">Config</span><span class="o">.</span><span class="ow">in</span>
+ <span class="n">source</span> <span class="n">make</span><span class="o">/</span><span class="n">nc6</span><span class="o">/</span><span class="n">Config</span><span class="o">.</span><span class="ow">in</span>
+ <span class="n">source</span> <span class="n">make</span><span class="o">/</span><span class="n">netsnmp</span><span class="o">/</span><span class="n">Config</span><span class="o">.</span><span class="ow">in</span>
+<span class="o">+</span><span class="n">source</span> <span class="n">make</span><span class="o">/</span><span class="n">newpackage</span><span class="o">/</span><span class="n">Config</span><span class="o">.</span><span class="ow">in</span>
+ <span class="n">source</span> <span class="n">make</span><span class="o">/</span><span class="n">nfs</span><span class="o">-</span><span class="n">utils</span><span class="o">/</span><span class="n">Config</span><span class="o">.</span><span class="ow">in</span>
+ <span class="n">source</span> <span class="n">make</span><span class="o">/</span><span class="n">ntfs</span><span class="o">/</span><span class="n">Config</span><span class="o">.</span><span class="ow">in</span>
+ <span class="n">source</span> <span class="n">make</span><span class="o">/</span><span class="n">openntpd</span><span class="o">/</span><span class="n">Config</span><span class="o">.</span><span class="ow">in</span>
+</pre></div>
+</div>
 <p>In den meisten Fällen lauten die 2 Dateinamen (hier make/Config.in)
 gleich, manchmal Unterscheiden sie sich in der Endung (.orig), je
 nachdem wie der Patch erstellt wurde. Im Beispiel ist also eine Änderung
@@ -584,15 +600,40 @@ hinzufügt.</p>
 <div class="section" id="erzeugen-eines-patches">
 <span id="erzeugeneinespatches"></span><h1>Erzeugen eines Patches<a class="headerlink" href="#erzeugen-eines-patches" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Man hat eine Datei (Config.in) geändert und difft sie gegen SVN:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">diff</span> <span class="n">Config</span><span class="o">.</span><span class="ow">in</span> <span class="o">&gt;</span> <span class="n">Config</span><span class="o">.</span><span class="n">patch</span>
+</pre></div>
+</div>
 <p>Alle Änderungen im Verzeichnis + Unterverzeichnisse:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="nb">all</span><span class="o">.</span><span class="n">patch</span>
+</pre></div>
+</div>
 <p>Falls man neue Dateien angelegt hat müssen diese erst dem SVN
 hinzugefügt werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">add</span> <span class="n">Datei</span><span class="o">-</span> <span class="n">oder</span> <span class="n">Verzeichnisname</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="patch-anwenden-oder-ruckgangig-machen">
 <span id="patchanwendenoderruckgangigmachen"></span><h1>Patch anwenden oder rückgängig machen<a class="headerlink" href="#patch-anwenden-oder-ruckgangig-machen" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Patch anwenden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ patch -p0 &lt; Config.patch
+patching file Config.in
+$
+</pre></div>
+</div>
 <p>Patch rückgängig machen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ patch -Rp0 &lt; Config.patch
+patching file Config.in
+$
+</pre></div>
+</div>
 <p>Falls ihr so etwas seht:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ patch -p0 &lt; Config.patch
+patching file Config.in
+Hunk #1 FAILED at 1.
+1 out of 1 hunk FAILED -- saving rejects to file Config.in.rej
+</pre></div>
+</div>
 <p>Dann passt der Patch nicht mehr und muss erneuert werden.</p>
 <ul class="simple">
 <li>TODO (evtl. aus dem
@@ -614,6 +655,16 @@ die Dateien unter „make/inetd/files/root“.</p>
 ändert und dann patcht. Am einfachsten findet man die Datei, wenn man
 nach einem Text sucht, der sonst hoffentlich selten vorkommt, „crontab“
 scheint hier ein guter Wert zu sein.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -r crontab make 2&gt; /dev/null | fgrep -v /.svn/
+make/mod/files/root/etc/init.d/rc.crond:        cat /tmp/flash/mod/crontab /etc/cron.d/* /tmp/cron.d/* 2&gt; /dev/null |
+make/mod/files/root/etc/init.d/rc.crond:            crontab -u root -
+make/mod/files/root/etc/init.d/rc.crond:                [ -r /tmp/flash/crontab.save ] &amp;&amp; mv /tmp/flash/crontab.save /tmp/flash/mod/crontab
+make/mod/files/root/etc/init.d/rc.crond:                modreg file mod crontab &#39;crontab&#39; 0 &quot;crontab&quot;
+make/mod/files/root/etc/init.d/rc.crond:                modunreg file mod crontab
+make/mod/files/root/etc/default.mod/crontab.def:CAPTION=&#39;Freetz: crontab&#39;
+make/mod/files/root/etc/default.mod/crontab.def:CONFIG_FILE=&#39;/tmp/flash/mod/crontab&#39;
+</pre></div>
+</div>
 <p>Das suchen in „make“ ist nur für den Fall, dass man nicht sicher ist, in
 welchem Verzeichnis sich die Dateien befinden. Wenn man weiss, daß cron
 zum Hauptsystem gehört, kann man direkt in „make/mod/files“ suchen, dann
@@ -625,9 +676,23 @@ Bedeutung.</p>
 vor. Das sagt uns leider noch nicht, was man machen muss, um eine Hilfe
 auf die Seite zu bringen. Also suchen wir einmal nach „Hosts“, weil auf
 der Hosts-Seite schon eine Hilfe da ist.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -r Hosts make 2&gt; /dev/null | fgrep -v /.svn/
+...
+make/mod/files/root/etc/default.mod/hosts.def:CAPTION=&#39;Freetz: hosts&#39;
+root/etc/init.d/rc.mod:         modreg file &#39;exhosts&#39; &#39;Hosts&#39; 1 &quot;$deffile&quot;
+... und noch viele andere Treffer
+</pre></div>
+</div>
 <p>Die Definitionsdatei, aus der der Text „hosts“ kommt, ist also
 make/mod/files/root/etc/default.mod/hosts.def. Schauen wir uns also mal
 die Datei an:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat make/mod/files/root/etc/default.mod/hosts.def
+CAPTION=&#39;Freetz: hosts&#39;
+DESCRIPTION=&#39;Syntax: &amp;lt;ip&amp;gt; &amp;lt;mac&amp;gt; &amp;lt;interface&amp;gt; &amp;lt;host&amp;gt; [&amp;lt;aliases|#description&amp;gt;]&lt;br&gt;
+($(lang de:&quot;z.B.: 10.0.0.1 * * www.local mfh1 # Mein Server&quot; en:&quot;e.g. 10.0.0.1 * * www.local mfh1 # my server&quot;)) *=&amp;quot;$(lang de:&quot;nicht definiert&quot; en:&quot;not defined&quot;)&amp;quot;&#39;
+... der Rest ist hier nicht von Bedeutung
+</pre></div>
+</div>
 <p>Wir sehen also, dass die Beschreibung aus dem Eintrag DESCRIPTION kommt,
 der in der Datei make/mod/files/root/etc/default.mod/crontab.def nicht
 vorhanden ist. Man muss also in der Datei
@@ -638,6 +703,20 @@ dann muss man auch sicherstellen, dass die Datei in der passenden Liste
 hinterlegt ist. Dies ist die datei „.language“ im Verzeichnis
 make/&lt;Paket&gt;/files.</p>
 <p>Die Datei sieht so aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat .language
+languages
+{ de en }
+default
+{ en }
+files
+{
+        etc/default.mod/*.def
+        etc/init.d/rc.mod
+        usr/bin/modreg
+        ...
+}
+</pre></div>
+</div>
 <p>Wir sehen hier, dass alle Dateien etc/default.mod/<a href="#id1"><span class="problematic" id="id2">*</span></a>.def schon inkludiert
 werden und kein weiterer Eintrag notwendig ist.</p>
 <p>Die geänderte Datei ist in diesem Fall nur

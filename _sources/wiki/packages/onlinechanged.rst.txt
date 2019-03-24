@@ -5,7 +5,7 @@ Onlinechanged
 
 You can send yourself an e-mail when your box comes online like this:
 
-.. code:: wiki
+.. code:: bash
 
      online)
        mailer -s "Freetz online" -t <your e-mail address>

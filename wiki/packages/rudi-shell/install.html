@@ -566,6 +566,14 @@ Mod-Verzeichnis die Datei <code class="docutils literal notranslate"><span class
 nach dem Menüeintrag „Extras“. Dort fügen wir die Zeile für Rudi ein (im
 Beispiel sieht man noch die bei Ihnen evtl. nicht vorhandene Zeile für
 meinen Backup/Restore-Mod):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">&lt;&lt;</span> <span class="n">EOF</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;extras&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;/cgi-bin/extras.cgi&quot;</span><span class="o">&gt;</span><span class="n">Extras</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;backup_restore&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;/cgi-bin/backup_restore.cgi&quot;</span><span class="o">&gt;</span><span class="n">Sichern</span><span class="o">/</span><span class="n">Wiederherstellen</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;rudi_shell&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;/cgi-bin/rudi_shell.cgi&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span><span class="o">&gt;</span><span class="n">Rudi</span><span class="o">-</span><span class="n">Shell</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="n">EOF</span>
+</pre></div>
+</div>
 <p>Der zweite einfache Schritt ist das Kopieren der drei CGI-Dateien</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">rudi_shell.cgi</span></code> (Hauptseite)</li>

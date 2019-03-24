@@ -15,7 +15,7 @@ In der mitgelieferten Konfiguration ist logwtmp standardmäßig aktiviert
 Dies sollte deaktiviert werden, da wtmp auf der fritzbox nicht läuft und
 somit eine vpn-Verbindung nicht zustande kommt.
 
-.. code:: wiki
+.. code:: bash
 
    # TAG: logwtmp
    #       Use wtmp(5) to record client connections and disconnections.
@@ -38,7 +38,7 @@ zu Verbindungsproblemen kommen, wenn der Client erstmal verhandeln will
 kann die Verschlüsselung direkt auf 128 Bit fest einstellen. Mit dieser
 Einstellung hat eine PPTP Verbindung mit dem iPhone VPN-Client geklappt:
 
-.. code:: wiki
+.. code:: bash
 
    # Require the peer to authenticate itself using MS-CHAPv2 [Microsoft
    # Challenge Handshake Authentication Protocol, Version 2] authentication.
@@ -56,7 +56,7 @@ In der ``options.pptpd`` ist der Name auf ``fritzbox`` eingestellt. Dies
 sollte sich dann in einem Benutzereintrag in der ``chap-secrets``
 widerspiegeln:
 
-.. code:: wiki
+.. code:: bash
 
    # client        server  secret                  IP addresses
    username fritzbox password 192.168.x.y
@@ -74,14 +74,14 @@ Troubleshooting
 Um die pptpd Meldungen zu sehen, muss man zunächst einen syslogd
 starten:
 
-.. code:: wiki
+.. code:: bash
 
    /var/tmp/flash/ppp # syslogd -L -C256 -l 7
 
 Und kann sich danach die Meldungen des daemons im syslog per ``logread``
 anschauen:
 
-.. code:: wiki
+.. code:: bash
 
    /var/tmp/flash/ppp # logread
 
@@ -90,7 +90,7 @@ Um mehr Meldungen zu bekommen, kann man in ``options.pptpd`` und/oder
 
 options.pptpd:
 
-.. code:: wiki
+.. code:: bash
 
    # Enable connection debugging facilities.
    # (see your syslog configuration for where pppd sends to)
@@ -98,7 +98,7 @@ options.pptpd:
 
 pptpd.conf:
 
-.. code:: wiki
+.. code:: bash
 
    # TAG: debug
    #       Turns on (more) debugging to syslog
@@ -113,13 +113,13 @@ Troubleshooting keine Fehlermeldung
 Bei mir tauchte im log keine Fehlermeldung auf. Da hilft debuggen auf
 der Box mit:
 
-.. code:: wiki
+.. code:: bash
 
    ./strace pptpd -d -f -c /etc/ppp/pptpd.conf
 
 Dabei kam heraus, dass es folgende Fehlermeldung gibt:
 
-.. code:: wiki
+.. code:: bash
 
    can't resolve symbol 'bzero'
 

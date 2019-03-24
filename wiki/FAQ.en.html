@@ -824,8 +824,17 @@ release versions are tagged (e.g.
 <a class="reference external" href="/browser/tags/freetz-1.1.4">freetz-1.1.4</a> )</div></blockquote>
 <blockquote>
 <div><p>To check out a stable version:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">co</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="o">.</span><span class="n">freetz</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">branches</span><span class="o">/</span><span class="n">freetz</span><span class="o">-</span><span class="n">stable</span><span class="o">-</span><span class="mf">1.1</span> <span class="n">freetz</span><span class="o">-</span><span class="n">stable</span><span class="o">-</span><span class="mf">1.1</span>
+</pre></div>
+</div>
 <p>To check out a tag:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">co</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="o">.</span><span class="n">freetz</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">tags</span><span class="o">/</span><span class="n">freetz</span><span class="o">-</span><span class="mf">1.1</span><span class="o">.</span><span class="mi">4</span> <span class="n">freetz</span><span class="o">-</span><span class="mf">1.1</span><span class="o">.</span><span class="mi">4</span>
+</pre></div>
+</div>
 <p>To check out the development version (trunk):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">co</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="o">.</span><span class="n">freetz</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">trunk</span> <span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span>
+</pre></div>
+</div>
 <p>Attention! The development version (trunk) is only recommended to
 novice users with basic Linux knowledge who can troubleshoot
 elementary errors and can give proper feedback to the developers.
@@ -1156,8 +1165,18 @@ SVN branch/-revision.</div></blockquote>
 <div class="section" id="settings-are-not-available-at-current-security-level">
 <span id="settingsarenotavailableatcurrentsecuritylevel"></span><h3>Settings are not available at current security level<a class="headerlink" href="#settings-are-not-available-at-current-security-level" title="Link zu dieser Überschrift">¶</a></h3>
 <blockquote>
-<div>There are several security levels. The level can be changed using the
-following commands:</div></blockquote>
+<div><p>There are several security levels. The level can be changed using the
+following commands:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">echo</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">security</span> <span class="p">(</span> <span class="n">after</span> <span class="n">r3318</span><span class="p">:</span> <span class="n">echo</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">security</span><span class="p">)</span>
+  <span class="n">modsave</span>
+
+<span class="o">*</span> <span class="k">with</span> <span class="n">x</span> <span class="n">being</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">values</span><span class="p">:</span>
+<span class="o">*</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">no</span> <span class="n">restrictions</span>
+<span class="o">*</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">only</span> <span class="n">configuration</span> <span class="n">files</span> <span class="n">without</span> <span class="n">shell</span> <span class="n">commands</span> <span class="p">(</span><span class="n">shell</span> <span class="n">scripts</span><span class="p">)</span> <span class="n">can</span> <span class="n">be</span> <span class="n">modified</span>
+<span class="o">*</span> <span class="mi">2</span> <span class="p">:</span> <span class="n">no</span> <span class="n">configuration</span> <span class="n">files</span> <span class="n">can</span> <span class="n">be</span> <span class="n">modified</span>
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="what-is-the-default-password-for-freetz">
 <span id="whatisthedefaultpasswordforfreetz"></span><h3>What is the default password for freetz?<a class="headerlink" href="#what-is-the-default-password-for-freetz" title="Link zu dieser Überschrift">¶</a></h3>
@@ -1189,8 +1208,17 @@ the flash. More information about that see below.</div></blockquote>
 <div class="section" id="configuration-not-available-at-the-current-security-level">
 <span id="configurationnotavailableatthecurrentsecuritylevel"></span><h3>Configuration not available at the current security level!<a class="headerlink" href="#configuration-not-available-at-the-current-security-level" title="Link zu dieser Überschrift">¶</a></h3>
 <blockquote>
-<div>There are different security levels. Depending on the selected level,
-not all configuration files are editable.</div></blockquote>
+<div><p>There are different security levels. Depending on the selected level,
+not all configuration files are editable.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">security</span> <span class="p">(</span><span class="n">since</span> <span class="n">r3318</span><span class="p">:</span> <span class="n">echo</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">security</span><span class="p">)</span>
+<span class="n">modsave</span>
+<span class="c1"># with x being one of the following values:</span>
+<span class="c1"># 0 : no restrictions</span>
+<span class="c1"># 1 : only configuration files without shell commands (shell scripts) can be modified</span>
+<span class="c1"># 2 : no configuration files can be modified</span>
+</pre></div>
+</div>
+</div></blockquote>
 <p><img alt="Warning" src="../_images/exclamation1.png" /> <strong>ATTENTION:</strong> Between x and &gt; there must be at least a single
 blank space. If there isn’t, the file will be empty. (echo will redirect
 to stdout. The output would be empty then. Alternatively, you could also
@@ -1203,6 +1231,12 @@ requires security level „0“).</p>
 <span id="howcanidisablethepasswordforthefreetz-website"></span><h3>How can i disable the password for the Freetz-Website?<a class="headerlink" href="#how-can-i-disable-the-password-for-the-freetz-website" title="Link zu dieser Überschrift">¶</a></h3>
 <blockquote>
 <div><p>Execute the following command on the terminal:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">webcfg_conf</span>
+<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">webcfg_conf</span>
+<span class="n">modsave</span> <span class="n">flash</span>
+<span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">webcfg</span> <span class="n">restart</span>
+</pre></div>
+</div>
 <p>Background: The script /tmp/flash/webcfg_conf will be preferred
 compared to /etc/default.webcfg/webcfg_conf to create the
 configuration file. An empty script /tmp/flash/webcfg_conf will
@@ -1223,9 +1257,21 @@ interface</a> by itself:
 <span id="howcaniresetthepasswordforthefreetz-websiteincaseivelostitbutstillhaveaccessviatelnetssh"></span><h3>How can i reset the password for the Freetz-Website in case I’ve lost it but still have access via telnet/SSH ?<a class="headerlink" href="#how-can-i-reset-the-password-for-the-freetz-website-in-case-i-ve-lost-it-but-still-have-access-via-telnet-ssh" title="Link zu dieser Überschrift">¶</a></h3>
 <blockquote>
 <div><p>At first, stop the Freetz-Webif:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">webcfg</span> <span class="n">stop</span>
+</pre></div>
+</div>
 <p>Then use vi to open the file mod.cfg and edit the line that begins
 with „export MOD_HTTPD_PASSWD“ as follows:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vi</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">mod</span><span class="o">.</span><span class="n">cfg</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">MOD_HTTPD_PASSWD</span><span class="o">=</span><span class="s1">&#39;$1$$zO6d3zi9DefdWLMB.OHaO.&#39;</span>
+</pre></div>
+</div>
 <p>Now start the Freetz-Web interface:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">webcfg</span> <span class="n">start</span>
+</pre></div>
+</div>
 <p>Now you can log in to the Web interface with the password „freetz“.</p>
 </div></blockquote>
 <blockquote>
@@ -1242,6 +1288,11 @@ freetz-menu under <em>Settings</em> before you reboot your Fritzbox.</div>
 <span id="howcanichangetheroot-password"></span><h3>How can I change the root-Password?<a class="headerlink" href="#how-can-i-change-the-root-password" title="Link zu dieser Überschrift">¶</a></h3>
 <blockquote>
 <div><p>Execute the following commands on the terminal:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">passwd</span>
+<span class="n">modusers</span> <span class="n">save</span>
+<span class="n">modsave</span> <span class="n">flash</span>
+</pre></div>
+</div>
 <p>After entering ‚passwd‘ you must type in the password. While typing,
 the password will ‚not‘ be shown. Too simple passwords will not be
 accepted.</p>
@@ -1253,10 +1304,16 @@ accepted.</p>
 <div class="section" id="var-flash-freetz-too-big">
 <span id="varflashfreetztoobig"></span><h3>/var/flash/freetz too big<a class="headerlink" href="#var-flash-freetz-too-big" title="Link zu dieser Überschrift">¶</a></h3>
 <blockquote>
-<div>The default limit set by Freetz for the maximum size of the
+<div><p>The default limit set by Freetz for the maximum size of the
 configuration was exceeded. This limit is a protection to prevent an
 unintended full TFFS. This limit can be increased, but you should
-keep an eye on the current fill level:</div></blockquote>
+keep an eye on the current fill level:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modconf</span> <span class="nb">set</span> <span class="n">mod</span> <span class="n">MOD_LIMIT</span><span class="o">=&lt;</span><span class="nb">bytes</span><span class="o">&gt;</span>
+<span class="n">modconf</span> <span class="n">save</span> <span class="n">mod</span>
+<span class="n">modsave</span> <span class="n">flash</span>
+</pre></div>
+</div>
+</div></blockquote>
 <p><img alt="Warning" src="../_images/exclamation1.png" /> As of <a class="reference external" href="/changeset/5706">r5706</a> the setting MOD_LIMIT is
 obsolete.</p>
 </div>
@@ -1314,6 +1371,9 @@ which can save files enduring with help of a Tiny Flash Filesystems
 number, which is not used by any other character device under
 <code class="docutils literal notranslate"><span class="pre">/var/flash/</span></code> (Freetz uses the minor 0x3c), the major number can be
 read from <code class="docutils literal notranslate"><span class="pre">/proc/devices</span></code>:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mknod</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">flash</span><span class="o">/&lt;</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span> <span class="n">c</span> <span class="o">&lt;</span><span class="n">major</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">minor</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>Because this character device is created in a
 <a class="reference external" href="http://de.wikipedia.org/wiki/RAM-Disk">​ramdisk</a> under <code class="docutils literal notranslate"><span class="pre">/var/</span></code>,
 this command must be executed every time during a restart. The content

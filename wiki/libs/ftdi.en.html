@@ -576,9 +576,54 @@ be used.</p>
 <p>First of all you have to program the CBUS port lines for I/O using
 <strong>FT_Prog</strong> (see link below), else it will not work.</p>
 <p>Example program to let a LED blink on port CBUS0:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;stdio.h&gt;</span>
+<span class="c1">#include &lt;ftdi.h&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="nb">int</span> <span class="n">argc</span><span class="p">,</span> <span class="n">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nb">int</span> <span class="n">f</span><span class="p">;</span>
+    <span class="n">struct</span> <span class="n">ftdi_context</span> <span class="n">ftdic</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;ftdi_usb_open</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="n">ftdi_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ftdic</span><span class="p">);</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">ftdi_usb_open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ftdic</span><span class="p">,</span> <span class="mh">0x0403</span><span class="p">,</span> <span class="mh">0x6001</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">f</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;ftdi_usb_open failed, error </span><span class="si">%d</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">ftdi_get_error_string</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ftdic</span><span class="p">));</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s2">&quot;Blinking ...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="nb">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%x</span><span class="s2"> &quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+        <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">ftdi_set_bitmode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ftdic</span><span class="p">,</span> <span class="mh">0x10</span> <span class="o">|</span> <span class="n">b</span><span class="p">,</span> <span class="n">BITMODE_CBUS</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">f</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s2">&quot;ftdi_set_bitmode failed, error </span><span class="si">%d</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">ftdi_get_error_string</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ftdic</span><span class="p">));</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">usleep</span><span class="p">(</span><span class="mi">500000</span><span class="n">L</span><span class="p">);</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">^</span> <span class="mh">0x01</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>It is possible to test in Ubuntu first:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libftdi</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">gcc</span> <span class="n">blink</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">lftdi</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">oblink</span>
+<span class="n">sudo</span> <span class="o">./</span><span class="n">blink</span>
+</pre></div>
+</div>
 <p>Compile for Freetz:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">~/</span><span class="n">freetz</span><span class="o">/</span><span class="n">toolchain</span><span class="o">/</span><span class="n">target</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">mipsel</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gcc</span> <span class="n">blink</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">lftdi</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">oblink</span>
+</pre></div>
+</div>
 <p>Run on your box:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LD_LIBRARY_PATH</span><span class="o">=/</span><span class="n">mod</span><span class="o">/</span><span class="n">lib</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">freetz</span>
+<span class="n">export</span> <span class="n">LD_LIBRARY_PATH</span>
+<span class="o">./</span><span class="n">blink</span>
+</pre></div>
+</div>
 <p>Note that the CBUS Bit Bang Mode is not suitable for high speed
 applications, since a command has to travel through the USB bus and has
 to be interpreted by the chip before anything happens. However, for

@@ -62,7 +62,7 @@ VORAUSSETZUNGEN:
       Ideal ist ein Build mit Replaced Kernel und eingeschalteter
       Autoload modules Funktion des Kernels:
 
-      .. code:: wiki
+      .. code:: bash
 
          user@Linux: make kernel-menuconfig
          (L)oadable modules support
@@ -93,7 +93,7 @@ nhipt.cgi.(version).tar.gz
 -  einen httpd-Dienst auf das übergeordnete Verzeichnis **/ipt** und
    einem freien port (z.B. 83) einrichten.
 
-.. code:: wiki
+.. code:: bash
 
    chmod +x /var/media/ftp/uStor01/ipt/cgi-bin/nhipt.cgi
    httpd -P /var/run/nhipt.pid -p 83 -h /var/media/ftp/uStor01/ipt
@@ -115,7 +115,7 @@ ipt.(version).tar.gz
 -  Datei **register.sh** mit execute rechten versehen
 -  Das Script **register.sh** ausführen
 
-.. code:: wiki
+.. code:: bash
 
    chmod +x /var/media/ftp/uStor01/ipt/register.sh
    . /var/media/ftp/uStor01/ipt/register.sh
@@ -257,7 +257,7 @@ Konfigurationsdatei
   finden, reboot-fest wird sie in BOOTDIR zusammen mit der *nhipt.cfg*
   abgelegt
 
-.. code:: wiki
+.. code:: bash
 
    BACK=/var/media/ftp/uStor01/save
    CHANGED=0
@@ -279,7 +279,7 @@ Konfigurationsdatei
 Dateien im freetz Paket
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: wiki
+.. code:: bash
 
    /etc/default.nhipt/nhipt.cfg       rwxrwxrwx    # config für freetz maske
    /etc/init.d/rc.nhipt               r-xr-xr-x    # call-back für freetz maske, boot loader

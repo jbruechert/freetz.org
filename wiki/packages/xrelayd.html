@@ -586,20 +586,37 @@ erstellte selbst signierte Zertifikate des HTTPS-Servers von AVM.</p>
 WebGUI.</p>
 <div class="section" id="konfiguration">
 <span id="id1"></span><h2>Konfiguration<a class="headerlink" href="#konfiguration" title="Link zu dieser Überschrift">¶</a></h2>
-<ol class="arabic simple">
-<li>Erzeugen der Keys auf dem PC (unter Linux):</li>
-<li>Die Keys im Webinterface unter Einstellungen→XRelayd:
-Certificate/Private Key einfügen.</li>
+<ol class="arabic">
+<li><p class="first">Erzeugen der Keys auf dem PC (unter Linux):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openssl</span> <span class="n">genrsa</span> <span class="mi">1024</span> <span class="o">&gt;</span> <span class="n">host</span><span class="o">.</span><span class="n">key</span>
+<span class="n">openssl</span> <span class="n">req</span> <span class="o">-</span><span class="n">new</span> <span class="o">-</span><span class="n">x509</span> <span class="o">-</span><span class="n">nodes</span> <span class="o">-</span><span class="n">sha1</span> <span class="o">-</span><span class="n">days</span> <span class="mi">365</span> <span class="o">-</span><span class="n">key</span> <span class="n">host</span><span class="o">.</span><span class="n">key</span> <span class="o">&gt;</span> <span class="n">host</span><span class="o">.</span><span class="n">cert</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Die Keys im Webinterface unter Einstellungen→XRelayd:
+Certificate/Private Key einfügen.</p>
+</li>
 </ol>
-<ol class="arabic simple" start="3">
-<li>Die gewünschten Services hinzufügen. Zum Beispiel:</li>
-<li>Zugriff (intern) über
+<ol class="arabic" start="3">
+<li><p class="first">Die gewünschten Services hinzufügen. Zum Beispiel:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">4433</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">81</span> <span class="n">Freetz</span><span class="o">-</span><span class="n">Webinterface</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Zugriff (intern) über
 <a class="reference external" href="https://fritz.box:4433">​https://fritz.box:4433</a>. Für den
-externen Zugriff muss noch eine Port-Freigabe eingetragen werden.</li>
+externen Zugriff muss noch eine Port-Freigabe eingetragen werden.</p>
+</li>
 </ol>
 </div>
 <div class="section" id="zertifikate-auf-der-box-erzeugen">
 <span id="zertifikateaufderboxerzeugen"></span><h2>Zertifikate auf der Box erzeugen<a class="headerlink" href="#zertifikate-auf-der-box-erzeugen" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xrelayd</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">K</span> <span class="mi">1024</span> <span class="o">-</span><span class="n">p</span> <span class="n">host</span><span class="o">.</span><span class="n">key</span> <span class="o">-</span><span class="n">U</span> <span class="s2">&quot;CN=localhost&quot;</span> <span class="o">-</span><span class="n">p</span> <span class="n">host</span><span class="o">.</span><span class="n">key</span> <span class="o">-</span><span class="n">A</span> <span class="n">host</span><span class="o">.</span><span class="n">cert</span>
+<span class="n">cat</span> <span class="n">host</span><span class="o">.</span><span class="n">key</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/.</span><span class="n">xrelayd</span><span class="o">/</span><span class="n">key</span><span class="o">.</span><span class="n">pem</span>
+<span class="n">cat</span> <span class="n">host</span><span class="o">.</span><span class="n">cert</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/.</span><span class="n">xrelayd</span><span class="o">/</span><span class="n">certs</span><span class="o">.</span><span class="n">pem</span>
+<span class="n">modsave</span> <span class="n">flash</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>Tags</li>
 <li><a class="reference external" href="/tags/network">network</a></li>

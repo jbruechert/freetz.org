@@ -634,6 +634,9 @@ unter Windows mit
 virutelle Maschine eine IP per DHCP holt. Sollte dieses nicht der
 Fall sein kann die IP-Adresse mit folgendem Befehl auch per Hand
 gesetzt werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ifconfig</span> <span class="n">eth0</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.</span><span class="n">xx</span> <span class="n">netmask</span> <span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span> <span class="n">broadcast</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.255</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">(Wobei die Netzwerkkarte „eth0“ evtl. durch eine eine andere
 ersetzt werden muss. Eine Auflistung aller Netzwerkkarten erhält
@@ -674,14 +677,21 @@ IP-Adresse-von-Freetz-Linux“ unter Eingabeaufforderung.</li>
 </li>
 <li><p class="first">Je nachdem, für welche Methode man sich entschieden hat, macht man
 folgendes:</p>
-<ul class="simple">
-<li>Mit <strong>SSH/TELNET</strong> oder <strong>Freetz-Linux Konsole</strong> (bevorzugt)
+<ul>
+<li><p class="first">Mit <strong>SSH/TELNET</strong> oder <strong>Freetz-Linux Konsole</strong> (bevorzugt)
 folgendes eingeben: (Anstatt freetz-2.0.x kann auch eine andere,
-z.B. Entwicklerversion genommen werden.)</li>
+z.B. Entwicklerversion genommen werden.)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">co</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="o">.</span><span class="n">freetz</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">branches</span><span class="o">/</span><span class="n">freetz</span><span class="o">-</span><span class="n">stable</span><span class="o">-</span><span class="mf">2.0</span><span class="o">.</span><span class="n">x</span> <span class="n">freetz</span><span class="o">-</span><span class="mf">2.0</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</li>
 </ul>
 </li>
 </ol>
 <p>Aktuell:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">co</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="o">.</span><span class="n">freetz</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">branches</span><span class="o">/</span><span class="n">freetz</span><span class="o">-</span><span class="n">stable</span><span class="o">-</span><span class="mf">2.0</span> <span class="n">freetz</span><span class="o">-</span><span class="mf">2.0</span>
+</pre></div>
+</div>
 <blockquote>
 <div><div class="line-block">
 <div class="line"><strong>Achtung:</strong> Kleiner Tip für Vista und Windows 7 User:</div>
@@ -709,12 +719,18 @@ Eurer Systemsteuerung:</div>
 <a class="reference external" href="../development/integrate_patches.html">Howto</a>)</p>
 </li>
 <li><p class="first">In das Verzeichnis des ausgecheckten/entpackten Freetz wechseln:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">freetz</span><span class="o">-</span><span class="mf">2.0</span><span class="o">.</span><span class="n">x</span> <span class="p">(</span><span class="n">aktuell</span><span class="p">:</span> <span class="n">cd</span> <span class="n">freetz</span><span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+</pre></div>
+</div>
 </li>
 <li><p class="first">Einstellungen wie Boxtyp, Pakete usw. konfigurieren. Dies ist über
 ein <a class="reference external" href="http://de.wikipedia.org/wiki/Ncurses">​ncurses</a> Interface
 möglich, welches z.B. aus der Konfiguration des Linux Kernels bekannt
 ist. Details und Beschreibungen zu den Optionen gibt es in der
 Beschreibung zum <a class="reference external" href="install/menuconfig.html">menuconfig</a>.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">menuconfig</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Es empfiehlt sich beim ersten Mal nicht zu viele Einstellungen zu
 verändern und das erste FritzBox Firmware Image mit den
@@ -728,6 +744,9 @@ modifizierte Firmware in drei Schritten erzeugt. Beim ersten Mal
 dauert es etwas länger. Die Zeit ist abhängig von den ausgewählten
 Paketen und dem benutzten Rechner. Man kann also ruhig eine
 Kaffeepause einlegen.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span>
+</pre></div>
+</div>
 </li>
 <li><p class="first">Wenn der Build ohne Fehler durchgelaufen ist, dann findet sich jetzt
 unter <code class="docutils literal notranslate"><span class="pre">~/freetz-2.0.*/images</span></code> die neue FritzBox Firmware (z.B.
@@ -890,9 +909,20 @@ darin, diesen Code per Copy and Paste auf der Konsole auszuführen.</p>
 </div>
 <p>Wer vergessen hat welche Ubuntu Version er installierte kann dies mit
 folgenden Befehlen prüfen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ubuntu Version: ergibt z.B. &quot;Ubuntu 12.04.1 LTS \n \l&quot;</span>
+<span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">issue</span>
+<span class="c1"># Maschinen Typ: ergibt z.B. &quot;i686&quot; bei 32-bit Ubuntu und &quot;x86_64&quot; bei 64-Bit Ubuntu</span>
+<span class="n">uname</span> <span class="o">-</span><span class="n">m</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="installation-der-benotigten-pakete-fedora">
 <span id="installationderbenotigtenpaketefedora"></span><h3>Installation der benötigten Pakete (Fedora)<a class="headerlink" href="#installation-der-benotigten-pakete-fedora" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">yum</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">ImageMagick</span> <span class="n">subversion</span> <span class="n">gcc</span> <span class="n">gcc</span><span class="o">-</span><span class="n">c</span><span class="o">++</span> <span class="n">binutils</span> <span class="n">autoconf</span> <span class="n">automake</span> <span class="n">libtool</span> <span class="n">make</span> <span class="n">bzip2</span> <span class="n">ncurses</span><span class="o">-</span><span class="n">devel</span> <span class="n">zlib</span><span class="o">-</span><span class="n">devel</span> <span class="n">flex</span> <span class="n">bison</span> <span class="n">patch</span> <span class="n">texinfo</span> <span class="n">gettext</span> <span class="n">pkgconfig</span> <span class="n">ecj</span> <span class="n">perl</span> <span class="n">perl</span><span class="o">-</span><span class="n">String</span><span class="o">-</span><span class="n">CRC32</span> <span class="n">wget</span> <span class="n">glib2</span><span class="o">-</span><span class="n">devel</span> <span class="n">git</span> <span class="n">libacl</span><span class="o">-</span><span class="n">devel</span> <span class="n">libattr</span><span class="o">-</span><span class="n">devel</span> <span class="n">libcap</span><span class="o">-</span><span class="n">devel</span>
+<span class="c1"># Auf 64-Bit Systemen sind zusätzlich folgende Pakete zu installieren:</span>
+<span class="n">sudo</span> <span class="n">yum</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">ncurses</span><span class="o">-</span><span class="n">devel</span><span class="o">.</span><span class="n">i686</span> <span class="n">glibc</span><span class="o">-</span><span class="n">devel</span><span class="o">.</span><span class="n">i686</span> <span class="n">libgcc</span><span class="o">.</span><span class="n">i686</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="erstellung-installation">
 <span id="erstellunginstallation"></span><h3>Erstellung &amp; Installation<a class="headerlink" href="#erstellung-installation" title="Link zu dieser Überschrift">¶</a></h3>
@@ -1091,6 +1121,18 @@ Standardnamen aufgerufen werden. Daher habe ich mir ein Verzeichnis
 erstellt, in dem Symlinks der Standardnamen auf die GNU Utilities
 zeigen. Zum Arbeiten mit ds-mod ist dieses Verzeichnis in den Suchpfad
 aufzunehmen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>~/gnubin $ ls -l
+total 64
+-rwxr-xr-x   1 enrik  enrik  106 20 Mär 17:23 as
+lrwxr-xr-x   1 enrik  enrik   19 20 Mär 17:18 awk -&gt; /opt/local/bin/gawk
+lrwxr-xr-x   1 enrik  enrik   18 20 Mär 18:32 cp -&gt; /opt/local/bin/gcp
+lrwxr-xr-x   1 enrik  enrik   22 11 Apr 10:11 cpp -&gt; /usr/local/bin/cpp-3.3
+lrwxr-xr-x   1 enrik  enrik   20 11 Apr 10:11 find -&gt; /opt/local/bin/gfind
+lrwxr-xr-x   1 enrik  enrik   23 20 Mär 17:18 install -&gt; /opt/local/bin/ginstall
+-rwxr-xr-x   1 enrik  enrik  106 20 Mär 17:24 ld
+lrwxr-xr-x   1 enrik  enrik   21 20 Mär 17:18 sed -&gt; /opt/local/bin/gnused
+</pre></div>
+</div>
 <p>Die Pseudebefehle <code class="docutils literal notranslate"><span class="pre">as</span></code> und <code class="docutils literal notranslate"><span class="pre">ld</span></code> dienen hier nur dazu, der glibc für
 den Kernel-Compiler, die über crosstool erstellt wird, geeignete
 binutils vorzugaukeln. Die beiden Dateien sehen so aus:</p>
@@ -1177,6 +1219,21 @@ sie über den Stromstecker zu resetten, eilen schnell wieder zurück und
 drücken die Enter-Taste. Wenn es geklappt hat wird man nach Benutzername
 und Passwort gefragt, er lautet für beides <strong>adam2</strong>. Weiter gehen wir
 wie folgt vor:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Eingabe</span> <span class="n">am</span> <span class="n">Prompt</span><span class="p">:</span> <span class="nb">bin</span>
+
+<span class="n">Eingabe</span> <span class="n">am</span> <span class="n">Prompt</span><span class="p">:</span> <span class="n">passiv</span>
+
+<span class="n">Flash</span> <span class="n">am</span> <span class="n">Prompt</span> <span class="n">initiieren</span> <span class="n">mit</span><span class="p">:</span> <span class="n">quote</span> <span class="n">MEDIA</span> <span class="n">FLSH</span>
+
+<span class="n">Datei</span> <span class="n">übertragen</span> <span class="n">mit</span><span class="p">:</span> <span class="n">put</span> <span class="n">kernel</span><span class="o">.</span><span class="n">image</span> <span class="n">mtd1</span>
+
+<span class="n">Rebranding</span><span class="p">:</span> <span class="n">quote</span> <span class="n">SETENV</span> <span class="n">firmware_version</span> <span class="n">avm</span>
+
+<span class="n">Reboot</span> <span class="n">der</span> <span class="n">Box</span> <span class="n">starten</span><span class="p">:</span> <span class="n">quote</span> <span class="n">REBOOT</span>
+
+<span class="n">ftp</span> <span class="n">verlassen</span><span class="p">:</span> <span class="n">quit</span>
+</pre></div>
+</div>
 <p>Es klappt meistens nicht beim ersten Versuch. Es hilft dann, ftp
 abzubrechen und es direkt nochmal neu zu versuchen.</p>
 </div>

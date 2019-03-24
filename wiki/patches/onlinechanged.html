@@ -610,6 +610,13 @@ aussehen:</p>
 </pre></div>
 </div>
 <p>An application: update external IP-address for dnsd:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EXTIP</span><span class="o">=</span><span class="s2">&quot;`/usr/bin/get_ip -d`&quot;</span>
+<span class="n">sed</span> <span class="s2">&quot;s/#EXTIP#/$EXTIP/g&quot;</span><span class="o">&lt;/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">dnsd</span><span class="o">/</span><span class="n">dnsd_template</span><span class="o">.</span><span class="n">conf</span> <span class="o">&gt;/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">dnsd</span><span class="o">/</span><span class="n">dnsd</span><span class="o">.</span><span class="n">conf</span>
+<span class="n">modsave</span>
+<span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">dnsd</span> <span class="n">restart</span>
+<span class="n">logger</span> <span class="o">-</span><span class="n">t</span> <span class="n">dnsd</span> <span class="s2">&quot;IP set to $EXTIP&quot;</span>
+</pre></div>
+</div>
 </div>
 
 

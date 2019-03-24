@@ -573,6 +573,46 @@ Bearbeitung existierender Artikel gut geeignet sein sollte.</p>
 <span id="id2"></span><h2>Beispiel-Artikel<a class="headerlink" href="#beispiel-artikel" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Die Zusammenfassung einmal vorab: So könnte der Artikel für ein fiktives
 Paket namens <em>dummy</em> aussehen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">TOC</span><span class="p">(</span><span class="n">heading</span><span class="o">=</span><span class="n">Inhaltsverzeichnis</span><span class="p">)]]</span>
+
+<span class="o">=</span> <span class="n">dummy</span> <span class="o">=</span>
+
+<span class="sd">&#39;&#39;&#39;dummy&#39;&#39;&#39;</span> <span class="n">ist</span> <span class="n">ein</span> <span class="n">Paket</span><span class="p">,</span> <span class="n">das</span> <span class="n">es</span> <span class="n">nicht</span> <span class="n">wirklich</span> <span class="n">gibt</span><span class="o">.</span>
+<span class="n">Wirklich</span> <span class="n">geben</span> <span class="n">tut</span> <span class="n">es</span> <span class="n">hingegen</span> <span class="n">Pakete</span> <span class="n">wie</span> <span class="p">[</span><span class="n">wiki</span><span class="p">:</span><span class="n">packages</span><span class="o">/</span><span class="n">callmonitor</span> <span class="n">CallMonitor</span><span class="p">]</span>
+<span class="n">und</span> <span class="p">[</span><span class="n">wiki</span><span class="p">:</span><span class="n">packages</span><span class="o">/</span><span class="n">dtmfbox</span> <span class="n">DTMFBox</span><span class="p">]</span><span class="o">.</span>
+
+<span class="o">==</span> <span class="n">Installation</span> <span class="o">==</span>
+<span class="n">Die</span> <span class="n">Installation</span> <span class="n">erfolgt</span> <span class="n">wie</span> <span class="n">bei</span> <span class="n">den</span> <span class="n">meisten</span> <span class="n">Paketen</span> <span class="n">direkt</span> <span class="n">bei</span> <span class="n">der</span>
+<span class="p">[</span><span class="n">wiki</span><span class="p">:</span><span class="n">help</span><span class="o">/</span><span class="n">howtos</span><span class="o">/</span><span class="n">common</span><span class="o">/</span><span class="n">installation</span> <span class="n">Erstellung</span> <span class="n">des</span> <span class="n">Freetz</span><span class="o">-</span><span class="n">Images</span><span class="p">],</span> <span class="n">indem</span> <span class="n">das</span> <span class="n">Paket</span>
+<span class="n">einfach</span> <span class="ow">in</span> <span class="n">der</span>
+<span class="p">[</span><span class="n">wiki</span><span class="p">:</span><span class="n">help</span><span class="o">/</span><span class="n">howtos</span><span class="o">/</span><span class="n">common</span><span class="o">/</span><span class="n">installation</span><span class="o">/</span><span class="n">menuconfig</span> <span class="n">menuconfig</span><span class="p">]</span> <span class="n">mit</span> <span class="n">ausgewählt</span> <span class="n">wird</span><span class="o">.</span>
+
+<span class="o">==</span> <span class="n">Einrichtung</span> <span class="o">==</span>
+<span class="s1">&#39;&#39;</span><span class="n">dummy</span><span class="s1">&#39;&#39;</span> <span class="n">verfügt</span> <span class="n">über</span> <span class="n">eine</span> <span class="n">Konfigurations</span><span class="o">-</span><span class="n">Oberfläche</span><span class="p">,</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">sich</span> <span class="n">alle</span> <span class="n">notwendigen</span>
+<span class="n">Einstellungen</span> <span class="n">tätigen</span> <span class="n">lassen</span><span class="p">:</span>
+<span class="p">[[</span><span class="n">Screenshot</span><span class="p">(</span><span class="mi">123</span><span class="p">)]]</span>
+ <span class="o">*</span> <span class="s1">&#39;&#39;&#39;Starttyp&#39;&#39;&#39;</span><span class="p">:</span> <span class="s2">&quot;Automatisch&quot;</span><span class="p">,</span> <span class="n">wenn</span> <span class="s1">&#39;&#39;</span><span class="n">dummy</span><span class="s1">&#39;&#39;</span> <span class="n">nach</span> <span class="n">jedem</span> <span class="n">Reboot</span> <span class="n">automatisch</span>
+<span class="n">gestartet</span> <span class="n">werden</span> <span class="n">soll</span><span class="o">.</span>
+ <span class="o">*</span> <span class="s1">&#39;&#39;&#39;Punkt1&#39;&#39;&#39;</span><span class="p">:</span> <span class="n">Hier</span> <span class="n">trägt</span> <span class="n">man</span> <span class="n">was</span> <span class="n">ein</span>
+ <span class="o">*</span> <span class="s1">&#39;&#39;&#39;Punkt2&#39;&#39;&#39;</span><span class="p">:</span> <span class="n">blabla</span><span class="o">...</span>
+
+<span class="o">==</span> <span class="n">Besonderheiten</span> <span class="o">==</span>
+<span class="s1">&#39;&#39;</span><span class="n">dummy</span><span class="s1">&#39;&#39;</span> <span class="n">kann</span> <span class="n">auch</span> <span class="n">zu</span> <span class="n">Debugging</span><span class="o">-</span><span class="n">Zwecken</span> <span class="n">mit</span> <span class="p">{{{</span><span class="n">dummy</span> <span class="o">-</span><span class="n">D</span><span class="p">}}}</span> <span class="n">direkt</span> <span class="n">von</span> <span class="n">der</span> <span class="n">Kommandozeile</span>
+<span class="n">gestartet</span> <span class="n">werden</span><span class="o">.</span> <span class="n">Ein</span> <span class="n">Skript</span> <span class="n">für</span> <span class="n">Trallalla</span> <span class="n">könnte</span> <span class="n">so</span> <span class="n">aussehen</span><span class="p">:</span>
+<span class="p">{{{</span>
+<span class="c1">#!sh</span>
+<span class="c1"># Irgendwas machen</span>
+<span class="n">echo</span> <span class="s2">&quot;Trallala!&quot;</span>
+<span class="c1"># Tschüß sagen</span>
+<span class="n">echo</span> <span class="s2">&quot;Warnurspaß!&quot;</span>
+<span class="n">exit</span> <span class="mi">0</span>
+<span class="p">}}}</span>
+
+<span class="o">==</span> <span class="n">Weiterführende</span> <span class="n">Links</span> <span class="o">==</span>
+ <span class="o">*</span> <span class="p">[</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">de</span><span class="o">.</span><span class="n">wikipedia</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">wiki</span><span class="o">/</span><span class="n">Lillibullero</span> <span class="n">Wikipedia</span> <span class="n">Artikel</span> <span class="n">zu</span> <span class="n">Trallala</span><span class="p">]</span>
+ <span class="o">*</span> <span class="p">[</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">wehavemorefun</span><span class="o">.</span><span class="n">de</span><span class="o">/</span> <span class="n">More</span> <span class="n">fun</span> <span class="n">to</span> <span class="n">come</span><span class="p">]</span> <span class="p">(</span><span class="n">Englisch</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="inhaltsverzeichnis">
 <span id="id3"></span><h2>Inhaltsverzeichnis<a class="headerlink" href="#inhaltsverzeichnis" title="Link zu dieser Überschrift">¶</a></h2>

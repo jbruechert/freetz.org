@@ -586,10 +586,19 @@ virtual circuits.</div>
 <div class="line">After the following step you can configure the packages you want to
 have included in your image.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">menuconfig</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Package</span> <span class="n">selection</span>  <span class="o">---&gt;</span>  <span class="n">Testing</span>  <span class="o">---&gt;</span>    <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">br2684ctl</span> <span class="p">(</span><span class="n">binary</span> <span class="n">only</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">For Client DHCP you can additionally enable the following option.</div>
 <div class="line">You can also add a script (default.script) to the image at compile
 time (see below for details).</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Advanced</span> <span class="n">options</span>  <span class="o">---&gt;</span> <span class="n">BusyBox</span> <span class="n">options</span>  <span class="o">---&gt;</span>    <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">udhcpc</span>
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -599,6 +608,9 @@ time (see below for details).</div>
 <span id="configuringbr2684ctl"></span><h2>Configuring br2684ctl<a class="headerlink" href="#configuring-br2684ctl" title="Link zu dieser Überschrift">¶</a></h2>
 <p>There is no GUI interface for br2684ctl. There is only one executable
 with a number of mandatory and optional parameters.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">br2684ctl</span> <span class="p">[</span><span class="o">-</span><span class="n">c</span> <span class="n">n</span> <span class="o">-</span><span class="n">e</span> <span class="mi">0</span><span class="o">|</span><span class="mi">1</span> <span class="o">-</span><span class="n">b</span> <span class="o">-</span><span class="n">s</span> <span class="n">buf_size</span> <span class="p">[</span><span class="o">-</span><span class="n">q</span> <span class="n">qos</span><span class="p">]</span> <span class="o">-</span><span class="n">a</span> <span class="p">[</span><span class="n">itf</span><span class="o">.</span><span class="p">]</span><span class="n">vpi</span><span class="o">.</span><span class="n">vci</span> <span class="p">]</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">ATM PVC number, VPI and VCI.</div>
 <div class="line">-a [itf.]vpi.vci</div>
@@ -639,14 +651,31 @@ the ATM cells.</div>
 <div class="line">Creating ATM PvC 0/32 in the background with interface name nas0 using
 LLC encapsulation.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">br2684ctl</span> <span class="o">-</span><span class="n">b</span> <span class="o">-</span><span class="n">e</span> <span class="mi">0</span> <span class="o">-</span><span class="n">c</span> <span class="mi">0</span> <span class="o">-</span><span class="n">a</span> <span class="mf">0.32</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">br2684ctl</span> <span class="o">-</span><span class="n">e</span> <span class="mi">0</span> <span class="o">-</span><span class="n">c</span> <span class="mi">0</span> <span class="o">-</span><span class="n">q</span> <span class="n">ubr</span><span class="p">,</span><span class="n">aal5</span><span class="p">:</span><span class="n">max_pcr</span><span class="o">=</span><span class="mi">5</span><span class="n">Mbps</span><span class="p">,</span><span class="n">min_pcr</span><span class="o">=</span><span class="mi">320</span><span class="n">kbps</span><span class="p">,</span><span class="n">max_sdu</span><span class="o">=</span><span class="mi">1524</span> <span class="o">-</span><span class="n">a</span> <span class="mf">0.32</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">After the interface is created you can see it with the following
 command:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ifconfig</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">or</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ifconfig</span> <span class="n">nas0</span>
+</pre></div>
+</div>
 <p>Some details can be viewed at:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">atm</span><span class="o">/</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">la</span>
+<span class="n">cat</span> <span class="o">&lt;</span><span class="n">file</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -669,18 +698,71 @@ address and subnetmask.</div>
 <div class="line">To include the script (default.script) at compile time follow the
 following steps:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>cd ~/freetz-x.y/addon/
+echo default.script &gt;&gt; static.pkg
+mkdir -p default.script/root/etc/dhcp/
+vi default.script/root/etc/dhcp/default.script
+
+#!/bin/sh
+
+[ -z &quot;$1&quot; ] &amp;&amp; &quot;Error: should be run by udhcpc&quot; &amp;&amp; exit 1
+
+case &quot;$1&quot; in
+        deconfig)
+                ifconfig $interface 0.0.0.0
+                # echo interface = $interface
+        ;;
+        leasefail)
+        ;;
+        nak)
+        ;;
+        renew|bound)
+                ifconfig $interface $ip \
+                broadcast $broadcast \
+                netmask $subnet
+                # echo interface = $interface
+                # echo ip address = $ip
+                # echo subnet = $subnet
+                # echo netmask = ${subnet:-255.255.255.0}
+        ;;
+esac
+</pre></div>
+</div>
 <p>Enable the interface:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ifconfig</span> <span class="n">nas0</span> <span class="n">up</span>
+</pre></div>
+</div>
 <p>Obtain ip configuration info via DHCP:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">udhcpc</span> <span class="o">-</span><span class="n">i</span> <span class="n">nas0</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">dhcp</span><span class="o">/</span><span class="n">default</span><span class="o">.</span><span class="n">script</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="debuging-the-dhcp-process">
 <span id="debugingthedhcpprocess"></span><h2>Debuging the DHCP process<a class="headerlink" href="#debuging-the-dhcp-process" title="Link zu dieser Überschrift">¶</a></h2>
 <p>To obtain additional debug information from the udhcpc package you need
 to enable this, and recompile a new image.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="n">target</span><span class="o">-</span><span class="n">mipsel_uClibc</span><span class="o">-</span><span class="mf">0.9</span><span class="o">.</span><span class="mi">29</span><span class="o">/</span><span class="n">ref</span><span class="o">-</span><span class="mi">8</span><span class="n">mb</span><span class="o">/</span><span class="n">busybox</span><span class="o">-</span><span class="mf">1.18</span><span class="o">.</span><span class="mi">5</span>
+<span class="n">vi</span> <span class="o">.</span><span class="n">config</span>
+</pre></div>
+</div>
 <p>In the .config file search for CONFIG_UDHCP_DEBUG=0 and change it to:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG_UDHCP_DEBUG</span><span class="o">=</span><span class="mi">3</span>
+</pre></div>
+</div>
 <p>Initiate recompile of the busybox packages during the next make:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="mf">1.2</span><span class="o">/</span>
+<span class="n">make</span> <span class="n">busybox</span><span class="o">-</span><span class="n">clean</span>
+</pre></div>
+</div>
 <p>Compile a new image with:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span>
+</pre></div>
+</div>
 <p>After installing the new image on the FritzBox start the DHCP Client
 with:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">udhcpc</span> <span class="o">-</span><span class="n">i</span> <span class="n">nas0</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">dhcp</span><span class="o">/</span><span class="n">default</span><span class="o">.</span><span class="n">script</span> <span class="o">-</span><span class="n">vvv</span>
+</pre></div>
+</div>
 <blockquote>
 <div>the number of v’s determines the detail of debug packages.</div></blockquote>
 </div>

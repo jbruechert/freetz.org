@@ -592,9 +592,15 @@ dazu um nächsten Abschnitt.</p>
 gespeichert, die fest im Bootloader selbst eingestellt ist.</p>
 <p>Aus Linux heraus hat diese Partition oft eine von <code class="docutils literal notranslate"><span class="pre">2</span></code> abweichende
 Nummer die man mit folgendem Befehl ausfindig macht:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">mtd</span>
+</pre></div>
+</div>
 <p>Eine der dort genannten Partitionen nennt sich <code class="docutils literal notranslate"><span class="pre">bootloader</span></code> oder
 <code class="docutils literal notranslate"><span class="pre">urlader</span></code>. Mit deren Nummer (hier z.B. <code class="docutils literal notranslate"><span class="pre">3</span></code>) liesst man dann die
 zugehörige <code class="docutils literal notranslate"><span class="pre">mtdblock</span></code> Device aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mtdblock3</span> <span class="o">&gt;</span> <span class="n">bootloader</span><span class="o">.</span><span class="n">bin</span>
+</pre></div>
+</div>
 <p>Siehe auch <a class="reference external" href="save_mtd_1.html">Flash-Partitionen im laufenden Betrieb
 sichern</a>.</p>
 <p>ADAM2 ist immer 64KB gross, EVA bei älteren Modellen 64KB, bei neueren
@@ -631,6 +637,9 @@ Konfiguration im Bootloader gesichert. Bootloader-Updates von AVM
 <p>Ohne RAM funktioniert auch ein intakter Bootloader nicht ⇒ Brick.</p>
 <p>Um die oben erstellte Sicherung *auf genau die selbe Box*
 zurückzuspielen *wäre* dies der Weg:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">bootloader</span><span class="o">.</span><span class="n">bin</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mtdblock3</span>
+</pre></div>
+</div>
 <p>Selbst dann besteht Brickgefahr. Die MTD Treiber blockieren nicht das
 OS. Greift ein anderer Prozess währenddessen z.B. über die ADAM2 API auf
 das Environment zu hängt sich das System eventuell während des Schreib-

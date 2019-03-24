@@ -653,6 +653,9 @@ under Windows using
 <li><p class="first">Run VMWare Player. Leave all settings as they are; the Player will be
 able to connect to the Internet by itself. If not, you can set up
 internet access manually like so:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ifconfig</span> <span class="n">eth0</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.</span><span class="n">xx</span> <span class="n">netmask</span> <span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span> <span class="n">broadcast</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.255</span>
+</pre></div>
+</div>
 <p>(where <code class="docutils literal notranslate"><span class="pre">eth0</span></code> might have to be replaced with your configured
 network interface. <strong>„ifconfig -a“</strong> will list all network interfaces
 available to your virtual machine.)</p>
@@ -685,31 +688,50 @@ Command Prompt.</li>
 </li>
 <li><p class="first">Depending on your preferred choice, you proceed with one of the
 following:</p>
-<ul class="simple">
-<li><strong>SSH/TELNET</strong>: (the preferred method)</li>
+<ul>
+<li><p class="first"><strong>SSH/TELNET</strong>: (the preferred method)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">co</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="o">.</span><span class="n">freetz</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">tags</span><span class="o">/</span><span class="n">freetz</span><span class="o">-</span><span class="mf">1.1</span><span class="o">.</span><span class="n">x</span> <span class="n">freetz</span><span class="o">-</span><span class="mf">1.1</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</li>
 </ul>
 </li>
 </ol>
 <p>You can replace <code class="docutils literal notranslate"><span class="pre">freetz-1.1.x</span></code> with any other valid tag, or use the
 development <code class="docutils literal notranslate"><span class="pre">/trunk</span></code> if you wish.</p>
-<ol class="arabic simple">
-<li><em>Optional</em>: Apply patch(es) (see
-<a class="reference external" href="../development/integrate_patches.html">Howto</a>)</li>
-<li>Change into the freetz directory you just checked out (or unpacked
-into):</li>
-<li>Configure freetz. It is possible to do this using a
+<ol class="arabic">
+<li><p class="first"><em>Optional</em>: Apply patch(es) (see
+<a class="reference external" href="../development/integrate_patches.html">Howto</a>)</p>
+</li>
+<li><p class="first">Change into the freetz directory you just checked out (or unpacked
+into):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">freetz</span><span class="o">-*/</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Configure freetz. It is possible to do this using a
 <a class="reference external" href="http://de.wikipedia.org/wiki/Ncurses">​ncurses</a> interface, the
 same one being used to configure the Linux kernel. For a detailed
-description, see <a class="reference external" href="install/menuconfig.html">menuconfig</a>.</li>
-<li>Modify firmware. In this step, the original firmware and packages
+description, see <a class="reference external" href="install/menuconfig.html">menuconfig</a>.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">menuconfig</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Modify firmware. In this step, the original firmware and packages
 matching your configuration as well as the necessary build tools are
 being downloaded automatically and a new one is being built,
 according to your configuration, in three distinct steps. The first
 run through will take a little while, so you might want to have some
-coffee or tea in the meantime.</li>
-<li>In <code class="docutils literal notranslate"><span class="pre">~/freetz-*/images</span></code>, you’ll find your newly built firmware (e.g.
-<code class="docutils literal notranslate"><span class="pre">7170_04.76freetz-devel-3790.de_20091021-180742.image</span></code>).</li>
-<li>Upload the image
+coffee or tea in the meantime.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unset</span> <span class="n">CFLAGS</span> <span class="n">CXXCFLAGS</span>
+<span class="n">make</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">~/freetz-*/images</span></code>, you’ll find your newly built firmware (e.g.
+<code class="docutils literal notranslate"><span class="pre">7170_04.76freetz-devel-3790.de_20091021-180742.image</span></code>).</p>
+</li>
+<li><p class="first">Upload the image
 <code class="docutils literal notranslate"><span class="pre">&lt;BOX_VERSION&gt;_&lt;ORIG_FIRMWARE_VERSION&gt;freetz-devel-VVVV.&lt;LANG&gt;_YYYYMMDD-HHMMSS.image</span></code>
 as Firmware Update to your FritzBox. After successful Upload, you can
 access a secondary web interface on port 81 of your box, offering
@@ -717,7 +739,8 @@ detailed instructions to finalize installation. Should your Box be
 unreachable even though INFO-LED stopped flashing several minutes ago
 - especially if, in <strong>regular intervals</strong>, all LEDs light up), you
 can recover your box‘ original firmware on most Box types. For
-details, see <a class="reference external" href="../troubleshoot/recover_firmware.html">this Howto</a>.</li>
+details, see <a class="reference external" href="../troubleshoot/recover_firmware.html">this Howto</a>.</p>
+</li>
 </ol>
 </div>
 </div>
@@ -1012,6 +1035,18 @@ Standardnamen aufgerufen werden. Daher habe ich mir ein Verzeichnis
 erstellt, in dem Symlinks der Standardnamen auf die GNU Utilities
 zeigen. Zum Arbeiten mit ds-mod ist dieses Verzeichnis in den Suchpfad
 aufzunehmen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>~/gnubin $ ls -l
+total 64
+-rwxr-xr-x   1 enrik  enrik  106 20 Mär 17:23 as
+lrwxr-xr-x   1 enrik  enrik   19 20 Mär 17:18 awk -&gt; /opt/local/bin/gawk
+lrwxr-xr-x   1 enrik  enrik   18 20 Mär 18:32 cp -&gt; /opt/local/bin/gcp
+lrwxr-xr-x   1 enrik  enrik   22 11 Apr 10:11 cpp -&gt; /usr/local/bin/cpp-3.3
+lrwxr-xr-x   1 enrik  enrik   20 11 Apr 10:11 find -&gt; /opt/local/bin/gfind
+lrwxr-xr-x   1 enrik  enrik   23 20 Mär 17:18 install -&gt; /opt/local/bin/ginstall
+-rwxr-xr-x   1 enrik  enrik  106 20 Mär 17:24 ld
+lrwxr-xr-x   1 enrik  enrik   21 20 Mär 17:18 sed -&gt; /opt/local/bin/gnused
+</pre></div>
+</div>
 <p>Die Pseudebefehle <code class="docutils literal notranslate"><span class="pre">as</span></code> und <code class="docutils literal notranslate"><span class="pre">ld</span></code> dienen hier nur dazu, der glibc für
 den Kernel-Compiler, die über crosstool erstellt wird, geeignete
 binutils vorzugaukeln. Die beiden Dateien sehen so aus:</p>

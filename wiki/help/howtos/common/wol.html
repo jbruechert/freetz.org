@@ -587,6 +587,23 @@ Bei Problemen kann mit dem optional auswählbaren
 <p>Um nicht über die Fritzbox-Weboberfläche arbeiten zu müssen, sondern
 schnell per Kommandozeile einen PC aufzuwecken, kann folgendes Skript
 verwendet werden (einfach in die <code class="docutils literal notranslate"><span class="pre">rc.custom</span></code> eintragen):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span># Skript für &#39;wakeup HOSTNAME&#39; erstellen
+# WAKEUPPATH should be root&#39;s homedirectory, if you want to login via
+# ssh root@fritz.box &#39;./wakeup HOSTNAME&#39;
+WAKEUPPATH=~root
+WAKEUP=$WAKEUPPATH/wakeup
+echo &#39;PATH=$PATH:&#39;$WAKEUPPATH &gt;&gt; ~root/.profile
+touch $WAKEUP
+chmod +x $WAKEUP
+echo &#39;#!/bin/sh&#39; &gt;&gt; $WAKEUP
+echo &#39;test -z &quot;$1&quot; &amp;&amp; echo &quot;Syntax: wakeup HOSTNAME&quot; &amp;&amp; return 1&#39; &gt;&gt; $WAKEUP
+echo &#39;# Hostname auf Macadresse mappen (steht in /var/tmp/ethers)&#39; &gt;&gt; $WAKEUP
+echo &#39;macadresse=$(sed -ne &quot;/[[:blank:]]$1$/{s/[[:blank:]].*$//p;q}&quot; /var/tmp/ethers)&#39; &gt;&gt; $WAKEUP
+echo &#39;test -z &quot;$macadresse&quot; &amp;&amp; echo &quot;Macadresse von $1 wurde nicht gefunden!&quot; &amp;&amp; return 1&#39; &gt;&gt; $WAKEUP
+echo &#39;# Etherwake ausführen&#39; &gt;&gt; $WAKEUP
+echo &#39;ether-wake $macadresse 2&gt; /dev/null&#39; &gt;&gt; $WAKEUP
+</pre></div>
+</div>
 <p>Ab sofort kann dann mit Hilfe von <code class="docutils literal notranslate"><span class="pre">wakeup</span> <span class="pre">HOSTNAME</span></code> ein PC aufgeweckt
 werden.</p>
 </div>

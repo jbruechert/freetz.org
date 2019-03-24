@@ -8,7 +8,7 @@ SoundBridge <http://www.rokulabs.com/products_soundbridge.php>`__ kann
 auf ihrem Display Nachrichten darstellen. Seit Callmonitor 1.12.4 stehen
 drei Funktionen zur Ansteuerung zur Verfügung:
 
-.. code:: wiki
+.. code:: bash
 
      sbmessage
      (default_sbmessage)
@@ -16,7 +16,7 @@ drei Funktionen zur Ansteuerung zur Verfügung:
 Zur Anzeige einer statischen Nachricht. Mit der Umgebungsvariable
 ``SB_TIMEOUT`` kann die Dauer der Anzeige bestimmt werden.
 
-.. code:: wiki
+.. code:: bash
 
      sbmarquee
      (default_sbmarquee)
@@ -24,7 +24,7 @@ Zur Anzeige einer statischen Nachricht. Mit der Umgebungsvariable
 Zur Anzeige eines Lauftexts. Mit der Umgebungsvariable ``SB_TIMES`` kann
 festgelegt werden, wie oft die Nachricht wiederholt werden soll.
 
-.. code:: wiki
+.. code:: bash
 
      sbxmessage
      (default_sbxmessage)

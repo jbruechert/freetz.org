@@ -146,7 +146,7 @@ folgende Beispiel beschreibt die Aufteilung des Switch in die beiden
 Interface eth0 mit LAN1 und LAN2 sowie eth1 mit LAN3 und LAN4. Der
 folgende Patch wurde für eine 7270 mit Firmware 76 erstellt.
 
-.. code:: wiki
+.. code:: bash
 
      --- linux-2.6.19.2/drivers/net/avm_cpmac/cpphy_adm6996.c_orig   2009-06-08 13:59:52.000000000 +0200
      +++ linux-2.6.19.2/drivers/net/avm_cpmac/cpphy_adm6996.c        2009-08-20 10:57:14.000000000 +0200
@@ -168,7 +168,7 @@ folgende Patch wurde für eine 7270 mit Firmware 76 erstellt.
 Den Patch in das Verzeichnis ``/make/linux/patches/2.6.19.2`` oder ggf.
 Unterordner wie z.B. ``7270_04.76`` kopieren.
 
-.. code:: wiki
+.. code:: bash
 
      make menuconfig
 
@@ -176,27 +176,27 @@ Box konfigurieren und die Option "Replace Kernel" auswählen
 
 Bestehenden Kernel löschen:
 
-.. code:: wiki
+.. code:: bash
 
      make kernel-dirclean
 
 Kernel-Sourcen bereitstellen und Patchen
 
-.. code:: wiki
+.. code:: bash
 
      make kernel-source
 
 Hier kann noch kontrolliert werden, ob der Patch korrekt durchgeführt
 wird. z.B.:
 
-.. code:: wiki
+.. code:: bash
 
      applying patch file make/linux/patches/2.6.19.2/7270_04.76/990-cpmac.patch
      patching file linux-2.6.19.2/drivers/net/avm_cpmac/cpphy_adm6996.c
 
 Dann noch das Image erstellen:
 
-.. code:: wiki
+.. code:: bash
 
      make
 
@@ -211,7 +211,7 @@ Wlan bestehen und und automatisch konfiguriert werden und bleiben.
 
 Kopie der ar7.cfg erstellen und diese bearbeiten:
 
-.. code:: wiki
+.. code:: bash
 
      cd /var/tmp
      cat /var/flash/ar7.cfg > ar7.cfg
@@ -220,7 +220,7 @@ Kopie der ar7.cfg erstellen und diese bearbeiten:
 Box muss sich im Modus "Router" befinden, dies wird mit der Option
 ``ethmode`` in der ar7.cfg eingestellt.
 
-.. code:: wiki
+.. code:: bash
 
      ethmode = ethmode_router;
 
@@ -242,7 +242,7 @@ zweier Devices intern und extern.
   sauber in der eth-Sektion! (und AVM hat es ja auch selber mit dem
   wlan-IF so gemacht)
 
-.. code:: wiki
+.. code:: bash
 
            ethinterfaces {
                    name = "extern";
@@ -279,7 +279,7 @@ zweier Devices intern und extern.
 Dann die bestehende ``ar7.cfg`` durch die veränderte Datei
 überschreiben:
 
-.. code:: wiki
+.. code:: bash
 
        cat /var/tmp/ar7.cfg > /var/flash/ar7.cfg
 
@@ -289,7 +289,7 @@ Dann die Änderungen mit einen Reboot oder ``ar7cfgchanged`` aktivieren.
 | Auch der special Modus kann über die ar7.cfg konfiguriert werden.
 | Als Beispiel ein Ausschnitt aus einer Alice Konfiguration)
 
-.. code:: wiki
+.. code:: bash
 
      cpmacspecial {
            enabled = yes;
@@ -299,7 +299,7 @@ Dann die Änderungen mit einen Reboot oder ``ar7cfgchanged`` aktivieren.
 
 | und ein Anderes mit "split" Interfaces
 
-.. code:: wiki
+.. code:: bash
 
    cpmacspecial {
        enabled = yes;
@@ -336,7 +336,7 @@ Portkonstanten. Das sind folgende Werte: LAN 1 = 0x01, LAN 2 = 0x02, LAN
 
 Für das obige Beispiel muss also folgender Befehl aufgerufen werden:
 
-.. code:: wiki
+.. code:: bash
 
    cpmaccfg ssms eth0 0x23 eth1 0x2c
 
@@ -399,7 +399,7 @@ Bei der 7270v3/3270v3 hat sich der CPU Port von Bit5 auf Bit0 verschoben
 und die Interface Ports sind um eins nach links gerückt. Für das obige
 Beispiel muss also folgender Befehl auf der 7270v3 aufgerufen werden:
 
-.. code:: wiki
+.. code:: bash
 
    cpmaccfg ssms eth0 0x07 eth1 0x19
 

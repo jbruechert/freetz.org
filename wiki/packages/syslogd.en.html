@@ -574,12 +574,21 @@ disk (e.g. USB), or remote to another server.</div>
 <div class="section" id="usage-of-syslog">
 <span id="usageofsyslog"></span><h2>Usage of syslog<a class="headerlink" href="#usage-of-syslog" title="Link zu dieser Überschrift">¶</a></h2>
 <p>The syslog messages can be displayed via the web-interface via:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Status</span> <span class="o">&gt;</span> <span class="n">Syslog</span>
+</pre></div>
+</div>
 <p>You can filter on some items depending on your configuration and used
 packages (e.g. hostapd, login, INADYN).</p>
 <p>Another option is to view the messages via a telnet or ssh connection
 using the following commands:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logread</span>
+</pre></div>
+</div>
 <p>You can monitor the syslog messages where all new messages are displayed
 using the command:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logread</span> <span class="o">-</span><span class="n">f</span>
+</pre></div>
+</div>
 <p>(With CTRL-C you can stop the monitoring.)</p>
 </div>
 </div>

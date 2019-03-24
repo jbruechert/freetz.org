@@ -556,7 +556,13 @@
 <span id="allgemeinehinweisezufunktionsaufrufen"></span><h1>Allgemeine Hinweise zu Funktionsaufrufen<a class="headerlink" href="#allgemeine-hinweise-zu-funktionsaufrufen" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Der Aufruf von Funktionen, die auf <a class="reference external" href="getmsg.html">getmsg</a> oder
 <a class="reference external" href="rawmsg.html">rawmsg</a> basieren, sieht immer so aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foomessage</span> <span class="p">[</span><span class="n">OPTION</span><span class="p">]</span><span class="o">...</span> <span class="o">&lt;</span><span class="n">host</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">message</span><span class="o">&gt;</span><span class="p">]</span><span class="o">...</span>
+</pre></div>
+</div>
 <p>Der einfachste und am meisten genutzte Fall ist dementsprechend</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foomessage</span> <span class="o">&lt;</span><span class="n">host</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>Als Optionen können alle Optionen verwendet werden, die auch
 <a class="reference external" href="getmsg.html">getmsg</a> bzw. <a class="reference external" href="rawmsg.html">rawmsg</a> verstehen.</p>
 <p>Die Standard-Nachricht wird generell von einer Funktion mit der
@@ -567,6 +573,9 @@ werden. Diese werden vor dem Funktionsaufruf gesetzt. Der Callmonitor
 sorgt automatisch für die Kodierung der Umgebungsvariablen, die Text
 enthalten (z.B. <code class="docutils literal notranslate"><span class="pre">XBOX_CAPTION</span></code> und <code class="docutils literal notranslate"><span class="pre">DREAM_CAPTION</span></code>). Man kann also
 einfach</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FOO_CAPTION</span><span class="o">=</span><span class="s2">&quot;Dies ist der zu 100</span><span class="si">% r</span><span class="s2">ichtige Titel&quot;</span> <span class="n">foomessage</span> <span class="o">&lt;</span><span class="n">host</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>schreiben, ohne sich Gedanken über Kodierungen (URL- oder printf-)
 machen zu müssen.</p>
 </div>

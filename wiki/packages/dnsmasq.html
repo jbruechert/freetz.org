@@ -669,8 +669,37 @@ multid starten‘ und ‚multid restarten‘ deaktivieren.</div>
 (<img alt="Warning" src="../../_images/exclamation9.png" /> je nach Kernelversion variieren die Namen etwas):</div>
 </div>
 <p>bei Kernel 2.6.28 (zb Fritzbox 7320):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nf_conntrack</span> <span class="n">nf_conntrack_ipv4</span> <span class="n">nf_defrag_ipv4</span> <span class="n">iptable_filter</span> <span class="n">iptable_nat</span> <span class="n">ip_tables</span> <span class="n">ipt_REDIRECT</span>
+<span class="n">x_tables</span> <span class="n">xt_tcpudp</span>
+<span class="n">libipt_REDIRECT</span>
+<span class="n">libxt_standard</span> <span class="n">libxt_tcp</span> <span class="n">libxt_udp</span>
+</pre></div>
+</div>
 <p>Die Module durch eintragen in ‚modules‘ beim Start von Freetz laden.</p>
 <p>Diese iptables Regeln mittels rc.custom ausführen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>rport=50053
+
+iptables -t nat -F dns 2&gt;/dev/null
+iptables -t nat -N dns
+
+iptables -t nat -D PREROUTING -p tcp --dport 53 -j dns 2&gt;/dev/null
+iptables -t nat -I PREROUTING -p tcp --dport 53 -j dns
+iptables -t nat -D PREROUTING -p udp --dport 53 -j dns 2&gt;/dev/null
+iptables -t nat -I PREROUTING -p udp --dport 53 -j dns
+
+iptables -t nat -D OUTPUT -o lo -p tcp --dport 53 -j REDIRECT --to-port $rport 2&gt;/dev/null
+iptables -t nat -I OUTPUT -o lo -p tcp --dport 53 -j REDIRECT --to-port $rport
+iptables -t nat -D OUTPUT -o lo -p udp --dport 53 -j REDIRECT --to-port $rport 2&gt;/dev/null
+iptables -t nat -I OUTPUT -o lo -p udp --dport 53 -j REDIRECT --to-port $rport
+
+for _if in $(ifconfig | sed -nr &#39;s/^([^ ]*) .*/\1/p&#39; | grep -vE &quot;lo|dsl|:|eth&quot;); do
+_ip=&quot;$(ifconfig $_if 2&gt;/dev/null | sed -n &#39;s/.*inet addr:\([0-9\.]*\).*/\1/p&#39;)&quot;
+[ -z &quot;$_ip&quot; ] &amp;&amp; continue
+iptables -t nat -I dns -i $_if -p tcp -d $_ip -j REDIRECT --to-port $rport
+iptables -t nat -I dns -i $_if -p udp -d $_ip -j REDIRECT --to-port $rport
+done
+</pre></div>
+</div>
 <p>So kann der multid Port 53 belegen, aber es wird trotzdem dnsmasq zur
 Namensauflösung genutzt. Außerdem sind so Restarts von multid nicht mehr
 nötig.</p>
@@ -697,7 +726,16 @@ damit die Änderungen wirksam werden. (Ansonsten manuell über <em>Dienste</em>
 <div class="section" id="beispiel-1">
 <span id="beispiel1"></span><h3>Beispiel 1<a class="headerlink" href="#beispiel-1" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Durch (Kommandozeilen-Optionen)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">O</span> <span class="mi">44</span><span class="p">,</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">178.1</span> <span class="o">-</span><span class="n">O</span> <span class="mi">45</span><span class="p">,</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">178.1</span> <span class="o">-</span><span class="n">O</span> <span class="mi">46</span><span class="p">,</span><span class="mi">8</span>
+</pre></div>
+</div>
 <p>oder alternativ (als Liste)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#options to DHCP clients</span>
+<span class="n">dhcp</span><span class="o">-</span><span class="n">option</span><span class="o">=</span><span class="mi">44</span><span class="p">,</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">178.1</span>
+<span class="n">dhcp</span><span class="o">-</span><span class="n">option</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">178.1</span>
+<span class="n">dhcp</span><span class="o">-</span><span class="n">option</span><span class="o">=</span><span class="mi">46</span><span class="p">,</span><span class="mi">8</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">wird unter der Adresse 192.168.178.1 ein WINS- und ein NBDD-Server mit
 dem NetBIOS-Knotentyp „h-Knoten“ beim Client eingetragen.</div>
@@ -714,7 +752,17 @@ DHCP</a>.</p>
 <div class="section" id="beispiel-2">
 <span id="beispiel2"></span><h3>Beispiel 2<a class="headerlink" href="#beispiel-2" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Durch (Kommandozeilen-Optionen)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">R</span> <span class="o">-</span><span class="n">S</span> <span class="mf">208.67</span><span class="o">.</span><span class="mf">222.222</span> <span class="o">-</span><span class="n">S</span> <span class="mf">208.67</span><span class="o">.</span><span class="mf">220.220</span>
+</pre></div>
+</div>
 <p>oder alternativ (als Liste)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#don&#39;t read resolv file</span>
+<span class="n">no</span><span class="o">-</span><span class="n">resolv</span>
+<span class="c1">#dns server</span>
+<span class="n">server</span><span class="o">=</span><span class="mf">208.67</span><span class="o">.</span><span class="mf">222.222</span>
+<span class="n">server</span><span class="o">=</span><span class="mf">208.67</span><span class="o">.</span><span class="mf">222.220</span>
+</pre></div>
+</div>
 <p>werden eigene DNS-Einträge genutzt, im Beispiel diejenigen von
 <a class="reference external" href="http://www.opendns.com/">​www.OpenDNS.com</a>. <em>-S</em> nutzt den DNS mit
 der angegebenen IP-Adresse. Dieser Schalter unterdrückt nicht das Lesen
@@ -725,6 +773,9 @@ der Datei <code class="docutils literal notranslate"><span class="pre">resolv.co
 <span id="dhcpserver"></span><h2>DHCP Server<a class="headerlink" href="#dhcp-server" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Im Bereich <em>DHCP Range (eine pro Zeile)</em> werden die Bereiche in
 folgender Form eingetragen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">net</span><span class="p">:]</span><span class="n">network</span><span class="o">-</span><span class="nb">id</span><span class="p">,]</span><span class="o">&lt;</span><span class="n">start</span><span class="o">-</span><span class="n">addr</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">end</span><span class="o">-</span><span class="n">addr</span><span class="o">&gt;</span><span class="p">[[,</span><span class="o">&lt;</span><span class="n">netmask</span><span class="o">&gt;</span><span class="p">],</span><span class="o">&lt;</span><span class="n">broadcast</span><span class="o">&gt;</span><span class="p">][,</span><span class="o">&lt;</span><span class="n">default</span> <span class="n">lease</span> <span class="n">time</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
 <p>(Die <a class="reference external" href="http://www.thekelleys.org.uk/dnsmasq/docs/dnsmasq-man.html">​dnsmask
 Direktive</a>
 dazu lautet: <code class="docutils literal notranslate"><span class="pre">dhcp-range</span></code>. Man findet findet übrigens fast alle
@@ -761,12 +812,18 @@ zuzuteilen. Nur Hosts, die statisch vergebene Adressen entsprechend der
 <div class="section" id="beispiel">
 <span id="id4"></span><h3>Beispiel<a class="headerlink" href="#beispiel" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Mit dem Eintrag</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">192.168</span><span class="o">.</span><span class="mf">178.20</span><span class="p">,</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">178.200</span><span class="p">,</span><span class="mi">12</span><span class="n">h</span>
+</pre></div>
+</div>
 <p>werden Adressen von IP 192.168.178.20 bis IP 192.168.178.200 mit einer
 Lease-Time von 12 Stunden vergeben.</p>
 </div>
 </div>
 <div class="section" id="eintrage-in-der-hosts-liste">
 <span id="eintrageinderhosts-liste"></span><h2>Einträge in der Hosts-Liste<a class="headerlink" href="#eintrage-in-der-hosts-liste" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ipaddr</span><span class="o">&gt;|*</span> <span class="o">&lt;</span><span class="n">hwaddr</span><span class="o">&gt;|</span><span class="p">[</span><span class="nb">id</span><span class="p">:]</span><span class="o">&lt;</span><span class="n">client_id</span><span class="o">&gt;|*</span> <span class="p">[</span><span class="n">net</span><span class="p">:]</span><span class="o">&lt;</span><span class="n">netid</span><span class="o">&gt;|*</span> <span class="o">&lt;</span><span class="n">hostname</span><span class="o">&gt;|*</span> <span class="p">[</span><span class="n">ignore</span><span class="p">]</span>
+</pre></div>
+</div>
 <p>Die Einträge in der Liste fest vorgegebener Hostnamen erlauben, dass
 einem Rechner mit einer bestimmten Hardwareadresse immer die gleichen
 Hostname, IP-Adresse, Lease-Time zugeteilt werden können. Ein hier
@@ -775,6 +832,9 @@ geliefert. Hier statisch vergebene IP-Adressen werden logischerweise bei
 der dynamischen IP-Vergabe ausgespart.</p>
 <p>Hostnamen mit Punkten im Namen sind ab Release 1.6 (dnsnasq 2.40) nicht
 mehr zulässig! Dies quittiert dnsmasq mit der Fehlermeldung</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fritz</span> <span class="n">daemon</span><span class="o">.</span><span class="n">err</span> <span class="n">dnsmasq</span><span class="p">[</span> <span class="p">]:</span> <span class="n">bad</span> <span class="n">name</span> <span class="n">at</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ethers</span> <span class="n">line</span> <span class="o">...</span>
+</pre></div>
+</div>
 <p>Eine Zuordnung aus der Hosts-Liste ist dann nicht mehr möglich, und es
 werden einfach andere Adressen zugeordnet.</p>
 <p>Es ist auch zulässig, die Hardwareadresse auszulassen und dafür den
@@ -839,6 +899,9 @@ Direktiven</a>:
 <span id="id5"></span><h3>Beispiel<a class="headerlink" href="#beispiel3" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Der integrierte TFTP-Server für einen Zugriff auf die Daten unter
 <code class="docutils literal notranslate"><span class="pre">/var/ftpd</span></code> wird wie folgt aktiviert:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">tftp</span> <span class="o">--</span><span class="n">tftp</span><span class="o">-</span><span class="n">root</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">ftpd</span>
+</pre></div>
+</div>
 <p>Man sollte also zusätzlich zum Parameter <code class="docutils literal notranslate"><span class="pre">--enable-tftp</span></code> (der den
 integrierten TFTP-Server aktiviert) mittels
 <code class="docutils literal notranslate"><span class="pre">--tftp-root=/irgendein_pfad_auf_der_box</span></code> angeben, wo die Dateien
@@ -847,6 +910,9 @@ Client-Rechner via BOOTP (Bootstrap Protocol — die erweiterte
 automatische Methode per PXE [Preboot Execution Environment] ist hier
 nicht möglich) und TFTP gebootet werden, muss noch das entsprechende
 Bootimage definiert werden. Das geschieht mit folgendem Parameter:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">M</span> <span class="p">[</span><span class="n">net</span><span class="p">:</span><span class="o">&lt;</span><span class="n">network</span><span class="o">-</span><span class="nb">id</span><span class="o">&gt;</span><span class="p">,]</span><span class="o">&lt;</span><span class="n">filename</span><span class="o">&gt;</span><span class="p">,[</span><span class="o">&lt;</span><span class="n">servername</span><span class="o">&gt;</span><span class="p">[,</span><span class="o">&lt;</span><span class="n">serveraddress</span><span class="o">&gt;</span><span class="p">]]</span>
+</pre></div>
+</div>
 <p>Dieser setzt die durch den DHCP-Server zurückgegebenen BOOTP-Optionen.
 Dabei sind <em>Servername</em> und <em>Serveraddress</em> optional, ist hier nichts
 angegeben, wird der Name leer gelassen und die Adresse auf die Adresse
@@ -867,9 +933,15 @@ Datenträger mit NTFS oder FAT32 formatiert, muss der komplette Ordner
 <code class="docutils literal notranslate"><span class="pre">debian-installer</span></code> verschoben werden. Anschließend konfiguriert man
 dnsmasq wie folgt (Pfad eventuell noch anpassen, je nach Konfiguration
 beim Bauen von Freetz):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">tftp</span> <span class="o">--</span><span class="n">tftp</span><span class="o">-</span><span class="n">root</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">tftp</span> <span class="o">-</span><span class="n">M</span> <span class="n">pxelinux</span><span class="o">.</span><span class="mi">0</span>
+</pre></div>
+</div>
 <p>Wenn der TFTP-Server auf einem anderen Rechner läuft, z. B. hier auf
 192.168.178.10 mit dem Bootfile <code class="docutils literal notranslate"><span class="pre">pxelinux.0</span></code>, dann ist dieser
 anzugeben:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">M</span> <span class="n">pxelinux</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">178.10</span><span class="p">,</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">178.10</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="komplett-eigene-konfiguration">

@@ -18,14 +18,14 @@ Using busybox httpd / inet
 
 Inetd custom config:
 
-.. code:: wiki
+.. code:: bash
 
    #:httpd-start: test web interface
    8088    stream  tcp nowait  root    /var/media/ftp/uFlash/httpd/httpd-start httpd-start -i
 
 httpd-start:
 
-.. code:: wiki
+.. code:: bash
 
    #!/bin/sh
 
@@ -40,19 +40,19 @@ httpd-start:
 
 Allow execution:
 
-.. code:: wiki
+.. code:: bash
 
    chmod +x httpd-start
 
 httpd.conf can be an empty file:
 
-.. code:: wiki
+.. code:: bash
 
    touch httpd.conf
 
 /var/media/ftp/uFlash/httpd/www/cgi-bin/info.cgi:
 
-.. code:: wiki
+.. code:: bash
 
    #!/usr/bin/haserl --shell=lua
    Content-Type: text/html; charset=UTF-8
@@ -66,7 +66,7 @@ httpd.conf can be an empty file:
 
 Allow execution:
 
-.. code:: wiki
+.. code:: bash
 
    chmod +x info.cgi
 

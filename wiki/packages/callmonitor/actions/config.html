@@ -568,6 +568,15 @@ umstellen.</p>
 <div class="section" id="portforwarding">
 <span id="id2"></span><h2>Portforwarding<a class="headerlink" href="#portforwarding" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Das Portforwarding kann aktiviert und deaktiviert werden.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span><span class="p">:</span>
+  <span class="n">config</span> <span class="n">forward</span> <span class="o">&lt;</span><span class="n">NUMMER</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">on</span><span class="o">|</span><span class="n">off</span><span class="o">|</span><span class="n">toggle</span><span class="o">&gt;</span>
+
+    <span class="n">NUMMER</span>                 <span class="n">Nummer</span> <span class="n">des</span> <span class="n">Portforwardings</span> <span class="p">(</span><span class="n">beginnend</span> <span class="n">bei</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">on</span><span class="o">|</span><span class="n">off</span><span class="o">|</span><span class="n">toggle</span>          <span class="n">an</span><span class="o">-</span> <span class="n">bzw</span><span class="o">.</span> <span class="n">abschalten</span> <span class="n">des</span> <span class="n">Portforwardings</span><span class="p">:</span> <span class="n">an</span><span class="p">,</span> <span class="n">aus</span><span class="p">,</span>
+                           <span class="n">an</span><span class="o">-/</span><span class="n">abschalten</span> <span class="n">des</span> <span class="n">Forwardings</span> <span class="n">abhängig</span> <span class="n">der</span> <span class="n">bereits</span>
+                           <span class="n">erfolgten</span> <span class="n">Einstellung</span>
+</pre></div>
+</div>
 <p>Beispiele:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="n">forward</span> <span class="mi">1</span> <span class="n">on</span>     <span class="c1"># 1. Portforwarding aktivieren</span>
 <span class="n">config</span> <span class="n">forward</span> <span class="mi">3</span> <span class="n">off</span>    <span class="c1"># 3. Portforwarding deaktivieren</span>
@@ -578,6 +587,14 @@ umstellen.</p>
 <div class="section" id="wlan">
 <span id="id3"></span><h2>WLAN<a class="headerlink" href="#wlan" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Das WLAN kann aktiviert und deaktiviert werden.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span><span class="p">:</span>
+  <span class="n">config</span> <span class="n">wlan</span> <span class="p">[</span><span class="mf">2.4</span><span class="o">|</span><span class="mi">5</span><span class="o">|</span><span class="n">guest</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">on</span><span class="o">|</span><span class="n">off</span><span class="o">&gt;</span>
+
+    <span class="mf">2.4</span><span class="o">|</span><span class="mi">5</span>                  <span class="n">gewünschtes</span> <span class="n">Frequenzband</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span><span class="mi">4</span> <span class="n">oder</span> <span class="mi">5</span> <span class="n">GHz</span>
+    <span class="n">guest</span>                  <span class="n">Gast</span><span class="o">-</span><span class="n">WLAN</span> <span class="n">schalten</span> <span class="p">(</span><span class="n">seit</span> <span class="n">Version</span> <span class="mf">1.20</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">on</span><span class="o">|</span><span class="n">off</span>                 <span class="n">an</span><span class="o">-</span> <span class="n">bzw</span><span class="o">.</span> <span class="n">abschalten</span> <span class="n">des</span> <span class="n">WLANs</span>
+</pre></div>
+</div>
 <p>Fehlt die Angabe des Frequenzbandes, werden beide geschaltet, aber nur
 das 2,4er abgefragt.</p>
 <p>Beispiele:</p>
@@ -591,6 +608,12 @@ das 2,4er abgefragt.</p>
 <div class="section" id="dect">
 <span id="id4"></span><h2>DECT<a class="headerlink" href="#dect" title="Link zu dieser Überschrift">¶</a></h2>
 <p>DECT kann aktiviert und deaktiviert werden.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span><span class="p">:</span>
+  <span class="n">config</span> <span class="n">dect</span> <span class="o">&lt;</span><span class="n">on</span><span class="o">|</span><span class="n">off</span><span class="o">&gt;</span>
+
+    <span class="n">on</span><span class="o">|</span><span class="n">off</span>                 <span class="n">an</span><span class="o">-</span> <span class="n">bzw</span><span class="o">.</span> <span class="n">abschalten</span> <span class="n">der</span> <span class="n">DECT</span><span class="o">-</span><span class="n">Hardware</span>
+</pre></div>
+</div>
 <p>Beispiele:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="n">dect</span> <span class="n">off</span>      <span class="c1"># DECT aus</span>
 <span class="n">config</span> <span class="n">dect</span> <span class="n">on</span>       <span class="c1"># DECT an</span>
@@ -600,6 +623,13 @@ das 2,4er abgefragt.</p>
 <div class="section" id="sip">
 <span id="id5"></span><h2>SIP<a class="headerlink" href="#sip" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Die SIP-Accounts können aktiviert und deaktiviert werden.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span><span class="p">:</span>
+  <span class="n">config</span> <span class="n">sip</span> <span class="o">&lt;</span><span class="n">NUMMER</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">on</span><span class="o">|</span><span class="n">off</span><span class="o">&gt;</span>
+
+    <span class="n">NUMMER</span>                 <span class="n">Nummer</span> <span class="n">des</span> <span class="n">SIP</span><span class="o">-</span><span class="n">Accounts</span> <span class="p">(</span><span class="n">beginnend</span> <span class="n">bei</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">on</span><span class="o">|</span><span class="n">off</span>                 <span class="n">an</span><span class="o">-</span> <span class="n">bzw</span><span class="o">.</span> <span class="n">abschalten</span> <span class="n">des</span> <span class="n">SIP</span><span class="o">-</span><span class="n">Accounts</span>
+</pre></div>
+</div>
 <p>Beispiele:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="n">sip</span> <span class="mi">4</span> <span class="n">on</span>      <span class="c1"># 4. SIP-Account aktivieren</span>
 <span class="n">config</span> <span class="n">sip</span> <span class="mi">2</span> <span class="n">off</span>     <span class="c1"># 2. SIP-Account deaktivieren</span>
@@ -611,6 +641,13 @@ das 2,4er abgefragt.</p>
 <p>(De-)Aktivierung der Rufumleitungen. (Seit Version 1.8.2) Unterstützt
 werden momentan nur Rufumleitungen des Typs „Anrufe von Rufnummer xy“,
 nicht aber „Alle Anrufe an Fon X“.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span>
+  <span class="n">config</span> <span class="n">diversion</span> <span class="o">&lt;</span><span class="n">NUMMER</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">on</span><span class="o">|</span><span class="n">off</span><span class="o">&gt;</span>
+
+    <span class="n">NUMMER</span>                 <span class="n">Nummer</span> <span class="n">der</span> <span class="n">Rufumleitung</span> <span class="p">(</span><span class="n">beginnend</span> <span class="n">bei</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">on</span><span class="o">|</span><span class="n">off</span>                 <span class="n">an</span><span class="o">-</span> <span class="n">bzw</span><span class="o">.</span> <span class="n">abschalten</span> <span class="n">der</span> <span class="n">Rufumleitung</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="abfragen-von-konfigurationswerten">
 <span id="abfragenvonkonfigurationswerten"></span><h2>Abfragen von Konfigurationswerten<a class="headerlink" href="#abfragen-von-konfigurationswerten" title="Link zu dieser Überschrift">¶</a></h2>

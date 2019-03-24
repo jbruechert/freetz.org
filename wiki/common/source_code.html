@@ -573,7 +573,14 @@ möglicherweise <strong>nur eingeschränkt</strong> oder <strong>temporär nicht
 <p>Aktuelle Liste unterstützter Boxen mit
 <a class="reference external" href="/browser/trunk/FIRMWARES#L3">Firmware-Version</a><a class="reference external" href="/export/HEAD/trunk/FIRMWARES#L3">​</a>.</p>
 <p>Auschecken aus SVN (zuvor ggf <code class="docutils literal notranslate"><span class="pre">umask</span> <span class="pre">022</span></code> nicht vergessen!):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ svn co http://svn.freetz.org/trunk freetz-devel                 &lt;--- freetz-trunk: Lokale Kopie des SVN-Repositorys
+$ svn co http://svn.freetz.org/trunk freetz-devel_r7843 -r 7843   &lt;--- Bestimmte Revision auschecken (hier: 7843)
+</pre></div>
+</div>
 <p>Auschecken aus Git:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/Freetz/freetz.git freetz-devel &lt;--- freetz-git: Lokale Kopie des Git-Repositorys
+</pre></div>
+</div>
 <p><img alt="Warning" src="../../_images/exclamation2.png" /> <a class="reference external" href="http://git-scm.com/">​Git</a> ist nicht das führende System und
 wird derzeit nicht offiziell unterstützt, sondern nur zusätzlich zu
 Testzwecken zur Verfügung gestellt.</p>
@@ -594,7 +601,16 @@ repository</a> anschauen.</div>
 <span id="id2"></span><h2>Updates<a class="headerlink" href="#updates" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Aktualisieren (Update) eines vorhandenen lokalen SVN-Repositorys (hier:
 Entwicklerversion):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd freetz-devel
+$ svn up         &lt;--- Update auf aktuelle Revision
+$ svn up -r 7843 &lt;--- Update auf eine bestimmte Revision (hier: 7843)
+</pre></div>
+</div>
 <p>Update eines lokalen Git-Repositorys (hier: Entwicklerversion):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd freetz-devel
+$ git pull
+</pre></div>
+</div>
 </div>
 <div class="section" id="stabile-version">
 <span id="stabileversion"></span><h2>Stabile Version<a class="headerlink" href="#stabile-version" title="Link zu dieser Überschrift">¶</a></h2>
@@ -608,9 +624,15 @@ werden: Abhilfe siehe
 <p><strong>freetz-2.0</strong>: aktuellste stabile Version (Liste unterstützter Boxen
 mit
 <a class="reference external" href="/browser/branches/freetz-stable-2.0/FIRMWARES#L3">Firmware-Version</a><a class="reference external" href="/export/HEAD/branches/freetz-stable-2.0/FIRMWARES#L3">​</a>)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ svn co http://svn.freetz.org/branches/freetz-stable-2.0
+</pre></div>
+</div>
 <p><strong>ds-0.2.9-p8</strong> (Kernel 2.4): für sehr alte Boxen, die kein
 Firmware-Update mehr von AVM erhalten (mehr Infos
 <a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=135253">​hier</a>)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ svn co http://svn.freetz.org/tags/ds-0.2.9-p8
+</pre></div>
+</div>
 </div>
 </div>
 

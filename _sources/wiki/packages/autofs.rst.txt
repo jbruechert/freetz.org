@@ -32,7 +32,7 @@ NFS
 
 Für NFS wird lediglich das Modul nfs.ko benötigt.
 
-.. code:: wiki
+.. code:: bash
 
    NFS-SHARE -rw,soft,intr,rsize=8192,wsize=8192         SERVER:/SHARE
 
@@ -44,7 +44,7 @@ Samba
 Hierfür wird das Paket `cifsmount <cifsmount.html>`__ benötigt, dessen
 Webinterface nicht.
 
-.. code:: wiki
+.. code:: bash
 
    SMB-SHARE -fstype=cifs,user=USER,pass=PASS,ro         ://SERVER/SHARE
 
@@ -56,7 +56,7 @@ WebDAV
 Für WebDAV wird das `davfs2 <davfs2.html>`__-Paket (ohne Webinterface)
 benötigt.
 
-.. code:: wiki
+.. code:: bash
 
    DAV-SHARE -fstype=davfs,conf=/tmp/flash/autofs/davfs.conf     :http\://SERVER
 
@@ -64,7 +64,7 @@ Außerdem noch diese 2 Dateien je Mountpoint:
 
 /tmp/flash/autofs/davfs.conf
 
-.. code:: wiki
+.. code:: bash
 
    secrets /tmp/flash/autofs/davfs.secrets
    ask_auth 0
@@ -73,7 +73,7 @@ Außerdem noch diese 2 Dateien je Mountpoint:
 
 /tmp/flash/autofs/davfs.secrets (Dateirechte 600!)
 
-.. code:: wiki
+.. code:: bash
 
    http://SERVER USERNAME    PASSWORT
 
@@ -84,7 +84,7 @@ SSHfs
 
 Es werden die Packages OpenSSH und SSHfs-FUSE benötigt
 
-.. code:: wiki
+.. code:: bash
 
    SSH-SHARE -fstype=fuse,rw,allow_other             :sshfs\#USER@SERVER\:/
 

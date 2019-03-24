@@ -564,11 +564,40 @@ eingehaengten usb stick) als auch in den ram-ringbuffer zu schreiben.</p>
 <div class="section" id="schritte-zur-losung-kann-ubersprungen-werden">
 <span id="schrittezurlosungkannubersprungenwerden"></span><h1>Schritte zur Lösung, kann übersprungen werden…<a class="headerlink" href="#schritte-zur-losung-kann-ubersprungen-werden" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Ich habe erst einmal mit</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># syslogd -h</span>
+<span class="n">syslogd</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">option</span> <span class="o">--</span> <span class="n">h</span>
+<span class="n">BusyBox</span> <span class="n">v1</span><span class="o">.</span><span class="mf">22.1</span> <span class="p">(</span><span class="mi">2014</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">13</span> <span class="mi">22</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">43</span> <span class="n">CEST</span><span class="p">)</span> <span class="n">multi</span><span class="o">-</span><span class="n">call</span> <span class="n">binary</span><span class="o">.</span>
+
+<span class="n">Usage</span><span class="p">:</span> <span class="n">syslogd</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+
+<span class="n">System</span> <span class="n">logging</span> <span class="n">utility</span>
+<span class="p">(</span><span class="n">this</span> <span class="n">version</span> <span class="n">of</span> <span class="n">syslogd</span> <span class="n">ignores</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">syslog</span><span class="o">.</span><span class="n">conf</span><span class="p">)</span>
+
+    <span class="o">-</span><span class="n">n</span>      <span class="n">Run</span> <span class="ow">in</span> <span class="n">foreground</span>
+    <span class="o">-</span><span class="n">O</span> <span class="n">FILE</span>     <span class="n">Log</span> <span class="n">to</span> <span class="n">FILE</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">messages</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">l</span> <span class="n">N</span>        <span class="n">Log</span> <span class="n">only</span> <span class="n">messages</span> <span class="n">more</span> <span class="n">urgent</span> <span class="n">than</span> <span class="n">prio</span> <span class="n">N</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">S</span>      <span class="n">Smaller</span> <span class="n">output</span>
+    <span class="o">-</span><span class="n">s</span> <span class="n">SIZE</span>     <span class="n">Max</span> <span class="n">size</span> <span class="p">(</span><span class="n">KB</span><span class="p">)</span> <span class="n">before</span> <span class="n">rotation</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span><span class="mi">200</span><span class="n">KB</span><span class="p">,</span> <span class="mi">0</span><span class="o">=</span><span class="n">off</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">b</span> <span class="n">N</span>        <span class="n">N</span> <span class="n">rotated</span> <span class="n">logs</span> <span class="n">to</span> <span class="n">keep</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span> <span class="mi">0</span><span class="o">=</span><span class="n">purge</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">R</span> <span class="n">HOST</span><span class="p">[:</span><span class="n">PORT</span><span class="p">]</span>  <span class="n">Log</span> <span class="n">to</span> <span class="n">HOST</span><span class="p">:</span><span class="n">PORT</span> <span class="p">(</span><span class="n">default</span> <span class="n">PORT</span><span class="p">:</span><span class="mi">514</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">L</span>      <span class="n">Log</span> <span class="n">locally</span> <span class="ow">and</span> <span class="n">via</span> <span class="n">network</span> <span class="p">(</span><span class="n">default</span> <span class="ow">is</span> <span class="n">network</span> <span class="n">only</span> <span class="k">if</span> <span class="o">-</span><span class="n">R</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">D</span>      <span class="n">Drop</span> <span class="n">duplicates</span>
+    <span class="o">-</span><span class="n">C</span><span class="p">[</span><span class="n">size_kb</span><span class="p">]</span> <span class="n">Log</span> <span class="n">to</span> <span class="n">shared</span> <span class="n">mem</span> <span class="n">buffer</span> <span class="p">(</span><span class="n">use</span> <span class="n">logread</span> <span class="n">to</span> <span class="n">read</span> <span class="n">it</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>angeschaut was denn der BusyBox syslogd so bietet und dann mit</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ps w | grep syslog</span>
+ <span class="mi">4718</span> <span class="n">root</span>      <span class="mi">3256</span> <span class="n">S</span>    <span class="p">{</span><span class="n">busybox</span><span class="p">}</span> <span class="n">syslogd</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="n">C2048</span>
+</pre></div>
+</div>
 <p>geschaut wie er denn gerade so läuft. Durch editieren der Option
 „Additional command line options (for experts)“ im webinterface
 (variable SYSLOGD_EXPERT_OPTIONS) habe ich es dann zu folgenden Status
 gebracht:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@FB</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span><span class="c1"># ps w | grep syslog</span>
+ <span class="mi">4718</span> <span class="n">root</span>      <span class="mi">3256</span> <span class="n">S</span>    <span class="p">{</span><span class="n">busybox</span><span class="p">}</span> <span class="n">syslogd</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="n">C2048</span> <span class="o">-</span><span class="n">O</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">messages</span> <span class="o">-</span><span class="n">b</span> <span class="mi">20</span> <span class="o">-</span><span class="n">s</span> <span class="mi">20048</span>
+</pre></div>
+</div>
 <p>leider scheint es allerdings so als ob die entweder oder option im
 webinterface korrekt abstrahiert wurde und der busyboxsyslogd die zweite
 option konsequent ignoriert.</p>
@@ -594,6 +623,15 @@ scriebt.</p>
 </div>
 <div class="section" id="also-hier-die-anleitung-zur-editierung-der-rc-costum-ueber-die-shell">
 <h1>Also hier die Anleitung zur Editierung der rc.costum ueber die shell:<a class="headerlink" href="#also-hier-die-anleitung-zur-editierung-der-rc-costum-ueber-die-shell" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#fritzbox rc.custom ohne webinterface anlegen</span>
+<span class="n">touch</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">custom</span>
+<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">custom</span>
+<span class="n">vi</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">custom</span> <span class="c1">#das gewünschte reinschreiben...</span>
+<span class="c1"># modsave flash # die daten vom ram in den flash übertragen...</span>
+<span class="n">Checking</span> <span class="n">Freetz</span> <span class="n">configuration</span> <span class="o">...</span> <span class="n">changed</span><span class="o">.</span>
+<span class="n">Writing</span> <span class="mi">3023</span> <span class="nb">bytes</span> <span class="n">to</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">freetz</span> <span class="o">...</span> <span class="n">done</span><span class="o">.</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="weiter-durch-die-herleitung-schritte-zur-loesung-whatever">
 <span id="weiterdurchdieherleitungschrittezurloesungwhatever"></span><h1>weiter durch die herleitung (schritte zur loesung, whatever)<a class="headerlink" href="#weiter-durch-die-herleitung-schritte-zur-loesung-whatever" title="Link zu dieser Überschrift">¶</a></h1>
@@ -601,6 +639,11 @@ scriebt.</p>
 mountpoint man durch <code class="docutils literal notranslate"><span class="pre">mount</span></code> erfährt) schon einhängt bevor freetz den
 rc.custom ausführt, also getreu nach der Anleitung zur editierung der
 der rc.custum sie in folgenden Zustand versetzt:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">custom</span>
+<span class="n">echo</span> <span class="n">testtest</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">testlog</span>
+<span class="n">date</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">testlog</span>
+</pre></div>
+</div>
 <p>die fritzbox neugestartet und siehe da die file
 /var/media/ftp/uStor01/testlog hat den richtigen Inhalt.</p>
 <p>Gut nun sind alle nötigen infos eingehohlt und tests durchgeführt und es
@@ -608,6 +651,25 @@ geht zu meiner…</p>
 </div>
 <div class="section" id="losung">
 <h1>…Lösung:<a class="headerlink" href="#losung" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">////////////////</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">logtostick</span><span class="p">:</span> <span class="p">(</span><span class="n">die</span> <span class="n">datei</span> <span class="n">muss</span> <span class="n">natürlich</span> <span class="n">auch</span> <span class="n">das</span> <span class="n">recht</span> <span class="n">zum</span> <span class="n">ausführen</span> <span class="n">erhalten</span> <span class="n">und</span> <span class="ow">in</span> <span class="n">den</span> <span class="n">flash</span> <span class="n">permanentisiert</span> <span class="n">werden</span><span class="o">...</span><span class="p">)</span>
+<span class="c1">#dieser script loggt das was ueber logread aus dem ram zu lesen ist susaetzlich auf nen usb stick</span>
+<span class="n">echo</span> <span class="n">logtostick</span> <span class="n">started</span> <span class="n">at</span><span class="p">:</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">logtostick</span>
+<span class="n">date</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">logtostick</span>
+<span class="n">echo</span> <span class="n">current</span> <span class="n">readlog</span> <span class="n">content</span>  <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">logtostick</span>
+<span class="n">logread</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">logtostick</span>
+<span class="n">echo</span> <span class="n">starting</span> <span class="n">logread</span> <span class="o">-</span><span class="n">f</span>  <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">logtostick</span>
+<span class="n">logread</span> <span class="o">-</span><span class="n">f</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">logtostick</span>
+
+<span class="o">///////////////</span>
+<span class="n">root</span><span class="nd">@FB</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span><span class="c1"># cat /tmp/flash/mod/rc.custom</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">logtostick</span> <span class="o">&amp;</span>
+<span class="n">root</span><span class="nd">@FB</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span><span class="c1"># modsave flash</span>
+<span class="n">Checking</span> <span class="n">Freetz</span> <span class="n">configuration</span> <span class="o">...</span> <span class="n">changed</span><span class="o">.</span>
+<span class="n">Writing</span> <span class="mi">3623</span> <span class="nb">bytes</span> <span class="n">to</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">freetz</span> <span class="o">...</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">root</span><span class="nd">@FB</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span><span class="c1">#</span>
+</pre></div>
+</div>
 <p>happy hacking wünscht treaki —</p>
 </div>
 

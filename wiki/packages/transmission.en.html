@@ -559,14 +559,33 @@ interface if you are using the trunk version of Freetz), you have to
 know that you have to provide a blocklist yourself. The simplest is to
 make a ‚update-blocklist.sh‘ with the content below and to invoke it
 daily or so using cron (don’t forget to make the file executable).</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/var/tmp/sh</span>
+
+<span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">-</span><span class="n">to</span><span class="o">/</span><span class="n">bittorrent</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">blocklists</span><span class="o">/</span>
+<span class="k">if</span> <span class="n">wget</span> <span class="o">-</span><span class="n">q</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">bluetack</span><span class="o">.</span><span class="n">co</span><span class="o">.</span><span class="n">uk</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">level1</span><span class="o">.</span><span class="n">gz</span> <span class="p">;</span> <span class="n">then</span>
+        <span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="n">level1</span> <span class="o">&amp;&amp;</span> <span class="n">gunzip</span> <span class="n">level1</span><span class="o">.</span><span class="n">gz</span>
+        <span class="n">killall</span> <span class="o">-</span><span class="n">HUP</span> <span class="n">transmission</span><span class="o">-</span><span class="n">daemon</span>
+        <span class="n">logger</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">t</span> <span class="n">transmission</span> <span class="s2">&quot;blocklist updated&quot;</span>
+<span class="k">else</span>
+        <span class="n">logger</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">t</span> <span class="n">transmission</span> <span class="s2">&quot;blocklist not updated&quot;</span>
+<span class="n">fi</span>
+</pre></div>
+</div>
 <p>This can be done from the transmission web interface too now.</p>
 </div>
 <div class="section" id="number-of-peers">
 <span id="numberofpeers"></span><h1>Number of peers<a class="headerlink" href="#number-of-peers" title="Link zu dieser Überschrift">¶</a></h1>
 <p>It is probably a good idea to reduce the number of peers by editing the
 <em>…/bittorrent/config/settings.json</em> file:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;peer-limit-global&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+<span class="s2">&quot;peer-limit-per-torrent&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+</pre></div>
+</div>
 <p>You have to stop transmission before changing this! Or you could use
 this command to reload the config file:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">killall</span> <span class="o">-</span><span class="n">HUP</span> <span class="n">transmission</span><span class="o">-</span><span class="n">daemon</span>
+</pre></div>
+</div>
 <p>This can be done from the transmission web interface too now.</p>
 </div>
 <div class="section" id="memory-usage">
@@ -606,6 +625,10 @@ Freetz WebIF since <a class="reference external" href="/changeset/6886">[6886]</
 <div class="section" id="limit-memory-usage">
 <span id="limitmemoryusage"></span><h1>Limit memory usage<a class="headerlink" href="#limit-memory-usage" title="Link zu dieser Überschrift">¶</a></h1>
 <p>To prevent memory shortage (could cause reboots and crashing processes):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;cache-size-mb&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;open-file-limit&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+</pre></div>
+</div>
 <p>The cache size is by default 2 MiB and the open file limit is by default
 32.</p>
 <p>To minimize the number of connections you could decide to forward TCP
@@ -615,6 +638,9 @@ traffic only and not UDP traffic.</p>
 <span id="id2"></span><h1>Watchdog<a class="headerlink" href="#watchdog" title="Link zu dieser Überschrift">¶</a></h1>
 <p>It may be necessary to disable the watchdog by adding this line to for
 example <em>rc.custom</em>:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;disable&quot;</span><span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">watchdog</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="links">
 <span id="id3"></span><h1>Links<a class="headerlink" href="#links" title="Link zu dieser Überschrift">¶</a></h1>

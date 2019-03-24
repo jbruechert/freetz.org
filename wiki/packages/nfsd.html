@@ -585,19 +585,49 @@ eingebaut.</p>
 <div class="section" id="example-configuration">
 <span id="exampleconfiguration"></span><h2>Example configuration<a class="headerlink" href="#example-configuration" title="Link zu dieser Überschrift">¶</a></h2>
 <p>get uid and gid:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span> <span class="o">-</span><span class="n">u</span> <span class="n">bittorrent</span>
+<span class="nb">id</span> <span class="o">-</span><span class="n">g</span> <span class="n">bittorrent</span>
+</pre></div>
+</div>
 <p>export:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uData</span> <span class="o">*</span><span class="p">(</span><span class="n">rw</span><span class="p">,</span><span class="n">all_squash</span><span class="p">,</span><span class="n">anonuid</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">anongid</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">insecure</span><span class="p">,</span><span class="n">sync</span><span class="p">,</span><span class="n">subtree_check</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>hosts.allow:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mountd</span><span class="p">,</span><span class="n">nfsd</span><span class="p">,</span><span class="n">portmap</span><span class="p">:</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.0</span><span class="o">/</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span>
+</pre></div>
+</div>
 <p>hosts.deny:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALL</span><span class="p">:</span> <span class="n">ALL</span>
+</pre></div>
+</div>
 <p>Ubuntu client:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">nfs</span> <span class="o">-</span><span class="n">o</span> <span class="n">vers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">rw</span><span class="p">,</span><span class="n">rsize</span><span class="o">=</span><span class="mi">65536</span><span class="p">,</span><span class="n">wsize</span><span class="o">=</span><span class="mi">65536</span> <span class="n">fritz</span><span class="o">.</span><span class="n">box</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uData</span> <span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">uData</span>
+</pre></div>
+</div>
 <p>Line in /etc/fstab:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fritz</span><span class="o">.</span><span class="n">box</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uData</span>    <span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">uData</span>    <span class="n">nfs</span> <span class="n">vers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">rw</span><span class="p">,</span><span class="n">rsize</span><span class="o">=</span><span class="mi">65536</span><span class="p">,</span><span class="n">wsize</span><span class="o">=</span><span class="mi">65536</span>
+</pre></div>
+</div>
 <p>Maximum block size:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">fs</span><span class="o">/</span><span class="n">nfsd</span><span class="o">/</span><span class="n">max_block_size</span>
+</pre></div>
+</div>
 <p>To change the block size, first stop <em>nfsd</em> and execute these commands:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">nfsd</span> <span class="n">nfsd</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">fs</span><span class="o">/</span><span class="n">nfsd</span>
+<span class="n">echo</span> <span class="mi">65536</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">fs</span><span class="o">/</span><span class="n">nfsd</span><span class="o">/</span><span class="n">max_block_size</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="fehlerquellen">
 <span id="id3"></span><h2>Fehlerquellen<a class="headerlink" href="#fehlerquellen" title="Link zu dieser Überschrift">¶</a></h2>
-<ul class="simple">
-<li>Falls die NFS-Freigabe nicht beschreibbar ist, dann kann das an den
-verwendeten Optionen in der export liegen:</li>
+<ul>
+<li><p class="first">Falls die NFS-Freigabe nicht beschreibbar ist, dann kann das an den
+verwendeten Optionen in der export liegen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">no_root_squash</span><span class="p">,</span><span class="n">anonuid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">anongid</span><span class="o">=</span><span class="mi">0</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <p>Diese Optionen bewirken, dass der root-User des Clients auch als root
 auf dem Server schreiben darf. Und dass der Benutzer nobody die uid/gid

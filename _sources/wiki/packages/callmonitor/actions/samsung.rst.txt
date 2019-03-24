@@ -6,13 +6,13 @@ Benachrichtigung auf einem Samsung TV
 Die Funktion ``samsung`` verschickt eine Benachrichtigung über einen
 Telefonanruf mit Hilfe der SOAP-Methode an ein Samsung TV:
 
-.. code:: wiki
+.. code:: bash
 
    samsung {IP des TV}
 
 Also z.B.:
 
-.. code:: wiki
+.. code:: bash
 
    samsung 192.168.178.19
 
@@ -25,14 +25,14 @@ er mit "…" endet.
 
 Der Listener-Eintrag im Callmonitor kann dazu z.B. so aussehen:
 
-.. code:: wiki
+.. code:: bash
 
    in:request ^ ^ samsung tv
 
 Zum Testen kann man folgendes direkt vom Terminal der Fritzbox
 ausführen:
 
-.. code:: wiki
+.. code:: bash
 
    callaction samsung tv
 
@@ -40,7 +40,7 @@ ausführen:
 | Die Funktion ``samsung_text`` verschickt eine Nachricht mit Hilfe der
   SOAP-Methode an ein Samsung TV, z.B.:
 
-.. code:: wiki
+.. code:: bash
 
    echo "Hello, world!" | callaction samsung_text 192.168.178.19 \
    --from="Absender" --from-number="069 123456" \

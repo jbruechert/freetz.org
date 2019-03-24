@@ -19,7 +19,7 @@ scan large networks, but works fine against single hosts.*"
 Example
 -------
 
-.. code:: wiki
+.. code:: bash
 
    root@fritz:/var/media/ftp/uData# nmap localhost
 
@@ -83,7 +83,7 @@ Known open ports
 
 Useful command:
 
-.. code:: wiki
+.. code:: bash
 
    netstat -anp
 

@@ -10,7 +10,7 @@ Optionen (s.o.) Port, Username und Passwort übergeben. Das XBMC stellt
 die Nachricht dann in einem kleinen Fenster dar, das automatisch
 geschlossen wird.
 
-.. code:: wiki
+.. code:: bash
 
      xboxmessage (default_xboxmessage)
 
@@ -30,7 +30,7 @@ die jeweilige Datei unter ``skin\Project Mayhem III\PAL\`` oder
 der "PAL"-Datei erreicht ein brauchbares Ergebnis (nur geänderte
 Zeilen):
 
-.. code:: wiki
+.. code:: bash
 
    ...
      <coordinates>

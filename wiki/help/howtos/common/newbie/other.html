@@ -862,6 +862,13 @@ stehen, müsst ihr die letzten Schritte nochmals kontrollieren.</p>
 <div class="line">6.) Im nächsten Fenster sollte man jetzt sehen wie die SWAP-Datei
 angelegt wird.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Erstelle</span> <span class="n">leere</span> <span class="n">Datei</span> <span class="o">...</span>
+<span class="mi">20</span><span class="o">+</span><span class="mi">0</span> <span class="n">records</span> <span class="ow">in</span>
+<span class="mi">20</span><span class="o">+</span><span class="mi">0</span> <span class="n">records</span> <span class="n">out</span>
+<span class="n">Bereite</span> <span class="n">Datei</span> <span class="n">für</span> <span class="n">Swap</span><span class="o">-</span><span class="n">Benutzung</span> <span class="n">vor</span> <span class="o">...</span>
+<span class="n">Setting</span> <span class="n">up</span> <span class="n">swapspace</span> <span class="n">version</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20967424</span> <span class="nb">bytes</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Dieses Fenster kann man danach einfach schließen.</div>
 <div class="line">Sollte alles richtig eingestellt sein, kann man SWAP über den Button
@@ -899,11 +906,31 @@ trotzdem angezeigt)</li>
 <div class="line-block">
 <div class="line">In das leere Feld kopiert man nun folgenden Text:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">log</span> <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">socket</span> <span class="n">options</span> <span class="o">=</span> <span class="n">TCP_NODELAY</span> <span class="n">IPTOS_LOWDELAY</span>
+<span class="n">read</span> <span class="n">raw</span> <span class="o">=</span> <span class="n">yes</span>
+<span class="n">write</span> <span class="n">raw</span> <span class="o">=</span> <span class="n">yes</span>
+<span class="n">oplocks</span> <span class="o">=</span> <span class="n">yes</span>
+<span class="nb">max</span> <span class="n">xmit</span> <span class="o">=</span> <span class="mi">65535</span>
+<span class="n">dead</span> <span class="n">time</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">getwd</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">yes</span>
+<span class="n">lpq</span> <span class="n">cache</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">unix</span> <span class="n">charset</span> <span class="o">=</span> <span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="freigaben">
 <span id="id3"></span><h2>Freigaben<a class="headerlink" href="#freigaben" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="line-block">
 <div class="line">In das leere Feld kopiert man nun folgenden Text:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span> <span class="n">USB</span><span class="o">-</span><span class="n">Stick</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">USB</span><span class="o">-</span><span class="n">Stick</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">gast</span> <span class="n">Gast</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">Gast</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">musik</span> <span class="n">Musik</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">Musik</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">filme</span> <span class="n">Filme</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">Filme</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">bilder</span> <span class="n">Bilder</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">Bilder</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">dokumente</span> <span class="n">Dokumente</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">Dokumente</span>
+</pre></div>
 </div>
 <p>Wir haben nun 6 Windows-Freigaben für unserem USB-Stick erzeugt.</p>
 <ul class="simple">
@@ -926,6 +953,9 @@ trotzdem angezeigt)</li>
 auf 0 gesetzt ist bzw. wird.)</div>
 <div class="line"><strong>Beispiel:</strong></div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span> <span class="n">USB</span><span class="o">-</span><span class="n">Stick</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">USB</span><span class="o">-</span><span class="n">Stick</span>
+</pre></div>
+</div>
 <blockquote>
 <div><div class="line-block">
 <div class="line"><strong>/var/media/ftp/USB</strong> dies ist der interner Pfad zum USB-Stick</div>
@@ -940,6 +970,9 @@ als Freigabe angezeigt wird.</div>
 </div></blockquote>
 <p>Da wir als Netbiosname <strong>NAS</strong> vergeben hatte, lautet der Zugriff von
 Windows auf die Freigabe nun:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>\\<span class="n">NAS</span>\<span class="n">USB</span><span class="o">-</span><span class="n">Stick</span>
+</pre></div>
+</div>
 <div class="figure" id="id19">
 <img alt="Freigabe am PC mounten" src="../../../../../_images/266.png" />
 <p class="caption"><span class="caption-text">Freigabe am PC mounten</span></p>
@@ -991,11 +1024,21 @@ AVM-Dienste</strong></div>
 <div class="line-block">
 <div class="line">In das leere Feld kopiert man nun folgenden Text:</div>
 </div>
-<ul class="simple">
-<li>Logging aktivieren = angehakt</li>
-<li>zusätzlich Protokoll-Log = leer</li>
-<li>Syslog = deaktiviert</li>
-<li>Datei = aktiviert mit folgendem Text:</li>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user_config_dir</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span><span class="o">/</span><span class="n">vsftp_user_conf</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first">Logging aktivieren = angehakt</p>
+</li>
+<li><p class="first">zusätzlich Protokoll-Log = leer</p>
+</li>
+<li><p class="first">Syslog = deaktiviert</p>
+</li>
+<li><p class="first">Datei = aktiviert mit folgendem Text:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span><span class="o">/</span><span class="n">logs</span><span class="o">/</span><span class="n">vsftpd</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <div class="figure" id="id21">
 <img alt="Zusätzliche Konfig. + Logging" src="../../../../../_images/268.png" />
@@ -1046,9 +1089,15 @@ FTP-Befehle
 Benutzer zu verbieten. Hierzu fügt man folgende Zeile in die Datei ein
 und entfernt die Befehle die der User nicht ausführen darf:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmds_allowed</span><span class="o">=</span><span class="n">ABOR</span><span class="p">,</span><span class="n">ACCT</span><span class="p">,</span><span class="n">ALLO</span><span class="p">,</span><span class="n">APPE</span><span class="p">,</span><span class="n">AUTH</span><span class="p">,</span><span class="n">CDUP</span><span class="p">,</span><span class="n">CWD</span><span class="p">,</span><span class="n">DELE</span><span class="p">,</span><span class="n">EPRT</span><span class="p">,</span><span class="n">EPSV</span><span class="p">,</span><span class="n">FEAT</span><span class="p">,</span><span class="n">HELP</span><span class="p">,</span><span class="n">LIST</span><span class="p">,</span><span class="n">MDTM</span><span class="p">,</span><span class="n">MKD</span><span class="p">,</span><span class="n">MODE</span><span class="p">,</span><span class="n">NLST</span><span class="p">,</span><span class="n">NOOP</span><span class="p">,</span><span class="n">OPTS</span><span class="p">,</span><span class="n">PASS</span><span class="p">,</span><span class="n">PASV</span><span class="p">,</span><span class="n">PBSZ</span><span class="p">,</span><span class="n">PORT</span><span class="p">,</span><span class="n">PROT</span><span class="p">,</span><span class="n">PWD</span><span class="p">,</span><span class="n">QUIT</span><span class="p">,</span><span class="n">REIN</span><span class="p">,</span><span class="n">REST</span><span class="p">,</span><span class="n">RETR</span><span class="p">,</span><span class="n">RMD</span><span class="p">,</span><span class="n">RNFR</span><span class="p">,</span><span class="n">RNTO</span><span class="p">,</span><span class="n">SITE</span><span class="p">,</span><span class="n">SMNT</span><span class="p">,</span><span class="n">STAT</span><span class="p">,</span><span class="n">STOR</span><span class="p">,</span><span class="n">STOU</span><span class="p">,</span><span class="n">STRU</span><span class="p">,</span><span class="n">SYST</span><span class="p">,</span><span class="n">TYPE</span><span class="p">,</span><span class="n">USER</span>
+</pre></div>
+</div>
 <p>So mit darf Paul Dateien auf den FTP kopieren und Verzeichnisse anlegen,
 jedoch diese nicht wieder löschen. Also muß folgendes in der Datei
 stehen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmds_allowed</span><span class="o">=</span><span class="n">ABOR</span><span class="p">,</span><span class="n">ACCT</span><span class="p">,</span><span class="n">ALLO</span><span class="p">,</span><span class="n">APPE</span><span class="p">,</span><span class="n">AUTH</span><span class="p">,</span><span class="n">CDUP</span><span class="p">,</span><span class="n">CWD</span><span class="p">,</span><span class="n">EPRT</span><span class="p">,</span><span class="n">EPSV</span><span class="p">,</span><span class="n">FEAT</span><span class="p">,</span><span class="n">HELP</span><span class="p">,</span><span class="n">LIST</span><span class="p">,</span><span class="n">MDTM</span><span class="p">,</span><span class="n">MKD</span><span class="p">,</span><span class="n">MODE</span><span class="p">,</span><span class="n">NLST</span><span class="p">,</span><span class="n">NOOP</span><span class="p">,</span><span class="n">OPTS</span><span class="p">,</span><span class="n">PASS</span><span class="p">,</span><span class="n">PASV</span><span class="p">,</span><span class="n">PBSZ</span><span class="p">,</span><span class="n">PORT</span><span class="p">,</span><span class="n">PROT</span><span class="p">,</span><span class="n">PWD</span><span class="p">,</span><span class="n">QUIT</span><span class="p">,</span><span class="n">REIN</span><span class="p">,</span><span class="n">REST</span><span class="p">,</span><span class="n">RETR</span><span class="p">,</span><span class="n">RNFR</span><span class="p">,</span><span class="n">RNTO</span><span class="p">,</span><span class="n">SITE</span><span class="p">,</span><span class="n">SMNT</span><span class="p">,</span><span class="n">STAT</span><span class="p">,</span><span class="n">STOR</span><span class="p">,</span><span class="n">STOU</span><span class="p">,</span><span class="n">STRU</span><span class="p">,</span><span class="n">SYST</span><span class="p">,</span><span class="n">TYPE</span><span class="p">,</span><span class="n">USER</span>
+</pre></div>
+</div>
 <blockquote>
 <div><div class="line-block">
 <div class="line"><strong>DELE</strong> (Delete file), <strong>RMD</strong> (Remove a directory) wurden aus dem
@@ -1109,11 +1158,32 @@ nichts am Bildschirm angezeigt, auch keine Sterne.</div>
 <p>Hierzu werden nun folgende Befehle in Putty eingegeben (Bitte auf Groß
 und Kleinschreibung achten):</p>
 <p>admin</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adduser</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span> <span class="n">admin</span>
+</pre></div>
+</div>
 <p>paul</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adduser</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span><span class="o">/</span><span class="n">data</span> <span class="n">paul</span>
+</pre></div>
+</div>
 <p>mary</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adduser</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span><span class="o">/</span><span class="n">data</span> <span class="n">mary</span>
+</pre></div>
+</div>
 <p>gast</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adduser</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">gast</span> <span class="n">gast</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">So sollte z.B. die Meldung für admin im Putty-Fenster aussehen:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span> <span class="c1"># adduser -h /var/media/ftp/USB admin</span>
+<span class="n">adduser</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">USB</span><span class="p">:</span> <span class="n">Operation</span> <span class="ow">not</span> <span class="n">permitted</span>
+<span class="n">Changing</span> <span class="n">password</span> <span class="k">for</span> <span class="n">admin</span>
+<span class="n">New</span> <span class="n">password</span><span class="p">:</span>
+<span class="n">Bad</span> <span class="n">password</span><span class="p">:</span> <span class="n">too</span> <span class="n">short</span>
+<span class="n">Retype</span> <span class="n">password</span><span class="p">:</span>
+<span class="n">Password</span> <span class="k">for</span> <span class="n">admin</span> <span class="n">changed</span> <span class="n">by</span> <span class="n">root</span>
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">Die Meldung <code class="docutils literal notranslate"><span class="pre">Operation</span> <span class="pre">not</span> <span class="pre">permitted</span></code> kommt, wenn es sich um ein
@@ -1129,6 +1199,9 @@ wieder zweimal nach dem neuen Paßwort gefragt.</div>
 wieder gespeichert werden.</div>
 <div class="line">Anzeigen kann man die Datei mit dem Befehl <strong>cat /var/tmp/passwd</strong>.</div>
 <div class="line">Nun melden wir uns noch mit folgendem Befehl von der Putty Konsole ab:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exit</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="einstellungsseite">
@@ -1251,6 +1324,9 @@ keine weiteren Kosten!</p>
 <a class="reference external" href="http://www.winscp.net/">​WinSCP</a>.</div>
 <div class="line">Ihr benötigt die IP-Adresse Eures virtuellen Freetz-Linux, diese
 erfährt man durch</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ifconfig</span>
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">Nach Start von WinSCP kann man im Ameldefenster die erforderlichen

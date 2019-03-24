@@ -34,24 +34,24 @@ Creating a Feetz Image with Radvd
 | After the following step you can configure the packages you want to
   have included in your image.
 
-.. code:: wiki
+.. code:: bash
 
    make menuconfig
 
 Make sure the following is selected:
 
-.. code:: wiki
+.. code:: bash
 
    [*] Show advanced options
    [*]   Enable IPv6 support
 
-.. code:: wiki
+.. code:: bash
 
    Package selection  --->  Standard packages  --->  [*] radvd (router advertisement daemon)
 
 I also advice to add the following for easier troubleshooting:
 
-.. code:: wiki
+.. code:: bash
 
    Advanced options  ---> BusyBox options  --->    IPv6 Options  --->   [*] ping6 command
    Advanced options  --->   BusyBox options  --->    IPv6 Options  --->   [*] traceroute6 command
@@ -69,7 +69,7 @@ I also advice to add the following for easier troubleshooting:
 With the following commands executed before make you can have this
 enhancement included also:
 
-.. code:: wiki
+.. code:: bash
 
    cd ~/freetz-1.2/make/radvd/files/root/etc/default.radvd/
    wget "/browser/trunk/make/radvd/files/root/etc/default.radvd/radvd.cfg?rev=9419&format=txt" -O radvd.cfg
@@ -121,7 +121,7 @@ WinXP Clients
 | With my WinXP system I had no problems to obtain an IPv6. All I had to
   do was to was to enable IPv6 with:
 
-.. code:: wiki
+.. code:: bash
 
    netsh interface ipv6 install
 
@@ -129,7 +129,7 @@ WinXP Clients
   temporary one.
 | You can also see them with:
 
-.. code:: wiki
+.. code:: bash
 
    netsh interface ipv6 show address
 
@@ -151,7 +151,7 @@ Win7 Clients
 -  | next use the following commands (note I used both commands without
      verifying correctly which one was needed):
 
-   .. code:: wiki
+   .. code:: bash
 
         netsh int ipv6 reset c:\ipv6_reset.log
         netsh interface isatap set state enabled

@@ -22,14 +22,14 @@ Aktuelle Liste unterstützter Boxen mit
 
 Auschecken aus SVN (zuvor ggf ``umask 022`` nicht vergessen!):
 
-.. code:: wiki
+.. code:: bash
 
    $ svn co http://svn.freetz.org/trunk freetz-devel                 <--- freetz-trunk: Lokale Kopie des SVN-Repositorys
    $ svn co http://svn.freetz.org/trunk freetz-devel_r7843 -r 7843   <--- Bestimmte Revision auschecken (hier: 7843)
 
 Auschecken aus Git:
 
-.. code:: wiki
+.. code:: bash
 
    $ git clone https://github.com/Freetz/freetz.git freetz-devel <--- freetz-git: Lokale Kopie des Git-Repositorys
 
@@ -56,7 +56,7 @@ Updates
 Aktualisieren (Update) eines vorhandenen lokalen SVN-Repositorys (hier:
 Entwicklerversion):
 
-.. code:: wiki
+.. code:: bash
 
    $ cd freetz-devel
    $ svn up         <--- Update auf aktuelle Revision
@@ -64,7 +64,7 @@ Entwicklerversion):
 
 Update eines lokalen Git-Repositorys (hier: Entwicklerversion):
 
-.. code:: wiki
+.. code:: bash
 
    $ cd freetz-devel
    $ git pull
@@ -88,7 +88,7 @@ Je nach Gerätetyp wird eine der nachstehenden Versionen benötigt:
 mit
 `Firmware-Version </browser/branches/freetz-stable-2.0/FIRMWARES#L3>`__\ `​ </export/HEAD/branches/freetz-stable-2.0/FIRMWARES#L3>`__)
 
-.. code:: wiki
+.. code:: bash
 
    $ svn co http://svn.freetz.org/branches/freetz-stable-2.0
 
@@ -96,7 +96,7 @@ mit
 Firmware-Update mehr von AVM erhalten (mehr Infos
 `​hier <http://www.ip-phone-forum.de/showthread.php?t=135253>`__)
 
-.. code:: wiki
+.. code:: bash
 
    $ svn co http://svn.freetz.org/tags/ds-0.2.9-p8
 

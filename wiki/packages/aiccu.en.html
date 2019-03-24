@@ -583,8 +583,22 @@ probably need to request is an <a class="reference external" href="http://www.si
 <div class="line">After the following step you can configure the packages you want to
 have included in your image.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">menuconfig</span>
+</pre></div>
+</div>
 <p>Make sure the following is selected:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Show</span> <span class="n">advanced</span> <span class="n">options</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span>   <span class="n">Enable</span> <span class="n">IPv6</span> <span class="n">support</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Package</span> <span class="n">selection</span>  <span class="o">---&gt;</span>  <span class="n">Standard</span> <span class="n">packages</span>  <span class="o">---&gt;</span>  <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">aiccu</span> <span class="o">-</span> <span class="n">aiccu</span> <span class="o">-</span> <span class="n">ipv6</span> <span class="n">connectivity</span> <span class="kn">from</span> <span class="nn">sixxs</span>
+</pre></div>
+</div>
 <p>I also advice to add the following for easier troubleshooting:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Advanced</span> <span class="n">options</span>  <span class="o">---&gt;</span> <span class="n">BusyBox</span> <span class="n">options</span>  <span class="o">---&gt;</span>    <span class="n">IPv6</span> <span class="n">Options</span>  <span class="o">---&gt;</span>   <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">ping6</span> <span class="n">command</span>
+<span class="n">Advanced</span> <span class="n">options</span>  <span class="o">---&gt;</span>   <span class="n">BusyBox</span> <span class="n">options</span>  <span class="o">---&gt;</span>    <span class="n">IPv6</span> <span class="n">Options</span>  <span class="o">---&gt;</span>   <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">traceroute6</span> <span class="n">command</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="setup-in-freetz-web-interface">
 <span id="setupinfreetzweb-interface"></span><h2>Setup in Freetz web-interface<a class="headerlink" href="#setup-in-freetz-web-interface" title="Link zu dieser Überschrift">¶</a></h2>
@@ -614,7 +628,13 @@ see that you cannot use the full bandwidth, and that the web-inteface is
 becoming slower to respond if you get near the 10Mbit/s. This is because
 you are running out of CPU resources.</p>
 <p>You can verify this with the following command:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uptime</span>
+</pre></div>
+</div>
 <p>Or:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">loadavg</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">If you see an avarage load value of higher than 1:00 you know that it
 is the CPU limitation you are running into.</div>
@@ -622,6 +642,9 @@ is the CPU limitation you are running into.</div>
 <a class="reference external" href="http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages">​here</a>.</div>
 </div>
 <p>You can also use the following command:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">top</span>
+</pre></div>
+</div>
 <p>This will give you more than the load avarages, and refreshes the values
 every 5 seconds.</p>
 </div>

@@ -668,6 +668,17 @@ des Orders muss „pluginName-Version“ lauten. (Version=0.0.01)</p>
 </div>
 </li>
 <li><p class="first">Erstelle in diesem Ordner die Date Makefile mit dem Inhalt:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>BINARY=plugin_name
+OBJS=plugin_name.o
+
+all: $(BINARY)
+
+$(BINARY): $(OBJS)
+
+clean:
+    $(RM) $(BINARY) $(OBJS)
+</pre></div>
+</div>
 </li>
 <li><p class="first">wechsle eine Verzeichnisebende runter</p>
 </li>

@@ -563,18 +563,36 @@ die für den Push-Service eingerichtet sind (falls man nicht beim Aufruf
 etwas anderes befiehlt (mailer-Optionen)). Der Push-Service selbst kann
 ruhig ausgeschaltet bleiben, wichtig sind die Einstellungen für
 Adressen, Mailserver &amp; Co. Beispiele zum Einsatz in Listeners:</p>
-<ul class="simple">
-<li>Mailadressen, Servereinstellungen, Passwörter &amp; Co. werden aus der
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mailmessage</span>
+<span class="n">mailmessage</span> <span class="o">-</span><span class="n">t</span> <span class="n">me</span><span class="nd">@my</span><span class="o">.</span><span class="n">self</span>
+<span class="n">mailmessage</span> <span class="o">-</span><span class="n">s</span> <span class="s2">&quot;Oh, oh ... ($SOURCE)&quot;</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first">Mailadressen, Servereinstellungen, Passwörter &amp; Co. werden aus der
 Konfiguration des Push Service der FritzBox übernommen. Einzelne
 Teile können durch Optionen überschrieben werden (im Beispiel zum
-Beispiel die Zieladresse mit <code class="docutils literal notranslate"><span class="pre">-t</span></code>).</li>
-<li>Die Optionen werden an <code class="docutils literal notranslate"><span class="pre">mail</span></code> durchgereicht; diese wiederum
+Beispiel die Zieladresse mit <code class="docutils literal notranslate"><span class="pre">-t</span></code>).</p>
+</li>
+<li><p class="first">Die Optionen werden an <code class="docutils literal notranslate"><span class="pre">mail</span></code> durchgereicht; diese wiederum
 größtenteils an <code class="docutils literal notranslate"><span class="pre">mailer</span></code>. Deswegen können folgende Optionen
-verwendet werden:</li>
-<li>Zur Anpassung der Mails: siehe <code class="docutils literal notranslate"><span class="pre">mail_subject</span></code> und <code class="docutils literal notranslate"><span class="pre">mail_body</span></code> in
+verwendet werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">s</span> <span class="n">STRING</span>          <span class="o">-</span> <span class="n">Subject</span><span class="o">.</span> <span class="p">(</span><span class="s2">&quot;FRITZ!Box&quot;</span><span class="p">)</span>
+<span class="o">-</span><span class="n">f</span> <span class="n">STRING</span>          <span class="o">-</span> <span class="n">From</span><span class="o">.</span> <span class="p">(</span><span class="n">NULL</span><span class="p">)</span>
+<span class="o">-</span><span class="n">t</span> <span class="n">STRING</span>          <span class="o">-</span> <span class="n">To</span><span class="o">.</span> <span class="p">(</span><span class="n">NULL</span><span class="p">)</span>
+<span class="o">-</span><span class="n">m</span> <span class="n">STRING</span>          <span class="o">-</span> <span class="n">mailserver</span><span class="o">.</span> <span class="p">(</span><span class="n">NULL</span><span class="p">)</span>
+<span class="o">-</span><span class="n">a</span> <span class="n">STRING</span>          <span class="o">-</span> <span class="n">authname</span><span class="o">.</span> <span class="p">(</span><span class="n">NULL</span><span class="p">)</span>
+<span class="o">-</span><span class="n">w</span> <span class="n">STRING</span>          <span class="o">-</span> <span class="n">passwd</span><span class="o">.</span> <span class="p">(</span><span class="n">NULL</span><span class="p">)</span>
+<span class="o">-</span><span class="n">d</span> <span class="n">STRING</span>          <span class="o">-</span> <span class="n">attachment</span><span class="o">.</span> <span class="p">(</span><span class="n">NULL</span><span class="p">)</span>
+<span class="o">-</span><span class="n">i</span> <span class="n">STRING</span>          <span class="o">-</span> <span class="n">inline</span> <span class="n">attachment</span><span class="o">.</span> <span class="p">(</span><span class="n">NULL</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Zur Anpassung der Mails: siehe <code class="docutils literal notranslate"><span class="pre">mail_subject</span></code> und <code class="docutils literal notranslate"><span class="pre">mail_body</span></code> in
 <code class="docutils literal notranslate"><span class="pre">mail.sh</span></code> (zum Überschreiben am besten
 <code class="docutils literal notranslate"><span class="pre">/tmp/flash/callmonitor/actions.local.d/</span></code> verwenden, siehe
-<a class="reference external" href="../adapt_messages.html">Anpassen der Benachrichtigungstexte</a>).</li>
+<a class="reference external" href="../adapt_messages.html">Anpassen der Benachrichtigungstexte</a>).</p>
+</li>
 </ul>
 <div class="section" id="mail">
 <h2>mail<a class="headerlink" href="#mail" title="Link zu dieser Überschrift">¶</a></h2>
@@ -597,6 +615,9 @@ An ihre Stelle tritt eine allgemeine Benachrichtigungsfunktion per
 E-Mail (<code class="docutils literal notranslate"><span class="pre">mailmessage</span></code>), die (auch) in Kombination mit dem Ereignis
 <code class="docutils literal notranslate"><span class="pre">in:cancel</span></code> genutzt werden kann, um bei verpassten Anrufen eine Mail
 zu verschicken:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span><span class="p">:</span><span class="n">cancel</span>   <span class="o">^</span>   <span class="o">^</span>   <span class="n">mailmessage</span>
+</pre></div>
+</div>
 <p>Das schöne ist, dass die Mail sofort rausgeschickt wird, wenn der
 Gesprächspartner aufgibt; es gibt keine Wartezeit von einer Minute mehr
 wie in den Vorversionen. Außerdem kann jetzt zuverlässiger bestimmt

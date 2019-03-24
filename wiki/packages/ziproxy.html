@@ -578,6 +578,9 @@ countries (typical in internet cafes).</p>
 <p>Relatively heavy.</p>
 <p>It may be necessary to disable the watchdog by adding this line to for
 example <em>rc.custom</em>:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;disable&quot;</span><span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">watchdog</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="memory-usage">
 <span id="memoryusage"></span><h2>Memory usage<a class="headerlink" href="#memory-usage" title="Link zu dieser Überschrift">¶</a></h2>
@@ -590,6 +593,11 @@ example <em>rc.custom</em>:</p>
 <div class="section" id="url-no-processing-list">
 <span id="urlnoprocessinglist"></span><h2>URL no processing list<a class="headerlink" href="#url-no-processing-list" title="Link zu dieser Überschrift">¶</a></h2>
 <p>You want probably at least:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mt</span><span class="o">*.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="o">/*</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">khm</span><span class="o">*.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="o">/*</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">maps</span><span class="o">.</span><span class="n">gstatic</span><span class="o">.</span><span class="n">com</span><span class="o">/*</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="url-deny-list">
 <span id="urldenylist"></span><h2>URL deny list<a class="headerlink" href="#url-deny-list" title="Link zu dieser Überschrift">¶</a></h2>
@@ -597,7 +605,22 @@ example <em>rc.custom</em>:</p>
 <img alt="" src="../../_images/218.png" />
 </div>
 <p>Something like:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//*.</span><span class="n">doubleclick</span><span class="o">.</span><span class="n">net</span><span class="o">/*</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//*.</span><span class="n">googleadservices</span><span class="o">.</span><span class="n">com</span><span class="o">/*</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//*.</span><span class="n">google</span><span class="o">-</span><span class="n">analytics</span><span class="o">.</span><span class="n">com</span><span class="o">/*</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//*.</span><span class="n">googlesyndication</span><span class="o">.</span><span class="n">com</span><span class="o">/*</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">adserver</span><span class="o">.*/*</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ads</span><span class="o">.*/*</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ad</span><span class="o">.*/*</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//*.</span><span class="n">facebook</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">plugins</span><span class="o">*</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//*.</span><span class="n">facebook</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">widgets</span><span class="o">*</span>
+<span class="n">http</span><span class="p">:</span><span class="o">//*.</span><span class="n">fbcdn</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">ads</span><span class="o">*/*</span>
+</pre></div>
+</div>
 <p>and maybe:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//*/*.</span><span class="n">swf</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="links">
 <span id="id1"></span><h2>Links<a class="headerlink" href="#links" title="Link zu dieser Überschrift">¶</a></h2>

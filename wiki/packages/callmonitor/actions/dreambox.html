@@ -563,6 +563,9 @@
 <span id="id1"></span><h1>DreamBox<a class="headerlink" href="#dreambox" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="dreambox-mit-enigma-1">
 <span id="dreamboxmitenigma1"></span><h2>Dreambox mit Enigma 1<a class="headerlink" href="#dreambox-mit-enigma-1" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dreammessage</span> <span class="p">[</span><span class="n">user</span><span class="p">[:</span><span class="n">password</span><span class="p">]</span><span class="o">@</span><span class="p">]</span><span class="n">host</span><span class="p">[:</span><span class="n">port</span><span class="p">]</span> <span class="p">[</span><span class="s2">&quot;Alternative Nachricht&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
 <div class="figure" id="id2">
 <img alt="CallMonitor: Dreambox Auth abschalten" src="../../../../_images/1.jpg" />
 <p class="caption"><span class="caption-text">CallMonitor: Dreambox Auth abschalten</span></p>
@@ -583,6 +586,9 @@ usw.</p>
 <p>Desweiteren gibt es drei Umgebungsvariablen, die das Verhalten von
 <code class="docutils literal notranslate"><span class="pre">dreammessage</span></code> beeinflussen. Sie sind hier in einem typischen Aufruf
 mit ihren Standardwerten gezeigt:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DREAM_TIMEOUT</span><span class="o">=</span><span class="mi">10</span> <span class="n">DREAM_CAPTION</span><span class="o">=</span><span class="s2">&quot;Telefonanruf&quot;</span> <span class="n">DREAM_ICON</span><span class="o">=</span><span class="mi">1</span> <span class="n">dreammessage</span> <span class="n">box1</span>
+</pre></div>
+</div>
 <div class="section" id="standby-check">
 <span id="standbycheck"></span><h3>StandBy Check<a class="headerlink" href="#standby-check" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Befindet sich die zu benachrichtigende Dreambox im StandBy, werden die
@@ -621,10 +627,16 @@ Thread</a></p>
 </div>
 <div class="section" id="dreambox-mit-enigma-2">
 <span id="dreamboxmitenigma2"></span><h2>DreamBox mit Enigma 2<a class="headerlink" href="#dreambox-mit-enigma-2" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dream2message</span> <span class="p">(</span><span class="n">default_dream2message</span><span class="p">)</span>
+</pre></div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">DREAM_TIMEOUT</span></code> und <code class="docutils literal notranslate"><span class="pre">DREAM_ICON</span></code> werden auch hier unterstützt.</p>
 <div class="line-block">
 <div class="line">Beispiel für ein Popup das nur den Namen (sofern in der Callers
 vorhanden) und die Telefonnummer des Anrufers anzeigt:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span><span class="p">:</span><span class="n">request</span> <span class="o">^</span> <span class="o">^</span> <span class="n">dream2message</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.25</span> <span class="s2">&quot;$</span><span class="si">{SOURCE_NAME}</span><span class="s2"> $</span><span class="si">{SOURCE}</span><span class="s2"> ruft an.&quot;</span>
+</pre></div>
 </div>
 </div>
 </div>

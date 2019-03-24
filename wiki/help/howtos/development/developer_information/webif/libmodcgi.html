@@ -573,6 +573,9 @@
 <h1>libmodcgi.sh<a class="headerlink" href="#libmodcgi-sh" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Diese Bibliothek dient der Erzeugung von Webseiten innerhalb des
 Freetz-Webinterface. Einzubinden durch</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libmodcgi</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
 <div class="section" id="cgi">
 <h2>cgi<a class="headerlink" href="#cgi" title="Link zu dieser Überschrift">¶</a></h2>
 <p><strong>Diese Schnittstelle ist in Entwicklung und kann sich täglich ändern.</strong></p>
@@ -609,6 +612,9 @@ geschrieben, was an den Anfang einer Seite gehört.)</p>
 <p>Alle Seiten im Freetz-Webinterface sind momentan in ISO-8859-1 (Latin 1)
 kodiert.</p>
 <p>Aufruf:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cgi_begin</span> <span class="n">TITLE</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>TITEL ist der bereits HTML-kodierte Titel der Seite</li>
 </ul>
@@ -622,6 +628,9 @@ kodiert.</p>
 <p>Startet einen Abschnitt mit dem Titel TITLE. Wie ein „Abschnitt“ im
 Detail in der HTML-Ausgabe umgesetzt wird, obliegt dem gewählten Skin;
 garantiert wird jedoch ein umgebendes <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;section&quot;&gt;</span></code></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sec_begin</span> <span class="n">TITLE</span> <span class="p">[</span><span class="n">ID</span><span class="p">]</span>
+</pre></div>
+</div>
 <p>Optional kann eine ID angegeben werden, um sich auf den Abschnitt
 beziehen zu können. Auf HTML-Ebene wird dies die ID des genannten
 div-Elements.</p>
@@ -648,6 +657,12 @@ log_output | html
 <h2>href<a class="headerlink" href="#href" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Erzeugt einen Link zu einer dynamisch registrierten Seite im
 Freetz-Webinterface: Die Argumente sind denen von <code class="docutils literal notranslate"><span class="pre">modreg</span></code> ähnlich:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">href</span> <span class="n">file</span> <span class="o">&lt;</span><span class="n">pkg</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nb">id</span><span class="o">&gt;</span>
+<span class="n">href</span> <span class="n">extra</span> <span class="o">&lt;</span><span class="n">pkg</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">cgi</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+<span class="n">href</span> <span class="n">status</span> <span class="o">&lt;</span><span class="n">pkg</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">cgi</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="n">href</span> <span class="n">cgi</span> <span class="o">&lt;</span><span class="n">pkg</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">key</span><span class="o">-</span><span class="n">value</span><span class="o">&gt;</span><span class="p">]</span><span class="o">...</span>
+</pre></div>
+</div>
 <p>Typischer Einsatz in einem Paket foo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">&lt;&lt;</span> <span class="n">EOF</span>
   <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;$(href file foo advanced)&quot;</span><span class="o">&gt;</span><span class="n">Konfigurationsdatei</span> <span class="n">bearbeiten</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
@@ -675,6 +690,10 @@ wurde.)</p>
 </div>
 <div class="section" id="cgi-error-print-error">
 <span id="cgi-errorprint-error"></span><h2>cgi_error, print_error<a class="headerlink" href="#cgi-error-print-error" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cgi_error</span> <span class="n">MESSAGE</span>
+<span class="n">print_error</span> <span class="n">MESSAGE</span>
+</pre></div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">cgi_error</span></code> erzeugt eine komplette Fehlerseite (inkl.
 cgi_begin/cgi_end) mit der angegeben Meldung. <code class="docutils literal notranslate"><span class="pre">print_error</span></code> erzeugt
 nur die Fehlermeldung und kann innerhalb einer bestehenden Seite genutzt
@@ -685,7 +704,16 @@ werden.</p>
 <p>Splits PATH_INFO into segments at „/“; returns the segments in the given
 variables. If there are not more variables than segments, the final
 variable will receive the remaining unsplit PATH_INFO.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PATH_INFO</span><span class="o">=/</span><span class="n">foo</span><span class="o">/</span><span class="n">bar</span><span class="o">/</span><span class="n">baz</span>
+<span class="n">path_info</span> <span class="n">package</span> <span class="nb">id</span> <span class="n">rest</span>
+</pre></div>
+</div>
 <p>will set</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span><span class="o">=</span><span class="n">foo</span>
+<span class="nb">id</span><span class="o">=</span><span class="n">bar</span>
+<span class="n">rest</span><span class="o">=/</span><span class="n">baz</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="valid">
 <h2>valid<a class="headerlink" href="#valid" title="Link zu dieser Überschrift">¶</a></h2>

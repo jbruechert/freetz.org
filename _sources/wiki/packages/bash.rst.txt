@@ -33,7 +33,7 @@ angezeigt wird. Dazu muss man die Variable PS1 anpassen, was man sehr
 bequem über das Freetz-WebGUI unter Einstellungen/.profile machen kann.
 Die Bash kennt für den Prompt u.a. folgende Variablen für PS1:
 
-.. code:: wiki
+.. code:: bash
 
    \h : Host name
    \H : Host name inklusive Domain
@@ -48,13 +48,13 @@ Die Bash kennt für den Prompt u.a. folgende Variablen für PS1:
 So lassen sich im Prompt z.B. auch noch User- und Hostname zusätzlich
 zum aktuellen Pfad anzeigen:
 
-.. code:: wiki
+.. code:: bash
 
    export PS1="\u@\h \w \$ "
 
 Das Resultat mit o.g. Beispiel sieht dann so aus:
 
-.. code:: wiki
+.. code:: bash
 
    root@fb1 /var/mod/root $
 
@@ -71,7 +71,7 @@ Das Ganze funktioniert sowohl für bash (mit diesem Paket installiert)
 als auch für ash (Standard in Freetz, ohne zusätzliches Paket), wobei
 ash nur folgendes unterstützt:
 
-.. code:: wiki
+.. code:: bash
 
    \h : Host name
    \u : User Benutzerkennung

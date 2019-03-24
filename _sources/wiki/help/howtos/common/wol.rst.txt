@@ -41,7 +41,7 @@ Um nicht über die Fritzbox-Weboberfläche arbeiten zu müssen, sondern
 schnell per Kommandozeile einen PC aufzuwecken, kann folgendes Skript
 verwendet werden (einfach in die ``rc.custom`` eintragen):
 
-.. code:: wiki
+.. code:: bash
 
    # Skript für 'wakeup HOSTNAME' erstellen
    # WAKEUPPATH should be root's homedirectory, if you want to login via

@@ -611,6 +611,49 @@ einen kleinen Speicherbereich für globale Einstellungen, welche absolut
 erforderlich sind, damit die Box überhaupt funktioniert. Das ist ja
 bekannt, aber zur Auffrischung nochmals die (mit „#“ anonymisierte)
 Ausgabe, generiert auf meiner 7170 mit Kernel 2.6:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /proc/sys/urlader/environment
+HWRevision      94.1.1.0
+ProductID       Fritz_Box_7170
+SerialNumber    0000000000000000
+annex   B
+autoload        yes
+bootloaderVersion       1.153
+bootserport     tty0
+bluetooth       ##:##:##:##:##:##
+cpufrequency    211968000
+firstfreeaddress        0x946AE530
+firmware_version        1und1
+firmware_info   29.04.29
+flashsize       0x00800000
+maca    ##:##:##:##:##:##
+macb    ##:##:##:##:##:##
+macwlan ##:##:##:##:##:##
+macdsl  ##:##:##:##:##:##
+memsize 0x02000000
+modetty0        38400,n,8,1,hw
+modetty1        38400,n,8,1,hw
+mtd0    0x90000000,0x90000000
+mtd1    0x90010000,0x90780000
+mtd2    0x90000000,0x90010000
+mtd3    0x90780000,0x907C0000
+mtd4    0x907C0000,0x90800000
+my_ipaddress    192.168.178.1
+prompt  AVM_Ar7
+ptest
+reserved        ##:##:##:##:##:##
+req_fullrate_freq       125000000
+sysfrequency    125000000
+urlader-version 1153
+usb_board_mac   ##:##:##:##:##:##
+usb_rndis_mac   ##:##:##:##:##:##
+usb_device_id   0x3D00
+usb_revision_id 0x0200
+usb_device_name USB DSL Device
+usb_manufacturer_name   AVM
+wlan_key        ################
+wlan_cal        ####,####,####,####,####,####,####,####,####
+</pre></div>
+</div>
 <p>Das Schöne an diesem Environment ist, dass es nicht nur lesbar, sondern
 auch (teilweise) beschreibbar ist. Das wird gern verwendet, um
 Anpassungen am Annex oder am Branding vorzunehmen, insbesondere bei

@@ -3,7 +3,7 @@
 Einfache TCP-Verbindungen (rawmsg)
 ==================================
 
-.. code:: wiki
+.. code:: bash
 
      Usage: rawmsg [OPTION]... <HOST> <template> [<param>]...
             rawmsg [OPTION]... -t <template> <host> [<param>]...

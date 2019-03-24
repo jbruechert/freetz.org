@@ -10,7 +10,7 @@ nur, dass dem so sei, gibt aber keine Details bekannt.
 
 Beispiel:
 
-.. code:: wiki
+.. code:: bash
 
    # lsof /var
    COMMAND     PID     USER   FD   TYPE DEVICE SIZE/OFF     NODE NAME

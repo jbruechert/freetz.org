@@ -609,6 +609,12 @@ möglich.</p>
 <span id="id5"></span><h3>Standard<a class="headerlink" href="#standard1" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Mit dem Trac-Wiki Standard (in gepatchter Form <img alt=";)" src="../../../_images/smiley-wink1.png" />) ist dies am
 einfachsten möglich:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|||</span>   <span class="o">|||</span> <span class="mi">1</span> <span class="o">|||</span> <span class="mi">2</span> <span class="o">|||</span> <span class="mi">3</span> <span class="o">||</span>
+<span class="o">|||</span> <span class="n">A</span> <span class="o">||</span>  <span class="n">X</span> <span class="o">||</span>    <span class="o">||</span>  <span class="n">X</span> <span class="o">||</span>
+<span class="o">|||</span> <span class="n">B</span> <span class="o">||</span>    <span class="o">||</span>  <span class="n">X</span> <span class="o">||</span>    <span class="o">||</span>
+<span class="o">|||</span> <span class="n">C</span> <span class="o">||</span>  <span class="n">X</span> <span class="o">||</span>  <span class="n">X</span> <span class="o">||</span>    <span class="o">||</span>
+</pre></div>
+</div>
 <p>wird zu</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -644,6 +650,21 @@ einfachsten möglich:</p>
 <div class="section" id="rst1">
 <span id="id6"></span><h3>RST<a class="headerlink" href="#rst1" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Hier sieht das ein wenig anders aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{{</span>
+<span class="c1">#!rst</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+   <span class="n">Inputs</span>     <span class="n">Output</span>
+<span class="o">------------</span>  <span class="o">------</span>
+  <span class="n">A</span>      <span class="n">B</span>    <span class="n">A</span> <span class="ow">or</span> <span class="n">B</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+<span class="kc">False</span>  <span class="kc">False</span>  <span class="kc">False</span>
+<span class="kc">True</span>   <span class="kc">False</span>  <span class="kc">True</span>
+<span class="kc">False</span>  <span class="kc">True</span>   <span class="kc">True</span>
+<span class="kc">True</span>   <span class="kc">True</span>   <span class="kc">True</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+<span class="p">}}}</span>
+</pre></div>
+</div>
 <p>Wird zu</p>
 <p>Inputs</p>
 <p>Output</p>
@@ -670,6 +691,19 @@ zwei aufgezeigt werden sollen:</p>
 <div class="section" id="einfaches-beispiel">
 <span id="einfachesbeispiel"></span><h4>Einfaches Beispiel<a class="headerlink" href="#einfaches-beispiel" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Gibt man folgendes ein:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>{{{
+#!mediawiki
+{|class=&quot;table&quot;
+|-
+! Überschrift 1. Spalte
+! Überschrift 2. Spalte
+|-
+| Inhalt 1.Zeile 1.Spalte
+| Inhalt 1.Zeile 2.Spalte
+|}
+}}}
+</pre></div>
+</div>
 <p>kommt dabei das heraus:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -693,6 +727,26 @@ zwei aufgezeigt werden sollen:</p>
 <p>Zu guter Letzt ein leicht komplexeres Beispiel, bei dem einige
 Formatierungen (Hintergrund-Farbe etc.) explizit mit vorgegeben, und
 auch ein paar Zellen verbunden werden. Eingegeben wurde also:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>{{{
+#!mediawiki
+{|border=&quot;1&quot; cellpadding=&quot;2px&quot; style=&quot;border-collapse:collapse;border:1px solid #8cacbb;border-width:1px;&quot;
+|-
+!background-color=&quot;#ff0&quot;|&#39;&#39;&#39;Überschrift&#39;&#39;&#39;
+!background-color=&quot;#ff0&quot;|&#39;&#39;&#39;Zweite Überschrift&#39;&#39;&#39;
+|-
+| Inhalt Zelle 1-1
+| Inhalt Zelle 1-2
+|-
+| colspan=&quot;2&quot; align=&quot;center&quot;|Verbundene Zellen zentriert
+|-
+| Inhalt Zelle 3-1
+| rowspan=&quot;2&quot;|Verbundene Zelle
+|-
+| Inhalt Zelle 4-1
+|}
+}}}
+</pre></div>
+</div>
 <p>Und dabei kam folgendes heraus:</p>
 <p><strong>Überschrift</strong></p>
 <p><strong>Zweite Überschrift</strong></p>

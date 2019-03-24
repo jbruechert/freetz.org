@@ -615,6 +615,9 @@ Herunterfahren des Rechners hat):</li>
 <li>Füge als abschließende Konfigurationsmaßnahme auf der Fritzbox
 folgende Zeile zu den Listenern des Callmonitors hinzu:</li>
 </ul>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span><span class="p">:</span><span class="n">request</span> <span class="o">^&lt;</span><span class="n">abgangsrufnummer</span><span class="o">&gt;</span> <span class="o">^&lt;</span><span class="n">eingangsrufnummer</span><span class="o">&gt;</span> <span class="n">HOME</span><span class="o">=/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span> <span class="o">&amp;&amp;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">shutdown_linuxrechner</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="konfiguration-der-fritzbox-fur-herunterzufahrenden-windows-rechner">
 <span id="konfigurationderfritzboxfurherunterzufahrendenwindows-rechner"></span><h3>Konfiguration der Fritzbox für herunterzufahrenden Windows-Rechner<a class="headerlink" href="#konfiguration-der-fritzbox-fur-herunterzufahrenden-windows-rechner" title="Link zu dieser Überschrift">¶</a></h3>
@@ -627,6 +630,9 @@ erzeugen, &lt;benutzername&gt; durch den Windows-Benutzernamen ersetzen:</p>
 </div>
 </li>
 <li><p class="first">Folgende Zeile zu den Listenern des Callmonitors hinzufügen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span><span class="p">:</span><span class="n">request</span> <span class="o">^&lt;</span><span class="n">abgangsrufnummer</span><span class="o">&gt;</span> <span class="o">^&lt;</span><span class="n">eingangsrufnummer</span><span class="o">&gt;</span> <span class="n">HOME</span><span class="o">=/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span> <span class="o">&amp;&amp;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">shutdown_windowsrechner</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
 </li>
 </ul>
 </div>
@@ -648,15 +654,24 @@ Benutzer die Rechte hat, den Rechner runterzufahren):</p>
 </div>
 <div class="section" id="konfiguration-des-herunterzufahrenden-windows-rechners-getestet-unter-windows-xp">
 <span id="konfigurationdesherunterzufahrendenwindows-rechnersgetestetunterwindowsxp"></span><h2>Konfiguration des herunterzufahrenden Windows-Rechners (getestet unter Windows XP)<a class="headerlink" href="#konfiguration-des-herunterzufahrenden-windows-rechners-getestet-unter-windows-xp" title="Link zu dieser Überschrift">¶</a></h2>
-<ul class="simple">
-<li>Public-Key von Fritzbox auf Zielrechner kopieren, in
+<ul>
+<li><p class="first">Public-Key von Fritzbox auf Zielrechner kopieren, in
 „authorized_keys“ umbenennen und im Ordner c:Dokumente und
 Einstellungenbenutzername.ssh\ ablegen. Auf dem Rechner des Autors
 musste der Ordner (des vorangestellten Punktes wegen) im Terminal
-angelegt werden (mkdir .ssh).</li>
-<li><a class="reference external" href="http://sshwindows.sourceforge.net/">​Openssh</a> installieren.</li>
-<li>Konfigurationsdatei c:programmeopensshetcsshd_config anpassen.
-Folgende Werte korrigieren:</li>
+angelegt werden (mkdir .ssh).</p>
+</li>
+<li><p class="first"><a class="reference external" href="http://sshwindows.sourceforge.net/">​Openssh</a> installieren.</p>
+</li>
+<li><p class="first">Konfigurationsdatei c:programmeopensshetcsshd_config anpassen.
+Folgende Werte korrigieren:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">StrictModes</span> <span class="n">no</span>
+<span class="n">RSAAuthentication</span> <span class="n">yes</span>
+<span class="n">PubkeyAuthentication</span> <span class="n">yes</span>
+<span class="n">AuthorizedKeysFile</span>  <span class="o">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">authorized_keys</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <p>Nun kann der Rechner mittels Anrufen der im Listener des Callmonitors
 eingegebenen Rufnummer gestartet werden. Es funktioniert auch über das

@@ -564,6 +564,14 @@ especially suited for Web development and can be embedded into HTML.</em>“</p>
 <span id="memoryusage"></span><h2>Memory usage<a class="headerlink" href="#memory-usage" title="Link zu dieser Überschrift">¶</a></h2>
 <p>It works, but it needs a lot of memory, so a swap file is advisable
 (about 32 MB will do in most cases).</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">1</span> <span class="n">root</span>     <span class="n">root</span>       <span class="mi">5036004</span> <span class="n">Apr</span> <span class="mi">25</span> <span class="mi">18</span><span class="p">:</span><span class="mi">41</span> <span class="n">php</span><span class="o">-</span><span class="n">cgi</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VmPeak</span><span class="p">:</span>    <span class="mi">10740</span> <span class="n">kB</span>
+<span class="n">VmSize</span><span class="p">:</span>    <span class="mi">10740</span> <span class="n">kB</span> <span class="n">The</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">virtual</span> <span class="n">memory</span> <span class="n">allocated</span> <span class="n">to</span> <span class="n">the</span> <span class="n">process</span>
+<span class="n">VmRSS</span><span class="p">:</span>      <span class="mi">3068</span> <span class="n">kB</span> <span class="n">The</span> <span class="n">amount</span> <span class="n">of</span> <span class="n">memory</span> <span class="n">mapped</span> <span class="ow">in</span> <span class="n">RAM</span> <span class="p">(</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">swapped</span> <span class="n">out</span> <span class="p">)</span>
+</pre></div>
+</div>
 <p>This is why <a class="reference external" href="http://www.fastcgi.com/">​fast-CGI</a> is better too:
 instead of loading the PHP binary over and over again it stays in
 memory, also giving the system the opportunity to swap out unused parts
@@ -571,6 +579,12 @@ of it.</p>
 <p>Another thing is that <em>php.ini</em> will use valuable flash space and is
 quite big. A solution is to make a symbolic link to an USB storage
 device:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">php</span><span class="o">.</span><span class="n">ini</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uFlash</span><span class="o">/</span><span class="n">hiawatha</span><span class="o">/</span><span class="n">php</span><span class="o">.</span><span class="n">ini</span>
+<span class="n">rm</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">php</span><span class="o">.</span><span class="n">ini</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uFlash</span><span class="o">/</span><span class="n">hiawatha</span><span class="o">/</span><span class="n">php</span><span class="o">.</span><span class="n">ini</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">php</span><span class="o">.</span><span class="n">ini</span>
+<span class="n">modsave</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="links">
 <span id="id2"></span><h2>Links<a class="headerlink" href="#links" title="Link zu dieser Überschrift">¶</a></h2>

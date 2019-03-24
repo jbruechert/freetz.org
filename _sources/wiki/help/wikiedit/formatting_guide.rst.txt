@@ -17,7 +17,7 @@ Beispiel-Artikel
 Die Zusammenfassung einmal vorab: So könnte der Artikel für ein fiktives
 Paket namens *dummy* aussehen:
 
-.. code:: wiki
+.. code:: bash
 
    [[TOC(heading=Inhaltsverzeichnis)]]
 

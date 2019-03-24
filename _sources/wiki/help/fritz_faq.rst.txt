@@ -52,7 +52,7 @@ Vorraussetzung ist eine Minor Nummer, die von keinem anderen character
 device in ``/var/flash/`` verwendet wird (Freetz benutzt die Minor
 0x3c), die Major Nummer kann aus ``/proc/devices`` ausgelesen werden:
 
-.. code:: wiki
+.. code:: bash
 
    mknod /var/flash/<dateiname> c <major> <minor>
 
@@ -275,7 +275,7 @@ So geht es:
    Punkt ausprobieren)
 -  Im FTP:
 
-   .. code:: wiki
+   .. code:: bash
 
       quote SETENV kernel_args ds_off=y
       quote REBOOT
@@ -299,7 +299,7 @@ umbenennt. Wenn dann der Aufruf von ``/etc/init.d/rc.mod`` wieder ein
 "normal funktionierendes" Freetz startet, braucht man nur noch den
 ``ds_off=y`` Parameter zu entfernen, und alles sollte wieder gehen:
 
-.. code:: wiki
+.. code:: bash
 
    . /usr/bin/kernel_args
    ka_removeVariable ds_off

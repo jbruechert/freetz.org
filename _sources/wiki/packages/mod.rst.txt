@@ -57,7 +57,7 @@ Konfigurationsdateien
   genutzte Befehle definiert werden:
 | Beispiel:
 
-.. code:: wiki
+.. code:: bash
 
    alias nl="sed '=' | sed 'N;s/\n/\t/'"
    alias tcpdump6="tcpdump ip6 or proto ipv6"
@@ -69,13 +69,13 @@ crontab
   durch die crontab konfiguriert.
 | Syntax:
 
-.. code:: wiki
+.. code:: bash
 
    Minute | Stunde | Tag | Monat | Wochentag | Befehl
 
 Beispiel:
 
-.. code:: wiki
+.. code:: bash
 
    55  23  * * 7  logger "Es ist Sonntag, 5 Minuten vor 12"
    */10  * * * *  logger "Es sind wieder 10 Minuten vergangen"
@@ -91,7 +91,7 @@ dtrace
   ``#97*3*`` am Telefon ausgeführt.
 | Beispiel:
 
-.. code:: wiki
+.. code:: bash
 
    #!/bin/sh
    if [ "$(/etc/init.d/rc.lighttpd status)" != "stopped" ]; then
@@ -110,13 +110,13 @@ hosts
   Hosts-Liste <dnsmasq.html#EinträgeinderHosts-Liste>`__
 | Syntax:
 
-.. code:: wiki
+.. code:: bash
 
    <ipaddr>|* <hwaddr>|[id:]<client_id>|* [net:]<netid>|* <hostname>|* [ignore]
 
 Beispiel:
 
-.. code:: wiki
+.. code:: bash
 
    192.168.178.20    *           * MeinPC-1
    192.168.178.21  11:22:33:44:55:66   * MeinPC-2
@@ -128,7 +128,7 @@ modules
   des Bootvorgangs geladen.
 | Beispiel:
 
-.. code:: wiki
+.. code:: bash
 
    pl2303
    ftdi_sio
@@ -153,7 +153,7 @@ rc.external
   eingehängt wurde und bevor er ausgehängt wird.
 | Beispiel:
 
-.. code:: wiki
+.. code:: bash
 
    #!/bin/sh
    case "$1" in

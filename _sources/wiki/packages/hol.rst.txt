@@ -10,7 +10,7 @@
   nicht implementiert und man sollte sich mit der Kommandozeile
   befreunden:
 
-.. code:: wiki
+.. code:: bash
 
    /var/mod/root # hol
    hol v1.0 Halt-On-Lan script

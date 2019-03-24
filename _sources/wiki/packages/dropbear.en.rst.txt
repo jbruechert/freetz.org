@@ -17,13 +17,13 @@ Creating a Feetz Image with Dropbrear
 | After the following step you can configure the packages you want to
   have included in your image.
 
-.. code:: wiki
+.. code:: bash
 
    make menuconfig
 
 Make sure the following is selected:
 
-.. code:: wiki
+.. code:: bash
 
    Package selection  ---> Standard packages  ---> [*] Dropbear 0.53.1
    Package selection  ---> Standard packages  ---> [ ]   Without scp & ssh client (NEW)

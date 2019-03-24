@@ -33,13 +33,13 @@ Vorbereitungen
 Man braucht einen Crosscompiler? um den Kernel kompilieren zu können.
 Falls noch nicht vorhanden:
 
-.. code:: wiki
+.. code:: bash
 
    make toolchain
 
 Anschließend:
 
-.. code:: wiki
+.. code:: bash
 
    make menuconfig
 
@@ -56,7 +56,7 @@ Folgende Dateien herunterladen:
 
 Die Verzeichnisse für spätere Anpassungen vorbereiten:
 
-.. code:: wiki
+.. code:: bash
 
    make kernel-dirclean
    make kernel-menuconfig
@@ -89,7 +89,7 @@ Patch einspielen
 
 Beim Patchen werden euch noch ein paar Hinweise erwarten:
 
-.. code:: wiki
+.. code:: bash
 
    The next patch would create the file linux-2.4.17_mvl21/include/asm-mips/kmap_types.h,
    which already exists!  Assume -R? [n]
@@ -102,13 +102,13 @@ Dort einfach alles mit *ENTER* betätigen.
 Kernel konfigurieren und kompilieren
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: wiki
+.. code:: bash
 
    make kernel-menuconfig
 
 Folgende Pakete zusätzlich auswählen:
 
-.. code:: wiki
+.. code:: bash
 
    Network device support --->
      <*> PPP (point-to-point protocol) support
@@ -124,7 +124,7 @@ Folgende Pakete zusätzlich auswählen:
 
 Beenden und Abspeichern
 
-.. code:: wiki
+.. code:: bash
 
    make kernel-precompiled
 
@@ -142,14 +142,14 @@ Das Addon-Paket? ``pptpd-1.3.0_fixed.tar.gz`` nach
 ``DS-MOD-VERZEICHNIS/addon`` entpacken und anschließen in die Datei
 ``static.pkg`` eintragen.
 
-.. code:: wiki
+.. code:: bash
 
    tar -C DS-MOD-VERZEICHNIS/addon -xvzf pptpd-1.3.0_fixed.tar.gz
    echo pptpd-1.3.0 >> DS-MOD-VERZEICHINS/addon/static.pkg
 
 Um die Erstellung des fertigen Firmware-Images vorzubereiten:
 
-.. code:: wiki
+.. code:: bash
 
    make menuconfig
 
@@ -159,7 +159,7 @@ auswählen.
 Für das PPTP-Server-Image ist zusätzlich die Einbindung folgender
 Libraries nötig:
 
-.. code:: wiki
+.. code:: bash
 
    Advanced options -->
        Shared libraries-->
@@ -170,7 +170,7 @@ Libraries nötig:
 
 Zuguterletzt erstellen wird das endgültige Image mit:
 
-.. code:: wiki
+.. code:: bash
 
    make
 

@@ -586,6 +586,31 @@ nicht).</div>
 </div>
 <div class="section" id="optionen">
 <span id="id2"></span><h2>Optionen<a class="headerlink" href="#optionen" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span> <span class="n">syslogd</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+
+<span class="n">System</span> <span class="n">logging</span> <span class="n">utility</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">version</span> <span class="n">of</span> <span class="n">syslogd</span> <span class="n">ignores</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">syslog</span><span class="o">.</span><span class="n">conf</span>
+
+<span class="n">Options</span><span class="p">:</span>
+        <span class="o">-</span><span class="n">n</span>              <span class="n">Run</span> <span class="ow">in</span> <span class="n">foreground</span>
+        <span class="o">-</span><span class="n">O</span> <span class="n">FILE</span>         <span class="n">Log</span> <span class="n">to</span> <span class="n">given</span> <span class="n">file</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">messages</span><span class="p">)</span>
+        <span class="o">-</span><span class="n">l</span> <span class="n">N</span>            <span class="n">Set</span> <span class="n">local</span> <span class="n">log</span> <span class="n">level</span>
+        <span class="o">-</span><span class="n">S</span>              <span class="n">Smaller</span> <span class="n">logging</span> <span class="n">output</span>
+        <span class="o">-</span><span class="n">s</span> <span class="n">SIZE</span>         <span class="n">Max</span> <span class="n">size</span> <span class="p">(</span><span class="n">KB</span><span class="p">)</span> <span class="n">before</span> <span class="n">rotate</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span><span class="mi">200</span><span class="n">KB</span><span class="p">,</span> <span class="mi">0</span><span class="o">=</span><span class="n">off</span><span class="p">)</span>
+        <span class="o">-</span><span class="n">b</span> <span class="n">N</span>            <span class="n">N</span> <span class="n">rotated</span> <span class="n">logs</span> <span class="n">to</span> <span class="n">keep</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span> <span class="mi">0</span><span class="o">=</span><span class="n">purge</span><span class="p">)</span>
+        <span class="o">-</span><span class="n">R</span> <span class="n">HOST</span><span class="p">[:</span><span class="n">PORT</span><span class="p">]</span>  <span class="n">Log</span> <span class="n">to</span> <span class="n">IP</span> <span class="ow">or</span> <span class="n">hostname</span> <span class="n">on</span> <span class="n">PORT</span> <span class="p">(</span><span class="n">default</span> <span class="n">PORT</span><span class="o">=</span><span class="mi">514</span><span class="o">/</span><span class="n">UDP</span><span class="p">)</span>
+        <span class="o">-</span><span class="n">L</span>              <span class="n">Log</span> <span class="n">locally</span> <span class="ow">and</span> <span class="n">via</span> <span class="n">network</span> <span class="p">(</span><span class="n">default</span> <span class="ow">is</span> <span class="n">network</span> <span class="n">only</span> <span class="k">if</span> <span class="o">-</span><span class="n">R</span><span class="p">)</span>
+        <span class="o">-</span><span class="n">C</span><span class="p">[</span><span class="n">size</span><span class="p">(</span><span class="n">KiB</span><span class="p">)]</span>   <span class="n">Log</span> <span class="n">to</span> <span class="n">shared</span> <span class="n">mem</span> <span class="n">buffer</span> <span class="p">(</span><span class="n">read</span> <span class="n">it</span> <span class="n">using</span> <span class="n">logread</span><span class="p">)</span>
+
+<span class="n">Usage</span><span class="p">:</span> <span class="n">klogd</span> <span class="p">[</span><span class="o">-</span><span class="n">c</span> <span class="n">N</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">n</span><span class="p">]</span>
+
+<span class="n">Kernel</span> <span class="n">logger</span>
+
+<span class="n">Options</span><span class="p">:</span>
+        <span class="o">-</span><span class="n">c</span> <span class="n">N</span>    <span class="n">Only</span> <span class="n">messages</span> <span class="k">with</span> <span class="n">level</span> <span class="o">&lt;</span> <span class="n">N</span> <span class="n">are</span> <span class="n">printed</span> <span class="n">to</span> <span class="n">console</span>
+        <span class="o">-</span><span class="n">n</span>      <span class="n">Run</span> <span class="ow">in</span> <span class="n">foreground</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="siehe-auch">
 <span id="sieheauch"></span><h2>Siehe auch<a class="headerlink" href="#siehe-auch" title="Link zu dieser Überschrift">¶</a></h2>

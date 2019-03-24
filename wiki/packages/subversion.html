@@ -627,6 +627,9 @@ Objekte) berichtet</td>
 <div class="section" id="konfiguration">
 <span id="id3"></span><h2>Konfiguration<a class="headerlink" href="#konfiguration" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Ein Repository wird mit folgendem Befehl angelegt</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svnadmin</span> <span class="n">create</span> <span class="o">--</span><span class="n">fs</span><span class="o">-</span><span class="nb">type</span> <span class="n">fsfs</span> <span class="o">/</span><span class="n">PFAD_ZU_DEM_EXT2_TRAEGER</span><span class="o">/</span><span class="n">REPOSITORY_NAME</span>
+</pre></div>
+</div>
 <p>REPOSITORY_NAME ist ein Platzhalter und darf beliebig gewählt werden.
 Der Datenträger muss mit ext2 bzw. ext3 formatiert werden, Repositories
 auf FAT- bzw. NTFS-Trägern werden von Freetz (derzeit noch) nicht
@@ -640,7 +643,17 @@ nachgelesen werden. Die allereinfachte Konfiguration könnte z.B. so
 aussehen:</p>
 <p><strong>authz</strong> einfach leer</p>
 <p><strong>passwd</strong></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">users</span><span class="p">]</span>
+<span class="n">DeinName</span> <span class="o">=</span> <span class="n">DeinPasswort</span>
+</pre></div>
+</div>
 <p><strong>svnserve.conf</strong></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">general</span><span class="p">]</span>
+<span class="n">anon</span><span class="o">-</span><span class="n">access</span> <span class="o">=</span> <span class="n">none</span>
+<span class="n">auth</span><span class="o">-</span><span class="n">access</span> <span class="o">=</span> <span class="n">write</span>
+<span class="n">password</span><span class="o">-</span><span class="n">db</span> <span class="o">=</span> <span class="n">passwd</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>Tags</li>
 <li><a class="reference external" href="/tags/inetd">inetd</a></li>

@@ -576,11 +576,32 @@ zugewiesen werden. Dies geschieht durch den Parameter <code class="docutils lite
 Der Parameter -g (GECOS field) ist eine Beschreibung des Benutzers.</p>
 <p><img alt="Warning" src="../../../../_images/exclamation4.png" /> Dieses Feld darf nicht auf <em>box user</em> oder <em>ftp user</em> gesetzt
 werden, da der Benutzer sonst beim Neustart verloren geht.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adduser</span> <span class="n">freetzuser</span> <span class="o">-</span><span class="n">G</span> <span class="n">users</span> <span class="o">-</span><span class="n">h</span> <span class="s2">&quot;/var/media/ftp&quot;</span> <span class="o">-</span><span class="n">g</span> <span class="s2">&quot;freetzuser&quot;</span> <span class="p">[</span><span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span><span class="p">]</span>
+</pre></div>
+</div>
 <p>Anschließend kann ein Password für den Benutzer gesetzt werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@fritz</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span><span class="c1"># adduser freetzuser -G users -h &quot;/var/media/ftp&quot; -g &quot;freetzuser&quot;</span>
+<span class="n">Changing</span> <span class="n">password</span> <span class="k">for</span> <span class="n">freetzuser</span>
+<span class="n">New</span> <span class="n">password</span><span class="p">:</span>
+<span class="n">Retype</span> <span class="n">password</span><span class="p">:</span>
+<span class="n">Password</span> <span class="k">for</span> <span class="n">freetzuser</span> <span class="n">changed</span> <span class="n">by</span> <span class="n">root</span>
+</pre></div>
+</div>
 <p>Dieses Verfahren ist für jeden weiteren Benutzer zu wiederholen. Nachdem
 die gewünschten Benutzer angelegt wurden sind die Änderungen noch
 rebootfest abzuspeichern. Dies geschieht durch die folgenden Befehle:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modusers</span> <span class="n">save</span>
+<span class="n">modsave</span> <span class="n">flash</span>
+</pre></div>
+</div>
 <p>Die Benutzer können wie folgt überprüft werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@fritz</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span><span class="c1"># cat /etc/passwd</span>
+<span class="n">root</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="n">root</span><span class="p">:</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+<span class="n">nobody</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">100</span><span class="p">:</span><span class="mi">1000</span><span class="p">:</span><span class="n">nobody</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">nobody</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">false</span>
+<span class="n">ftpuser</span><span class="p">:</span><span class="nb">any</span><span class="p">:</span><span class="mi">1001</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="n">ftp</span> <span class="n">user</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+<span class="n">freetzuser</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">1002</span><span class="p">:</span><span class="mi">100</span><span class="p">:</span><span class="n">freetzuser</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="beschreibung-freetz-1-1-x">
 <span id="beschreibungfreetz-1-1-x"></span><h2>Beschreibung (Freetz-1.1.x)<a class="headerlink" href="#beschreibung-freetz-1-1-x" title="Link zu dieser Überschrift">¶</a></h2>
@@ -601,6 +622,17 @@ IPPF</a></div>
 <div class="line">1.) Man speichert den Inhalt des Nachfolgenden Textes als User.sh auf
 seinen PC</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">passwd</span> <span class="o">&lt;&lt;</span> <span class="s1">&#39;EOF&#39;</span>
+<span class="n">root</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="n">root</span><span class="p">:</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+<span class="n">ftpuser</span><span class="p">:</span><span class="nb">any</span><span class="p">:</span><span class="mi">1000</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="n">ftp</span> <span class="n">user</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+<span class="n">ftp</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="n">FTP</span> <span class="n">account</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ftp</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+<span class="n">User1</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">1001</span><span class="p">:</span><span class="mi">1001</span><span class="p">:</span><span class="n">Linux</span> <span class="n">User</span><span class="p">,,,:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">User1</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+<span class="n">User2</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">1002</span><span class="p">:</span><span class="mi">1002</span><span class="p">:</span><span class="n">Linux</span> <span class="n">User</span><span class="p">,,,:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">User2</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+<span class="n">User3</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">1003</span><span class="p">:</span><span class="mi">1003</span><span class="p">:</span><span class="n">Linux</span> <span class="n">User</span><span class="p">,,,:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">User3</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+<span class="n">EOF</span>
+<span class="n">chmod</span> <span class="mi">644</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">passwd</span>
+</pre></div>
+</div>
 <p>2.) Man ruft die passwd seiner Box im Rudi-Shell-Menu auf (cat
 /var/tmp/passwd)</p>
 <p>` &lt;/attachment/wiki/help/howtos/common/user/Rudi.JPG&gt;`__</p>
@@ -613,6 +645,9 @@ Einträge aus der Rudi-Shell</div>
 <p>` &lt;/attachment/wiki/help/howtos/common/user/usb.JPG&gt;`__</p>
 <p>5.) Folgenden Eintrag in der rc.custom erzeugen (Pfad und Dateiname
 entpsrechend anpassen):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
 <p>` &lt;/attachment/wiki/help/howtos/common/user/rc.coustom.JPG&gt;`__</p>
 <p>6.) Eintrag mit übernehmen sichern und FritzBox neu starten.</p>
 <div class="line-block">

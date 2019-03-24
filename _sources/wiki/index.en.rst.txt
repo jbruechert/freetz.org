@@ -111,7 +111,7 @@ Wiki <http://wiki.ip-phone-forum.de/software:ds-mod:installation#linux>`__
 build *Freetz*. If you're really in a hurry make sure you've got all the
 required tools installed and then do
 
-.. code:: wiki
+.. code:: bash
 
    make menuconfig
    make

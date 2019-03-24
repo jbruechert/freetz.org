@@ -612,6 +612,10 @@ vermieden, es ist aber ca 350 kB gross.</li>
 Freetz:modules das bzw. die Kernel-Modul(e) untereinander eintragen
 (aber ohne „modprobe“ o.ä.!)</li>
 </ul>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pl2303</span>
+<span class="n">ftdi_sio</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>im Freetz-Webif unter „RRDstats“ weitere Einstellungen vornehmen</li>
 </ul>
@@ -620,12 +624,20 @@ Freetz:modules das bzw. die Kernel-Modul(e) untereinander eintragen
 <span id="id3"></span><h2>Backup<a class="headerlink" href="#backup" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Sinnvoll ist die Anpassung der Pfade, falls man regelmäßige Backups der
 Messdaten machen möchte, z.B.:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Backup</span> <span class="n">Verzeichnis</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">rrdstats</span><span class="o">/</span><span class="n">backup</span>
+</pre></div>
+</div>
 <p>… und im Freetz-WebGUI bei den RRDstats-Einstellungen das automatisch
 Wiederherstellen von Backups beim Starten aktivieren</p>
 <p>Wenn man die Backups nun regelmäßig mittels eines cronjobs durchführt,
 z.B. alle 20-30 Minuten, sind die Lücken in den Graphen bei entsprechend
 kurzen Box-Ausfallzeiten auch nicht zu groß. Im Freetz-WebGUI gibt man
 dazu unter „Einstellungen / Freetz: crontab“ z.B. folgendes ein:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">00</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">rrdstats</span> <span class="n">backup</span>
+<span class="mi">20</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">rrdstats</span> <span class="n">backup</span>
+<span class="mi">40</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">rrdstats</span> <span class="n">backup</span>
+</pre></div>
+</div>
 <p>Näheres zu crontab bitte im Internet nachlesen.</p>
 </div>
 <div class="section" id="einstellungen-webgui">
@@ -680,10 +692,54 @@ Dazu:</div>
 erweitern:</div>
 <div class="line">1) Am Anfang der dump.xml vor den Zeilen</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ds</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span> <span class="n">up</span> <span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>dies hinzufügen</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;name&gt; txfq2 &lt;/name&gt;
+&lt;type&gt; GAUGE &lt;/type&gt;
+&lt;minimal_heartbeat&gt; 600 &lt;/minimal_heartbeat&gt;
+&lt;min&gt; 9.0000000000e+00 &lt;/min&gt;
+&lt;max&gt; 9.9000000000e+01 &lt;/max&gt;
+
+&lt;!-- PDP Status --&gt;
+&lt;last_ds&gt; UNKN &lt;/last_ds&gt;
+&lt;value&gt; NaN &lt;/value&gt;
+&lt;unknown_sec&gt; 25 &lt;/unknown_sec&gt;
+&lt;/ds&gt;
+
+&lt;ds&gt;
+&lt;name&gt; txdb2 &lt;/name&gt;
+&lt;type&gt; GAUGE &lt;/type&gt;
+&lt;minimal_heartbeat&gt; 600 &lt;/minimal_heartbeat&gt;
+&lt;min&gt; 0.0000000000e+00 &lt;/min&gt;
+&lt;max&gt; 9.9000000000e+01 &lt;/max&gt;
+
+&lt;!-- PDP Status --&gt;
+&lt;last_ds&gt; UNKN &lt;/last_ds&gt;
+&lt;value&gt; NaN &lt;/value&gt;
+&lt;unknown_sec&gt; 25 &lt;/unknown_sec&gt;
+&lt;/ds&gt;
+</pre></div>
+</div>
 <ol class="arabic simple" start="2">
 <li>12 Zeilen vor allen <code class="docutils literal notranslate"><span class="pre">&lt;/cdp_prep&gt;</span></code> Zeilen dies hinzufügen</li>
 </ol>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ds</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">primary_value</span><span class="o">&gt;</span> <span class="mf">0.0000000000e+00</span> <span class="o">&lt;/</span><span class="n">primary_value</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">secondary_value</span><span class="o">&gt;</span> <span class="mf">0.0000000000e+00</span> <span class="o">&lt;/</span><span class="n">secondary_value</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span> <span class="n">NaN</span> <span class="o">&lt;/</span><span class="n">value</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">unknown_datapoints</span><span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&lt;/</span><span class="n">unknown_datapoints</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ds</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ds</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">primary_value</span><span class="o">&gt;</span> <span class="mf">0.0000000000e+00</span> <span class="o">&lt;/</span><span class="n">primary_value</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">secondary_value</span><span class="o">&gt;</span> <span class="mf">0.0000000000e+00</span> <span class="o">&lt;/</span><span class="n">secondary_value</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span> <span class="n">NaN</span> <span class="o">&lt;/</span><span class="n">value</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">unknown_datapoints</span><span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&lt;/</span><span class="n">unknown_datapoints</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ds</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>3) Nun noch alle Zeilen die mit <code class="docutils literal notranslate"><span class="pre">&lt;/row&gt;</span></code> enden zwischen das
 drittletzte und vorletzte <code class="docutils literal notranslate"><span class="pre">&lt;v&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/v&gt;</span></code> dies einfügen:
 <code class="docutils literal notranslate"><span class="pre">&lt;v&gt;</span> <span class="pre">NaN</span> <span class="pre">&lt;/v&gt;</span> <span class="pre">&lt;v&gt;</span> <span class="pre">NaN</span> <span class="pre">&lt;/v&gt;</span></code>.</p>

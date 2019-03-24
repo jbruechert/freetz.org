@@ -44,7 +44,7 @@ Es gibt allerdings ein Werkzeug, um sich die gesetzten Flags anzeigen zu
 lassen, wenn man auf der Box via Telnet oder SSH angemeldet ist:
 ``/sbin/eventsdump``.
 
-.. code:: wiki
+.. code:: bash
 
    eventsdump -d | head -n 1
 
@@ -73,7 +73,7 @@ nimmt, müssen wir mit einem Werkzeug wie
 welche Systemaufrufe ``eventsdump`` macht. Hier ist ein Ausschnitt aus
 einem ``strace``-Log:
 
-.. code:: wiki
+.. code:: bash
 
    01  mkdir("/var", 0777) = -1 EEXIST (File exists)
    02  mkdir("/var/flash", 0777) = -1 EEXIST (File exists)
@@ -137,7 +137,7 @@ aus:
 
 Ausgabe (ohne Zeilenvorschub):
 
-.. code:: wiki
+.. code:: bash
 
    NOT_SIGNED,TELNET
 
@@ -396,7 +396,7 @@ einfacheres Löschen
 Man kann tffs-Dateien auch über /proc/tffs löschen. In diesem Fall ist
 der Befehl:
 
-.. code:: wiki
+.. code:: bash
 
    echo clear_id 87 > /proc/tffs
 

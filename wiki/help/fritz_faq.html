@@ -606,6 +606,9 @@ und veränderbar im Flash abspeichert, um die Konfiguration zu sichern.
 Vorraussetzung ist eine Minor Nummer, die von keinem anderen character
 device in <code class="docutils literal notranslate"><span class="pre">/var/flash/</span></code> verwendet wird (Freetz benutzt die Minor
 0x3c), die Major Nummer kann aus <code class="docutils literal notranslate"><span class="pre">/proc/devices</span></code> ausgelesen werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mknod</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">flash</span><span class="o">/&lt;</span><span class="n">dateiname</span><span class="o">&gt;</span> <span class="n">c</span> <span class="o">&lt;</span><span class="n">major</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">minor</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>Da dieses character device in der
 <a class="reference external" href="http://de.wikipedia.org/wiki/RAM-Disk">​Ramdisk</a> unter <code class="docutils literal notranslate"><span class="pre">/var/</span></code>
 erzeugt wurde, muss dieser Befehl jedesmal beim Neustart ausgeführt
@@ -950,6 +953,10 @@ eventuell ein paar mal versuchen (oder den Hinweis aus dem letzten
 Punkt ausprobieren)</p>
 </li>
 <li><p class="first">Im FTP:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quote</span> <span class="n">SETENV</span> <span class="n">kernel_args</span> <span class="n">ds_off</span><span class="o">=</span><span class="n">y</span>
+<span class="n">quote</span> <span class="n">REBOOT</span>
+</pre></div>
+</div>
 <p>(bereits vorhandene Einträge in den kernel_args gehen dadurch
 natürlich verloren…)</p>
 </li>
@@ -969,6 +976,10 @@ z.B. /var/tmp/flash/&lt;paket&gt;.diff löscht, von Hand „korrigiert“ oder
 umbenennt. Wenn dann der Aufruf von <code class="docutils literal notranslate"><span class="pre">/etc/init.d/rc.mod</span></code> wieder ein
 „normal funktionierendes“ Freetz startet, braucht man nur noch den
 <code class="docutils literal notranslate"><span class="pre">ds_off=y</span></code> Parameter zu entfernen, und alles sollte wieder gehen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">kernel_args</span>
+<span class="n">ka_removeVariable</span> <span class="n">ds_off</span>
+</pre></div>
+</div>
 <p>Ergänzender Hinweis: Analog schaltet <code class="docutils literal notranslate"><span class="pre">dbg_off=y</span></code> das Abarbeiten der
 debug.cfg beim Starten ab.</p>
 <ul class="simple">

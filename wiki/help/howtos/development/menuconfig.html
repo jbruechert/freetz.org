@@ -589,8 +589,9 @@ quelloffene Projekte) diese Art der MK und die dazu notwendigen
 Werkzeuge entlehnt haben.</p>
 <p>Die wichtigste Dateien und <em>Make</em>-Targets, mit welchen wir es im
 Folgenden zu tun haben werden, sind</p>
+<ul>
+<li><p class="first">Config.in</p>
 <ul class="simple">
-<li>Config.in<ul>
 <li>enthält das Hauptgerüst der MK</li>
 <li>ist in der <em>Kconfig</em>-Sprache geschrieben</li>
 <li>inkludiert hierarchisch (Baumstruktur) mittels
@@ -601,7 +602,8 @@ allen Includes, gepuffert in <em>Config.in.cache</em>, um Ladezeiten beim
 Aufruf von <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code> zu verringern.</li>
 </ul>
 </li>
-<li><em>.config</em><ul>
+<li><p class="first"><em>.config</em></p>
+<ul class="simple">
 <li>enthält die vom Benutzer erstellte FW-Konfiguration als
 maßgebliche Vorausstzung für folgende Builds</li>
 <li>ist als Kopie in der FW unter <em>/etc/.config</em> enthalten, sofern das
@@ -611,7 +613,8 @@ mit einer bestimmten Konfiguration melden</li>
 <li>kann, sollte aber nicht manuell editiert werden</li>
 </ul>
 </li>
-<li><em>tools/config/mconf</em><ul>
+<li><p class="first"><em>tools/config/mconf</em></p>
+<ul class="simple">
 <li>ist das Binary, welches von <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code> aufgerufen wird,
 um die MK anzuzeigen und zu speichern</li>
 <li>wird mittels <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">tools</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">kconfig</span></code> automatisch
@@ -621,18 +624,40 @@ als Baumstruktur ohne Unterseiten darstellt (manchmal nett, wenn
 man die Gesamtstruktur sehen bzw. bearbeiten möchte)</li>
 </ul>
 </li>
-<li><em>tools/config/conf</em><ul>
-<li>ist die Kommandozeilenversion von <em>mconf</em></li>
-<li>hat mehr Features</li>
-<li>wird ebenfalls mittels <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">tools</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">kconfig</span></code>
-automatisch gebaut, sobald es benötigt wird</li>
-<li>wird von den <em>Make</em>-Targets <code class="docutils literal notranslate"><span class="pre">config</span></code>, <code class="docutils literal notranslate"><span class="pre">oldconfig</span></code>,
+<li><p class="first"><em>tools/config/conf</em></p>
+<ul>
+<li><p class="first">ist die Kommandozeilenversion von <em>mconf</em></p>
+</li>
+<li><p class="first">hat mehr Features</p>
+</li>
+<li><p class="first">wird ebenfalls mittels <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">tools</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">kconfig</span></code>
+automatisch gebaut, sobald es benötigt wird</p>
+</li>
+<li><p class="first">wird von den <em>Make</em>-Targets <code class="docutils literal notranslate"><span class="pre">config</span></code>, <code class="docutils literal notranslate"><span class="pre">oldconfig</span></code>,
 <code class="docutils literal notranslate"><span class="pre">oldnoconfig</span></code>, <code class="docutils literal notranslate"><span class="pre">defconfig</span></code>, <code class="docutils literal notranslate"><span class="pre">allnoconfig</span></code>, <code class="docutils literal notranslate"><span class="pre">allyesconfig</span></code>,
 <code class="docutils literal notranslate"><span class="pre">randconfig</span></code>, <code class="docutils literal notranslate"><span class="pre">listnewconfig</span></code>, <code class="docutils literal notranslate"><span class="pre">config-clean-deps</span></code> und
-<code class="docutils literal notranslate"><span class="pre">config-clean-deps-keep-busybox</span></code> benutzt</li>
-<li>zeigt folgende Hilfe an, wenn ohne Parameter aufgerufen (klappt
+<code class="docutils literal notranslate"><span class="pre">config-clean-deps-keep-busybox</span></code> benutzt</p>
+</li>
+<li><p class="first">zeigt folgende Hilfe an, wenn ohne Parameter aufgerufen (klappt
 Stand 15.10.2011 im Trunk, nicht in älteren Stable-Versionen, also
-frühestens ab <em>Freetz 1.2</em>):</li>
+frühestens ab <em>Freetz 1.2</em>):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span> <span class="n">tools</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">conf</span> <span class="p">[</span><span class="n">option</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">kconfig</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>
+<span class="p">[</span><span class="n">option</span><span class="p">]</span> <span class="ow">is</span> <span class="n">_one_</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">listnewconfig</span>         <span class="n">List</span> <span class="n">new</span> <span class="n">options</span>
+  <span class="o">--</span><span class="n">oldaskconfig</span>          <span class="n">Start</span> <span class="n">a</span> <span class="n">new</span> <span class="n">configuration</span> <span class="n">using</span> <span class="n">a</span> <span class="n">line</span><span class="o">-</span><span class="n">oriented</span> <span class="n">program</span>
+  <span class="o">--</span><span class="n">oldconfig</span>             <span class="n">Update</span> <span class="n">a</span> <span class="n">configuration</span> <span class="n">using</span> <span class="n">a</span> <span class="n">provided</span> <span class="o">.</span><span class="n">config</span> <span class="k">as</span> <span class="n">base</span>
+  <span class="o">--</span><span class="n">silentoldconfig</span>       <span class="n">Same</span> <span class="k">as</span> <span class="n">oldconfig</span><span class="p">,</span> <span class="n">but</span> <span class="n">quietly</span><span class="p">,</span> <span class="n">additionally</span> <span class="n">update</span> <span class="n">deps</span>
+  <span class="o">--</span><span class="n">oldnoconfig</span>           <span class="n">Same</span> <span class="k">as</span> <span class="n">silentoldconfig</span> <span class="n">but</span> <span class="nb">set</span> <span class="n">new</span> <span class="n">symbols</span> <span class="n">to</span> <span class="n">no</span>
+  <span class="o">--</span><span class="n">defconfig</span> <span class="o">&lt;</span><span class="n">file</span><span class="o">&gt;</span>      <span class="n">New</span> <span class="n">config</span> <span class="k">with</span> <span class="n">default</span> <span class="n">defined</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">file</span><span class="o">&gt;</span>
+  <span class="o">--</span><span class="n">savedefconfig</span> <span class="o">&lt;</span><span class="n">file</span><span class="o">&gt;</span>  <span class="n">Save</span> <span class="n">the</span> <span class="n">minimal</span> <span class="n">current</span> <span class="n">configuration</span> <span class="n">to</span> <span class="o">&lt;</span><span class="n">file</span><span class="o">&gt;</span>
+  <span class="o">--</span><span class="n">allnoconfig</span>           <span class="n">New</span> <span class="n">config</span> <span class="n">where</span> <span class="nb">all</span> <span class="n">options</span> <span class="n">are</span> <span class="n">answered</span> <span class="k">with</span> <span class="n">no</span>
+  <span class="o">--</span><span class="n">allyesconfig</span>          <span class="n">New</span> <span class="n">config</span> <span class="n">where</span> <span class="nb">all</span> <span class="n">options</span> <span class="n">are</span> <span class="n">answered</span> <span class="k">with</span> <span class="n">yes</span>
+  <span class="o">--</span><span class="n">allmodconfig</span>          <span class="n">New</span> <span class="n">config</span> <span class="n">where</span> <span class="nb">all</span> <span class="n">options</span> <span class="n">are</span> <span class="n">answered</span> <span class="k">with</span> <span class="n">mod</span>
+  <span class="o">--</span><span class="n">alldefconfig</span>          <span class="n">New</span> <span class="n">config</span> <span class="k">with</span> <span class="nb">all</span> <span class="n">symbols</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">default</span>
+  <span class="o">--</span><span class="n">randconfig</span>            <span class="n">New</span> <span class="n">config</span> <span class="k">with</span> <span class="n">random</span> <span class="n">answer</span> <span class="n">to</span> <span class="nb">all</span> <span class="n">options</span>
+</pre></div>
+</div>
+</li>
 </ul>
 </li>
 </ul>
@@ -654,6 +679,12 @@ gerade drauf stößt. Es sind ja nur Warnings, aber die sind auch
 wichtig, damit wir Unsauberkeiten aus den <em>Config.in</em> heraus
 bekommen. Das ist also gut für die Projekthygiene. Ich gebe mal
 ein Beispiel:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">warning</span><span class="p">:</span> <span class="p">(</span><span class="n">FREETZ_PACKAGE_AUTOFS_NFS</span> <span class="o">&amp;&amp;</span> <span class="n">FREETZ_PACKAGE_NFSROOT</span><span class="p">)</span>
+    <span class="n">selects</span> <span class="n">FREETZ_MODULE_nfs</span> <span class="n">which</span> <span class="n">has</span> <span class="n">unmet</span> <span class="n">direct</span> <span class="n">dependencies</span>
+    <span class="p">(</span><span class="n">FREETZ_KERNEL_VERSION_2_6_13_1</span> <span class="o">||</span> <span class="n">FREETZ_KERNEL_VERSION_2_6_28</span> <span class="o">||</span>
+     <span class="n">FREETZ_KERNEL_VERSION_2_6_32</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>Aha, hier hat also jemand (ich) NFS-Root ausgewählt. Klar, daß
 dazu auch das NFS-Kernelmodul ausgewählt werden muß. Jetzt hat
 dieser Jemand aber bspw. eine 7270_v1 mit Kernel 2.6.19.2. Das
@@ -767,16 +798,50 @@ Ausnahmefällen A und B.“</p>
 <div class="section" id="syntax-fehler-in-mk-dateien-finden">
 <span id="syntax-fehlerinmk-dateienfinden"></span><h2>Syntax-Fehler in MK-Dateien finden<a class="headerlink" href="#syntax-fehler-in-mk-dateien-finden" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wir sehen einen Fehler wie diesen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ make menuconfig
+
+Config.in.cache:4951: syntax error
+Config.in.cache:4950: unknown option &quot;xconfig&quot;
+Config.in.cache:4951:warning: prompt redefined
+make: *** [menuconfig] Error 1
+</pre></div>
+</div>
 <p>Gemäß Beschreibung in <a class="reference external" href="/changeset/8466">r8466</a> gibt es zwei Wege, bei
 einem von <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code> angezeigten Syntax-Fehler schnell die
 fehlerhafte Stelle zu finden:</p>
-<ol class="arabic simple">
-<li>In <code class="docutils literal notranslate"><span class="pre">Config.cache.in</span></code> direkt zu der Fehlerzeile 4950 springen, die
+<ol class="arabic">
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">Config.cache.in</span></code> direkt zu der Fehlerzeile 4950 springen, die
 auf der Konsole angezeigt wurde. Von dort aus rückwärts(!) suchen
 nach <code class="docutils literal notranslate"><span class="pre">INCLUDE_BEGIN</span></code> - voilà, dort steht der Dateiname, wo die
-fehlerhafte MK zu finden ist.</li>
-<li><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig-nocache</span></code> aufrufen und die problematische Datei
-(<em>make/davfs2/Config.in</em>) direkt von der Konsole ablesen:</li>
+fehlerhafte MK zu finden ist.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig-nocache</span></code> aufrufen und die problematische Datei
+(<em>make/davfs2/Config.in</em>) direkt von der Konsole ablesen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ make menuconfig-nocache
+
+make/davfs2/Config.in:2: syntax error
+make/Config.in:84: missing end statement for this entry
+Config.in:851: missing end statement for this entry
+make/davfs2/Config.in:1: invalid statement
+make/davfs2/Config.in:2: unexpected option &quot;bool&quot;
+make/davfs2/Config.in:3: unexpected option &quot;select&quot;
+make/davfs2/Config.in:4: unexpected option &quot;select&quot;
+make/davfs2/Config.in:5: unexpected option &quot;select&quot;
+make/davfs2/Config.in:6: unexpected option &quot;select&quot;
+make/davfs2/Config.in:7: unexpected option &quot;select&quot;
+make/davfs2/Config.in:8: unexpected option &quot;select&quot;
+make/davfs2/Config.in:9: unexpected option &quot;default&quot;
+make/davfs2/Config.in:10: invalid statement
+make/davfs2/Config.in:11: unknown statement &quot;davfs&quot;
+make/davfs2/Config.in:12: unknown statement &quot;WebDAV&quot;
+make/davfs2/Config.in:13: unknown statement &quot;HTTP&quot;
+make/davfs2/Config.in:14: unknown statement &quot;resources&quot;
+make/Config.in:199: unexpected end statement
+Config.in:862: unexpected end statement
+make: *** [menuconfig-nocache] Error 1
+</pre></div>
+</div>
+</li>
 </ol>
 </div>
 <div class="section" id="syntax-hervorhebung-fur-mk-dateien">
@@ -816,7 +881,19 @@ Shell-Code: Entweder man erwähnt am Anfang des Code-Blocks mit führendem
 Shebang den MIME-Typ (<code class="docutils literal notranslate"><span class="pre">text/x-kconfig</span></code>, übrigens selbst erfunden und
 kein allgemeiner Standard) oder das in <code class="docutils literal notranslate"><span class="pre">trac.ini</span></code> konfigurierte
 Schlüsselwort <code class="docutils literal notranslate"><span class="pre">kconfig</span></code>, also in etwa so:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{{</span>
+<span class="c1">#!text/x-kconfig</span>
+<span class="o">...</span> <span class="n">MK</span><span class="o">-</span><span class="n">Code</span> <span class="o">...</span>
+<span class="p">}}}</span>
+</pre></div>
+</div>
 <p>Oder so:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{{</span>
+<span class="c1">#!kconfig</span>
+<span class="o">...</span> <span class="n">MK</span><span class="o">-</span><span class="n">Code</span> <span class="o">...</span>
+<span class="p">}}}</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>Tags</li>
 <li><a class="reference external" href="/tags/development">development</a></li>

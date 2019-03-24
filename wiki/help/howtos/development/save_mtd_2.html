@@ -611,6 +611,9 @@ werden häufig verwendet:</p>
 <li>192.168.2.254</li>
 </ul>
 <p>Die normale und einfache Methode, die Boot-IP herauszufinden, ist diese:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">urlader</span><span class="o">/</span><span class="n">environment</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">my_ipaddress</span>
+</pre></div>
+</div>
 <p>Man sollte dafür sorgen, dass Personal Firewalls ausgeschaltet sind,
 evtl. auch andere Sicherheitspakete, die den Netzwerkverkehr behindern
 könnten. Spätestens, wenn es mit aktiven Programmen nicht geht, sollte
@@ -631,6 +634,13 @@ Ping oder FTP-Connect funktioniert. Unter Windows sollte man ggf. auch
 noch das Media Sensing ausschalten, indem man folgendes als Textdatei
 <code class="docutils literal notranslate"><span class="pre">mediasensing-aus.reg</span></code> speichert und doppelklickt, um es danach in die
 Windows-Registry eintragen zu lassen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Windows</span> <span class="n">Registry</span> <span class="n">Editor</span> <span class="n">Version</span> <span class="mf">5.00</span>
+
+<span class="p">[</span><span class="n">HKEY_LOCAL_MACHINE</span>\<span class="n">SYSTEM</span>\<span class="n">ControlSet001</span>\<span class="n">Services</span>\<span class="n">Tcpip</span>\<span class="n">Parameters</span><span class="p">]</span>
+
+<span class="s2">&quot;DisableDHCPMediaSense&quot;</span><span class="o">=</span><span class="n">dword</span><span class="p">:</span><span class="mi">00000001</span>
+</pre></div>
+</div>
 <p>Evtl. sollte man nach dem Ausschalten einen Windows-Neustart machen.
 AVMs Recover-Werkzeug macht das jedenfalls, aber vielleicht geht es auch
 ohne. Man kann das Mediasensing dauerhaft ausgeschaltet lassen, sofern
@@ -638,6 +648,13 @@ man den betreffenden Rechner nicht ständig an verschiedenen Netzwerken
 ein- und ausstöpselt und das Mediasensing für unterschiedliche
 DHCP-Server benötigt (z.B. Notebook abwechselnd im Büro und zu Hause).
 Sollte man es doch wieder einschalten wollen, geht das so:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Windows</span> <span class="n">Registry</span> <span class="n">Editor</span> <span class="n">Version</span> <span class="mf">5.00</span>
+
+<span class="p">[</span><span class="n">HKEY_LOCAL_MACHINE</span>\<span class="n">SYSTEM</span>\<span class="n">ControlSet001</span>\<span class="n">Services</span>\<span class="n">Tcpip</span>\<span class="n">Parameters</span><span class="p">]</span>
+
+<span class="s2">&quot;DisableDHCPMediaSense&quot;</span><span class="o">=</span><span class="n">dword</span><span class="p">:</span><span class="mi">00000000</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="allgemeine-informationen-zur-datensicherung">
 <span id="allgemeineinformationenzurdatensicherung"></span><h2>Allgemeine Informationen zur Datensicherung<a class="headerlink" href="#allgemeine-informationen-zur-datensicherung" title="Link zu dieser Überschrift">¶</a></h2>
@@ -710,6 +727,15 @@ jede der vier Partitionen von <code class="docutils literal notranslate"><span c
 einmal geht hier nicht. Aber Strg-C am Ende des
 <a class="reference external" href="../../../Download.html">Downloads</a> ist auch hier zum Beenden
 erforderlich.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncftpget</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">stdout</span> \
+    <span class="o">-</span><span class="n">o</span> <span class="n">doNotGetStartCWD</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">useFEAT</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">useHELP_SITE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">useCLNT</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">useSIZE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">useMDTM</span><span class="o">=</span><span class="mi">0</span> \
+    <span class="o">-</span><span class="n">W</span> <span class="s2">&quot;quote MEDIA FLSH&quot;</span> \
+    <span class="o">-</span><span class="n">u</span> <span class="n">adam2</span> \
+    <span class="o">-</span><span class="n">p</span> <span class="n">adam2</span> \
+    <span class="n">ftp</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">178.1</span><span class="o">/</span><span class="n">mtd1</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="sicherung-mit-cygwin-ncftp-ncftpget">
 <span id="sicherungmitcygwin-ncftpncftpget"></span><h2>Sicherung mit Cygwin-NcFTP (ncftpget)<a class="headerlink" href="#sicherung-mit-cygwin-ncftp-ncftpget" title="Link zu dieser Überschrift">¶</a></h2>

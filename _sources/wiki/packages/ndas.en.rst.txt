@@ -28,13 +28,13 @@ Creating a Feetz Image with NDAS
 | After the following step you can configure the packages you want to
   have included in your image.
 
-.. code:: wiki
+.. code:: bash
 
    make menuconfig
 
 Make sure the following is selected:
 
-.. code:: wiki
+.. code:: bash
 
    Package selection  ---> Packages  ---> [*] (binary only)
 
@@ -75,7 +75,7 @@ and
 | You can create block-devices for multiple drives and multiple
   partitions. Below example for one drive with one partition.
 
-.. code:: wiki
+.. code:: bash
 
    mknod -m 644 /dev/ndas c 60 0
    mknod -m 644 /dev/nda b 60 0
@@ -89,7 +89,7 @@ and
 You can verify the creation of the devices with the following well known
 command
 
-.. code:: wiki
+.. code:: bash
 
    ls -la /dev/nd*
 
@@ -100,7 +100,7 @@ command
 
 Next the kernel moduls needs to be loaded.
 
-.. code:: wiki
+.. code:: bash
 
    insmod /lib/modules/`uname -r`/kernel/fs/ndas/ndas_sal.ko
    insmod /lib/modules/`uname -r`/kernel/fs/ndas/ndas_core.ko ndas_dev=lan
@@ -121,21 +121,21 @@ Next the kernel moduls needs to be loaded.
 To verify the three modules are loaded properly you can use the
 following command:
 
-.. code:: wiki
+.. code:: bash
 
    lsmod
 
 Now the NDAS driver 'NDAS Administration Tool' should be started. This
 is done with:
 
-.. code:: wiki
+.. code:: bash
 
    ndasadmin start
 
 Following is to register the netdisk with the ID and key, that should be
 found on the NDAS device.
 
-.. code:: wiki
+.. code:: bash
 
    ndasadmin register "rrrrr-rrrrr-rrrrr-rrrrr-wwwww" --name ndas-01
 
@@ -150,7 +150,7 @@ found on the NDAS device.
 | Verify the status via the proc filesystem /proc with the following
   commands.
 
-.. code:: wiki
+.. code:: bash
 
    cat /proc/ndas/devs
 
@@ -158,7 +158,7 @@ found on the NDAS device.
 
    To see the disk details and the status.
 
-.. code:: wiki
+.. code:: bash
 
    cat /proc/ndas/devices/ndas-01/slots
 
@@ -169,25 +169,25 @@ found on the NDAS device.
 The NetDisks can be enabled with one of the following three modes: For
 read access use the following
 
-.. code:: wiki
+.. code:: bash
 
    ndasadmin enable -s 1 -o r
 
 For read/write access the following can be used:
 
-.. code:: wiki
+.. code:: bash
 
    ndasadmin enable -s 1 -o w
 
 For shared write access use:
 
-.. code:: wiki
+.. code:: bash
 
    ndasadmin enable -s 1 -o s
 
 Also a mountpoint is needed that can be created with:
 
-.. code:: wiki
+.. code:: bash
 
    mkdir /var/media/ndas/ntfs/
 
@@ -197,13 +197,13 @@ far I had only success with an NTFS formatted drive.
 
 Mount an NTFS formatted drive:
 
-.. code:: wiki
+.. code:: bash
 
    ntfs-3g -o rw /dev/nda1 /var/media/ndas
 
 A FAT formatted drive should be mounted with:
 
-.. code:: wiki
+.. code:: bash
 
    mount -t fat /dev/nda1 /var/media/ndas
 
@@ -217,7 +217,7 @@ Script at startup
 You can use the script in file rc.custom, which can be edited via the
 `web-interface <mod.html#rc_custom>`__.
 
-.. code:: wiki
+.. code:: bash
 
    #! /bin/sh
    # Create the character file to send the commands

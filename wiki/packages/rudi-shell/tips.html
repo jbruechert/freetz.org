@@ -640,6 +640,58 @@ Linux abläuft. Es genügt, folgendes Skript auszuführen:</p>
 <p>Der gesamte Vorgang erfordert zwischendurch die Eingabe einer Passphrase
 für den Serverschlüssel sowie von persönlichen Daten für das Zertifikat.
 Das sieht dann inkl. Ein- und Ausgaben beispielsweise so aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ openssl genrsa -des3 -out server.key 1024
+Generating RSA private key, 1024 bit long modulus
+..................++++++
+.......++++++
+e is 65537 (0x10001)
+Enter pass phrase for server.key:
+Verifying - Enter pass phrase for server.key:
+
+$ openssl rsa -in server.key -out server.key.unsecure
+Enter pass phrase for server.key:
+writing RSA key
+
+$ openssl req -new -key server.key -out server.csr
+Enter pass phrase for server.key:
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter &#39;.&#39;, the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:DE
+State or Province Name (full name) [Some-State]:Bavaria
+Locality Name (eg, city) []:Munich
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:ACME Ltd.
+Organizational Unit Name (eg, section) []:
+Common Name (eg, YOUR name) []:Manni Muster
+Email Address []:manni@acme.de
+
+Please enter the following &#39;extra&#39; attributes
+to be sent with your certificate request
+A challenge password []:
+An optional company name []:
+
+$ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+Signature ok
+subject=/C=DE/ST=Bavaria/L=Munich/O=ACME Ltd./CN=Manni Muster/emailAddress=manni@acme.de
+Getting Private key
+Enter pass phrase for server.key:
+
+$ rm server.csr
+
+$ cat server.key.unsecure server.crt &gt; stunnel-key.pem
+
+$ ls -l
+insgesamt 16
+-rw-r--r-- 1 ubuntu ubuntu  895 2007-02-26 21:50 server.crt
+-rw-r--r-- 1 ubuntu ubuntu  963 2007-02-26 21:41 server.key
+-rw-r--r-- 1 ubuntu ubuntu  887 2007-02-26 21:42 server.key.unsecure
+-rw-r--r-- 1 ubuntu ubuntu 1782 2007-02-26 22:00 stunnel-key.pem
+</pre></div>
+</div>
 <p>Anschließend haben wir in Form der Datei <code class="docutils literal notranslate"><span class="pre">stunnel-key.pem</span></code>, was wir
 wollten: ein selbst signiertes Schlüsselpaar für unseren HTTPS-Server.
 Das muß jetzt nur noch irgendwie auf die Box. Dafür gibt es zwei Wege:</p>
@@ -674,6 +726,13 @@ automatisch gestartet wird und geben unter <em>Einstellungen → stunnel
 services</em> folgende Konfiguration ein, um eben diese Web-Oberfläche, in
 der wir uns gerade aufhalten, zukünftig HTTPS-gesichert verfügbar zu
 machen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">freetz_web</span><span class="p">]</span>
+<span class="n">cert</span> <span class="o">=</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">stunnel</span><span class="o">-</span><span class="n">key</span><span class="o">.</span><span class="n">pem</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">no</span>
+<span class="n">accept</span> <span class="o">=</span> <span class="mi">443</span>
+<span class="n">connect</span> <span class="o">=</span> <span class="mi">81</span>
+</pre></div>
+</div>
 <p>D.h. nichts anderes, als daß wir einen von uns
 <a class="reference external" href="../../index.html">Freetz</a> getauften Service verfügbar machen,
 welcher eingehende SSL-Verbindungen auf dem HTTPS-Port 443 akzeptiert
@@ -691,6 +750,9 @@ Abschnitte in die Konfiguration ein nach obigem Muster.</p>
 machen, müssen entweder die üblichen Einstellungen in
 <code class="docutils literal notranslate"><span class="pre">/var/flash/ar7.cfg</span></code> vorgenommen werden, also z.B. folgender Abschnitt
 unter <em>forwardrules</em></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;tcp 0.0.0.0:443 0.0.0.0:443&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
 <p>oder aber über die AVM-Oberfläche ein entsprechendes <a class="reference external" href="http://de.wikipedia.org/wiki/Portweiterleitung">​Port
 Forwarding</a> auf ein
 virtuelles Interface konfiguriert werden. Das Ganze benötigen wir pro

@@ -25,7 +25,7 @@ Usage of syslog
 
 The syslog messages can be displayed via the web-interface via:
 
-.. code:: wiki
+.. code:: bash
 
    Status > Syslog
 
@@ -35,14 +35,14 @@ packages (e.g. hostapd, login, INADYN).
 Another option is to view the messages via a telnet or ssh connection
 using the following commands:
 
-.. code:: wiki
+.. code:: bash
 
    logread
 
 You can monitor the syslog messages where all new messages are displayed
 using the command:
 
-.. code:: wiki
+.. code:: bash
 
    logread -f
 

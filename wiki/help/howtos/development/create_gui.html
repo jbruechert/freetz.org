@@ -637,9 +637,17 @@ individuell erstellt.</p>
 <span id="id3"></span><h3>Konfiguration<a class="headerlink" href="#konfiguration" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Jedes Paket besitzt ein Konfigurationsdatei
 <code class="docutils literal notranslate"><span class="pre">/mod/etc/conf/&lt;paketname&gt;.cfg</span></code>, welche wie folgt aufgebaut ist:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="o">&lt;</span><span class="n">PAKETNAME</span><span class="o">&gt;</span><span class="n">_OPTION1</span><span class="o">=</span><span class="s1">&#39;bla&#39;</span>
+<span class="n">export</span> <span class="o">&lt;</span><span class="n">PAKETNAME</span><span class="o">&gt;</span><span class="n">_OPTION2</span><span class="o">=</span><span class="s1">&#39;blub&#39;</span>
+<span class="o">...</span>
+</pre></div>
+</div>
 <p>Sie enthält alle Optionen, die auch übers Webinterface eingestellt
 werden können und ist in Shell Syntax. Damit kann die aktuelle
 Konfiguration mit</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span> <span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">conf</span><span class="o">/&lt;</span><span class="n">paketname</span><span class="o">&gt;.</span><span class="n">cfg</span>
+</pre></div>
+</div>
 <p>eingelesen werden. In der Datei
 <code class="docutils literal notranslate"><span class="pre">/mod/etc/default.&lt;paketname&gt;/&lt;paketname&gt;.cfg</span></code> sind die default
 Einstellungen gespeichert. Beim Speichern werden nur die sich von den
@@ -663,7 +671,27 @@ hat den Paketnamen ‚mod‘. Die Befehle dazu sind:</p>
 </div>
 <p>Das dauerhafte Abschalten des Webinterfaces geht damit so (Variable
 MOD_HTTPD in der Basis-Konfiguration ‚mod‘):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vi</span> <span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">mod</span><span class="o">.</span><span class="n">cfg</span>  <span class="c1"># -&gt; MOD_HTTPD=&#39;yes&#39; durch MOD_HTTPD=&#39;no&#39; ersetzen</span>
+<span class="n">modconf</span> <span class="n">save</span> <span class="n">mod</span>  <span class="c1"># nun ist mod.diff up-to-date</span>
+<span class="n">modsave</span> <span class="n">flash</span>  <span class="c1"># damit ist mod.diff im tffs</span>
+
+<span class="c1"># oder</span>
+
+<span class="n">vi</span> <span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">mod</span><span class="o">.</span><span class="n">cfg</span>  <span class="c1"># -&gt; MOD_HTTPD=&#39;yes&#39; durch MOD_HTTPD=&#39;no&#39; ersetzen</span>
+<span class="n">modsave</span>  <span class="c1"># erzeugt alle diff Dateien neu und speichert ins tffs</span>
+</pre></div>
+</div>
 <p>Soviel zur Veranschaulichung. Komfortabler ist folgendes:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modconf</span> <span class="nb">set</span> <span class="n">mod</span> <span class="n">MOD_HTTPD</span><span class="o">=</span><span class="n">no</span>
+<span class="n">modconf</span> <span class="n">save</span> <span class="n">mod</span>
+<span class="n">modsave</span> <span class="n">flash</span>
+
+<span class="c1"># bzw.</span>
+
+<span class="n">modconf</span> <span class="nb">set</span> <span class="n">mod</span> <span class="n">MOD_HTTPD</span><span class="o">=</span><span class="n">no</span>
+<span class="n">modsave</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="wie-funktioniert-das-mit-der-gui">

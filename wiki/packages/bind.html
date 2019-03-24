@@ -565,7 +565,33 @@ werden.</p>
 <p>Die möglichen Optionen können der Manpage oder den vielen Internetseiten
 entnommen werden.</p>
 <p>Minimal <em>named.conf</em>:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">options</span> <span class="p">{</span>
+    <span class="n">directory</span> <span class="s2">&quot;/var/media/ftp/uFlash/bind&quot;</span><span class="p">;</span>
+    <span class="n">listen</span><span class="o">-</span><span class="n">on</span> <span class="n">port</span> <span class="mi">53</span> <span class="p">{</span> <span class="nb">any</span><span class="p">;</span> <span class="p">};</span>
+    <span class="n">allow</span><span class="o">-</span><span class="n">query</span> <span class="p">{</span> <span class="nb">any</span><span class="p">;</span> <span class="p">};</span>
+    <span class="n">notify</span> <span class="n">no</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">zone</span> <span class="s2">&quot;example.org&quot;</span> <span class="ow">in</span> <span class="p">{</span>
+      <span class="nb">type</span> <span class="n">master</span><span class="p">;</span>
+      <span class="n">file</span> <span class="s2">&quot;example.org&quot;</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
 <p>Minimal zone file <em>/var/media/ftp/uFlash/bind/example.org</em>:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$TTL 300
+@       IN      SOA     @ example.org. (
+                        2011032701      ;serial
+                        300             ;refresh
+                        300             ;retry
+                        300             ;expire
+                        300             ;minimum
+                        )
+
+        IN      NS      ns.example.org.
+*       IN      A       85.214.209.234
+</pre></div>
+</div>
 </div>
 </div>
 

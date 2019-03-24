@@ -577,11 +577,22 @@ geblockt wird <img alt=";)" src="../../_images/smiley-wink2.png" /></p>
 <p>See package <a class="reference external" href="dns2tcp.html">dns2tcp</a> for signing up with FreeDNS and
 some other details.</p>
 <p>Put this in your <em>rc.custom</em> (there is no WebIF):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">iodine</span>
+<span class="n">chown</span> <span class="n">nobody</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">iodine</span>
+<span class="n">iodined</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">P</span> <span class="o">&lt;</span><span class="n">password</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">u</span> <span class="n">nobody</span> <span class="o">-</span><span class="n">t</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">iodine</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">0.1</span> <span class="o">-</span><span class="n">p</span> <span class="mi">10053</span> <span class="n">dns2tcp</span><span class="o">.</span><span class="n">strangled</span><span class="o">.</span><span class="n">net</span>
+</pre></div>
+</div>
 <p>(assuming user <em>nobody</em> exists)</p>
 <p>The trunk version of Freetz has an iodine WebIF now (changeset #6657;
 thanks oliver!)</p>
 <p>Create a tunnel from the client like this:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">./</span><span class="nb">bin</span><span class="o">/</span><span class="n">iodine</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">P</span> <span class="o">&lt;</span><span class="n">password</span><span class="o">&gt;</span> <span class="n">dns2tcp</span><span class="o">.</span><span class="n">strangled</span><span class="o">.</span><span class="n">net</span>
+</pre></div>
+</div>
 <p>To connect to Polipo?:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">root</span><span class="nd">@10</span><span class="o">.</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">1</span> <span class="o">-</span><span class="n">L</span> <span class="mi">8123</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8123</span>
+</pre></div>
+</div>
 <p>The advantages over <a class="reference external" href="dns2tcp.html">dns2tcp</a> are:</p>
 <ul class="simple">
 <li>There is an iodine Windows client available</li>
@@ -595,13 +606,25 @@ Android</a>.</p>
 <span id="id1"></span><h2>Security<a class="headerlink" href="#security" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Install <a class="reference external" href="iptables.html">iptables</a> and add these rules to allow only
 traffic to the internet and not your local net:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iptables</span> <span class="o">-</span><span class="n">I</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">o</span> <span class="n">dns0</span> <span class="o">-</span><span class="n">s</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.0</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">j</span> <span class="n">DROP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">I</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">i</span> <span class="n">dns0</span> <span class="o">-</span><span class="n">d</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.0</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">j</span> <span class="n">DROP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">FORWARD</span> <span class="o">-</span><span class="n">i</span> <span class="n">dns0</span> <span class="o">-</span><span class="n">o</span> <span class="n">dsl</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">FORWARD</span> <span class="o">-</span><span class="n">i</span> <span class="n">dns0</span> <span class="o">-</span><span class="n">j</span> <span class="n">DROP</span>
+</pre></div>
+</div>
 <p>Of course you can always allow specific traffic from tunnel to your
 local net, for example to a SSH server by using something like:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iptables</span> <span class="o">-</span><span class="n">I</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">i</span> <span class="n">dns0</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">22</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="forwarding">
 <span id="id2"></span><h2>Forwarding<a class="headerlink" href="#forwarding" title="Link zu dieser Überschrift">¶</a></h2>
 <p>iodine can forward DNS requests for unknown (sub)domains to a real
 DNS-server on another port with this switch:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">b</span> <span class="mi">5353</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>Tags</li>
 <li><a class="reference external" href="/tags/network">network</a></li>

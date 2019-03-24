@@ -40,20 +40,20 @@ this:
 #. On the client you should be able to create a DNS tunnel like this
    now:
 
-   .. code:: wiki
+   .. code:: bash
 
       dns2tcpc -r ssh -l 2222 -z dns2tcp.strangled.net fabulous.fritzbox.org
 
 #. If you want a local `​SOCKS <http://en.wikipedia.org/wiki/SOCKS>`__
    server to browse the internet:
 
-   .. code:: wiki
+   .. code:: bash
 
       ssh root@localhost -p 2222 -D 8765
 
 #. | If you want to use Polipo? as http proxy:
 
-   .. code:: wiki
+   .. code:: bash
 
       ssh root@localhost -p 2222 -L 8123:localhost:8123
 

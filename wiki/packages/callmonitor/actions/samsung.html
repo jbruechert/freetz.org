@@ -556,7 +556,13 @@
 <span id="benachrichtigungaufeinemsamsungtv"></span><h1>Benachrichtigung auf einem Samsung TV<a class="headerlink" href="#benachrichtigung-auf-einem-samsung-tv" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Die Funktion <code class="docutils literal notranslate"><span class="pre">samsung</span></code> verschickt eine Benachrichtigung über einen
 Telefonanruf mit Hilfe der SOAP-Methode an ein Samsung TV:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">samsung</span> <span class="p">{</span><span class="n">IP</span> <span class="n">des</span> <span class="n">TV</span><span class="p">}</span>
+</pre></div>
+</div>
 <p>Also z.B.:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">samsung</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.19</span>
+</pre></div>
+</div>
 <p>Es werden der Anrufer-Name (sofern im Telefonbuch oder in den Callers
 eingetragen, ansonsten die Telefonnummer), die angerufene Nummer, sowie
 Datum und Uhrzeit angezeigt. Die Länge der darstellbaren Zeichen hängt
@@ -564,12 +570,24 @@ vom Inhalt ab. Wenn nicht mehr Text angezeigt werden kann (z.B. bei
 Adresszusätzen in den Callers), wird er am Ende abgeschnitten, so dass
 er mit „…“ endet.</p>
 <p>Der Listener-Eintrag im Callmonitor kann dazu z.B. so aussehen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span><span class="p">:</span><span class="n">request</span> <span class="o">^</span> <span class="o">^</span> <span class="n">samsung</span> <span class="n">tv</span>
+</pre></div>
+</div>
 <p>Zum Testen kann man folgendes direkt vom Terminal der Fritzbox
 ausführen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">callaction</span> <span class="n">samsung</span> <span class="n">tv</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line">Die Funktion <code class="docutils literal notranslate"><span class="pre">samsung_text</span></code> verschickt eine Nachricht mit Hilfe der
 SOAP-Methode an ein Samsung TV, z.B.:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;Hello, world!&quot;</span> <span class="o">|</span> <span class="n">callaction</span> <span class="n">samsung_text</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.19</span> \
+<span class="o">--</span><span class="n">from</span><span class="o">=</span><span class="s2">&quot;Absender&quot;</span> <span class="o">--</span><span class="n">from</span><span class="o">-</span><span class="n">number</span><span class="o">=</span><span class="s2">&quot;069 123456&quot;</span> \
+<span class="o">--</span><span class="n">to</span><span class="o">-</span><span class="n">number</span><span class="o">=</span><span class="s2">&quot;089 987654&quot;</span> <span class="o">--</span><span class="n">to</span><span class="o">=</span><span class="s2">&quot;Empfänger&quot;</span> \
+<span class="o">--</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;2010-05-21&quot;</span> <span class="o">--</span><span class="n">time</span><span class="o">=</span><span class="s2">&quot;21:56:00&quot;</span>
+</pre></div>
 </div>
 <p>Analog zum obigen Beispiel werden hier Anrufer-Name und dessen
 Telefonnummer, Empfänger-Name und dessen Telefonnummer sowie Datum und

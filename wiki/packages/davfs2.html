@@ -611,6 +611,11 @@ Nachladen per wget</li>
 <div class="section" id="paket-in-die-firmware-einbauen">
 <span id="paketindiefirmwareeinbauen"></span><h2>Paket in die Firmware einbauen<a class="headerlink" href="#paket-in-die-firmware-einbauen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Das davfs2 Paket unter <em>menuconfig</em> auswählen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">menuconfig</span>
+<span class="n">Package</span> <span class="n">selection</span> <span class="o">-&gt;</span> <span class="n">Testing</span> <span class="o">-&gt;</span> <span class="n">davfs</span> <span class="n">auswählen</span>
+<span class="n">make</span>
+</pre></div>
+</div>
 <div class="section" id="verschlusselung-mit-zertifikaten">
 <span id="verschlusselungmitzertifikaten"></span><h3>Verschlüsselung mit Zertifikaten<a class="headerlink" href="#verschlusselung-mit-zertifikaten" title="Link zu dieser Überschrift">¶</a></h3>
 <div class="line-block">
@@ -647,6 +652,10 @@ Aktualisieren des Zertifikates schafft Abhilft.</p>
 einige Zertifikate vor.</p>
 <p>Man kann das Zertifikat auch über folgenden Aufruf auf dem PC ausgeben
 lassen (Die Adresse in der ersten Zeile ist anzupassen):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>TARGET=www.box.net:https
+openssl s_client -showcerts -connect $TARGET &lt; /dev/null 2&gt; /dev/null | sed -n &#39;/^-----BEGIN CERTIFICATE-----$/,/^-----END CERTIFICATE-----$/{/BEGIN /h;/BEGIN /!H};${g;p}&#39;
+</pre></div>
+</div>
 </div>
 <div class="section" id="einstellungen-optionen">
 <span id="einstellungenoptionen"></span><h3>Einstellungen/ Optionen<a class="headerlink" href="#einstellungen-optionen" title="Link zu dieser Überschrift">¶</a></h3>

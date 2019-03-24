@@ -594,9 +594,43 @@ dieser beim Bau eines Freetz-Image im Menuconfig ausgewählt werden:</p>
 Beispiel haben wir die 2222 gewählt) und der Speicherort des Log-Files
 angegeben werden. Des weiteren müsst ihr noch die <strong>user.config</strong> von
 hier :</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">###client_side_ssl = false;</span>
+<span class="c1">### Networks</span>
+<span class="n">network</span> <span class="p">{</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;freetz&quot;</span><span class="p">;</span>
+    <span class="n">server</span> <span class="p">{</span> <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;random.ircd.de&quot;</span><span class="p">;</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">6667</span><span class="p">;</span> <span class="p">};</span>
+<span class="p">};</span>
+<span class="c1">### Users</span>
+<span class="n">user</span> <span class="p">{</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Mustermann&quot;</span><span class="p">;</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;xxxxxxxxxxxxxxxxxxxxxxxx&quot;</span><span class="p">;</span>
+    <span class="n">default_nick</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+    <span class="n">default_user</span> <span class="o">=</span> <span class="s2">&quot;Mustermann&quot;</span><span class="p">;</span>
+    <span class="n">default_realname</span> <span class="o">=</span> <span class="s2">&quot;Mustermann&quot;</span><span class="p">;</span>
+    <span class="n">connection</span> <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;freetz&quot;</span><span class="p">;</span>
+        <span class="n">network</span> <span class="o">=</span> <span class="s2">&quot;freetz&quot;</span><span class="p">;</span>
+<span class="c1">#       away_nick = &quot;Mustermann-away&quot;;</span>
+        <span class="n">follow_nick</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
+        <span class="n">ignore_first_nick</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
+        <span class="n">channel</span> <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;#fritzbox&quot;</span><span class="p">;</span>
+        <span class="p">};</span>
+
+    <span class="p">};</span>
+
+<span class="p">};</span>
+</pre></div>
+</div>
 <p>kopieren und nach Euren Wünschen anpassen. Geändert werden muss
 eigentlich nur der <strong>Mustermann</strong> gegen Euren <strong>Usernamen</strong>. Unter
 <strong>Networks</strong> kann auch folgender Eintrag genutzt werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">network</span> <span class="p">{</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;freetz&quot;</span><span class="p">;</span>
+    <span class="n">server</span> <span class="p">{</span> <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;irc.fu-berlin.de&quot;</span><span class="p">;</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">6667</span><span class="p">;</span> <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
 <p><strong>Hinweis:</strong> Nach <strong>jeder</strong> Änderungen an der <strong>user.config</strong> und
 drücken des Button <strong>Übernehmen</strong> muss man ca. 5 Minuten warten bis sich
 der User wieder am IRC-Chanel anmelden kann.</p>

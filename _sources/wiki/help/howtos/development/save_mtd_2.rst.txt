@@ -63,7 +63,7 @@ werden häufig verwendet:
 
 Die normale und einfache Methode, die Boot-IP herauszufinden, ist diese:
 
-.. code:: wiki
+.. code:: bash
 
    cat /proc/sys/urlader/environment | grep my_ipaddress
 
@@ -90,7 +90,7 @@ noch das Media Sensing ausschalten, indem man folgendes als Textdatei
 ``mediasensing-aus.reg`` speichert und doppelklickt, um es danach in die
 Windows-Registry eintragen zu lassen:
 
-.. code:: wiki
+.. code:: bash
 
    Windows Registry Editor Version 5.00
 
@@ -106,7 +106,7 @@ ein- und ausstöpselt und das Mediasensing für unterschiedliche
 DHCP-Server benötigt (z.B. Notebook abwechselnd im Büro und zu Hause).
 Sollte man es doch wieder einschalten wollen, geht das so:
 
-.. code:: wiki
+.. code:: bash
 
    Windows Registry Editor Version 5.00
 
@@ -198,7 +198,7 @@ einmal geht hier nicht. Aber Strg-C am Ende des
 `Downloads <../../../Download.html>`__ ist auch hier zum Beenden
 erforderlich.
 
-.. code:: wiki
+.. code:: bash
 
    ncftpget \
        -d stdout \

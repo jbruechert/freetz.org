@@ -99,7 +99,7 @@ Screenshots referenzieren
    in Originalgröße zu ermöglichen, kann man sich eines Tricks bedienen,
    und den passenden Link in die Beschreibung packen:
 
-   .. code:: wiki
+   .. code:: bash
 
       [[Screenshot(6,width=200,height=145,align=right,description=[screenshot:6 $description])]]
 

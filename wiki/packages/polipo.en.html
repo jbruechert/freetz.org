@@ -585,6 +585,9 @@ localhost:8123 (assuming default Polipo configuration)</li>
 </ol>
 <p>It is not an bad idea to restrict the memory Polipo will use with the
 following additional option:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chunkHighMark</span><span class="o">=</span><span class="mi">1048576</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="security">
 <span id="id1"></span><h1>Security<a class="headerlink" href="#security" title="Link zu dieser Überschrift">¶</a></h1>
@@ -598,6 +601,9 @@ allowed.</p>
 Tor about how to prevent this. (it is possible to use Tor Button without
 Tor)</p>
 <p>It is possible to tighten security by using these options:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tunnelAllowedPorts</span><span class="o">=</span><span class="mi">443</span><span class="p">;</span><span class="n">allowedPorts</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="mi">443</span>
+</pre></div>
+</div>
 <p>This prevent tunneling through the proxy and access to the freetz web
 interface.</p>
 </div>
@@ -605,7 +611,17 @@ interface.</p>
 <span id="blockingdomains"></span><h1>Blocking domains<a class="headerlink" href="#blocking-domains" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Using the extra options it is possible to specify a file with forbidden
 domains, like this:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">forbiddenFile</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uFlash</span><span class="o">/</span><span class="n">polipo</span><span class="o">/</span><span class="n">forbidden</span>
+</pre></div>
+</div>
 <p>Add the domains you want to block on separate lines, like this:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">doubleclick</span><span class="o">.</span><span class="n">net</span>
+<span class="n">googleadservices</span><span class="o">.</span><span class="n">com</span>
+<span class="n">google</span><span class="o">-</span><span class="n">analytics</span><span class="o">.</span><span class="n">com</span>
+<span class="n">googlesyndication</span><span class="o">.</span><span class="n">com</span>
+<span class="n">facebook</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">plugins</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="issues">
 <span id="id2"></span><h1>Issues<a class="headerlink" href="#issues" title="Link zu dieser Überschrift">¶</a></h1>

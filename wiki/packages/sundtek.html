@@ -583,11 +583,17 @@ benötigt</p>
 <span id="treiberverwenden"></span><h2>Treiber verwenden<a class="headerlink" href="#treiber-verwenden" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Um den Treiber benutzen zu können muss vorher dieser Befehl ausgeführt
 werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">LD_PRELOAD</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libmediaclient</span><span class="o">.</span><span class="n">so</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="usb-stick-initialisieren">
 <span id="usb-stickinitialisieren"></span><h2>USB-Stick initialisieren<a class="headerlink" href="#usb-stick-initialisieren" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Der USB-Stick muss für die Fritzbox in den Übertrangungsmodus „bulk“
 versetzt werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mediaclient</span> <span class="o">--</span><span class="n">dtvtransfermode</span><span class="o">=</span><span class="n">bulk</span>
+</pre></div>
+</div>
 <p>Dies ist nur einmalig nötig und der Stick muss danach neu angesteckt
 werden.</p>
 </div>

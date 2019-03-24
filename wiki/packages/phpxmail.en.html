@@ -561,16 +561,19 @@ the logs what is (not) happening.</p>
 </div>
 <div class="section" id="basic-setup-guide">
 <span id="basicsetupguide"></span><h1>Basic setup guide<a class="headerlink" href="#basic-setup-guide" title="Link zu dieser Überschrift">¶</a></h1>
+<ol class="arabic">
+<li><p class="first">To prevent disappointment: check if your internet provider allows
+SMTP (port 25) traffic</p>
+</li>
+<li><p class="first">Build and install Freetz with PHPXMail and
+<a class="reference external" href="avm-firewall.html">AVM-firewall-cgi</a></p>
 <ol class="arabic simple">
-<li>To prevent disappointment: check if your internet provider allows
-SMTP (port 25) traffic</li>
-<li>Build and install Freetz with PHPXMail and
-<a class="reference external" href="avm-firewall.html">AVM-firewall-cgi</a><ol class="arabic">
 <li>PHPXMail selects XMail and PHP</li>
 <li>Be prepared for the space requirements …</li>
 </ol>
 </li>
-<li>Setup Firewall (Freetz menu Packages &gt; AVM-Firewall)<ol class="arabic">
+<li><p class="first">Setup Firewall (Freetz menu Packages &gt; AVM-Firewall)</p>
+<ol class="arabic simple">
 <li>Select port forwarding</li>
 <li>Forward TCP port 25 to Fritz!Box port 10025 (SMTP)</li>
 <li>Forward TCP port 110 to Fritz!Box port 10110 (POP3)</li>
@@ -578,23 +581,38 @@ SMTP (port 25) traffic</li>
 <li>Reboot</li>
 </ol>
 </li>
-<li>Setup XMail (Freetz menu Packages &gt; XMail)<ol class="arabic">
-<li>Set start type to automatic</li>
-<li>Fill in a <strong>existing</strong> directory for settings &amp; storage, for
-example</li>
+<li><p class="first">Setup XMail (Freetz menu Packages &gt; XMail)</p>
+<ol class="arabic">
+<li><p class="first">Set start type to automatic</p>
+</li>
+<li><p class="first">Fill in a <strong>existing</strong> directory for settings &amp; storage, for
+example</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">XMail</span>
+</pre></div>
+</div>
+</li>
 </ol>
 </li>
-<li>Activate SMTP &amp; POP3</li>
-<li>Activate unencrypted admin access</li>
-<li>Activate all logging for the time being</li>
-<li>Apply</li>
-<li>Start XMail (freetz menu Services &gt; XMail &gt; Start)</li>
-<li>Change the user name of the web interface to set XMail password
-(Freetz menu Settings &gt; webcfg &gt; change password)</li>
-<li>Open PHPXMail configuration site (Freetz menu Packages &gt; PHPXMail &gt;
-here)<ol class="arabic">
-<li>Login with user <em>admin</em> and the set web interface password</li>
-<li>Goto server config<ol class="arabic">
+<li><p class="first">Activate SMTP &amp; POP3</p>
+</li>
+<li><p class="first">Activate unencrypted admin access</p>
+</li>
+<li><p class="first">Activate all logging for the time being</p>
+</li>
+<li><p class="first">Apply</p>
+</li>
+<li><p class="first">Start XMail (freetz menu Services &gt; XMail &gt; Start)</p>
+</li>
+<li><p class="first">Change the user name of the web interface to set XMail password
+(Freetz menu Settings &gt; webcfg &gt; change password)</p>
+</li>
+<li><p class="first">Open PHPXMail configuration site (Freetz menu Packages &gt; PHPXMail &gt;
+here)</p>
+<ol class="arabic">
+<li><p class="first">Login with user <em>admin</em> and the set web interface password</p>
+</li>
+<li><p class="first">Goto server config</p>
+<ol class="arabic simple">
 <li>Enable <em>DefaultSMTPGateways</em></li>
 <li>Fill in your provider’s smtp server address</li>
 <li>Save values</li>
@@ -603,17 +621,26 @@ here)<ol class="arabic">
 if you need to authenticate</li>
 </ol>
 </li>
-<li>Goto server domains &gt; new domain</li>
-<li>Enter your domain name, for example <em>your-domain.com</em></li>
-<li>Submit</li>
-<li>Goto server config<ol class="arabic">
-<li>Enable and set <em>CustMapsList</em> to (see
-<a class="reference external" href="http://xmailforum.homelinux.net/index.php?showtopic=4620">​here</a>):</li>
-</ol>
+<li><p class="first">Goto server domains &gt; new domain</p>
+</li>
+<li><p class="first">Enter your domain name, for example <em>your-domain.com</em></p>
+</li>
+<li><p class="first">Submit</p>
+</li>
+<li><p class="first">Goto server config</p>
+<ol class="arabic">
+<li><p class="first">Enable and set <em>CustMapsList</em> to (see
+<a class="reference external" href="http://xmailforum.homelinux.net/index.php?showtopic=4620">​here</a>):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zen</span><span class="o">.</span><span class="n">spamhaus</span><span class="o">.</span><span class="n">org</span><span class="o">.</span><span class="p">:</span><span class="mi">0</span>
+</pre></div>
+</div>
 </li>
 </ol>
 </li>
-<li>Create an MX record that points to the external IP of your FritzBox<ol class="arabic">
+</ol>
+</li>
+<li><p class="first">Create an MX record that points to the external IP of your FritzBox</p>
+<ol class="arabic simple">
 <li>See for example
 <a class="reference external" href="http://www.dyndns.com/support/kb/email_mail_exchangers_and_dns.html">​here</a>
 for information</li>
@@ -624,12 +651,14 @@ records, so in case of problems mail will be handled by my hosting
 provider as usual</li>
 </ol>
 </li>
-<li>Setup your preferred e-mail client<ol class="arabic">
+<li><p class="first">Setup your preferred e-mail client</p>
+<ol class="arabic simple">
 <li>Server: external IP of your FritzBox</li>
 <li>User name: <em>postmaster &#64; your-domain.com</em></li>
 </ol>
 </li>
-<li>Test your configuration<ol class="arabic">
+<li><p class="first">Test your configuration</p>
+<ol class="arabic simple">
 <li>Send a test mail to <em>postmaster &#64; your-domain.com</em> (check server
 logs &gt; smtp)</li>
 <li>Receive the test mail with your e-mail client (check server logs &gt;
@@ -638,7 +667,8 @@ pop3)</li>
 <a class="reference external" href="http://www.abuse.net/relay.html">​here</a></li>
 </ol>
 </li>
-<li>Setup as many other domains and accounts as you like …</li>
+<li><p class="first">Setup as many other domains and accounts as you like …</p>
+</li>
 </ol>
 <p>If you want to forward e-mail:</p>
 <ol class="arabic simple">
@@ -652,21 +682,35 @@ directory!</p>
 </div>
 <div class="section" id="setup-ssl">
 <span id="setupssl"></span><h1>Setup SSL<a class="headerlink" href="#setup-ssl" title="Link zu dieser Überschrift">¶</a></h1>
-<ol class="arabic simple">
-<li>Build XMail with SSL support</li>
-<li>Login using telnet (or better SSH)</li>
-<li>Goto the XMail settings directory</li>
-<li>Create the file <em>openssl.cnf</em> with the example contents from
-<a class="reference external" href="http://www.iona.com/support/docs/orbix2000/2.0/tls/html/OpenSslUtils3.html">​here</a></li>
-<li>Enter the following commands:</li>
-<li>Answer the questions with anything you like, but use your domain name
-as common name (CN)</li>
-<li>Forward TCP port 465 to Fritz!Box port 10465 (SSMTP)</li>
-<li>Forward TCP port 995 to Fritz!Box port 10995 (POP3S)</li>
-<li>Activate the XMail options SSMTP and POP3S (note that the checkboxes
+<ol class="arabic">
+<li><p class="first">Build XMail with SSL support</p>
+</li>
+<li><p class="first">Login using telnet (or better SSH)</p>
+</li>
+<li><p class="first">Goto the XMail settings directory</p>
+</li>
+<li><p class="first">Create the file <em>openssl.cnf</em> with the example contents from
+<a class="reference external" href="http://www.iona.com/support/docs/orbix2000/2.0/tls/html/OpenSslUtils3.html">​here</a></p>
+</li>
+<li><p class="first">Enter the following commands:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openssl_genrsa</span> <span class="mi">2048</span> <span class="o">&gt;</span> <span class="n">server</span><span class="o">.</span><span class="n">key</span>
+<span class="n">openssl_req</span> <span class="o">-</span><span class="n">new</span> <span class="o">-</span><span class="n">x509</span> <span class="o">-</span><span class="n">key</span> <span class="n">server</span><span class="o">.</span><span class="n">key</span> <span class="o">-</span><span class="n">out</span> <span class="n">server</span><span class="o">.</span><span class="n">cert</span> <span class="o">-</span><span class="n">days</span> <span class="mi">365</span> <span class="o">-</span><span class="n">config</span> <span class="n">openssl</span><span class="o">.</span><span class="n">cnf</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Answer the questions with anything you like, but use your domain name
+as common name (CN)</p>
+</li>
+<li><p class="first">Forward TCP port 465 to Fritz!Box port 10465 (SSMTP)</p>
+</li>
+<li><p class="first">Forward TCP port 995 to Fritz!Box port 10995 (POP3S)</p>
+</li>
+<li><p class="first">Activate the XMail options SSMTP and POP3S (note that the checkboxes
 don’t show up checked again before changeset
-<a class="reference external" href="/changeset/4760">r4760</a>)</li>
-<li>Test by checking your e-mail with SSL (port 995) enabled</li>
+<a class="reference external" href="/changeset/4760">r4760</a>)</p>
+</li>
+<li><p class="first">Test by checking your e-mail with SSL (port 995) enabled</p>
+</li>
 </ol>
 </div>
 <div class="section" id="useful-links">

@@ -674,6 +674,12 @@ zustande kam (so kann man direkt auf „verpasste Anrufe“ reagieren)</li>
 <p>Dazu passend haben die Listeners eine zusätzliche erste Spalte bekommen,
 in der (mit Hilfe von Abkürzungen und Wildcards) das gewünschte Ereignis
 angegeben werden kann, auf das die betreffende Regel reagieren soll:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>in:request  ^       ^1234$  xboxmessage xbox
+in:cancel   ^       ^       mailmessage -t test@example.com
+out:cancel  ^1234$  ^0123   dboxpopup dbox-a &quot;${DEST} geht nicht ran&quot;
+*:dis       ^       ^       echo &quot;Anruf beendet: ${DURATION} Sekunden&quot; &gt;&gt; log
+</pre></div>
+</div>
 <p>Es kann mehrere Regeln geben, die auf dasselbe Ereignis passen.</p>
 <p>Die Präfixe „NT:“, „E:“ und „<em>:“ in der *SOURCE</em>-Spalte gibt es nicht
 mehr. Eure bisherige Listeners-Datei (vor Version 1.0) könnt ihr nicht
@@ -876,14 +882,23 @@ vorher ist die Zuordnung ja nicht klar):</p>
 <span id="formatierungderausgaben"></span><h2>Formatierung der Ausgaben<a class="headerlink" href="#formatierung-der-ausgaben" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Zur Formatierung der Ausgaben stehen folgende Funktionen bereit:</p>
 <p>seit Version 1.8:</p>
-<ul class="simple">
-<li>f_duration: zur Darstellung von Zeitdauern als „hh:mm:ss“</li>
+<ul>
+<li><p class="first">f_duration: zur Darstellung von Zeitdauern als „hh:mm:ss“</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>f_duration &lt;ZEIT_IN_SEKUNDEN&gt;
+
+  ZEIT_IN_SEKUNDEN:      Zeit in Sekunden, z.B. $DURATION
+</pre></div>
+</div>
+</li>
 </ul>
 <p>Beispiel:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;Der Anruf dauerte $(f_duration $DURATION)&quot;</span>
 </pre></div>
 </div>
 <p>führt zu einer Ausgabe</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Der</span> <span class="n">Anruf</span> <span class="n">dauerte</span> <span class="mi">1</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mi">03</span>
+</pre></div>
+</div>
 <p>falls DURATION den Wert 3903 hat.</p>
 <p>Als nützlich kann sich auch die Konstante $LF erweisen, die einen
 Zeilenumbruch enthält (line feed):</p>
@@ -895,22 +910,56 @@ Zeilenumbruch enthält (line feed):</p>
 <span id="musterfurereignisse"></span><h2>Muster für Ereignisse<a class="headerlink" href="#muster-fur-ereignisse" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Es gibt mehrere Möglichkeiten, in den Listeners die Ereignisse
 anzugeben, bei der eine Regel auslösen soll:</p>
-<ul class="simple">
-<li>Vollständige Ereignisnamen:</li>
-<li>Abkürzungen des vorderen und/oder hinteren Teils:</li>
-<li>Wildcards für den vorderen Teil (Richtung), den hinteren oder beide:</li>
-<li>Listen dieser Bestandteile (mit Komma getrennt (Vorsicht, kein
-Whitespace); die Regel passt, wenn einer der Teile passt):</li>
+<ul>
+<li><p class="first">Vollständige Ereignisnamen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span><span class="p">:</span><span class="n">request</span>
+<span class="n">out</span><span class="p">:</span><span class="n">disconnect</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Abkürzungen des vorderen und/oder hinteren Teils:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span><span class="p">:</span><span class="n">req</span>
+<span class="n">out</span><span class="p">:</span><span class="n">disc</span>
+<span class="n">i</span><span class="p">:</span><span class="n">r</span>
+<span class="n">o</span><span class="p">:</span><span class="n">d</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Wildcards für den vorderen Teil (Richtung), den hinteren oder beide:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="p">:</span><span class="n">req</span>
+<span class="n">ou</span><span class="p">:</span><span class="o">*</span>
+<span class="o">*</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Listen dieser Bestandteile (mit Komma getrennt (Vorsicht, kein
+Whitespace); die Regel passt, wenn einer der Teile passt):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span><span class="p">:</span><span class="n">req</span><span class="p">,</span><span class="n">out</span><span class="p">:</span><span class="o">*</span>
+</pre></div>
+</div>
+</li>
 </ul>
 </div>
 <div class="section" id="beispiele">
 <h2>Beispiele:<a class="headerlink" href="#beispiele" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Verpasster Anruf (in:cancel) mailmessage an mehrere Email Adressen
 versenden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span><span class="p">:</span><span class="n">cancel</span> <span class="o">^</span> <span class="o">^</span> <span class="n">mailmessage</span> <span class="o">-</span><span class="n">t</span> <span class="n">user1</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="n">user2</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
 <p>Von einer bestimmten Rufnummer (0401234567) eine festgelegte Rufnummer
 (0401234568) anrufen und den PC über WOL (Wake on Lan) einschalten:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span><span class="p">:</span><span class="n">request</span> <span class="o">^</span><span class="mi">0401234567</span> <span class="o">^</span><span class="mi">0401234568</span> <span class="n">ether</span><span class="o">-</span><span class="n">wake</span> <span class="o">-</span><span class="n">i</span> <span class="n">eth0</span> <span class="mi">00</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="n">DE</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">A4</span><span class="p">:</span><span class="n">DE</span>
+</pre></div>
+</div>
 <p>Benachrichtigungen über Dreambox mit Enigma2 auf Fernseher anzeigen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span><span class="p">:</span><span class="n">request</span> <span class="o">^</span> <span class="o">^</span> <span class="n">dream2message</span> <span class="o">--</span><span class="n">user</span><span class="o">=</span><span class="n">root</span> <span class="o">--</span><span class="k">pass</span><span class="o">=</span><span class="n">dreambox</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.104</span>
+</pre></div>
+</div>
 <p>Benachrichtigung per Email bei Faxempfang:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>in:disconnect ^ 0401234567$ mailmessage -s &quot;Faxeingang von $SOURCE&quot;
+</pre></div>
+</div>
 <ul class="simple">
 <li>Tags</li>
 <li><a class="reference external" href="/tags/callmonitor">callmonitor</a></li>

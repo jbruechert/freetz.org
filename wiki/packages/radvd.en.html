@@ -595,8 +595,22 @@ Wiki</a></div>
 <div class="line">After the following step you can configure the packages you want to
 have included in your image.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">menuconfig</span>
+</pre></div>
+</div>
 <p>Make sure the following is selected:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Show</span> <span class="n">advanced</span> <span class="n">options</span>
+<span class="p">[</span><span class="o">*</span><span class="p">]</span>   <span class="n">Enable</span> <span class="n">IPv6</span> <span class="n">support</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Package</span> <span class="n">selection</span>  <span class="o">---&gt;</span>  <span class="n">Standard</span> <span class="n">packages</span>  <span class="o">---&gt;</span>  <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">radvd</span> <span class="p">(</span><span class="n">router</span> <span class="n">advertisement</span> <span class="n">daemon</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>I also advice to add the following for easier troubleshooting:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Advanced</span> <span class="n">options</span>  <span class="o">---&gt;</span> <span class="n">BusyBox</span> <span class="n">options</span>  <span class="o">---&gt;</span>    <span class="n">IPv6</span> <span class="n">Options</span>  <span class="o">---&gt;</span>   <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">ping6</span> <span class="n">command</span>
+<span class="n">Advanced</span> <span class="n">options</span>  <span class="o">---&gt;</span>   <span class="n">BusyBox</span> <span class="n">options</span>  <span class="o">---&gt;</span>    <span class="n">IPv6</span> <span class="n">Options</span>  <span class="o">---&gt;</span>   <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">traceroute6</span> <span class="n">command</span>
+</pre></div>
+</div>
 <div class="section" id="patching-freetz-1-2-with-client-config-option">
 <span id="patchingfreetz-1-2withclientconfigoption"></span><h3>‚Patching‘ Freetz-1.2 with Client config option<a class="headerlink" href="#patching-freetz-1-2-with-client-config-option" title="Link zu dieser Überschrift">¶</a></h3>
 <div class="line-block">
@@ -607,6 +621,14 @@ include enhancement <a class="reference external" href="/ticket/1921">1921</a> a
 </div>
 <p>With the following commands executed before make you can have this
 enhancement included also:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="mf">1.2</span><span class="o">/</span><span class="n">make</span><span class="o">/</span><span class="n">radvd</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">default</span><span class="o">.</span><span class="n">radvd</span><span class="o">/</span>
+<span class="n">wget</span> <span class="s2">&quot;/browser/trunk/make/radvd/files/root/etc/default.radvd/radvd.cfg?rev=9419&amp;format=txt&quot;</span> <span class="o">-</span><span class="n">O</span> <span class="n">radvd</span><span class="o">.</span><span class="n">cfg</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="mf">1.2</span><span class="o">/</span><span class="n">make</span><span class="o">/</span><span class="n">radvd</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">default</span><span class="o">.</span><span class="n">radvd</span><span class="o">/</span>
+<span class="n">wget</span> <span class="s2">&quot;/browser/trunk/make/radvd/files/root/etc/default.radvd/radvd_conf?rev=9453&amp;format=txt&quot;</span> <span class="o">-</span><span class="n">O</span> <span class="n">radvd_conf</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="mf">1.2</span><span class="o">/</span><span class="n">make</span><span class="o">/</span><span class="n">radvd</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="nb">bin</span><span class="o">/</span>
+<span class="n">wget</span> <span class="s2">&quot;/browser/trunk/make/radvd/files/root/usr/lib/cgi-bin/radvd.cgi?rev=9444&amp;format=txt&quot;</span> <span class="o">-</span><span class="n">O</span> <span class="n">radvd</span><span class="o">.</span><span class="n">cgi</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="setup-in-freetz-web-interface">
@@ -641,10 +663,16 @@ ending with part of your MAC address in there.</p>
 <div class="line">With my WinXP system I had no problems to obtain an IPv6. All I had to
 do was to was to enable IPv6 with:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">interface</span> <span class="n">ipv6</span> <span class="n">install</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Then you should see that you get two IPv6 addresses. One public and a
 temporary one.</div>
 <div class="line">You can also see them with:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">interface</span> <span class="n">ipv6</span> <span class="n">show</span> <span class="n">address</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="win7-clients">
@@ -666,6 +694,10 @@ an IPv6 address from RADVD, even after a reboot.</div>
 <li><div class="first line-block">
 <div class="line">next use the following commands (note I used both commands without
 verifying correctly which one was needed):</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="nb">int</span> <span class="n">ipv6</span> <span class="n">reset</span> <span class="n">c</span><span class="p">:</span>\<span class="n">ipv6_reset</span><span class="o">.</span><span class="n">log</span>
+<span class="n">netsh</span> <span class="n">interface</span> <span class="n">isatap</span> <span class="nb">set</span> <span class="n">state</span> <span class="n">enabled</span>
+</pre></div>
 </div>
 </li>
 </ul>

@@ -68,7 +68,7 @@ dsld-Syslogmeldung
 
 Fehlermeldung im Syslog:
 
-.. code:: wiki
+.. code:: bash
 
    user.err dsld[1243]: internet: 192.168.178.253 not an intern host, forwardrule "tcp 0.0.0.0:85 192.168.178.253:85 0 # Test" ignored
 

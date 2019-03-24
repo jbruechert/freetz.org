@@ -6,7 +6,7 @@ Wählhilfe
 Die aus dem Webinterface von AVM bekannte Wählhilfe steht hier als
 Funktion zur Verfügung (seit Callmonitor 1.1).
 
-.. code:: wiki
+.. code:: bash
 
    dial NUMMER [PORT]
 
@@ -18,6 +18,6 @@ Die Ports 1 bis 3 sind die analogen Telefonen, 50 alle ISDN-Telefone, ab
 
 Auflegen ist auch möglich (seit Callmonitor 1.5):
 
-.. code:: wiki
+.. code:: bash
 
    hangup [PORT]

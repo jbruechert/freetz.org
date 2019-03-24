@@ -584,23 +584,44 @@ ausgegeben.</p>
 <div class="section" id="nfs">
 <span id="id1"></span><h3>NFS<a class="headerlink" href="#nfs" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Für NFS wird lediglich das Modul nfs.ko benötigt.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NFS</span><span class="o">-</span><span class="n">SHARE</span> <span class="o">-</span><span class="n">rw</span><span class="p">,</span><span class="n">soft</span><span class="p">,</span><span class="n">intr</span><span class="p">,</span><span class="n">rsize</span><span class="o">=</span><span class="mi">8192</span><span class="p">,</span><span class="n">wsize</span><span class="o">=</span><span class="mi">8192</span>         <span class="n">SERVER</span><span class="p">:</span><span class="o">/</span><span class="n">SHARE</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="samba">
 <span id="id2"></span><h3>Samba<a class="headerlink" href="#samba" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Hierfür wird das Paket <a class="reference external" href="cifsmount.html">cifsmount</a> benötigt, dessen
 Webinterface nicht.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SMB</span><span class="o">-</span><span class="n">SHARE</span> <span class="o">-</span><span class="n">fstype</span><span class="o">=</span><span class="n">cifs</span><span class="p">,</span><span class="n">user</span><span class="o">=</span><span class="n">USER</span><span class="p">,</span><span class="k">pass</span><span class="o">=</span><span class="n">PASS</span><span class="p">,</span><span class="n">ro</span>         <span class="p">:</span><span class="o">//</span><span class="n">SERVER</span><span class="o">/</span><span class="n">SHARE</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="webdav">
 <span id="id3"></span><h3>WebDAV<a class="headerlink" href="#webdav" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Für WebDAV wird das <a class="reference external" href="davfs2.html">davfs2</a>-Paket (ohne Webinterface)
 benötigt.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DAV</span><span class="o">-</span><span class="n">SHARE</span> <span class="o">-</span><span class="n">fstype</span><span class="o">=</span><span class="n">davfs</span><span class="p">,</span><span class="n">conf</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">autofs</span><span class="o">/</span><span class="n">davfs</span><span class="o">.</span><span class="n">conf</span>     <span class="p">:</span><span class="n">http</span>\<span class="p">:</span><span class="o">//</span><span class="n">SERVER</span>
+</pre></div>
+</div>
 <p>Außerdem noch diese 2 Dateien je Mountpoint:</p>
 <p>/tmp/flash/autofs/davfs.conf</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">secrets</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">autofs</span><span class="o">/</span><span class="n">davfs</span><span class="o">.</span><span class="n">secrets</span>
+<span class="n">ask_auth</span> <span class="mi">0</span>
+<span class="c1">#falls benötigt:</span>
+<span class="c1">#if_match_bug 1</span>
+</pre></div>
+</div>
 <p>/tmp/flash/autofs/davfs.secrets (Dateirechte 600!)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">SERVER</span> <span class="n">USERNAME</span>    <span class="n">PASSWORT</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="sshfs">
 <span id="id4"></span><h3>SSHfs<a class="headerlink" href="#sshfs" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Es werden die Packages OpenSSH und SSHfs-FUSE benötigt</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SSH</span><span class="o">-</span><span class="n">SHARE</span> <span class="o">-</span><span class="n">fstype</span><span class="o">=</span><span class="n">fuse</span><span class="p">,</span><span class="n">rw</span><span class="p">,</span><span class="n">allow_other</span>             <span class="p">:</span><span class="n">sshfs</span>\<span class="c1">#USER@SERVER\:/</span>
+</pre></div>
+</div>
 <p>Außerdem muss der Server in der known_hosts bekannt sein und in id_rsa
 oder id_dsa muss der private Schlüssel hinterlegt sein. Diese Dateien
 können mit dem SSH/<a class="reference external" href="authorized-keys.html">authorized_keys</a> Package

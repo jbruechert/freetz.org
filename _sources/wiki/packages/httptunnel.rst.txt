@@ -16,7 +16,7 @@ Ein etwas anschaulicheres Beispiel anbei von
 `​diesem
 Thread <http://www.ip-phone-forum.de/showthread.php?p=536622#post536622>`__:
 
-.. code:: wiki
+.. code:: bash
 
    PC in der Firma          Proxy in der Firma         Fritzbox
 

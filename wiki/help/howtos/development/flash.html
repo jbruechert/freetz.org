@@ -604,8 +604,17 @@ oft von den ADAM2/EVA Numerierung ab!</p>
 die ADAM2 API, die je nach Kernel Version an verschiedenen Stellen in
 /proc erreichbar ist.</p>
 <p>Um die Environment mtd Tabelle unter Kernel 2.4 zu lesen kann</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">adam2</span><span class="o">/</span><span class="n">environment</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">mtd</span>
+</pre></div>
+</div>
 <p>abgerufen werden. Ab Kernel 2.6 muss es so aussehen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">urlader</span><span class="o">/</span><span class="n">environment</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">mtd</span>
+</pre></div>
+</div>
 <p>Die Liste aller Linux mtd Devices erhält man mit:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">mtd</span>
+</pre></div>
+</div>
 <p>Da die Linux Partitionen von den MTD Treibern im Kernel ermittelt werden
 weichen Nummerierung und Größen teilweise erheblich von der
 Partitionierung im Environment ab.</p>

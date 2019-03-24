@@ -569,6 +569,16 @@ Telnet auf einen Rechner außerhalb der Firewall zuzugreifen.</p>
 <a class="reference external" href="http://www.ip-phone-forum.de/member.php?u=62645">​sweetie-pie</a> aus
 <a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?p=536622#post536622">​diesem
 Thread</a>:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PC</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">Firma</span>          <span class="n">Proxy</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">Firma</span>         <span class="n">Fritzbox</span>
+
+   <span class="o">+-------+</span>    <span class="n">Verbunden</span> <span class="n">auf</span>                       <span class="o">+-------+</span>    <span class="n">Heimnetz</span>
+   <span class="o">|</span><span class="n">Putty</span>  <span class="o">|--+</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">22</span>                        <span class="o">|</span><span class="n">sshd</span>   <span class="o">|--&gt;</span> <span class="n">via</span> <span class="n">ssh</span><span class="o">-</span><span class="n">Tunnel</span>
+   <span class="o">|-------|</span>  <span class="o">|</span>                <span class="o">+-----+</span>              <span class="o">|</span>       <span class="o">|&lt;-+</span> <span class="p">(</span><span class="n">Port</span> <span class="mi">22</span><span class="p">)</span>
+   <span class="o">|</span><span class="n">htc</span>    <span class="o">|&lt;-+</span> <span class="n">Port</span> <span class="mi">22</span>        <span class="o">|</span><span class="n">HTTP</span> <span class="o">|</span>              <span class="o">|-------|</span>  <span class="o">|</span>
+   <span class="o">|</span>       <span class="o">|------------------&gt;|</span><span class="n">Proxy</span><span class="o">|-------------&gt;|</span><span class="n">hts</span>    <span class="o">|--+</span>
+   <span class="o">+-------+</span>                   <span class="o">+-----+</span>    <span class="n">Port</span> <span class="mi">9999</span> <span class="o">+-------+</span>
+</pre></div>
+</div>
 <p>Derzeit ist httptunnel nur als Binary (3.3) für Freetz verfügbar, d.h.
 es gibt noch kein WebGUI für grafische Einstellungen.</p>
 <div class="section" id="weiterfuhrende-links">

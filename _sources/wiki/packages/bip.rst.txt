@@ -49,7 +49,7 @@ Beispiel haben wir die 2222 gewählt) und der Speicherort des Log-Files
 angegeben werden. Des weiteren müsst ihr noch die **user.config** von
 hier :
 
-.. code:: wiki
+.. code:: bash
 
    ###client_side_ssl = false;
    ### Networks
@@ -82,7 +82,7 @@ kopieren und nach Euren Wünschen anpassen. Geändert werden muss
 eigentlich nur der **Mustermann** gegen Euren **Usernamen**. Unter
 **Networks** kann auch folgender Eintrag genutzt werden:
 
-.. code:: wiki
+.. code:: bash
 
    network {
        name = "freetz";

@@ -592,11 +592,31 @@ optimized for usage with PHP.</em>“</p>
 <li>Minimal menuconfig, including libraries, excluding <em>pthread</em>,
 <em>md5sum</em></li>
 </ol>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">1</span> <span class="n">root</span>     <span class="n">root</span>        <span class="mi">105788</span> <span class="n">Apr</span> <span class="mi">25</span> <span class="mi">20</span><span class="p">:</span><span class="mi">29</span> <span class="n">hiawatha</span>
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">1</span> <span class="n">root</span>     <span class="n">root</span>        <span class="mi">150324</span> <span class="n">Apr</span> <span class="mi">25</span> <span class="mi">10</span><span class="p">:</span><span class="mi">56</span> <span class="n">lighttpd</span>
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">1</span> <span class="n">root</span>     <span class="n">root</span>          <span class="mi">5496</span> <span class="n">Apr</span> <span class="mi">25</span> <span class="mi">10</span><span class="p">:</span><span class="mi">56</span> <span class="n">mod_access</span><span class="o">.</span><span class="n">so</span>
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">1</span> <span class="n">root</span>     <span class="n">root</span>         <span class="mi">16772</span> <span class="n">Apr</span> <span class="mi">25</span> <span class="mi">11</span><span class="p">:</span><span class="mi">11</span> <span class="n">mod_dirlisting</span><span class="o">.</span><span class="n">so</span>
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">1</span> <span class="n">root</span>     <span class="n">root</span>          <span class="mi">6320</span> <span class="n">Apr</span> <span class="mi">25</span> <span class="mi">10</span><span class="p">:</span><span class="mi">56</span> <span class="n">mod_indexfile</span><span class="o">.</span><span class="n">so</span>
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">1</span> <span class="n">root</span>     <span class="n">root</span>         <span class="mi">10584</span> <span class="n">Apr</span> <span class="mi">25</span> <span class="mi">10</span><span class="p">:</span><span class="mi">56</span> <span class="n">mod_staticfile</span><span class="o">.</span><span class="n">so</span>
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">1</span> <span class="n">root</span>     <span class="n">root</span>        <span class="mi">219916</span> <span class="n">Apr</span> <span class="mi">24</span> <span class="mi">08</span><span class="p">:</span><span class="mi">54</span> <span class="n">libpcre</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">1</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="security">
 <span id="id1"></span><h2>Security<a class="headerlink" href="#security" title="Link zu dieser Überschrift">¶</a></h2>
 <p>You might want to add this or similar to the extra configuration:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BanOnGarbage</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">BanOnMaxPerIP</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">BanOnMaxReqSize</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">KickOnBan</span> <span class="o">=</span> <span class="n">yes</span>
+<span class="n">RebanDuringBan</span> <span class="o">=</span> <span class="n">yes</span>
+</pre></div>
+</div>
 <p>And you might want to limit the number of simultaneous connections too:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ConnectionsTotal</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">ConnectionsPerIP</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="links">
 <span id="id2"></span><h2>Links<a class="headerlink" href="#links" title="Link zu dieser Überschrift">¶</a></h2>

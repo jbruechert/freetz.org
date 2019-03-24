@@ -57,7 +57,7 @@ erforderlich sind, damit die Box überhaupt funktioniert. Das ist ja
 bekannt, aber zur Auffrischung nochmals die (mit "#" anonymisierte)
 Ausgabe, generiert auf meiner 7170 mit Kernel 2.6:
 
-.. code:: wiki
+.. code:: bash
 
    $ cat /proc/sys/urlader/environment
    HWRevision      94.1.1.0

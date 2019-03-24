@@ -582,9 +582,26 @@ ist seit <a class="reference external" href="http://trac.freetz.org/changeset/58
 angezeigt wird. Dazu muss man die Variable PS1 anpassen, was man sehr
 bequem über das Freetz-WebGUI unter Einstellungen/.profile machen kann.
 Die Bash kennt für den Prompt u.a. folgende Variablen für PS1:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">h</span> <span class="p">:</span> <span class="n">Host</span> <span class="n">name</span>
+\<span class="n">H</span> <span class="p">:</span> <span class="n">Host</span> <span class="n">name</span> <span class="n">inklusive</span> <span class="n">Domain</span>
+\<span class="n">d</span> <span class="p">:</span> <span class="n">Datum</span>
+\<span class="n">t</span> <span class="p">:</span> <span class="n">time</span> <span class="n">Zeit</span>
+\<span class="n">u</span> <span class="p">:</span> <span class="n">User</span> <span class="n">Benutzerkennung</span>
+\<span class="n">w</span> <span class="p">:</span> <span class="n">Working</span> <span class="n">directory</span><span class="p">,</span> <span class="n">aktuelles</span> <span class="n">Arbeitsverzeichnis</span>
+\<span class="n">l</span> <span class="p">:</span> <span class="n">Terminalname</span><span class="p">,</span> <span class="n">zum</span> <span class="n">Beispiel</span> <span class="n">tty1</span>
+\<span class="c1"># : Eingabezeilennummer</span>
+\\ <span class="p">:</span> <span class="n">Das</span> <span class="n">Zeichen</span> <span class="s2">&quot;</span><span class="se">\&quot;</span>
+</pre></div>
+</div>
 <p>So lassen sich im Prompt z.B. auch noch User- und Hostname zusätzlich
 zum aktuellen Pfad anzeigen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PS1</span><span class="o">=</span><span class="s2">&quot;\u@\h \w \$ &quot;</span>
+</pre></div>
+</div>
 <p>Das Resultat mit o.g. Beispiel sieht dann so aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>root@fb1 /var/mod/root $
+</pre></div>
+</div>
 <p>Der Host (die Fritzbox) heisst genauso wie es in der Variable
 /proc/sys/kernel/hostname steht, hier also „fb1“ (Standard ist
 „fritz.box“).</p>
@@ -594,6 +611,12 @@ zum aktuellen Pfad anzeigen:</p>
 <p>Das Ganze funktioniert sowohl für bash (mit diesem Paket installiert)
 als auch für ash (Standard in Freetz, ohne zusätzliches Paket), wobei
 ash nur folgendes unterstützt:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">h</span> <span class="p">:</span> <span class="n">Host</span> <span class="n">name</span>
+\<span class="n">u</span> <span class="p">:</span> <span class="n">User</span> <span class="n">Benutzerkennung</span>
+\<span class="n">w</span> <span class="p">:</span> <span class="n">Working</span> <span class="n">directory</span><span class="p">,</span> <span class="n">aktuelles</span> <span class="n">Arbeitsverzeichnis</span>
+\<span class="c1"># : Eingabezeilennummer</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="bash-als-loginshell">
 <span id="bashalsloginshell"></span><h1>Bash als Loginshell<a class="headerlink" href="#bash-als-loginshell" title="Link zu dieser Überschrift">¶</a></h1>

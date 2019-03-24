@@ -16,13 +16,13 @@ Konfiguration
 
 Zunächst kopieren wir uns die Beispielkonfiguration aus /var/mod/etc/:
 
-.. code:: wiki
+.. code:: bash
 
    cp /var/mod/etc/prosody.cfg.lua /var/tmp/flash/mod/prosody.cfg.lua
 
 Diese können wir dann mit vi bearbeiten:
 
-.. code:: wiki
+.. code:: bash
 
    vi /var/tmp/flash/mod/prosody.cfg.lua
 
@@ -35,7 +35,7 @@ Zunächst sollte man einen VirtualHost konfigurieren, dazu verändert man
 man die "example.com" in die gewünschte Domain und entfernt das enabled
 = false
 
-.. code:: wiki
+.. code:: bash
 
    VirtualHost "example.com"
            enabled = false -- Remove this line to enable this host
@@ -52,7 +52,7 @@ Speichermedium (z.B. USB-Stick) auf die FritzBox übertragen.
 Die Pfade dazu müssen in der prosody.cfg.lua entsprechend verändert
 werden:
 
-.. code:: wiki
+.. code:: bash
 
    ssl = {
            key = "/var/media/ftp/uStor01/certs/localhost.key";
@@ -82,7 +82,7 @@ mit einem XMPP-Client registrieren.
 
 Alternativ kann man mit der Shell Benutzer erstellen:
 
-.. code:: wiki
+.. code:: bash
 
    prosodyctl adduser [Benutzer]@[Domain]
 
@@ -96,7 +96,7 @@ logging aktivieren kann, muss POSIX aktiviert werden.
 
 Zunächst aktiviert man das Modul in der prosody.cfg.lua:
 
-.. code:: wiki
+.. code:: bash
 
       modules_enabled = {
            -- andere Module
@@ -106,7 +106,7 @@ Zunächst aktiviert man das Modul in der prosody.cfg.lua:
 Zusätzlich wird noch ein pid-File benötigt, dazu fügen wir in der
 prosody.cfg.lua an:
 
-.. code:: wiki
+.. code:: bash
 
    pidfile = "/var/tmp/flash/mod/prosody.pid"
 
@@ -119,7 +119,7 @@ Damit die Benutzerdateien nicht auf der FritzBox sondern auf einem
 externen Medium gespeichert werden, erstellt man eine symbolische
 Verlinkung:
 
-.. code:: wiki
+.. code:: bash
 
    ln -s /var/media/ftp/uStor01/prosody/data /var/tmp/flash/mod/prosody/
 
@@ -131,7 +131,7 @@ Benutzer hinzufügen
 Damit prosody nicht mit root-Rechten geöffnet werden muss, wird ein
 anderer Benutzer benötigt. Diesen kann man mithilfe der Shell erstellen:
 
-.. code:: wiki
+.. code:: bash
 
    addgroup prosody
    adduser -G prosody prosody
@@ -145,14 +145,14 @@ Bei Systemstart ausführen
 Wenn man die Daten nicht extern speichert, reicht es, wenn mit vi
 /tmp/flash/mod/rc.custom folgendes hinzufügt:
 
-.. code:: wiki
+.. code:: bash
 
    prosodyctl start
 
 Wenn man die Daten extern speichert, sollte man in das Verzeichnis
 /var/tmp/flash/mod wechseln und dort die folgenden Dateien anlegen:
 
-.. code:: wiki
+.. code:: bash
 
    root@fritz:/var/tmp/flash/mod# vi rc.prosody
    #!/bin/sh
@@ -180,7 +180,7 @@ Wenn man die Daten extern speichert, sollte man in das Verzeichnis
 
    exit 0
 
-.. code:: wiki
+.. code:: bash
 
    root@fritz:/var/tmp/flash/mod# vi rc.external
    #!/bin/sh
@@ -195,7 +195,7 @@ Wenn man die Daten extern speichert, sollte man in das Verzeichnis
 
    eventadd 1 "Running custom rc.external done."
 
-.. code:: wiki
+.. code:: bash
 
    root@fritz:/var/tmp/flash/mod# vi /var/tmp/flash/onlinechanged-cgi
    case "$1" in
@@ -224,7 +224,7 @@ Wenn man die Daten extern speichert, sollte man in das Verzeichnis
 |Warning| Damit diese Änderung beim Neustart erhalten bleibt müssen diese
 gespeichert werden:
 
-.. code:: wiki
+.. code:: bash
 
    modsave all
 
@@ -235,7 +235,7 @@ Prosody ausführen
 
 Prosody kann auch manuell gestartet werden mit:
 
-.. code:: wiki
+.. code:: bash
 
    prosodyctl start
 

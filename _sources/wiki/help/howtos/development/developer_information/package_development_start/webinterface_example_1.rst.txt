@@ -8,7 +8,7 @@ Web-interface HTTPTunnel
 
 Usages information:
 
-.. code:: wiki
+.. code:: bash
 
    # hts --help
    Usage: hts [OPTION]... [PORT]
@@ -62,7 +62,7 @@ httptunnel.cfg
   package, so I'm not sure if this default value is good from a security
   point of view.
 
-.. code:: wiki
+.. code:: bash
 
    export HTTPTUNNEL_ENABLED='no'
    export HTTPTUNNEL_HOST='localhost'
@@ -130,7 +130,7 @@ httptunnel.cgi
 
 httptunnel.cgi without ``lang`` statements:
 
-.. code:: wiki
+.. code:: bash
 
    #!/bin/sh
 
@@ -185,7 +185,7 @@ httptunnel.cgi without ``lang`` statements:
 
 httptunnel.cgi with ``lang`` statements and an entry for each language:
 
-.. code:: wiki
+.. code:: bash
 
    #!/bin/sh
 
@@ -259,7 +259,7 @@ rc.httptunnel
 | The case function test for a match. See the
   `rc.<package> <rc.%3Cpackage%3E.html>`__ page for more information.
 
-.. code:: wiki
+.. code:: bash
 
    #!/bin/sh
 
@@ -323,7 +323,7 @@ Test on router
 
 For the initial development of all files:
 
-.. code:: wiki
+.. code:: bash
 
    #!/bin/sh
    export package=httptunnel
@@ -345,7 +345,7 @@ For the initial development of all files:
 For verifying changes to just the rc.<package> file e.g. after already
 including the files in the Freetz image:
 
-.. code:: wiki
+.. code:: bash
 
    #!/bin/sh
    export package=httptunnel

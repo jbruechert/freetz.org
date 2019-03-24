@@ -74,7 +74,7 @@ Order-Struktur auf der USB-Platte wird vorbereitet.
 
 Dazu die folgenden Ordner im Hauptverzeichnis der Platte erstellen:
 
-.. code:: wiki
+.. code:: bash
 
    user1        #Heimverzeichnis user1
    user1/shared
@@ -107,7 +107,7 @@ Diensteinstellungen werden im Freetz-Menü eingestellt.
 
 → *Zugriff*
 
-.. code:: wiki
+.. code:: bash
 
    [ ]Anonymes FTP
    [X]Lokale Benutzer
@@ -122,7 +122,7 @@ Diensteinstellungen werden im Freetz-Menü eingestellt.
 
 → *Zusätzliche Konfigurationsoptionen (für Experten)*
 
-.. code:: wiki
+.. code:: bash
 
    user_config_dir=/var/media/ftp/uStor01/vsftp_user_conf
 
@@ -130,7 +130,7 @@ Später werden wir die Schreibrechte für die Benutzer getrennt festlegen.
 
 →\ *Übernehmen*\ ←
 
-.. code:: wiki
+.. code:: bash
 
    Saving settings...done.
    Saving vsftpd.cfg...done.
@@ -155,13 +155,13 @@ Die lokalen Benutzer werden eingerichtet.
 Jeder Benutzer erhält dabei ein explizites Heim-Verzeichnis welches von
 vsFTP automatisch übernommen wird.
 
-.. code:: wiki
+.. code:: bash
 
    adduser -h /var/media/ftp/uStor01/user1 user1
    adduser -h /var/media/ftp/uStor01/user2 user2
    adduser -h /var/media/ftp/uStor01/public gast
 
-.. code:: wiki
+.. code:: bash
 
    /var/media/ftp/uStor01/ # adduser -h /var/media/ftp/uStor01/user1/ user1
    adduser: /var/media/ftp/uStor01/user1/: File exists
@@ -184,11 +184,11 @@ vsFTP automatisch übernommen wird.
 
 Die neuen Zugangsdaten werden erstmal gespeichert.
 
-.. code:: wiki
+.. code:: bash
 
    modsave all
 
-.. code:: wiki
+.. code:: bash
 
    /var/media/ftp/uStor01/technik # modsave all
    Saving users, groups and passwords...done.
@@ -209,7 +209,7 @@ unmount-Befehle in die *autoend.sh*.
 
 */var/media/ftp/uStor01/autorun.sh*
 
-.. code:: wiki
+.. code:: bash
 
    mount -o bind /var/media/ftp/uStor01/shared /var/media/ftp/uStor01/user1/shared
    mount -o bind /var/media/ftp/uStor01/shared /var/media/ftp/uStor01/user2/shared
@@ -219,7 +219,7 @@ unmount-Befehle in die *autoend.sh*.
 
 */var/media/ftp/uStor01/autoend.sh*
 
-.. code:: wiki
+.. code:: bash
 
    umount /var/media/ftp/uStor01/user1/shared
    umount /var/media/ftp/uStor01/user2/shared
@@ -238,19 +238,19 @@ Schreibrechte hat oder nicht.
 
 */var/media/ftp/uStor01/vsftp_user_conf/user1*
 
-.. code:: wiki
+.. code:: bash
 
    write_enable=yes
 
 */var/media/ftp/uStor01/vsftp_user_conf/user2*
 
-.. code:: wiki
+.. code:: bash
 
    write_enable=yes
 
 */var/media/ftp/uStor01/vsftp_user_conf/gast*
 
-.. code:: wiki
+.. code:: bash
 
    write_enable=no
 
@@ -259,14 +259,14 @@ Schreibrechte hat oder nicht.
 Benutzer zu verbieten. Hierzu fügt man folgende Zeile in die Datei ein
 und entfernt die nicht gewünschten Befehle:
 
-.. code:: wiki
+.. code:: bash
 
    cmds_allowed=ABOR,ACCT,ALLO,APPE,AUTH,CDUP,CWD,DELE,EPRT,EPSV,FEAT,HELP,LIST,MDTM,MKD,MODE,NLST,NOOP,OPTS,PASS,PASV,PBSZ,PORT,PROT,PWD,QUIT,REIN,REST,RETR,RMD,RNFR,RNTO,SITE,SMNT,STAT,STOR,STOU,STRU,SYST,TYPE,USER
 
 Alternativ kann man auch einzelne FTP-Befehle verbieten (ab vsftpd
 Version 2.1.0):
 
-.. code:: wiki
+.. code:: bash
 
    cmds_denied=DELE,RMD
 
@@ -278,7 +278,7 @@ Gelöst wird das ganze ebenfalls über die Benutzerdateien. Hierzu fügt
 man folgende Zeile in die Datei ein und **entfernt** die Befehle die der
 User nicht ausführen darf:
 
-.. code:: wiki
+.. code:: bash
 
    cmds_allowed=ABOR,ACCT,ALLO,APPE,AUTH,CDUP,CWD,DELE,EPRT,EPSV,FEAT,HELP,LIST,MDTM,MKD,MODE,NLST,NOOP,OPTS,PASS,PASV,PBSZ,PORT,PROT,PWD,QUIT,REIN,REST,RETR,RMD,RNFR,RNTO,SITE,SMNT,STAT,STOR,STOU,STRU,SYST,TYPE,USER
 
@@ -286,7 +286,7 @@ User nicht ausführen darf:
 anlegen, jedoch diese nicht wieder löschen. Also muß folgendes in der
 Datei stehen:
 
-.. code:: wiki
+.. code:: bash
 
    cmds_allowed=ABOR,ACCT,ALLO,APPE,AUTH,CDUP,CWD,EPRT,EPSV,FEAT,HELP,LIST,MDTM,MKD,MODE,NLST,NOOP,OPTS,PASS,PASV,PBSZ,PORT,PROT,PWD,QUIT,REIN,REST,RETR,RNFR,RNTO,SITE,SMNT,STAT,STOR,STOU,STRU,SYST,TYPE,USER
 
@@ -321,7 +321,7 @@ Anmeldebildschirm bei vsftpd ändern
 | Name: **ftp-startbild**
 | Inhalt:
 
-.. code:: wiki
+.. code:: bash
 
    Herzlich Willkommen bei
      _   _   _   _   _   _   _   _   _
@@ -340,7 +340,7 @@ Anmeldebildschirm bei vsftpd ändern
   folgender Eintrag unter **Zusätzliche Konfigurationsoptionen (für
   Experten)** eingetragen.
 
-.. code:: wiki
+.. code:: bash
 
    banner_file=/var/media/ftp/uStor01/ftp-startbild
 

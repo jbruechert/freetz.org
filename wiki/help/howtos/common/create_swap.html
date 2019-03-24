@@ -579,6 +579,11 @@ Wer lieber auf „Nummer sicher“ geht, und daher die Release
 (<code class="docutils literal notranslate"><span class="pre">freetz-1.0</span></code>) oder <code class="docutils literal notranslate"><span class="pre">stable</span></code> Branch verwendet, dem hilft ein anderer
 Linux-PC weiter, auf dem man die benötigte Swap-Datei erstellt, um sie
 dann auf die Box zu kopieren. Das sieht z.B. so aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dd</span> <span class="k">if</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">zero</span> <span class="n">of</span><span class="o">=</span><span class="n">swapfile</span> <span class="n">bs</span><span class="o">=</span><span class="mi">1</span><span class="n">k</span> <span class="n">count</span><span class="o">=</span><span class="mi">64000</span>
+<span class="n">mkswap</span> <span class="n">swapfile</span>
+<span class="n">scp</span> <span class="n">swapfile</span> <span class="n">root</span><span class="nd">@fritz</span><span class="o">.</span><span class="n">box</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span>
+</pre></div>
+</div>
 <p>Dann im Freetz-WebIF unter <em>Einstellungen ⇒ Swap</em> noch den Pfad
 eintragen, wo das System es finden kann (also
 <code class="docutils literal notranslate"><span class="pre">/var/media/ftp/uStor01/swapfile</span></code>), und den Starttyp sinnvollerweise

@@ -568,16 +568,33 @@ generally abbreviated by SVN.</p>
 know how to help themselves! The trunk changes continuously and might
 temporarily contain bugs or not work at all.</p>
 <p>Check out from SVN:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ svn co http://svn.freetz.org/trunk                     &lt;--- check out current trunk revision
+$ svn co http://svn.freetz.org/trunk trunk_7843 -r 7843  &lt;--- check out specific trunk revision (here: 7843) into subdirectory
+                                                              &quot;trunk_7843&quot;, so as not to overwrite the current trunk directory
+</pre></div>
+</div>
 <p>Check out from Git (<img alt="Warning" src="../../_images/exclamation2.png" /> Git is not the leading system and is
 officially unsupported presently. We provide it „as is“ for test
 purposes.):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/Freetz/freetz.git freetz-devel  &lt;--- freetz-devel: local copy of Git repository
+</pre></div>
+</div>
 </div>
 <div class="section" id="updates">
 <span id="id1"></span><h2>Updates<a class="headerlink" href="#updates" title="Link zu dieser Überschrift">¶</a></h2>
 <p>How to update an existing local SVN repository (here: developer
 version):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd trunk
+$ svn up         &lt;--- update to current revision
+$ svn up -r 7843 &lt;--- update to specific revision (here: 7843)
+</pre></div>
+</div>
 <p>How to update an existing local Git repository (here: developer
 version):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd freetz-devel
+$ git pull
+</pre></div>
+</div>
 </div>
 <div class="section" id="stable-version">
 <span id="stableversion"></span><h2>Stable version<a class="headerlink" href="#stable-version" title="Link zu dieser Überschrift">¶</a></h2>
@@ -591,9 +608,15 @@ yourself using this
 versions:</p>
 <p><strong>freetz-2.0</strong>: current stable version (list of supported boxes and
 firmware versions)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ svn co http://svn.freetz.org/branches/freetz-stable-2.0
+</pre></div>
+</div>
 <p><strong>ds-0.2.9-p8</strong> (kernel 2.4): for very old boxes which do not get AVM
 firmware updates anymore (more
 <a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=135253">​info</a>)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ svn co http://svn.freetz.org/tags/ds-0.2.9-p8
+</pre></div>
+</div>
 </div>
 </div>
 

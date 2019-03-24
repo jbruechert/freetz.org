@@ -617,6 +617,42 @@ Dateien dem <code class="docutils literal notranslate"><span class="pre">ls</spa
 Größe absteigend zu sortieren. Als Beispiel diene hier die AVM-FW
 29.04.29 für die Box vom Typ 7170. (Der Übersicht halber lasse ich
 unwichtige Spalten der Ergebnisliste weg.)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd build/original/filesystem
+$ find . -type f | xargs ls -lSR | more
+
+1291372 lib/libcrypto.so.0.9.8
+ 858208 lib/modules/2.6.13.1-ohio/kernel/drivers/isdn/isdn_fon4/zzz/isdn_fbox.ko
+ 730844 lib/modules/2.6.13.1-ohio/kernel/drivers/dsld/kdsldmod.ko
+ 551944 usr/bin/telefon
+ 473772 lib/modules/2.6.13.1-ohio/kernel/drivers/net/wireless/avm_wlan/wlan/tiap.ko
+ 425652 lib/libuClibc-0.9.28.so
+ 416632 bin/busybox
+ 314836 lib/libavmcsock.so.2.0.0
+ 303784 lib/modules/microvoip-dsl.bin
+ 283853 lib/modules/microvoip_isdn_top.bit1
+ 274704 usr/bin/ctlmgr
+ 274352 lib/libsiplib.so.2.0.0
+ 259052 lib/libssl.so.0.9.8
+ 252344 usr/share/ctlmgr/libtr069.so
+ 234684 usr/share/ctlmgr/libfon.so
+ 212468 lib/modules/microvoip_isdn_top.bit
+ 212432 sbin/dsld
+ 202684 lib/libmscodex.so.2.0.0
+ 167180 sbin/fsck.ext2
+ 163360 sbin/multid
+ 158332 lib/modules/2.6.13.1-ohio/kernel/drivers/usb/core/usbcore.ko
+ 154224 usr/bin/wpa_authenticator
+ 142624 lib/modules/2.6.13.1-ohio/kernel/drivers/atm/avm_atm/tiatm.ko
+ 142104 lib/libosipparser2.so.4.0.0
+ 134308 lib/modules/2.6.13.1-ohio/kernel/drivers/scsi/scsi_mod.ko
+ 132296 lib/libar7cfg.so.1.0.0
+ 117056 lib/libm-0.9.28.so
+ 116804 bin/voipd
+ 106192 lib/modules/fw_dcrhp_1150_ap.bin
+ 102712 usr/lib/libext2fs.so.2.4
+ 102472 sbin/fdisk
+</pre></div>
+</div>
 <p>Jetzt kann man anfangen zu überlegen, was wohl verzichtbar wäre. Eine
 Busybox oder den DSL-Daemon wegzulassen, ergibt keinen Sinn - eher
 schon, bei der Busybox auf unnötige Applets zu verzichten. Mancher mag
@@ -653,6 +689,53 @@ Optionen und Erweiterungen: 1&amp;1-Branding, keine Hilfetexte und
 Assistenten, Original-Kernel, Bftp, Callmonitor, Cifsmount, Dropbear
 (nur Server), MC, Mini_fo, Samba, Screen, Syslogd-CGI, WoL-CGI, Lua,
 Matrixtunnel. Das sieht dann so aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd build/modified/filesystem
+$ find . -type f | xargs ls -lSR | more
+
+1291372 lib/libcrypto.so.0.9.8
+ 913456 usr/sbin/smbd
+ 858208 lib/modules/2.6.13.1-ohio/kernel/drivers/isdn/isdn_fon4/zzz/isdn_fbox.ko
+ 779956 usr/bin/mc.bin
+ 730844 lib/modules/2.6.13.1-ohio/kernel/drivers/dsld/kdsldmod.ko
+ 599740 bin/busybox
+ 551944 usr/bin/telefon
+ 473772 lib/modules/2.6.13.1-ohio/kernel/drivers/net/wireless/avm_wlan/wlan/tiap.ko
+ 436344 usr/sbin/nmbd
+ 413184 lib/libuClibc-0.9.28.so
+ 372060 usr/bin/screen.bin
+ 323371 lib/modules/2.6.13.1-ohio/kernel/fs/cifs/cifs.ko
+ 314836 lib/libavmcsock.so.2.0.0
+ 303784 lib/modules/microvoip-dsl.bin
+ 283853 lib/modules/microvoip_isdn_top.bit1
+ 274704 usr/bin/ctlmgr
+ 274352 lib/libsiplib.so.2.0.0
+ 273900 usr/lib/libncurses.so.5.5
+ 259052 lib/libssl.so.0.9.8
+ 252344 usr/share/ctlmgr/libtr069.so
+ 234684 usr/share/ctlmgr/libfon.so
+ 212468 lib/modules/microvoip_isdn_top.bit
+ 212432 sbin/dsld
+ 204336 usr/bin/lua
+ 202684 lib/libmscodex.so.2.0.0
+ 200256 usr/lib/libreadline.so.5.2
+ 183224 usr/sbin/dropbearmulti
+ 167180 sbin/fsck.ext2
+ 163360 sbin/multid
+ 155037 lib/modules/2.6.13.1-ohio/kernel/drivers/usb/core/usbcore.ko
+ 154224 usr/bin/wpa_authenticator
+ 142624 lib/modules/2.6.13.1-ohio/kernel/drivers/atm/avm_atm/tiatm.ko
+ 142104 lib/libosipparser2.so.4.0.0
+ 132296 lib/libar7cfg.so.1.0.0
+ 132124 lib/modules/2.6.13.1-ohio/kernel/drivers/scsi/scsi_mod.ko
+ 131614 usr/share/samba/unicode_map.850
+ 117746 usr/lib/mc/mc.hlp
+ 116804 bin/voipd
+ 116148 lib/libm-0.9.28.so
+ 106192 lib/modules/fw_dcrhp_1150_ap.bin
+ 102712 usr/lib/libext2fs.so.2.4
+ 102472 sbin/fdisk
+</pre></div>
+</div>
 <p>Wir erkennen: Samba, MC und Screen scheinen recht groß zu sein, aber so
 richtig übersichtlich ist das Ganze nicht, denn die zuvor analysierten
 Dateien der Original-Firmware sind ja immer noch in der Liste. Wenn wir

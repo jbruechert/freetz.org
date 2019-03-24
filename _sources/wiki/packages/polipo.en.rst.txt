@@ -38,7 +38,7 @@ A solution is this:
 It is not an bad idea to restrict the memory Polipo will use with the
 following additional option:
 
-.. code:: wiki
+.. code:: bash
 
    chunkHighMark=1048576
 
@@ -61,7 +61,7 @@ Tor)
 
 It is possible to tighten security by using these options:
 
-.. code:: wiki
+.. code:: bash
 
    tunnelAllowedPorts=443;allowedPorts=80,443
 
@@ -76,13 +76,13 @@ Blocking domains
 Using the extra options it is possible to specify a file with forbidden
 domains, like this:
 
-.. code:: wiki
+.. code:: bash
 
    forbiddenFile=/var/media/ftp/uFlash/polipo/forbidden
 
 Add the domains you want to block on separate lines, like this:
 
-.. code:: wiki
+.. code:: bash
 
    doubleclick.net
    googleadservices.com

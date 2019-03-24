@@ -584,7 +584,13 @@ verbauen will, hat ein wenig mehr Hand anzulegen:</p>
 <span id="id2"></span><h3>Vorbereitungen<a class="headerlink" href="#vorbereitungen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Man braucht einen Crosscompiler? um den Kernel kompilieren zu können.
 Falls noch nicht vorhanden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">toolchain</span>
+</pre></div>
+</div>
 <p>Anschließend:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">menuconfig</span>
+</pre></div>
+</div>
 <p>Die entsprechende Box auswählen, für die nachfolgend der PPTP-Server
 kompiliert werden soll. (Es wird nach der entsprechenden Kernel-Größe
 4MB oder 8MB unterschieden.)</p>
@@ -595,6 +601,10 @@ kompiliert werden soll. (Es wird nach der entsprechenden Kernel-Größe
 <li><a class="reference external" href="http://www.ip-phone-forum.de/attachment.php?attachmentid=10966&amp;d=1161809653">​pptpd-1.3.0_fixed.tar.gz</a></li>
 </ul>
 <p>Die Verzeichnisse für spätere Anpassungen vorbereiten:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">kernel</span><span class="o">-</span><span class="n">dirclean</span>
+<span class="n">make</span> <span class="n">kernel</span><span class="o">-</span><span class="n">menuconfig</span>
+</pre></div>
+</div>
 <p>Hier noch keine Einstellungen vornehmen, einfach Beenden und
 Abspeichern.</p>
 <div class="section" id="patch-einspielen">
@@ -617,12 +627,36 @@ Abspeichern.</p>
 </li>
 </ul>
 <p>Beim Patchen werden euch noch ein paar Hinweise erwarten:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>The next patch would create the file linux-2.4.17_mvl21/include/asm-mips/kmap_types.h,
+which already exists!  Assume -R? [n]
+Apply anyway? [n]
+</pre></div>
+</div>
 <p>Dort einfach alles mit <em>ENTER</em> betätigen.</p>
 </div>
 <div class="section" id="kernel-konfigurieren-und-kompilieren">
 <span id="kernelkonfigurierenundkompilieren"></span><h4>Kernel konfigurieren und kompilieren<a class="headerlink" href="#kernel-konfigurieren-und-kompilieren" title="Link zu dieser Überschrift">¶</a></h4>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">kernel</span><span class="o">-</span><span class="n">menuconfig</span>
+</pre></div>
+</div>
 <p>Folgende Pakete zusätzlich auswählen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Network</span> <span class="n">device</span> <span class="n">support</span> <span class="o">---&gt;</span>
+  <span class="o">&lt;*&gt;</span> <span class="n">PPP</span> <span class="p">(</span><span class="n">point</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">point</span> <span class="n">protocol</span><span class="p">)</span> <span class="n">support</span>
+  <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">PPP</span> <span class="n">multilink</span> <span class="n">support</span>
+  <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">PPP</span> <span class="n">support</span> <span class="k">for</span> <span class="k">async</span> <span class="n">serial</span> <span class="n">ports</span>
+  <span class="o">&lt;*&gt;</span> <span class="n">PPP</span> <span class="n">Deflate</span> <span class="n">compression</span>
+  <span class="o">&lt;*&gt;</span> <span class="n">Microsoft</span> <span class="n">PPP</span> <span class="n">compression</span><span class="o">/</span><span class="n">encyptions</span>
+
+<span class="n">Cryptographic</span> <span class="n">options</span> <span class="o">---&gt;</span>
+  <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Cryptographic</span> <span class="n">API</span>
+  <span class="o">&lt;*&gt;</span> <span class="n">SHA1</span> <span class="n">digest</span> <span class="n">algorithms</span>
+  <span class="o">&lt;*&gt;</span> <span class="n">ARC4</span> <span class="n">cipher</span> <span class="n">algorithms</span>
+</pre></div>
+</div>
 <p>Beenden und Abspeichern</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">kernel</span><span class="o">-</span><span class="n">precompiled</span>
+</pre></div>
+</div>
 <p>Sollte der Kompiliervorgang mit einem Segmentation-Fault abbrechen, den
 Vorgang mit <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">kernel-precompiled</span></code> noch einmal starten. Weshalb der
 Fehler auftritt ist mir noch nicht klar, aber es entsteht schließlich
@@ -633,12 +667,30 @@ ein lauffähiges Kernel-Image.</p>
 <p>Das Addon-Paket? <code class="docutils literal notranslate"><span class="pre">pptpd-1.3.0_fixed.tar.gz</span></code> nach
 <code class="docutils literal notranslate"><span class="pre">DS-MOD-VERZEICHNIS/addon</span></code> entpacken und anschließen in die Datei
 <code class="docutils literal notranslate"><span class="pre">static.pkg</span></code> eintragen.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="o">-</span><span class="n">C</span> <span class="n">DS</span><span class="o">-</span><span class="n">MOD</span><span class="o">-</span><span class="n">VERZEICHNIS</span><span class="o">/</span><span class="n">addon</span> <span class="o">-</span><span class="n">xvzf</span> <span class="n">pptpd</span><span class="o">-</span><span class="mf">1.3</span><span class="o">.</span><span class="mi">0</span><span class="n">_fixed</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">echo</span> <span class="n">pptpd</span><span class="o">-</span><span class="mf">1.3</span><span class="o">.</span><span class="mi">0</span> <span class="o">&gt;&gt;</span> <span class="n">DS</span><span class="o">-</span><span class="n">MOD</span><span class="o">-</span><span class="n">VERZEICHINS</span><span class="o">/</span><span class="n">addon</span><span class="o">/</span><span class="n">static</span><span class="o">.</span><span class="n">pkg</span>
+</pre></div>
+</div>
 <p>Um die Erstellung des fertigen Firmware-Images vorzubereiten:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">menuconfig</span>
+</pre></div>
+</div>
 <p>Dort die gewünschten Einstellungen vornehmen sowie sonstige Paktete
 auswählen.</p>
 <p>Für das PPTP-Server-Image ist zusätzlich die Einbindung folgender
 Libraries nötig:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Advanced</span> <span class="n">options</span> <span class="o">--&gt;</span>
+    <span class="n">Shared</span> <span class="n">libraries</span><span class="o">--&gt;</span>
+        <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">libcc_s</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mi">1</span>
+        <span class="n">uClibc</span> <span class="o">---&gt;</span>
+            <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">libutil</span><span class="o">-</span><span class="mf">0.9</span><span class="o">.</span><span class="mf">28.</span><span class="n">so</span>
+<span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>Zuguterletzt erstellen wird das endgültige Image mit:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

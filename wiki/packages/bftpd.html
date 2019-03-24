@@ -564,10 +564,15 @@ strives to be fast, secure and quick to install/configure.“
 <a class="reference external" href="http://bftpd.sourceforge.net/">​http://bftpd.sourceforge.net/</a></div></blockquote>
 <p>Bftpd ist ein kleiner FTP Server. Um den Zugriff auf den FTP-Server mit
 einem Passwort zu schützen, kann man wie folgt vorgehen:</p>
-<ul class="simple">
-<li>Anonymer Zugriff auf der Freetz Konfigurations-Seite deaktivieren</li>
-<li>In einer Shell (serielle Konsole, telnet oder dropbear) das Passwort
-für den Benutzer ftp ändern:</li>
+<ul>
+<li><p class="first">Anonymer Zugriff auf der Freetz Konfigurations-Seite deaktivieren</p>
+</li>
+<li><p class="first">In einer Shell (serielle Konsole, telnet oder dropbear) das Passwort
+für den Benutzer ftp ändern:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modpasswd</span> <span class="n">ftp</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <p>Nun ist der Zugriff auf den FTP Server nur noch als Benutzer ftp mit dem
 vergebenen Passwort möglich.</p>
@@ -584,8 +589,16 @@ zusätzliche Benutzer mit frei wählbaren Homeverzeichnissen eingerichtet
 werden.</p>
 <p>Auf dieser Seite kann man sich die für die <code class="docutils literal notranslate"><span class="pre">/var/tmp/passwd</span></code>
 benötigten Zeilen mit Benutzer und Passwort erzeugen lassen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">home</span><span class="o">.</span><span class="n">flash</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="nb">bin</span><span class="o">/</span><span class="n">pw</span><span class="o">.</span><span class="n">pl</span>
+</pre></div>
+</div>
 <p>Alternativ geht das auch mit dem Unix/Linux Kommando <code class="docutils literal notranslate"><span class="pre">htpasswd</span></code>.</p>
 <p>Die Syntax sieht dann wie folgt aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;user1:pass1:1000:1:ftp user:/var/media/ftp:/bin/sh&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">passwd</span>
+<span class="n">echo</span> <span class="s2">&quot;user2:pass2:1000:1:ftp user:/var/media/ftp:/bin/sh&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">passwd</span>
+<span class="n">echo</span> <span class="s2">&quot;user3:pass3:1000:1:ftp user:/var/media/ftp/uStor01/share:/bin/sh&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">passwd</span>
+</pre></div>
+</div>
 <p>Wobei user und pass durch die zuvor zuvor erzeugten User und Passwörter
 zu ersetzen sind. Wie auch die Pfadangaben sind das natürlich nur
 Beispiele. Man beachte die Pfadangabe auf den USB-Stick im dritten

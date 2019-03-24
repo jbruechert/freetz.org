@@ -10,7 +10,7 @@ Firmware Image erstellen
 
 Zunächst rufen wir das Menuconfig auf:
 
-.. code:: wiki
+.. code:: bash
 
    make menuconfig
 
@@ -18,7 +18,7 @@ Es muss zunächst euer Router ausgewählt sein, auch "Show advanced
 options" und das darunter erscheinende "Enable IPv6 support". Zudem
 werden folgende Pakte benötigt:
 
-.. code:: wiki
+.. code:: bash
 
    Standard Packages -> Dnsmasq
    Web Interface -> NHIPT Iptables CGI
@@ -36,13 +36,13 @@ den nächsten Schritt benötigten Dateien erstellen.
 Nachdem der Vorgang abgeschlossen ist, gebt ihr in die Konsole diesen
 Befehl ein:
 
-.. code:: wiki
+.. code:: bash
 
    make kernel-menuconfig
 
 In diesem Menü aktiviert ihr nun folgende Optionen:
 
-.. code:: wiki
+.. code:: bash
 
    Loadable module support > Automatic kernel module loading (CONFIG_KMOD=y)
    Networking  > Networking options > IPv6: IPv6-in-IPv4 tunnel (SIT driver) (CONFIG_IPV6_SIT=y)
@@ -80,7 +80,7 @@ Netzwerksetup
 Wählt den Punkt "Pakete" aus, um aiccu und radvd zu konfigurieren.
 Zuerst aiccu:
 
-.. code:: wiki
+.. code:: bash
 
    Starttyp: Automatisch
    Benutzername: Euer SixXS Benutzername
@@ -94,7 +94,7 @@ Subnet, dass zu eurem Tunnel geroutet wird. Lautet euer Prefix
 beispielsweise !2001:6f8:1234::/48, so muss die Konfiguration
 folgendermaßen aussehen:
 
-.. code:: wiki
+.. code:: bash
 
    Starttyp: Automatisch
    IPv6 Schnittstelle: lan
@@ -125,7 +125,7 @@ erschlagen und scrollt direkt zu den Feldern, über denen "RULES FOR
 CHAIN INPUT [ filter ] [ IPv6 ]" steht. Tragt jetzt in die Felder
 folgende Werte ein:
 
-.. code:: wiki
+.. code:: bash
 
    "In IFC" = "sixxs"
    "Prot" = "ipv6"
@@ -135,12 +135,12 @@ folgende Werte ein:
 und klickt auf "Insert". Das ganze wiederholt ihr dann noch (wieder in
 den gleichen Feldern) mit den Werten
 
-.. code:: wiki
+.. code:: bash
 
    "In IFC" = "sixxs"
    "Prot" = "ipv6-icmp"
 
-.. code:: wiki
+.. code:: bash
 
    "In IFC" = "sixxs"
    "Action" = "DROP"
@@ -204,7 +204,7 @@ Modul für meinen alten 2.6.19er Kernel auf der 7170 geschrieben. Über
 Kommentare und Verbesserungsvorschläge freue ich mich. Ich weiß selbst
 dass es nicht perfekt ist, aber besser so als gar keinen Schutz.
 
-.. code:: wiki
+.. code:: bash
 
    # Flush rules
    ip6tables -F

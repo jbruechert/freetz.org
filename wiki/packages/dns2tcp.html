@@ -593,12 +593,21 @@ this:</p>
 </li>
 <li><p class="first">On the client you should be able to create a DNS tunnel like this
 now:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dns2tcpc</span> <span class="o">-</span><span class="n">r</span> <span class="n">ssh</span> <span class="o">-</span><span class="n">l</span> <span class="mi">2222</span> <span class="o">-</span><span class="n">z</span> <span class="n">dns2tcp</span><span class="o">.</span><span class="n">strangled</span><span class="o">.</span><span class="n">net</span> <span class="n">fabulous</span><span class="o">.</span><span class="n">fritzbox</span><span class="o">.</span><span class="n">org</span>
+</pre></div>
+</div>
 </li>
 <li><p class="first">If you want a local <a class="reference external" href="http://en.wikipedia.org/wiki/SOCKS">​SOCKS</a>
 server to browse the internet:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">root</span><span class="nd">@localhost</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2222</span> <span class="o">-</span><span class="n">D</span> <span class="mi">8765</span>
+</pre></div>
+</div>
 </li>
 <li><div class="first line-block">
 <div class="line">If you want to use Polipo? as http proxy:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">root</span><span class="nd">@localhost</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2222</span> <span class="o">-</span><span class="n">L</span> <span class="mi">8123</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8123</span>
+</pre></div>
 </div>
 </li>
 </ol>

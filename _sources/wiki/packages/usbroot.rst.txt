@@ -93,7 +93,7 @@ entpackt, Schritte 1, 3, 4) auf den USB-Stick zu kopieren, sofern dieser
 am PC angeschlossen oder über NFS erreichbar ist. Erstere Variante ist
 vermutlich die häufigere und sieht so aus:
 
-.. code:: wiki
+.. code:: bash
 
    Freetz Configuration
    ====================
@@ -134,7 +134,7 @@ führen, daher **MUSS vor dem Firmware-Update bzw Recover die
 usbroot-Funktion wieder deaktiviert werden''', wahlweise über das Freetz
 Webinterface oder aus der Shell mit:**
 
-.. code:: wiki
+.. code:: bash
 
    echo kernel_args > /proc/sys/urlader/environment
    echo kernel_args1 > /proc/sys/urlader/environment
@@ -142,7 +142,7 @@ Webinterface oder aus der Shell mit:**
 Bemerkt man dies zu spät (Die Box startet als Beispiel gleich nach 5
 Sekunden neu) helfen die ADAM2 Befehle:
 
-.. code:: wiki
+.. code:: bash
 
    quote SETENV kernel_args
    quote SETENV kernel_args1

@@ -5,7 +5,7 @@ Kleiner Webserver mit BusyBox
 
 BusyBox enthält einen kleinen Webserver, den man z.B. so starten kann:
 
-.. code:: wiki
+.. code:: bash
 
    httpd -P /var/run/port90.pid -p 90 -c /mod/etc/webcfg.conf -h /var/media/ftp/irgendwo/htdocs/ -r "Port 90"
 
@@ -19,7 +19,7 @@ kann man ein CGI-Skript mit dem Namen index.cgi im Unterverzeichnis
 cgi-bin anlegen, im Beispiel also
 /var/media/ftp/irgendwo/htdocs/cgi-bin/index.cgi.
 
-.. code:: wiki
+.. code:: bash
 
    #!/bin/sh
 
@@ -76,14 +76,14 @@ Der BusyBox-httpd kann auch PHP-Skripte ausführen, wenn man das
 `PHP-Package <../../../packages/php.html>`__ installiert hat. Dazu muss
 man in /mod/etc/webcfg.conf eine neue Zeile einfügen:
 
-.. code:: wiki
+.. code:: bash
 
    *.php:/usr/bin/php-cgi
 
 Damit index.php-Dateien verarbeitet werden, kann man beim
 index.cgi-Skript nach der ersten Zeile folgende Zeilen einfügen:
 
-.. code:: wiki
+.. code:: bash
 
    if test -s "../${QUERY_STRING}/index.php" ; then
      echo -e "Status: 302 Found\r"

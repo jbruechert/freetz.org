@@ -41,7 +41,7 @@ Benutzerdefiniert
   Auch können auch in inetd integrierte Services angegeben werden.
 | Beispiele:
 
-.. code:: wiki
+.. code:: bash
 
    31337          stream  tcp     nowait  root    /var/media/ftp/uStor01/binary    binary -i
 

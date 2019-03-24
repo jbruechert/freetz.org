@@ -189,7 +189,7 @@ Einstellungen → Samba Freigaben
 
 **Beispiel:**
 
-.. code:: wiki
+.. code:: bash
 
    /var/media/ftp/uStor01/Videos hdd1 1 0 - Videos
    /var/media/ftp/uStor01/Bilder hdd1 1 0 - Bilder
@@ -201,11 +201,11 @@ Fremdrechner z. B. mit ext2 oder ext3 formatiert, sind oft keine
 Schreibrechte und auch nicht ``ftpuser`` als Eigentümer gesetzt. In der
 FRITZBox kann das mit folgenden Kommandos korrigiert werden:
 
-.. code:: wiki
+.. code:: bash
 
    chmod -R 777 uStor01
 
-.. code:: wiki
+.. code:: bash
 
    chown ftpuser -R uStor01
 
@@ -226,7 +226,7 @@ Weitere Tuningmöglichkeiten gibt es hier:
 | Für Performanceverbesserungen kann folgendes unter 'Erweitert'
   eingetragen werden:
 
-.. code:: wiki
+.. code:: bash
 
    socket options = TCP_NODELAY IPTOS_LOWDELAY
    read raw = yes

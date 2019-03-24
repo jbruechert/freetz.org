@@ -9,7 +9,7 @@ know that you have to provide a blocklist yourself. The simplest is to
 make a 'update-blocklist.sh' with the content below and to invoke it
 daily or so using cron (don't forget to make the file executable).
 
-.. code:: wiki
+.. code:: bash
 
    #!/var/tmp/sh
 
@@ -32,7 +32,7 @@ Number of peers
 It is probably a good idea to reduce the number of peers by editing the
 *…/bittorrent/config/settings.json* file:
 
-.. code:: wiki
+.. code:: bash
 
        "peer-limit-global": 150,
        "peer-limit-per-torrent": 50,
@@ -40,7 +40,7 @@ It is probably a good idea to reduce the number of peers by editing the
 You have to stop transmission before changing this! Or you could use
 this command to reload the config file:
 
-.. code:: wiki
+.. code:: bash
 
    killall -HUP transmission-daemon
 
@@ -77,7 +77,7 @@ Limit memory usage
 
 To prevent memory shortage (could cause reboots and crashing processes):
 
-.. code:: wiki
+.. code:: bash
 
        "cache-size-mb": 1,
        "open-file-limit": 32,
@@ -96,7 +96,7 @@ Watchdog
 It may be necessary to disable the watchdog by adding this line to for
 example *rc.custom*:
 
-.. code:: wiki
+.. code:: bash
 
        echo "disable">/dev/watchdog
 

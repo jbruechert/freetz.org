@@ -8,7 +8,7 @@ DBox2
 DBox2 mit Neutrino Image
 ------------------------
 
-.. code:: wiki
+.. code:: bash
 
      dboxmessage (default_dboxmessage)
      dboxpopup (default_dboxpopup)
@@ -20,7 +20,7 @@ werden muss.
 ``default_dboxmessage}} und {{{default_dboxpopup`` haben die Funktion
 ``default_dbox`` als gemeinsame Grundlage.
 
-.. code:: wiki
+.. code:: bash
 
      dboxlcd (default_dboxlcd)
 
@@ -35,7 +35,7 @@ Wenn ihr ein Enigma Image auf eurer Box habt und im Popup vor dem
 eigentlichen Text ein "popup=" oder "nmsg=" erscheint, so könnt ihr wie
 bei der Dreambox folgenden Befehl nutzen:
 
-.. code:: wiki
+.. code:: bash
 
      dreammessage (default_dreammessage)
 

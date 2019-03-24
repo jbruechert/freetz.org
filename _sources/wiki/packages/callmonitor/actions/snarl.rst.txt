@@ -14,7 +14,7 @@ diese vom Callmonitor über SNP übermittelte Benachrichtigung dann an.
 
 Also z. B. so:
 
-.. code:: wiki
+.. code:: bash
 
    echo -n "type=SNP#?version=1.0#?action=notification#?title=Anruf#?text=${SOURCE}#?timeout=20"$'\r\n' | nc IP 9887
 
@@ -29,7 +29,7 @@ Listener-Eintrag:
 
 Der Listener-Eintrag im Callmonitor kann dazu z.B. so aussehen:
 
-.. code:: wiki
+.. code:: bash
 
    in:request ^ ^ echo -n "type=SNP#?version=1.0#?action=notification#?title=eingehender Anruf#?text=von ${SOURCE} - ($SOURCE_NAME)${LF}für ${DEST_NAME} - (${DEST_DISP})${LF}#?timeout=20#?icon=C:\pic.png"$'\r\n' | nc 192.168.178.20 9887
 

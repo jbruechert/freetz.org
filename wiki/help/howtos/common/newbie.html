@@ -814,6 +814,11 @@ konnte nicht aufgelöst werden</strong>, dann kontrolliert bitte die
 Netzwerkkonfiguration und prüft ob eure virtuelle Maschine eine
 IP-Adresse bekommen hat. Zum Überprüfen bitte folgenden Befehl in der VM
 eingeben: <strong>ifconfig</strong></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">eth0</span>      <span class="n">Link</span> <span class="n">encap</span><span class="p">:</span><span class="n">Ethernet</span>  <span class="n">Hardware</span> <span class="n">Adresse</span> <span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span>
+          <span class="n">inet</span> <span class="n">Adresse</span><span class="p">:</span><span class="mf">192.168</span><span class="o">.</span><span class="n">XXX</span><span class="o">.</span><span class="mi">203</span>  <span class="n">Bcast</span><span class="p">:</span><span class="mf">192.168</span><span class="o">.</span><span class="n">XXX</span><span class="o">.</span><span class="mi">255</span>  <span class="n">Maske</span><span class="p">:</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span>
+          <span class="n">inet6</span><span class="o">-</span><span class="n">Adresse</span><span class="p">:</span> <span class="n">XXXX</span><span class="p">::</span><span class="n">XXXX</span><span class="p">:</span><span class="n">XXXX</span><span class="p">:</span><span class="n">XXXX</span><span class="p">:</span><span class="n">XXXX</span><span class="o">/</span><span class="n">XX</span> <span class="n">Gültigkeitsbereich</span><span class="p">:</span><span class="n">Verbindung</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Wie auf dem Auszug zu sehen hat die VM die <strong>192.168.XXX.203</strong> als IP
 bekommen. Die IP kann aber von System zu System anders lauten, das ist
@@ -826,6 +831,9 @@ von VirtualBox erneut überprüfen.</div>
 <span id="freetzsourcenauschecken"></span><h3>Freetz Sourcen auschecken<a class="headerlink" href="#freetz-sourcen-auschecken" title="Link zu dieser Überschrift">¶</a></h3>
 <div class="line-block">
 <div class="line">Als nächstes gebt ihr folgenden Befehl ein:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">checkout</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="o">.</span><span class="n">freetz</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">branches</span><span class="o">/</span><span class="n">freetz</span><span class="o">-</span><span class="n">stable</span><span class="o">-</span><span class="mf">2.0</span>
+</pre></div>
 </div>
 <p>Nun wird der aktuelle stabile Freetz Source Code (hier: Version 2.0) aus
 dem Subversion Repository geladen. Unter folgendem Link kann geprüft

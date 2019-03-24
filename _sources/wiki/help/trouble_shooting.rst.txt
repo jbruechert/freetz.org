@@ -13,7 +13,7 @@ Troubleshooting .config
   verwendet werden.
 | Mögliche Abhilfe:
 
-.. code:: wiki
+.. code:: bash
 
    $ yes "" || make oldconfig <--- Alte .config Datei auffrischen
    oder
@@ -29,7 +29,7 @@ man versuchen diese Strategien anzuwenden:
 
 Einzelnes Paketes erneut erstellen:
 
-.. code:: wiki
+.. code:: bash
 
    $ make iptables-dirclean     <--- Sourceverzeichnis eines problematischen Package löschen (hier: iptables)
    weiter mit
@@ -37,7 +37,7 @@ Einzelnes Paketes erneut erstellen:
 
 Von Anfang neu bauen:
 
-.. code:: wiki
+.. code:: bash
 
    $ make dirclean          <--- Source-Verzeichnisse aller bisher erstellter Software löschen
    weiter mit

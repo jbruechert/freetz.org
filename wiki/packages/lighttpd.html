@@ -611,6 +611,10 @@ Verzeichnisstruktur des lighttpd kopiert wird.</p>
 sollen, muss außerdem noch eine Zeile in die ‚Additional‘-Konfiguration
 von lighttpd (zu finden im Freetz-Konfigurationsmenü unter <code class="docutils literal notranslate"><span class="pre">Settings</span></code>
 → <code class="docutils literal notranslate"><span class="pre">'lighttpd:</span> <span class="pre">Additional</span></code>):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># aktiviere CGI Unterstützung für *.pl-Dateien</span>
+<span class="n">cgi</span><span class="o">.</span><span class="n">assign</span> <span class="o">+=</span> <span class="p">(</span> <span class="s2">&quot;.pl&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;/usr/bin/perl&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
 <p>Außerdem muss darauf geachtet werden, dass jegliche Perl-Skripte
 Ausführrechte haben, dies ist mit einem einfachen <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">755</span> <span class="pre">DATEI.pl</span></code>
 zu erledigen.</p>
@@ -626,9 +630,18 @@ zu erledigen.</p>
 <ul class="simple">
 <li>put this in <em>lighttpd &gt; Additional</em>:</li>
 </ul>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">server</span><span class="o">.</span><span class="n">modules</span> <span class="o">+=</span> <span class="p">(</span> <span class="s2">&quot;mod_magnet&quot;</span> <span class="p">)</span>
+<span class="n">magnet</span><span class="o">.</span><span class="n">attract</span><span class="o">-</span><span class="n">physical</span><span class="o">-</span><span class="n">path</span><span class="o">-</span><span class="n">to</span> <span class="o">=</span> <span class="p">(</span> <span class="n">server</span><span class="o">.</span><span class="n">document</span><span class="o">-</span><span class="n">root</span> <span class="o">+</span> <span class="s2">&quot;/ip.lua&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>put this in <em>ip.lua</em> in your document root:</li>
 </ul>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lighty</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;text/html&quot;</span>
+<span class="n">lighty</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;Your IP-address is: &quot;</span><span class="p">,</span> <span class="n">lighty</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;request.remote-ip&quot;</span><span class="p">]</span> <span class="p">}</span>
+<span class="k">return</span> <span class="mi">200</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>browse to <em>http://fritz.box:&lt;configured port&gt;/ip.lua</em></li>
 </ul>

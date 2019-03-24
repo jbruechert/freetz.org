@@ -569,6 +569,27 @@ Forums-Thread</a>:</p>
 <p>Am einfachsten ist es, Freetz als Infrastruktur zu benutzen, und zwar
 das Skript <code class="docutils literal notranslate"><span class="pre">fwmod</span></code> aus dem Freetz-Hauptverzeichnis. Wenn man es ohne
 Parameter aufruft, verrät es wie es benutzt werden möchte:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./fwmod
+
+Usage: fwmod [-u|-m|-p|-a] [-i &lt;cfg&gt;] [-d &lt;dir&gt;] &lt;orig_fw&gt; [&lt;tk_fw&gt; [&lt;aux_fw&gt;]]
+  actions
+    -u         unpack firmware image
+    -m         modify previously unpacked image
+    -p         pack firmware image
+    -a         all: unpack, modify and pack firmware image (-u -m -p, default)
+  special actions
+    -n         firmware-nocompile: do not install kernel and busybox
+    -f         force pack even if image is too big for flash (AVM SDK)
+    -z         zip file system into archive for USB/NFS root
+    -c &lt;dir&gt;   copy file system to target directory for NFS/USB root (implies -z)
+  input/output
+    -i &lt;cfg&gt;   input file for configuration data (default: .config)
+    -d &lt;dir&gt;   build directory (default: &lt;orig_firmware&gt;.mod)
+    &lt;orig_fw&gt;  original firmware name
+    &lt;tk_fw&gt;    2nd firmware name (e.g. for merging in web UI)
+    &lt;aux_fw&gt;   3rd firmware name (e.g. to borrow missing files)
+</pre></div>
+</div>
 <p>Man braucht also einmal den Aufruf mit <code class="docutils literal notranslate"><span class="pre">-u</span></code> zum Entpacken, dann nach
 der Modifikation den mit <code class="docutils literal notranslate"><span class="pre">-p</span></code> zum erneuten Packen.</p>
 </div>
@@ -595,6 +616,9 @@ kann ein Weilchen (einige Minuten) dauern. Internet-Downloads via
 </li>
 <li><p class="first">Jetzt entpackt man das von AVM heruntergeladene Firmware-Image in ein
 Verzeichnis, das hier beispielhaft <em>unpacked_firmware</em> genannt wird:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">fwmod</span> <span class="o">-</span><span class="n">u</span> <span class="o">-</span><span class="n">d</span> <span class="n">unpacked_firmware</span> <span class="n">FRITZ</span><span class="o">.</span><span class="n">Box_Fon_WLAN_7170</span><span class="o">.</span><span class="mf">29.04</span><span class="o">.</span><span class="mf">59.</span><span class="n">image</span>
+</pre></div>
+</div>
 </li>
 <li><p class="first">Unter <em>unpacked_firmware/original/filesystem</em> modifiziert man dann
 das Dateisystem der Firmware.</p>
@@ -602,24 +626,42 @@ das Dateisystem der Firmware.</p>
 <li><div class="first line-block">
 <div class="line">Zum guten Schluss packt man dann wieder das Firmware-Image:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">fwmod</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">d</span> <span class="n">unpacked_firmware</span> <span class="n">FRITZ</span><span class="o">.</span><span class="n">Box_Fon_WLAN_7170</span><span class="o">.</span><span class="mf">29.04</span><span class="o">.</span><span class="mf">59.</span><span class="n">image</span>
+</pre></div>
+</div>
 </li>
 </ol>
 <p>Das ist also der gleiche Aufruf wie vorher, nur mit <code class="docutils literal notranslate"><span class="pre">-p</span></code> statt <code class="docutils literal notranslate"><span class="pre">-u</span></code>.
 Den Namen des Original-Images muss man leider mit angeben, obwohl das
 Image zum Packen nicht benötigt wird. Das ist eine kleine Schwäche des
 Skripts <code class="docutils literal notranslate"><span class="pre">fwmod</span></code>.</p>
-<ol class="arabic simple" start="6">
-<li>Nach einer Weile steht am Ende der Skript-Ausgabe so etwas wie</li>
+<ol class="arabic" start="6">
+<li><p class="first">Nach einer Weile steht am Ende der Skript-Ausgabe so etwas wie</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">creating</span> <span class="n">filesystem</span> <span class="n">image</span>
+<span class="n">merging</span> <span class="n">kernel</span> <span class="n">image</span>
+ <span class="n">kernel</span> <span class="n">image</span> <span class="n">size</span><span class="p">:</span> <span class="mi">6969088</span> <span class="p">(</span><span class="nb">max</span><span class="p">:</span> <span class="mi">7798784</span><span class="p">,</span> <span class="n">free</span><span class="p">:</span> <span class="mi">829696</span><span class="p">)</span>
+<span class="n">packing</span> <span class="mi">7170</span><span class="n">_</span><span class="o">.</span><span class="n">de_20080923</span><span class="o">-</span><span class="mf">200251.</span><span class="n">image</span>
+<span class="n">done</span><span class="o">.</span>
+
+<span class="n">FINISHED</span>
+</pre></div>
+</div>
+</li>
 </ol>
 <p><strong>Anmerkungen zu den Freetz-Versionen bis einschließlich 1.1:</strong></p>
-<ul class="simple">
-<li>Bei diesen Versionen muss den beiden <code class="docutils literal notranslate"><span class="pre">fwmod</span></code>-Aufrufen folgender
+<ul>
+<li><p class="first">Bei diesen Versionen muss den beiden <code class="docutils literal notranslate"><span class="pre">fwmod</span></code>-Aufrufen folgender
 fakeroot-Teil vorangestellt werden <code class="docutils literal notranslate"><span class="pre">tools/build/bin/fakeroot</span> <span class="pre">--</span></code>
 (fwmod hat es erwartet in fakeroot-Umgebung aufgerufen zu werden und
-hat sich selbst um diese noch nicht gekümmert)</li>
-<li>Bei Fehlermeldung
+hat sich selbst um diese noch nicht gekümmert)</p>
+</li>
+<li><p class="first">Bei Fehlermeldung
 <code class="docutils literal notranslate"><span class="pre">fakeroot:</span> <span class="pre">preload</span> <span class="pre">library</span> <span class="pre">`libfakeroot.so'</span> <span class="pre">not</span> <span class="pre">found,</span> <span class="pre">aborting.</span></code>
-hilft ein vorangestelltes LD_PATH_PRELOAD:</li>
+hilft ein vorangestelltes LD_PATH_PRELOAD:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LD_PATH_PRELOAD</span><span class="o">=</span><span class="n">tools</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libfakeroot</span><span class="o">.</span><span class="n">so</span> <span class="n">tools</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fakeroot</span> <span class="o">--</span> <span class="o">./</span><span class="n">fwmod</span> <span class="o">...</span>
+</pre></div>
+</div>
+</li>
 </ul>
 </div>
 <div class="section" id="verwendung-von-fwmod-im-no-freetz-modus">
@@ -631,8 +673,8 @@ jedoch keine einzige freetz-Änderung vorgenommen. Stattdessen wird ein
 Hook aufgerufen, in dem man eigene Modifikationen der Firmware
 implementieren und automatisiert ausführen lassen kann. Konkret gehe man
 wie folgt vor:</p>
-<ol class="arabic simple">
-<li>Man rufe <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code> auf, schalte den Experten-Modus ein
+<ol class="arabic">
+<li><p class="first">Man rufe <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code> auf, schalte den Experten-Modus ein
 („Level of User Competence“ = Expert), wähle die richtige Hardware
 (z.B. 7390) aus und aktiviere anschließend unter „Firmware packaging
 (fwmod) options“ die Option „Skip modifying unpacked firmware, adding
@@ -640,8 +682,9 @@ Freetz stuff“. Der letzte Schritt entspricht dem Aktivieren des „no
 freetz“-Modus. Seit Fritz!OS-6.5x empfiehlt es sich weiterhin die
 Option „Sign image“ (ebenfalls unter „Firmware packaging (fwmod)
 options“ zu finden) zu aktivieren (s. dazu den <a class="reference external" href="http://trac.freetz.org/wiki/help/howtos/development/sign_image">​Signieren von
-Firmware</a>-Artikel).</li>
-<li>Die eigenen Mods der Firmware sind in dem Script
+Firmware</a>-Artikel).</p>
+</li>
+<li><p class="first">Die eigenen Mods der Firmware sind in dem Script
 <a class="reference external" href="http://trac.freetz.org/browser/trunk/fwmod_custom">​fwmod_custom</a>
 in der Funktion
 <a class="reference external" href="http://trac.freetz.org/browser/trunk/fwmod_custom?rev=13796#L14">​all_no_freetz</a>
@@ -650,10 +693,63 @@ zu implementieren. Das entpackte Root-Dateisystem steht dabei unter
 auskommentierte Beispiele: <a class="reference external" href="http://trac.freetz.org/browser/trunk/fwmod_custom?rev=13796#L17">​restore telnet
 support</a>,
 <a class="reference external" href="http://trac.freetz.org/browser/trunk/fwmod_custom?rev=13796#L25">​restore debug.cfg
-support</a>.</li>
-<li>Anschließend rufe man <code class="docutils literal notranslate"><span class="pre">make</span></code> auf. Das entpackte,
+support</a>.</p>
+</li>
+<li><p class="first">Anschließend rufe man <code class="docutils literal notranslate"><span class="pre">make</span></code> auf. Das entpackte,
 fwmod_custom-modifizierte, wieder zusammengepackte und ggf. signierte
-Image ist unter <code class="docutils literal notranslate"><span class="pre">images/</span></code> zu finden.</li>
+Image ist unter <code class="docutils literal notranslate"><span class="pre">images/</span></code> zu finden.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>STEP 1: UNPACK
+unpacking firmware image
+removing NMI vector from SquashFS
+NMI vector v1 found at offset 0xBE0000, removing it ... done.
+splitting kernel image
+unpacking filesystem image
+    Reading a different endian SQUASHFS filesystem on build/original/kernel/kernelsquashfs.raw
+    Filesystem on build/original/kernel/kernelsquashfs.raw is lzma compressed (3:76)
+    Parallel unsquashfs: Using 1 processor
+    6112 inodes (6522 blocks) to write
+    created 5328 files
+    created 373 directories
+    created 697 symlinks
+    created 87 devices
+    created 0 fifos
+unpacking AVM plugins
+    tam image
+    webcm_interpreter image
+    wlan image
+unpacking var.tar
+done.
+
+detected firmware 7390_de 84.06.80 rev43122 (07.02.2017 12:23:41)
+
+STEP 3: PACK/SIGN
+WARNING: Modifications (STEP 2) and this step should never
+         ever be run with different configurations!
+         This can result in invalid images!!!
+WARNING: firmware does not seem to be modified by the script
+invoking custom script
+  restoring support for /var/flash/debug.cfg
+    patching ./filesystem/etc/init.d/rc.tail.sh
+  checking for left over Subversion directories
+packing var.tar
+Image signing files found, checking their consistency
+Copying /home/gene/.freetz.image_signing.asc to /etc/avm_firmware_public_key9
+creating filesystem image
+  SquashFS block size: 64 kB (65536 bytes)
+merging kernel image
+  kernel image size: 14.6 MB, max 14.9 MB, free 0.3 MB (269568 bytes)
+  WARNING: Not enough free flash space for answering machine!
+adding checksum to kernel.image
+packing images/7390_06.80.de_20170220-222457.image
+  image file size: 16.8 MB
+signing images/7390_06.80.de_20170220-222457.image
+  signed image file size: 16.8 MB
+done.
+
+FINISHED
+</pre></div>
+</div>
+</li>
 </ol>
 <ul class="simple">
 <li>Tags</li>

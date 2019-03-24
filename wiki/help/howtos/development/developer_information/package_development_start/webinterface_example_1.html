@@ -566,6 +566,33 @@
 <a class="reference external" href="../../../../../packages/httptunnel.html">httptunnel</a>.</div>
 </div>
 <p>Usages information:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># hts --help</span>
+<span class="n">Usage</span><span class="p">:</span> <span class="n">hts</span> <span class="p">[</span><span class="n">OPTION</span><span class="p">]</span><span class="o">...</span> <span class="p">[</span><span class="n">PORT</span><span class="p">]</span>
+<span class="n">Listen</span> <span class="k">for</span> <span class="n">incoming</span> <span class="n">httptunnel</span> <span class="n">connections</span> <span class="n">at</span> <span class="n">PORT</span> <span class="p">(</span><span class="n">default</span> <span class="n">port</span> <span class="ow">is</span> <span class="mi">8888</span><span class="p">)</span><span class="o">.</span>
+<span class="n">When</span> <span class="n">a</span> <span class="n">connection</span> <span class="ow">is</span> <span class="n">made</span><span class="p">,</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="ow">is</span> <span class="n">redirected</span> <span class="n">to</span> <span class="n">the</span> <span class="n">destination</span> <span class="n">specified</span>
+<span class="n">by</span> <span class="n">the</span> <span class="o">--</span><span class="n">device</span><span class="p">,</span> <span class="o">--</span><span class="n">forward</span><span class="o">-</span><span class="n">port</span> <span class="ow">or</span> <span class="o">--</span><span class="n">stdin</span><span class="o">-</span><span class="n">stdout</span> <span class="n">switch</span><span class="o">.</span>
+
+  <span class="o">-</span><span class="n">c</span><span class="p">,</span> <span class="o">--</span><span class="n">content</span><span class="o">-</span><span class="n">length</span> <span class="n">BYTES</span>     <span class="n">use</span> <span class="n">HTTP</span> <span class="n">PUT</span> <span class="n">requests</span> <span class="n">of</span> <span class="n">BYTES</span> <span class="n">size</span>
+                                 <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="ow">and</span> <span class="n">G</span> <span class="n">postfixes</span> <span class="n">recognized</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">d</span><span class="p">,</span> <span class="o">--</span><span class="n">device</span> <span class="n">DEVICE</span>            <span class="n">use</span> <span class="n">DEVICE</span> <span class="k">for</span> <span class="nb">input</span> <span class="ow">and</span> <span class="n">output</span>
+  <span class="o">-</span><span class="n">F</span><span class="p">,</span> <span class="o">--</span><span class="n">forward</span><span class="o">-</span><span class="n">port</span> <span class="n">HOST</span><span class="p">:</span><span class="n">PORT</span>   <span class="n">connect</span> <span class="n">to</span> <span class="n">PORT</span> <span class="n">at</span> <span class="n">HOST</span> <span class="ow">and</span> <span class="n">use</span> <span class="n">it</span> <span class="k">for</span>
+                                 <span class="nb">input</span> <span class="ow">and</span> <span class="n">output</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                     <span class="n">display</span> <span class="n">this</span> <span class="n">help</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">-</span><span class="n">k</span><span class="p">,</span> <span class="o">--</span><span class="n">keep</span><span class="o">-</span><span class="n">alive</span> <span class="n">SECONDS</span>       <span class="n">send</span> <span class="n">keepalive</span> <span class="nb">bytes</span> <span class="n">every</span> <span class="n">SECONDS</span> <span class="n">seconds</span>
+                                 <span class="p">(</span><span class="n">default</span> <span class="ow">is</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">M</span><span class="p">,</span> <span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">connection</span><span class="o">-</span><span class="n">age</span> <span class="n">SEC</span>   <span class="n">maximum</span> <span class="n">time</span> <span class="n">a</span> <span class="n">connection</span> <span class="n">will</span> <span class="n">stay</span>
+                                 <span class="nb">open</span> <span class="ow">is</span> <span class="n">SEC</span> <span class="n">seconds</span> <span class="p">(</span><span class="n">default</span> <span class="ow">is</span> <span class="mi">300</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">stdin</span><span class="o">-</span><span class="n">stdout</span>             <span class="n">use</span> <span class="n">stdin</span><span class="o">/</span><span class="n">stdout</span> <span class="k">for</span> <span class="n">communication</span>
+                                 <span class="p">(</span><span class="n">implies</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">daemon</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">S</span><span class="p">,</span> <span class="o">--</span><span class="n">strict</span><span class="o">-</span><span class="n">content</span><span class="o">-</span><span class="n">length</span>    <span class="n">always</span> <span class="n">write</span> <span class="n">Content</span><span class="o">-</span><span class="n">Length</span> <span class="nb">bytes</span> <span class="ow">in</span> <span class="n">requests</span>
+  <span class="o">-</span><span class="n">V</span><span class="p">,</span> <span class="o">--</span><span class="n">version</span>                  <span class="n">output</span> <span class="n">version</span> <span class="n">information</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">-</span><span class="n">w</span><span class="p">,</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">daemon</span>                <span class="n">don</span><span class="s1">&#39;t fork into the background</span>
+  <span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="o">--</span><span class="n">pid</span><span class="o">-</span><span class="n">file</span> <span class="n">LOCATION</span>        <span class="n">write</span> <span class="n">a</span> <span class="n">PID</span> <span class="n">file</span> <span class="n">to</span> <span class="n">LOCATION</span>
+
+<span class="n">Report</span> <span class="n">bugs</span> <span class="n">to</span> <span class="n">bug</span><span class="o">-</span><span class="n">httptunnel</span><span class="nd">@gnu</span><span class="o">.</span><span class="n">org</span><span class="o">.</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">First some characteristics of the HTTPTunnel package.</div>
 </div>
@@ -594,6 +621,15 @@ file with the default values.</div>
 <div class="line">For HOST I selected ‚localhost‘, but I actually never used this
 package, so I’m not sure if this default value is good from a security
 point of view.</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">HTTPTUNNEL_ENABLED</span><span class="o">=</span><span class="s1">&#39;no&#39;</span>
+<span class="n">export</span> <span class="n">HTTPTUNNEL_HOST</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span>
+<span class="n">export</span> <span class="n">HTTPTUNNEL_HOSTPORT</span><span class="o">=</span><span class="s1">&#39;22&#39;</span>
+<span class="n">export</span> <span class="n">HTTPTUNNEL_CLIENTPORT</span><span class="o">=</span><span class="s1">&#39;443&#39;</span>
+<span class="n">export</span> <span class="n">HTTPTUNNEL_KEEPALIVE</span><span class="o">=</span><span class="s1">&#39;5&#39;</span>
+<span class="n">export</span> <span class="n">HTTPTUNNEL_MAXCONNECTIONAGE</span><span class="o">=</span><span class="s1">&#39;300&#39;</span>
+<span class="n">export</span> <span class="n">HTTPTUNNEL_DEVICE</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="httptunnel-cgi">
@@ -656,7 +692,111 @@ the &lt;PACKAGE&gt;_&lt;VALUE&gt; parameters located in
 <code class="docutils literal notranslate"><span class="pre">/mod/etc/conf/&lt;package&gt;.cfg</span></code>.</div>
 </div>
 <p>httptunnel.cgi without <code class="docutils literal notranslate"><span class="pre">lang</span></code> statements:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+. /usr/lib/libmodcgi.sh
+
+check &quot;$HTTPTUNNEL_ENABLED&quot; yes:auto &quot;*&quot;:man
+
+sec_begin &#39;Start type&#39;
+
+cat &lt;&lt; EOF
+&lt;p&gt;
+&lt;input id=&quot;e1&quot; type=&quot;radio&quot; name=&quot;enabled&quot; value=&quot;yes&quot;$auto_chk&gt;&lt;label for=&quot;e1&quot;&gt;Automatic&lt;/label&gt;
+&lt;input id=&quot;e2&quot; type=&quot;radio&quot; name=&quot;enabled&quot; value=&quot;no&quot;$man_chk&gt;&lt;label for=&quot;e2&quot;&gt;Manual&lt;/label&gt;
+EOF
+cat &lt;&lt; EOF
+&lt;/p&gt;
+EOF
+
+sec_end
+sec_begin &#39;httptunnel&#39;
+
+cat &lt;&lt; EOF
+&lt;table border=&quot;0&quot;&gt;
+&lt;tr&gt;
+    &lt;td&gt;Destination Host:&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;host&quot; size=&quot;60&quot; maxlength=&quot;255&quot; value=&quot;$(html &quot;$HTTPTUNNEL_HOST&quot;)&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;Destination Port:&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;hostport&quot; size=&quot;5&quot; maxlength=&quot;5&quot; value=&quot;$(html &quot;$HTTPTUNNEL_HOSTPORT&quot;)&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;Client Port:&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;clientport&quot; size=&quot;5&quot; maxlength=&quot;5&quot; value=&quot;$(html &quot;$HTTPTUNNEL_CLIENTPORT&quot;)&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;Keep Alive:&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;keepalive&quot; size=&quot;3&quot; maxlength=&quot;3&quot; value=&quot;$(html &quot;$HTTPTUNNEL_KEEPALIVE&quot;)&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;Max Connection Age:&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;maxconnectionage&quot; size=&quot;4&quot; maxlength=&quot;4&quot; value=&quot;$(html &quot;$HTTPTUNNEL_MAXCONNECTIONAGE&quot;)&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;Device:&lt;/td&gt;
+    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;device&quot; size=&quot;10&quot; maxlength=&quot;10&quot; value=&quot;$(html &quot;$HTTPTUNNEL_DEVICE&quot;)&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+EOF
+
+sec_end
+</pre></div>
+</div>
 <p>httptunnel.cgi with <code class="docutils literal notranslate"><span class="pre">lang</span></code> statements and an entry for each language:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+. /usr/lib/libmodcgi.sh
+
+check &quot;$HTTPTUNNEL_ENABLED&quot; yes:auto &quot;*&quot;:man
+
+sec_begin &#39;$(lang de:&quot;Starttyp&quot; en:&quot;Start type&quot;)&#39;
+
+cat &lt;&lt; EOF
+&lt;p&gt;
+&lt;input id=&quot;e1&quot; type=&quot;radio&quot; name=&quot;enabled&quot; value=&quot;yes&quot;$auto_chk&gt;&lt;label for=&quot;e1&quot;&gt;$(lang de:&quot;Automatisch&quot; en:&quot;Automatic&quot;)&lt;/label&gt;
+&lt;input id=&quot;e2&quot; type=&quot;radio&quot; name=&quot;enabled&quot; value=&quot;no&quot;$man_chk&gt;&lt;label for=&quot;e2&quot;&gt;$(lang de:&quot;Manuell&quot; en:&quot;Manual&quot;)&lt;/label&gt;
+EOF
+cat &lt;&lt; EOF
+&lt;/p&gt;
+EOF
+
+sec_end
+sec_begin &#39;$(lang de:&quot;httptunnel&quot; en:&quot;httptunnel&quot;)&#39;
+
+cat &lt;&lt; EOF
+&lt;table border=&quot;0&quot;&gt;
+&lt;tr&gt;
+        &lt;td&gt;$(lang de:&quot;Destination Host&quot; en:&quot;Destination Host&quot;):&lt;/td&gt;
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;host&quot; size=&quot;80&quot; maxlength=&quot;255&quot; value=&quot;$(html &quot;$HTTPTUNNEL_HOST&quot;)&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+        &lt;td&gt;$(lang de:&quot;Destination Port&quot; en:&quot;Destination Port&quot;):&lt;/td&gt;
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;hostport&quot; size=&quot;5&quot; maxlength=&quot;5&quot; value=&quot;$(html &quot;$HTTPTUNNEL_HOSTPORT&quot;)&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+        &lt;td&gt;$(lang de:&quot;Client Port&quot; en:&quot;Client Port&quot;):&lt;/td&gt;
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;clientport&quot; size=&quot;5&quot; maxlength=&quot;5&quot; value=&quot;$(html &quot;$HTTPTUNNEL_CLIENTPORT&quot;)&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+        &lt;td&gt;$(lang de:&quot;Keep Alive&quot; en:&quot;Keep Alive&quot;):&lt;/td&gt;
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;keepalive&quot; size=&quot;3&quot; maxlength=&quot;3&quot; value=&quot;$(html &quot;$HTTPTUNNEL_KEEPALIVE&quot;)&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+        &lt;td&gt;$(lang de:&quot;Max Connection Age&quot; en:&quot;Max Connection Age&quot;):&lt;/td&gt;
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;maxconnectionage&quot; size=&quot;4&quot; maxlength=&quot;4&quot; value=&quot;$(html &quot;$HTTPTUNNEL_MAXCONNECTIONAGE&quot;)&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+        &lt;td&gt;$(lang de:&quot;Device&quot; en:&quot;Device&quot;):&lt;/td&gt;
+        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;device&quot; size=&quot;10&quot; maxlength=&quot;10&quot; value=&quot;$(html &quot;$HTTPTUNNEL_DEVICE&quot;)&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+EOF
+
+sec_end
+</pre></div>
+</div>
 </div>
 <div class="section" id="rc-httptunnel">
 <h2>rc.httptunnel<a class="headerlink" href="#rc-httptunnel" title="Link zu dieser Überschrift">¶</a></h2>
@@ -679,6 +819,56 @@ non-zero amount of characters.</div>
 <div class="line">The case function test for a match. See the
 <a class="reference external" href="rc.%3Cpackage%3E.html">rc.&lt;package&gt;</a> page for more information.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+DAEMON=httptunnel
+DAEMON_BIN=hts
+PID_FILE=/var/run/$DAEMON_BIN.pid
+. /etc/init.d/modlibrc
+
+start() {
+        OPTIONS=&quot;-F $HTTPTUNNEL_HOST:$HTTPTUNNEL_HOSTPORT \
+                -k $HTTPTUNNEL_KEEPALIVE \
+                -M $HTTPTUNNEL_MAXCONNECTIONAGE \
+                -p $PID_FILE \
+                $HTTPTUNNEL_CLIENTPORT&quot;
+        [ -n &quot;$HTTPTUNNEL_DEVICE&quot; ] &amp;&amp; OPTIONS=&quot;$OPTIONS -d $HTTPTUNNEL_DEVICE&quot;
+        modlib_startdaemon $DAEMON_BIN $OPTIONS
+}
+
+case $1 in
+        &quot;&quot;|load)
+                modreg cgi &#39;httptunnel&#39; &#39;httptunnel&#39;
+                modreg daemon httptunnel
+
+                modlib_start $HTTPTUNNEL_ENABLED
+                ;;
+        unload)
+                modunreg daemon httptunnel
+                modunreg cgi &#39;httptunnel&#39;
+                modlib_stop
+                ;;
+        start)
+                modlib_start
+                ;;
+        stop)
+                modlib_stop
+                ;;
+        restart)
+                modlib_restart
+                ;;
+        status)
+                modlib_status
+                ;;
+        *)
+                echo &quot;Usage: $0 [load|unload|start|stop|restart|status]&quot; 1&gt;&amp;2
+                exit 1
+                ;;
+esac
+
+exit 0
+</pre></div>
+</div>
 </div>
 <div class="section" id="test-on-router">
 <span id="testonrouter"></span><h2>Test on router<a class="headerlink" href="#test-on-router" title="Link zu dieser Überschrift">¶</a></h2>
@@ -690,8 +880,33 @@ the router.</div>
 obtain the config parameter values from tffs.</div>
 </div>
 <p>For the initial development of all files:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+export package=httptunnel
+echo Will add webinterface for $package
+[ ! -e /mod/etc/default.$package ] &amp;&amp; mkdir /mod/etc/default.$package
+[ ! -e /mod/etc/default.$package/$package.cfg ] &amp;&amp; cp $package.cfg /mod/etc/default.$package/
+if [ $1 -eq 2 ]; then
+ modconf load $package
+else
+ [ ! -e /mod/etc/conf/$package.cfg ] &amp;&amp; cp $package.cfg /mod/etc/conf/
+fi
+cd /var/mod/usr/lib/cgi-bin/
+[ ! -e /var/mod/usr/lib/cgi-bin/$package.cgi ] &amp;&amp;  ln -s /var/media/ftp/uStor01/freetz/webinterface/$package/$package.cgi $package.cgi
+cd /mod/etc/init.d/
+[ ! -e /mod/etc/init.d/rc.$package ] &amp;&amp; ln -s /var/media/ftp/uStor01/freetz/webinterface/$package/rc.$package rc.$package
+rm /var/mod/var/cache/menu/packages
+modreg cgi $package $package
+</pre></div>
+</div>
 <p>For verifying changes to just the rc.&lt;package&gt; file e.g. after already
 including the files in the Freetz image:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+export package=httptunnel
+cd /mod/etc/init.d/
+[ -h /mod/etc/init.d/rc.$package ] &amp;&amp; rm /mod/etc/init.d/rc.$package
+[ ! -e /mod/etc/init.d/rc.$package ] &amp;&amp; ln -s /var/media/ftp/uStor01/freetz/webinterface/$package/rc.$package rc.$package
+</pre></div>
+</div>
 </div>
 <div class="section" id="references">
 <span id="id1"></span><h2>References<a class="headerlink" href="#references" title="Link zu dieser Überschrift">¶</a></h2>

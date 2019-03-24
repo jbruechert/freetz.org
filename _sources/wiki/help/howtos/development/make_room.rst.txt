@@ -61,7 +61,7 @@ Größe absteigend zu sortieren. Als Beispiel diene hier die AVM-FW
 29.04.29 für die Box vom Typ 7170. (Der Übersicht halber lasse ich
 unwichtige Spalten der Ergebnisliste weg.)
 
-.. code:: wiki
+.. code:: bash
 
    $ cd build/original/filesystem
    $ find . -type f | xargs ls -lSR | more
@@ -138,7 +138,7 @@ Assistenten, Original-Kernel, Bftp, Callmonitor, Cifsmount, Dropbear
 (nur Server), MC, Mini_fo, Samba, Screen, Syslogd-CGI, WoL-CGI, Lua,
 Matrixtunnel. Das sieht dann so aus:
 
-.. code:: wiki
+.. code:: bash
 
    $ cd build/modified/filesystem
    $ find . -type f | xargs ls -lSR | more

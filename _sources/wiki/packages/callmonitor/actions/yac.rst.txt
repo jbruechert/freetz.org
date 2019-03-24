@@ -8,7 +8,7 @@ YAC: Yet Another Caller ID Program,
 
 Syntax:
 
-.. code:: wiki
+.. code:: bash
 
      yac <IP>
        IP       IP des Rechners, auf dem der YAC-Listener läuft

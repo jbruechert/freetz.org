@@ -69,7 +69,7 @@ nhipt.cgi.(version).tar.gz
 -  set up the httpd deamon for the UI on the folder above of the cgi-bin
    (e.g. to\ **/ipt**) and use a free tcp port (e.g. 83).
 
-.. code:: wiki
+.. code:: bash
 
    chmod +x /var/media/ftp/uStor01/ipt/cgi-bin/nhipt.cgi
    httpd -P /var/run/nhipt.pid -p 83 -h /var/media/ftp/uStor01/ipt
@@ -90,7 +90,7 @@ ipt.(version).tar.gz
 -  set execute permissions to **register.sh**
 -  run **register.sh**
 
-.. code:: wiki
+.. code:: bash
 
    chmod +x /var/media/ftp/uStor01/ipt/register.sh
    . /var/media/ftp/uStor01/ipt/register.sh
@@ -209,7 +209,7 @@ config file
 | At run-time you'll find it here: */var/tmp/nhipt.par*, persistently
   stored at BOOTDIR along with the *nhipt.cfg*
 
-.. code:: wiki
+.. code:: bash
 
    BACK=/var/media/ftp/uStor01/save
    CHANGED=0
@@ -231,7 +231,7 @@ config file
 files contained in the freetz package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: wiki
+.. code:: bash
 
    /etc/default.nhipt/nhipt.cfg       rwxrwxrwx    # config for freetz UI
    /etc/init.d/rc.nhipt               r-xr-xr-x    # call-back for freetz UI, boot loader

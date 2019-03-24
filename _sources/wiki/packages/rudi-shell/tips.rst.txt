@@ -92,7 +92,7 @@ Der gesamte Vorgang erfordert zwischendurch die Eingabe einer Passphrase
 für den Serverschlüssel sowie von persönlichen Daten für das Zertifikat.
 Das sieht dann inkl. Ein- und Ausgaben beispielsweise so aus:
 
-.. code:: wiki
+.. code:: bash
 
    $ openssl genrsa -des3 -out server.key 1024
    Generating RSA private key, 1024 bit long modulus
@@ -180,7 +180,7 @@ services* folgende Konfiguration ein, um eben diese Web-Oberfläche, in
 der wir uns gerade aufhalten, zukünftig HTTPS-gesichert verfügbar zu
 machen:
 
-.. code:: wiki
+.. code:: bash
 
    [freetz_web]
    cert = /tmp/stunnel-key.pem
@@ -209,7 +209,7 @@ machen, müssen entweder die üblichen Einstellungen in
 ``/var/flash/ar7.cfg`` vorgenommen werden, also z.B. folgender Abschnitt
 unter *forwardrules*
 
-.. code:: wiki
+.. code:: bash
 
            "tcp 0.0.0.0:443 0.0.0.0:443",
 

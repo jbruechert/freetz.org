@@ -91,7 +91,7 @@ Execution
    able to connect to the Internet by itself. If not, you can set up
    internet access manually like so:
 
-   .. code:: wiki
+   .. code:: bash
 
       ifconfig eth0 192.168.178.xx netmask 255.255.255.0 broadcast 192.168.178.255
 
@@ -129,7 +129,7 @@ Execution
 
    -  **SSH/TELNET**: (the preferred method)
 
-      .. code:: wiki
+      .. code:: bash
 
          svn co http://svn.freetz.org/tags/freetz-1.1.x freetz-1.1.x
 
@@ -141,7 +141,7 @@ development ``/trunk`` if you wish.
 #. Change into the freetz directory you just checked out (or unpacked
    into):
 
-   .. code:: wiki
+   .. code:: bash
 
       cd freetz-*/
 
@@ -150,7 +150,7 @@ development ``/trunk`` if you wish.
    same one being used to configure the Linux kernel. For a detailed
    description, see `menuconfig <install/menuconfig.html>`__.
 
-   .. code:: wiki
+   .. code:: bash
 
       make menuconfig
 
@@ -161,7 +161,7 @@ development ``/trunk`` if you wish.
    run through will take a little while, so you might want to have some
    coffee or tea in the meantime.
 
-   .. code:: wiki
+   .. code:: bash
 
       unset CFLAGS CXXCFLAGS
       make
@@ -495,7 +495,7 @@ erstellt, in dem Symlinks der Standardnamen auf die GNU Utilities
 zeigen. Zum Arbeiten mit ds-mod ist dieses Verzeichnis in den Suchpfad
 aufzunehmen:
 
-.. code:: wiki
+.. code:: bash
 
    ~/gnubin $ ls -l
    total 64

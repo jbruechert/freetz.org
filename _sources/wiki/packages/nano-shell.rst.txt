@@ -99,7 +99,7 @@ Konqueror 3.5.8): Viele Browser akzeptieren auch unkodierte
 CGI-Parameter, also Befehler im Klartext, d.h. normalerweise kann man
 anstatt der kodierten Befehle oben auch Folgendes schreiben:
 
-.. code:: wiki
+.. code:: bash
 
    http://fritz.box/cgi-bin/shell.cgi?ls -l /var/tmp
    http://fritz.box/cgi-bin/shell.cgi?/usr/sbin/telnetd -p 2323 -l /bin/sh

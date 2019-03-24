@@ -575,16 +575,32 @@ Speicherort für die Änderungen ausgewählt werden. Entweder RAM
 (flüchtig) oder JFFS2 (reboot resistent). Bei Auswahl der Option JFFS2
 muss genügend freier Speicherplatz verfügbar sein (die Daten werden gzip
 komprimiert abgespeichert):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@fritz</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span><span class="c1"># df /dev/mtdblock5</span>
+<span class="n">Filesystem</span>           <span class="mi">1</span><span class="n">K</span><span class="o">-</span><span class="n">blocks</span>      <span class="n">Used</span> <span class="n">Available</span> <span class="n">Use</span><span class="o">%</span> <span class="n">Mounted</span> <span class="n">on</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mtdblock5</span>            <span class="mi">3200</span>      <span class="mi">2612</span>       <span class="mi">588</span>  <span class="mi">82</span><span class="o">%</span> <span class="o">/</span><span class="n">sto</span>
+</pre></div>
+</div>
 <p>Das Paket kann nur durch einen Reboot de-/aktiviert werden.</p>
 </div>
 <div class="section" id="konfiguration-per-hand">
 <span id="konfigurationperhand"></span><h1>Konfiguration (per Hand)<a class="headerlink" href="#konfiguration-per-hand" title="Link zu dieser Überschrift">¶</a></h1>
 <p><strong>mini_fo</strong> ist ein Kernel-Modul, das man entweder ohne Argumente mit
 insmod lädt…</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">insmod</span> <span class="n">mini_fo</span>
+</pre></div>
+</div>
 <p>…oder in der Freetz-Oberfläche in Modules einträgt, damit es beim Start
 geladen wird:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mini_fo</span>
+</pre></div>
+</div>
 <p>Ist es aktiv steht der mount-type ‚mini_fo‘ zur Verfügung. Um /usr/www
 beschreibbar zu machen genügt diese Zeile in rc.custom:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">usrwww</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">usrwww</span><span class="o">-</span><span class="n">sto</span> <span class="o">&amp;&amp;</span> \
+ <span class="n">mount</span> <span class="o">-</span><span class="n">o</span> <span class="n">bind</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">www</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">usrwww</span> <span class="o">&amp;&amp;</span> \
+ <span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">mini_fo</span> <span class="o">-</span><span class="n">o</span> <span class="n">base</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">usrwww</span><span class="p">,</span><span class="n">sto</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">usrwww</span><span class="o">-</span><span class="n">sto</span> <span class="n">minifo</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">www</span>
+</pre></div>
+</div>
 <p>Im Pfad /tmp/usrwww-sto befinden sich dann jegliche Änderungen.</p>
 </div>
 <div class="section" id="mogliche-nebeneffekte">
@@ -616,6 +632,9 @@ gestört.</p>
 <div class="section" id="restore-original-file">
 <span id="restoreoriginalfile"></span><h1>Restore original file<a class="headerlink" href="#restore-original-file" title="Link zu dieser Überschrift">¶</a></h1>
 <p>The modified files are stored here (trunk version):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">sto</span><span class="o">/</span><span class="n">mini_fo</span><span class="o">/...</span>
+</pre></div>
+</div>
 <p>So for example a modified <em>/usr/sbin/blkid</em> is stored as
 <em>/sto/mini_fo/usr/sbin/blkid</em>.</p>
 <p>If you remove the latter one, the original one will reappear in your

@@ -17,7 +17,7 @@ Setup
 Folgendes bei ``forwardrules`` der ar7.cfg eintragen um Pings aus dem
 Internet zuzulassen:
 
-.. code:: wiki
+.. code:: bash
 
    "icmp 0.0.0.0 0.0.0.0 0 # PTunnel"
 
@@ -28,7 +28,7 @@ Capturing packets (`​libpcap <http://www.tcpdump.org/pcap3_man.html>`__)
 from interface *dsl* doesn't work (packets are fragmented), but from
 interface *lan* does:
 
-.. code:: wiki
+.. code:: bash
 
    ptunnel -c lan
 
@@ -39,7 +39,7 @@ that are not wlan or ethernet.*")
 The web interface of pingtunnel (from revision 6792) uses the following
 options if you don't specify extra options:
 
-.. code:: wiki
+.. code:: bash
 
    -c lan -syslog -x <password>
 
@@ -66,7 +66,7 @@ if you configure ICMP forwarding.
 
 It is easily overlooked, but you can tighten security with these option:
 
-.. code:: wiki
+.. code:: bash
 
        -da: Set remote proxy destination address if client
             Restrict to only this destination address if server
@@ -75,7 +75,7 @@ It is easily overlooked, but you can tighten security with these option:
 
 You can restrict access to for example Polipo? like this:
 
-.. code:: wiki
+.. code:: bash
 
    -da localhost -dp 8123
 

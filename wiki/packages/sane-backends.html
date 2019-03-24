@@ -637,14 +637,22 @@ erweitern, dann reicht es, nur <code class="docutils literal notranslate"><span 
 </div>
 <div class="section" id="windows">
 <span id="id6"></span><h4>Windows<a class="headerlink" href="#windows" title="Link zu dieser Überschrift">¶</a></h4>
-<ul class="simple">
-<li>Mit <a class="reference external" href="http://sanetwain.ozuzo.net/">​SaneTwain</a> kann man den Scanner
+<ul>
+<li><p class="first">Mit <a class="reference external" href="http://sanetwain.ozuzo.net/">​SaneTwain</a> kann man den Scanner
 aus allen Windows-Anwendungen heraus verwenden, die Scanner über die
-TWAIN-Schnittstelle unterstützen.</li>
-<li><a class="reference external" href="http://www.xsane.org/xsane-win32.html">​XSane für Windows</a><ul>
-<li>Die Sprache läßt sich so auf Deutsch ändern, indem man die
+TWAIN-Schnittstelle unterstützen.</p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.xsane.org/xsane-win32.html">​XSane für Windows</a></p>
+<ul>
+<li><p class="first">Die Sprache läßt sich so auf Deutsch ändern, indem man die
 Umgebungsvariable <code class="docutils literal notranslate"><span class="pre">LANG</span></code> auf <code class="docutils literal notranslate"><span class="pre">de</span></code> setzt. Z.B. Folgendes in
-xsane.bat:</li>
+xsane.bat:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@echo</span> <span class="n">off</span>
+<span class="nb">set</span> <span class="n">LANG</span><span class="o">=</span><span class="n">de</span>
+<span class="n">c</span><span class="p">:</span>\<span class="n">sane</span>\<span class="nb">bin</span>\<span class="n">xsane</span><span class="o">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+</li>
 </ul>
 </li>
 </ul>
@@ -732,6 +740,15 @@ snape20.bin</li>
 <li>die Dateien „<code class="docutils literal notranslate"><span class="pre">snapscan.conf</span></code>“ und „<code class="docutils literal notranslate"><span class="pre">snapscan.conf.in</span></code>“ aus dem
 Ordner „<code class="docutils literal notranslate"><span class="pre">source/sane-backends-1.0.19/backend</span></code>“ anpassen:</li>
 </ul>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#------------------------------ General -----------------------------------</span>
+
+<span class="c1"># Change to the fully qualified filename of your firmware file, if</span>
+<span class="c1"># firmware upload is needed by the scanner</span>
+<span class="n">firmware</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">snape20</span><span class="o">.</span><span class="n">bin</span>
+
+<span class="c1"># If not automatically found you may manually specify a device name.</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>freetz-image erstellen</li>
 <li>und der Scanner kann z.B. per xsane genutzt werden</li>
@@ -739,11 +756,18 @@ Ordner „<code class="docutils literal notranslate"><span class="pre">source/sa
 </div>
 <div class="section" id="mustek-bearpaw-1200-ta">
 <span id="mustekbearpaw1200ta"></span><h4>Mustek BearPaw 1200 TA<a class="headerlink" href="#mustek-bearpaw-1200-ta" title="Link zu dieser Überschrift">¶</a></h4>
-<ul class="simple">
-<li>Firmwaredatei besorgen - A1fw.usb -
-<a class="reference external" href="http://www.meier-geinitz.de/sane/gt68xx-backend/">​http://www.meier-geinitz.de/sane/gt68xx-backend/</a></li>
-<li>In freetz Verzeichnis eingeben:</li>
-<li>freetz-image erstellen</li>
+<ul>
+<li><p class="first">Firmwaredatei besorgen - A1fw.usb -
+<a class="reference external" href="http://www.meier-geinitz.de/sane/gt68xx-backend/">​http://www.meier-geinitz.de/sane/gt68xx-backend/</a></p>
+</li>
+<li><p class="first">In freetz Verzeichnis eingeben:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">make</span><span class="o">/</span><span class="n">sane</span><span class="o">-</span><span class="n">backends</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">sane</span><span class="o">/</span><span class="n">gt68xx</span>
+<span class="n">cp</span> <span class="o">&lt;</span><span class="n">Pfad</span> <span class="n">zu</span> <span class="n">A1fw</span><span class="o">.</span><span class="n">usb</span><span class="o">&gt;</span> <span class="n">make</span><span class="o">/</span><span class="n">sane</span><span class="o">-</span><span class="n">backends</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">sane</span><span class="o">/</span><span class="n">gt68xx</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">freetz-image erstellen</p>
+</li>
 </ul>
 </div>
 <div class="section" id="hp-gerate-die-ein-plugin-benotigen">

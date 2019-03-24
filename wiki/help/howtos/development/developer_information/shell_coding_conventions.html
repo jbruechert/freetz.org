@@ -798,6 +798,12 @@ processes).</p>
 <div class="section" id="quoting">
 <span id="id1"></span><h3>Quoting<a class="headerlink" href="#quoting" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Quick review of the quoting basics:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">single</span> <span class="n">quotes</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="n">mean</span> <span class="n">quote</span> <span class="n">but</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">expand</span> <span class="n">variable</span> <span class="ow">or</span> <span class="n">backquote</span> <span class="n">substitutions</span><span class="o">.</span>
+<span class="n">Double</span> <span class="n">quotes</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="n">mean</span> <span class="n">quote</span> <span class="n">but</span> <span class="n">allow</span> <span class="n">expansion</span><span class="o">.</span>
+<span class="n">Backquotes</span> <span class="p">()</span> <span class="n">mean</span> <span class="n">execute</span> <span class="n">the</span> <span class="n">command</span> <span class="ow">and</span> <span class="n">substitute</span> <span class="n">its</span> <span class="n">standard</span> <span class="n">output</span>
+<span class="p">(</span><span class="n">note</span><span class="p">:</span> <span class="n">stderr</span> <span class="ow">is</span> <span class="n">unchanged</span> <span class="ow">and</span> <span class="n">may</span> <span class="s2">&quot;leak&quot;</span> <span class="n">through</span> <span class="n">unless</span> <span class="n">properly</span> <span class="n">redirected</span><span class="p">)</span><span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
 <p>Use quotes wherever they <em>could</em> be necessary, even when knowing that
 for example a variable does only expand to one word at the moment. This
 can save us from possible side effects of later code changes.</p>

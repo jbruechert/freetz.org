@@ -81,7 +81,7 @@ Folgenden zu tun haben werden, sind
       Stand 15.10.2011 im Trunk, nicht in älteren Stable-Versionen, also
       frühestens ab *Freetz 1.2*):
 
-      .. code:: wiki
+      .. code:: bash
 
          Usage: tools/config/conf [option] <kconfig-file>
          [option] is _one_ of the following:
@@ -123,7 +123,7 @@ Siehe vorerst `#1532 </ticket/1532>`__, insbes. Kommentare Nr.
       bekommen. Das ist also gut für die Projekthygiene. Ich gebe mal
       ein Beispiel:
 
-      .. code:: wiki
+      .. code:: bash
 
          warning: (FREETZ_PACKAGE_AUTOFS_NFS && FREETZ_PACKAGE_NFSROOT)
              selects FREETZ_MODULE_nfs which has unmet direct dependencies
@@ -250,7 +250,7 @@ Syntax-Fehler in MK-Dateien finden
 
 Wir sehen einen Fehler wie diesen:
 
-.. code:: wiki
+.. code:: bash
 
    $ make menuconfig
 
@@ -270,7 +270,7 @@ fehlerhafte Stelle zu finden:
 #. ``make menuconfig-nocache`` aufrufen und die problematische Datei
    (*make/davfs2/Config.in*) direkt von der Konsole ablesen:
 
-   .. code:: wiki
+   .. code:: bash
 
       $ make menuconfig-nocache
 
@@ -339,7 +339,7 @@ Shebang den MIME-Typ (``text/x-kconfig``, übrigens selbst erfunden und
 kein allgemeiner Standard) oder das in ``trac.ini`` konfigurierte
 Schlüsselwort ``kconfig``, also in etwa so:
 
-.. code:: wiki
+.. code:: bash
 
    {{{
    #!text/x-kconfig
@@ -348,7 +348,7 @@ Schlüsselwort ``kconfig``, also in etwa so:
 
 Oder so:
 
-.. code:: wiki
+.. code:: bash
 
    {{{
    #!kconfig

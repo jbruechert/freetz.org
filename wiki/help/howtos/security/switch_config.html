@@ -694,14 +694,48 @@ Box passend aufgeteilt.</p>
 folgende Beispiel beschreibt die Aufteilung des Switch in die beiden
 Interface eth0 mit LAN1 und LAN2 sowie eth1 mit LAN3 und LAN4. Der
 folgende Patch wurde für eine 7270 mit Firmware 76 erstellt.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span> <span class="n">linux</span><span class="o">-</span><span class="mf">2.6</span><span class="o">.</span><span class="mf">19.2</span><span class="o">/</span><span class="n">drivers</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">avm_cpmac</span><span class="o">/</span><span class="n">cpphy_adm6996</span><span class="o">.</span><span class="n">c_orig</span>   <span class="mi">2009</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">08</span> <span class="mi">13</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">52.000000000</span> <span class="o">+</span><span class="mi">0200</span>
+<span class="o">+++</span> <span class="n">linux</span><span class="o">-</span><span class="mf">2.6</span><span class="o">.</span><span class="mf">19.2</span><span class="o">/</span><span class="n">drivers</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">avm_cpmac</span><span class="o">/</span><span class="n">cpphy_adm6996</span><span class="o">.</span><span class="n">c</span>        <span class="mi">2009</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">20</span> <span class="mi">10</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mf">14.000000000</span> <span class="o">+</span><span class="mi">0200</span>
+<span class="o">@@</span> <span class="o">-</span><span class="mi">137</span><span class="p">,</span><span class="mi">9</span> <span class="o">+</span><span class="mi">137</span><span class="p">,</span><span class="mi">10</span> <span class="o">@@</span>
+                                         <span class="p">{</span> <span class="p">{</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">}</span>
+                                         <span class="p">}</span>
+                                    <span class="p">},</span>
+<span class="o">-</span>        <span class="o">/*</span> <span class="n">CPMAC_MODE_NORMAL</span>    <span class="o">*/</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mh">0xff</span><span class="p">,</span>
+<span class="o">-</span>                                        <span class="p">{</span> <span class="p">{</span><span class="s2">&quot;eth0&quot;</span><span class="p">,</span> <span class="mh">0x2f</span><span class="p">}</span>
+<span class="o">-</span>                                        <span class="p">}</span>
+<span class="o">+</span>        <span class="o">/*</span> <span class="n">CPMAC_MODE_NORMAL</span>    <span class="o">*/</span> <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mh">0xff</span><span class="p">,</span>
+<span class="o">+</span>                                        <span class="p">{</span> <span class="p">{</span><span class="s2">&quot;eth0&quot;</span><span class="p">,</span> <span class="mh">0x23</span><span class="p">},</span>
+<span class="o">+</span>                                                 <span class="p">{</span><span class="s2">&quot;eth1&quot;</span><span class="p">,</span> <span class="mh">0x2c</span><span class="p">}</span>
+<span class="o">+</span>                                       <span class="p">}</span>
+                                    <span class="p">},</span>
+         <span class="o">/*</span> <span class="n">CPMAC_MODE_ATA</span>       <span class="o">*/</span> <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                                         <span class="p">{</span> <span class="p">{</span><span class="s2">&quot;wan&quot;</span><span class="p">,</span>  <span class="mh">0x21</span><span class="p">},</span>
+</pre></div>
+</div>
 <p>Den Patch in das Verzeichnis <code class="docutils literal notranslate"><span class="pre">/make/linux/patches/2.6.19.2</span></code> oder ggf.
 Unterordner wie z.B. <code class="docutils literal notranslate"><span class="pre">7270_04.76</span></code> kopieren.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">menuconfig</span>
+</pre></div>
+</div>
 <p>Box konfigurieren und die Option „Replace Kernel“ auswählen</p>
 <p>Bestehenden Kernel löschen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">kernel</span><span class="o">-</span><span class="n">dirclean</span>
+</pre></div>
+</div>
 <p>Kernel-Sourcen bereitstellen und Patchen</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">kernel</span><span class="o">-</span><span class="n">source</span>
+</pre></div>
+</div>
 <p>Hier kann noch kontrolliert werden, ob der Patch korrekt durchgeführt
 wird. z.B.:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">applying</span> <span class="n">patch</span> <span class="n">file</span> <span class="n">make</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="n">patches</span><span class="o">/</span><span class="mf">2.6</span><span class="o">.</span><span class="mf">19.2</span><span class="o">/</span><span class="mf">7270_04.76</span><span class="o">/</span><span class="mi">990</span><span class="o">-</span><span class="n">cpmac</span><span class="o">.</span><span class="n">patch</span>
+<span class="n">patching</span> <span class="n">file</span> <span class="n">linux</span><span class="o">-</span><span class="mf">2.6</span><span class="o">.</span><span class="mf">19.2</span><span class="o">/</span><span class="n">drivers</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">avm_cpmac</span><span class="o">/</span><span class="n">cpphy_adm6996</span><span class="o">.</span><span class="n">c</span>
+</pre></div>
+</div>
 <p>Dann noch das Image erstellen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="anpassungen-in-der-ar7-cfg">
@@ -710,8 +744,16 @@ wird. z.B.:</p>
 verschiedenen Konfiguationsänderungen, wie z.B. Aus- und Einschalten des
 Wlan bestehen und und automatisch konfiguriert werden und bleiben.</p>
 <p>Kopie der ar7.cfg erstellen und diese bearbeiten:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span>
+<span class="n">cat</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">ar7</span><span class="o">.</span><span class="n">cfg</span> <span class="o">&gt;</span> <span class="n">ar7</span><span class="o">.</span><span class="n">cfg</span>
+<span class="n">vi</span> <span class="n">ar7</span><span class="o">.</span><span class="n">cfg</span>
+</pre></div>
+</div>
 <p>Box muss sich im Modus „Router“ befinden, dies wird mit der Option
 <code class="docutils literal notranslate"><span class="pre">ethmode</span></code> in der ar7.cfg eingestellt.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ethmode</span> <span class="o">=</span> <span class="n">ethmode_router</span><span class="p">;</span>
+</pre></div>
+</div>
 <p>Dann muss noch der Bereich <code class="docutils literal notranslate"><span class="pre">ethinterfaces</span></code> verändert werden.</p>
 <p>Bei der Konfiguration ist folgendes zu beachten. Nur den dort
 vorhandenen wird eine IP-Adresse zugewiesen. Alle anderen Interfaces
@@ -728,16 +770,66 @@ verschiedenen WLan-Interfaces mit der Adresse 192.168.0.1.</div>
 sauber in der eth-Sektion! (und AVM hat es ja auch selber mit dem
 wlan-IF so gemacht)</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ethinterfaces</span> <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;extern&quot;</span><span class="p">;</span>
+        <span class="n">dhcp</span> <span class="o">=</span> <span class="n">no</span><span class="p">;</span>
+        <span class="n">ipaddr</span> <span class="o">=</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.1</span><span class="p">;</span>
+        <span class="n">netmask</span> <span class="o">=</span> <span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span><span class="p">;</span>
+        <span class="n">dstipaddr</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">interfaces</span> <span class="o">=</span> <span class="s2">&quot;eth1&quot;</span><span class="p">;</span>
+        <span class="n">dhcpenabled</span> <span class="o">=</span> <span class="n">no</span><span class="p">;</span>
+        <span class="n">dhcpstart</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">dhcpend</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="p">}</span> <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;eth0:0&quot;</span><span class="p">;</span>
+        <span class="n">dhcp</span> <span class="o">=</span> <span class="n">no</span><span class="p">;</span>
+        <span class="n">ipaddr</span> <span class="o">=</span> <span class="mf">169.254</span><span class="o">.</span><span class="mf">1.1</span><span class="p">;</span>
+        <span class="n">netmask</span> <span class="o">=</span> <span class="mf">255.255</span><span class="o">.</span><span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">dstipaddr</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">dhcpenabled</span> <span class="o">=</span> <span class="n">yes</span><span class="p">;</span>
+        <span class="n">dhcpstart</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">dhcpend</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="p">}</span> <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;intern&quot;</span><span class="p">;</span>
+        <span class="n">dhcp</span> <span class="o">=</span> <span class="n">no</span><span class="p">;</span>
+        <span class="n">ipaddr</span> <span class="o">=</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.1</span><span class="p">;</span>
+        <span class="n">netmask</span> <span class="o">=</span> <span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span><span class="p">;</span>
+        <span class="n">dstipaddr</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">;</span>
+        <span class="n">interfaces</span> <span class="o">=</span> <span class="s2">&quot;eth0&quot;</span><span class="p">,</span> <span class="s2">&quot;ath0&quot;</span><span class="p">,</span> <span class="s2">&quot;wdsup1&quot;</span><span class="p">,</span> <span class="s2">&quot;wdsdw1&quot;</span><span class="p">,</span> <span class="s2">&quot;wdsdw2&quot;</span><span class="p">,</span>
+                     <span class="s2">&quot;wdsdw3&quot;</span><span class="p">,</span> <span class="s2">&quot;wdsdw4&quot;</span><span class="p">;</span>
+        <span class="n">dhcpenabled</span> <span class="o">=</span> <span class="n">no</span><span class="p">;</span>
+        <span class="n">dhcpstart</span> <span class="o">=</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.20</span><span class="p">;</span>
+        <span class="n">dhcpend</span> <span class="o">=</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.200</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>Dann die bestehende <code class="docutils literal notranslate"><span class="pre">ar7.cfg</span></code> durch die veränderte Datei
 überschreiben:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ar7</span><span class="o">.</span><span class="n">cfg</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">ar7</span><span class="o">.</span><span class="n">cfg</span>
+</pre></div>
+</div>
 <p>Dann die Änderungen mit einen Reboot oder <code class="docutils literal notranslate"><span class="pre">ar7cfgchanged</span></code> aktivieren.</p>
 <div class="line-block">
 <div class="line">Ergänzung:</div>
 <div class="line">Auch der special Modus kann über die ar7.cfg konfiguriert werden.</div>
 <div class="line">Als Beispiel ein Ausschnitt aus einer Alice Konfiguration)</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cpmacspecial</span> <span class="p">{</span>
+      <span class="n">enabled</span> <span class="o">=</span> <span class="n">yes</span><span class="p">;</span>
+      <span class="n">normalcfg</span> <span class="o">=</span> <span class="s2">&quot;eth0,1,2,3&quot;</span><span class="p">,</span> <span class="s2">&quot;eth3,4&quot;</span><span class="p">;</span>
+      <span class="n">atacfg</span> <span class="o">=</span> <span class="s2">&quot;wan,1&quot;</span><span class="p">,</span> <span class="s2">&quot;eth0,2,3&quot;</span><span class="p">,</span> <span class="s2">&quot;eth3,4&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">und ein Anderes mit „split“ Interfaces</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cpmacspecial</span> <span class="p">{</span>
+    <span class="n">enabled</span> <span class="o">=</span> <span class="n">yes</span><span class="p">;</span>
+    <span class="n">normalcfg</span> <span class="o">=</span> <span class="s2">&quot;eth0,1&quot;</span><span class="p">,</span> <span class="s2">&quot;eth1,2&quot;</span><span class="p">,</span> <span class="s2">&quot;eth2,3&quot;</span><span class="p">,</span> <span class="s2">&quot;eth3,4&quot;</span><span class="p">;</span>
+    <span class="n">atacfg</span> <span class="o">=</span> <span class="s2">&quot;wan,1&quot;</span><span class="p">,</span> <span class="s2">&quot;eth1,2&quot;</span><span class="p">,</span> <span class="s2">&quot;eth2,3&quot;</span><span class="p">,</span> <span class="s2">&quot;eth3,4&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">Der Syntax:</div>
@@ -764,6 +856,9 @@ Portmaske ergibt sich aus der Logischen-Oder-Verknüpfung der jeweiligen
 Portkonstanten. Das sind folgende Werte: LAN 1 = 0x01, LAN 2 = 0x02, LAN
 3 = 0x04, LAN 4 = 0x08 und der CPU-Port ist 0x20.</p>
 <p>Für das obige Beispiel muss also folgender Befehl aufgerufen werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cpmaccfg</span> <span class="n">ssms</span> <span class="n">eth0</span> <span class="mh">0x23</span> <span class="n">eth1</span> <span class="mh">0x2c</span>
+</pre></div>
+</div>
 <p>Man beachte, dass in beiden Portmasken der CPU-Port eingeschlossen
 wurde. Macht man dies nicht, entsteht zwar das Interface, es „sieht“
 aber keinen Traffic (noch nicht probiert, zu überprüfen).</p>
@@ -809,6 +904,19 @@ permanent in der ar7.cfg im Bridgemode).</li>
 <p>Bei der 7270v3/3270v3 hat sich der CPU Port von Bit5 auf Bit0 verschoben
 und die Interface Ports sind um eins nach links gerückt. Für das obige
 Beispiel muss also folgender Befehl auf der 7270v3 aufgerufen werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cpmaccfg</span> <span class="n">ssms</span> <span class="n">eth0</span> <span class="mh">0x07</span> <span class="n">eth1</span> <span class="mh">0x19</span>
+
+<span class="c1"># eth0: Maske 0000 0111</span>
+<span class="c1"># eth1: Maske 0001 1001</span>
+
+<span class="c1"># 7270v3: 0001 1111               7270v2: 0010 1111</span>
+<span class="c1">#                 x---- CPU Port -----------x</span>
+<span class="c1">#                x----- Port 1   -----------------x</span>
+<span class="c1">#               x------ Port 2   ----------------x</span>
+<span class="c1">#              x------- Port 3   ---------------x</span>
+<span class="c1">#            x--------- Port 4   --------------x</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

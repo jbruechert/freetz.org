@@ -558,6 +558,9 @@
   <div class="section" id="kleiner-webserver-mit-busybox">
 <span id="kleinerwebservermitbusybox"></span><h1>Kleiner Webserver mit BusyBox<a class="headerlink" href="#kleiner-webserver-mit-busybox" title="Link zu dieser Überschrift">¶</a></h1>
 <p>BusyBox enthält einen kleinen Webserver, den man z.B. so starten kann:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">httpd</span> <span class="o">-</span><span class="n">P</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">port90</span><span class="o">.</span><span class="n">pid</span> <span class="o">-</span><span class="n">p</span> <span class="mi">90</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">webcfg</span><span class="o">.</span><span class="n">conf</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">irgendwo</span><span class="o">/</span><span class="n">htdocs</span><span class="o">/</span> <span class="o">-</span><span class="n">r</span> <span class="s2">&quot;Port 90&quot;</span>
+</pre></div>
+</div>
 <p>Diese Zeile startet den Webserver auf Port 90, d.h. um ihn zu erreichen,
 benutzt man <a class="reference external" href="http://fritz.box:90">​http://fritz.box:90</a>. Wenn man in
 /var/media/ftp/irgendwo/htdocs/ eine Datei namens index.html abgelegt
@@ -566,11 +569,73 @@ hat, wird diese angezeigt.</p>
 kann man ein CGI-Skript mit dem Namen index.cgi im Unterverzeichnis
 cgi-bin anlegen, im Beispiel also
 /var/media/ftp/irgendwo/htdocs/cgi-bin/index.cgi.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+# standardkonformen HTTP-Header erzeugen
+echo -en &quot;Content-Type: text/html\r\n\r\n&quot;
+cat &lt;&lt; EOF
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Index of ${QUERY_STRING}&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Index of ${QUERY_STRING}&lt;/h2&gt;
+    &lt;table cellspacing=&quot;2&quot; border=&quot;0&quot;&gt;
+      &lt;tr align=&quot;left&quot;&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;&amp;nbsp;&amp;nbsp;Last modified&lt;/th&gt;&lt;th&gt;&amp;nbsp;&amp;nbsp;Size&lt;/th&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td colspan=&quot;3&quot;&gt;&lt;hr&gt;&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;$([ &quot;$QUERY_STRING&quot; == &quot;/&quot; ] || echo &#39;&lt;a href=&quot;..&quot;&gt;..&lt;/a&gt;&#39;)&lt;/td&gt;&lt;/tr&gt;
+      $(
+        # alle Fehler ins Nirvana umleiten
+        exec 2&gt;/dev/null
+        # Datumsformat 1 zum Finden in der Verzeichnisliste
+        date_format1=&quot;[A-Z][a-z]{2} [A-Z][a-z]{2} [ 123][0-9] [0-9]{2}:[0-9]{2}:[0-9]{2} [0-9]{4}&quot;
+        # langer Ersetzungsausdruck (daher separat), der eine Tabellenzeile
+        # generiert
+        replace=&quot;&lt;tr&gt;&lt;td&gt;&lt;tt&gt;&lt;a href=\&quot;\3\&quot;&gt;\3&lt;\/a&gt;&lt;\/tt&gt;&lt;\/td&gt;&lt;td&gt;&lt;tt&gt;\&amp;nbsp;\&amp;nbsp;\2&lt;\/tt&gt;&lt;\/td&gt;&lt;td align=right&gt;&lt;tt&gt;\&amp;nbsp;\&amp;nbsp;\1&lt;\/tt&gt;&lt;\/td&gt;&lt;\/tr&gt;&quot;
+        # Datumsformat 2 zum Separieren eines führenden Leerzeichens bei der
+        # Tageszahl (muß durch festes HTML-Leerzeichen &amp;nbsp; ersetzt werden)
+        date_format2=&quot;([A-Z][a-z]{2} [A-Z][a-z]{2} ) ([0-9] [0-9]{2}:[0-9]{2}:[0-9]{2} [0-9]{4})&quot;
+        busybox ls -lLep ../${QUERY_STRING} |
+          # im Wurzelverzeichnis &quot;cgi-bin&quot; herausfiltern
+          ([ &quot;$QUERY_STRING&quot; == &quot;/&quot; ] &amp;&amp; grep -v &#39;cgi-bin&#39; || cat) |
+          # Zeilen numerieren, damit Reihenfolge innerhalb der beiden Gruppen
+          # (Verzeichnisse und der Rest) später erhalten bleibt beim Sortieren
+          awk &#39;{printf(&quot;%5d %s\n&quot;, NR,$0)}&#39; |
+          # &quot;X&quot; vor Verzeichnisse setzen, &quot;Y&quot; vor den Rest (&quot;X&quot; &lt; &quot;Y&quot;)
+          sed -r &#39;s/^([0-9 ]+ d)/X \1/&#39; |
+          sed -r &#39;s/^([0-9 ]+)/Y \1/&#39; |
+          # Sortieren bewirkt Gruppierung der Einträge
+          sort |
+          # Sortierhilfen + nicht benötigte Spalten löschen
+          sed -r &#39;s/^([^ ]+ +){6}(.*)/\2/&#39; |
+          # Dateigrößen für Verzeichnisse durch &quot;---&quot; ersetzen
+          sed -r &#39;s/^[0-9]+(.*)\/$/---\1/&#39; |
+          # eine Tabellenzeile je Verzeichniseintrag erzeugen
+          sed -r &quot;s/^([-0-9, ]+) ($date_format1) +(.*)$/$replace/&quot; |
+          # Sonderfall führendes Leerzeichen bei Tageszahl im Datum
+          sed -r &quot;s/$date_format2/\1\&amp;nbsp;\2/&quot;
+      )
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+EOF
+</pre></div>
+</div>
 <p>Der BusyBox-httpd kann auch PHP-Skripte ausführen, wenn man das
 <a class="reference external" href="../../../packages/php.html">PHP-Package</a> installiert hat. Dazu muss
 man in /mod/etc/webcfg.conf eine neue Zeile einfügen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*.</span><span class="n">php</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">php</span><span class="o">-</span><span class="n">cgi</span>
+</pre></div>
+</div>
 <p>Damit index.php-Dateien verarbeitet werden, kann man beim
 index.cgi-Skript nach der ersten Zeile folgende Zeilen einfügen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">test</span> <span class="o">-</span><span class="n">s</span> <span class="s2">&quot;../$</span><span class="si">{QUERY_STRING}</span><span class="s2">/index.php&quot;</span> <span class="p">;</span> <span class="n">then</span>
+  <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;Status: 302 Found</span><span class="se">\r</span><span class="s2">&quot;</span>
+  <span class="n">echo</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;Location: index.php</span><span class="se">\r</span><span class="s2">&quot;</span>
+  <span class="n">exit</span> <span class="mi">0</span>
+<span class="n">fi</span>
+</pre></div>
+</div>
 <div class="section" id="weiterfuhrende-links">
 <span id="weiterfuhrendelinks"></span><h2>Weiterführende Links<a class="headerlink" href="#weiterfuhrende-links" title="Link zu dieser Überschrift">¶</a></h2>
 <ul class="simple">

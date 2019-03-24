@@ -588,6 +588,22 @@ steps for intergrading the package into Freetz.</div>
 freetz build system), you should see that your toolchain is also
 included in the search path. This is achieved with the PATH= export
 command below.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir httptunnel
+cd httptunnel
+wget http://www.nocrew.org/software/httptunnel/httptunnel-3.0.5.tar.gz
+tar xfz httptunnel-3.0.5.tar.gz
+cd ~/freetz-trunk/httptunnel/httptunnel-3.0.5/
+export CC=&quot;mipsel-linux-gcc&quot;
+export PATH=/home/freetz/freetz-trunk/toolchain/target/bin/:$PATH
+./configure --build=i386-linux-gnu --target=mipsel-linux --host=mipsel-linux
+make
+file hts *
+file htc *
+mipsel-linux-strip hts htc
+file hts *
+file htc *
+</pre></div>
+</div>
 <blockquote>
 <div><sup>*</sup> Optional, to see the impact of stripping. The file command
 should also show the executable is a MIPS executable.</div></blockquote>
@@ -604,6 +620,10 @@ this package. This will remove all generated files.</div>
 <div class="line">(For packages involving a .config file you might want to save that
 file to a save location, because make clean often will also delete
 this file. But this is not applicable for httptunnel.)</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span><span class="n">httptunnel</span><span class="o">/</span><span class="n">httptunnel</span><span class="o">-</span><span class="mf">3.0</span><span class="o">.</span><span class="mi">5</span><span class="o">/</span>
+<span class="n">make</span> <span class="n">clean</span>
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">The Freetz environment makes use of „<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code>“ of each package
@@ -622,9 +642,20 @@ files.</p>
 point for a new package.</p>
 <p>Because httptunnel is already integrated in Freetz the files are already
 present. Lets tar them in a file and remove them:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span><span class="n">make</span><span class="o">/</span>
+<span class="n">tar</span> <span class="n">cfz</span> <span class="n">httptunnel_orig</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="n">httptunnel</span><span class="o">/</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">la</span> <span class="n">httptunnel_orig</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">tar</span> <span class="n">tfz</span> <span class="n">httptunnel_orig</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="n">httptunnel</span>
+</pre></div>
+</div>
 <p>We also need to delete some auto generated files to make sure the
 changes are recognized (no need to save these, as they will be generated
 again):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="n">make</span><span class="o">/</span><span class="n">external</span><span class="o">.</span><span class="ow">in</span><span class="o">.</span><span class="n">generated</span>
+<span class="n">rm</span> <span class="n">make</span><span class="o">/</span><span class="n">Config</span><span class="o">.</span><span class="ow">in</span><span class="o">.</span><span class="n">generated</span>
+</pre></div>
+</div>
 <p>(sudo will execute the command with root rights, so be carefull.)</p>
 <div class="line-block">
 <div class="line">Go to <code class="docutils literal notranslate"><span class="pre">~/freetz-trunk/make/empty</span></code>. This package will serve as your
@@ -637,9 +668,16 @@ starting point to build your own httptunnel package.</div>
 directory with the two files as a new package. Let us call it
 „httptunnel“.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span><span class="n">make</span><span class="o">/</span><span class="n">empty</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span><span class="n">make</span><span class="o">/</span><span class="n">httptunnel</span>
+</pre></div>
+</div>
 <p>Please go into that new „<code class="docutils literal notranslate"><span class="pre">httptunnel</span></code>“ directory and remove the
 sub-directory „<code class="docutils literal notranslate"><span class="pre">.svn</span></code>“. You will not need it. Now it should look like
 this:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>   <span class="mi">1</span> <span class="n">slightly</span> <span class="n">slightly</span>  <span class="mi">480</span> <span class="mi">2008</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">07</span> <span class="mi">08</span><span class="p">:</span><span class="mi">17</span> <span class="n">Config</span><span class="o">.</span><span class="ow">in</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>   <span class="mi">1</span> <span class="n">slightly</span> <span class="n">slightly</span>  <span class="mi">701</span> <span class="mi">2008</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">07</span> <span class="mi">08</span><span class="p">:</span><span class="mi">17</span> <span class="n">empty</span><span class="o">.</span><span class="n">mk</span>
+</pre></div>
+</div>
 <p>Rename „<code class="docutils literal notranslate"><span class="pre">empty.mk</span></code>“ to „<code class="docutils literal notranslate"><span class="pre">httptunnel.mk</span></code>“, because this is what your
 project is about now: httptunnel. The base name of the file
 („<code class="docutils literal notranslate"><span class="pre">httptunnel</span></code>“) will be used to define the variables <code class="docutils literal notranslate"><span class="pre">$(PKG)</span></code> to
@@ -647,22 +685,83 @@ project is about now: httptunnel. The base name of the file
 „<code class="docutils literal notranslate"><span class="pre">httptunnel.mk</span></code>“.</p>
 <p>Now let us have a look at the „<code class="docutils literal notranslate"><span class="pre">Config.in</span></code>“ file. Open it with your
 favorite editor, and it should look like this:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="n">FREETZ_PACKAGE_EMPTY</span>
+        <span class="nb">bool</span> <span class="s2">&quot;Empty 0.6.15b&quot;</span>
+        <span class="n">select</span> <span class="n">FREETZ_LIB_libutil</span>
+        <span class="n">default</span> <span class="n">n</span>
+        <span class="n">help</span>
+                <span class="n">empty</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">utility</span> <span class="n">that</span> <span class="n">provides</span> <span class="n">an</span> <span class="n">interface</span> <span class="n">to</span> <span class="n">execute</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span>
+                <span class="n">interact</span> <span class="k">with</span> <span class="n">processes</span> <span class="n">under</span> <span class="n">pseudo</span><span class="o">-</span><span class="n">terminal</span> <span class="n">sessions</span> <span class="p">(</span><span class="n">PTYs</span><span class="p">)</span><span class="o">.</span>
+                <span class="n">This</span> <span class="n">tool</span> <span class="ow">is</span> <span class="n">definitely</span> <span class="n">useful</span> <span class="ow">in</span> <span class="n">programming</span> <span class="n">of</span> <span class="n">shell</span> <span class="n">scripts</span>
+                <span class="n">designed</span> <span class="n">to</span> <span class="n">communicate</span> <span class="k">with</span> <span class="n">interactive</span> <span class="n">programs</span> <span class="n">like</span> <span class="n">telnet</span><span class="p">,</span>
+                <span class="n">ssh</span><span class="p">,</span> <span class="n">ftp</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span> <span class="n">In</span> <span class="n">some</span> <span class="n">cases</span><span class="p">,</span> <span class="n">empty</span> <span class="n">can</span> <span class="n">be</span> <span class="n">the</span> <span class="n">simplest</span>
+                <span class="n">replacement</span> <span class="k">for</span> <span class="n">TCL</span><span class="o">/</span><span class="n">expect</span> <span class="ow">or</span> <span class="n">other</span> <span class="n">similar</span> <span class="n">programming</span> <span class="n">tools</span><span class="o">.</span>
+</pre></div>
+</div>
 <p>In this file you basically find the package name (bool) and a short help
 text.</p>
 <p>You should change this to reflect your http tunnel project. Please note
 that the line „select FREETZ_LIB_libutil“ is not necessary for your
 project, thus remove it:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="n">FREETZ_PACKAGE_HTTPTUNNEL</span>
+        <span class="nb">bool</span> <span class="s2">&quot;httptunnel 3.0.5 (binary only)&quot;</span>
+        <span class="n">default</span> <span class="n">n</span>
+        <span class="n">help</span>
+                <span class="n">httptunnel</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">utility</span> <span class="n">that</span> <span class="n">provides</span> <span class="n">a</span> <span class="n">HTTP</span> <span class="n">tunnel</span> <span class="n">server</span> <span class="n">on</span> <span class="n">your</span> <span class="n">box</span><span class="o">.</span>
+</pre></div>
+</div>
 <blockquote>
 <div>(the indents should be tab’s not spaces)</div></blockquote>
 <p>The next file „<code class="docutils literal notranslate"><span class="pre">httptunnel.mk</span></code>“ (copied from „<code class="docutils literal notranslate"><span class="pre">empty.mk</span></code>“) should be
 edited like this:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$(call PKG_INIT_BIN, 3.0.5)
+$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+$(PKG)_SITE:=http://www.nocrew.org/software/httptunnel
+$(PKG)_BINARY:=$($(PKG)_DIR)/hts
+$(PKG)_TARGET_BINARY:=$($(PKG)_DEST_DIR)/usr/bin/hts
+$(PKG)_CATEGORY:=Unstable
+
+$(PKG_SOURCE_DOWNLOAD)
+$(PKG_UNPACKED)
+$(PKG_CONFIGURED_CONFIGURE)
+
+$($(PKG)_BINARY): $($(PKG)_DIR)/.configured
+        $(SUBMAKE) -C $(HTTPTUNNEL_DIR) \
+                CC=&quot;$(TARGET_CC)&quot; \
+                CFLAGS=&quot;$(TARGET_CFLAGS)&quot;
+
+$($(PKG)_TARGET_BINARY): $($(PKG)_BINARY)
+        $(INSTALL_BINARY_STRIP)
+
+$(pkg):
+
+$(pkg)-precompiled: $($(PKG)_TARGET_BINARY)
+
+$(pkg)-clean:
+        -$(MAKE) -C $(HTTPTUNNEL_DIR) clean
+
+$(pkg)-uninstall:
+        $(RM) $(HTTPTUNNEL_TARGET_BINARY)
+
+$(PKG_FINISH)
+</pre></div>
+</div>
 <p>Explanation:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$(call PKG_INIT_BIN, 3.0.5)
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">This defines the version of your package.</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$(PKG)_SOURCE:=httptunnel-$($(PKG)_VERSION).tar.gz
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">This defines the file name of the package source code, which has to be
 exactly as the filename on the server where the file is located.</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$(PKG)_SITE:=http://www.nocrew.org/software/httptunnel
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">This defines the basis of the download URL from where the package
@@ -670,19 +769,31 @@ source code will be downloaded during the build process.</div>
 <div class="line">In this case, the complete path would be:
 <a class="reference external" href="http://www.nocrew.org/software/httptunnel/httptunnel-3.0.5.tar.gz">​http://www.nocrew.org/software/httptunnel/httptunnel-3.0.5.tar.gz</a></div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$(PKG)_BINARY:=$($(PKG)_DIR)/hts
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">This defines the file name of the binary in the source directory.</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$(PKG)_TARGET_BINARY:=$($(PKG)_DEST_DIR)/usr/bin/hts
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">This defines the path of the binary of your package where it will be
 stored on your box when your new package and FW is installed on your
 box.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$(PKG)_CATEGORY:=Unstable
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">This causes the package to be listed under the list of unstable
 packages in the menu.</div>
 <div class="line">If a package if found stable this line can be removed, so it becomes
 listed under the normal packages.</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$(PKG_CONFIGURED_CONFIGURE)
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">This assumes that the program is configured by calling the GNU
@@ -694,11 +805,17 @@ will find tests and assignments to variables like
 ac_cv_func_setvbuf_reversed. Find the correct value and add a line
 like this to „<code class="docutils literal notranslate"><span class="pre">httptunnel.mk</span></code>“</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$(PKG)_CONFIGURE_ENV += ac_cv_func_setvbuf_reversed=no
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">You may need to set $(PKG)_DEPENDS_ON if your package depends on other
 packages (e.g. see example 3). List the names of corresponding .mk
 files with all plus-signs replaced by x’s and all minus-signs replaced
 by underscores and separate package names by spaces.</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$(SUBMAKE) -C $(HTTPTUNNEL_DIR)
+</pre></div>
 </div>
 <p>This calls the package’s Makefile with the Freetz environment set (e.g.
 FREETZ_LD_RUN_PATH)</p>
@@ -706,6 +823,11 @@ FREETZ_LD_RUN_PATH)</p>
 „configure“ needs to be called for this package to be built:</p>
 <p>Go back to file „httptunnel.mk“ and edit the line PKG_CONFIGURED_NOP to
 PKG_CONFIGURED_CONFIGURE:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$(PKG_SOURCE_DOWNLOAD)
+$(PKG_UNPACKED)
+$(PKG_CONFIGURED_CONFIGURE)
+</pre></div>
+</div>
 <p>If you left it as PKG_CONFIGURED_NOP, this would mean that „configure“
 was not necessary to be called. However, with this package you will need
 it to be built.</p>
@@ -716,6 +838,10 @@ it to be built.</p>
 <p>Now it is time to call „<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code>“ and to choose your new
 package from the „packages &gt; unstable“ section, where it should be
 available now for selection.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span>
+<span class="n">make</span> <span class="n">menuconfig</span>
+</pre></div>
+</div>
 <p>After you have finished and saved your various selections (starting just
 with your new package to test the build procedure), you will issue the
 „<code class="docutils literal notranslate"><span class="pre">make</span></code>“ command.</p>
@@ -723,11 +849,29 @@ with your new package to test the build procedure), you will issue the
 this may take some (longer) time.</p>
 <p>A successful FW build with your new package included should end with
 these lines:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">STEP</span> <span class="mi">3</span><span class="p">:</span> <span class="n">PACK</span>
+  <span class="n">Checking</span> <span class="k">for</span> <span class="n">left</span> <span class="n">over</span> <span class="n">Subversion</span> <span class="n">directories</span>
+<span class="n">squashfs</span> <span class="n">blocksize</span>
+  <span class="n">root</span> <span class="n">filesystem</span><span class="p">:</span> <span class="mi">65536</span>
+<span class="n">packing</span> <span class="n">var</span><span class="o">.</span><span class="n">tar</span>
+<span class="n">creating</span> <span class="n">filesystem</span> <span class="n">image</span>
+<span class="n">merging</span> <span class="n">kernel</span> <span class="n">image</span>
+  <span class="n">kernel</span> <span class="n">image</span> <span class="n">size</span><span class="p">:</span> <span class="mi">7354112</span> <span class="p">(</span><span class="nb">max</span><span class="p">:</span> <span class="mi">7798784</span><span class="p">,</span> <span class="n">free</span><span class="p">:</span> <span class="mi">444672</span><span class="p">)</span>
+<span class="n">packing</span> <span class="mf">7170_04.57</span><span class="o">-</span><span class="n">freetz</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="mi">2315</span><span class="n">M</span><span class="o">.</span><span class="n">de_20080611</span><span class="o">-</span><span class="mf">222651.</span><span class="n">image</span>
+<span class="n">done</span><span class="o">.</span>
+
+<span class="n">FINISHED</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="testing">
 <span id="id1"></span><h2>Testing<a class="headerlink" href="#testing" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Lets see if „<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code>“ works as expected. This should bring the
 state back to like it was before the „<code class="docutils literal notranslate"><span class="pre">make</span></code>“ command.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span><span class="o">/</span>
+<span class="n">make</span> <span class="n">clean</span>
+</pre></div>
+</div>
 <p>Well, since further testing depends on which package you have created,
 there is not much more to say here - except that testing is easier if
 you did not include too many other packages, because these might
@@ -738,12 +882,19 @@ when you are pretty sure that it works.</p>
 <span id="preparingnewpackageforpublicintegrationtofreetztrunk"></span><h2>Preparing New Package for Public Integration to Freetz Trunk<a class="headerlink" href="#preparing-new-package-for-public-integration-to-freetz-trunk" title="Link zu dieser Überschrift">¶</a></h2>
 <p>In order to create a file which displays the changes which would be
 needed in freetz to add your package, issue the following commands:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">add</span> <span class="n">make</span><span class="o">/</span><span class="n">httptunnel</span>
+<span class="n">svn</span> <span class="n">diff</span> <span class="o">./</span><span class="n">make</span> <span class="o">&gt;</span> <span class="n">patchfile</span>
+</pre></div>
+</div>
 <p>In our case „patchfile“ may be called „httptunnel“. Please note that
 there is no need for an extension here. You may only need an extension
 (e.g. .txt) for uploading it in the IPPF, because else it would not be
 recognized as a valid file for upload.</p>
 <p>In addition you could even create a ready (and compressed) package of
 the two files which you had edited above:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="n">cfz</span> <span class="n">httptunnel</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="n">make</span><span class="o">/</span><span class="n">httptunnel</span> <span class="o">--</span><span class="n">exclude</span> <span class="o">.</span><span class="n">svn</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Well, that is it for the moment. I will add further stuff as I see
 fit. Of course everybody is invited to correct mistaked, add more

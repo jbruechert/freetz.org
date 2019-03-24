@@ -86,7 +86,7 @@ Windows
       Umgebungsvariable ``LANG`` auf ``de`` setzt. Z.B. Folgendes in
       xsane.bat:
 
-      .. code:: wiki
+      .. code:: bash
 
          @echo off
          set LANG=de
@@ -183,7 +183,7 @@ AGFA SnapScan e20
 -  die Dateien "``snapscan.conf``" und "``snapscan.conf.in``" aus dem
    Ordner "``source/sane-backends-1.0.19/backend``" anpassen:
 
-.. code:: wiki
+.. code:: bash
 
    #------------------------------ General -----------------------------------
 
@@ -205,7 +205,7 @@ Mustek BearPaw 1200 TA
    `​http://www.meier-geinitz.de/sane/gt68xx-backend/ <http://www.meier-geinitz.de/sane/gt68xx-backend/>`__
 -  In freetz Verzeichnis eingeben:
 
-   .. code:: wiki
+   .. code:: bash
 
       mkdir -p make/sane-backends/files/root/usr/share/sane/gt68xx
       cp <Pfad zu A1fw.usb> make/sane-backends/files/root/usr/share/sane/gt68xx

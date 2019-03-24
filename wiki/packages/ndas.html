@@ -577,10 +577,24 @@ Anleitung. Die Links darin funktionieren nicht mehr.</p>
 <p>You can find NDAS „ID“ and NDAS „key“ from the the bottom of the
 NetDisk.</p>
 <p>If your NDAS ID (20 characters) and NDAS key (5 characters) are</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ID</span><span class="p">:</span> <span class="n">AF7R2</span><span class="o">-</span><span class="mi">2</span><span class="n">MKK4</span><span class="o">-</span><span class="n">UHG9S</span><span class="o">-</span><span class="mi">5</span><span class="n">RHTG</span>
+<span class="n">KEY</span><span class="p">:</span> <span class="mi">8</span><span class="n">QT6U</span>
+</pre></div>
+</div>
 <p>then execute the following commands as root (in most systems it will be
 sufficient to type <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">ndasadmin...</span></code> rather than full
 <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">/usr/sbin/ndasadmin...</span></code>)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">ndasadmin</span> <span class="n">register</span> <span class="o">&lt;</span><span class="n">NDAS</span> <span class="n">ID</span><span class="o">&gt;-&lt;</span><span class="n">NDAS</span> <span class="n">key</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">NetDisk</span> <span class="n">Name</span> <span class="n">to</span> <span class="n">be</span><span class="o">&gt;</span>
+<span class="ow">or</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">ndasadmin</span> <span class="n">register</span> <span class="o">&lt;</span><span class="n">NDAS</span> <span class="n">ID</span><span class="o">&gt;-&lt;</span><span class="n">NDAS</span> <span class="n">key</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">n</span> <span class="o">&lt;</span><span class="n">NetDisk</span> <span class="n">Name</span> <span class="n">to</span> <span class="n">be</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>vis:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">ndasadmin</span> <span class="n">register</span> <span class="n">AF7R2</span><span class="o">-</span><span class="mi">2</span><span class="n">MKK4</span><span class="o">-</span><span class="n">UHG9S</span><span class="o">-</span><span class="mi">5</span><span class="n">RHTG</span><span class="o">-</span><span class="mi">8</span><span class="n">QT6U</span> <span class="o">--</span><span class="n">name</span> <span class="n">MyDisk</span>
+<span class="ow">or</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">ndasadmin</span> <span class="n">register</span> <span class="n">AF7R2</span><span class="o">-</span><span class="mi">2</span><span class="n">MKK4</span><span class="o">-</span><span class="n">UHG9S</span><span class="o">-</span><span class="mi">5</span><span class="n">RHTG</span><span class="o">-</span><span class="mi">8</span><span class="n">QT6U</span> <span class="o">-</span><span class="n">n</span> <span class="n">MyDisk</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Please note that ‚MyDisk‘ is any name named by you.</div>
 <div class="line">Sucessful registering means NOT the Disk ist reached sucessful via
@@ -588,8 +602,17 @@ Network!</div>
 <div class="line">You will get the numeric slot number(s) for each disk on the NetDisk
 by</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">ndas</span><span class="o">/</span><span class="n">devices</span><span class="o">/</span><span class="n">MyDisk</span><span class="o">/</span><span class="n">slots</span>
+</pre></div>
+</div>
 <p>check the status of the NetDisks, if you can’t get the slot number from
 commands above.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">ndas</span><span class="o">/</span><span class="n">devs</span>
+<span class="n">Name</span>            <span class="n">ID</span>                     <span class="n">Key</span> <span class="n">Serial</span>           <span class="n">Ver</span> <span class="n">Status</span>         <span class="n">Slots</span>
+<span class="n">MyDisk01</span>        <span class="n">ABCDEFGHIJKLMNO</span><span class="o">*****</span>   <span class="n">Yes</span> <span class="mi">00800000</span>         <span class="mi">1</span>   <span class="n">Online</span>         <span class="mi">1</span>
+<span class="n">MyDisk02</span>        <span class="n">ABCDEFGHIJKLMNP</span><span class="o">*****</span>   <span class="n">Yes</span> <span class="mi">00800001</span>         <span class="mi">1</span>   <span class="n">Offline</span>
+</pre></div>
+</div>
 <p>If the Status is „Offline“ make sure the NetDisk turns on and is
 attached in the same network.</p>
 </div>
@@ -600,8 +623,18 @@ attached in the same network.</p>
 /proc/ndas/devices/MyDisk/slots. If you get ‚1‘ as the slot number from
 /proc/ndas/devices/MyDisk/slots then, execute one of the following
 command with root privilege.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">ndasadmin</span> <span class="n">enable</span> <span class="o">-</span><span class="n">s</span> <span class="mi">1</span> <span class="o">-</span><span class="n">o</span> <span class="n">w</span>   <span class="c1"># exclusive write and read mode</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">ndasadmin</span> <span class="n">enable</span> <span class="o">-</span><span class="n">s</span> <span class="mi">1</span> <span class="o">-</span><span class="n">o</span> <span class="n">r</span>   <span class="c1"># read-only mode</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">ndasadmin</span> <span class="n">enable</span> <span class="o">-</span><span class="n">s</span> <span class="mi">1</span> <span class="o">-</span><span class="n">o</span> <span class="n">s</span>   <span class="c1"># for GFS/OCFS2 file system</span>
+</pre></div>
+</div>
 <p>This command will print out the path of the block device file. For
 example,</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">nda</span><span class="p">,</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ndb</span><span class="p">,</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ndas</span><span class="o">-</span><span class="mi">001000001</span><span class="o">-</span><span class="mf">0.</span>
+</pre></div>
+</div>
 <p>Your NetDisk will then have to be partitioned and/or formatted if not
 already.</p>
 </div>
@@ -611,10 +644,21 @@ already.</p>
 <p>WARNING: All data will be erased.</p>
 <div class="section" id="partition">
 <h3>partition<a class="headerlink" href="#partition" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fdisk</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">nda</span> <span class="p">(</span><span class="n">fdisk</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">of</span> <span class="n">the</span> <span class="n">block</span> <span class="n">device</span> <span class="n">file</span><span class="o">&gt;</span> <span class="n">see</span> <span class="n">output</span> <span class="n">of</span> <span class="n">ndasadmin</span> <span class="n">enable</span><span class="p">),</span>
+<span class="o">*</span> <span class="n">use</span> <span class="n">p</span> <span class="n">to</span> <span class="n">show</span> <span class="n">the</span> <span class="n">current</span> <span class="n">partition</span> <span class="n">table</span>
+<span class="o">*</span> <span class="n">use</span> <span class="n">n</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">partion</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="format">
 <h3>format<a class="headerlink" href="#format" title="Link zu dieser Überschrift">¶</a></h3>
 <p>use for example:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkfs</span> <span class="o">-</span><span class="n">t</span> <span class="n">ext2</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">nda1</span>
+<span class="ow">or</span>
+<span class="n">mkfs</span><span class="o">.</span><span class="n">ext3</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ndas</span><span class="o">-</span><span class="mi">08019896</span><span class="o">-</span><span class="mi">0</span><span class="n">p1</span> <span class="o">-</span><span class="n">L</span> <span class="n">ndas_disc1</span>
+<span class="o">...</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">where /dev/ndas-08019896-0 is the path of the block device file and p1
 stands for <em>partion 1</em></div>
@@ -629,9 +673,15 @@ stands for <em>partion 1</em></div>
 <ul class="simple">
 <li>try</li>
 </ul>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">blkid</span>
+</pre></div>
+</div>
 <p>which should give all partition information for your entire Linux
 system, including the NDAS device. This is very useful if you already
 have multiple partitions on your NDAS device. You then need to</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">filesystem</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">device</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">mount</span> <span class="n">directory</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>in normal way.</p>
 <ul class="simple">
 <li><strong>If the disk is formatted other than NDAS mode, there is a
@@ -647,15 +697,36 @@ NDAS mode.</strong></li>
 <p>These commands may differ slightly for your particular configuration.</p>
 <p>Once your Netdisk drivers are properly setup, create a mount point for
 the device:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># mkdir /mnt/netdisk</span>
+</pre></div>
+</div>
 <p>Under Ubuntu distrobutions, it’s best to put this point in /media,
 rather than /mnt, for conformity. You may name the point anything you
 like.</p>
 <p>Next, locate the device.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls /dev/ndas*
+/dev/ndas  /dev/ndas-00110749-0  /dev/ndas-00110749-0p1
+</pre></div>
+</div>
 <p>The drive itself, in this example, is at /dev/ndas-00110749-0. The
 primary (and only, in this case) partition is /dev/ndas-00110749-0p1.</p>
 <p>Determine the format of the disk</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># fdisk -l /dev/ndas-00110749-0</span>
+
+<span class="n">Disk</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ndas</span><span class="o">-</span><span class="mi">00110749</span><span class="o">-</span><span class="mi">0</span><span class="p">:</span> <span class="mf">160.0</span> <span class="n">GB</span><span class="p">,</span> <span class="mi">160039788544</span> <span class="nb">bytes</span>
+<span class="mi">255</span> <span class="n">heads</span><span class="p">,</span> <span class="mi">63</span> <span class="n">sectors</span><span class="o">/</span><span class="n">track</span><span class="p">,</span> <span class="mi">19457</span> <span class="n">cylinders</span>
+<span class="n">Units</span> <span class="o">=</span> <span class="n">cylinders</span> <span class="n">of</span> <span class="mi">16065</span> <span class="o">*</span> <span class="mi">512</span> <span class="o">=</span> <span class="mi">8225280</span> <span class="nb">bytes</span>
+
+                <span class="n">Device</span> <span class="n">Boot</span>      <span class="n">Start</span>         <span class="n">End</span>      <span class="n">Blocks</span>   <span class="n">Id</span>  <span class="n">System</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ndas</span><span class="o">-</span><span class="mi">00110749</span><span class="o">-</span><span class="mi">0</span><span class="n">p1</span>               <span class="mi">1</span>       <span class="mi">19457</span>   <span class="mi">156288321</span>    <span class="n">b</span>  <span class="n">W95</span> <span class="n">FAT32</span>
+</pre></div>
+</div>
 <p>In this example, it is a FAT32 drive.</p>
 <p>Next, back up and add this information to your /etc/fstab file</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># cp /etc/fstab /etc/fstab.backup</span>
+<span class="c1"># nano /etc/fstab</span>
+</pre></div>
+</div>
 <p>You may use any text editor you like in place of nano.</p>
 <p>At the end of this file, add the information for your netdisk. The basic
 format for a line is DEVICE LOCATION FORMAT OPTIONS DUMP PASS. For our
@@ -664,9 +735,15 @@ at /mnt/netdisk. The format of the netdisk is vfat. For options, we want
 to use the defaults, allow users to mount it, and to not mount it
 automatically at boot. We don’t need dump or pass for anything. The line
 we’d add is:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ndas</span><span class="o">-</span><span class="mi">00110749</span><span class="o">-</span><span class="mi">0</span><span class="n">p1</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">netdisk</span> <span class="n">vfat</span> <span class="n">defaults</span><span class="p">,</span><span class="n">user</span><span class="p">,</span><span class="n">noauto</span> <span class="mi">0</span> <span class="mi">0</span>
+</pre></div>
+</div>
 <p>Save the file, and exit your editor.</p>
 <p>Now, any user on this machine should be able to mount the netdisk with
 this command:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ mount /mnt/netdisk
+</pre></div>
+</div>
 <p>We’ve specified all the other information about the device in
 /etc/fstab, so no more is required.</p>
 <p>Due to how and when the device drivers and /etc/fstab load, setting the
@@ -678,12 +755,18 @@ system documentation for further information on this.</p>
 <div class="section" id="additional-commands-for-the-ndas-device">
 <span id="additionalcommandsforthendasdevice"></span><h2>Additional Commands for the NDAS device<a class="headerlink" href="#additional-commands-for-the-ndas-device" title="Link zu dieser Überschrift">¶</a></h2>
 <p>To disable the NetDisk:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">ndasadmin</span> <span class="n">disable</span> <span class="o">-</span><span class="n">s</span> <span class="mi">1</span>
+</pre></div>
+</div>
 <blockquote>
 <div>Note: disable is to make the NetDisk to be disconnected from the
 Linux machine. especially it will release the exclusively write
 permission and the other Linux / MS Windows machine can gain the
 exclusive write permission.</div></blockquote>
 <p>To Unregister the NetDisk</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">ndasadmin</span> <span class="n">unregister</span> <span class="o">--</span><span class="n">name</span> <span class="n">MyDisk</span>
+</pre></div>
+</div>
 <blockquote>
 <div><p>Note: ‚unregister‘ is to delete the registration so that the NetDisk
 is not registered in the next booting of Linux machine.</p>
@@ -726,6 +809,15 @@ and Windows machines. This is so sad. <img alt=":-(" src="../../_images/smiley-s
 <li>How to share the NDAS hard disk with OCFS2</li>
 <li>Add how to share the NDAS hard disk with NTFS</li>
 </ul>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">For</span> <span class="n">example</span> <span class="nb">type</span> <span class="n">on</span> <span class="n">the</span> <span class="n">command</span> <span class="n">line</span><span class="p">:</span>
+
+<span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">ntfs</span><span class="o">-</span><span class="mi">3</span><span class="n">g</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ndas</span><span class="o">-</span><span class="mi">00611109</span><span class="o">-</span><span class="mi">0</span><span class="n">p1</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">windows</span>  <span class="o">&lt;</span> <span class="o">-</span><span class="n">o</span> <span class="n">force</span> <span class="o">&gt;</span>
+
+<span class="n">Or</span> <span class="n">add</span> <span class="n">the</span> <span class="n">option</span> <span class="n">to</span> <span class="n">the</span> <span class="n">relevant</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">the</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fstab</span> <span class="n">file</span><span class="p">:</span>
+
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ndas</span><span class="o">-</span><span class="mi">00611109</span><span class="o">-</span><span class="mi">0</span><span class="n">p1</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">windows</span> <span class="n">ntfs</span><span class="o">-</span><span class="mi">3</span><span class="n">g</span> <span class="n">defaults</span> <span class="mi">0</span> <span class="mi">0</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>Add how to share the NDAS hard disk with ext2/3</li>
 </ul>

@@ -601,6 +601,16 @@ wird, zB <code class="docutils literal notranslate"><span class="pre">noserverin
 machen. Anschauen kann man sich die Meldungen mit <code class="docutils literal notranslate"><span class="pre">dmesg</span> <span class="pre">|</span> <span class="pre">tail</span></code>. Bei
 fehlendem Benutzername oder falschem Passwort sieht das Beispielsweise
 so aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@fritz</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span><span class="c1"># mount -t cifs //192.168.1.1/Freetz /var/media/ftp</span>
+ <span class="n">CIFS</span> <span class="n">VFS</span><span class="p">:</span> <span class="n">Send</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">SessSetup</span> <span class="o">=</span> <span class="o">-</span><span class="mi">13</span>
+ <span class="n">CIFS</span> <span class="n">VFS</span><span class="p">:</span> <span class="n">Send</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">SessSetup</span> <span class="o">=</span> <span class="o">-</span><span class="mi">13</span>
+<span class="n">mount</span><span class="p">:</span> <span class="n">mounting</span> <span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">1.172</span><span class="o">/</span><span class="n">Freetz</span> <span class="n">on</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Permission</span> <span class="n">denied</span>
+<span class="n">root</span><span class="nd">@fritz</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span><span class="c1"># dmesg | tail</span>
+ <span class="n">CIFS</span> <span class="n">VFS</span><span class="p">:</span> <span class="n">No</span> <span class="n">username</span> <span class="n">specified</span>
+<span class="n">Status</span> <span class="n">code</span> <span class="n">returned</span> <span class="mh">0xc000006d</span> <span class="n">NT_STATUS_LOGON_FAILURE</span>
+ <span class="n">CIFS</span> <span class="n">VFS</span><span class="p">:</span> <span class="n">Send</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">SessSetup</span> <span class="o">=</span> <span class="o">-</span><span class="mi">13</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>

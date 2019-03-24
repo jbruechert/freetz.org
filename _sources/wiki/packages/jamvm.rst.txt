@@ -30,7 +30,7 @@ standardmäßig nur eine reduzierte Version (mini.jar) installiert.
 Deshalb muss jamvm folgendermaßen aufgerufen werden um z.B. die Datei
 Hello.class im aktuellen Verzeichnis aufzurufen:
 
-.. code:: wiki
+.. code:: bash
 
    jamvm -Xbootclasspath/a:/usr/share/classpath/mini.jar Hello
 

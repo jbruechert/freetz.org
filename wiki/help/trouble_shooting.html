@@ -566,13 +566,28 @@ existierende (alte) <code class="docutils literal notranslate"><span class="pre"
 verwendet werden.</div>
 <div class="line">Mögliche Abhilfe:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ yes &quot;&quot; || make oldconfig &lt;--- Alte .config Datei auffrischen
+oder
+$ make menuconfig          &lt;--- Ggf. .config Datei neu erstellen
+</pre></div>
+</div>
 </div>
 <div class="section" id="troubleshooting-build-abbruch">
 <span id="troubleshootingbuild-abbruch"></span><h2>Troubleshooting Build-Abbruch<a class="headerlink" href="#troubleshooting-build-abbruch" title="Link zu dieser Überschrift">¶</a></h2>
 <p><img alt="Warning" src="../../_images/exclamation3.png" /> Sollte während des Build-Prozesses ein Abbruch auftreten, so kann
 man versuchen diese Strategien anzuwenden:</p>
 <p>Einzelnes Paketes erneut erstellen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ make iptables-dirclean     &lt;--- Sourceverzeichnis eines problematischen Package löschen (hier: iptables)
+weiter mit
+$ make iptables-precompiled  &lt;--- Versuchen problematisches Package von Anfang neu zu bauen
+</pre></div>
+</div>
 <p>Von Anfang neu bauen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ make dirclean          &lt;--- Source-Verzeichnisse aller bisher erstellter Software löschen
+weiter mit
+$ make                   &lt;--- Versuchen problematische Software von Anfang neu zu bauen
+</pre></div>
+</div>
 <p>Bei Nichterfolg können <a class="reference external" href="../index.html#WikiForumundIRC">Wiki, Forum und
 IRC</a> genutzt werden, um das Problem
 weiter zu behandeln.</p>

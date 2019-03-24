@@ -21,7 +21,7 @@ Benutzung
 Beispiel-Parameter
 ~~~~~~~~~~~~~~~~~~
 
-.. code:: wiki
+.. code:: bash
 
    T: Bus=01 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#= 3 Spd=12 MxCh= 0
    D: Ver= 1.10 Cls=00(>ifc ) Sub=00 Prot=00 MxPS= 8 #Cfgs= 1
@@ -57,7 +57,7 @@ Verbindung zum Testen
    öffnen
 -  Auf der Fritzbox:
 
-   .. code:: wiki
+   .. code:: bash
 
       echo "Hallo" > /var/ttyUSB0
 
@@ -69,7 +69,7 @@ Verbindung zum Testen
 
 -  Ergebnis im Hyperterminal auf dem Kontrollgerät:
 
-   .. code:: wiki
+   .. code:: bash
 
       Hallo
 

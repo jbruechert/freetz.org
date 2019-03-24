@@ -597,10 +597,19 @@ des apache gelegt werden</li>
 nötig, dass zwei symlinks erstellt werden dies kann z.B so gelöst
 werden</li>
 </ol>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">logs</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">logs</span>
+</pre></div>
+</div>
 <p>Danach kann man die Apache Befehle direkt verwenden (z.B. apachectl
 start|stop|restart):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">apachectl</span> <span class="n">start</span>
+</pre></div>
+</div>
 <p><strong>Verwendet man kein selbsterstelltes Binary, so sollte (muss) man
 Apache mittels folgendem Befehl starten:</strong></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">httpd</span><span class="o">-</span><span class="mf">2.2</span><span class="o">.</span><span class="mi">4</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">apachectl</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">Pfad</span><span class="o">/</span><span class="n">zur</span><span class="o">/</span><span class="n">Apache</span><span class="o">/</span><span class="n">Config</span><span class="o">/</span><span class="n">httpd</span><span class="o">.</span><span class="n">conf</span> <span class="o">-</span><span class="n">k</span> <span class="n">start</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>Sollte die Website nicht direkt erreichbar sein, bitte unter
 apache/logs nachsehen, welche Fehlermeldungen dort ausgegeben werden</li>
@@ -610,7 +619,14 @@ chmod -R +x /var/media/ftp/uStor01/apache)</li>
 <li>Wichtig: damit PHP funktioniert müssen folgende Zeilen in die
 Apache-Konfiguration eingefügt werden:</li>
 </ul>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Action</span>       <span class="n">php</span><span class="o">-</span><span class="n">script</span> <span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="nb">bin</span><span class="o">/</span><span class="n">php</span><span class="o">-</span><span class="n">cgi</span>
+<span class="n">AddHandler</span>      <span class="n">php</span><span class="o">-</span><span class="n">script</span> <span class="o">.</span><span class="n">php</span>
+</pre></div>
+</div>
 <p>Für CGI’s muss folgende Zeile hinzugefügt/auskommentiert werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AddHandler</span>    <span class="n">cgi</span><span class="o">-</span><span class="n">script</span> <span class="o">.</span><span class="n">cgi</span>
+</pre></div>
+</div>
 <p>Es kann auch eine bereits fertiger Apache2 Binary mit dem oben
 beschriebenem PHP Binary verwendet werden.</p>
 <p>Wird z.B. mod_proxy bzw. sogar mod_proxy_html benötigt empfehle ich das
@@ -621,23 +637,51 @@ fertige Binary aus diesem
 <p>Der User muss auf einen vorhandenen User abgeändert werden (der User
 root ist nur bei speziellen Binaries möglich).</p>
 <p>Derzeit (Stand Juli 2011) kann folgendes verwendet werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">User</span> <span class="n">boxusr80</span>
+<span class="n">Group</span> <span class="n">root</span>
+</pre></div>
+</div>
 <p>Sollen die .htaccess Dateien verwendet werden, so muss für das
 entsprechende Verzeichnis AllowOverride entsprechend angepasst werden
 (man kann auch einfach „AllowOverride All“ verwenden)</p>
 <p>Hier eine entsprechende Config für ein Verzeichnis (diese ermöglicht
 jedem den Zugriff!):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Directory</span> <span class="s2">&quot;/var/media/ftp/uStor01/apache/htdocs&quot;</span><span class="o">&gt;</span>
+<span class="n">Options</span> <span class="n">All</span>
+<span class="n">AllowOverride</span>    <span class="n">All</span>
+<span class="n">Order</span> <span class="n">allow</span><span class="p">,</span><span class="n">deny</span>
+<span class="n">Allowfrom</span> <span class="nb">all</span>
+<span class="o">&lt;/</span><span class="n">Directory</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">Directory</span> <span class="s2">&quot;/var/media/ftp/uStor01/apache/cgi-bin&quot;</span><span class="o">&gt;</span>
+<span class="n">AllowOverride</span>    <span class="kc">None</span>
+<span class="n">Options</span> <span class="n">ExecCGI</span>
+<span class="n">Order</span> <span class="n">allow</span><span class="p">,</span><span class="n">deny</span>
+<span class="n">Allow</span> <span class="kn">from</span> <span class="nn">all</span><span class="o">&lt;/</span><span class="n">Directory</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="passwortschutz-mit-htaccess">
 <span id="passwortschutzmit-htaccess"></span><h2>Passwortschutz mit .htaccess<a class="headerlink" href="#passwortschutz-mit-htaccess" title="Link zu dieser Überschrift">¶</a></h2>
 <blockquote>
 <div>Soll ein Verzeichnis mittels <em>.htaccess</em> vor autorisiertem Zugriff
 geschützt werden kann folgendes hinzugefügt werden:</div></blockquote>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>AuthType
+Basic AuthUserFile    /path/to/.ht.password !AuthName    &quot;Die Website erfordert Zugangsdaten&quot; require valid-user
+</pre></div>
+</div>
 <blockquote>
 <div><strong>Wichtig</strong> : im apache Ordner befindet sich htpasswd, mit dem man
 die Passwortdatei erstellen kann.</div></blockquote>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">htpasswd</span> <span class="o">-</span><span class="n">c</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/.</span><span class="n">ht</span><span class="o">.</span><span class="n">password</span> <span class="n">username</span>
+</pre></div>
+</div>
 <p>(Dies erstellt eine neue oder überschreibt die vorhandene Passwortdatei
 mit dem angegebenem Usernamen)</p>
 <p>Um Benutzer zur Passwortdatei hinzuzufügen folgendes benutzen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">htpasswd</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/.</span><span class="n">ht</span><span class="o">.</span><span class="n">password</span> <span class="n">username</span>
+</pre></div>
+</div>
 <p>Es ist generell empfehlenswert vor zu schützenden Daten das Kürzel .ht
 anzugeben, dadurch bekommt der Benutzer die Datei nicht zu sehen.</p>
 </div>
@@ -659,6 +703,24 @@ verwende hierfür das von MaxMuster erstellte
 zusätzliche Website, welche angezeigt werden soll, muss ein VirtualHost
 erstellt werden. Hier eine Beispielkonfiguration um das Freetz-Interface
 über freetz.meinedomain.at anzeigen zu lassen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">VirtualHost</span> <span class="o">*</span><span class="p">:</span><span class="mi">80</span><span class="o">&gt;</span>
+<span class="n">ProxyPreserveHost</span> <span class="n">On</span>
+<span class="n">ProxyPass</span> <span class="o">/</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">81</span><span class="o">/</span>
+<span class="n">ProxyPassReverse</span> <span class="o">/</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">81</span><span class="o">/</span>
+<span class="n">ServerName</span> <span class="n">freetz</span><span class="o">.</span><span class="n">meinedomain</span><span class="o">.</span><span class="n">at</span>
+    <span class="o">&lt;</span><span class="n">Proxy</span> <span class="o">*&gt;</span>
+        <span class="n">Order</span> <span class="n">Deny</span><span class="p">,</span><span class="n">Allow</span>
+        <span class="n">Allow</span> <span class="kn">from</span> <span class="nn">all</span>
+    <span class="o">&lt;/</span><span class="n">Proxy</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">Location</span> <span class="o">/&gt;</span>
+        <span class="n">Require</span> <span class="n">valid</span><span class="o">-</span><span class="n">user</span>
+        <span class="n">AuthType</span> <span class="n">basic</span>
+        <span class="n">AuthName</span> <span class="s2">&quot;Passwortgeschuetzt - Login&quot;</span>
+        <span class="n">AuthUserFile</span> <span class="o">/</span><span class="n">Pfad</span><span class="o">/</span><span class="n">zur</span><span class="o">/</span><span class="n">Datei</span><span class="o">/.</span><span class="n">htpasswd</span>
+    <span class="o">&lt;/</span><span class="n">Location</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">VirtualHost</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>Das Location Element bewirkt, dass der Benutzer sich vor dem
 Seitenaufbau anmelden muss.</p>
 </div>

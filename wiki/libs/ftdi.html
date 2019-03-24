@@ -579,6 +579,18 @@ kommunizieren kann.</p>
 <span id="id1"></span><h2>Benutzung<a class="headerlink" href="#benutzung" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="beispiel-parameter">
 <span id="id2"></span><h3>Beispiel-Parameter<a class="headerlink" href="#beispiel-parameter" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">T</span><span class="p">:</span> <span class="n">Bus</span><span class="o">=</span><span class="mi">01</span> <span class="n">Lev</span><span class="o">=</span><span class="mi">01</span> <span class="n">Prnt</span><span class="o">=</span><span class="mi">01</span> <span class="n">Port</span><span class="o">=</span><span class="mi">00</span> <span class="n">Cnt</span><span class="o">=</span><span class="mi">01</span> <span class="n">Dev</span><span class="c1">#= 3 Spd=12 MxCh= 0</span>
+<span class="n">D</span><span class="p">:</span> <span class="n">Ver</span><span class="o">=</span> <span class="mf">1.10</span> <span class="n">Cls</span><span class="o">=</span><span class="mi">00</span><span class="p">(</span><span class="o">&gt;</span><span class="n">ifc</span> <span class="p">)</span> <span class="n">Sub</span><span class="o">=</span><span class="mi">00</span> <span class="n">Prot</span><span class="o">=</span><span class="mi">00</span> <span class="n">MxPS</span><span class="o">=</span> <span class="mi">8</span> <span class="c1">#Cfgs= 1</span>
+<span class="n">P</span><span class="p">:</span> <span class="n">Vendor</span><span class="o">=</span><span class="mi">0403</span> <span class="n">ProdID</span><span class="o">=</span><span class="mi">6001</span> <span class="n">Rev</span><span class="o">=</span> <span class="mf">4.00</span>
+<span class="n">S</span><span class="p">:</span> <span class="n">Manufacturer</span><span class="o">=</span><span class="n">ftdi</span>
+<span class="n">S</span><span class="p">:</span> <span class="n">Product</span><span class="o">=</span><span class="n">usb</span> <span class="n">serial</span> <span class="n">converter</span>
+<span class="n">S</span><span class="p">:</span> <span class="n">SerialNumber</span><span class="o">=</span><span class="n">ftBNKG1I</span>
+<span class="n">C</span><span class="p">:</span><span class="o">*</span> <span class="c1">#Ifs= 1 Cfg#= 1 Atr=a0 MxPwr= 44mA</span>
+<span class="n">I</span><span class="p">:</span> <span class="n">If</span><span class="c1">#= 0 Alt= 0 #EPs= 2 Cls=ff(vend.) Sub=ff Prot=ff Driver=ftdi_sio</span>
+<span class="n">E</span><span class="p">:</span> <span class="n">Ad</span><span class="o">=</span><span class="mi">81</span><span class="p">(</span><span class="n">I</span><span class="p">)</span> <span class="n">Atr</span><span class="o">=</span><span class="mi">02</span><span class="p">(</span><span class="n">Bulk</span><span class="p">)</span> <span class="n">MxPS</span><span class="o">=</span> <span class="mi">64</span> <span class="n">Ivl</span><span class="o">=</span><span class="mi">0</span><span class="n">ms</span>
+<span class="n">E</span><span class="p">:</span> <span class="n">Ad</span><span class="o">=</span><span class="mi">02</span><span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="n">Atr</span><span class="o">=</span><span class="mi">02</span><span class="p">(</span><span class="n">Bulk</span><span class="p">)</span> <span class="n">MxPS</span><span class="o">=</span> <span class="mi">64</span> <span class="n">Ivl</span><span class="o">=</span><span class="mi">0</span><span class="n">ms</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="anpassen-der-baudrate">
 <span id="anpassenderbaudrate"></span><h3>Anpassen der Baudrate<a class="headerlink" href="#anpassen-der-baudrate" title="Link zu dieser Überschrift">¶</a></h3>
@@ -587,22 +599,32 @@ Forum</a> diskutiert.</p>
 </div>
 <div class="section" id="verbindung-zum-testen">
 <span id="verbindungzumtesten"></span><h3>Verbindung zum Testen<a class="headerlink" href="#verbindung-zum-testen" title="Link zu dieser Überschrift">¶</a></h3>
-<ul class="simple">
-<li>Verkabelung herstellen:
+<ul>
+<li><p class="first">Verkabelung herstellen:
 Fritzbox ⇔ USB-RS-232-Adapter ⇔
 <a class="reference external" href="http://de.wikipedia.org/wiki/Nullmodem">​Null-Modem</a>-Kabel ⇔
-Kontrollgerät (PC/Laptop/Macbook o.ä.)</li>
-<li>Auf dem Kontrollgerät ein
+Kontrollgerät (PC/Laptop/Macbook o.ä.)</p>
+</li>
+<li><p class="first">Auf dem Kontrollgerät ein
 <a class="reference external" href="http://de.wikipedia.org/wiki/HyperTerminal">​Hyperterminal</a>
-öffnen</li>
-<li>Auf der Fritzbox:</li>
+öffnen</p>
+</li>
+<li><p class="first">Auf der Fritzbox:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;Hallo&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">ttyUSB0</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <blockquote>
 <div>Statt <em>ttyUSB0</em> ist ggf. etwas anderes zu wählen, je nach dem, ob
 man den Adapter direkt an der Fritzbox angeschlossen hat, oder
 über einen USB-Hub mit mehreren USB-Ports.</div></blockquote>
-<ul class="simple">
-<li>Ergebnis im Hyperterminal auf dem Kontrollgerät:</li>
+<ul>
+<li><p class="first">Ergebnis im Hyperterminal auf dem Kontrollgerät:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hallo</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <p>Und das sollte auch anders herum funktionieren, also von der Fritzbox
 aus.</p>

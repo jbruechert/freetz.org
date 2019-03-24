@@ -570,6 +570,12 @@ Sie liegen im Verzeichnis <code class="docutils literal notranslate"><span class
 (bezieht sich auf Version 1.1.2-stable. Ist im ‚trunk‘ schon gefixed.).
 Dies sollte deaktiviert werden, da wtmp auf der fritzbox nicht läuft und
 somit eine vpn-Verbindung nicht zustande kommt.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># TAG: logwtmp</span>
+<span class="c1">#       Use wtmp(5) to record client connections and disconnections.</span>
+<span class="c1">#</span>
+<span class="c1">#logwtmp</span>
+</pre></div>
+</div>
 <p>Falls die Datenrate vom Wlan ins Internet mit pptpd sehr langsam ist,
 sollte die Zeile <code class="docutils literal notranslate"><span class="pre">bcrelay</span></code> auskommentiert werden (siehe
 <a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=201539">​IPPF</a>)</p>
@@ -584,12 +590,27 @@ zu Verbindungsproblemen kommen, wenn der Client erstmal verhandeln will
 (negotiation), der pppd aber direkt verschlüsselt sprechen will. Man
 kann die Verschlüsselung direkt auf 128 Bit fest einstellen. Mit dieser
 Einstellung hat eine PPTP Verbindung mit dem iPhone VPN-Client geklappt:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Require the peer to authenticate itself using MS-CHAPv2 [Microsoft</span>
+<span class="c1"># Challenge Handshake Authentication Protocol, Version 2] authentication.</span>
+<span class="n">require</span><span class="o">-</span><span class="n">mschap</span><span class="o">-</span><span class="n">v2</span>
+<span class="c1"># Require MPPE 128-bit encryption</span>
+<span class="c1"># (note that MPPE requires the use of MSCHAP-V2 during authentication)</span>
+<span class="c1">#require-mppe-128</span>
+
+<span class="n">mppe</span> <span class="n">required</span><span class="p">,</span><span class="n">no40</span><span class="p">,</span><span class="n">no56</span><span class="p">,</span><span class="n">stateless</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="chap-secrets">
 <h2>chap-secrets<a class="headerlink" href="#chap-secrets" title="Link zu dieser Überschrift">¶</a></h2>
 <p>In der <code class="docutils literal notranslate"><span class="pre">options.pptpd</span></code> ist der Name auf <code class="docutils literal notranslate"><span class="pre">fritzbox</span></code> eingestellt. Dies
 sollte sich dann in einem Benutzereintrag in der <code class="docutils literal notranslate"><span class="pre">chap-secrets</span></code>
 widerspiegeln:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># client        server  secret                  IP addresses</span>
+<span class="n">username</span> <span class="n">fritzbox</span> <span class="n">password</span> <span class="mf">192.168</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">y</span>
+<span class="n">EOF</span>
+</pre></div>
+</div>
 <p>In vielen Beispielen im Netz steht in der zweiten Spalte <code class="docutils literal notranslate"><span class="pre">pptpd</span></code>.
 Möchte man das so haben, dann sollte man einfach den <code class="docutils literal notranslate"><span class="pre">name</span></code> Eintrag in
 <code class="docutils literal notranslate"><span class="pre">options.pptpd</span></code> entsprechend anpassen.</p>
@@ -598,18 +619,41 @@ Möchte man das so haben, dann sollte man einfach den <code class="docutils lite
 <span id="id2"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Um die pptpd Meldungen zu sehen, muss man zunächst einen syslogd
 starten:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">ppp</span> <span class="c1"># syslogd -L -C256 -l 7</span>
+</pre></div>
+</div>
 <p>Und kann sich danach die Meldungen des daemons im syslog per <code class="docutils literal notranslate"><span class="pre">logread</span></code>
 anschauen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">ppp</span> <span class="c1"># logread</span>
+</pre></div>
+</div>
 <p>Um mehr Meldungen zu bekommen, kann man in <code class="docutils literal notranslate"><span class="pre">options.pptpd</span></code> und/oder
 <code class="docutils literal notranslate"><span class="pre">pptpd.conf</span></code> den Debug-Modus aktivieren:</p>
 <p>options.pptpd:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable connection debugging facilities.</span>
+<span class="c1"># (see your syslog configuration for where pppd sends to)</span>
+<span class="n">debug</span>
+</pre></div>
+</div>
 <p>pptpd.conf:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># TAG: debug</span>
+<span class="c1">#       Turns on (more) debugging to syslog</span>
+<span class="c1">#</span>
+<span class="n">debug</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="troubleshooting-keine-fehlermeldung">
 <span id="troubleshootingkeinefehlermeldung"></span><h2>Troubleshooting keine Fehlermeldung<a class="headerlink" href="#troubleshooting-keine-fehlermeldung" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Bei mir tauchte im log keine Fehlermeldung auf. Da hilft debuggen auf
 der Box mit:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">strace</span> <span class="n">pptpd</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ppp</span><span class="o">/</span><span class="n">pptpd</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
 <p>Dabei kam heraus, dass es folgende Fehlermeldung gibt:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">can</span><span class="s1">&#39;t resolve symbol &#39;</span><span class="n">bzero</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
 <p>Dazu gibt es einen Thread im Forum, der letzte Post erklärt wie man die
 Toolchain zum fixen neu bauen muss:
 <a class="reference external" href="http://www.ip-phone-forum.de/showpost.php?p=1407147&amp;postcount=25">​http://www.ip-phone-forum.de/showpost.php?p=1407147&amp;postcount=25</a></p>

@@ -571,6 +571,32 @@ use, and dozens of other characteristics. It was designed to rapidly
 scan large networks, but works fine against single hosts.</em>“</p>
 <div class="section" id="example">
 <span id="id2"></span><h2>Example<a class="headerlink" href="#example" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@fritz</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uData</span><span class="c1"># nmap localhost</span>
+
+<span class="n">Starting</span> <span class="n">Nmap</span> <span class="mf">4.68</span> <span class="p">(</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">nmap</span><span class="o">.</span><span class="n">org</span> <span class="p">)</span> <span class="n">at</span> <span class="mi">2011</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">20</span> <span class="mi">09</span><span class="p">:</span><span class="mi">06</span> <span class="n">CEST</span>
+<span class="n">Interesting</span> <span class="n">ports</span> <span class="n">on</span> <span class="n">localhost</span> <span class="p">(</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">):</span>
+<span class="n">Not</span> <span class="n">shown</span><span class="p">:</span> <span class="mi">1699</span> <span class="n">closed</span> <span class="n">ports</span>
+<span class="n">PORT</span>     <span class="n">STATE</span> <span class="n">SERVICE</span>
+<span class="mi">21</span><span class="o">/</span><span class="n">tcp</span>   <span class="nb">open</span>  <span class="n">ftp</span>
+<span class="mi">22</span><span class="o">/</span><span class="n">tcp</span>   <span class="nb">open</span>  <span class="n">ssh</span>
+<span class="mi">23</span><span class="o">/</span><span class="n">tcp</span>   <span class="nb">open</span>  <span class="n">telnet</span>
+<span class="mi">53</span><span class="o">/</span><span class="n">tcp</span>   <span class="nb">open</span>  <span class="n">domain</span>
+<span class="mi">80</span><span class="o">/</span><span class="n">tcp</span>   <span class="nb">open</span>  <span class="n">http</span>
+<span class="mi">81</span><span class="o">/</span><span class="n">tcp</span>   <span class="nb">open</span>  <span class="n">hosts2</span><span class="o">-</span><span class="n">ns</span>
+<span class="mi">111</span><span class="o">/</span><span class="n">tcp</span>  <span class="nb">open</span>  <span class="n">rpcbind</span>
+<span class="mi">443</span><span class="o">/</span><span class="n">tcp</span>  <span class="nb">open</span>  <span class="n">https</span>
+<span class="mi">1011</span><span class="o">/</span><span class="n">tcp</span> <span class="nb">open</span>  <span class="n">unknown</span>
+<span class="mi">1012</span><span class="o">/</span><span class="n">tcp</span> <span class="nb">open</span>  <span class="n">unknown</span>
+<span class="mi">2007</span><span class="o">/</span><span class="n">tcp</span> <span class="nb">open</span>  <span class="n">dectalk</span>
+<span class="mi">2047</span><span class="o">/</span><span class="n">tcp</span> <span class="nb">open</span>  <span class="n">dls</span>
+<span class="mi">5060</span><span class="o">/</span><span class="n">tcp</span> <span class="nb">open</span>  <span class="n">sip</span>
+<span class="mi">8080</span><span class="o">/</span><span class="n">tcp</span> <span class="nb">open</span>  <span class="n">http</span><span class="o">-</span><span class="n">proxy</span>
+<span class="mi">8123</span><span class="o">/</span><span class="n">tcp</span> <span class="nb">open</span>  <span class="n">polipo</span>
+<span class="mi">8888</span><span class="o">/</span><span class="n">tcp</span> <span class="nb">open</span>  <span class="n">sun</span><span class="o">-</span><span class="n">answerbook</span>
+
+<span class="n">Nmap</span> <span class="n">done</span><span class="p">:</span> <span class="mi">1</span> <span class="n">IP</span> <span class="n">address</span> <span class="p">(</span><span class="mi">1</span> <span class="n">host</span> <span class="n">up</span><span class="p">)</span> <span class="n">scanned</span> <span class="ow">in</span> <span class="mf">4.598</span> <span class="n">seconds</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="known-open-ports">
 <span id="knownopenports"></span><h2>Known open ports<a class="headerlink" href="#known-open-ports" title="Link zu dieser Überschrift">¶</a></h2>
@@ -643,6 +669,9 @@ telefon-daemon</td>
 </tbody>
 </table>
 <p>Useful command:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netstat</span> <span class="o">-</span><span class="n">anp</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="links">
 <span id="id3"></span><h2>Links<a class="headerlink" href="#links" title="Link zu dieser Überschrift">¶</a></h2>

@@ -115,7 +115,7 @@ mit iptables den DNS-Port umleiten
 
 bei Kernel 2.6.28 (zb Fritzbox 7320):
 
-.. code:: wiki
+.. code:: bash
 
    nf_conntrack nf_conntrack_ipv4 nf_defrag_ipv4 iptable_filter iptable_nat ip_tables ipt_REDIRECT
    x_tables xt_tcpudp
@@ -126,7 +126,7 @@ Die Module durch eintragen in 'modules' beim Start von Freetz laden.
 
 Diese iptables Regeln mittels rc.custom ausführen:
 
-.. code:: wiki
+.. code:: bash
 
    rport=50053
 
@@ -181,13 +181,13 @@ Beispiel 1
 
 Durch (Kommandozeilen-Optionen)
 
-.. code:: wiki
+.. code:: bash
 
    -O 44,192.168.178.1 -O 45,192.168.178.1 -O 46,8
 
 oder alternativ (als Liste)
 
-.. code:: wiki
+.. code:: bash
 
    #options to DHCP clients
    dhcp-option=44,192.168.178.1
@@ -213,13 +213,13 @@ Beispiel 2
 
 Durch (Kommandozeilen-Optionen)
 
-.. code:: wiki
+.. code:: bash
 
    -R -S 208.67.222.222 -S 208.67.220.220
 
 oder alternativ (als Liste)
 
-.. code:: wiki
+.. code:: bash
 
    #don't read resolv file
    no-resolv
@@ -240,7 +240,7 @@ DHCP Server
 Im Bereich *DHCP Range (eine pro Zeile)* werden die Bereiche in
 folgender Form eingetragen:
 
-.. code:: wiki
+.. code:: bash
 
    [[net:]network-id,]<start-addr>,<end-addr>[[,<netmask>],<broadcast>][,<default lease time>]
 
@@ -290,7 +290,7 @@ Beispiel
 
 Mit dem Eintrag
 
-.. code:: wiki
+.. code:: bash
 
    192.168.178.20,192.168.178.200,12h
 
@@ -302,7 +302,7 @@ Lease-Time von 12 Stunden vergeben.
 Einträge in der Hosts-Liste
 ---------------------------
 
-.. code:: wiki
+.. code:: bash
 
    <ipaddr>|* <hwaddr>|[id:]<client_id>|* [net:]<netid>|* <hostname>|* [ignore]
 
@@ -316,7 +316,7 @@ der dynamischen IP-Vergabe ausgespart.
 Hostnamen mit Punkten im Namen sind ab Release 1.6 (dnsnasq 2.40) nicht
 mehr zulässig! Dies quittiert dnsmasq mit der Fehlermeldung
 
-.. code:: wiki
+.. code:: bash
 
    fritz daemon.err dnsmasq[ ]: bad name at /etc/ethers line ...
 
@@ -404,7 +404,7 @@ Beispiel
 Der integrierte TFTP-Server für einen Zugriff auf die Daten unter
 ``/var/ftpd`` wird wie folgt aktiviert:
 
-.. code:: wiki
+.. code:: bash
 
    --enable-tftp --tftp-root=/var/ftpd
 
@@ -417,7 +417,7 @@ automatische Methode per PXE [Preboot Execution Environment] ist hier
 nicht möglich) und TFTP gebootet werden, muss noch das entsprechende
 Bootimage definiert werden. Das geschieht mit folgendem Parameter:
 
-.. code:: wiki
+.. code:: bash
 
    -M [net:<network-id>,]<filename>,[<servername>[,<serveraddress>]]
 
@@ -443,7 +443,7 @@ Datenträger mit NTFS oder FAT32 formatiert, muss der komplette Ordner
 dnsmasq wie folgt (Pfad eventuell noch anpassen, je nach Konfiguration
 beim Bauen von Freetz):
 
-.. code:: wiki
+.. code:: bash
 
    --enable-tftp --tftp-root=/var/media/ftp/uStor01/tftp -M pxelinux.0
 
@@ -451,7 +451,7 @@ Wenn der TFTP-Server auf einem anderen Rechner läuft, z. B. hier auf
 192.168.178.10 mit dem Bootfile ``pxelinux.0``, dann ist dieser
 anzugeben:
 
-.. code:: wiki
+.. code:: bash
 
    -M pxelinux.0,192.168.178.10,192.168.178.10
 

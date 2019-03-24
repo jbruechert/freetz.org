@@ -48,7 +48,7 @@ Um sich schließlich von außen auf den PPTP-Server verbinden zu können,
 muss natürlich eine Portweiterleitung auf die IP der FRITZBox
 eingerichtet werden.
 
-.. code:: wiki
+.. code:: bash
 
    Protokoll: TCP  Port: 1723
    Protokoll: GRE  (keine Portangabe nötig)

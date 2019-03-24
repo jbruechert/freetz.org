@@ -596,6 +596,24 @@ menuconfig“ aufrufen, und das noch einmal überprüfen.</p>
 Auch können auch in inetd integrierte Services angegeben werden.</div>
 <div class="line">Beispiele:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">31337</span>          <span class="n">stream</span>  <span class="n">tcp</span>     <span class="n">nowait</span>  <span class="n">root</span>    <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">binary</span>    <span class="n">binary</span> <span class="o">-</span><span class="n">i</span>
+
+<span class="n">echo</span>           <span class="n">stream</span>  <span class="n">tcp</span>     <span class="n">nowait</span>  <span class="n">root</span>    <span class="n">internal</span>
+<span class="n">echo</span>           <span class="n">dgram</span>   <span class="n">udp</span>     <span class="n">wait</span>    <span class="n">root</span>    <span class="n">internal</span>
+
+<span class="n">discard</span>        <span class="n">stream</span>  <span class="n">tcp</span>     <span class="n">nowait</span>  <span class="n">root</span>    <span class="n">internal</span>
+<span class="n">discard</span>        <span class="n">dgram</span>   <span class="n">udp</span>     <span class="n">wait</span>    <span class="n">root</span>    <span class="n">internal</span>
+
+<span class="n">daytime</span>        <span class="n">stream</span>  <span class="n">tcp</span>     <span class="n">nowait</span>  <span class="n">root</span>    <span class="n">internal</span>
+<span class="n">daytime</span>        <span class="n">dgram</span>   <span class="n">udp</span>     <span class="n">wait</span>    <span class="n">root</span>    <span class="n">internal</span>
+
+<span class="n">chargen</span>        <span class="n">stream</span>  <span class="n">tcp</span>     <span class="n">nowait</span>  <span class="n">root</span>    <span class="n">internal</span>
+<span class="n">chargen</span>        <span class="n">dgram</span>   <span class="n">udp</span>     <span class="n">wait</span>    <span class="n">root</span>    <span class="n">internal</span>
+
+<span class="n">time</span>           <span class="n">stream</span>  <span class="n">tcp</span>     <span class="n">nowait</span>  <span class="n">root</span>    <span class="n">internal</span>
+<span class="n">time</span>           <span class="n">dgram</span>   <span class="n">udp</span>     <span class="n">wait</span>    <span class="n">root</span>    <span class="n">internal</span>
+</pre></div>
+</div>
 <p>Hinweis: Es können nur Servicenamen benutzt werden die in /etc/services
 hinterlegt sind</p>
 </div>

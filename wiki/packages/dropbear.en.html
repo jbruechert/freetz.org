@@ -571,7 +571,17 @@ support.</div>
 <div class="line">After the following step you can configure the packages you want to
 have included in your image.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">menuconfig</span>
+</pre></div>
+</div>
 <p>Make sure the following is selected:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Package</span> <span class="n">selection</span>  <span class="o">---&gt;</span> <span class="n">Standard</span> <span class="n">packages</span>  <span class="o">---&gt;</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Dropbear</span> <span class="mf">0.53</span><span class="o">.</span><span class="mi">1</span>
+<span class="n">Package</span> <span class="n">selection</span>  <span class="o">---&gt;</span> <span class="n">Standard</span> <span class="n">packages</span>  <span class="o">---&gt;</span> <span class="p">[</span> <span class="p">]</span>   <span class="n">Without</span> <span class="n">scp</span> <span class="o">&amp;</span> <span class="n">ssh</span> <span class="n">client</span> <span class="p">(</span><span class="n">NEW</span><span class="p">)</span>
+<span class="n">Package</span> <span class="n">selection</span>  <span class="o">---&gt;</span> <span class="n">Standard</span> <span class="n">packages</span>  <span class="o">---&gt;</span> <span class="p">[</span> <span class="p">]</span>   <span class="n">With</span> <span class="n">zlib</span> <span class="n">Compression</span> <span class="p">(</span><span class="n">NEW</span><span class="p">)</span>
+<span class="n">Package</span> <span class="n">selection</span>  <span class="o">---&gt;</span> <span class="n">Standard</span> <span class="n">packages</span>  <span class="o">---&gt;</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span>   <span class="n">Disable</span> <span class="n">DNS</span> <span class="n">reverse</span><span class="o">-</span><span class="n">lookup</span> <span class="n">of</span> <span class="n">the</span> <span class="n">client</span> <span class="p">(</span><span class="n">NEW</span><span class="p">)</span>
+<span class="n">Package</span> <span class="n">selection</span>  <span class="o">---&gt;</span> <span class="n">Standard</span> <span class="n">packages</span>  <span class="o">---&gt;</span> <span class="p">[</span> <span class="p">]</span>   <span class="n">Build</span> <span class="n">static</span> <span class="n">binary</span> <span class="p">(</span><span class="n">NEW</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="setup-in-freetz-web-interface">
 <span id="setupinfreetzweb-interface"></span><h2>Setup in Freetz web-interface<a class="headerlink" href="#setup-in-freetz-web-interface" title="Link zu dieser Überschrift">¶</a></h2>

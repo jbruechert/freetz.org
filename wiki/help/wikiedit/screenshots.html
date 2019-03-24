@@ -625,26 +625,36 @@ Verfügbare Eigenschaften sind:</p>
 <div class="section" id="screenshots-referenzieren">
 <span id="screenshotsreferenzieren"></span><h2>Screenshots referenzieren<a class="headerlink" href="#screenshots-referenzieren" title="Link zu dieser Überschrift">¶</a></h2>
 <p>… kann ein wenig tricky sein. Hier ein paar Hinweise:</p>
-<ul class="simple">
-<li>Gibt man keine Größe an, wird die Bildgröße 1:1 übernommen:
+<ul>
+<li><p class="first">Gibt man keine Größe an, wird die Bildgröße 1:1 übernommen:
 <code class="docutils literal notranslate"><span class="pre">[[Screenshot(6)]]</span></code>. Wer eine andere Größe will, muss Höhe <strong>und</strong>
 Breite angeben, da sonst das Bild verzerrt wird:
-<code class="docutils literal notranslate"><span class="pre">[[Screenshot(6,width=200,height=145)]]</span></code></li>
-<li>Gibt man keine Ausrichtung an, wird „mittig“ ausgerichtet - es
+<code class="docutils literal notranslate"><span class="pre">[[Screenshot(6,width=200,height=145)]]</span></code></p>
+</li>
+<li><p class="first">Gibt man keine Ausrichtung an, wird „mittig“ ausgerichtet - es
 „passt“ also nur eine Zeile neben das Bild. Daher besser angeben, wo
 das Bild hin soll: <code class="docutils literal notranslate"><span class="pre">[[Screenshot(6,align=left)]]</span></code>
 <img alt="&lt;!&gt;" src="../../../_images/exclamation-red1.png" /> Soll das Bild „alleine stehen“, <em>ohne</em> dass der Text um
 selbiges fließt, darf das Keyword <code class="docutils literal notranslate"><span class="pre">align</span></code> <strong>nicht</strong> verwendet
-werden.</li>
-<li>Das Bild ist immer so verlinkt, das ein Klick darauf zum
+werden.</p>
+</li>
+<li><p class="first">Das Bild ist immer so verlinkt, das ein Klick darauf zum
 <a class="reference external" href="../../Download.html">Download</a> führt. Um die Anzeige des Bildes
 in Originalgröße zu ermöglichen, kann man sich eines Tricks bedienen,
-und den passenden Link in die Beschreibung packen:</li>
-<li>Weitere Informationen finden sich auf der
-<a class="reference external" href="http://trac-hacks.org/wiki/ScreenshotsPlugin">​Projektseite</a></li>
-<li>Tags</li>
-<li><a class="reference external" href="../../help.html">help</a></li>
-<li><a class="reference external" href="/tags/wikiedit">wikiedit</a></li>
+und den passenden Link in die Beschreibung packen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>[[Screenshot(6,width=200,height=145,align=right,description=[screenshot:6 $description])]]
+</pre></div>
+</div>
+</li>
+<li><p class="first">Weitere Informationen finden sich auf der
+<a class="reference external" href="http://trac-hacks.org/wiki/ScreenshotsPlugin">​Projektseite</a></p>
+</li>
+<li><p class="first">Tags</p>
+</li>
+<li><p class="first"><a class="reference external" href="../../help.html">help</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="/tags/wikiedit">wikiedit</a></p>
+</li>
 </ul>
 </div>
 </div>

@@ -584,6 +584,9 @@ formatted.</div>
 <div class="line">My currect config allows 192.168.178.0/24 and localhost (for the local
 NFS Client).</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ndas</span><span class="o">/</span><span class="n">ext3</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.0</span><span class="o">/</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">250.0</span><span class="p">(</span><span class="n">rw</span><span class="p">,</span><span class="n">no_subtree_check</span><span class="p">)</span> <span class="n">localhost</span><span class="p">(</span><span class="n">rw</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="etc-hosts-allow">
 <h2>/etc/hosts.allow<a class="headerlink" href="#etc-hosts-allow" title="Link zu dieser Überschrift">¶</a></h2>
@@ -591,11 +594,23 @@ NFS Client).</div>
 <div class="line">Looks only the first two lines are needed, but the others should not
 harm.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mountd</span><span class="p">,</span><span class="n">nfsd</span><span class="p">,</span><span class="n">portmap</span><span class="p">:</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.0</span><span class="o">/</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span> <span class="p">,</span> <span class="n">localhost</span>
+<span class="n">lockd</span><span class="p">:</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.0</span><span class="o">/</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span> <span class="p">,</span> <span class="n">localhost</span>
+<span class="n">rquotad</span><span class="p">:</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.0</span><span class="o">/</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span> <span class="p">,</span> <span class="n">localhost</span>
+<span class="n">statd</span><span class="p">:</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.0</span><span class="o">/</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span> <span class="p">,</span> <span class="n">localhost</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="etc-hosts-deny">
 <h2>/etc/hosts.deny<a class="headerlink" href="#etc-hosts-deny" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="line-block">
 <div class="line">Only deny the NFS related services</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mountd</span><span class="p">,</span><span class="n">nfsd</span><span class="p">,</span><span class="n">portmap</span><span class="p">:</span><span class="n">ALL</span>
+<span class="n">lockd</span><span class="p">:</span><span class="n">ALL</span>
+<span class="n">rquotad</span><span class="p">:</span><span class="n">ALL</span>
+<span class="n">statd</span><span class="p">:</span><span class="n">ALL</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="verification-on-server">
@@ -606,32 +621,60 @@ harm.</div>
 FB. Maybe <code class="docutils literal notranslate"><span class="pre">rpcinfo</span></code> is available if ‚replace kernel‘ is used.</div>
 </div>
 <p>List of kernel supported filesystems by the FB:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">filesystems</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Just look if the filesystems you are planning to use are listed.</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">nfsd</span> <span class="n">status</span>
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">Status should be <code class="docutils literal notranslate"><span class="pre">running</span></code>. Use the following <code class="docutils literal notranslate"><span class="pre">ps</span></code> command first
 to see which processes are actually running before restarting the nfs
 server.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="o">-</span><span class="n">wl</span> <span class="o">|</span> <span class="n">grep</span> <span class="s1">&#39;nfs\|portmap\|lockd\|statd\|mountd\|quota&#39;</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">portmap, lockd, mountd, and nfsd should be all listed as a process.</div>
 <div class="line">You can use <code class="docutils literal notranslate"><span class="pre">/etc/init.d/rc.nfsd</span> <span class="pre">stop</span></code> and
 <code class="docutils literal notranslate"><span class="pre">/etc/init.d/rc.nfsd</span> <span class="pre">start</span></code> to stop and start the nfs server.</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exportfs</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Should show the hosts or subnets (incl. localhost if configured)
 configured in /etc/exports</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mount</span>
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">Look that the mounted disk allows rw (if intended)</div>
 </div>
 <p>If you also have the <a class="reference external" href="/wiki/packages/nfs.en">NFS Client</a> installed on
 the FB, the following verification is available:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">nfs</span> <span class="n">localhost</span><span class="p">:</span><span class="o">/&lt;</span><span class="n">share</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span> <span class="o">/&lt;</span><span class="n">mount</span><span class="o">-</span><span class="n">point</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>To show from the server which nfs exports are in use:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">showmount</span> <span class="o">--</span><span class="nb">all</span>
+<span class="n">showmount</span> <span class="o">--</span><span class="n">exports</span>
+</pre></div>
+</div>
 <p>To verify layer-4 network information (e.g. used ports):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netstat</span> <span class="o">-</span><span class="n">anp</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line"><br /></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logread</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="rsize-and-wsize-buffers">
@@ -669,8 +712,55 @@ do about 16 overnight.</div>
 <div class="line">Here the scripts I used:</div>
 </div>
 <p>main script:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+# the initial test with a rsize of 32768 (=32k) and increased with steps of 32k to 1024k
+# rsize=32768
+# for the second test again 32 test using 1gigabyte using the best result -16*1k to +16*1k
+# rsize to test is rsize=294912. Start rsize is
+rsize=(294912-16384)
+i=1
+date &gt; results.txt
+date +%s &gt;&gt; results.txt
+while [ $i -le 32 ]; do
+        echo ======================================================= &gt;&gt; results.txt
+        echo =======================================================
+        echo setup bonny++ test with rsize of $(($rsize+1024*$i))
+        echo setup bonny++ test with rsize of $(($rsize+1024*$i)) &gt;&gt; results.txt
+        mount -o hard,intr,rsize=$(($rsize+1024*$i)) 192.168.178.1:&lt;full_share_path&gt; &lt;local_mount_point&gt;
+        bonnie++ -d &lt;local_mount_point&gt; -s 1g -n 0 -m nfs_client_$rsize -f -b -u root &gt;&gt; results.txt 2&gt;&gt; results.txt
+        echo ======================================================= &gt;&gt; results.txt
+        umount &lt;local_mount_point&gt;
+        expect autologin.sh
+        i=$(($i + 1))
+done
+date &gt;&gt; results.txt
+date +%s &gt;&gt; results.txt
+</pre></div>
+</div>
 <p>expect script:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/expect</span>
+
+<span class="n">spawn</span> <span class="n">ssh</span> <span class="n">root</span><span class="nd">@192</span><span class="o">.</span><span class="mf">168.178</span><span class="o">.</span><span class="mi">1</span>
+<span class="c1"># expect &quot;connecting (yes/no)?&quot;</span>
+<span class="c1"># send &quot;yes\r&quot;</span>
+<span class="n">expect</span> <span class="s2">&quot;assword:&quot;</span>
+<span class="n">send</span> <span class="s2">&quot;&lt;your_passwd&gt;</span><span class="se">\r</span><span class="s2">&quot;</span>
+<span class="n">expect</span> <span class="s2">&quot;#&quot;</span>
+<span class="n">send</span> <span class="s2">&quot;/etc/init.d/rc.nfsd stop</span><span class="se">\r</span><span class="s2">&quot;</span>
+<span class="n">expect</span> <span class="s2">&quot;done.&quot;</span>
+<span class="n">send</span> <span class="s2">&quot;umount /dev/nda2</span><span class="se">\r</span><span class="s2">&quot;</span>
+<span class="n">expect</span> <span class="s2">&quot;#&quot;</span>
+<span class="n">send</span> <span class="s2">&quot;mount /dev/nda2 &lt;mount-point&gt;</span><span class="se">\r</span><span class="s2">&quot;</span>
+<span class="n">expect</span> <span class="s2">&quot;#&quot;</span>
+<span class="n">send</span> <span class="s2">&quot;/etc/init.d/rc.nfsd start</span><span class="se">\r</span><span class="s2">&quot;</span>
+<span class="n">expect</span> <span class="s2">&quot;done.&quot;</span>
+</pre></div>
+</div>
 <p>You can obtain a nice html page of your results with:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">results</span><span class="o">.</span><span class="n">txt</span> <span class="o">|</span> <span class="n">grep</span> <span class="p">,,,</span> <span class="o">|</span> <span class="n">bon_csv2html</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">nfs_client_test</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
 <p>But you can also use the csv format output in an Excel sheet. I attached
 3 html files showing my results.</p>
 </div>

@@ -569,15 +569,35 @@
 <div class="section" id="firmware-image-erstellen">
 <span id="firmwareimageerstellen"></span><h2>Firmware Image erstellen<a class="headerlink" href="#firmware-image-erstellen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Zunächst rufen wir das Menuconfig auf:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">menuconfig</span>
+</pre></div>
+</div>
 <p>Es muss zunächst euer Router ausgewählt sein, auch „Show advanced
 options“ und das darunter erscheinende „Enable IPv6 support“. Zudem
 werden folgende Pakte benötigt:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Standard</span> <span class="n">Packages</span> <span class="o">-&gt;</span> <span class="n">Dnsmasq</span>
+<span class="n">Web</span> <span class="n">Interface</span> <span class="o">-&gt;</span> <span class="n">NHIPT</span> <span class="n">Iptables</span> <span class="n">CGI</span>
+<span class="n">Web</span> <span class="n">Interface</span> <span class="o">-&gt;</span> <span class="n">NHIPT</span><span class="o">-&gt;</span><span class="n">Select</span> <span class="n">kernel</span> <span class="n">modules</span> <span class="p">(</span><span class="n">IPv6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ip6_tables</span><span class="o">.</span><span class="n">ko</span>
+<span class="n">Web</span> <span class="n">Interface</span> <span class="o">-&gt;</span> <span class="n">NHIPT</span><span class="o">-&gt;</span><span class="n">Select</span> <span class="n">kernel</span> <span class="n">modules</span> <span class="p">(</span><span class="n">IPv6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ip6table_filter</span><span class="o">.</span><span class="n">ko</span>
+<span class="n">Web</span> <span class="n">Interface</span> <span class="o">-&gt;</span> <span class="n">NHIPT</span><span class="o">-&gt;</span><span class="n">Select</span> <span class="n">shared</span> <span class="n">libraries</span> <span class="p">(</span><span class="n">IPv6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">libip6t_icmp6</span><span class="o">.</span><span class="n">so</span>
+<span class="n">Unstable</span> <span class="o">-&gt;</span> <span class="n">aiccu</span>
+<span class="n">Unstable</span> <span class="o">-&gt;</span> <span class="n">radvd</span>
+<span class="n">Unstable</span> <span class="o">-&gt;</span> <span class="n">traceroute6</span>
+</pre></div>
+</div>
 <p>Jetzt speichert und verlasst ihr die Konfiguration. Falls dies die erste
 Erstellung eines Images ist, müsst ihr nun zunächst mit <code class="docutils literal notranslate"><span class="pre">make</span></code> die für
 den nächsten Schritt benötigten Dateien erstellen.</p>
 <p>Nachdem der Vorgang abgeschlossen ist, gebt ihr in die Konsole diesen
 Befehl ein:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">kernel</span><span class="o">-</span><span class="n">menuconfig</span>
+</pre></div>
+</div>
 <p>In diesem Menü aktiviert ihr nun folgende Optionen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Loadable</span> <span class="n">module</span> <span class="n">support</span> <span class="o">&gt;</span> <span class="n">Automatic</span> <span class="n">kernel</span> <span class="n">module</span> <span class="n">loading</span> <span class="p">(</span><span class="n">CONFIG_KMOD</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<span class="n">Networking</span>  <span class="o">&gt;</span> <span class="n">Networking</span> <span class="n">options</span> <span class="o">&gt;</span> <span class="n">IPv6</span><span class="p">:</span> <span class="n">IPv6</span><span class="o">-</span><span class="ow">in</span><span class="o">-</span><span class="n">IPv4</span> <span class="n">tunnel</span> <span class="p">(</span><span class="n">SIT</span> <span class="n">driver</span><span class="p">)</span> <span class="p">(</span><span class="n">CONFIG_IPV6_SIT</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>Auch hier müsst ihr danach die Menüs mit „Exit“ verlassen und die Frage,
 ob ihr das Speichern wollt, mit „Yes“ beantworten.</p>
 <div class="line-block">
@@ -607,11 +627,24 @@ eingespielt werden.</p>
 <span id="id2"></span><h2>Netzwerksetup<a class="headerlink" href="#netzwerksetup" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wählt den Punkt „Pakete“ aus, um aiccu und radvd zu konfigurieren.
 Zuerst aiccu:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Starttyp</span><span class="p">:</span> <span class="n">Automatisch</span>
+<span class="n">Benutzername</span><span class="p">:</span> <span class="n">Euer</span> <span class="n">SixXS</span> <span class="n">Benutzername</span>
+<span class="n">Passwort</span><span class="p">:</span> <span class="n">Euer</span> <span class="n">SixXS</span> <span class="n">Passwort</span>
+<span class="n">Tunnel</span> <span class="n">ID</span><span class="p">:</span> <span class="n">ID</span> <span class="n">des</span> <span class="n">dynamischen</span> <span class="n">Tunnels</span> <span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">B</span><span class="o">.</span> <span class="n">T1234</span><span class="p">)</span>
+<span class="n">Name</span> <span class="n">des</span> <span class="n">virt</span><span class="o">.</span> <span class="n">IPv6</span> <span class="n">Interface</span><span class="p">:</span> <span class="n">sixxs</span>
+</pre></div>
+</div>
 <p>Klickt anschließend auf „Übernehmen“, um die Einstellungen zu speichern.
 Als nächstes wird radvd konfiguriert. Dazu benötigt ihr ein aktives
 Subnet, dass zu eurem Tunnel geroutet wird. Lautet euer Prefix
 beispielsweise !2001:6f8:1234::/48, so muss die Konfiguration
 folgendermaßen aussehen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Starttyp</span><span class="p">:</span> <span class="n">Automatisch</span>
+<span class="n">IPv6</span> <span class="n">Schnittstelle</span><span class="p">:</span> <span class="n">lan</span>
+<span class="n">IPv6</span> <span class="n">Adresse</span><span class="p">:</span> <span class="mi">2001</span><span class="p">:</span><span class="mi">6</span><span class="n">f8</span><span class="p">:</span><span class="mi">1234</span><span class="p">::</span><span class="mi">1</span><span class="o">/</span><span class="mi">64</span>
+<span class="n">IPv6</span> <span class="n">Prefix</span><span class="p">:</span> <span class="mi">2001</span><span class="p">:</span><span class="mi">6</span><span class="n">f8</span><span class="p">:</span><span class="mi">1234</span><span class="p">::</span><span class="o">/</span><span class="mi">64</span>
+</pre></div>
+</div>
 <p>Achtung: Dies ist kein Tippfehler! In der Konfiguration muss hinter dem
 Prefix /64 stehen, auch wenn eurer Prefix ein /48 Subnet hat! Auch hier
 durch klick auf „Übernehmen“ die Einstellung speichern. Abschließend
@@ -631,8 +664,22 @@ IPv6 Firewall ip6tables. Lasst euch nicht von den vielen Feldern
 erschlagen und scrollt direkt zu den Feldern, über denen „RULES FOR
 CHAIN INPUT [ filter ] [ IPv6 ]“ steht. Tragt jetzt in die Felder
 folgende Werte ein:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;In IFC&quot;</span> <span class="o">=</span> <span class="s2">&quot;sixxs&quot;</span>
+<span class="s2">&quot;Prot&quot;</span> <span class="o">=</span> <span class="s2">&quot;ipv6&quot;</span>
+<span class="s2">&quot;Module&quot;</span> <span class="o">=</span> <span class="s2">&quot;state&quot;</span>
+<span class="s2">&quot;Param&quot;</span> <span class="o">=</span> <span class="s2">&quot;RELATED,ESTABLISHED&quot;</span>
+</pre></div>
+</div>
 <p>und klickt auf „Insert“. Das ganze wiederholt ihr dann noch (wieder in
 den gleichen Feldern) mit den Werten</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;In IFC&quot;</span> <span class="o">=</span> <span class="s2">&quot;sixxs&quot;</span>
+<span class="s2">&quot;Prot&quot;</span> <span class="o">=</span> <span class="s2">&quot;ipv6-icmp&quot;</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;In IFC&quot;</span> <span class="o">=</span> <span class="s2">&quot;sixxs&quot;</span>
+<span class="s2">&quot;Action&quot;</span> <span class="o">=</span> <span class="s2">&quot;DROP&quot;</span>
+</pre></div>
+</div>
 <p>Zum Schluss auf „persist rules“ klicken.</p>
 <p>Jetzt ist euer Netzwerk auch unter IPv6 geschützt, wobei es trotzdem die
 Pings durchlässt (für Credits).</p>
@@ -675,6 +722,41 @@ Tunnel auf der FritzBox an. Habe ich gerade aus Mangel am conntrack
 Modul für meinen alten 2.6.19er Kernel auf der 7170 geschrieben. Über
 Kommentare und Verbesserungsvorschläge freue ich mich. Ich weiß selbst
 dass es nicht perfekt ist, aber besser so als gar keinen Schutz.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Flush rules</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">F</span>
+
+<span class="c1"># Set the default policy</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">P</span> <span class="n">INPUT</span> <span class="n">DROP</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">P</span> <span class="n">FORWARD</span> <span class="n">DROP</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">P</span> <span class="n">OUTPUT</span> <span class="n">ACCEPT</span>
+
+<span class="c1"># Allow anything on the local link</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">i</span> <span class="n">lo</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">o</span> <span class="n">lo</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+
+<span class="c1"># Allow Link-Local addresses</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">s</span> <span class="n">fe80</span><span class="p">::</span><span class="o">/</span><span class="mi">10</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+
+<span class="c1"># Allow multicast</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">s</span> <span class="n">ff00</span><span class="p">::</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+
+<span class="c1"># Allow ICMP</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">icmpv6</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+
+<span class="c1"># Allow INPUT   ports from 1-1024 to destination ports 1024-65535</span>
+<span class="c1"># Allow FORWARD ports from 1-1024 to destination ports 1024-65535</span>
+<span class="c1"># on the sixxs interface</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">i</span> <span class="n">sixxs</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">sport</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1024</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">1024</span><span class="p">:</span><span class="mi">65535</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">i</span> <span class="n">sixxs</span> <span class="o">-</span><span class="n">p</span> <span class="n">udp</span> <span class="o">--</span><span class="n">sport</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1024</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">1024</span><span class="p">:</span><span class="mi">65535</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">A</span> <span class="n">FORWARD</span> <span class="o">-</span><span class="n">i</span> <span class="n">sixxs</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">sport</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1024</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">1024</span><span class="p">:</span><span class="mi">65535</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">A</span> <span class="n">FORWARD</span> <span class="o">-</span><span class="n">i</span> <span class="n">sixxs</span> <span class="o">-</span><span class="n">p</span> <span class="n">udp</span> <span class="o">--</span><span class="n">sport</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1024</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">1024</span><span class="p">:</span><span class="mi">65535</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+
+<span class="c1"># Allow forwarding of everything coming from _OUR_</span>
+<span class="c1"># subnet. In this case: 2a01:aaa:bbb::/48</span>
+<span class="c1"># You have to replace this for your config!!!</span>
+<span class="n">ip6tables</span> <span class="o">-</span><span class="n">A</span> <span class="n">FORWARD</span> <span class="o">-</span><span class="n">s</span> <span class="mi">2</span><span class="n">a01</span><span class="p">:</span><span class="n">aaa</span><span class="p">:</span><span class="n">bbb</span><span class="p">::</span><span class="o">/</span><span class="mi">48</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+</pre></div>
+</div>
 <p>AddComment?</p>
 <ul class="simple">
 <li>Tags</li>

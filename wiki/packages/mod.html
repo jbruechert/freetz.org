@@ -616,6 +616,10 @@ kann hier in diesem Fall aber die Methode von <code class="docutils literal notr
 genutzte Befehle definiert werden:</div>
 <div class="line">Beispiel:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">nl</span><span class="o">=</span><span class="s2">&quot;sed &#39;=&#39; | sed &#39;N;s/</span><span class="se">\n</span><span class="s2">/</span><span class="se">\t</span><span class="s2">/&#39;&quot;</span>
+<span class="n">alias</span> <span class="n">tcpdump6</span><span class="o">=</span><span class="s2">&quot;tcpdump ip6 or proto ipv6&quot;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="crontab">
 <h2>crontab<a class="headerlink" href="#crontab" title="Link zu dieser Überschrift">¶</a></h2>
@@ -624,7 +628,15 @@ genutzte Befehle definiert werden:</div>
 durch die crontab konfiguriert.</div>
 <div class="line">Syntax:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Minute</span> <span class="o">|</span> <span class="n">Stunde</span> <span class="o">|</span> <span class="n">Tag</span> <span class="o">|</span> <span class="n">Monat</span> <span class="o">|</span> <span class="n">Wochentag</span> <span class="o">|</span> <span class="n">Befehl</span>
+</pre></div>
+</div>
 <p>Beispiel:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">55</span>  <span class="mi">23</span>  <span class="o">*</span> <span class="o">*</span> <span class="mi">7</span>  <span class="n">logger</span> <span class="s2">&quot;Es ist Sonntag, 5 Minuten vor 12&quot;</span>
+<span class="o">*/</span><span class="mi">10</span>  <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span>  <span class="n">logger</span> <span class="s2">&quot;Es sind wieder 10 Minuten vergangen&quot;</span>
+<span class="o">*</span> <span class="mi">6</span><span class="p">,</span><span class="mi">18</span>  <span class="o">*</span> <span class="o">*</span> <span class="o">*</span>  <span class="n">logger</span> <span class="s2">&quot;Es ist 6 Uhr&quot;</span>
+</pre></div>
+</div>
 <p><img alt="Warning" src="../../_images/exclamation9.png" /> Im Gegensatz zu „normalen“ Linux Systemen fehlt die
 „Besitzer“-Spalte und alle Befehle werden als root ausgeführt.</p>
 </div>
@@ -634,6 +646,14 @@ durch die crontab konfiguriert.</div>
 <div class="line">Die Befehle in dieser Datei werden durch die Tastenkombination
 <code class="docutils literal notranslate"><span class="pre">#97*3*</span></code> am Telefon ausgeführt.</div>
 <div class="line">Beispiel:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="k">if</span> <span class="p">[</span> <span class="s2">&quot;$(/etc/init.d/rc.lighttpd status)&quot;</span> <span class="o">!=</span> <span class="s2">&quot;stopped&quot;</span> <span class="p">];</span> <span class="n">then</span>
+    <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">lighttpd</span> <span class="n">stop</span>
+<span class="k">else</span>
+    <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">lighttpd</span> <span class="n">start</span>
+<span class="n">fi</span>
+</pre></div>
 </div>
 <p><img alt="Warning" src="../../_images/exclamation9.png" /> Nur sichtbar wenn der replace-dtrace Patch ausgewählt wurde!</p>
 </div>
@@ -645,7 +665,14 @@ zueinander zugeordnet werden. Siehe auch <a class="reference external" href="dns
 Hosts-Liste</a></div>
 <div class="line">Syntax:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ipaddr</span><span class="o">&gt;|*</span> <span class="o">&lt;</span><span class="n">hwaddr</span><span class="o">&gt;|</span><span class="p">[</span><span class="nb">id</span><span class="p">:]</span><span class="o">&lt;</span><span class="n">client_id</span><span class="o">&gt;|*</span> <span class="p">[</span><span class="n">net</span><span class="p">:]</span><span class="o">&lt;</span><span class="n">netid</span><span class="o">&gt;|*</span> <span class="o">&lt;</span><span class="n">hostname</span><span class="o">&gt;|*</span> <span class="p">[</span><span class="n">ignore</span><span class="p">]</span>
+</pre></div>
+</div>
 <p>Beispiel:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">192.168</span><span class="o">.</span><span class="mf">178.20</span>    <span class="o">*</span>           <span class="o">*</span> <span class="n">MeinPC</span><span class="o">-</span><span class="mi">1</span>
+<span class="mf">192.168</span><span class="o">.</span><span class="mf">178.21</span>  <span class="mi">11</span><span class="p">:</span><span class="mi">22</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">66</span>   <span class="o">*</span> <span class="n">MeinPC</span><span class="o">-</span><span class="mi">2</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="modules">
 <h2>modules<a class="headerlink" href="#modules" title="Link zu dieser Überschrift">¶</a></h2>
@@ -653,6 +680,10 @@ Hosts-Liste</a></div>
 <div class="line">Die Kernel-Module die in dieser Datei aufgeführt sind werden während
 des Bootvorgangs geladen.</div>
 <div class="line">Beispiel:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pl2303</span>
+<span class="n">ftdi_sio</span>
+</pre></div>
 </div>
 <p><img alt="Warning" src="../../_images/exclamation9.png" /> Die Namen der Module sind ohne Pfad und die Endung <code class="docutils literal notranslate"><span class="pre">.ko</span></code>
 anzugeben.</p>
@@ -674,6 +705,17 @@ USB-Stick, bitte die Erweiterung rc.external verwenden.</div>
 <a class="reference external" href="../help/howtos/common/external.html">external</a>-Dateien befinden
 eingehängt wurde und bevor er ausgehängt wird.</div>
 <div class="line">Beispiel:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="n">case</span> <span class="s2">&quot;$1&quot;</span> <span class="ow">in</span>
+    <span class="n">load</span><span class="p">)</span>
+        <span class="n">logger</span> <span class="s2">&quot;Datenträger eingehängt&quot;</span>
+        <span class="p">;;</span>
+    <span class="n">unload</span><span class="p">)</span>
+        <span class="n">logger</span> <span class="s2">&quot;Datenträger ausgehängt&quot;</span>
+        <span class="p">;;</span>
+<span class="n">esac</span>
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>

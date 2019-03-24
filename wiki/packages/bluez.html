@@ -581,14 +581,32 @@ documentation, but here we go <img alt=":-)" src="../../_images/smiley5.png" /><
 <li>Make your device discoverable</li>
 </ul>
 <p>Freetz PAN Server:</p>
-<ul class="simple">
-<li>Find your device</li>
-<li>Trust your device:</li>
-<li>Restart BlueZ to persist data</li>
+<ul>
+<li><p class="first">Find your device</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hcitool</span> <span class="n">scan</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Trust your device:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>dbus-send --system --type=method_call --dest=org.bluez --print-reply /org/bluez/$(pidof bluetoothd)/hci0/dev_YY_YY_YY_YY_YY_YY org.bluez.Device.SetProperty string:Trusted variant:boolean:true
+</pre></div>
+</div>
+</li>
+<li><p class="first">Restart BlueZ to persist data</p>
+</li>
 </ul>
 <p>Android PANU Client:</p>
-<ul class="simple">
-<li>Make the connection (Android: root required!):</li>
+<ul>
+<li><p class="first">Make the connection (Android: root required!):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hcitool</span> <span class="n">scan</span>
+<span class="n">pand</span> <span class="o">--</span><span class="n">connect</span> <span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span>
+<span class="n">sleep</span> <span class="mi">7</span>
+<span class="n">netcfg</span> <span class="n">bnep0</span> <span class="n">dhcp</span>
+<span class="n">setprop</span> <span class="n">net</span><span class="o">.</span><span class="n">dns1</span> <span class="mf">8.8</span><span class="o">.</span><span class="mf">8.8</span>
+<span class="n">ifconfig</span> <span class="n">rmnet0</span> <span class="n">up</span> <span class="c1"># trick to make apps think there is an internet connection</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <p>Ignore any message from the Android browser that there is no connection
 <img alt=":-)" src="../../_images/smiley5.png" /></p>
@@ -597,8 +615,15 @@ Manager</a>&nbsp;or
 use&nbsp;<a class="reference external" href="https://market.android.com/details?id=earlmagnus.nctether">​NC Bluetooth
 Tether</a>.</p>
 <p>Ubuntu client:</p>
-<ul class="simple">
-<li>Make the connection:</li>
+<ul>
+<li><p class="first">Make the connection:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hcitool</span> <span class="n">scan</span>
+<span class="n">sudo</span> <span class="n">pand</span> <span class="o">--</span><span class="n">connect</span> <span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span>
+<span class="n">sudo</span> <span class="n">ifconfig</span> <span class="n">bnep0</span> <span class="n">up</span>
+<span class="n">sudo</span> <span class="n">dhclient</span> <span class="n">bnep0</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <p><em>Tested with a Sitecom CN-517 USB dongle (pretty generic) through a
 USB-hub on a 7270v2 international with the (patched) btusb module and an
@@ -606,6 +631,20 @@ Android device with a</em><a class="reference external" href="http://www.cyanoge
 7</a><em>ROM and with a Ubuntu Lucid Lynx
 client.</em></p>
 <p>lsusb:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VID</span><span class="o">=</span><span class="mi">0</span><span class="n">a12</span>
+<span class="n">PID</span><span class="o">=</span><span class="mi">0001</span>
+<span class="n">CLS</span><span class="o">=</span><span class="mi">224</span>
+<span class="n">SCL</span><span class="o">=</span><span class="mi">01</span>
+<span class="n">SPEED</span><span class="o">=</span><span class="s1">&#39;full&#39;</span>
+<span class="n">VER</span><span class="o">=</span><span class="s1">&#39;2.0&#39;</span>
+<span class="n">ISOC</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">INUM</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">ICLS1</span><span class="o">=</span><span class="mi">224</span>
+<span class="n">ISCL1</span><span class="o">=</span><span class="mi">01</span>
+<span class="n">ICLS2</span><span class="o">=</span><span class="mi">224</span>
+<span class="n">ISCL2</span><span class="o">=</span><span class="mi">01</span>
+</pre></div>
+</div>
 <p><em>Not tested with hci_usb (earlier kernels; will probably work) and bfusb
 (AVM - BlueFRITZ! USB).</em></p>
 </div>
@@ -621,11 +660,37 @@ rest of the guide <img alt=":-)" src="../../_images/smiley5.png" /></li>
 <div class="section" id="dbus">
 <span id="id4"></span><h2>DBUS<a class="headerlink" href="#dbus" title="Link zu dieser Überschrift">¶</a></h2>
 <p>See all interface methods:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>dbus-send --system --dest=org.bluez --print-reply /org/bluez/$(pidof bluetoothd)/hci0 org.freedesktop.DBus.Introspectable.Introspect
+</pre></div>
+</div>
 <p>See the properties of your adapter:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>dbus-send --system --type=method_call --dest=org.bluez --print-reply /org/bluez/$(pidof bluetoothd)/hci0 org.bluez.Adapter.GetProperties
+</pre></div>
+</div>
 <p>See the properties of your device:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>dbus-send --system --type=method_call --dest=org.bluez --print-reply /org/bluez/$(pidof bluetoothd)/hci0/dev_YY_YY_YY_YY_YY_YY org.bluez.Device.GetProperties
+</pre></div>
+</div>
 </div>
 <div class="section" id="sizes">
 <span id="id5"></span><h2>Sizes<a class="headerlink" href="#sizes" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">libbluetooth</span> <span class="o">.................</span>   <span class="mf">55.07</span> <span class="n">Kb</span>
+<span class="n">libdbus</span> <span class="o">......................</span>   <span class="mf">86.59</span> <span class="n">Kb</span>
+<span class="n">libexpat</span> <span class="o">.....................</span>   <span class="mf">43.79</span> <span class="n">Kb</span>
+<span class="n">libglib_2</span> <span class="o">....................</span>  <span class="mf">237.86</span> <span class="n">Kb</span>
+<span class="n">libpcre</span> <span class="o">......................</span>   <span class="mf">60.75</span> <span class="n">Kb</span>
+
+<span class="n">crc16</span><span class="o">.</span><span class="n">ko</span> <span class="o">.....................</span>    <span class="mf">1.27</span> <span class="n">Kb</span>
+<span class="n">btusb</span><span class="o">.</span><span class="n">ko</span> <span class="o">.....................</span>    <span class="mf">6.25</span> <span class="n">Kb</span>
+<span class="n">bnep</span><span class="o">.</span><span class="n">ko</span> <span class="o">......................</span>    <span class="mf">7.30</span> <span class="n">Kb</span>
+<span class="n">bluetooth</span><span class="o">.</span><span class="n">ko</span> <span class="o">.................</span>   <span class="mf">27.58</span> <span class="n">Kb</span>
+<span class="n">l2cap</span><span class="o">.</span><span class="n">ko</span> <span class="o">.....................</span>   <span class="mf">17.07</span> <span class="n">Kb</span>
+<span class="n">rfcomm</span><span class="o">.</span><span class="n">ko</span> <span class="o">....................</span>   <span class="mf">22.10</span> <span class="n">Kb</span>
+
+<span class="n">dbus</span><span class="o">-</span><span class="mf">1.5</span><span class="o">.</span><span class="mi">8</span> <span class="o">...................</span>  <span class="mf">143.21</span> <span class="n">Kb</span>
+<span class="n">bluez</span><span class="o">-</span><span class="mf">4.101</span> <span class="o">..................</span>  <span class="mf">285.39</span> <span class="n">Kb</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="links">
 <span id="id6"></span><h2>Links<a class="headerlink" href="#links" title="Link zu dieser Überschrift">¶</a></h2>

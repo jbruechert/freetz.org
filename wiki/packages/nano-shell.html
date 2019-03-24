@@ -644,6 +644,11 @@ Sonderzeichen in Latin-1 (ISO-8859-1) (de)kodiert. Außerdem kann man mit
 Konqueror 3.5.8): Viele Browser akzeptieren auch unkodierte
 CGI-Parameter, also Befehler im Klartext, d.h. normalerweise kann man
 anstatt der kodierten Befehle oben auch Folgendes schreiben:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>http://fritz.box/cgi-bin/shell.cgi?ls -l /var/tmp
+http://fritz.box/cgi-bin/shell.cgi?/usr/sbin/telnetd -p 2323 -l /bin/sh
+http://fritz.box/cgi-bin/shell.cgi?echo &quot;Erster Befehl&quot;; cat /etc/motd; echo &quot;Dritter Befehl&quot;
+</pre></div>
+</div>
 <p>Viel Spaß beim Ausprobieren!</p>
 <p><a class="reference external" href="http://www.ip-phone-forum.de/member.php?u=117253">​Alexander Kriegisch
 (kriegaex)</a></p>

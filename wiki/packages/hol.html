@@ -565,6 +565,22 @@ aus dem erweiterten WOL-WebIF zu ermöglichen. Momentan ist es noch
 nicht implementiert und man sollte sich mit der Kommandozeile
 befreunden:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>/var/mod/root # hol
+hol v1.0 Halt-On-Lan script
+Author hermann72pb &lt;http://www.ip-phone-forum.de/member.php?u=80424&gt;
+
+Usage: hol HOST [ACTION TIME MESSAGE]
+HOST      Hostname or ip address: e.g. my.computer or 192.168.178.20
+ACTION    Actions for poweroff: e.g. shutdown, reboot, logoff, lock, etc.
+TIME      time in seconds for warning before the action:
+          e.g. 10 or 0 for no warning
+MESSAGE   Warning message: e.g. Please close all your files
+/var/mod/root # hol 192.168.178.20
+/var/mod/root # hol 192.168.178.20 lock
+/var/mod/root # hol MeinPC monitor_off 15
+/var/mod/root # hol DeinNotebook monitor_off 15 &quot;Hey, du\nschalte aus!&quot;
+</pre></div>
+</div>
 <p>Man kann aber schon jetzt die HOL-Aufrufe als callmonitor-Aktionen oder
 als cron-Einträge benutzen. Zur Konfiguration der Default-Aktionen und
 sonstiger Parameter gibt es eine Konfigurationsseite zum Paket HOL im

@@ -841,10 +841,22 @@ Releaseversionen bekommen einen Tag (z.B.
 Tag 2.0 werden.</div>
 <div class="line">Auschecken einer stabilen Version:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">co</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="o">.</span><span class="n">freetz</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">branches</span><span class="o">/</span><span class="n">freetz</span><span class="o">-</span><span class="n">stable</span><span class="o">-</span><span class="mf">2.0</span> <span class="n">freetz</span><span class="o">-</span><span class="n">stable</span><span class="o">-</span><span class="mf">2.0</span>
+</pre></div>
+</div>
 <p>Auschecken eines Tags:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">co</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="o">.</span><span class="n">freetz</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">tags</span><span class="o">/</span><span class="n">freetz</span><span class="o">-</span><span class="mf">1.2</span> <span class="n">freetz</span><span class="o">-</span><span class="mf">1.2</span>
+</pre></div>
+</div>
 <p>Nach Erscheinen des neuen Tag 2.0 wird dieser dann wie folgt
 ausgecheckt:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">co</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="o">.</span><span class="n">freetz</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">tags</span><span class="o">/</span><span class="n">freetz</span><span class="o">-</span><span class="mf">2.0</span> <span class="n">freetz</span><span class="o">-</span><span class="mf">2.0</span>
+</pre></div>
+</div>
 <p>Auschecken einer Entwicklerversion (trunk):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">co</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="o">.</span><span class="n">freetz</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">trunk</span> <span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span>
+</pre></div>
+</div>
 <p>Achtung! Die Entwicklerversion (trunk) ist nur für fortgeschrittene
 Benutzer zu empfehlen, die mit Linux-Grundlagen vertraut sind, sich bei
 elementaren Problemen selbst helfen können und den Entwicklern einen
@@ -1405,6 +1417,18 @@ auch bei aktueller Firmware).</div></blockquote>
 <div><p>Zum Deaktivieren von TR069 muss die Datei /var/flash/tr069.cfg
 mittels nvi, nmcedit oder nnano editiert werden. So sollte es
 aussehen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># cat tr069.cfg</span>
+<span class="o">/*</span>
+<span class="o">*</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">tr069</span><span class="o">.</span><span class="n">cfg</span>
+<span class="o">*</span> <span class="n">Sun</span> <span class="n">Sep</span> <span class="mi">8</span> <span class="mi">14</span><span class="p">:</span><span class="mi">03</span><span class="p">:</span><span class="mi">34</span> <span class="mi">2002</span>
+<span class="o">*/</span>
+
+<span class="n">tr069cfg</span> <span class="p">{</span>
+<span class="n">enabled</span> <span class="o">=</span> <span class="n">no</span><span class="p">;</span>
+<span class="n">igd</span> <span class="p">{</span>
+<span class="o">...</span>
+</pre></div>
+</div>
 <p>Bei neueren Firmwares reicht es nicht mehr aus TR069 zu deaktivieren.
 Hier crasht der ctlmgr auch bei anderen Aktionen beim Zugriff auf die
 OpenSSL-Libs. Manchmal schafft das Ersetzen der libavmhmac (im
@@ -1417,6 +1441,11 @@ z.B. die FritzMini Unterstützung, das Fritz-App von AVM, u.s.w.</p>
 <blockquote>
 <div><p>Um heraus zu finden, ob die problematischen OpenSSL-Libs ins Image
 eingebunden werden, kann man folgenden Befehl ausführen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>oliver@ubuntu:~/fritzbox/freetz/trunk$ grep -E  &quot;libssl|libcrypto&quot; .config
+FREETZ_LIB_libcrypto=y
+FREETZ_LIB_libssl=y
+</pre></div>
+</div>
 <p>Es folgt eine Liste mit Paketen die die OpenSSL-Libs benötigen,
 manche auch nur optional: <em>bip, curl, dropbear mit sftp-Support,
 mcabber, netsnmp, OpenVPN, Tor, transmission, Vsftpd und wget</em></p>
@@ -1434,6 +1463,14 @@ dass diese immer noch ins Image gepackt werden. Das kommt daher, dass
 menuconfig eine automatische Abwahl nicht unterstützt. Hierfür gibt
 es den Befehl <em>make config-clean-deps</em> bzw. <em>make
 config-clean-deps-keep-busybox</em>.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>oliver@ubuntu:~/fritzbox/freetz/trunk$ make config-clean-deps
+Step 1: temporarily deactivate all kernel modules, shared libraries and optional BusyBox applets ... DONE
+Step 2: reactivate only elements required by selected packages ... DONE
+The following elements have been deactivated:
+  FREETZ_BUSYBOX_BRCTL
+  FREETZ_LIB_libcrypto
+</pre></div>
+</div>
 <p>Vorsicht: Wie im Beispiel zu sehen werden hierbei auch Optionen
 deaktiviert die absichtlich gewählt aber nicht per default aktiviert
 sind.</p>
@@ -1632,18 +1669,40 @@ Konsole der Box per Telnet oder SSH auszuführen (geht leider nicht
 per Rudi-Shell, denn die benötigt selbst eine Sicherheitsstufe „0“).</div></blockquote>
 <blockquote>
 <div><p>Ermitteln der aktuellen Sicherheitsstufe (hier: Freetz-1.1.4):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">security</span>
+</pre></div>
+</div>
 <p><strong>Freetz-1.1.x und älter:</strong></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="mi">0</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">security</span> <span class="o">&lt;---</span> <span class="n">Bsp</span><span class="o">.</span> <span class="c1">#1: Setzen von Stufe &quot;0&quot; (keine Restriktionen, VORSICHT!)</span>
+<span class="n">modsave</span>                      <span class="o">&lt;---</span> <span class="n">Speichern</span> <span class="n">der</span> <span class="n">neuen</span> <span class="n">Sicherheitsstufe</span>
+</pre></div>
+</div>
 </div></blockquote>
 <blockquote>
 <div><p><strong>Ab Freetz-1.2.x und SVN-trunk
 ≥**`r3318 &lt;/changeset/3318&gt;`__**:</strong></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">security</span> <span class="o">&lt;---</span> <span class="n">Bsp</span><span class="o">.</span> <span class="c1">#2: Setzen von Stufe &quot;1&quot; (Konfigurationsdateien editierbar)</span>
+<span class="n">modsave</span>                          <span class="o">&lt;---</span> <span class="n">Speichern</span> <span class="n">der</span> <span class="n">neuen</span> <span class="n">Sicherheitsstufe</span>
+</pre></div>
+</div>
 <p>Erlaubte Werte mit Erläuterung (Default: 2):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 0 : no restrictions</span>
+<span class="c1"># 1 : only configuration files without shell commands might be edited</span>
+<span class="c1"># 2 : no configuration files might be edited</span>
+</pre></div>
+</div>
 </div></blockquote>
 </div>
 <div class="section" id="wie-deaktiviere-ich-das-passwort-fur-die-freetz-webseite">
 <span id="wiedeaktiviereichdaspasswortfurdiefreetz-webseite"></span><h3>Wie deaktiviere ich das Passwort für die Freetz-Webseite?<a class="headerlink" href="#wie-deaktiviere-ich-das-passwort-fur-die-freetz-webseite" title="Link zu dieser Überschrift">¶</a></h3>
 <blockquote>
 <div><p>Folgende Befehle auf der Konsole ausführen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">webcfg_conf</span>
+<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span><span class="n">webcfg_conf</span>
+<span class="n">modsave</span> <span class="n">flash</span>
+<span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">webcfg</span> <span class="n">restart</span>
+</pre></div>
+</div>
 <p>Hintergrund: Das Skript /tmp/flash/webcfg_conf wird gegenüber
 /etc/default.webcfg/webcfg_conf zum Erstellen der Konfigurationsdatei
 bevorzugt. Ein leeres Skript /tmp/flash/webcfg_conf erzeugt also eine
@@ -1663,11 +1722,23 @@ leere Konfigurationsdatei ohne Passwort.</p>
 <span id="wieandereichdaspasswortfurdiefreetz-webseitesofernichesvergessenundtelnetssh-zuganghabe"></span><h3>Wie ändere ich das Passwort für die Freetz-Webseite sofern ich es vergessen und Telnet/SSH-Zugang habe?<a class="headerlink" href="#wie-andere-ich-das-passwort-fur-die-freetz-webseite-sofern-ich-es-vergessen-und-telnet-ssh-zugang-habe" title="Link zu dieser Überschrift">¶</a></h3>
 <blockquote>
 <div><p>Erstmal das Freetz-Webif stoppen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">webcfg</span> <span class="n">stop</span>
+</pre></div>
+</div>
 <p>Dann mit vi in der Datei mod.cfg die Zeile, die mit export
 MOD_HTTPD_PASSWD beginnt, wie folgt abändern:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vi</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">mod</span><span class="o">.</span><span class="n">cfg</span>
+</pre></div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">MOD_HTTPD_PASSWD</span><span class="o">=</span><span class="s1">&#39;$1$$zO6d3zi9DefdWLMB.OHaO.&#39;</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Speichern der Änderung: 1x ESC drücken und <code class="docutils literal notranslate"><span class="pre">:wq</span></code> eingeben.</div>
 <div class="line">Nun wieder das Freetz-Webif starten:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">webcfg</span> <span class="n">start</span>
+</pre></div>
 </div>
 <p>Jetzt kann man sich mit dem Passwort „freetz“ wieder einloggen.</p>
 </div></blockquote>
@@ -1685,6 +1756,11 @@ Passwort.</div>
 <span id="wieandereichdasroot-passwort"></span><h3>Wie ändere ich das root-Passwort?<a class="headerlink" href="#wie-andere-ich-das-root-passwort" title="Link zu dieser Überschrift">¶</a></h3>
 <blockquote>
 <div><p>Folgende Befehle auf der Konsole ausführen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">passwd</span>
+<span class="n">modusers</span> <span class="n">save</span>
+<span class="n">modsave</span> <span class="n">flash</span>
+</pre></div>
+</div>
 <p>Nach Eingabe des Befehls ‚passwd‘ muss das Passwort eingegeben
 werden. Dabei wird das eingegebene Passwort ‚nicht‘ angezeigt. Zu
 einfache Passwörter werden nicht akzeptiert.</p>
@@ -1715,11 +1791,17 @@ auslesen kann.</p>
 <div class="section" id="var-flash-freetz-too-big">
 <span id="varflashfreetztoobig"></span><h3>/var/flash/freetz too big<a class="headerlink" href="#var-flash-freetz-too-big" title="Link zu dieser Überschrift">¶</a></h3>
 <blockquote>
-<div>Das von Freetz vorgegebene Limit für die maximale Größe der
+<div><p>Das von Freetz vorgegebene Limit für die maximale Größe der
 Konfiguration wurde überschritten. Dieses Limit ist ein Schutz, um
 nicht unbeabsichtigt das TFFS volllaufen zu lassen. Das Limit kann
 folgendermaßen erhöht werden, man sollte aber den Füllstand des TFFS
-im Auge behalten:</div></blockquote>
+im Auge behalten:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modconf</span> <span class="nb">set</span> <span class="n">mod</span> <span class="n">MOD_LIMIT</span><span class="o">=&lt;</span><span class="nb">bytes</span><span class="o">&gt;</span>
+<span class="n">modconf</span> <span class="n">save</span> <span class="n">mod</span>
+<span class="n">modsave</span> <span class="n">flash</span>
+</pre></div>
+</div>
+</div></blockquote>
 <p><img alt="Warning" src="../_images/exclamation1.png" /> Seit <a class="reference external" href="/changeset/5706">r5706</a> (trunk) wird das Setzen des
 Limits nicht mehr unterstützt.</p>
 </div>
@@ -1764,11 +1846,17 @@ Dazu geht man wie folgt vor:</li>
 <div class="line">An freetz-linux anmelden</div>
 <div class="line">Die smb.conf öffnen mit:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">samba</span><span class="o">/</span><span class="n">smb</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Dann zur workgroup runterscrollen und dort den Namen ändern.</div>
 <div class="line">Die smb.conf speichern mit: „strg+x“</div>
 </div>
 <p>Und zum Schluss Samba neu starten:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">samba</span> <span class="n">restart</span>
+</pre></div>
+</div>
 </div></blockquote>
 </div>
 <div class="section" id="wie-finde-ich-die-ip-meiner-virtuellen-maschine">
@@ -1778,6 +1866,26 @@ Dazu geht man wie folgt vor:</li>
 Kasten) oder mit folgendem Befehl : <strong>ifconfig</strong> in der VM angezeigt.</div>
 <div class="line">Nach Eingabe von <strong>ifconfig</strong> sollte folgende Anzeige in der VM zu
 sehen sein.</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>eth0      Link encap:Ethernet  Hardware Adresse 08:00:27:45:53:49
+          inet Adresse:192.168.XXX.203  Bcast:192.168.XXX.255  Maske:255.255.255.0
+          inet6-Adresse: XXXX::XXXX:XXXX:XXXX:XXXX/XX Gültigkeitsbereich:Verbindung
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metrik:1
+          RX packets:454 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:155 errors:0 dropped:0 overruns:0 carrier:0
+          Kollisionen:0 SendewarteschlangenlÃ¤nge:1000
+          RX bytes:59413 (59.4 KB)  TX bytes:24972 (24.9 KB)
+          Interrupt:10 Basisadresse:0xd020
+
+lo        Link encap:Lokale Schleife
+          inet Adresse:127.0.0.1  Maske:255.0.0.0
+          inet6-Adresse: ::1/128 Gültigkeitsbereich:Maschine
+          UP LOOPBACK RUNNING  MTU:16436  Metrik:1
+          RX packets:15 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:15 errors:0 dropped:0 overruns:0 carrier:0
+          Kollisionen:0 SendewarteschlangenlÃ¤nge:0
+          RX bytes:1122 (1.1 KB)  TX bytes:1122 (1.1 KB)
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">Wie auf dem Auszug zu sehen hat die VM die <strong>192.168.XXX.203</strong> als IP

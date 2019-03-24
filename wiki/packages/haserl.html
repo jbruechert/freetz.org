@@ -567,11 +567,47 @@ server, such as mini-httpd, lighty, or the server built into busybox.</em>“</p
 <div class="section" id="using-busybox-httpd-inet">
 <span id="usingbusyboxhttpdinet"></span><h2>Using busybox httpd / inet<a class="headerlink" href="#using-busybox-httpd-inet" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Inetd custom config:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#:httpd-start: test web interface</span>
+<span class="mi">8088</span>    <span class="n">stream</span>  <span class="n">tcp</span> <span class="n">nowait</span>  <span class="n">root</span>    <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uFlash</span><span class="o">/</span><span class="n">httpd</span><span class="o">/</span><span class="n">httpd</span><span class="o">-</span><span class="n">start</span> <span class="n">httpd</span><span class="o">-</span><span class="n">start</span> <span class="o">-</span><span class="n">i</span>
+</pre></div>
+</div>
 <p>httpd-start:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+
+<span class="n">export</span> <span class="n">PATH</span><span class="o">=/</span><span class="n">sbin</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="p">:</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">sbin</span><span class="p">:</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="nb">bin</span><span class="p">:</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="p">:</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span>
+<span class="n">export</span> <span class="n">LD_LIBRARY_PATH</span><span class="o">=/</span><span class="n">mod</span><span class="o">/</span><span class="n">lib</span>
+
+<span class="n">homedir</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uFlash</span><span class="o">/</span><span class="n">httpd</span><span class="o">/</span><span class="n">www</span>
+<span class="n">config</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uFlash</span><span class="o">/</span><span class="n">httpd</span><span class="o">/</span><span class="n">httpd</span><span class="o">.</span><span class="n">conf</span>
+
+<span class="n">cd</span> <span class="s2">&quot;$homedir&quot;</span>
+<span class="n">exec</span> <span class="n">httpd</span> <span class="s2">&quot;$@&quot;</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8088</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;$config&quot;</span> <span class="o">-</span><span class="n">h</span> <span class="s2">&quot;$homedir&quot;</span> <span class="o">-</span><span class="n">r</span> <span class="s2">&quot;Freetz&quot;</span> <span class="mi">2</span><span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+</pre></div>
+</div>
 <p>Allow execution:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">httpd</span><span class="o">-</span><span class="n">start</span>
+</pre></div>
+</div>
 <p>httpd.conf can be an empty file:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">httpd</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
 <p>/var/media/ftp/uFlash/httpd/www/cgi-bin/info.cgi:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/haserl --shell=lua</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">;</span> <span class="n">charset</span><span class="o">=</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Info</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="o">&lt;%</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">(</span><span class="n">ENV</span><span class="p">)</span> <span class="n">do</span> <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s1">&#39;&lt;br /&gt;&#39;</span><span class="p">)</span> <span class="n">end</span> <span class="o">%&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>Allow execution:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">info</span><span class="o">.</span><span class="n">cgi</span>
+</pre></div>
+</div>
 <p>Test:
 <a class="reference external" href="http://fritz.box:8088/cgi-bin/info.cgi">​http://fritz.box:8088/cgi-bin/info.cgi</a></p>
 </div>

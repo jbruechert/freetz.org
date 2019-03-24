@@ -622,6 +622,9 @@ Stelle</a> durch.</p>
 <div class="line">Der Befehl zum Auschecken sieht nun etwas anders aus. Folgender Befehl
 ist jetzt einzugeben:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">checkout</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="o">.</span><span class="n">freetz</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">trunk</span> <span class="n">freetz</span><span class="o">-</span><span class="n">trunk</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line">Sollte dies nicht starten, so kann es sein das die Netzwerkverbindung
@@ -779,6 +782,9 @@ Freigabe angezeigt wird.</div>
 </div>
 </div></blockquote>
 <p><strong>Beispiel:</strong></p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">Videos</span> <span class="n">hdd1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">Videos</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Da wir als Netbiosname <strong>fritz</strong> vergeben hatte, lautet der Zugriff
 von Windows auf die Freigabe</div>
@@ -911,10 +917,23 @@ Samba) FTP-Zugriff erhalten sollen. Weiterhin wird hier ein User
 <div class="line">Hierzu werden nun folgende Befehle in Putty eingegeben (Bitte auf Groß
 und Kleinschreibung achten):</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span> <span class="c1"># adduser -h /var/media/ftp/uStor01/hdd1 paul</span>
+<span class="n">adduser</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">hdd1</span><span class="p">:</span> <span class="n">Operation</span> <span class="ow">not</span> <span class="n">permitted</span>
+<span class="n">Changing</span> <span class="n">password</span> <span class="k">for</span> <span class="n">paul</span>
+<span class="n">New</span> <span class="n">password</span><span class="p">:</span>
+<span class="n">Bad</span> <span class="n">password</span><span class="p">:</span> <span class="n">too</span> <span class="n">short</span>
+<span class="n">Retype</span> <span class="n">password</span><span class="p">:</span>
+<span class="n">Password</span> <span class="k">for</span> <span class="n">paul</span> <span class="n">changed</span> <span class="n">by</span> <span class="n">root</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Die Meldung <code class="docutils literal notranslate"><span class="pre">Operation</span> <span class="pre">not</span> <span class="pre">permitted</span></code> kommt, wenn es sich um ein
 Dateisystem mit FAT oder NTFS handelt.</div>
 <div class="line">Das selbe machen wir nun nochmals für Marry und Gast:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adduser</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">hdd2</span> <span class="n">mary</span>
+<span class="n">adduser</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">hdd1</span> <span class="n">gast</span>
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line">Wenn man das Paßwort ändern will, verwendet man dazu den Befehl
@@ -933,8 +952,19 @@ auf 0 gesetzt ist.</div>
 <div class="line">Wenn alles Richtig gelaufen ist, sollte folgendes in der passwd
 stehen:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="n">root</span><span class="p">:</span><span class="o">/</span><span class="n">mod</span><span class="o">/</span><span class="n">root</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+<span class="n">ftp</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="n">FTP</span> <span class="n">account</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ftp</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+<span class="n">ftpuser</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="n">ftp</span> <span class="n">user</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+<span class="n">paul</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">1000</span><span class="p">:</span><span class="mi">1000</span><span class="p">:</span><span class="n">Linux</span> <span class="n">User</span><span class="p">,,,:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">hdd1</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+<span class="n">mary</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">1001</span><span class="p">:</span><span class="mi">1001</span><span class="p">:</span><span class="n">Linux</span> <span class="n">User</span><span class="p">,,,:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">hdd2</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+<span class="n">gast</span><span class="p">:</span><span class="n">x</span><span class="p">:</span><span class="mi">1002</span><span class="p">:</span><span class="mi">1002</span><span class="p">:</span><span class="n">Linux</span> <span class="n">User</span><span class="p">,,,:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">hdd1</span><span class="p">:</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Nun melden wir uns noch mit folgendem Befehl von der Putty Konsole ab:</div>
+</div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exit</span>
+</pre></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -964,9 +994,15 @@ Gast)</div>
 (<a class="reference external" href="http://en.wikipedia.org/wiki/List_of_FTP_commands">​Liste</a>) für
 Benutzer zu verbieten. Hierzu fügt man folgende Zeile in die Datei ein
 und entfernt die Befehle die der User nicht ausführen darf:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmds_allowed</span><span class="o">=</span><span class="n">ABOR</span><span class="p">,</span><span class="n">ACCT</span><span class="p">,</span><span class="n">ALLO</span><span class="p">,</span><span class="n">APPE</span><span class="p">,</span><span class="n">AUTH</span><span class="p">,</span><span class="n">CDUP</span><span class="p">,</span><span class="n">CWD</span><span class="p">,</span><span class="n">DELE</span><span class="p">,</span><span class="n">EPRT</span><span class="p">,</span><span class="n">EPSV</span><span class="p">,</span><span class="n">FEAT</span><span class="p">,</span><span class="n">HELP</span><span class="p">,</span><span class="n">LIST</span><span class="p">,</span><span class="n">MDTM</span><span class="p">,</span><span class="n">MKD</span><span class="p">,</span><span class="n">MODE</span><span class="p">,</span><span class="n">NLST</span><span class="p">,</span><span class="n">NOOP</span><span class="p">,</span><span class="n">OPTS</span><span class="p">,</span><span class="n">PASS</span><span class="p">,</span><span class="n">PASV</span><span class="p">,</span><span class="n">PBSZ</span><span class="p">,</span><span class="n">PORT</span><span class="p">,</span><span class="n">PROT</span><span class="p">,</span><span class="n">PWD</span><span class="p">,</span><span class="n">QUIT</span><span class="p">,</span><span class="n">REIN</span><span class="p">,</span><span class="n">REST</span><span class="p">,</span><span class="n">RETR</span><span class="p">,</span><span class="n">RMD</span><span class="p">,</span><span class="n">RNFR</span><span class="p">,</span><span class="n">RNTO</span><span class="p">,</span><span class="n">SITE</span><span class="p">,</span><span class="n">SMNT</span><span class="p">,</span><span class="n">STAT</span><span class="p">,</span><span class="n">STOR</span><span class="p">,</span><span class="n">STOU</span><span class="p">,</span><span class="n">STRU</span><span class="p">,</span><span class="n">SYST</span><span class="p">,</span><span class="n">TYPE</span><span class="p">,</span><span class="n">USER</span>
+</pre></div>
+</div>
 <p><strong>Beispiel:</strong> Mary darf Dateien auf den FTP kopieren und Verzeichnisse
 anlegen, jedoch diese nicht wieder löschen. Also muß folgendes in der
 Datei stehen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmds_allowed</span><span class="o">=</span><span class="n">ABOR</span><span class="p">,</span><span class="n">ACCT</span><span class="p">,</span><span class="n">ALLO</span><span class="p">,</span><span class="n">APPE</span><span class="p">,</span><span class="n">AUTH</span><span class="p">,</span><span class="n">CDUP</span><span class="p">,</span><span class="n">CWD</span><span class="p">,</span><span class="n">EPRT</span><span class="p">,</span><span class="n">EPSV</span><span class="p">,</span><span class="n">FEAT</span><span class="p">,</span><span class="n">HELP</span><span class="p">,</span><span class="n">LIST</span><span class="p">,</span><span class="n">MDTM</span><span class="p">,</span><span class="n">MKD</span><span class="p">,</span><span class="n">MODE</span><span class="p">,</span><span class="n">NLST</span><span class="p">,</span><span class="n">NOOP</span><span class="p">,</span><span class="n">OPTS</span><span class="p">,</span><span class="n">PASS</span><span class="p">,</span><span class="n">PASV</span><span class="p">,</span><span class="n">PBSZ</span><span class="p">,</span><span class="n">PORT</span><span class="p">,</span><span class="n">PROT</span><span class="p">,</span><span class="n">PWD</span><span class="p">,</span><span class="n">QUIT</span><span class="p">,</span><span class="n">REIN</span><span class="p">,</span><span class="n">REST</span><span class="p">,</span><span class="n">RETR</span><span class="p">,</span><span class="n">RNFR</span><span class="p">,</span><span class="n">RNTO</span><span class="p">,</span><span class="n">SITE</span><span class="p">,</span><span class="n">SMNT</span><span class="p">,</span><span class="n">STAT</span><span class="p">,</span><span class="n">STOR</span><span class="p">,</span><span class="n">STOU</span><span class="p">,</span><span class="n">STRU</span><span class="p">,</span><span class="n">SYST</span><span class="p">,</span><span class="n">TYPE</span><span class="p">,</span><span class="n">USER</span>
+</pre></div>
+</div>
 <blockquote>
 <div><div class="line-block">
 <div class="line"><strong>DELE</strong> (Delete file), <strong>RMD</strong> (Remove a directory) wurden aus dem

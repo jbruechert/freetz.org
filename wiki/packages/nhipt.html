@@ -646,6 +646,11 @@ in die Firmware zu integrieren !!!</strong></p>
 <blockquote>
 <div><p>Ideal ist ein Build mit Replaced Kernel und eingeschalteter
 Autoload modules Funktion des Kernels:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user</span><span class="nd">@Linux</span><span class="p">:</span> <span class="n">make</span> <span class="n">kernel</span><span class="o">-</span><span class="n">menuconfig</span>
+<span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="n">oadable</span> <span class="n">modules</span> <span class="n">support</span>
+<span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="n">utomatic</span> <span class="n">kernel</span> <span class="n">module</span> <span class="n">loading</span>
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line">Vor dem ersten Start <strong>iptables -S</strong> eingeben, um iptables zu
 laden <em>(bei Built mit replaced kernel und automatic kernel
@@ -670,6 +675,10 @@ freetz.</div></blockquote>
 <li>einen httpd-Dienst auf das übergeordnete Verzeichnis <strong>/ipt</strong> und
 einem freien port (z.B. 83) einrichten.</li>
 </ul>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">ipt</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="nb">bin</span><span class="o">/</span><span class="n">nhipt</span><span class="o">.</span><span class="n">cgi</span>
+<span class="n">httpd</span> <span class="o">-</span><span class="n">P</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">nhipt</span><span class="o">.</span><span class="n">pid</span> <span class="o">-</span><span class="n">p</span> <span class="mi">83</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">ipt</span>
+</pre></div>
+</div>
 <blockquote>
 <div>Aufgerufen wird das Interface mit
 <a class="reference external" href="http://fritz.box:83/cgi-bin/nhipt.cgi">​http://fritz.box:83/cgi-bin/nhipt.cgi</a></div></blockquote>
@@ -685,6 +694,10 @@ Integration.</div></blockquote>
 <li>Datei <strong>register.sh</strong> mit execute rechten versehen</li>
 <li>Das Script <strong>register.sh</strong> ausführen</li>
 </ul>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">ipt</span><span class="o">/</span><span class="n">register</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">.</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">ipt</span><span class="o">/</span><span class="n">register</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
 <blockquote>
 <div>Im Freetz ist nun ein neues Paket zu sehen. Dort kann man den Rest
 konfigurieren und das Interface starten.</div></blockquote>
@@ -813,9 +826,32 @@ optional weiterhin über <em>debug.cfg</em> .</div></blockquote>
 finden, reboot-fest wird sie in BOOTDIR zusammen mit der <em>nhipt.cfg</em>
 abgelegt</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BACK</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">save</span>
+<span class="n">CHANGED</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">DELAY</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">LOGTARGET</span><span class="o">=</span><span class="n">internal</span>
+<span class="n">DSLDOFF</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">ADMINIP</span><span class="o">=</span>
+<span class="n">LOGD</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">log</span>
+<span class="n">AIRBAG</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">MYIP</span><span class="o">=</span>
+<span class="n">BOOTSTRAP</span><span class="o">=</span><span class="n">freetz</span>
+<span class="n">PORT</span><span class="o">=</span><span class="mi">83</span>
+<span class="n">BOOT</span><span class="o">=</span><span class="n">flash</span>
+<span class="n">BOOTDIR</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">flash</span>
+<span class="n">ROOT</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">ipt</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="dateien-im-freetz-paket">
 <span id="dateienimfreetzpaket"></span><h3>Dateien im freetz Paket<a class="headerlink" href="#dateien-im-freetz-paket" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">default</span><span class="o">.</span><span class="n">nhipt</span><span class="o">/</span><span class="n">nhipt</span><span class="o">.</span><span class="n">cfg</span>       <span class="n">rwxrwxrwx</span>    <span class="c1"># config für freetz maske</span>
+<span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rc</span><span class="o">.</span><span class="n">nhipt</span>               <span class="n">r</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="c1"># call-back für freetz maske, boot loader</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">ipt</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>                <span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>    <span class="c1"># frameset für UI</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">ipt</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="nb">bin</span><span class="o">/</span><span class="n">nhipt</span><span class="o">.</span><span class="n">cgi</span>         <span class="n">r</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="c1"># das CGI für iptables</span>
+<span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="nb">bin</span><span class="o">/</span><span class="n">nhipt</span><span class="o">.</span><span class="n">cgi</span>             <span class="n">r</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="c1"># das CGI für freetz Einstellungen</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="gut-gemeinte-ratschlage">

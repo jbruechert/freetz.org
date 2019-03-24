@@ -587,6 +587,9 @@ entpackt werden, in welches man schließlich
 „<a class="reference external" href="http://de.wikipedia.org/wiki/Chroot">​chrooten</a>“ kann.</p>
 <p>Sofern z.B. unter Debian, Ubuntu <em>Debootstrap</em> noch nicht installiert
 ist, kann dies mit</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">debootstrap</span>
+</pre></div>
+</div>
 <p>nachgeholt werden.</p>
 <div class="section" id="debian-in-wenigen-schritten-nutzen">
 <span id="debianinwenigenschrittennutzen"></span><h2>Debian in wenigen Schritten nutzen<a class="headerlink" href="#debian-in-wenigen-schritten-nutzen" title="Link zu dieser Überschrift">¶</a></h2>
@@ -610,19 +613,48 @@ herauszufinden, gibt es 3 Möglichkeiten, entweder per
 (Wurzelverzeichnis (root) muss sichtbar sein) oder per aktiviertem
 Telnet.</p>
 <p><strong>Telnet</strong> (in der Übersicht wird das USB-Gerät aufgelistet)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span>
+</pre></div>
+</div>
 <p><strong>Ausgabe könnte in wie folgt sein</strong> (Variiert nach Modell/Firmware):</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FRITZ</span><span class="o">-</span><span class="n">NAS</span><span class="o">.</span><span class="n">txt</span>         <span class="n">FRITZ</span><span class="o">-</span><span class="n">Song</span><span class="o">.</span><span class="n">mp3</span>        <span class="n">Generic</span><span class="o">-</span><span class="n">FlashDisk</span><span class="o">-</span><span class="mi">01</span>  <span class="n">lost</span><span class="o">+</span><span class="n">found</span>
+<span class="n">FRITZ</span><span class="o">-</span><span class="n">Picture</span><span class="o">.</span><span class="n">jpg</span>     <span class="n">FRITZ</span><span class="o">-</span><span class="n">Video</span><span class="o">.</span><span class="n">mp4</span>       <span class="n">Onlinespeicher</span>
+</pre></div>
+</div>
 <p><strong>Mit Etch ausprobieren</strong> (veraltete Version):</p>
 <p>(FritzBox Modelle bis Version x2xxx)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">debootstrap</span> <span class="o">--</span><span class="n">foreign</span> <span class="o">--</span><span class="n">arch</span><span class="o">=</span><span class="n">mipsel</span> <span class="n">etch</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">debian</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ftp</span><span class="o">.</span><span class="n">de</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">debian</span>
+</pre></div>
+</div>
 <p>(FritzBox Modelle ab Version x3xxx)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">debootstrap</span> <span class="o">--</span><span class="n">foreign</span> <span class="o">--</span><span class="n">arch</span><span class="o">=</span><span class="n">mips</span> <span class="n">etch</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">debian</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ftp</span><span class="o">.</span><span class="n">de</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">debian</span>
+</pre></div>
+</div>
 <p><strong>Mit Wheezy ausprobieren</strong> (aktuelle Version):</p>
 <p>(FritzBox Modelle bis Version x2xxx)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">debootstrap</span> <span class="o">--</span><span class="n">foreign</span> <span class="o">--</span><span class="n">arch</span><span class="o">=</span><span class="n">mipsel</span> <span class="n">wheezy</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">debian</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ftp</span><span class="o">.</span><span class="n">de</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">debian</span>
+</pre></div>
+</div>
 <p>(FritzBox Modelle ab Version x3xxx)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">debootstrap</span> <span class="o">--</span><span class="n">foreign</span> <span class="o">--</span><span class="n">arch</span><span class="o">=</span><span class="n">mips</span> <span class="n">wheezy</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">debian</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ftp</span><span class="o">.</span><span class="n">de</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">debian</span>
+</pre></div>
+</div>
 <p>anschließend</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chroot</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">debian</span> <span class="o">/</span><span class="n">debootstrap</span><span class="o">/</span><span class="n">debootstrap</span> <span class="o">--</span><span class="n">second</span><span class="o">-</span><span class="n">stage</span>
+</pre></div>
+</div>
 <p>Sollte man Debootstrap an einem anderen PC durchgeführt haben, steckt
 man den betreffenden USB-Stick nun in die FritzBox. Um das Debian jetzt
 noch nutzen zu können, muss das /proc/ Verzeichnis für das Debian
 bereitgestellt werden und wie bereits erwähnt „gechrootet“ werden:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">proc</span> <span class="n">proc</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">debian</span><span class="o">/</span><span class="n">proc</span>
+<span class="n">chroot</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">debian</span> <span class="n">bash</span>
+</pre></div>
+</div>
 <p>Wenn alles gut geht sollte folgender Prompt da sein</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@fritz</span>
+</pre></div>
+</div>
 <p>Ab jetzt kann man sich wie gewohnt nach einem apt-get update mit apt-get
 install zusätzliche Pakete installieren.</p>
 </div>
@@ -670,6 +702,9 @@ Pakete installieren kann.</p>
 <div class="section" id="comment-by-mandy28-on-di-01-mar-2011-22-30-28-cet">
 <span id="commentbymandy28ondi01mar201122-30-28cet"></span><h3>Comment by mandy28 on Di 01 Mär 2011 22:30:28 CET<a class="headerlink" href="#comment-by-mandy28-on-di-01-mar-2011-22-30-28-cet" title="Link zu dieser Überschrift">¶</a></h3>
 <p>sollte so aussehen</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deb</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ftp</span><span class="o">.</span><span class="n">de</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">debian</span> <span class="n">stable</span> <span class="n">main</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="comment-by-oliver-on-di-01-mar-2011-22-43-32-cet">
 <span id="commentbyoliverondi01mar201122-43-32cet"></span><h3>Comment by oliver on Di 01 Mär 2011 22:43:32 CET<a class="headerlink" href="#comment-by-oliver-on-di-01-mar-2011-22-43-32-cet" title="Link zu dieser Überschrift">¶</a></h3>
@@ -688,6 +723,10 @@ irrtümlich als stable aufgeführt.</p>
 <span id="commentbymandy28onmi02mar201108-15-05cet"></span><h3>Comment by mandy28 on Mi 02 Mär 2011 08:15:05 CET<a class="headerlink" href="#comment-by-mandy28-on-mi-02-mar-2011-08-15-05-cet" title="Link zu dieser Überschrift">¶</a></h3>
 <p>mit den entsprechenden scrips in debootstrap ja , dann aber über anderen
 Mirror z.B.:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">debootstrap</span> <span class="o">--</span><span class="n">foreign</span> <span class="o">--</span><span class="n">arch</span><span class="o">=</span><span class="n">mipsel</span> <span class="n">squeeze</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">squeeze</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ftp</span><span class="o">.</span><span class="n">de</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">debian</span>
+<span class="n">chroot</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">uStor01</span><span class="o">/</span><span class="n">squeeze</span> <span class="o">/</span><span class="n">debootstrap</span><span class="o">/</span><span class="n">debootstrap</span> <span class="o">--</span><span class="n">second</span><span class="o">-</span><span class="n">stage</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="comment-by-kriegaex-on-mo-12-dez-2011-23-05-51-cet">
 <span id="commentbykriegaexonmo12dez201123-05-51cet"></span><h3>Comment by kriegaex on Mo 12 Dez 2011 23:05:51 CET<a class="headerlink" href="#comment-by-kriegaex-on-mo-12-dez-2011-23-05-51-cet" title="Link zu dieser Überschrift">¶</a></h3>

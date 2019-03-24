@@ -858,6 +858,13 @@ ohne JFFS2</td>
 wenn <code class="docutils literal notranslate"><span class="pre">/sbin/makedevs</span></code> sie beim Hochfahren anlegen würde. In
 <code class="docutils literal notranslate"><span class="pre">/etc/device.table</span></code> müßte dazu Folgendes geändert werden, um die
 Devices bis <code class="docutils literal notranslate"><span class="pre">mtd15</span></code> zu erhalten:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aktuelle Einstellung bei AVM und in Freetz</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mtd</span>        <span class="n">c</span>       <span class="mi">640</span>     <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">90</span>      <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">1</span>       <span class="mi">11</span>
+
+<span class="c1"># Geänderte Einstellung (siehe letzte Spalte)</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mtd</span>        <span class="n">c</span>       <span class="mi">640</span>     <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">90</span>      <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">1</span>       <span class="mi">16</span>
+</pre></div>
+</div>
 <blockquote>
 <div><em>Zitat</em><a class="reference external" href="http://www.ip-phone-forum.de/member.php?u=58639">​Oliver
 (olistudent)</a><em>:
@@ -941,15 +948,51 @@ major minor  #blocks  name
 <p>Hier sieht man sehr schön die Größen der einzelnen Partitionen samt
 Device Major/Minor (wer’s braucht) und passenden Block-Device-Namen.</p>
 <p>Auf einer 7270 sieht das etwas anders aus:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /proc/partitions
+
+major minor  #blocks  name
+
+  31     0       6732 mtdblock0
+  31     1        883 mtdblock1
+  31     2         64 mtdblock2
+  31     3        256 mtdblock3
+  31     4        256 mtdblock4
+  31     5       8192 mtdblock5
+</pre></div>
+</div>
 <p>Hier scheint mtdblock2 wirklich der Bootloader zu sein.</p>
 </div>
 <div class="section" id="proc-mtd">
 <h3>/proc/mtd<a class="headerlink" href="#proc-mtd" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /proc/mtd
+
+dev:    size   erasesize  name
+mtd0: 00800000 00010000 &quot;phys_mapped_flash&quot;
+mtd1: 006cdb00 00010000 &quot;filesystem&quot;
+mtd2: 00770000 00010000 &quot;kernel&quot;
+mtd3: 00010000 00010000 &quot;bootloader&quot;
+mtd4: 00040000 00010000 &quot;tffs (1)&quot;
+mtd5: 00040000 00010000 &quot;tffs (2)&quot;
+mtd6: 00190000 00010000 &quot;jffs2&quot;
+mtd7: 005e0000 00010000 &quot;Kernel without jffs2&quot;
+</pre></div>
+</div>
 <p>In dieser alternativen Darstellung mit in Hexadezimal-Schreibweise
 angegebener Partitionsgröße sieht man noch als Kommentar eine
 Beschreibung, die Auskunft darüber gibt, wofür die einzelnen Partitionen
 tatsächlich vorgesehen sind. Sehr einfach, sehr praktisch.</p>
 <p>Und auch hier wieder die 7270:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /proc/mtd
+
+dev:    size   erasesize  name
+mtd0: 00693200 00010000 &quot;rootfs&quot;
+mtd1: 000dce00 00010000 &quot;kernel&quot;
+mtd2: 00010000 00010000 &quot;urlader&quot;
+mtd3: 00040000 00010000 &quot;tffs (1)&quot;
+mtd4: 00040000 00010000 &quot;tffs (2)&quot;
+mtd5: 00800000 00010000 &quot;reserved&quot;
+</pre></div>
+</div>
 <div class="section" id="backup-von-urlader-kernel-und-dateisystem">
 <span id="backupvonurladerkernelunddateisystem"></span><h4>Backup von Urlader, Kernel und Dateisystem<a class="headerlink" href="#backup-von-urlader-kernel-und-dateisystem" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Wie man bei einer Kernel-2.6-Firmware konkret und effizient
@@ -969,7 +1012,13 @@ Programm „dd“ mit den Funktionen „if“ und „of“ (beides ist auszuwäh
 im Menuconfig; getestet mit Freetz 1.2) integriert, läßt sich auf
 einfache Weise eine vollständige Sicherheitskopie ziehen und
 zurückspielen:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ dd if=/dev/mtdblock5 of=/var/media/ftp/uStor00/mtd5.bak
+</pre></div>
+</div>
 <p>Wiederherstellen geht dann umgekehrt:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ dd of=/dev/mtdblock5 if=/var/media/ftp/uStor00/mtd5.bak
+</pre></div>
+</div>
 <p>Das Programm „cat“ ist zum Sichern ebenso geeignet, hier muß dann die
 Ausgabe in die Zieldatei umgeleitet werden. Der erste eingesteckte
 USB-Speicher ist für gewöhnlich als „/var/media/ftp/uStor00“ eingehängt,

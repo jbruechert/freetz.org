@@ -35,7 +35,7 @@ Um Wake on LAN zu nutzen, muss wenigstens die Mac-Adresse und der
 Hostname eingegeben werden, am Besten einfach gleich noch die IP-Adresse
 und das Interface (meist eth0). Beispiele:
 
-.. code:: wiki
+.. code:: bash
 
    #<ip>           <mac>              <interface> <host>  [<description>]  (*... nicht definiert)
    *              0A:B1:2C:D3:4E:F5  *           server

@@ -50,7 +50,7 @@ Auf der Box:
    Freetz:modules das bzw. die Kernel-Modul(e) untereinander eintragen
    (aber ohne "modprobe" o.ä.!)
 
-.. code:: wiki
+.. code:: bash
 
    pl2303
    ftdi_sio
@@ -65,7 +65,7 @@ Backup
 Sinnvoll ist die Anpassung der Pfade, falls man regelmäßige Backups der
 Messdaten machen möchte, z.B.:
 
-.. code:: wiki
+.. code:: bash
 
    Backup Verzeichnis: /var/media/ftp/uStor01/rrdstats/backup
 
@@ -77,7 +77,7 @@ z.B. alle 20-30 Minuten, sind die Lücken in den Graphen bei entsprechend
 kurzen Box-Ausfallzeiten auch nicht zu groß. Im Freetz-WebGUI gibt man
 dazu unter "Einstellungen / Freetz: crontab" z.B. folgendes ein:
 
-.. code:: wiki
+.. code:: bash
 
    00 * * * * /etc/init.d/rc.rrdstats backup
    20 * * * * /etc/init.d/rc.rrdstats backup
@@ -148,14 +148,14 @@ Loggen der Kanäle
      erweitern:
    | 1) Am Anfang der dump.xml vor den Zeilen
 
-   .. code:: wiki
+   .. code:: bash
 
       <ds>
       <name> up </name>
 
    dies hinzufügen
 
-   .. code:: wiki
+   .. code:: bash
 
       <name> txfq2 </name>
       <type> GAUGE </type>
@@ -184,7 +184,7 @@ Loggen der Kanäle
 
    2) 12 Zeilen vor allen ``</cdp_prep>`` Zeilen dies hinzufügen
 
-   .. code:: wiki
+   .. code:: bash
 
       <ds>
       <primary_value> 0.0000000000e+00 </primary_value>

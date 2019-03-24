@@ -743,10 +743,96 @@ ssh or telnet.</li>
 <div class="line">Here an example script to load the necessary modules for the rules
 described in this wiki:</div>
 </div>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># the most common modules needed:</span>
+<span class="n">modprobe</span> <span class="n">ip_tables</span>
+<span class="n">modprobe</span> <span class="n">iptable_filter</span>
+<span class="n">modprobe</span> <span class="n">x_tables</span>
+<span class="n">modprobe</span> <span class="n">xt_tcpudp</span>
+
+<span class="c1"># Alternative LOG und REJECT targets:</span>
+<span class="n">modprobe</span> <span class="n">ipt_LOG</span>
+<span class="n">modprobe</span> <span class="n">ipt_REJECT</span>
+
+<span class="c1"># if one wants to use ip ranges in the rules:</span>
+<span class="n">modprobe</span> <span class="n">ipt_iprange</span>
+
+<span class="c1"># same for port ranges:</span>
+<span class="n">modprobe</span> <span class="n">xt_multiport</span>
+
+<span class="c1"># for stateful firewall rules (conntrack):</span>
+<span class="n">modprobe</span> <span class="n">xt_state</span>
+<span class="n">modprobe</span> <span class="n">xt_conntrack</span>
+<span class="n">modprobe</span> <span class="n">ip_conntrack</span>
+<span class="n">modprobe</span> <span class="n">ip_conntrack_ftp</span>
+<span class="n">modprobe</span> <span class="n">ip_conntrack_tftp</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>After registering / loading the modules we can start defining rules
 (here some rules for a strong basic protection):</li>
 </ul>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># # # FIREWALL RULES</span>
+
+<span class="n">iptables</span> <span class="o">-</span><span class="n">N</span> <span class="n">TRANS</span>
+<span class="c1"># Outbound for surfing the Internet:</span>
+<span class="c1"># 20 FTP data, 21 FTP, 22 SSH, 25 SMTP, 80 HTTP, 110 POP3, 443 HTTPS, 465 SSMTP, 995 POP3S, 5060 VoIP</span>
+<span class="c1"># 53 DNS, 67/68 DHCP, 80 HTTP, 123 NTP, 5060 VoIP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">TRANS</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span>  <span class="o">-</span><span class="n">s</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">m</span> <span class="n">multiport</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">20</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">443</span><span class="p">,</span><span class="mi">465</span><span class="p">,</span><span class="mi">995</span><span class="p">,</span><span class="mi">5060</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">TRANS</span> <span class="o">-</span><span class="n">p</span> <span class="n">udp</span>  <span class="o">-</span><span class="n">s</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">m</span> <span class="n">multiport</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">53</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="mi">5060</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">TRANS</span> <span class="o">-</span><span class="n">p</span> <span class="n">icmp</span> <span class="o">-</span><span class="n">s</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+
+<span class="c1"># conntrack rules for returning data packages:</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">TRANS</span> <span class="o">-</span><span class="n">m</span> <span class="n">state</span> <span class="o">--</span><span class="n">state</span> <span class="n">RELATED</span><span class="p">,</span><span class="n">ESTABLISHED</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+
+<span class="c1"># ... Some rules for known hosts</span>
+<span class="c1"># ...</span>
+
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">TRANS</span> <span class="o">-</span><span class="n">j</span> <span class="n">LOG</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">prefix</span> <span class="s2">&quot;[IPT] DENY-LAN-ACCESS &quot;</span>          <span class="c1"># log all dropped packets</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">TRANS</span> <span class="o">-</span><span class="n">j</span> <span class="n">DROP</span>                                               <span class="c1"># PARANOIA LINK</span>
+
+<span class="c1"># # # Rules for Fritz Device</span>
+
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">udp</span> <span class="o">-</span><span class="n">s</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span> <span class="o">-</span><span class="n">d</span> <span class="mf">255.255</span><span class="o">.</span><span class="mf">255.255</span> <span class="o">--</span><span class="n">sport</span> <span class="mi">68</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">67</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span> <span class="c1">#DHCP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">s</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span> <span class="o">-</span><span class="n">d</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>                 <span class="c1"># LOCALHOST</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">s</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>                         <span class="c1"># LAN</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">s</span> <span class="mf">169.254</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">16</span> <span class="o">-</span><span class="n">i</span> <span class="n">lan</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>                  <span class="c1"># EMERGENCY LAN</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">m</span> <span class="n">state</span> <span class="o">--</span><span class="n">state</span> <span class="n">RELATED</span><span class="p">,</span><span class="n">ESTABLISHED</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">5060</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>                       <span class="c1"># VoIP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">udp</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">5060</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>                       <span class="c1"># VoIP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">j</span> <span class="n">LOG</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">prefix</span> <span class="s2">&quot;[IPT] DENY-FRITZ-ACCESS &quot;</span>      <span class="c1"># Log other traffic</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">j</span> <span class="n">DROP</span>                                             <span class="c1"># PARANOIA IN</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">P</span> <span class="n">INPUT</span> <span class="n">DROP</span>                                                <span class="c1"># Default policy DROP</span>
+
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">d</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>                        <span class="c1"># Allow LAN</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">d</span> <span class="mf">224.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>                          <span class="c1"># UPnP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">d</span> <span class="mf">239.255</span><span class="o">.</span><span class="mf">255.250</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">d</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>                             <span class="c1"># Local Host</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">udp</span> <span class="o">-</span><span class="n">m</span> <span class="n">multiport</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">53</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="mi">5060</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>  <span class="c1"># DNS, TIME, VoIP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">5060</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>                      <span class="c1"># VoIP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">80</span> <span class="o">-</span><span class="n">d</span> <span class="mf">63.208</span><span class="o">.</span><span class="mf">196.0</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>     <span class="c1"># DynDNS</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">d</span> <span class="n">myMailServer</span><span class="o">.</span><span class="n">com</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>                      <span class="c1"># e-Mail OUT</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">m</span> <span class="n">state</span> <span class="o">--</span><span class="n">state</span> <span class="n">RELATED</span><span class="p">,</span><span class="n">ESTABLISHED</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>     <span class="c1"># stateful conntrack</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">d</span> <span class="mf">212.42</span><span class="o">.</span><span class="mf">244.73</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">80</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>       <span class="c1"># Plugins Server AVM</span>
+
+<span class="c1"># iptables -A OUTPUT -d www.dasoertliche.de    -p tcp --dport 80 -j ACCEPT # Phone book reverse look-up targets</span>
+<span class="c1"># iptables -A OUTPUT -d www.dastelefonbuch.de  -p tcp --dport 80 -j ACCEPT</span>
+<span class="c1"># iptables -A OUTPUT -d www.goyellow.de        -p tcp --dport 80 -j ACCEPT</span>
+<span class="c1"># iptables -A OUTPUT -d www.11880.com          -p tcp --dport 80 -j ACCEPT</span>
+<span class="c1"># iptables -A OUTPUT -d www.google.de          -p tcp --dport 80 -j ACCEPT</span>
+<span class="c1"># iptables -A OUTPUT -d www.das-telefonbuch.at -p tcp --dport 80 -j ACCEPT</span>
+<span class="c1"># iptables -A OUTPUT -d www.search.ch          -p tcp --dport 80 -j ACCEPT</span>
+<span class="c1"># iptables -A OUTPUT -d www.anywho.com         -p tcp --dport 80 -j ACCEPT</span>
+
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">j</span> <span class="n">LOG</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">prefix</span> <span class="s2">&quot;[IPT] WARNING-CALL-HOME &quot;</span>      <span class="c1"># Log forbidden outbound traffic</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">P</span> <span class="n">OUTPUT</span> <span class="n">DROP</span>                                                <span class="c1"># and DROP it.</span>
+
+<span class="c1"># # # Rules for FORWARD</span>
+
+<span class="n">iptables</span> <span class="o">-</span><span class="n">P</span> <span class="n">FORWARD</span> <span class="n">DROP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">FORWARD</span> <span class="o">-</span><span class="n">j</span> <span class="n">TRANS</span>                                           <span class="c1"># LAN - WAN traffic rules</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">FORWARD</span> <span class="o">-</span><span class="n">j</span> <span class="n">LOG</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">prefix</span> <span class="s2">&quot;[IPT] DENY-FWD-ACCESS &quot;</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>compared to the AVM firewall, iptables rules apply immediately,
 without the need of a restart.</li>
@@ -817,6 +903,12 @@ in your preferred language.</li>
 <span id="isolateguestnetworkfromlan"></span><h3>Isolate guest network from LAN<a class="headerlink" href="#isolate-guest-network-from-lan" title="Link zu dieser Überschrift">¶</a></h3>
 <p>These rules will prevent access to the local area network, including the
 box itself from the guest network:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">d</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.0</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">i</span> <span class="n">guest</span> <span class="o">-</span><span class="n">j</span> <span class="n">DROP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">FORWARD</span> <span class="o">-</span><span class="n">i</span> <span class="n">guest</span> <span class="o">-</span><span class="n">o</span> <span class="n">dsl</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">FORWARD</span> <span class="o">-</span><span class="n">i</span> <span class="n">guest</span> <span class="o">-</span><span class="n">j</span> <span class="n">DROP</span>
+<span class="n">iptables</span> <span class="o">-</span><span class="n">A</span> <span class="n">OUTPUT</span> <span class="o">-</span><span class="n">s</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">178.0</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">o</span> <span class="n">guest</span> <span class="o">-</span><span class="n">j</span> <span class="n">DROP</span>
+</pre></div>
+</div>
 <p>The guest network can only use the internet. Assuming the default subnet
 (192.168.178.0/24).</p>
 </div>
