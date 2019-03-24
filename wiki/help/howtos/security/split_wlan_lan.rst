@@ -1,5 +1,3 @@
-help/howtos/security/split_wlan_lan
-===================================
 .. _WLANvonLANtrennenmitiptables:
 
 WLAN von LAN trennen mit iptables

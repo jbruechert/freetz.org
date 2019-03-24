@@ -1,5 +1,3 @@
-packages/rudi-shell/install
-===========================
 *Die Rudi-Shell ist fester Bestandteil von allen Freetz-Versionen. Diese
 Anleitung bezieht sich auf den Vorgänger DS-Mod.*
 

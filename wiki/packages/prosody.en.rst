@@ -1,5 +1,3 @@
-packages/prosody.en
-===================
 .. _ProsodyIM:
 
 Prosody IM

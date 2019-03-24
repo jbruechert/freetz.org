@@ -1,5 +1,3 @@
-packages/callmonitor/actions/relook
-===================================
 .. _DGStationRelook400S:
 
 DGStation Relook 400S

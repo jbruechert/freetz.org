@@ -1,5 +1,3 @@
-packages/onlinechanged_cgi
-==========================
 .. _Onlinechanged-CGI:
 
 Onlinechanged-CGI

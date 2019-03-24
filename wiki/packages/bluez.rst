@@ -1,5 +1,3 @@
-packages/bluez
-==============
 .. _BlueZ4.x:
 
 BlueZ 4.x

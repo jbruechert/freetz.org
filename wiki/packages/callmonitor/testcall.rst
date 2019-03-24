@@ -1,5 +1,3 @@
-packages/callmonitor/testcall
-=============================
 .. _Testanruf:
 
 Testanruf

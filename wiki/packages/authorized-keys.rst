@@ -1,5 +1,3 @@
-packages/authorized-keys
-========================
 authorized_keys
 ===============
 

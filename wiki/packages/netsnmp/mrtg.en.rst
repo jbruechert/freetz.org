@@ -1,5 +1,3 @@
-packages/netsnmp/mrtg.en
-========================
 .. _MRTG:
 
 MRTG

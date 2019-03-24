@@ -1,5 +1,3 @@
-packages/minidlna
-=================
 .. _MiniDLNA:
 
 MiniDLNA

@@ -1,5 +1,3 @@
-packages/callmonitor/maintenance
-================================
 .. _Wartung:
 
 Wartung

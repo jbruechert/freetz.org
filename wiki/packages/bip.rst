@@ -1,5 +1,3 @@
-packages/bip
-============
 .. _BIP:
 
 BIP

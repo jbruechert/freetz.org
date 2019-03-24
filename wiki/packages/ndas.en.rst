@@ -1,5 +1,3 @@
-packages/ndas.en
-================
 .. _NDAS:
 
 NDAS

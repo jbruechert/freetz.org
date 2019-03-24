@@ -1,5 +1,3 @@
-help/trouble_shooting
-=====================
 .. _Troubleshooting:
 
 Troubleshooting

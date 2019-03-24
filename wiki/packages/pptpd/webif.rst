@@ -1,5 +1,3 @@
-packages/pptpd/webif
-====================
 .. _DasWeb-FrontendzumPaket:
 
 Das Web-Frontend zum Paket

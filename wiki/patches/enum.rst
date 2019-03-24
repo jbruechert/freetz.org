@@ -1,5 +1,3 @@
-patches/enum
-============
 `Englische Beschreibung <enum.en.html>`__
 
 Dieser Patch macht in AVM-WebIf eine Konfigurationsmöglichkeit sichtbar,

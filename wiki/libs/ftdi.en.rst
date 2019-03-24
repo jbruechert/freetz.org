@@ -1,5 +1,3 @@
-libs/ftdi.en
-============
 libftdi
 =======
 

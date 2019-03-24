@@ -1,5 +1,3 @@
-packages/inetd
-==============
 inetd
 =====
 

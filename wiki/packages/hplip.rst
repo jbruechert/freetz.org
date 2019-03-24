@@ -1,5 +1,3 @@
-packages/hplip
-==============
 .. _HPLIP:
 
 HPLIP

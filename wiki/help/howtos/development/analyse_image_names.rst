@@ -1,5 +1,3 @@
-help/howtos/development/analyse_image_names
-===========================================
 .. _Firmware-Image-Namenanalysierenundinterpretieren:
 
 Firmware-Image-Namen analysieren und interpretieren

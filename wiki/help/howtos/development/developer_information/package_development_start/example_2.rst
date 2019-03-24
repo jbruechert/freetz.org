@@ -1,5 +1,3 @@
-help/howtos/development/developer_information/package_development_start/example_2
-=================================================================================
 .. _Example2:par2cmdline:
 
 Example 2: par2cmdline

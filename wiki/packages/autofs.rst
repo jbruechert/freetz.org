@@ -1,5 +1,3 @@
-packages/autofs
-===============
 autofs
 ======
 

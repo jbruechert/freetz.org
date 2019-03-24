@@ -1,5 +1,3 @@
-help/howtos/development/install_addon
-=====================================
 .. _AddonPaketinstallieren:
 
 Addon Paket installieren

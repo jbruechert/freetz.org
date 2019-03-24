@@ -1,5 +1,3 @@
-packages/callmonitor/actions/soundbridge
-========================================
 .. _RokuSoundBridge:
 
 Roku SoundBridge

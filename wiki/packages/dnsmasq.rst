@@ -1,5 +1,3 @@
-packages/dnsmasq
-================
 dnsmasq
 =======
 

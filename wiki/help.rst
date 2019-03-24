@@ -1,5 +1,3 @@
-help
-====
 .. _Hilfe:
 
 Hilfe

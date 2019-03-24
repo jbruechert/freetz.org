@@ -1,5 +1,3 @@
-packages/rudi-shell/functions
-=============================
 .. _Funktionsweise:
 
 Funktionsweise

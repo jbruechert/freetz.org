@@ -1,5 +1,3 @@
-packages/pptpd/install
-======================
 .. _Installation:
 
 Installation

@@ -1,5 +1,3 @@
-packages/radvd.en
-=================
 .. _RADVD:
 
 RADVD

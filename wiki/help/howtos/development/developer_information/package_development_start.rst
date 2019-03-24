@@ -1,5 +1,3 @@
-help/howtos/development/developer_information/package_development_start
-=======================================================================
 .. _Firststeps-Howtostartyourfirstfreetzpackage:
 
 First steps - How to start your first freetz package

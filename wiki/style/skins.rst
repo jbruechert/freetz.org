@@ -1,5 +1,3 @@
-style/skins
-===========
 .. _Skins:
 
 Skins

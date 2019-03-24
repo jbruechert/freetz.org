@@ -1,5 +1,3 @@
-help/howtos/security
-====================
 .. _Security:
 
 Security

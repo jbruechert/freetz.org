@@ -1,5 +1,3 @@
-packages/callmonitor/phonebook
-==============================
 .. _TelefonbuchCallers:
 
 Telefonbuch (Callers)

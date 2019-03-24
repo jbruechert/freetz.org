@@ -1,5 +1,3 @@
-packages/virtualip
-==================
 .. _VirtualIP:
 
 Virtual IP

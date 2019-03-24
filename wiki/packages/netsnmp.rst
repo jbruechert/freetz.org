@@ -1,5 +1,3 @@
-packages/netsnmp
-================
 .. _Net-SNMP:
 
 Net-SNMP

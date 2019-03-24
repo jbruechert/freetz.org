@@ -1,5 +1,3 @@
-packages/callmonitor/actions/rawmsg
-===================================
 .. _EinfacheTCP-Verbindungenrawmsg:
 
 Einfache TCP-Verbindungen (rawmsg)

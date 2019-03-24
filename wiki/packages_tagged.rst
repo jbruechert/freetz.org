@@ -1,5 +1,3 @@
-packages_tagged
-===============
 .. _PaketenachAnwendungsgebieten:
 
 Pakete nach Anwendungsgebieten

@@ -1,5 +1,3 @@
-packages/callmonitor/adapt_messages
-===================================
 .. _AnpassenderBenachrichtigungstexte:
 
 Anpassen der Benachrichtigungstexte

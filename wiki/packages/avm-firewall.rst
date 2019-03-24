@@ -1,5 +1,3 @@
-packages/avm-firewall
-=====================
 .. _AVM-firewall-cgi:
 
 AVM-firewall-cgi

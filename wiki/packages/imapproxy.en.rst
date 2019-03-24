@@ -1,5 +1,3 @@
-packages/imapproxy.en
-=====================
 .. _ImapProxy:
 
 ImapProxy

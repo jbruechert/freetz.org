@@ -1,5 +1,3 @@
-help/howtos/development/compile_own_progs
-=========================================
 .. _EigeneProgrammekompilieren:
 
 Eigene Programme kompilieren

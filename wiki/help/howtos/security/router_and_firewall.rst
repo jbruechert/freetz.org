@@ -1,5 +1,3 @@
-help/howtos/security/router_and_firewall
-========================================
 .. _FreetzalsinternerRoutermitFirewall:
 
 Freetz als interner Router mit Firewall

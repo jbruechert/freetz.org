@@ -1,5 +1,3 @@
-packages/callmonitor/actions/xbox
-=================================
 .. _XBox:
 
 XBox

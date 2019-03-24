@@ -1,5 +1,3 @@
-packages/haserl
-===============
 .. _Haserl:
 
 Haserl

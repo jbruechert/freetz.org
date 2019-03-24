@@ -1,5 +1,3 @@
-costumscript_dublesyslog
-========================
 Ausgeführt auf einer Fritzbox 7330 mit Firmware: 107.06.03 rev27364
 Branding: avm Freetz: devel-12445 - FRITZ!OS 06.03-freetz-devel-12445
 Zum Zeitpunkt der Installation gabs noch kein stable für diese Box mit

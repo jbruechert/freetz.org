@@ -1,5 +1,3 @@
-packages/callmonitor/actions/snarl
-==================================
 `​Snarl <http://www.fullphat.net/index.php>`__ ist ähnlich wie Growl,
 welches einigen vielleicht bekannt ist, ist ein
 Benachrichtigungs-Programm ("notification"), welches im Hintergrund

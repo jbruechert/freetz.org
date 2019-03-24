@@ -1,5 +1,3 @@
-Impressum
-=========
 .. _Impressum:
 
 `Impressum <Impressum.html>`__

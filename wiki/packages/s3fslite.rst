@@ -1,5 +1,3 @@
-packages/s3fslite
-=================
 s3fslite
 ========
 

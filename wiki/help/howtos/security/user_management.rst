@@ -1,5 +1,3 @@
-help/howtos/security/user_management
-====================================
 .. _Benutzerverwaltung:
 
 Benutzerverwaltung

@@ -1,5 +1,3 @@
-packages/smartmontools
-======================
 .. _Smartmontoolssmartctl:
 
 Smartmontools (smartctl)

@@ -1,5 +1,3 @@
-packages/trickle
-================
 trickle
 =======
 

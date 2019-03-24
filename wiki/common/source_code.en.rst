@@ -1,5 +1,3 @@
-common/source_code.en
-=====================
 .. _Sourcecode:
 
 Source code

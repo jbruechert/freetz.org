@@ -1,5 +1,3 @@
-packages/pciutils
-=================
 pciutils
 ========
 

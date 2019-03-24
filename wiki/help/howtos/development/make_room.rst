@@ -1,5 +1,3 @@
-help/howtos/development/make_room
-=================================
 .. _PlatzsparenimDateisystemderFritzBox:
 
 Platz sparen im Dateisystem der FritzBox

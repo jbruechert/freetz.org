@@ -1,5 +1,3 @@
-packages/openntpd
-=================
 .. _OpenNTPD:
 
 OpenNTPD

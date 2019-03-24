@@ -1,5 +1,3 @@
-help/howtos/development/menuconfig
-==================================
 .. _Menükonfigurationpflegen:
 
 Menükonfiguration pflegen

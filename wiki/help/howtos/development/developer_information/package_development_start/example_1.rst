@@ -1,5 +1,3 @@
-help/howtos/development/developer_information/package_development_start/example_1
-=================================================================================
 .. _Example1:Httptunnel:
 
 Example 1: Httptunnel

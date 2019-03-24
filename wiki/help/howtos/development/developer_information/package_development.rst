@@ -1,5 +1,3 @@
-help/howtos/development/developer_information/package_development
-=================================================================
 .. _PackageDevelopment:
 
 Package Development

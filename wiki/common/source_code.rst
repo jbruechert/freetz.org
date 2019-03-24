@@ -1,5 +1,3 @@
-common/source_code
-==================
 .. _Quellcode:
 
 Quellcode

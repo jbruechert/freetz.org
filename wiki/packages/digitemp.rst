@@ -1,5 +1,3 @@
-packages/digitemp
-=================
 .. _Wasistdigitemp:
 
 **Was ist digitemp?**

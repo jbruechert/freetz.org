@@ -1,5 +1,3 @@
-packages/spindown
-=================
 .. _Spindown:
 
 Spindown

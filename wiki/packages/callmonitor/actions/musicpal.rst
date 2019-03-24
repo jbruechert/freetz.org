@@ -1,5 +1,3 @@
-packages/callmonitor/actions/musicpal
-=====================================
 .. _FreecomMusicPal:
 
 Freecom MusicPal

@@ -1,5 +1,3 @@
-packages/iptables-cgi
-=====================
 iptables-cgi
 ============
 

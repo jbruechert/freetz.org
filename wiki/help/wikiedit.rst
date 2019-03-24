@@ -1,5 +1,3 @@
-help/wikiedit
-=============
 .. _WikiBearbeitung-TippsundTricks:
 
 Wiki Bearbeitung - Tipps und Tricks

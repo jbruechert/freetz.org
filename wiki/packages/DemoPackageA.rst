@@ -1,5 +1,3 @@
-packages/DemoPackageA
-=====================
 .. _DemoPackageAHelloWorld:
 
 DemoPackageA "Hello World"

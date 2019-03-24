@@ -1,5 +1,3 @@
-packages/xmail
-==============
 .. _Links:
 
 Links

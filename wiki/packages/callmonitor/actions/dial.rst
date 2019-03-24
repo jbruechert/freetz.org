@@ -1,5 +1,3 @@
-packages/callmonitor/actions/dial
-=================================
 .. _Wählhilfe:
 
 Wählhilfe

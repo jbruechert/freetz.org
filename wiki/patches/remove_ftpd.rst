@@ -1,5 +1,3 @@
-patches/remove_ftpd
-===================
 .. _RemoveFTPdeamonftpd:
 
 Remove FTP deamon (ftpd)

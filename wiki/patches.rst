@@ -1,5 +1,3 @@
-patches
-=======
 .. _FreetzPatches:
 
 Freetz Patches

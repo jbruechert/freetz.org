@@ -1,5 +1,3 @@
-help/howtos/development/package_creation
-========================================
 **Diese Beschreibung ist höchstwahrscheinlich nicht das Gesuchte,
 Verwendung auf eigene Gefahr!
 **\ `Hier gibt es eine Beschreibung zur Erstellung eines Pakets für ein

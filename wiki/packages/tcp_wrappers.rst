@@ -1,5 +1,3 @@
-packages/tcp_wrappers
-=====================
 .. _TCPWrapper:
 
 TCP Wrapper

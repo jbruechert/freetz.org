@@ -1,5 +1,3 @@
-help/wikiedit/toc
-=================
 .. _Inhaltsverzeichniserstellenlassen:
 
 Inhaltsverzeichnis erstellen (lassen)

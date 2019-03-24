@@ -1,5 +1,3 @@
-packages/stunnel
-================
 .. _Stunnel:
 
 Stunnel

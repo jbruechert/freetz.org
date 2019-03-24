@@ -1,5 +1,3 @@
-patches/remove_mediasrv
-=======================
 .. _RemoveMediaServerdaemonmediasrv:
 
 Remove MediaServer daemon (mediasrv)

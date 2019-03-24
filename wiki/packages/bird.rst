@@ -1,5 +1,3 @@
-packages/bird
-=============
 .. _Bird:
 
 Bird

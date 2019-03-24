@@ -1,5 +1,3 @@
-packages/asterisk
-=================
 .. _Asterisk:
 
 Asterisk

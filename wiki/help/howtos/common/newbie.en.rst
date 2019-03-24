@@ -1,5 +1,3 @@
-help/howtos/common/newbie.en
-============================
 .. _Freetzforbeginners:
 
 Freetz for beginners

@@ -1,5 +1,3 @@
-help/howtos/security/switch_config
-==================================
 .. _KonfigurationdeseingebautenSwitches:
 
 Konfiguration des eingebauten Switches

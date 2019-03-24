@@ -1,5 +1,3 @@
-help/howtos/development/repack_fw
-=================================
 .. _EntpackenundPackenvonFirmware-Images:
 
 Entpacken und Packen von Firmware-Images

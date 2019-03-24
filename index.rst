@@ -1,5 +1,3 @@
-Freetz
-======
 .. _WillkommenbeiFreetz:
 
 Willkommen bei Freetz

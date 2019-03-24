@@ -1,5 +1,3 @@
-freetz
-======
 .. _FreetzmachtmehrausderBox:
 
 Freetz macht mehr aus der Box!

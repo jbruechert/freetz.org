@@ -1,5 +1,3 @@
-style/mounted
-=============
 .. _Aussehenvonmounted.cgi:
 
 Aussehen von mounted.cgi

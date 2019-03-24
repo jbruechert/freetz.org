@@ -1,5 +1,3 @@
-packages/dtmfbox
-================
 .. _DTMFBox:
 
 DTMFBox

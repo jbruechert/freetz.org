@@ -1,5 +1,3 @@
-packages/usbroot
-================
 .. _USB-Root:
 
 USB-Root

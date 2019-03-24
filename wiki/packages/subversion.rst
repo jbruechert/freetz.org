@@ -1,5 +1,3 @@
-packages/subversion
-===================
 .. _Subversion:
 
 Subversion

@@ -1,5 +1,3 @@
-packages/ctorrent
-=================
 .. _CTorrent:
 
 CTorrent

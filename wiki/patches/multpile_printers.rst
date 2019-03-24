@@ -1,5 +1,3 @@
-patches/multpile_printers
-=========================
 .. _FritzBoxalsPrintserverfürmehrereDrucker:
 
 FritzBox als Printserver für mehrere Drucker

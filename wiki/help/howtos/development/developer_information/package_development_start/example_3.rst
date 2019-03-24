@@ -1,5 +1,3 @@
-help/howtos/development/developer_information/package_development_start/example_3
-=================================================================================
 .. _Example3:NZBGet:
 
 Example 3: NZBGet

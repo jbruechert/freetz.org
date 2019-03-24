@@ -1,5 +1,3 @@
-packages/ruby
-=============
 .. _Ruby:
 
 Ruby

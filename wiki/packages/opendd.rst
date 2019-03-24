@@ -1,5 +1,3 @@
-packages/opendd
-===============
 .. _OpenDD:
 
 OpenDD

@@ -1,5 +1,3 @@
-packages/nano-shell
-===================
 .. _Nano-Shell:
 
 Nano-Shell

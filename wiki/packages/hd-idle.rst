@@ -1,5 +1,3 @@
-packages/hd-idle
-================
 hd-idle
 =======
 

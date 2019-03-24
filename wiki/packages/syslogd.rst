@@ -1,5 +1,3 @@
-packages/syslogd
-================
 .. _Syslogd:
 
 Syslogd

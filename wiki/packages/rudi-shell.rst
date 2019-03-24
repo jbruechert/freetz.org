@@ -1,5 +1,3 @@
-packages/rudi-shell
-===================
 .. _Rudi-Shell:
 
 Rudi-Shell

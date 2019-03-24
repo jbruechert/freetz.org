@@ -1,5 +1,3 @@
-packages
-========
 .. _PaketeAddonsundCGI-Erweiterungen:
 
 Pakete, Addons und CGI-Erweiterungen

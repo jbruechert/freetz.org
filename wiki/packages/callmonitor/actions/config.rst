@@ -1,5 +1,3 @@
-packages/callmonitor/actions/config
-===================================
 .. _FritzBox-Konfiguration:
 
 FritzBox-Konfiguration

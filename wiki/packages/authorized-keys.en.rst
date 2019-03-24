@@ -1,5 +1,3 @@
-packages/authorized-keys.en
-===========================
 authorized-keys
 ---------------
 

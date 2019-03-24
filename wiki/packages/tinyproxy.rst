@@ -1,5 +1,3 @@
-packages/tinyproxy
-==================
 .. _Tinyproxy:
 
 Tinyproxy

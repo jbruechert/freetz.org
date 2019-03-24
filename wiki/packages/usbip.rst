@@ -1,5 +1,3 @@
-packages/usbip
-==============
 .. _USBIP:
 
 USB/IP

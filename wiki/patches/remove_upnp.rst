@@ -1,5 +1,3 @@
-patches/remove_upnp
-===================
 .. _RemoveuPnPdaemon:
 
 Remove uPnP daemon

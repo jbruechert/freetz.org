@@ -1,5 +1,3 @@
-packages/wol
-============
 .. _WakeonLANWoL:
 
 Wake on LAN (WoL)

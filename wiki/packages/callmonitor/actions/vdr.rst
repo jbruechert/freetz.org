@@ -1,5 +1,3 @@
-packages/callmonitor/actions/vdr
-================================
 .. _VDR:
 
 VDR

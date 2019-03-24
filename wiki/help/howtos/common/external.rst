@@ -1,5 +1,3 @@
-help/howtos/common/external
-===========================
 .. _External:
 
 External

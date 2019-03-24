@@ -1,5 +1,3 @@
-help/howtos/development/manipulation_detection
-==============================================
 .. _WiedieFritzBoxManipulationenerkennt:
 
 Wie die FritzBox Manipulationen erkennt

@@ -1,5 +1,3 @@
-help/howtos/development/make_busybox
-====================================
 .. _Busyboxkonfigurierenundkompilieren:
 
 Busybox konfigurieren und kompilieren

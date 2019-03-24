@@ -1,5 +1,3 @@
-help/howtos/development/release_management
-==========================================
 .. _ReleaseManagement:
 
 Release Management

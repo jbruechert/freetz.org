@@ -1,5 +1,3 @@
-patches/enum.en
-===============
 `​ENUM <http://www.voip-info.org/wiki/view/ENUM>`__ can be used to
 translate telephone numbers into IP addresses, much alike
 `​DNS <http://en.wikipedia.org/wiki/Domain_Name_System>`__ is used to

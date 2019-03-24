@@ -1,5 +1,3 @@
-help/howtos/development/sign_image
-==================================
 .. _SignierenvonFirmware:
 
 Signieren von Firmware

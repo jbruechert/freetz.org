@@ -1,5 +1,3 @@
-packages/vsftpd
-===============
 *TODO: Paket überarbeiten, so dass die Optionen vom AVM ftpd übernommen
 werden, falls gewünscht. Dann kann hier auch was dokumentiert werden.*
 

@@ -1,5 +1,3 @@
-packages/siproxd
-================
 `​Siproxd <http://siproxd.sourceforge.net/>`__ is a proxy/masquerading
 daemon for the SIP protocol.
 

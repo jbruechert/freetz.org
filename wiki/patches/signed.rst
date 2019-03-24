@@ -1,5 +1,3 @@
-patches/signed
-==============
 .. _PatchWebmenuSignedMessage:
 
 Patch Webmenu Signed Message

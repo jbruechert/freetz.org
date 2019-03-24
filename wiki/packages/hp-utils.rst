@@ -1,5 +1,3 @@
-packages/hp-utils
-=================
 hp-utils
 ========
 

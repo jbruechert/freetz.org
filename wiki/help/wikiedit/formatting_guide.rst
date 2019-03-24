@@ -1,5 +1,3 @@
-help/wikiedit/formatting_guide
-==============================
 .. _Formatierungs-Guidelines:
 
 Formatierungs-Guidelines

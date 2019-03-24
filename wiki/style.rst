@@ -1,5 +1,3 @@
-style
-=====
 .. _Aussehen:
 
 Aussehen

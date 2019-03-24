@@ -1,5 +1,3 @@
-help/howtos/development/developer_information/post_commit_hook
-==============================================================
 .. _TracHooks:
 
 Trac Hooks

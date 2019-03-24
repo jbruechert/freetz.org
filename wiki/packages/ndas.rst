@@ -1,5 +1,3 @@
-packages/ndas
-=============
 Network Direct Attached Storage (NDAS) ist ein proprietäres System zur
 Anbindung externer Speichermedien wie Festplatten, Flash-Speicher oder
 Bandlaufwerke an ein Netzwerk. Die Patente für NDAS hält die

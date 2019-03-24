@@ -1,5 +1,3 @@
-packages/m-i-t
-==============
 module-init-tools
 =================
 

@@ -1,5 +1,3 @@
-packages/pptpd/config
-=====================
 .. _Konfiguration:
 
 Konfiguration

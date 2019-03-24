@@ -1,5 +1,3 @@
-help/howtos/common/create_swap
-==============================
 .. _Swap-Fileanlegen:
 
 Swap-File anlegen

@@ -1,5 +1,3 @@
-packages/rudi-shell/tips
-========================
 .. _TipsTricks:
 
 Tips & Tricks

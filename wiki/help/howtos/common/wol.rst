@@ -1,5 +1,3 @@
-help/howtos/common/wol
-======================
 |<!>| **In Überarbeitung**
 
 .. _WakeonLanWoLmitderFritzbox:

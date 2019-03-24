@@ -1,5 +1,3 @@
-packages/nfsd
-=============
 *TODO: Hinweise aus Forums Thread reinkopieren?*
 
 .. _NFSD_CGI:

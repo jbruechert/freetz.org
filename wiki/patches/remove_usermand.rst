@@ -1,5 +1,3 @@
-patches/remove_usermand
-=======================
 .. _Removeusermanduserman.ko:
 
 Remove usermand & userman.ko

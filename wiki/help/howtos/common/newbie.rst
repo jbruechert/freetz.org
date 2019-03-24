@@ -1,5 +1,3 @@
-help/howtos/common/newbie
-=========================
 .. _ErsteSchrittemitFreetz:
 
 Erste Schritte mit Freetz

@@ -15,6 +15,7 @@ def line_prepender(filename, line):
         f.seek(0, 0)
         f.write(line.rstrip('\r\n') + '\n' + content)
 
+
 # Create a list of all pages to convert
 for path, subdirs, files in os.walk("wiki"):
 	for name in files:
@@ -38,10 +39,6 @@ for count, page in enumerate(pages):
 	pageFile.close()
 
 	content = pageSoup.find(id="content")
-	try:
-		title = pageSoup.title.string.strip().replace(" – Freetz", "")
-	except:
-		title = page.replace("html", "").strip()
 
 	titleList.append(title)
 
@@ -53,11 +50,6 @@ for count, page in enumerate(pages):
 
 	subprocess.call(["pandoc", "-f", "html-header_attributes-link_attributes-native_spans-native_divs", "-t", "rst", page + ".content", "-o", page.replace(".html", ".rst")])
 	subprocess.call(["sed", "-i", "/^:::/ d", page.replace(".html", ".rst")])
-
-	if title != "":
-		line_prepender(page.replace(".html", ".rst"), len(title) * "=" + "\n")
-		line_prepender(page.replace(".html", ".rst"), title)
-
 
 	os.remove(page + ".content")
 	bar.next()

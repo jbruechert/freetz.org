@@ -1,5 +1,3 @@
-help/howtos/common/first_trunk
-==============================
 .. _Wiebaueichmeinenerstentrunk:
 
 Wie baue ich meinen ersten trunk ?

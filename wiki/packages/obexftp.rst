@@ -1,5 +1,3 @@
-packages/obexftp
-================
 .. _ObexFTP:
 
 ObexFTP

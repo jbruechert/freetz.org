@@ -1,5 +1,3 @@
-help/wikiedit/screenshots
-=========================
 .. _Screenshots:
 
 Screenshots

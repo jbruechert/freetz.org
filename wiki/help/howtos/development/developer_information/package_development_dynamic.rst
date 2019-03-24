@@ -1,5 +1,3 @@
-help/howtos/development/developer_information/package_development_dynamic
-=========================================================================
 .. _PaketverwaltungfürFreetz:
 
 Paketverwaltung für Freetz

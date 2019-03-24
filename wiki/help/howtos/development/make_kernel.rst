@@ -1,5 +1,3 @@
-help/howtos/development/make_kernel
-===================================
 .. _Kernelkonfigurierenundkompilieren:
 
 Kernel konfigurieren und kompilieren

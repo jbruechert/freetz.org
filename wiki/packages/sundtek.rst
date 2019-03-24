@@ -1,5 +1,3 @@
-packages/sundtek
-================
 .. _SundtekDVBTreiber:
 
 Sundtek DVB Treiber

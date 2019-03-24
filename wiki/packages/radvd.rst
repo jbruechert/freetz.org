@@ -1,5 +1,3 @@
-packages/radvd
-==============
 .. _Radvd:
 
 Radvd

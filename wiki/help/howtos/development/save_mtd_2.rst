@@ -1,5 +1,3 @@
-help/howtos/development/save_mtd_2
-==================================
 .. _Flash-PartitionenvonaußenmitFTPsichern:
 
 Flash-Partitionen von außen mit FTP sichern

@@ -1,5 +1,3 @@
-packages/tinc
-=============
 .. _Tinc:
 
 Tinc

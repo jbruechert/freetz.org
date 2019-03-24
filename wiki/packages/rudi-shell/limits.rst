@@ -1,5 +1,3 @@
-packages/rudi-shell/limits
-==========================
 .. _GrenzenEinschränkungen:
 
 Grenzen & Einschränkungen

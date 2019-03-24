@@ -1,5 +1,3 @@
-packages/tor
-============
 .. _TorProxy:
 
 Tor Proxy

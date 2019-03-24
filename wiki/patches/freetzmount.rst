@@ -1,5 +1,3 @@
-patches/freetzmount
-===================
 .. _FREETZMOUNT:
 
 FREETZMOUNT

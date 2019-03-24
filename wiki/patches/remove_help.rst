@@ -1,5 +1,3 @@
-patches/remove_help
-===================
 .. _Removehelp:
 
 Remove help

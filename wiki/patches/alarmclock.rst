@@ -1,5 +1,3 @@
-patches/alarmclock
-==================
 .. _Patchthirdalarm-clock:
 
 Patch third alarm-clock

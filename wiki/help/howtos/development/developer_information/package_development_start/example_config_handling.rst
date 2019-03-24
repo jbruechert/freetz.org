@@ -1,5 +1,3 @@
-help/howtos/development/developer_information/package_development_start/example_config_handling
-===============================================================================================
 | Here some examples using the tools for configuration handling to
   explain the behavior of the available commands.
 

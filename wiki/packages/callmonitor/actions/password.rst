@@ -1,5 +1,3 @@
-packages/callmonitor/actions/password
-=====================================
 .. _BenutzernamenundPasswörter:
 
 Benutzernamen und Passwörter

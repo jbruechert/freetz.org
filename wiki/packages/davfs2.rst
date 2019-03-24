@@ -1,5 +1,3 @@
-packages/davfs2
-===============
 .. figure:: /screenshots/62.jpg
    :alt: WebDAV: Konfiguration
 

@@ -1,5 +1,3 @@
-packages/ncftp
-==============
 ncftp
 =====
 

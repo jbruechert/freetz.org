@@ -1,5 +1,3 @@
-help/howtos/development/integrate_patches
-=========================================
 .. _PatchesinFreetzeinspielen:
 
 Patches in Freetz einspielen

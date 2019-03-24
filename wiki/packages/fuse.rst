@@ -1,5 +1,3 @@
-packages/fuse
-=============
 .. _FUSE:
 
 FUSE

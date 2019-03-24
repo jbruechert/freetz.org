@@ -1,5 +1,3 @@
-packages/callmonitor/actions/wol
-================================
 .. _WakeonLAN:
 
 Wake on LAN

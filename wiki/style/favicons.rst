@@ -1,5 +1,3 @@
-style/favicons
-==============
 .. _Favicons:
 
 Favicons

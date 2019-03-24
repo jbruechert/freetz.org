@@ -1,5 +1,3 @@
-help/howtos/development/freetz_make
-===================================
 .. _FreetzBuild-Prozeß:
 
 Freetz Build-Prozeß

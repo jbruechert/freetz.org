@@ -1,5 +1,3 @@
-patches/remove_samba
-====================
 .. _RemoveSambadaemonsmbd:
 
 Remove Samba daemon (smbd)

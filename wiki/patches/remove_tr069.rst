@@ -1,5 +1,3 @@
-patches/remove_tr069
-====================
 .. _Removetr069stuff:
 
 Remove tr069 stuff

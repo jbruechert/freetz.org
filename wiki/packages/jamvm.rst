@@ -1,5 +1,3 @@
-packages/jamvm
-==============
 .. _JamVM:
 
 JamVM

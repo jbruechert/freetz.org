@@ -1,5 +1,3 @@
-help/fritz_faq
-==============
 .. _FAQ:
 
 FAQ

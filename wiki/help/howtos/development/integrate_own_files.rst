@@ -1,5 +1,3 @@
-help/howtos/development/integrate_own_files
-===========================================
 .. _EigeneDateienindieFirmwareintegrieren:
 
 Eigene Dateien in die Firmware integrieren

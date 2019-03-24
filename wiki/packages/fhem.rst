@@ -1,5 +1,3 @@
-packages/fhem
-=============
 .. _FHEM:
 
 FHEM

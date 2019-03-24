@@ -1,5 +1,3 @@
-help/howtos/common/busybox_httpd
-================================
 .. _KleinerWebservermitBusyBox:
 
 Kleiner Webserver mit BusyBox

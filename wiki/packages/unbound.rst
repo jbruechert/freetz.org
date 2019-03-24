@@ -1,5 +1,3 @@
-packages/unbound
-================
 .. _Unbound:
 
 Unbound

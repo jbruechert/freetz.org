@@ -1,5 +1,3 @@
-packages/nmap
-=============
 .. _Nmap:
 
 Nmap

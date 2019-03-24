@@ -1,5 +1,3 @@
-packages/bluez-utils
-====================
 .. _Bluez-Utils:
 
 Bluez-Utils

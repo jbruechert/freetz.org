@@ -1,5 +1,3 @@
-packages/deco
-=============
 .. _DemosCommander:
 
 Demos Commander

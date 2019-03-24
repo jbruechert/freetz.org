@@ -1,5 +1,3 @@
-help/howtos/development
-=======================
 .. _DevelopmentHowtos:
 
 Development Howtos

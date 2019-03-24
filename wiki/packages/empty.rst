@@ -1,5 +1,3 @@
-packages/empty
-==============
 .. _Empty:
 
 Empty

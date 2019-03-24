@@ -1,5 +1,3 @@
-help/howtos/development/developer_information/shell_coding_conventions
-======================================================================
 .. _ShellCodingConventions:
 
 Shell Coding Conventions

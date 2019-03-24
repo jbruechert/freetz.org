@@ -1,5 +1,3 @@
-packages/microperl
-==================
 microperl
 =========
 

@@ -1,5 +1,3 @@
-packages/debootstrap
-====================
 .. _Debootstrap:
 
 Debootstrap

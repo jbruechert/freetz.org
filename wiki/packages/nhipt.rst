@@ -1,5 +1,3 @@
-packages/nhipt
-==============
 .. _NHIPT-iptablesfirewallGUI:
 
 NHIPT - iptables firewall GUI

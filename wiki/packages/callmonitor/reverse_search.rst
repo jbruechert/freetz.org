@@ -1,5 +1,3 @@
-packages/callmonitor/reverse_search
-===================================
 .. _Rückwärtssuche:
 
 Rückwärtssuche

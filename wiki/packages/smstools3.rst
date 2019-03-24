@@ -1,5 +1,3 @@
-packages/smstools3
-==================
 .. _SMStools3:
 
 SMStools3

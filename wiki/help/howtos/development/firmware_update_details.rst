@@ -1,5 +1,3 @@
-help/howtos/development/firmware_update_details
-===============================================
 .. _AblaufeinesFirmware-Updates:
 
 Ablauf eines Firmware-Updates

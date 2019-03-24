@@ -1,5 +1,3 @@
-help/howtos/development/adam2
-=============================
 .. _ADAM2-Bootloader:
 
 ADAM2-Bootloader

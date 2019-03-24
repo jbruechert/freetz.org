@@ -1,5 +1,3 @@
-packages/mediaserver
-====================
 **This package was removed in**\ `r1823 </changeset/1823>`__\ **!**
 
 .. _Mediaserver:

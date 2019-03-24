@@ -1,5 +1,3 @@
-help/howtos/development/create_gui
-==================================
 .. _ErstelleneinerGUIfürPaketeinFreetz:
 
 Erstellen einer GUI für Pakete in Freetz

@@ -1,5 +1,3 @@
-packages/callmonitor/actions/mail
-=================================
 .. _E-Mail-Benachrichtigung:
 
 E-Mail-Benachrichtigung

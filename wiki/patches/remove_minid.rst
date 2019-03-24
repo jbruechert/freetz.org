@@ -1,5 +1,3 @@
-patches/remove_minid
-====================
 .. _Removeminid:
 
 Remove minid

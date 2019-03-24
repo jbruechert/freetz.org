@@ -1,5 +1,3 @@
-patches/maxdevcount
-===================
 .. _MaxDevCount:
 
 MaxDevCount

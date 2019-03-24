@@ -1,5 +1,3 @@
-WikiStart.en
-============
 .. _WelcometoFreetz:
 
 Welcome to Freetz

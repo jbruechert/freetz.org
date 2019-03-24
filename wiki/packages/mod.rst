@@ -1,5 +1,3 @@
-packages/mod
-============
 .. _Freetz-MOD:
 
 (Freetz-) MOD

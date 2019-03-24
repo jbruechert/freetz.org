@@ -1,5 +1,3 @@
-patches/replace_onlinechanged
-=============================
 .. _Replaceonlinechanged:
 
 Replace onlinechanged

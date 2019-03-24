@@ -1,5 +1,3 @@
-help/howtos/development/bandwidth_svg
-=====================================
 .. _DynamischeBandbreitenanzeigeperSVG:
 
 Dynamische Bandbreitenanzeige per SVG

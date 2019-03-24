@@ -1,5 +1,3 @@
-style/tagging
-=============
 .. _Tagging:
 
 Tagging

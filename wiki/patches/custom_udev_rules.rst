@@ -1,5 +1,3 @@
-patches/custom_udev_rules
-=========================
 Mit diesem Patch werden 2 zusätzliche frei verwendbare rules erstellt
 und nach /tmp/flash/mod/ verlinkt. Diese können mit dem Webinterface in
 einem Unterpunkt von "Freetz" bearbeitet werden.

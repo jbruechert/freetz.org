@@ -1,5 +1,3 @@
-patches/usb_names
-=================
 .. _PatchUSBstoragenamesmakeFATfilesystemsworld-writableautomountfeature:
 
 Patch USB storage names, make FAT filesystems world-writable, automount feature

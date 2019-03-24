@@ -1,5 +1,3 @@
-patches/remove_aura_usb
-=======================
 .. _RemoveauraUSB:
 
 Remove aura USB

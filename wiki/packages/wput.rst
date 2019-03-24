@@ -1,5 +1,3 @@
-packages/wput
-=============
 **wput** ist ein command-line ftp client, der Dateien oder auch ganze
 Verzeichnisse auf einen remote Server hochlädt. Dabei unterstützt er
 auch das wiederaufnehmen von abgebrochenen uploads.

@@ -1,5 +1,3 @@
-help/howtos/common/freetz_linux
-===============================
 .. _FreetzLinux:
 
 Freetz Linux

@@ -1,5 +1,3 @@
-patches/remove_capi
-===================
 .. _RemoveCapiOverTCP:
 
 Remove CapiOverTCP

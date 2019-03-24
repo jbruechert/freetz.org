@@ -1,5 +1,3 @@
-packages/sispmctl
-=================
 sispmctl
 ========
 

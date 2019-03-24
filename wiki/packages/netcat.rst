@@ -1,5 +1,3 @@
-packages/netcat
-===============
 netcat
 ======
 

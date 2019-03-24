@@ -1,5 +1,3 @@
-packages/lua
-============
 .. _Lua:
 
 Lua

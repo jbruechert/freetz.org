@@ -1,5 +1,3 @@
-packages/rudi-shell/usage
-=========================
 .. _IllustrierteAnwendungsfälle:
 
 Illustrierte Anwendungsfälle

@@ -1,5 +1,3 @@
-packages/dns2tcp
-================
 .. _Dns2Tcp:
 
 Dns2Tcp

@@ -1,5 +1,3 @@
-help/howtos/development/create_cross-compiler_toolchain
-=======================================================
 .. _Cross-CompilerToolchainerstellen:
 
 Cross-Compiler / Toolchain erstellen

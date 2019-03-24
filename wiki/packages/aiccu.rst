@@ -1,5 +1,3 @@
-packages/aiccu
-==============
 .. _Aiccu:
 
 Aiccu

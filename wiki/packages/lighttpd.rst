@@ -1,5 +1,3 @@
-packages/lighttpd
-=================
 .. _lighttpdWebserver:
 
 lighttpd Webserver

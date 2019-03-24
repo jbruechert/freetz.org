@@ -1,5 +1,3 @@
-help/howtos/development/flash
-=============================
 .. _FlashPartitionierung:
 
 Flash Partitionierung

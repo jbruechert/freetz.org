@@ -1,5 +1,3 @@
-FreetzConf2011
-==============
 .. _FreetzConf2011:
 
 FreetzConf 2011

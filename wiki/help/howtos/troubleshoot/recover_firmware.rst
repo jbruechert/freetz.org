@@ -1,5 +1,3 @@
-help/howtos/troubleshoot/recover_firmware
-=========================================
 .. _OriginalFirmwarewiederherstellen:
 
 Original Firmware wiederherstellen

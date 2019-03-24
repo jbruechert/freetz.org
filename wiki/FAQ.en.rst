@@ -1,5 +1,3 @@
-FAQ.en
-======
 .. _Freetz-FAQ:
 
 Freetz-FAQ

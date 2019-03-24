@@ -1,5 +1,3 @@
-help/howtos/troubleshoot/reboots
-================================
 .. _HäufigeselbständigeReboots:
 
 Häufige selbständige Reboots

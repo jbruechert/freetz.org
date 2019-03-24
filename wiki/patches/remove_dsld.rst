@@ -1,5 +1,3 @@
-patches/remove_dsld
-===================
 .. _Removedsld:
 
 Remove dsld

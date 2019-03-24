@@ -1,5 +1,3 @@
-help/howtos/common/newbie/errors
-================================
 .. _WasmacheichwennsichmeineBoxnichtFreetzenlässt:
 
 Was mache ich, wenn sich meine Box nicht Freetzen lässt

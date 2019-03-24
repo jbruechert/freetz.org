@@ -1,5 +1,3 @@
-packages/curl
-=============
 .. _cURL:
 
 cURL

@@ -1,5 +1,3 @@
-packages/lynx
-=============
 .. _Lynx:
 
 Lynx

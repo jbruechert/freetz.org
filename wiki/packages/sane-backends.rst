@@ -1,5 +1,3 @@
-packages/sane-backends
-======================
 .. _SANE:
 
 SANE

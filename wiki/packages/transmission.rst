@@ -1,5 +1,3 @@
-packages/transmission
-=====================
 .. _Transmission:
 
 Transmission

@@ -1,5 +1,3 @@
-packages/pptpd
-==============
 .. _PoPTop-PPTP-VPN-Server:
 
 PoPTop - PPTP-VPN-Server

@@ -1,5 +1,3 @@
-kernel
-======
 Kernel Layout
 
 Box

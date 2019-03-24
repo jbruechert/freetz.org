@@ -1,5 +1,3 @@
-packages/madplay
-================
 madplay
 =======
 

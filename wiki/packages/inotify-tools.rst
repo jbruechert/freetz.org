@@ -1,5 +1,3 @@
-packages/inotify-tools
-======================
 .. _Inotify-Tools:
 
 Inotify-Tools

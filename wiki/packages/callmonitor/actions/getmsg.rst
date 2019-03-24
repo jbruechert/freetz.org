@@ -1,5 +1,3 @@
-packages/callmonitor/actions/getmsg
-===================================
 .. _HTTP-Requestsgetmsg:
 
 HTTP-Requests (getmsg)

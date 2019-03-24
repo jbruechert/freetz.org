@@ -1,5 +1,3 @@
-help/irc
-========
 .. _Intro:
 
 Intro

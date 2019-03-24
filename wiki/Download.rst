@@ -1,5 +1,3 @@
-Download
-========
 .. _StabileVersionen:
 
 Stabile Versionen

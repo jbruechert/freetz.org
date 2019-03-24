@@ -1,5 +1,3 @@
-help/wikiedit/tagging
-=====================
 .. _Tagging:
 
 Tagging

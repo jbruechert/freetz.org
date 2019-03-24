@@ -1,5 +1,3 @@
-packages/nfs
-============
 .. _NFS:
 
 NFS

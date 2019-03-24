@@ -1,5 +1,3 @@
-packages/nfsd.en
-================
 .. _NFSD_CGI:
 
 NFSD_CGI

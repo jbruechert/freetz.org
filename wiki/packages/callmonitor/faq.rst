@@ -1,5 +1,3 @@
-packages/callmonitor/faq
-========================
 .. _Callmonitor-FAQ:
 
 Callmonitor-FAQ

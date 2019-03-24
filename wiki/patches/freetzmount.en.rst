@@ -1,5 +1,3 @@
-patches/freetzmount.en
-======================
 .. _FREETZMOUNT:
 
 FREETZMOUNT

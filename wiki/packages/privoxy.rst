@@ -1,5 +1,3 @@
-packages/privoxy
-================
 .. _Privoxy:
 
 Privoxy

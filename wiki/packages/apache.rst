@@ -1,5 +1,3 @@
-packages/apache
-===============
 .. _ApacheWebservermitPHPCGI:
 
 Apache Webserver mit PHP CGI

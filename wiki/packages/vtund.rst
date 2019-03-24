@@ -1,5 +1,3 @@
-packages/vtund
-==============
 .. _VTUNfreetzPackage:
 
 VTUN freetz Package

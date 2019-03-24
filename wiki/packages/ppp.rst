@@ -1,5 +1,3 @@
-packages/ppp
-============
 .. figure:: /screenshots/121.jpg
    :alt: ppp-cgi
 

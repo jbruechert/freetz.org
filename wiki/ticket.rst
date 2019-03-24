@@ -1,5 +1,3 @@
-ticket
-======
 .. _WassollteichbeiderErstellungeinesneuenTicketsbeachten:
 
 Was sollte ich bei der Erstellung eines neuen Tickets beachten?

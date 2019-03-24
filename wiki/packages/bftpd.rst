@@ -1,5 +1,3 @@
-packages/bftpd
-==============
 .. _Bftpd:
 
 Bftpd

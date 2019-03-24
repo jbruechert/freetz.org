@@ -1,5 +1,3 @@
-packages/callmonitor/actions/samsung
-====================================
 .. _BenachrichtigungaufeinemSamsungTV:
 
 Benachrichtigung auf einem Samsung TV

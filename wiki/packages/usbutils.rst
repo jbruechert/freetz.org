@@ -1,5 +1,3 @@
-packages/usbutils
-=================
 usbutils
 ========
 

@@ -1,5 +1,3 @@
-packages/vim
-============
 vim
 ===
 

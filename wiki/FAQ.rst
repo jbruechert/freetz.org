@@ -1,5 +1,3 @@
-FAQ
-===
 .. _Freetz-FAQ:
 
 Freetz-FAQ

@@ -1,5 +1,3 @@
-packages/callmonitor/listeners
-==============================
 .. _RegelnListeners:
 
 Regeln (Listeners)

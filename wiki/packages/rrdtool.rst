@@ -1,5 +1,3 @@
-packages/rrdtool
-================
 .. _RRDTool:
 
 RRDTool

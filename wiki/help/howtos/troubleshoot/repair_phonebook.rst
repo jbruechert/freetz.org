@@ -1,5 +1,3 @@
-help/howtos/troubleshoot/repair_phonebook
-=========================================
 .. _KaputtesTelefonbuchreparieren:
 
 Kaputtes Telefonbuch reparieren

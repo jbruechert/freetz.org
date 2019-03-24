@@ -1,5 +1,3 @@
-help/wikiedit/tables
-====================
 .. _Tabellen:
 
 Tabellen

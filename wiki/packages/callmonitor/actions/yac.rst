@@ -1,5 +1,3 @@
-packages/callmonitor/actions/yac
-================================
 .. _YAC:
 
 YAC

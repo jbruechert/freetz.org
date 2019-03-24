@@ -1,5 +1,3 @@
-help/howtos/common/install/menuconfig
-=====================================
 .. _Konfiguration:
 
 Konfiguration

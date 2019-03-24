@@ -1,5 +1,3 @@
-packages/lsof
-=============
 lsof
 ====
 

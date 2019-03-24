@@ -1,5 +1,3 @@
-packages/checkmaild
-===================
 .. _checkmaild0.4.7:
 
 checkmaild 0.4.7

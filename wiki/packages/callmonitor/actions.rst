@@ -1,5 +1,3 @@
-packages/callmonitor/actions
-============================
 .. _Aktionen:
 
 Aktionen

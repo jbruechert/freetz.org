@@ -1,5 +1,3 @@
-packages/callmonitor/actions/dreambox
-=====================================
 .. _DreamBox:
 
 DreamBox

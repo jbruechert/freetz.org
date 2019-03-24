@@ -1,5 +1,3 @@
-packages/bridge-utils
-=====================
 bridge-utils
 ============
 

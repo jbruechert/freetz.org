@@ -1,5 +1,3 @@
-patch
-=====
 .. _AufbaueinesPatches:
 
 Aufbau eines Patches

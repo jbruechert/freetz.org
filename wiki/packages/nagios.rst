@@ -1,5 +1,3 @@
-packages/nagios
-===============
 .. _Nagios:
 
 Nagios

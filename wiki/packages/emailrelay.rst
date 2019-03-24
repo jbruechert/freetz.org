@@ -1,5 +1,3 @@
-packages/emailrelay
-===================
 .. _E-MailRelay:
 
 E-MailRelay

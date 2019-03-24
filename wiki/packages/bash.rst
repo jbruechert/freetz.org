@@ -1,5 +1,3 @@
-packages/bash
-=============
 .. _Bash:
 
 Bash

@@ -1,5 +1,3 @@
-packages/php
-============
 .. _PHP:
 
 PHP

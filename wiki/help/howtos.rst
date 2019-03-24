@@ -1,5 +1,3 @@
-help/howtos
-===========
 .. _HowTos:
 
 HowTos

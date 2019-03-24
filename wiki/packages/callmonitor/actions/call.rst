@@ -1,5 +1,3 @@
-packages/callmonitor/actions/call
-=================================
 .. _AllgemeineHinweisezuFunktionsaufrufen:
 
 Allgemeine Hinweise zu Funktionsaufrufen

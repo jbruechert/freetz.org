@@ -1,5 +1,3 @@
-help/howtos/common/newbie/other
-===============================
 .. _SonstigeInfosfürNewbies:
 
 Sonstige Infos für Newbie's

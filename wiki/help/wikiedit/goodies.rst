@@ -1,5 +1,3 @@
-help/wikiedit/goodies
-=====================
 .. _WikiGoodies:
 
 Wiki Goodies

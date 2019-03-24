@@ -1,5 +1,3 @@
-patches/exec_autorun
-====================
 .. _Executeautorun.shautoend.shscriptonunmount:
 
 Execute autorun.sh/autoend.sh script on (un)mount

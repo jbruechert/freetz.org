@@ -1,5 +1,3 @@
-help/howtos/common/shutdown
-===========================
 .. _RechnerimNetzherunterfahren:
 
 Rechner im Netz herunterfahren

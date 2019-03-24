@@ -1,5 +1,3 @@
-packages/callmonitor/actions/dbox
-=================================
 .. _DBox2:
 
 DBox2

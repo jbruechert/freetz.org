@@ -1,5 +1,3 @@
-packages/phpxmail.en
-====================
 .. _Introduction:
 
 Introduction

@@ -1,5 +1,3 @@
-packages/xyssl
-==============
 `​XySSL <http://www.ohloh.net/p/xyssl>`__\ *is an open-source
 cryptographic library for embedded systems. It provides standard crypto
 block: AES, SHA-1, X.509, etc. as well as higher lever protocols: SSL v3

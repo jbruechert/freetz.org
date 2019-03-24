@@ -1,5 +1,3 @@
-help/howtos/development/save_mtd_1
-==================================
 .. _Flash-PartitionenimlaufendenBetriebsichern:
 
 Flash-Partitionen im laufenden Betrieb sichern

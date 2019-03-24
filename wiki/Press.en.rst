@@ -1,5 +1,3 @@
-Press.en
-========
 .. _Freetzinpublicpressweb:
 
 Freetz in public press & web

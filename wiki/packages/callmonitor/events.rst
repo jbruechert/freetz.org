@@ -1,5 +1,3 @@
-packages/callmonitor/events
-===========================
 .. _Ereignisse:
 
 Ereignisse

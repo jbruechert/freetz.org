@@ -1,5 +1,3 @@
-packages/samba
-==============
 .. _Samba:
 
 Samba

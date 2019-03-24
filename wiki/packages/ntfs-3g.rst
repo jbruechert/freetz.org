@@ -1,5 +1,3 @@
-packages/ntfs-3g
-================
 .. _NTFS-3G:
 
 NTFS-3G

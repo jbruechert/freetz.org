@@ -1,5 +1,3 @@
-packages/callmonitor/actions/self-defined
-=========================================
 .. _SelbstdefinierteAktionen:
 
 Selbstdefinierte Aktionen

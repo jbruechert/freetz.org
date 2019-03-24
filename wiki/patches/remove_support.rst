@@ -1,5 +1,3 @@
-patches/remove_support
-======================
 .. _Removethesupport-files:
 
 Remove the support-files

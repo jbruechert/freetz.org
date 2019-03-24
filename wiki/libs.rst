@@ -1,5 +1,3 @@
-libs
-====
 .. _Bibliothekenlibraries:
 
 Bibliotheken (libraries)

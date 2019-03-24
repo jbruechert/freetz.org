@@ -1,5 +1,3 @@
-packages/mc
-===========
 *TODO: Verschiedene Menüoptionen beschreiben, insbesondere
 Subshell-Support mit Bash …*
 

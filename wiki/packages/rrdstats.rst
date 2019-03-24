@@ -1,5 +1,3 @@
-packages/rrdstats
-=================
 .. _RRDstats:
 
 RRDstats

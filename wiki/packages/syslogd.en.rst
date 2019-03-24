@@ -1,5 +1,3 @@
-packages/syslogd.en
-===================
 .. _Syslog:
 
 Syslog

@@ -1,5 +1,3 @@
-freetz.en
-=========
 .. _FreetzgetsmorefromtheBox:
 
 Freetz gets more from the Box!

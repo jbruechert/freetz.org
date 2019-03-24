@@ -1,5 +1,3 @@
-Press
-=====
 .. _FreetzinPresseundWeb:
 
 Freetz in Presse und Web

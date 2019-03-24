@@ -1,5 +1,3 @@
-packages/ser2net
-================
 Homepage:
 `​http://ser2net.sourceforge.net/ <http://ser2net.sourceforge.net/>`__
 

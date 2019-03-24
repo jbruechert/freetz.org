@@ -1,5 +1,3 @@
-packages/fritzload
-==================
 .. _FritzLoad:
 
 FritzLoad

@@ -1,5 +1,3 @@
-help/howtos/common/user
-=======================
 .. _Benutzerdauerhaftinderpasswdspeichern:
 
 Benutzer dauerhaft in der passwd speichern

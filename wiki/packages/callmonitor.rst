@@ -1,5 +1,3 @@
-packages/callmonitor
-====================
 .. _Callmonitor:
 
 Callmonitor

@@ -1,5 +1,3 @@
-packages/strace
-===============
 strace
 ======
 

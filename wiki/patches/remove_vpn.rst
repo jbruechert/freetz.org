@@ -1,5 +1,3 @@
-patches/remove_vpn
-==================
 .. _RemoveAVMvpn:
 
 Remove AVM vpn

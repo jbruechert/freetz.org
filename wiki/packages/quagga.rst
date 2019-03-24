@@ -1,5 +1,3 @@
-packages/quagga
-===============
 .. _Quagga:
 
 Quagga

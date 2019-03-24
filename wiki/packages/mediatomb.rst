@@ -1,5 +1,3 @@
-packages/mediatomb
-==================
 .. _MediaTomb:
 
 MediaTomb

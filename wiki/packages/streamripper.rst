@@ -1,5 +1,3 @@
-packages/streamripper
-=====================
 .. _Streamripper:
 
 Streamripper

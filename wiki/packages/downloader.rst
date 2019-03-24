@@ -1,5 +1,3 @@
-packages/downloader
-===================
 .. _Downloader-CGI:
 
 Downloader-CGI

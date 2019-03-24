@@ -1,5 +1,3 @@
-packages/openvpn
-================
 .. _OpenVPNfreetzPackage:
 
 OpenVPN freetz Package

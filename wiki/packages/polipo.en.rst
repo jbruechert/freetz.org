@@ -1,5 +1,3 @@
-packages/polipo.en
-==================
 .. _UsingwithTor:
 
 Using with Tor

@@ -1,5 +1,3 @@
-help/howtos/development/developer_information/webif/libmodcgi
-=============================================================
 libmodcgi.sh
 ============
 

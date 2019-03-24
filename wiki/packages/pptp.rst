@@ -1,5 +1,3 @@
-packages/pptp
-=============
 .. _PPTPClient:
 
 PPTP Client

@@ -1,5 +1,3 @@
-packages/inadyn-mt.en
-=====================
 .. _Inadyn:
 
 Inadyn

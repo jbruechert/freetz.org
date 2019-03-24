@@ -1,5 +1,3 @@
-packages/dropbear.en
-====================
 .. _Dropbear:
 
 Dropbear

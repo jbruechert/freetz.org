@@ -1,5 +1,3 @@
-packages/mini_fo
-================
 mini_fo
 =======
 

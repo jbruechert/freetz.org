@@ -1,5 +1,3 @@
-patches/remove_assistant
-========================
 .. _Removeassistant:
 
 Remove assistant
