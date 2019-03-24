@@ -17,7 +17,7 @@ ppp-cgi
 .. _AllgemeineKonfiguration:
 
 Allgemeine Konfiguration
-========================
+------------------------
 
 | zu finden im Webinterface unter "Pakete" > "PPP"
 
@@ -45,7 +45,7 @@ durch einen Reboot der Fritzbox nicht verloren geht!
 .. _KonfigurationfürUMTS:
 
 Konfiguration für UMTS
-======================
+---------------------
 
 .. _PEERS:chat:
 
@@ -85,7 +85,7 @@ Optional kann hier der gewünschte Verbindungsmodus ausgewählt werden.
 .. _Namensauflösung:
 
 Namensauflösung
-===============
+---------------
 
 Für eine dynamisch wechselnde Namensauflösung zwischen Mobilfunk und
 herkömmlicher Verbindung empfiehlt sich folgendes:
@@ -108,7 +108,7 @@ herkömmlicher Verbindung empfiehlt sich folgendes:
 .. _FirewallRoutingNAT:
 
 Firewall, Routing & NAT
-=======================
+-----------------------
 
 Um Masquerading zu aktivieren sind folgende Befehle nötig:
 
@@ -138,7 +138,7 @@ Module wieder zu entladen.
 .. _Fallback:
 
 Fallback
-========
+--------
 
 |Warning| Dieses Feature ist noch exprimentell. Fehlfunktionen und hohe
 Kosten können nicht ausgeschlossen werden!
@@ -156,7 +156,7 @@ werden!
 .. _Treiberprobleme:
 
 Treiberprobleme
-===============
+---------------
 
 Das Treibermodul *option* wird beim Start automatisch geladen. Es kann
 aber nötig sein es mit eigenen Parameter zu laden, zB durch
@@ -167,7 +167,7 @@ aber nötig sein es mit eigenen Parameter zu laden, zB durch
 .. _Wasistnochzubeachten2do-Liste:
 
 Was ist noch zu beachten? (2do-Liste)
-=====================================
+------------------------------------
 
 |Warning| Es können momentan nur SIMs mit deaktivierter PIN-Abfrage genutzt
 werden. (dies ist allerdings mit dem Package *gcom* möglich)
@@ -177,7 +177,7 @@ werden. (dies ist allerdings mit dem Package *gcom* möglich)
 .. _Weiteres:
 
 Weiteres
-========
+--------
 
 Deaktivierung des integrierten CD-Roms bei Huawei-Sticks mittels
 einmaligem ``at^u2diag=0`` an das 2. virtuelle, serielle Interface
