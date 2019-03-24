@@ -13,9 +13,9 @@ Sundtek DVB Treiber
 Dieses Package stellt den Treiber für USB-Sticks von Sundtek bereit, mit
 denen DVB (c/s/t) empfangen werden kann.
 
-| |/!\\| Die Fritzbox sollte mindestens USB 2.0 haben, 11 MBit/s reichen
+| |Warning| Die Fritzbox sollte mindestens USB 2.0 haben, 11 MBit/s reichen
   nicht aus.
-| |/!\\| Mit Kernel 2.6.19.2 (Fritzbox 7270v1 und 7570) gibt es momentan
+| |Warning| Mit Kernel 2.6.19.2 (Fritzbox 7270v1 und 7570) gibt es momentan
   ein Memoryleak, siehe `#472 </ticket/472>`__.
 
 .. _Parameterfürmediaclient:
@@ -65,5 +65,5 @@ Kabelinternet mit `RRDstats <rrdstats.html#segment>`__. Es soll damit
 auch Streaming zu einem Windows PC mit einer aktuellen Betaversion des
 DVB-Viewer via SAT>IP möglich sein.
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

@@ -14,7 +14,7 @@ generally abbreviated by SVN.
 Developer version (trunk)
 -------------------------
 
-|/!\\| This version is only for experienced users and developers who
+|Warning| This version is only for experienced users and developers who
 know how to help themselves! The trunk changes continuously and might
 temporarily contain bugs or not work at all.
 
@@ -26,7 +26,7 @@ Check out from SVN:
    $ svn co http://svn.freetz.org/trunk trunk_7843 -r 7843  <--- check out specific trunk revision (here: 7843) into subdirectory
                                                                  "trunk_7843", so as not to overwrite the current trunk directory
 
-Check out from Git (|/!\\| Git is not the leading system and is
+Check out from Git (|Warning| Git is not the leading system and is
 officially unsupported presently. We provide it "as is" for test
 purposes.):
 
@@ -61,9 +61,9 @@ version):
 Stable version
 --------------
 
-|/!\\| **The "stable" version is not maintained anymore. Newer boxes as
+|Warning| **The "stable" version is not maintained anymore. Newer boxes as
 well as firmwares are not available there. Please use whenever possible
-the trunk as mentioned above.** |/!\\|
+the trunk as mentioned above.** |Warning|
 
 For some box types no firmware is available on AVM servers. Help
 yourself using this
@@ -87,5 +87,5 @@ firmware updates anymore (more
 
    $ svn co http://svn.freetz.org/tags/ds-0.2.9-p8
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

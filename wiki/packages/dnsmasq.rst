@@ -49,7 +49,7 @@ Zur Konfiguration gibt es im Web-Interface von Freetz die Seiten:
 -  *Einstellungen / Dnsmasq: extra*: Textfeld zur Eingabe zusätzlicher
    Optionen (dnsmasq long options ohne führende ``--``)
 
-|/!\\| Wenn der DHCP-Server von dnsmasq genutzt werden soll, dann ist
+|Warning| Wenn der DHCP-Server von dnsmasq genutzt werden soll, dann ist
 der FRITZBox-interne DHCP-Server aus der Original-Firmware unter
 *System* → *Netzwerkeinstellungen* → *IP-Adressen* zu deaktivieren
 
@@ -113,7 +113,7 @@ mit iptables den DNS-Port umleiten
 | Dazu den Port von dnsmasq auf 50053 ändern und die Optionen 'vor
   multid starten' und 'multid restarten' deaktivieren.
 | Im menuconfig müssen diese Optionen von iptables ausgewählt sein
-  (|/!\\| je nach Kernelversion variieren die Namen etwas):
+  (|Warning| je nach Kernelversion variieren die Namen etwas):
 
 bei Kernel 2.6.28 (zb Fritzbox 7320):
 
@@ -485,5 +485,5 @@ Weiterführende Links
 -  `network </tags/network>`__
 -  `packages <../packages.html>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

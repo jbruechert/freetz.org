@@ -11,7 +11,7 @@ neuen Mail wird ein Skript (maillog.cfg) aufgerufen. In diesem kann das
 Mail-Event z.B. durch eine LED an der FritzBox signalisiert werden. Oder
 über einen kurzen Telefonanruf auf ein Telefon bzw. Handy.
 
-|/!\\| Es können keine Konten über SSL-Verbindungen abgerufen werden!
+|Warning| Es können keine Konten über SSL-Verbindungen abgerufen werden!
 
 **Unterschied von IMAP- und POP3-Konten:** Wenn die Mails über ein
 IMAP-Konto abgerufen werden, dann werden die ungelesenen Mails (unread
@@ -133,5 +133,5 @@ Weiterführende Links
 -  `network </tags/network>`__
 -  `packages <../packages.html>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

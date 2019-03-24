@@ -26,14 +26,14 @@ there is a reference that a new account can be created via
 `​https://account.dyn.com/entrance/ <https://account.dyn.com/entrance/>`__
 Just give it a try.
 
-|/!\\| From 7-May-2014
+|Warning| From 7-May-2014
 
    | From 7-May the free Dyn account will stop. See `​Dyn
      blog <http://dyn.com/blog/why-we-decided-to-stop-offering-free-accounts/>`__.
 
 | 
 
-|/!\\| Since 14-May-2013
+|Warning| Since 14-May-2013
 
    Starting now, if you would like to maintain your free Dyn account,
    you must log into your account once a month. Failure to do so will
@@ -98,5 +98,5 @@ INADYN to show only Inadyn related messages. You will see that the every
 the IP address changed, your account at your DNS provider is updates
 with this new IP address.
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

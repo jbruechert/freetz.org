@@ -32,7 +32,7 @@ Was brauche ich um ein Freetz-Image erstellen zu können?
   `​7170 <ftp://ftp.avm.de/fritz.box/fritzbox.fon_wlan_7170/x_misc/deutsch/>`__
   oder
   `​7270 <ftp://ftp.avm.de/fritz.box/fritzbox.fon_wlan_7270/x_misc/deutsch/>`__.
-| |/!\\| Nach einem fehlgeschlagenen Firmware-Update kommst du nicht
+| |Warning| Nach einem fehlgeschlagenen Firmware-Update kommst du nicht
   mehr ins Internet, um dir ein Recovery-Image zu besorgen.
 | 2a.) Ein natives Linux-Betriebssytem, z.B.
   `​Ubuntu <http://www.ubuntu.com/>`__ (Einsteiger), Fedora
@@ -48,7 +48,7 @@ Was brauche ich um ein Freetz-Image erstellen zu können?
   (VMWare & VirtualBox),
   `​speedlinux <http://wiki.ip-phone-forum.de/skript:andlinux>`__
   (coLinux als VM, 32bit)
-| |/!\\| Freetz-Linux steht seit Version 1.2 nur als Virtualbox OVA
+| |Warning| Freetz-Linux steht seit Version 1.2 nur als Virtualbox OVA
   Datei bereit. Wer es weiterhin unter VMWare laufen lassen möchte,
   findet
   `hier <../../../FAQ.html#WiebekommeichFreetzLinuxunterVMWarezumLaufen>`__
@@ -60,7 +60,7 @@ Was brauche ich um ein Freetz-Image erstellen zu können?
   lokalen Download-Ordner "freetz/dl" etc. (`​Limitierungen bei
   Dateisystemen <http://en.wikipedia.org/wiki/Comparison_of_file_systems#Limits>`__
   beachten). Minimum: 5GiB (VM), Bevorzugt: 10GiB (nativ).
-| |/!\\| Die folgende Beschreibung ist auf Freetz-Linux zugeschnitten.
+| |Warning| Die folgende Beschreibung ist auf Freetz-Linux zugeschnitten.
 
 .. _Wassollteichbedenken:
 
@@ -413,5 +413,5 @@ Anhänge (1)
 Alle Anhänge herunterladen als:
 `.zip </zip-attachment/wiki/help/howtos/common/newbie/>`__
 
-.. |/!\\| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
 

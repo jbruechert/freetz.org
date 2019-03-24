@@ -15,7 +15,7 @@ integriert, sodass es hier nur noch bei ``make menuconfig`` entsprechend
 ausgewählt werden muss. Nach speichern der Konfiguration sowie
 erfolgreichem ``make`` ist pptp dann im erstellten Image enthalten.
 
-|/!\\| Wichtig ist hier: Aufgrund der Crypt-Module wird ein "replaced
+|Warning| Wichtig ist hier: Aufgrund der Crypt-Module wird ein "replaced
 kernel" benötigt (kann entsprechend in ``make menuconfig`` ausgewählt
 werden). Nur dann ist pptpd sichtbar und selektierbar!
 
@@ -176,5 +176,5 @@ Zuguterletzt erstellen wird das endgültige Image mit:
 
    make
 
-.. |/!\\| image:: ../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../chrome/wikiextras-icons-16/exclamation.png
 

@@ -351,7 +351,7 @@ string):*
 Commenting
 ----------
 
-|/!\\| As usual, comments are mainly intended for maintainers of the
+|Warning| As usual, comments are mainly intended for maintainers of the
 files, that means probably not you but someone else. Comments should
 describe why something is done the way it is done, or explain
 complicated statements that are not obvious. A summary for a whole block
@@ -418,5 +418,5 @@ The proper interpreter magic (aka shebang) for shell script is:
 
    #!/bin/sh
 
-.. |/!\\| image:: ../../../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../../../chrome/wikiextras-icons-16/exclamation.png
 

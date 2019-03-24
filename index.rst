@@ -16,7 +16,7 @@ Willkommen bei Freetz
   Software <http://www.germany.fsfeurope.org/documents/freesoftware.de.html>`__
   und wird von Oliver Metz, Alexander Kriegisch und Team entwickelt.
 
-|/!\\| **WARNUNG:** Die Installation einer modifizierten Firmware führt
+|Warning| **WARNUNG:** Die Installation einer modifizierten Firmware führt
 zum Verlust der Gewährleistung des Herstellers!
 
 .. _Download:
@@ -484,4 +484,4 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/packages/rudi-shell/functions
    wiki/Freetz
 
-.. |/!\\| image:: /chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: /chrome/wikiextras-icons-16/exclamation.png

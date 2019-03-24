@@ -19,7 +19,7 @@ für OpenSSL als auch für MatrixSSL passend sind.
 Übrigens: *matrixtunnel* kann man nicht nur für das Verschlüsseln von
 http, sondern auch für beliebige TCP Connections einsetzten.
 
-|/!\\| Achtung: matrixtunnel wird nicht mehr gefplegt, der Autor hat
+|Warning| Achtung: matrixtunnel wird nicht mehr gefplegt, der Autor hat
 aber einen Nachfolger `xrelayd <xrelayd.html>`__ vorgestellt, der jedoch
 etwas mehr Platz als die Kombination matrixtunnel/matrixssl benötigt.
 
@@ -28,5 +28,5 @@ etwas mehr Platz als die Kombination matrixtunnel/matrixssl benötigt.
 -  `packages <../packages.html>`__
 -  `tunnel </tags/tunnel>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

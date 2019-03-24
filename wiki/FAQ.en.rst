@@ -705,7 +705,7 @@ Configuration not available at the current security level!
       # 1 : only configuration files without shell commands (shell scripts) can be modified
       # 2 : no configuration files can be modified
 
-|/!\\| **ATTENTION:** Between x and > there must be at least a single
+|Warning| **ATTENTION:** Between x and > there must be at least a single
 blank space. If there isn't, the file will be empty. (echo will redirect
 to stdout. The output would be empty then. Alternatively, you could also
 write "x">security.
@@ -735,7 +735,7 @@ How can i disable the password for the Freetz-Website?
 
 ..
 
-   |/!\\| For Freetz-1.1.x replace */tmp/flash/webcfg_conf* with
+   |Warning| For Freetz-1.1.x replace */tmp/flash/webcfg_conf* with
    */tmp/flash/httpd_conf* .
 
 .. _HowcanichangethepasswordfortheFreetz-Website:
@@ -823,7 +823,7 @@ Problems During Working
       modconf save mod
       modsave flash
 
-|/!\\| As of `r5706 </changeset/5706>`__ the setting MOD_LIMIT is
+|Warning| As of `r5706 </changeset/5706>`__ the setting MOD_LIMIT is
 obsolete.
 
 .. _NoftpaccessafterFreetz:
@@ -899,10 +899,10 @@ read from ``/proc/devices``:
 Because this character device is created in a
 `​ramdisk <http://de.wikipedia.org/wiki/RAM-Disk>`__ under ``/var/``,
 this command must be executed every time during a restart. The content
-is achieving |(?)|. |/!\\| To edit such character devices **never** use
+is achieving |(?)|. |Warning| To edit such character devices **never** use
 vi! For this case, there is the wrapper script nvi.
 
-|/!\\| **ATTENTION:** The flash partition of the TFFS is very small and
+|Warning| **ATTENTION:** The flash partition of the TFFS is very small and
 not capable to contain files > 10-30 KB (depending on the size of the
 other files).
 
@@ -964,6 +964,6 @@ How much RAM does my FritzBox contain?
 -  `faq </tags/faq>`__
 
 .. |:-)| image:: ../chrome/wikiextras-icons-16/smiley.png
-.. |/!\\| image:: ../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../chrome/wikiextras-icons-16/exclamation.png
 .. |(?)| image:: ../chrome/wikiextras-icons-16/question.png
 

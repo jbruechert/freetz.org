@@ -5,7 +5,7 @@ help/howtos/development/integrate_patches
 Patches in Freetz einspielen
 ============================
 
-|/!\\| Hinweis: Wenn ihr Freetz aus dem svn (trunk oder stable branch)
+|Warning| Hinweis: Wenn ihr Freetz aus dem svn (trunk oder stable branch)
 ausgecheckt habt, dann erhaltet ihr die neuesten Patches durch
 ``svn up``.
 
@@ -28,5 +28,5 @@ dem Erstellen des Image fortfahren.
 -  Tags
 -  `howtos </tags/howtos>`__
 
-.. |/!\\| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
 

@@ -12,7 +12,7 @@ Transmission
    Transmission weniger Systemressourcen als andere Clients." (Quelle:
    `​Wikipedia <http://de.wikipedia.org/wiki/Transmission_(BitTorrent)>`__)
 
-|/!\\| Das Transmission Paket ist derzeit nur im Trunk über das Freetz
+|Warning| Das Transmission Paket ist derzeit nur im Trunk über das Freetz
 Webinterface konfigurierbar. In allen anderen Freetz Versionen muss das
 Paket von Hand gestartet werden.
 
@@ -31,5 +31,5 @@ Weiterführende Links
 -  `network </tags/network>`__
 -  `packages <../packages.html>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

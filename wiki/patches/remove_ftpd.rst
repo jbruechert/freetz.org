@@ -13,11 +13,11 @@ Laufwerke per FTP mehr möglich! Dieser kann jedoch auch per
 `vsftpd <../packages/vsftpd.html>`__ konfiguriert werden - vorausgesetzt
 natürlich, diese Pakete wurden auch installiert.
 
-|/!\\| Der Patch ist nur auswählbar, wenn vorher die Option *Show
+|Warning| Der Patch ist nur auswählbar, wenn vorher die Option *Show
 Advanced Options* ausgewählt wurde.
 
 -  Tags
 -  `patches <../patches.html>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

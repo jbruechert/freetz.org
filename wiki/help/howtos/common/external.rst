@@ -27,14 +27,14 @@ Entstanden aus diesem Thread im IPPF:
 | Mit External kann man die Meldung `Filesystem image too
   big <../../../FAQ.html#Filesystemimagetoobig>`__ vermeiden.
 
-| |/!\\| Der Pfad zu den external-Dateien kann im Webinterface unter
+| |Warning| Der Pfad zu den external-Dateien kann im Webinterface unter
   Freetz → Einstellungen → external konfiguriert werden.
 
 In diesem dürfen sich keine andere Dateien befinden, dies könnte zu
 `​Fehlern <http://www.ip-phone-forum.de/showthread.php?p=1469406#post1469406>`__
 führen.
 
-| |/!\\| Es können nur Pakete ausgelagert werden, die zur Installation
+| |Warning| Es können nur Pakete ausgelagert werden, die zur Installation
   ausgewählt wurden.
 
 .. _Konfiguration:
@@ -102,7 +102,7 @@ services
 Hier können verschiedene automatisch startende Packages zum auslagern
 ausgewählt werden.
 
-|/!\\| Diese werden erst geladen wenn der USB-Stick verfügbar ist und
+|Warning| Diese werden erst geladen wenn der USB-Stick verfügbar ist und
 die Option zum automatischen Starten von ausgelagerten Diensten im
 Webinterface aktiviert ist.
 
@@ -111,7 +111,7 @@ libraries
 
 Hier können verschieden Libraries zum auslagern ausgewählt werden.
 
-|/!\\| Zu beachten ist, dass Programme, die gegen diese gelinkt sind,
+|Warning| Zu beachten ist, dass Programme, die gegen diese gelinkt sind,
 erst gestartet werden können, wenn die Datei auf der Box geladen ist.
 Also vorher bitte die Abhängigkeiten prüfen.
 
@@ -174,5 +174,5 @@ external-Pakete der aktualisierten Firmware schon zur Verfügung.
 -  Tags
 -  `external </tags/external>`__
 
-.. |/!\\| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
 

@@ -223,7 +223,7 @@ Wenn man die Daten extern speichert, sollte man in das Verzeichnis
 Änderungen speichern
 ~~~~~~~~~~~~~~~~~~~~
 
-|/!\\| Damit diese Änderung beim Neustart erhalten bleibt müssen diese
+|Warning| Damit diese Änderung beim Neustart erhalten bleibt müssen diese
 gespeichert werden:
 
 .. code:: wiki
@@ -255,5 +255,5 @@ Links
    (Jabber)
 -  `​OpenWrt thread <http://open-wrt.ru/forum/viewtopic.php?id=21643>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

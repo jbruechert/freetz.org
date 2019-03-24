@@ -22,17 +22,17 @@ ihre Befehls- bzw. Fehlerausgaben anzuzeigen, falls vorhanden.
 Sicherheitshinweis
 ------------------
 
-|/!\\| **ACHTUNG!** Die Nano-Shell sollte nur für Debugging-Zwecke
+|Warning| **ACHTUNG!** Die Nano-Shell sollte nur für Debugging-Zwecke
 (Entwicklung, Fehlersuche) verwendet werden, z.B. wenn *telnetd, sshd
 (Dropbear)* oder *Rudi-Shell* aus irgendeinem Grund nicht verfügbar bzw.
 nicht zugreifbar sind. Sie ist eine Art Reservefallschirm oder letzter
 Ausweg, um Kommandos auf der Router-Box auszuführen, wenn alles andere
 scheitert, aber zumindest eine der beiden Weboberflächen (AVM oder
-Freetz) noch zugreifbar sind. |/!\\|
+Freetz) noch zugreifbar sind. |Warning|
 
 Da die Nano-Shell in der AVM-Oberfläche die Paßwortabfrage umgeht,
-handelt es sich hierbei um ein |/!\\| **potentielles Sicherheitsrisiko**
-|/!\\|, sofern Ihre Router-Box aus dem LAN/WAN für Fremde zugreifbar
+handelt es sich hierbei um ein |Warning| **potentielles Sicherheitsrisiko**
+|Warning|, sofern Ihre Router-Box aus dem LAN/WAN für Fremde zugreifbar
 ist. Das Freetz-Paßwort wird allerdings abgefragt, da es bereits auf
 Webserver-Ebene greift und nicht wie bei AVM in der
 Web-Applikationslogik implementiert ist.
@@ -117,5 +117,5 @@ Viel Spaß beim Ausprobieren!
 -  `packages <../packages.html>`__
 -  `tools </tags/tools>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

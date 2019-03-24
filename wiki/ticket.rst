@@ -5,7 +5,7 @@ ticket
 Was sollte ich bei der Erstellung eines neuen Tickets beachten?
 ---------------------------------------------------------------
 
-|/!\\| **Grundsätzlich**: Das Bug-Tracking-System (BTS) ist primär für
+|Warning| **Grundsätzlich**: Das Bug-Tracking-System (BTS) ist primär für
 **Bug-Reports** und **Erweiterungen** vorgesehen. **Support** gibt es im
 `​IP-Phone-Forum
 (IPPF) <http://www.ip-phone-forum.de/forumdisplay.php?f=525>`__ oder
@@ -100,6 +100,6 @@ Was sollte ich bei der Erstellung eines neuen Tickets beachten?
 
 `Neues Ticket erstellen </newticket>`__
 
-.. |/!\\| image:: ../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../chrome/wikiextras-icons-16/exclamation.png
 .. |:-)| image:: ../chrome/wikiextras-icons-16/smiley.png
 

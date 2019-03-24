@@ -9,7 +9,7 @@ Installation
 originalen Firmware bereit. Aus Lizenzgründen ist die Verbreitung sowohl
 originaler als auch modifizierter Firmware Images untersagt!
 
-|/!\\| Achtung: Das Aufspielen einer modifizierten Firmware geht mit dem
+|Warning| Achtung: Das Aufspielen einer modifizierten Firmware geht mit dem
 Verlust der Garantie einher. Wendet euch bei Problemen mit einer
 modifizierten Firmware daher **NICHT** an den AVM Support.
 
@@ -505,10 +505,10 @@ SpeedLinux hat eine Option zum vergrößern der Partition.
 Cygwin
 ------
 
-|/!\\| **Unter Cygwin funktioniert Freetz definitiv nicht, und auch für
+|Warning| **Unter Cygwin funktioniert Freetz definitiv nicht, und auch für
 ds-0.2.9 (Kernel 2.4) wird Linux empfohlen, weil es mit Cygwin Probleme
 geben kann und es außerdem einen riesigen Geschwindigkeitsverlust beim
-Bauen (mehrfache Build-Dauer) bedeutet, Cygwin zu verwenden.** |/!\\|
+Bauen (mehrfache Build-Dauer) bedeutet, Cygwin zu verwenden.** |Warning|
 
 Da Freetz sich unter Cygwin ohnehin nicht bauen lässt, folgt hier
 lediglich die Beschreibung für ds-mod:
@@ -751,5 +751,5 @@ Weiterführende Links
 -  Tags
 -  `howtos </tags/howtos>`__
 
-.. |/!\\| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
 

@@ -10,7 +10,7 @@ Tips & Tricks
 Sicherer Zugriff via HTTPS
 --------------------------
 
-|/!\\| Achtung: Diese Anleitung wurde geschrieben bevor AVM eine eigene
+|Warning| Achtung: Diese Anleitung wurde geschrieben bevor AVM eine eigene
 Fernzugrifffunktion integriert hat, weshalb die hier auch nicht erwähnt
 wird.
 
@@ -206,7 +206,7 @@ Wenn wir jetzt noch Services für Port 80 (AVM-Oberfläche) und/oder Port
 82 (WoL?-Oberfläche) haben wollen, fügen wir einfach entsprechende
 Abschnitte in die Konfiguration ein nach obigem Muster.
 
-|/!\\| **Achtung:** Um den oder die HTTPS-Ports nach außen verfügbar zu
+|Warning| **Achtung:** Um den oder die HTTPS-Ports nach außen verfügbar zu
 machen, müssen entweder die üblichen Einstellungen in
 ``/var/flash/ar7.cfg`` vorgenommen werden, also z.B. folgender Abschnitt
 unter *forwardrules*
@@ -224,7 +224,7 @@ schlage vor, der Freetz-Oberfläche diesen Port zu geben, denn dadurch
 gelangen wir an die Rudi-Shell und können somit alles mit der Box
 anstellen, was wir wollen.
 
-|/!\\| **Wichtig:** Es muß wohl nicht weiter erklärt werden, weshalb bei
+|Warning| **Wichtig:** Es muß wohl nicht weiter erklärt werden, weshalb bei
 diesem Szenario einem sicheren Passwort für die Web-Oberfläche besondere
 Bedeutung zukommt…
 
@@ -327,5 +327,5 @@ grundsätzlich auch innerhalb einer Telnet- oder SSH-Sitzung.
 -  `https </tags/https>`__
 -  `remote </tags/remote>`__
 
-.. |/!\\| image:: ../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../chrome/wikiextras-icons-16/exclamation.png
 

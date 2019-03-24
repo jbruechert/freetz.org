@@ -382,7 +382,7 @@ iptables <../help/howtos/security/split_wlan_lan.html>`__
 Known Bug (FritzBox vor 7270)
 -----------------------------
 
-|/!\\| Nach Laden des Conntack-Moduls weist der Kernel immer wieder
+|Warning| Nach Laden des Conntack-Moduls weist der Kernel immer wieder
 Pakete mit ``...ip_conntrack_tcp: INVALID: invalid TCP flag combinat``
 o.ä. ab. Das ist ja gut so. Aber warum kommen die nicht an den
 iptables-Chains vorbei? Das scheint vorher zu passieren.
@@ -403,11 +403,11 @@ danisahne schreibt dazu:
    0.2.7 läd diese Module im Skript modload, falls sie mitinstalliert
    wurden. — danisahne
 
-|/!\\| ds26: Die Module werden nicht automatisch geladen. Mit geladenem
+|Warning| ds26: Die Module werden nicht automatisch geladen. Mit geladenem
 ip_conntrack stürzt meine Box nach ca. 3h ab. Ich hab den dsld im
 Verdacht. Aber hier müsste mal jemand weiterforschen… — olistudent
 
-|/!\\| Ich habe festgestellt, dass es sich erheblich bessert, wenn man
+|Warning| Ich habe festgestellt, dass es sich erheblich bessert, wenn man
 folgendes macht:
 
 .. code:: wiki
@@ -437,5 +437,5 @@ mindestens 5x Reboot am Tag (W900V) (`Ticket 260 </ticket/260>`__)
 -  `security </tags/security>`__
 -  `überarbeiten </tags/%C3%BCberarbeiten>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

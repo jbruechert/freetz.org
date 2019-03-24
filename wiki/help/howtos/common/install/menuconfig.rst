@@ -85,9 +85,9 @@ Branding werden aber von der Box nicht akzeptiert.
 -  **freenet**: Gibt an, ob das freenet Branding in der modifizierten
    Firmware erhalten bleiben soll.
 
-|/!\\| In `r2700 </changeset/2700>`__ wurde die Logik der
+|Warning| In `r2700 </changeset/2700>`__ wurde die Logik der
 Brandingauswahl umgekehrt. Ausgewählte Brandings werden ab jetzt
-entfernt. |/!\\|
+entfernt. |Warning|
 
 .. _Mod:
 
@@ -144,5 +144,5 @@ Mod
       tut.
 
 .. |:-)| image:: ../../../../../chrome/wikiextras-icons-16/smiley.png
-.. |/!\\| image:: ../../../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../../../chrome/wikiextras-icons-16/exclamation.png
 

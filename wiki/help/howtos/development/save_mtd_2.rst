@@ -252,13 +252,13 @@ sein oder man sollte sich die Update-Prozedur aus den Original-Firmwares
 (z.B. 06.04.33, darin steckt ein Bootloader samt Update-Programm)
 anschauen und sich o.g. Artikel von Enrik durchlesen.
 
-|/!\\| **Ich kann nur dringendst davon abraten, den Urlader zu
-überschreiben, das sollte auch nie notwendig sein!!!** |/!\\|
+|Warning| **Ich kann nur dringendst davon abraten, den Urlader zu
+überschreiben, das sollte auch nie notwendig sein!!!** |Warning|
 
 `​Alexander Kriegisch
 (kriegaex) <http://www.ip-phone-forum.de/member.php?u=117253>`__
 
 .. |:-)| image:: ../../../../chrome/wikiextras-icons-16/smiley.png
 .. |;-)| image:: ../../../../chrome/wikiextras-icons-16/smiley-wink.png
-.. |/!\\| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
 

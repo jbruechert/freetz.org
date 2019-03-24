@@ -21,7 +21,7 @@ Intro
    Port="6667"
    Channel="##fritzbox"
 
-|/!\\| Grundsätzlich: Bitte einfach Eure Fragen stellen, Antworten
+|Warning| Grundsätzlich: Bitte einfach Eure Fragen stellen, Antworten
 können manchmal dauern (siehe "IRC Netiquette").
 
 .. _IRCNetiquette:
@@ -79,5 +79,5 @@ Konfiguration Chatzilla-Plugin in Firefox
 Ab sofort verbindet man sich automatisch mit jedem Start von Chatzilla
 zu ##fritzbox.
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

@@ -21,7 +21,7 @@ unbedingt kompliziert.
 In *Freetz* baut *Nagios* auf das Paket `microperl <microperl.html>`__
 auf.
 
-|/!\\| Das Paket hat momentan keine Weboberfläche. Die
+|Warning| Das Paket hat momentan keine Weboberfläche. Die
 Konfigurationsdateien sind nicht auf die Box angepasst und sowohl die
 html- als auch die cgi-Dateien werden nicht ins Image kopiert. Hier ist
 also einiges an Handarbeit nötig.
@@ -48,5 +48,5 @@ Weiterführende Informationen
 -  `packages <../packages.html>`__
 -  `tools </tags/tools>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

@@ -18,8 +18,8 @@ Dieses Paket enthält derzeit noch keine Konfigurationshilfe; die
 Konfigurationsdateien lassen sich jedoch über das Web-Interface
 bearbeiten.
 
-|/!\\| **Wer nicht weiß, wie die Routing-Daemons zu konfigurieren sind,
-sollte dieses Paket NICHT installieren''' /!\\**
+|Warning| **Wer nicht weiß, wie die Routing-Daemons zu konfigurieren sind,
+sollte dieses Paket NICHT installieren''' Warning**
 
 Ein sicheres Konfigurations-Interface ist allerdings in Arbeit…
 
@@ -45,5 +45,5 @@ Weiterführende Links
 -  `packages <../packages.html>`__
 -  `routing </tags/routing>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

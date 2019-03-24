@@ -13,7 +13,7 @@ Das Erstellen eines Cross-Compilers ist mit Freetz denkbar einfach:
    in der Regel nichts zu ändern. Soll der Compiler hingegen für eine
    originale Firmware kompilieren können, so solltest du bei "uClibc
    config" die entsprechende Konfiguration auswählen.
-   |/!\\| **ACHTUNG:** Im zweiten Fall sollte diese entpackte Instanz
+   |Warning| **ACHTUNG:** Im zweiten Fall sollte diese entpackte Instanz
    von Freetz nicht mehr zum Erstellen von Images verwendet werden,
    sondern nur noch der Cross-Compiler selbst.
 #. Benötigt wird
@@ -153,5 +153,5 @@ Using the dev-tools package to install compiler and tools
 -  Tags
 -  `howtos </tags/howtos>`__
 
-.. |/!\\| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
 

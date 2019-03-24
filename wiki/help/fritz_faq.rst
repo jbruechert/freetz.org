@@ -61,11 +61,11 @@ device in ``/var/flash/`` verwendet wird (Freetz benutzt die Minor
 Da dieses character device in der
 `​Ramdisk <http://de.wikipedia.org/wiki/RAM-Disk>`__ unter ``/var/``
 erzeugt wurde, muss dieser Befehl jedesmal beim Neustart ausgeführt
-werden. Der Inhalt bleibt aber erhalten. |/!\\| Zum Bearbeiten solcher
+werden. Der Inhalt bleibt aber erhalten. |Warning| Zum Bearbeiten solcher
 character devices **niemals** vi verwenden! Dafür gibt es das
 Wrapper-Skript nvi.
 
-|/!\\| **ACHTUNG:** Die Flash Partition des TFFS ist sehr klein und
+|Warning| **ACHTUNG:** Die Flash Partition des TFFS ist sehr klein und
 nicht geeignet Dateien > 10-30 KB aufzunehmen (je nach Größe der anderen
 Dateien).
 
@@ -312,5 +312,5 @@ debug.cfg beim Starten ab.
 -  Tags
 -  `faq </tags/faq>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

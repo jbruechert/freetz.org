@@ -17,7 +17,7 @@ Portfreigaben auf die Box im AVM Webinterface anlegen zu können.
 
 .. _VORSICHT:
 
-|/!\\| VORSICHT |/!\\|
+|Warning| VORSICHT |Warning|
 ----------------------
 
 Dieses Package wird nicht mehr supported und es sollte stattdessen
@@ -115,5 +115,5 @@ virtuellen IP - vergebens. Deaktiviert man virtual-ip und ruft
 -  `routing </tags/routing>`__
 -  `überarbeiten </tags/%C3%BCberarbeiten>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

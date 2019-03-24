@@ -34,7 +34,7 @@ Wer also eine Box mit "mehr Speicher" (ab 8MB aufwärts) benutzt, kann
 *Ruby* also durchaus auch in der Firmware selbst unterbringen. Naja,
 u.U. muss dafür so einiges anderes weggelassen werden |:-)|
 
-|/!\\| **Achtung:** Auf dem "Build-Host" muss die gleiche *Ruby* Version
+|Warning| **Achtung:** Auf dem "Build-Host" muss die gleiche *Ruby* Version
 installiert sein, die man für die Box bauen möchte!
 
 .. _WeiterführendeLinks:
@@ -55,5 +55,5 @@ Weiterführende Links
 -  `programming </tags/programming>`__
 
 .. |:-)| image:: ../../chrome/wikiextras-icons-16/smiley.png
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

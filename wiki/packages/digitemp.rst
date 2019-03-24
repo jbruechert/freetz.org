@@ -19,7 +19,7 @@ z.B. DS1820.
 Wichtiger Hinweis
 ~~~~~~~~~~~~~~~~~
 
-| |/!\\| Egal was in irgendeiner Anleitung im Internet steht, es MÜSSEN
+| |Warning| Egal was in irgendeiner Anleitung im Internet steht, es MÜSSEN
   alle 3 Beinchen der Sensoren verbunden werden!
 | Ob es nun eine eigene Stromversorgung oder Masse ist, bleibt euch
   überlassen. Ansonsten befinden sich die Sensoren in einem nicht
@@ -140,5 +140,5 @@ Weiterführende Links
 -  `packages <../packages.html>`__
 -  `usb </tags/usb>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

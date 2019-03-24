@@ -126,7 +126,7 @@ Um Masquerading zu aktivieren sind folgende Befehle nötig:
 
 Hierzu werden die iptables-Module *state* und *MASQUERADE* benötigt.
 
-|/!\\| Diese lassen (ließen?) Boxen mit altem Kernel 2.6.13.1 wie zB die
+|Warning| Diese lassen (ließen?) Boxen mit altem Kernel 2.6.13.1 wie zB die
 7170 nach einer gewissen Zeit rebooten, siehe Ticket
 `#260 </ticket/260>`__.
 
@@ -142,7 +142,7 @@ Module wieder zu entladen.
 Fallback
 ========
 
-|/!\\| Dieses Feature ist noch exprimentell. Fehlfunktionen und hohe
+|Warning| Dieses Feature ist noch exprimentell. Fehlfunktionen und hohe
 Kosten können nicht ausgeschlossen werden!
 
 Bei Aktivierung von Fallback wird die DSL/ATA-Internetverbindung alle X
@@ -171,7 +171,7 @@ aber nötig sein es mit eigenen Parameter zu laden, zB durch
 Was ist noch zu beachten? (2do-Liste)
 =====================================
 
-|/!\\| Es können momentan nur SIMs mit deaktivierter PIN-Abfrage genutzt
+|Warning| Es können momentan nur SIMs mit deaktivierter PIN-Abfrage genutzt
 werden. (dies ist allerdings mit dem Package *gcom* möglich)
 
 | 
@@ -193,5 +193,5 @@ wieder einzuschalten.
 -  `network </tags/network>`__
 -  `packages <../packages.html>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

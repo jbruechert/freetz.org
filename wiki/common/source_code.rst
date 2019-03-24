@@ -14,9 +14,9 @@ Subversion wird allgemein abgekürzt mit SVN.
 Entwicklerversion (Trunk)
 -------------------------
 
-| |/!\\| Diese Version ist ausschließlich für **erfahrene Benutzer und
+| |Warning| Diese Version ist ausschließlich für **erfahrene Benutzer und
   Entwickler** gedacht, die sich selbst zu helfen wissen!
-| |/!\\| Sie ist ständigen Änderungen unterworfen und funktioniert daher
+| |Warning| Sie ist ständigen Änderungen unterworfen und funktioniert daher
   möglicherweise **nur eingeschränkt** oder **temporär nicht**!
 
 Aktuelle Liste unterstützter Boxen mit
@@ -35,7 +35,7 @@ Auschecken aus Git:
 
    $ git clone https://github.com/Freetz/freetz.git freetz-devel <--- freetz-git: Lokale Kopie des Git-Repositorys
 
-|/!\\| `​Git <http://git-scm.com/>`__ ist nicht das führende System und
+|Warning| `​Git <http://git-scm.com/>`__ ist nicht das führende System und
 wird derzeit nicht offiziell unterstützt, sondern nur zusätzlich zu
 Testzwecken zur Verfügung gestellt.
 
@@ -76,9 +76,9 @@ Update eines lokalen Git-Repositorys (hier: Entwicklerversion):
 Stabile Version
 ---------------
 
-|/!\\| **Die "stabile" Version wird nicht mehr gepflegt und neuere Boxen
+|Warning| **Die "stabile" Version wird nicht mehr gepflegt und neuere Boxen
 wie auch aktuelle Firmwares (06.X) sind hier nicht verfügbar. Es
-empfiehlt sich nur den trunk Zweig zu nutzen.** |/!\\|
+empfiehlt sich nur den trunk Zweig zu nutzen.** |Warning|
 
 Für einige Box-Typen kann keine Firmware von den AVM-Servern geladen
 werden: Abhilfe siehe
@@ -102,5 +102,5 @@ Firmware-Update mehr von AVM erhalten (mehr Infos
 
    $ svn co http://svn.freetz.org/tags/ds-0.2.9-p8
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

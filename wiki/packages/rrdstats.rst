@@ -100,7 +100,7 @@ lazy") verringert die CPU-Last.
 Vefügbare Netzwerkintrafaces auf der Box kann man so ermitteln:
 ``ifconfig |grep -v "^ "``
 
-|/!\\| Das Unterdrücken der 85°C Fehlerwerte wirkt sich nur auf die .rrd
+|Warning| Das Unterdrücken der 85°C Fehlerwerte wirkt sich nur auf die .rrd
 Dateien aus, nicht auf die .cvs.
 
 *Die anderen Einstellungen dürften selbsterklärend sein. Falls nicht,
@@ -286,6 +286,6 @@ Entstanden aus diesem Thread im IPPF:
 -  `monitoring </tags/monitoring>`__
 -  `packages <../packages.html>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 .. |:)| image:: ../../chrome/wikiextras-icons-16/smiley.png
 

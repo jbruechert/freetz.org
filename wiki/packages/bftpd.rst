@@ -28,7 +28,7 @@ vergebenen Passwort möglich.
 Zusätzliche Benutzer einrichten
 -------------------------------
 
-|/!\\| Achtung: Der AVM-Dämon ``ctlmgr`` überschreibt die
+|Warning| Achtung: Der AVM-Dämon ``ctlmgr`` überschreibt die
 ``/etc/passwd`` bei Änderungen im Webinterface und löscht die angelegten
 User. Außerdem ist das Usermanagement von Freetz überarbeitet worden, so
 dass jetzt mit ``adduser username -h /var/media/ftp/uStor01`` neue
@@ -111,5 +111,5 @@ im Forum.
 -  `server </tags/server>`__
 -  `überarbeiten </tags/%C3%BCberarbeiten>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

@@ -294,7 +294,7 @@ einen Proxy-Ansatz an: Wir benennen ``/sbin/ar7login`` um in z.B.
 Wir reichen also einfach alle Parameter durch an ``ar7login`` und
 löschen danach umgehend wieder dessen Spuren im Klassenbuch. |;-)|
 Anschließend gilt analog zu Variante 1: Firmware bauen, flashen,
-glücklich sein. |/!\\| **Achtung: Das Flag wird erst gelöscht, nachdem
+glücklich sein. |Warning| **Achtung: Das Flag wird erst gelöscht, nachdem
 die Telnet-Sitzung wieder beendet wird.**
 
 .. _NachgelagertesAufräumenperProxy-SkripttransienteVariante:
@@ -458,5 +458,5 @@ Harald Becker (ralda)
 
 .. |:-)| image:: ../../../../chrome/wikiextras-icons-16/smiley.png
 .. |;-)| image:: ../../../../chrome/wikiextras-icons-16/smiley-wink.png
-.. |/!\\| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
 

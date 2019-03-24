@@ -129,7 +129,7 @@ korrekt: IPTables selbst läuft stabil. Die Probleme werden durch das
 allgemeine Funktion von IPTables jedoch nicht unbedingt benötigt wird,
 muss man es auch nicht installieren.
 
-|/!\\| Bei der Auswahl von iptables-cgi in ``make menuconfig`` wird
+|Warning| Bei der Auswahl von iptables-cgi in ``make menuconfig`` wird
 *conntrack* u.U. rekursiv mit ausgewählt. Man kann es jedoch manuell
 abwählen, sodass dessen Installation unterbleibt.
 
@@ -141,5 +141,5 @@ abwählen, sodass dessen Installation unterbleibt.
 -  `routing </tags/routing>`__
 -  `security </tags/security>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

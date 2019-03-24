@@ -12,7 +12,7 @@ SMStools3
 
 Package um SMS mit einem UMTS-Stick zu versenden und zu empfangen.
 
-|/!\\| Falls die FritzBox UMTS-Unterstützung hat, am besten den umtsd
+|Warning| Falls die FritzBox UMTS-Unterstützung hat, am besten den umtsd
 herauspatchen.
 
 | SMStools3 kann komplett per Webif bedient werden oder alternativ per
@@ -55,5 +55,5 @@ Weiteres
 -  Falls der Stick nicht richtig erkannt wird, sondern nur als
    Datenträger: `wiki:/packages/ppp#Weiteres <ppp.html#Weiteres>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

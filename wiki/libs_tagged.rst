@@ -1,5 +1,3 @@
-libs_tagged
-===========
 .. _BibliothekennachAnwendungsgebieten:
 
 Bibliotheken nach Anwendungsgebieten

@@ -19,7 +19,7 @@ auf der Box via telnet/ssh anzumelden, muss ihm eine Login-Shell
 zugewiesen werden. Dies geschieht durch den Parameter ``-s /bin/sh``.
 Der Parameter -g (GECOS field) ist eine Beschreibung des Benutzers.
 
-|/!\\| Dieses Feld darf nicht auf *box user* oder *ftp user* gesetzt
+|Warning| Dieses Feld darf nicht auf *box user* oder *ftp user* gesetzt
 werden, da der Benutzer sonst beim Neustart verloren geht.
 
 .. code:: wiki
@@ -149,5 +149,5 @@ Anhänge (4)
 Alle Anhänge herunterladen als:
 `.zip </zip-attachment/wiki/help/howtos/common/user/>`__
 
-.. |/!\\| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
 

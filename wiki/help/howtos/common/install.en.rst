@@ -9,9 +9,9 @@ Installation
 original firmware. Because of license issues the distribution of
 original or modified firmware images is forbidden.
 
-|/!\\| the installation of a modified firmware invalidates the
+|Warning| the installation of a modified firmware invalidates the
 manufacturer's warranty! In case of problems, do NOT contact AVM
-support. |/!\\|
+support. |Warning|
 
 **Speedports**: (see
 `​sp2fritz <http://wiki.ip-phone-forum.de/skript:speedport2fritz#was_mach_ich_mit_dem_fertigen_kernel.image>`__).
@@ -400,10 +400,10 @@ Vorteile von coLinux/andLinux/speedLinux:
 Cygwin
 ------
 
-|/!\\| **Unter Cygwin funktioniert Freetz definitiv nicht, und auch für
+|Warning| **Unter Cygwin funktioniert Freetz definitiv nicht, und auch für
 ds-0.2.9 (Kernel 2.4) wird Linux empfohlen, weil es mit Cygwin Probleme
 geben kann und es außerdem einen riesigen Geschwindigkeitsverlust beim
-Bauen (mehrfache Build-Dauer) bedeutet, Cygwin zu verwenden.** |/!\\|
+Bauen (mehrfache Build-Dauer) bedeutet, Cygwin zu verwenden.** |Warning|
 
 Da Freetz sich unter Cygwin ohnehin nicht bauen lässt, folgt hier
 lediglich die Beschreibung für ds-mod:
@@ -633,5 +633,5 @@ Weiterführende Links
 -  Tags
 -  `howto </tags/howto>`__
 
-.. |/!\\| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../../chrome/wikiextras-icons-16/exclamation.png
 

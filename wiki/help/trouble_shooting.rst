@@ -26,7 +26,7 @@ Troubleshooting .config
 Troubleshooting Build-Abbruch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|/!\\| Sollte während des Build-Prozesses ein Abbruch auftreten, so kann
+|Warning| Sollte während des Build-Prozesses ein Abbruch auftreten, so kann
 man versuchen diese Strategien anzuwenden:
 
 Einzelnes Paketes erneut erstellen:
@@ -49,5 +49,5 @@ Bei Nichterfolg können `Wiki, Forum und
 IRC <../index.html#WikiForumundIRC>`__ genutzt werden, um das Problem
 weiter zu behandeln.
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

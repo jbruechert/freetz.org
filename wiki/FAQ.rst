@@ -549,7 +549,7 @@ Could not download firmware image
    menuconfig <help/howtos/common/install/menuconfig.html>`__ unter
    *Advanced Options ⇒ Override firmware source* den Namen der
    herunterzuladenen Image Datei anpassen.
-   |/!\\| Vorsicht: Evtl. sind weitere Anpassungen im Quellcode
+   |Warning| Vorsicht: Evtl. sind weitere Anpassungen im Quellcode
    notwendig und zur Sicherheit ein passendes Recover-Image bereit
    halten.
 
@@ -1229,7 +1229,7 @@ Wie deaktiviere ich das Passwort für die Freetz-Webseite?
    bevorzugt. Ein leeres Skript /tmp/flash/webcfg_conf erzeugt also eine
    leere Konfigurationsdatei ohne Passwort.
 
-|/!\\| Für Freetz-1.1.x ist */tmp/flash/webcfg_conf* durch
+|Warning| Für Freetz-1.1.x ist */tmp/flash/webcfg_conf* durch
 */tmp/flash/httpd_conf* zu ersetzen.
 
 .. _WieändereichdasPasswortfürdieFreetz-Webseite:
@@ -1342,7 +1342,7 @@ Probleme im Betrieb
       modconf save mod
       modsave flash
 
-|/!\\| Seit `r5706 </changeset/5706>`__ (trunk) wird das Setzen des
+|Warning| Seit `r5706 </changeset/5706>`__ (trunk) wird das Setzen des
 Limits nicht mehr unterstützt.
 
 .. _KeinFTP-ZugriffnachFreetzmöglich:
@@ -1457,5 +1457,5 @@ allgemein <help/fritz_faq.html>`__
 -  `faq </tags/faq>`__
 
 .. |:-)| image:: ../chrome/wikiextras-icons-16/smiley.png
-.. |/!\\| image:: ../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../chrome/wikiextras-icons-16/exclamation.png
 

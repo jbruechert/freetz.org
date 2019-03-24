@@ -11,7 +11,7 @@ Viele Firmen setzen den PPTP-Server von Microsoft ein. Mit dem Client
 kann man ein Verbindung zu diesem VPN über das **Point-to-Point
 Tunneling Protocol** (**PPTP**) aufbauen
 
-|/!\\| Das PPTP-Package benötigt "replace kernel".
+|Warning| Das PPTP-Package benötigt "replace kernel".
 
 .. _PPTPKonfiguration:
 
@@ -54,5 +54,5 @@ Screenshot?
 -  `server </tags/server>`__
 -  `tunnel </tags/tunnel>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

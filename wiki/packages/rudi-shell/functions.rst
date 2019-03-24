@@ -43,7 +43,7 @@ besteht aus folgenden Elementen:
    an den Namensvorschlag angehängt. Das dient nur zur Bequemlichkeit,
    man kann es auch selbst beim Speichern machen. Für Benutzer mit
    `Download <../../Download.html>`__-Manager und ausgeschaltetem
-   Speichern-Dialog ist es so ein bißchen einfacher. |/!\\| Achtung: Die
+   Speichern-Dialog ist es so ein bißchen einfacher. |Warning| Achtung: Die
    Schalter ändern *nicht* das Dateiformat, nur die Dateiendung.
 -  **Datei-Uploads** werden über die beiden Textfelder "Quelldatei" und
    "Zieldatei" abgewickelt. Die Quelldatei kann mit "Durchsuchen" direkt
@@ -51,17 +51,17 @@ besteht aus folgenden Elementen:
    änderbaren Vorschlagsnamen ``/var/tmp/rudi_upload``. Es sollte
    natürlich ein existierendes, beschreibbares Verzeichnis gewählt
    werden. Ein nicht existierendes kann ja vorher über die
-   Befehlseingabe erzeugt werden. |/!\\| **Achtung:** Bitte nicht
+   Befehlseingabe erzeugt werden. |Warning| **Achtung:** Bitte nicht
    versuchen, Dateien nach ``/var/flash`` hochzuladen. Immer erst
    temporär woanders speichern und mittels ``cat`` ins *tffs* schreiben!
-   |/!\\|
+   |Warning|
 
-|/!\\| **Achtung, besonders wichtig: Die Rudi-Shell, insbesondere die
+|Warning| **Achtung, besonders wichtig: Die Rudi-Shell, insbesondere die
 Historie, funktioniert ohne Navigation auf der Hauptseite. D.h., Sie
 brauchen weder die Schaltflächen "Vor/Zurück" noch "Neu laden" des
 Browsers. Im Gegenteil, wenn Sie sie benutzen, werden erstens die
 Historie gelöscht und zweitens alle Schalter und Textfelder auf ihre
-Standardwerte zurückgesetzt.** |/!\\| *Für die Techniker unter uns:
+Standardwerte zurückgesetzt.** |Warning| *Für die Techniker unter uns:
 Alles, was an Rudi-Shell dynamisch ist, passiert in einem unsichtbaren
 IFrame bzw. auf der Hauptseite durch javascript-basierte Änderungen am
 DOM der Seite.*
@@ -69,5 +69,5 @@ DOM der Seite.*
 -  Tags
 -  `rudi-shell </tags/rudi-shell>`__
 
-.. |/!\\| image:: ../../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../../chrome/wikiextras-icons-16/exclamation.png
 

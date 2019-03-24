@@ -24,7 +24,7 @@ Library. Eine Reihe von Klassen sind Referenz-Klassen, die für eine
 spezielle VM angepasst werden müssen. Diese werden zusammen mit *JamVM*
 gebündelt.
 
-|/!\\| **Anmerkung:** *JamVM* wird nicht mit der Class Library von Suns
+|Warning| **Anmerkung:** *JamVM* wird nicht mit der Class Library von Suns
 oder IBMs JVMs funktionieren.
 
 Da die normale Klassenbiliothek (glibj.zip) über 9 MB groß ist wird
@@ -52,5 +52,5 @@ Weiterführende Links
 -  Tags
 -  `packages <../packages.html>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

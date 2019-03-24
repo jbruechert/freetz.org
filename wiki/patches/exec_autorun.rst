@@ -13,7 +13,7 @@ eine im Wurzelverzeichnis des Sticks (also /var/media/ftp/uStorXY/)
 befindliche ``autorun.sh`` anschließend auch ohne Rückfrage ausgeführt
 (sowie ``autoend.sh`` beim Auswerfen des Sticks über das AVM WebIF).
 
-   |/!\\| Falls ein Dateisystem mit Berechtigungen genutzt wird, müssen
+   |Warning| Falls ein Dateisystem mit Berechtigungen genutzt wird, müssen
    die Dateien ausführbar gemacht werden.
 
 Diese Vor- und Nachteile sollten vor der Entscheidung abgewogen werden:
@@ -33,7 +33,7 @@ Vorteile
 Nachteile
 ---------
 
--  |/!\\| ein "böser Bube" könnte auf diese Weise in die Box eindringen,
+-  |Warning| ein "böser Bube" könnte auf diese Weise in die Box eindringen,
    ohne das Passwort zu kennen - sofern er "physischen Zugang" hat (also
    ein USB-Gerät an die Box anschließen, bzw. ein für diesen Zweck
    ständig verwendetes Medium modifizieren kann)
@@ -49,5 +49,5 @@ Hier können die Einstellungen dazu im Webinterface vorgenommen werden.
 -  Tags
 -  `patches <../patches.html>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

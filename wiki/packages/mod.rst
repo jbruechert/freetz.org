@@ -11,7 +11,7 @@ packages/mod
   `FREETZ-MOUNT <../patches/freetzmount.html>`__,
   `external <../help/howtos/common/external.html>`__ und das
   Freetz-Webinterface konfiguriert werden.
-| |/!\\| Abhängig von der Konfiguration sind nur bestimmte zu sehen.
+| |Warning| Abhängig von der Konfiguration sind nur bestimmte zu sehen.
 
 swap
 ~~~~
@@ -83,7 +83,7 @@ Beispiel:
    */10  * * * *  logger "Es sind wieder 10 Minuten vergangen"
    * 6,18  * * *  logger "Es ist 6 Uhr"
 
-|/!\\| Im Gegensatz zu "normalen" Linux Systemen fehlt die
+|Warning| Im Gegensatz zu "normalen" Linux Systemen fehlt die
 "Besitzer"-Spalte und alle Befehle werden als root ausgeführt.
 
 dtrace
@@ -102,7 +102,7 @@ dtrace
        /etc/init.d/rc.lighttpd start
    fi
 
-|/!\\| Nur sichtbar wenn der replace-dtrace Patch ausgewählt wurde!
+|Warning| Nur sichtbar wenn der replace-dtrace Patch ausgewählt wurde!
 
 hosts
 ~~~~~
@@ -135,14 +135,14 @@ modules
    pl2303
    ftdi_sio
 
-|/!\\| Die Namen der Module sind ohne Pfad und die Endung ``.ko``
+|Warning| Die Namen der Module sind ohne Pfad und die Endung ``.ko``
 anzugeben.
 
 rc.custom
 ~~~~~~~~~
 
 | Die Befehle in dieser Datei werden nach dem Bootvorgang ausgeführt.
-| |/!\\| Es dürfen keine Befehle eingetragen sein, die im Vordergrund
+| |Warning| Es dürfen keine Befehle eingetragen sein, die im Vordergrund
   bleiben oder sehr lange brauchen. Dies könnte Probleme beim Starten
   der FritzBox verursachen. Bei Befehlen in Verbindung mit einen
   USB-Stick, bitte die Erweiterung rc.external verwenden.
@@ -168,7 +168,7 @@ rc.external
    esac
 
 | 
-| |/!\\| Bitte ``Advanced Options`` → ``External`` →
+| |Warning| Bitte ``Advanced Options`` → ``External`` →
   ``Enable external processing`` für diese Erweiterung aktivieren.
 
 shutdown
@@ -188,5 +188,5 @@ rules <../patches/custom_udev_rules.html>`__.
 -  Tags
 -  `packages <../packages.html>`__
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

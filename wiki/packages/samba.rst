@@ -97,7 +97,7 @@ Unter ``Patches`` befindet sich
 
 -  *Patch USB storage names* … mit zusätzlichen Unterpunkten.
    Diese beeinflussen ebenfalls Details der Dateifreigabe.
--  *Remove smbd* |/!\\| Diese Option sollte deselektiert sein und wird
+-  *Remove smbd* |Warning| Diese Option sollte deselektiert sein und wird
    bei der Auswahl des Samba-Packages aus menuconfig entfernt.
 
 .. _KonfigurierendesPakets:
@@ -158,7 +158,7 @@ Pakete → Samba
    Dateifreigabe bereit stellt. Es kann leer gelassen werden. Dann gilt
    die Dateifreigabe für alle Netzwerksegment, in der sich die Box
    befindet.
-   |/!\\| **Achtung:** Wenn die Box direkt mit dem Internet verbunden
+   |Warning| **Achtung:** Wenn die Box direkt mit dem Internet verbunden
    ist, sollte man sicher sein der der interne Firewall in Ordnung ist.
    Sonst könnte das eine Angriffsmöglichkeit aus dem gesamten Internet
    eröffnen.
@@ -252,5 +252,5 @@ Weitere Tuningmöglichkeiten gibt es hier:
 -  `überarbeiten </tags/%C3%BCberarbeiten>`__
 
 .. |(./)| image:: ../../chrome/wikiextras-icons-16/tick.png
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 

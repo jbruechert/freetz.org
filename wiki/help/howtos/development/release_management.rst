@@ -5,7 +5,7 @@ help/howtos/development/release_management
 Release Management
 ==================
 
-**/!\\ Work In Progress /!\\**
+**Warning Work In Progress Warning**
 
 .. _SubversionRepository:
 

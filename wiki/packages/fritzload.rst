@@ -10,7 +10,7 @@ Software die automatisiert Dateien von bzw. zu Sharehostern herunter-
 und hochladen kann und diese auf einem gemounteten Medium (z.B.
 USB-Stick) ablegt.
 
-| |/!\\| Es ist kein Bestandteil von Freetz und wird nicht von Freetz
+| |Warning| Es ist kein Bestandteil von Freetz und wird nicht von Freetz
   supportet!
 | Bei Fragen oder Problemen bitte auf der `​FritzLoad
   Homepage <http://sourceforge.net/apps/trac/avmload/>`__ oder im
@@ -31,7 +31,7 @@ Es hat sich gezeigt, dass FritzLoad
 -  es sich nicht ordnungsgemäß beendet und damit das Aushängen von
    Datenträgern verhindert (`#910 </ticket/910>`__)
 
-|/!\\| Deshalb: Vor einer Ticketerstellung bitte ohne FritzLoad testen.
+|Warning| Deshalb: Vor einer Ticketerstellung bitte ohne FritzLoad testen.
 
 .. _GründeundmöglicheLösungen:
 
@@ -50,5 +50,5 @@ FritzLoad wäre zur Fehlersuche jederzeit im Handumdrehen "abziehbar".
 
 Diese Lösung sollte dann auch vom FritzLoad Autor gepflegt werden.
 
-.. |/!\\| image:: ../../chrome/wikiextras-icons-16/exclamation.png
+.. |Warning| image:: ../../chrome/wikiextras-icons-16/exclamation.png
 
