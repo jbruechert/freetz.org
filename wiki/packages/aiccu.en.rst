@@ -31,24 +31,24 @@ Creating a Feetz Image with AICCU
 | After the following step you can configure the packages you want to
   have included in your image.
 
-.. code:: wiki
+.. code:: bash
 
    make menuconfig
 
 Make sure the following is selected:
 
-.. code:: wiki
+.. code:: bash
 
    [*] Show advanced options
    [*]   Enable IPv6 support
 
-.. code:: wiki
+.. code:: bash
 
    Package selection  --->  Standard packages  --->  [*] aiccu - aiccu - ipv6 connectivity from sixxs
 
 I also advice to add the following for easier troubleshooting:
 
-.. code:: wiki
+.. code:: bash
 
    Advanced options  ---> BusyBox options  --->    IPv6 Options  --->   [*] ping6 command
    Advanced options  --->   BusyBox options  --->    IPv6 Options  --->   [*] traceroute6 command
@@ -88,13 +88,13 @@ you are running out of CPU resources.
 
 You can verify this with the following command:
 
-.. code:: wiki
+.. code:: bash
 
     uptime
 
 Or:
 
-.. code:: wiki
+.. code:: bash
 
     cat /proc/loadavg
 
@@ -105,7 +105,7 @@ Or:
 
 You can also use the following command:
 
-.. code:: wiki
+.. code:: bash
 
    top
 

@@ -9,7 +9,7 @@ Erstellen des Image herunterladen und nach ``./addon`` entpacken.
 Folgendes Beispiel geht davon aus, dass man sich im Verzeichnis des
 entpackten Freetz befindet:
 
-.. code:: wiki
+.. code:: bash
 
    tar -C addon -xjvf /pfad/zu/addon-paket-0.1-freetz.tar.bz2
 

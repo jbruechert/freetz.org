@@ -45,7 +45,7 @@ die in Freetz 1.2 oder der Freetz-Entwicklerversion enthalten sind.
 Zum Einbinden der aktuellsten Version aus der Entwicklerversion in
 Freetz 1.2 kann man so vorgehen (im Wurzelverzeichnis von Freetz):
 
-.. code:: wiki
+.. code:: bash
 
    svn switch http://svn.freetz.org/trunk/make/callmonitor/callmonitor.mk make/callmonitor/callmonitor.mk
 

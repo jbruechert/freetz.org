@@ -36,7 +36,7 @@ Es kann entweder über **Netzwerk** oder **lokal** geloggt werden.
 Optionen
 --------
 
-.. code:: wiki
+.. code:: bash
 
    Usage: syslogd [OPTIONS]
 

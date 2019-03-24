@@ -125,7 +125,7 @@ Optionen. Die
 `​man-page <http://sispmctl.sourceforge.net/#mozTocId756141>`__ findet
 sich aber auch auf der Homepage des Projekts.
 
-.. code:: wiki
+.. code:: bash
 
    root@fritz:/var/mod/root# sispmctl -h
 

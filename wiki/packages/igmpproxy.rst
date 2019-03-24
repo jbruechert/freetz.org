@@ -5,7 +5,7 @@ igmpproxy
 einfacher multicast routing Daemon der für multicast forwarding zwischen
 Netzwerken z.B. für IPTV benutzt wird.
 
-.. code:: wiki
+.. code:: bash
 
    Usage: igmpproxy [-h] [-d] [-v [-v]] <configfile>
 
@@ -15,7 +15,7 @@ Netzwerken z.B. für IPTV benutzt wird.
 
 Configfile:
 
-.. code:: wiki
+.. code:: bash
 
    ########################################################
    #

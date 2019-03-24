@@ -48,7 +48,7 @@ machen. Anschauen kann man sich die Meldungen mit ``dmesg | tail``. Bei
 fehlendem Benutzername oder falschem Passwort sieht das Beispielsweise
 so aus:
 
-.. code:: wiki
+.. code:: bash
 
    root@fritz:/var/mod/root# mount -t cifs //192.168.1.1/Freetz /var/media/ftp
     CIFS VFS: Send error in SessSetup = -13

@@ -45,21 +45,21 @@ Vorgehensweise:
    nötig, dass zwei symlinks erstellt werden dies kann z.B so gelöst
    werden
 
-.. code:: wiki
+.. code:: bash
 
      ln -s /var/media/ftp/uStor01/apache/logs /var/logs
 
 Danach kann man die Apache Befehle direkt verwenden (z.B. apachectl
 start|stop|restart):
 
-.. code:: wiki
+.. code:: bash
 
    /var/media/ftp/uStor01/apache/bin/apachectl start
 
 **Verwendet man kein selbsterstelltes Binary, so sollte (muss) man
 Apache mittels folgendem Befehl starten:**
 
-.. code:: wiki
+.. code:: bash
 
    httpd-2.2.4/bin/apachectl -f /Pfad/zur/Apache/Config/httpd.conf -k start
 
@@ -71,14 +71,14 @@ Apache mittels folgendem Befehl starten:**
 -  Wichtig: damit PHP funktioniert müssen folgende Zeilen in die
    Apache-Konfiguration eingefügt werden:
 
-.. code:: wiki
+.. code:: bash
 
    Action       php-script /cgi-bin/php-cgi
    AddHandler      php-script .php
 
 Für CGI's muss folgende Zeile hinzugefügt/auskommentiert werden:
 
-.. code:: wiki
+.. code:: bash
 
    AddHandler    cgi-script .cgi
 
@@ -97,7 +97,7 @@ root ist nur bei speziellen Binaries möglich).
 
 Derzeit (Stand Juli 2011) kann folgendes verwendet werden:
 
-.. code:: wiki
+.. code:: bash
 
    User boxusr80
    Group root
@@ -109,7 +109,7 @@ entsprechende Verzeichnis AllowOverride entsprechend angepasst werden
 Hier eine entsprechende Config für ein Verzeichnis (diese ermöglicht
 jedem den Zugriff!):
 
-.. code:: wiki
+.. code:: bash
 
    <Directory "/var/media/ftp/uStor01/apache/htdocs">
    Options All
@@ -132,7 +132,7 @@ Passwortschutz mit .htaccess
    Soll ein Verzeichnis mittels *.htaccess* vor autorisiertem Zugriff
    geschützt werden kann folgendes hinzugefügt werden:
 
-.. code:: wiki
+.. code:: bash
 
    AuthType
    Basic AuthUserFile    /path/to/.ht.password !AuthName    "Die Website erfordert Zugangsdaten" require valid-user
@@ -142,7 +142,7 @@ Passwortschutz mit .htaccess
    **Wichtig** : im apache Ordner befindet sich htpasswd, mit dem man
    die Passwortdatei erstellen kann.
 
-.. code:: wiki
+.. code:: bash
 
    htpasswd -c/path/to/.ht.password username
 
@@ -151,7 +151,7 @@ mit dem angegebenem Usernamen)
 
 Um Benutzer zur Passwortdatei hinzuzufügen folgendes benutzen:
 
-.. code:: wiki
+.. code:: bash
 
     htpasswd/path/to/.ht.password username
 
@@ -184,7 +184,7 @@ zusätzliche Website, welche angezeigt werden soll, muss ein VirtualHost
 erstellt werden. Hier eine Beispielkonfiguration um das Freetz-Interface
 über freetz.meinedomain.at anzeigen zu lassen:
 
-.. code:: wiki
+.. code:: bash
 
    <VirtualHost *:80>
    ProxyPreserveHost On

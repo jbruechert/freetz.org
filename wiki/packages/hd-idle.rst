@@ -10,7 +10,7 @@ wird ein Utility wie *hd-idle* (oder das mit Freetz ebenfalls verfügbare
 
 Es gibt, herstellerabhängig 3 verschiedene Powermodes:
 
-.. code:: wiki
+.. code:: bash
 
    active/idle (normal operation)
    standby (low power mode, drive has spun down)

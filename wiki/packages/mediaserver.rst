@@ -31,7 +31,7 @@ verlinkt sogar auf das Verzeichnis des FTP-Servers.
 
 In der Ereignisanzeige sollte folgende Meldung erscheinen:
 
-.. code:: wiki
+.. code:: bash
 
    Mediaserver mit xx Mediendateien gestartet. Alle Mediendateien stehen zur Verfügung.
 

@@ -74,7 +74,7 @@ Transparenter Proxy
 Um die Umleitung zu aktivieren folgendes ausführen (Konsole oder
 rc.custom):
 
-.. code:: wiki
+.. code:: bash
 
    modprobe ip_tables
    modprobe iptable_filter
@@ -99,7 +99,7 @@ Werbefilter
   Fritz.Box etwas eng. Deswegen ist es nützliche die Listen beim Start
   der Fritz.Box neu zu laden.
 
-.. code:: wiki
+.. code:: bash
 
    URL="http://adblockplus.mozdev.org/easylist/easylist.txt"
    ACTION=/var/tmp/flash/privoxy/user.action
@@ -124,12 +124,12 @@ Nähere Infos unter:
 If you want to store the action and filter file external in stead of
 flash:
 
-.. code:: wiki
+.. code:: bash
 
    ACTION=/var/media/ftp/uFlash/privoxy/user.action
    FILTER=/var/media/ftp/uFlash/privoxy/user.filter
 
-.. code:: wiki
+.. code:: bash
 
    rm /tmp/flash/privoxy/user.filter
    rm /tmp/flash/privoxy/user.action

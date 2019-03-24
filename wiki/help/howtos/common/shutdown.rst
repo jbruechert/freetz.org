@@ -61,7 +61,7 @@ Konfiguration der Fritzbox für herunterzufahrenden Linux-Rechner
 -  Füge als abschließende Konfigurationsmaßnahme auf der Fritzbox
    folgende Zeile zu den Listenern des Callmonitors hinzu:
 
-.. code:: wiki
+.. code:: bash
 
    in:request ^<abgangsrufnummer> ^<eingangsrufnummer> HOME=/mod/root && /var/tmp/flash/ssh/shutdown_linuxrechner.sh
 
@@ -80,7 +80,7 @@ Konfiguration der Fritzbox für herunterzufahrenden Windows-Rechner
 
 -  Folgende Zeile zu den Listenern des Callmonitors hinzufügen:
 
-   .. code:: wiki
+   .. code:: bash
 
       in:request ^<abgangsrufnummer> ^<eingangsrufnummer> HOME=/mod/root && /var/tmp/flash/ssh/shutdown_windowsrechner.sh
 
@@ -116,7 +116,7 @@ Konfiguration des herunterzufahrenden Windows-Rechners (getestet unter Windows X
 -  Konfigurationsdatei c:\programme\openssh\etc\sshd_config anpassen.
    Folgende Werte korrigieren:
 
-   .. code:: wiki
+   .. code:: bash
 
       StrictModes no
       RSAAuthentication yes

@@ -37,50 +37,50 @@ Example configuration
 
 get uid and gid:
 
-.. code:: wiki
+.. code:: bash
 
    id -u bittorrent
    id -g bittorrent
 
 export:
 
-.. code:: wiki
+.. code:: bash
 
    /var/media/ftp/uData *(rw,all_squash,anonuid=100,anongid=1,insecure,sync,subtree_check)
 
 hosts.allow:
 
-.. code:: wiki
+.. code:: bash
 
    mountd,nfsd,portmap: 192.168.178.0/255.255.255.0
 
 hosts.deny:
 
-.. code:: wiki
+.. code:: bash
 
    ALL: ALL
 
 Ubuntu client:
 
-.. code:: wiki
+.. code:: bash
 
    sudo mount -t nfs -o vers=3,rw,rsize=65536,wsize=65536 fritz.box:/var/media/ftp/uData /media/uData
 
 Line in /etc/fstab:
 
-.. code:: wiki
+.. code:: bash
 
    fritz.box:/var/media/ftp/uData    /media/uData    nfs vers=3,rw,rsize=65536,wsize=65536
 
 Maximum block size:
 
-.. code:: wiki
+.. code:: bash
 
    cat /proc/fs/nfsd/max_block_size
 
 To change the block size, first stop *nfsd* and execute these commands:
 
-.. code:: wiki
+.. code:: bash
 
    mount -t nfsd nfsd /proc/fs/nfsd
    echo 65536 > /proc/fs/nfsd/max_block_size
@@ -93,7 +93,7 @@ Fehlerquellen
 -  Falls die NFS-Freigabe nicht beschreibbar ist, dann kann das an den
    verwendeten Optionen in der export liegen:
 
-   .. code:: wiki
+   .. code:: bash
 
       no_root_squash,anonuid=0,anongid=0
 

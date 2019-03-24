@@ -34,7 +34,7 @@ Treiber verwenden
 Um den Treiber benutzen zu können muss vorher dieser Befehl ausgeführt
 werden:
 
-.. code:: wiki
+.. code:: bash
 
    export LD_PRELOAD=/usr/lib/libmediaclient.so
 
@@ -46,7 +46,7 @@ USB-Stick initialisieren
 Der USB-Stick muss für die Fritzbox in den Übertrangungsmodus "bulk"
 versetzt werden:
 
-.. code:: wiki
+.. code:: bash
 
    mediaclient --dtvtransfermode=bulk
 

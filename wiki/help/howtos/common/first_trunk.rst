@@ -53,7 +53,7 @@ Stelle <newbie.html#FreetzSourcenauschecken>`__ durch.
 | Der Befehl zum Auschecken sieht nun etwas anders aus. Folgender Befehl
   ist jetzt einzugeben:
 
-.. code:: wiki
+.. code:: bash
 
    svn checkout http://svn.freetz.org/trunk freetz-trunk
 
@@ -206,7 +206,7 @@ Standard Samba-Server der FritzBox ersetzt.
 
 **Beispiel:**
 
-.. code:: wiki
+.. code:: bash
 
    /var/media/ftp/uStor01/Videos hdd1 1 0 - Videos
 
@@ -336,7 +336,7 @@ Einrichten von Benutzern
 | Hierzu werden nun folgende Befehle in Putty eingegeben (Bitte auf Groß
   und Kleinschreibung achten):
 
-.. code:: wiki
+.. code:: bash
 
    /var/mod/root # adduser -h /var/media/ftp/uStor01/hdd1 paul
    adduser: /var/media/ftp/uStor01/hdd1: Operation not permitted
@@ -350,7 +350,7 @@ Einrichten von Benutzern
   Dateisystem mit FAT oder NTFS handelt.
 | Das selbe machen wir nun nochmals für Marry und Gast:
 
-.. code:: wiki
+.. code:: bash
 
      adduser -h /var/media/ftp/uStor01/hdd2 mary
      adduser -h /var/media/ftp/uStor01/hdd1 gast
@@ -371,7 +371,7 @@ Einrichten von Benutzern
 | Wenn alles Richtig gelaufen ist, sollte folgendes in der passwd
   stehen:
 
-.. code:: wiki
+.. code:: bash
 
    root:x:0:0:root:/mod/root:/bin/sh
    ftp:x:2:1:FTP account:/home/ftp:/bin/sh
@@ -382,7 +382,7 @@ Einrichten von Benutzern
 
 | Nun melden wir uns noch mit folgendem Befehl von der Putty Konsole ab:
 
-.. code:: wiki
+.. code:: bash
 
    exit
 
@@ -411,7 +411,7 @@ Inhalt der Datei :
 Benutzer zu verbieten. Hierzu fügt man folgende Zeile in die Datei ein
 und entfernt die Befehle die der User nicht ausführen darf:
 
-.. code:: wiki
+.. code:: bash
 
    cmds_allowed=ABOR,ACCT,ALLO,APPE,AUTH,CDUP,CWD,DELE,EPRT,EPSV,FEAT,HELP,LIST,MDTM,MKD,MODE,NLST,NOOP,OPTS,PASS,PASV,PBSZ,PORT,PROT,PWD,QUIT,REIN,REST,RETR,RMD,RNFR,RNTO,SITE,SMNT,STAT,STOR,STOU,STRU,SYST,TYPE,USER
 
@@ -419,7 +419,7 @@ und entfernt die Befehle die der User nicht ausführen darf:
 anlegen, jedoch diese nicht wieder löschen. Also muß folgendes in der
 Datei stehen:
 
-.. code:: wiki
+.. code:: bash
 
    cmds_allowed=ABOR,ACCT,ALLO,APPE,AUTH,CDUP,CWD,EPRT,EPSV,FEAT,HELP,LIST,MDTM,MKD,MODE,NLST,NOOP,OPTS,PASS,PASV,PBSZ,PORT,PROT,PWD,QUIT,REIN,REST,RETR,RNFR,RNTO,SITE,SMNT,STAT,STOR,STOU,STRU,SYST,TYPE,USER
 

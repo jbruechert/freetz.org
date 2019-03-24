@@ -93,13 +93,13 @@ herkömmlicher Verbindung empfiehlt sich folgendes:
 -  Bei dnsmasq im Feld "Zusätzliche Kommandozeilen-Optionen (für
    Experten)" dies eintragen:
 
-   .. code:: wiki
+   .. code:: bash
 
       -r /var/tmp/avm-resolv.conf -r /etc/ppp/resolv.conf
 
 -  alternativ falls OpenDNS bevorzugt wird
 
-   .. code:: wiki
+   .. code:: bash
 
       -r /etc/ppp/resolv.conf -S 208.67.220.220 -S 208.67.222.222
 
@@ -112,7 +112,7 @@ Firewall, Routing & NAT
 
 Um Masquerading zu aktivieren sind folgende Befehle nötig:
 
-.. code:: wiki
+.. code:: bash
 
    modprobe ipt_state
    modprobe ipt_MASQUERADE

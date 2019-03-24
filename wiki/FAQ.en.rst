@@ -228,19 +228,19 @@ Trunk, Branches, Tags?
 
    To check out a stable version:
 
-   .. code:: wiki
+   .. code:: bash
 
       svn co http://svn.freetz.org/branches/freetz-stable-1.1 freetz-stable-1.1
 
    To check out a tag:
 
-   .. code:: wiki
+   .. code:: bash
 
       svn co http://svn.freetz.org/tags/freetz-1.1.4 freetz-1.1.4
 
    To check out the development version (trunk):
 
-   .. code:: wiki
+   .. code:: bash
 
       svn co http://svn.freetz.org/trunk freetz-trunk
 
@@ -639,7 +639,7 @@ Settings are not available at current security level
    There are several security levels. The level can be changed using the
    following commands:
 
-   .. code:: wiki
+   .. code:: bash
 
          echo x > /tmp/flash/security ( after r3318: echo x > /tmp/flash/mod/security)
          modsave
@@ -694,7 +694,7 @@ Configuration not available at the current security level!
    There are different security levels. Depending on the selected level,
    not all configuration files are editable.
 
-   .. code:: wiki
+   .. code:: bash
 
       echo x > /tmp/flash/security (since r3318: echo x > /tmp/flash/mod/security)
       modsave
@@ -719,7 +719,7 @@ How can i disable the password for the Freetz-Website?
 
    Execute the following command on the terminal:
 
-   .. code:: wiki
+   .. code:: bash
 
       touch /tmp/flash/webcfg_conf
       chmod +x /tmp/flash/webcfg_conf
@@ -752,24 +752,24 @@ How can i reset the password for the Freetz-Website in case I've lost it but sti
 
    At first, stop the Freetz-Webif:
 
-   .. code:: wiki
+   .. code:: bash
 
       /etc/init.d/rc.webcfg stop
 
    Then use vi to open the file mod.cfg and edit the line that begins
    with "export MOD_HTTPD_PASSWD" as follows:
 
-   .. code:: wiki
+   .. code:: bash
 
       vi /var/mod/etc/conf/mod.cfg
 
-   .. code:: wiki
+   .. code:: bash
 
       export MOD_HTTPD_PASSWD='$1$$zO6d3zi9DefdWLMB.OHaO.'
 
    Now start the Freetz-Web interface:
 
-   .. code:: wiki
+   .. code:: bash
 
       /etc/init.d/rc.webcfg start
 
@@ -790,7 +790,7 @@ How can I change the root-Password?
 
    Execute the following commands on the terminal:
 
-   .. code:: wiki
+   .. code:: bash
 
       passwd
       modusers save
@@ -815,7 +815,7 @@ Problems During Working
    unintended full TFFS. This limit can be increased, but you should
    keep an eye on the current fill level:
 
-   .. code:: wiki
+   .. code:: bash
 
       modconf set mod MOD_LIMIT=<bytes>
       modconf save mod
@@ -890,7 +890,7 @@ number, which is not used by any other character device under
 ``/var/flash/`` (Freetz uses the minor 0x3c), the major number can be
 read from ``/proc/devices``:
 
-.. code:: wiki
+.. code:: bash
 
    mknod /var/flash/<name-of-file> c <major> <minor>
 

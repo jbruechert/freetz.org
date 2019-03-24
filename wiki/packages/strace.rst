@@ -32,7 +32,7 @@ Aufrufe separat notiert. Darunter leidet aber die Lesbarkeit, weil man
 weiter unten oft nicht mehr weiß, zum welchem "unfinished" welches
 "resume" gehört (hier im Beispiel ist es noch einfach):
 
-.. code:: wiki
+.. code:: bash
 
    719   14:55:13.562840 clock_gettime(CLOCK_MONOTONIC,  <unfinished ...>
    1010  14:55:13.563457 getppid( <unfinished ...>

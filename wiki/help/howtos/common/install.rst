@@ -76,7 +76,7 @@ Durchführung mit Windows OS
    Fall sein kann die IP-Adresse mit folgendem Befehl auch per Hand
    gesetzt werden:
 
-   .. code:: wiki
+   .. code:: bash
 
       ifconfig eth0 192.168.178.xx netmask 255.255.255.0 broadcast 192.168.178.255
 
@@ -122,13 +122,13 @@ Durchführung mit Windows OS
       folgendes eingeben: (Anstatt freetz-2.0.x kann auch eine andere,
       z.B. Entwicklerversion genommen werden.)
 
-      .. code:: wiki
+      .. code:: bash
 
          svn co http://svn.freetz.org/branches/freetz-stable-2.0.x freetz-2.0.x
 
 Aktuell:
 
-.. code:: wiki
+.. code:: bash
 
    svn co http://svn.freetz.org/branches/freetz-stable-2.0 freetz-2.0
 
@@ -155,7 +155,7 @@ Aktuell:
    `Howto <../development/integrate_patches.html>`__)
 #. In das Verzeichnis des ausgecheckten/entpackten Freetz wechseln:
 
-   .. code:: wiki
+   .. code:: bash
 
       cd freetz-2.0.x (aktuell: cd freetz-2.0)
 
@@ -165,7 +165,7 @@ Aktuell:
    ist. Details und Beschreibungen zu den Optionen gibt es in der
    Beschreibung zum `menuconfig <install/menuconfig.html>`__.
 
-   .. code:: wiki
+   .. code:: bash
 
       make menuconfig
 
@@ -181,7 +181,7 @@ Aktuell:
    Paketen und dem benutzten Rechner. Man kann also ruhig eine
    Kaffeepause einlegen.
 
-   .. code:: wiki
+   .. code:: bash
 
       make
 
@@ -361,7 +361,7 @@ darin, diesen Code per Copy and Paste auf der Konsole auszuführen.
 Wer vergessen hat welche Ubuntu Version er installierte kann dies mit
 folgenden Befehlen prüfen:
 
-.. code:: wiki
+.. code:: bash
 
    # Ubuntu Version: ergibt z.B. "Ubuntu 12.04.1 LTS \n \l"
    cat /etc/issue
@@ -373,7 +373,7 @@ folgenden Befehlen prüfen:
 Installation der benötigten Pakete (Fedora)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: wiki
+.. code:: bash
 
    sudo yum -y install ImageMagick subversion gcc gcc-c++ binutils autoconf automake libtool make bzip2 ncurses-devel zlib-devel flex bison patch texinfo gettext pkgconfig ecj perl perl-String-CRC32 wget glib2-devel git libacl-devel libattr-devel libcap-devel
    # Auf 64-Bit Systemen sind zusätzlich folgende Pakete zu installieren:
@@ -600,7 +600,7 @@ erstellt, in dem Symlinks der Standardnamen auf die GNU Utilities
 zeigen. Zum Arbeiten mit ds-mod ist dieses Verzeichnis in den Suchpfad
 aufzunehmen:
 
-.. code:: wiki
+.. code:: bash
 
    ~/gnubin $ ls -l
    total 64
@@ -715,7 +715,7 @@ drücken die Enter-Taste. Wenn es geklappt hat wird man nach Benutzername
 und Passwort gefragt, er lautet für beides **adam2**. Weiter gehen wir
 wie folgt vor:
 
-.. code:: wiki
+.. code:: bash
 
    Eingabe am Prompt: bin
 

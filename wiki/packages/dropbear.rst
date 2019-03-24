@@ -38,7 +38,7 @@ Grundbegriffe
 -  **Password-based Authentication**: SSH-Verbindung kommt zustande,
    nachdem sich der (SSH-)Client mit einem Passwort authentifiziert hat.
 
-   .. code:: wiki
+   .. code:: bash
 
       # ssh user@host
       user@host's password:
@@ -53,7 +53,7 @@ Grundbegriffe
    (öffentlichen Schlüssel)* authentifiziert hat. Ein Vorteil ist, dass
    man zur Anmeldung kein Passwort mehr eingeben muss.
 
-   .. code:: wiki
+   .. code:: bash
 
       # ssh user@host
       Authenticating with public key "rsa-key-XXXXXXXX"
@@ -86,7 +86,7 @@ Web-Config
    Format der *Authorized keys* im Web-GUI sollte (für root) so aussehen
    (hier durch … abgekürzt):
 
-   .. code:: wiki
+   .. code:: bash
 
       ---root
       ssh-rsa AAAAB3...o1b0=0
@@ -114,7 +114,7 @@ kann die Fritzbox folgendermaßen über SSH erreicht werden:
 Zugang mit OpenSSH
 ~~~~~~~~~~~~~~~~~~
 
-.. code:: wiki
+.. code:: bash
 
    # ssh root@fritz.box
    root@fritz.box's password: freetz
@@ -260,20 +260,20 @@ verwenden (analog auch andere SSH-Tools).
 In Putty trägt man unter Proxy den Proxy ein. Unter Tunnels folgendes
 (für das Freetz-GUI):
 
-.. code:: wiki
+.. code:: bash
 
    Source Port: 1081 {ein beliebiger, freier, lokaler Port}
    Destination: 192.168.178.1:81 {die IP der Box im LAN)
 
 Nach dem Hinzufügen erscheint im PuTTY-Fenster unter "Forwarded Ports":
 
-.. code:: wiki
+.. code:: bash
 
    L1081 192.168.178.1:81
 
 Entsprechend kann man sich das für das AVM-GUI (Port 80) einrichten:
 
-.. code:: wiki
+.. code:: bash
 
    Source Port: 1080 {ein beliebiger, freier, lokaler Port}
    Destination: 192.168.178.1:80 {die IP der Box im LAN)
@@ -281,13 +281,13 @@ Entsprechend kann man sich das für das AVM-GUI (Port 80) einrichten:
 Nach dem Starten der SSH-Session und dem Login ruft man dann das
 Freetz-GUI so auf:
 
-.. code:: wiki
+.. code:: bash
 
    http://localhost:1081/
 
 … und das AVM-GUI so:
 
-.. code:: wiki
+.. code:: bash
 
    http://localhost:1080/
 
@@ -304,14 +304,14 @@ ab.
 Es lassen sich auch Weiterleitungen auf beliebige Maschinen und Dienste
 im Lan schalten. Z.B. Remotedesktopverbindung für eine Maschine im LAN:
 
-.. code:: wiki
+.. code:: bash
 
    Source Port: 3399 {ein beliebiger, freier, lokaler Port}
    Destination: 192.168.178.21:3389 (die IP der gewünschten Maschine im LAN; statische DHCP-Leases sind hier vorteilhaft)
 
 im Remotedesktopclient dann:
 
-.. code:: wiki
+.. code:: bash
 
    localhost:3399
 
@@ -349,14 +349,14 @@ Der nachfolgende Befehl kopiert den RSA key auf das Remote-System mit
 der IP 192.168.178.2 für den User:user01 in die Datei
 ~/.ssh/authorized_keys
 
-.. code:: wiki
+.. code:: bash
 
    # dropbearkey -f /tmp/flash/rsa_host_key -y | ssh user01@192.168.178.2 'umask 077; cat >> .ssh/authorized_keys'
 
 Für einen Login ohne Passwort Angabe, muss das Keyfile wie im Beispiel
 als Parameter angegeben werden.
 
-.. code:: wiki
+.. code:: bash
 
    # ssh -i /tmp/flash/rsa_host_key user@machine
 
@@ -399,7 +399,7 @@ mögliche Probleme
    in* ~/.ssh/known_hosts *nicht bekannt ist).*
 -  *folgende Warnung nach Anmeldung mit* ssh root@…\ *:*
 
-   .. code:: wiki
+   .. code:: bash
 
       @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
       @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @

@@ -32,13 +32,13 @@ Freetz PAN Server:
 
 -  Find your device
 
-   .. code:: wiki
+   .. code:: bash
 
       hcitool scan
 
 -  Trust your device:
 
-   .. code:: wiki
+   .. code:: bash
 
       dbus-send --system --type=method_call --dest=org.bluez --print-reply /org/bluez/$(pidof bluetoothd)/hci0/dev_YY_YY_YY_YY_YY_YY org.bluez.Device.SetProperty string:Trusted variant:boolean:true
 
@@ -48,7 +48,7 @@ Android PANU Client:
 
 -  Make the connection (Android: root required!):
 
-   .. code:: wiki
+   .. code:: bash
 
       hcitool scan
       pand --connect xx:xx:xx:xx:xx:xx
@@ -69,7 +69,7 @@ Ubuntu client:
 
 -  Make the connection:
 
-   .. code:: wiki
+   .. code:: bash
 
       hcitool scan
       sudo pand --connect xx:xx:xx:xx:xx:xx
@@ -84,7 +84,7 @@ client.*
 
 lsusb:
 
-.. code:: wiki
+.. code:: bash
 
    VID=0a12
    PID=0001
@@ -119,19 +119,19 @@ DBUS
 
 See all interface methods:
 
-.. code:: wiki
+.. code:: bash
 
    dbus-send --system --dest=org.bluez --print-reply /org/bluez/$(pidof bluetoothd)/hci0 org.freedesktop.DBus.Introspectable.Introspect
 
 See the properties of your adapter:
 
-.. code:: wiki
+.. code:: bash
 
    dbus-send --system --type=method_call --dest=org.bluez --print-reply /org/bluez/$(pidof bluetoothd)/hci0 org.bluez.Adapter.GetProperties
 
 See the properties of your device:
 
-.. code:: wiki
+.. code:: bash
 
    dbus-send --system --type=method_call --dest=org.bluez --print-reply /org/bluez/$(pidof bluetoothd)/hci0/dev_YY_YY_YY_YY_YY_YY org.bluez.Device.GetProperties
 
@@ -140,7 +140,7 @@ See the properties of your device:
 Sizes
 -----
 
-.. code:: wiki
+.. code:: bash
 
      libbluetooth .................   55.07 Kb
      libdbus ......................   86.59 Kb

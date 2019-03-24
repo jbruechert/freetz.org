@@ -9,13 +9,13 @@ Paket zur Verfügung stehen, zu übersetzen.
 
 Den MIPS-Compiler zum Pfad hinzufügen:
 
-.. code:: wiki
+.. code:: bash
 
    export PATH=/pfad/zu/freetz/toolchain/target/bin:$PATH
 
 Optionen für ``./configure``:
 
-.. code:: wiki
+.. code:: bash
 
    ./configure --build=i386-linux-gnu --target=mipsel-linux --host=mipsel-linux
 
@@ -27,7 +27,7 @@ Statisches Linken der Binaries, damit sie keine separaten Libraries
 benutzen, sondern sie gleich enthalten (funktioniert aber nicht bei
 jeder Software):
 
-.. code:: wiki
+.. code:: bash
 
    LDFLAGS=-static ./configure ...
 
@@ -42,7 +42,7 @@ geht, zu verwenden.
 In manchen Fällen ist es ratsam die CC-Variable explizit zu setzen. Auch
 die Angabe der *CFLAGS* kann nicht schaden:
 
-.. code:: wiki
+.. code:: bash
 
    ./configure ... CC="mipsel-linux-gcc" CFLAGS="-Os -pipe -march=4kc -Wa,--trap"
 

@@ -22,7 +22,7 @@ entpackt werden, in welches man schließlich
 Sofern z.B. unter Debian, Ubuntu *Debootstrap* noch nicht installiert
 ist, kann dies mit
 
-.. code:: wiki
+.. code:: bash
 
    sudo apt-get install -y debootstrap
 
@@ -57,13 +57,13 @@ Telnet.
 
 **Telnet** (in der Übersicht wird das USB-Gerät aufgelistet)
 
-.. code:: wiki
+.. code:: bash
 
    ls /var/media/ftp/
 
 **Ausgabe könnte in wie folgt sein** (Variiert nach Modell/Firmware):
 
-.. code:: wiki
+.. code:: bash
 
    FRITZ-NAS.txt         FRITZ-Song.mp3        Generic-FlashDisk-01  lost+found
    FRITZ-Picture.jpg     FRITZ-Video.mp4       Onlinespeicher
@@ -72,13 +72,13 @@ Telnet.
 
 (FritzBox Modelle bis Version x2xxx)
 
-.. code:: wiki
+.. code:: bash
 
    debootstrap --foreign --arch=mipsel etch /var/media/ftp/uStor01/debian http://ftp.de.debian.org/debian
 
 (FritzBox Modelle ab Version x3xxx)
 
-.. code:: wiki
+.. code:: bash
 
    debootstrap --foreign --arch=mips etch /var/media/ftp/uStor01/debian http://ftp.de.debian.org/debian
 
@@ -86,19 +86,19 @@ Telnet.
 
 (FritzBox Modelle bis Version x2xxx)
 
-.. code:: wiki
+.. code:: bash
 
    debootstrap --foreign --arch=mipsel wheezy /var/media/ftp/uStor01/debian http://ftp.de.debian.org/debian
 
 (FritzBox Modelle ab Version x3xxx)
 
-.. code:: wiki
+.. code:: bash
 
    debootstrap --foreign --arch=mips wheezy /var/media/ftp/uStor01/debian http://ftp.de.debian.org/debian
 
 anschließend
 
-.. code:: wiki
+.. code:: bash
 
    chroot /var/media/ftp/uStor01/debian /debootstrap/debootstrap --second-stage
 
@@ -107,14 +107,14 @@ man den betreffenden USB-Stick nun in die FritzBox. Um das Debian jetzt
 noch nutzen zu können, muss das /proc/ Verzeichnis für das Debian
 bereitgestellt werden und wie bereits erwähnt "gechrootet" werden:
 
-.. code:: wiki
+.. code:: bash
 
    mount -t proc proc /var/media/ftp/uStor01/debian/proc
    chroot /var/media/ftp/uStor01/debian bash
 
 Wenn alles gut geht sollte folgender Prompt da sein
 
-.. code:: wiki
+.. code:: bash
 
    root@fritz
 
@@ -183,7 +183,7 @@ Comment by mandy28 on Di 01 Mär 2011 22:30:28 CET
 
 sollte so aussehen
 
-.. code:: wiki
+.. code:: bash
 
    deb http://ftp.de.debian.org/debian stable main
 
@@ -217,7 +217,7 @@ Comment by mandy28 on Mi 02 Mär 2011 08:15:05 CET
 mit den entsprechenden scrips in debootstrap ja , dann aber über anderen
 Mirror z.B.:
 
-.. code:: wiki
+.. code:: bash
 
    debootstrap --foreign --arch=mipsel squeeze /var/media/ftp/uStor01/squeeze http://ftp.de.debian.org/debian
    chroot /var/media/ftp/uStor01/squeeze /debootstrap/debootstrap --second-stage

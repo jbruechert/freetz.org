@@ -18,7 +18,7 @@ nach dem Menüeintrag "Extras". Dort fügen wir die Zeile für Rudi ein (im
 Beispiel sieht man noch die bei Ihnen evtl. nicht vorhandene Zeile für
 meinen Backup/Restore-Mod):
 
-.. code:: wiki
+.. code:: bash
 
    cat << EOF
    <div id="extras"><a href="/cgi-bin/extras.cgi">Extras</a></div>

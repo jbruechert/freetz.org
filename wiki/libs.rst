@@ -14,7 +14,7 @@ Abwahl diverser Pakete auch die nicht mehr benötigten libs zu entfernen
 (damit das Image nachher auch tatsächlich nicht zu groß wird) gibt es
 folgende *make*-Targets:
 
-.. code:: wiki
+.. code:: bash
 
    # Unnötige Libs und Busybox-Applets deselektieren
    make config-clean-deps

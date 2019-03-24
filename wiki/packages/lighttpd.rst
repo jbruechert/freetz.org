@@ -70,7 +70,7 @@ sollen, muss außerdem noch eine Zeile in die 'Additional'-Konfiguration
 von lighttpd (zu finden im Freetz-Konfigurationsmenü unter ``Settings``
 → ``'lighttpd: Additional``):
 
-.. code:: wiki
+.. code:: bash
 
    # aktiviere CGI Unterstützung für *.pl-Dateien
    cgi.assign += ( ".pl" => "/usr/bin/perl" )
@@ -93,14 +93,14 @@ Example:
 
 -  put this in *lighttpd > Additional*:
 
-.. code:: wiki
+.. code:: bash
 
    server.modules += ( "mod_magnet" )
    magnet.attract-physical-path-to = ( server.document-root + "/ip.lua" )
 
 -  put this in *ip.lua* in your document root:
 
-.. code:: wiki
+.. code:: bash
 
    lighty.header["Content-Type"] = "text/html"
    lighty.content = { "Your IP-address is: ", lighty.env["request.remote-ip"] }

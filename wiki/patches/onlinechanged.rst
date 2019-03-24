@@ -42,7 +42,7 @@ aussehen:
 
 An application: update external IP-address for dnsd:
 
-.. code:: wiki
+.. code:: bash
 
    EXTIP="`/usr/bin/get_ip -d`"
    sed "s/#EXTIP#/$EXTIP/g"</tmp/flash/dnsd/dnsd_template.conf >/tmp/flash/dnsd/dnsd.conf

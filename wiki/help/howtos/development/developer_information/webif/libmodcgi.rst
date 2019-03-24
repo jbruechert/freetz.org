@@ -4,7 +4,7 @@ libmodcgi.sh
 Diese Bibliothek dient der Erzeugung von Webseiten innerhalb des
 Freetz-Webinterface. Einzubinden durch
 
-.. code:: wiki
+.. code:: bash
 
    source /usr/lib/libmodcgi.sh
 
@@ -56,7 +56,7 @@ kodiert.
 
 Aufruf:
 
-.. code:: wiki
+.. code:: bash
 
    cgi_begin TITLE
 
@@ -74,7 +74,7 @@ Startet einen Abschnitt mit dem Titel TITLE. Wie ein "Abschnitt" im
 Detail in der HTML-Ausgabe umgesetzt wird, obliegt dem gewählten Skin;
 garantiert wird jedoch ein umgebendes ``<div class="section">``
 
-.. code:: wiki
+.. code:: bash
 
    sec_begin TITLE [ID]
 
@@ -112,7 +112,7 @@ href
 Erzeugt einen Link zu einer dynamisch registrierten Seite im
 Freetz-Webinterface: Die Argumente sind denen von ``modreg`` ähnlich:
 
-.. code:: wiki
+.. code:: bash
 
    href file <pkg> <id>
    href extra <pkg> <cgi-name>
@@ -155,7 +155,7 @@ TODO
 cgi_error, print_error
 ----------------------
 
-.. code:: wiki
+.. code:: bash
 
    cgi_error MESSAGE
    print_error MESSAGE
@@ -172,14 +172,14 @@ Splits PATH_INFO into segments at "/"; returns the segments in the given
 variables. If there are not more variables than segments, the final
 variable will receive the remaining unsplit PATH_INFO.
 
-.. code:: wiki
+.. code:: bash
 
    PATH_INFO=/foo/bar/baz
    path_info package id rest
 
 will set
 
-.. code:: wiki
+.. code:: bash
 
    package=foo
    id=bar

@@ -13,7 +13,7 @@ Subversion Repository
 The subversion repository of Freetz follows the recommended repository
 layout by the subversion maintainers. [1]
 
-.. code:: wiki
+.. code:: bash
 
    /
      trunk

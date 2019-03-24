@@ -31,7 +31,7 @@ freetz build system), you should see that your toolchain is also
 included in the search path. This is achieved with the PATH= export
 command below.
 
-.. code:: wiki
+.. code:: bash
 
    mkdir httptunnel
    cd httptunnel
@@ -65,7 +65,7 @@ command below.
   file to a save location, because make clean often will also delete
   this file. But this is not applicable for httptunnel.)
 
-.. code:: wiki
+.. code:: bash
 
    cd ~/freetz-trunk/httptunnel/httptunnel-3.0.5/
    make clean
@@ -94,7 +94,7 @@ point for a new package.
 Because httptunnel is already integrated in Freetz the files are already
 present. Lets tar them in a file and remove them:
 
-.. code:: wiki
+.. code:: bash
 
    cd ~/freetz-trunk/make/
    tar cfz httptunnel_orig.tar.gz httptunnel/
@@ -106,7 +106,7 @@ We also need to delete some auto generated files to make sure the
 changes are recognized (no need to save these, as they will be generated
 again):
 
-.. code:: wiki
+.. code:: bash
 
    rm make/external.in.generated
    rm make/Config.in.generated
@@ -122,7 +122,7 @@ again):
   directory with the two files as a new package. Let us call it
   "httptunnel".
 
-.. code:: wiki
+.. code:: bash
 
    cp -r ~/freetz-trunk/make/empty ~/freetz-trunk/make/httptunnel
 
@@ -130,7 +130,7 @@ Please go into that new "``httptunnel``" directory and remove the
 sub-directory "``.svn``". You will not need it. Now it should look like
 this:
 
-.. code:: wiki
+.. code:: bash
 
    -rw-r--r--   1 slightly slightly  480 2008-06-07 08:17 Config.in
    -rw-r--r--   1 slightly slightly  701 2008-06-07 08:17 empty.mk
@@ -144,7 +144,7 @@ project is about now: httptunnel. The base name of the file
 Now let us have a look at the "``Config.in``" file. Open it with your
 favorite editor, and it should look like this:
 
-.. code:: wiki
+.. code:: bash
 
    config FREETZ_PACKAGE_EMPTY
            bool "Empty 0.6.15b"
@@ -165,7 +165,7 @@ You should change this to reflect your http tunnel project. Please note
 that the line "select FREETZ_LIB_libutil" is not necessary for your
 project, thus remove it:
 
-.. code:: wiki
+.. code:: bash
 
    config FREETZ_PACKAGE_HTTPTUNNEL
            bool "httptunnel 3.0.5 (binary only)"
@@ -180,7 +180,7 @@ project, thus remove it:
 The next file "``httptunnel.mk``" (copied from "``empty.mk``") should be
 edited like this:
 
-.. code:: wiki
+.. code:: bash
 
    $(call PKG_INIT_BIN, 3.0.5)
    $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
@@ -215,20 +215,20 @@ edited like this:
 
 Explanation:
 
-.. code:: wiki
+.. code:: bash
 
    $(call PKG_INIT_BIN, 3.0.5)
 
 | This defines the version of your package.
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_SOURCE:=httptunnel-$($(PKG)_VERSION).tar.gz
 
 | This defines the file name of the package source code, which has to be
   exactly as the filename on the server where the file is located.
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_SITE:=http://www.nocrew.org/software/httptunnel
 
@@ -237,13 +237,13 @@ Explanation:
 | In this case, the complete path would be:
   `​http://www.nocrew.org/software/httptunnel/httptunnel-3.0.5.tar.gz <http://www.nocrew.org/software/httptunnel/httptunnel-3.0.5.tar.gz>`__
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_BINARY:=$($(PKG)_DIR)/hts
 
 | This defines the file name of the binary in the source directory.
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_TARGET_BINARY:=$($(PKG)_DEST_DIR)/usr/bin/hts
 
@@ -251,7 +251,7 @@ Explanation:
   stored on your box when your new package and FW is installed on your
   box.
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_CATEGORY:=Unstable
 
@@ -260,7 +260,7 @@ Explanation:
 | If a package if found stable this line can be removed, so it becomes
   listed under the normal packages.
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG_CONFIGURED_CONFIGURE)
 
@@ -273,7 +273,7 @@ Explanation:
   ac_cv_func_setvbuf_reversed. Find the correct value and add a line
   like this to "``httptunnel.mk``"
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_CONFIGURE_ENV += ac_cv_func_setvbuf_reversed=no
 
@@ -282,7 +282,7 @@ Explanation:
   files with all plus-signs replaced by x's and all minus-signs replaced
   by underscores and separate package names by spaces.
 
-.. code:: wiki
+.. code:: bash
 
    $(SUBMAKE) -C $(HTTPTUNNEL_DIR)
 
@@ -295,7 +295,7 @@ Now we also need to make sure that the following is changed, because
 Go back to file "httptunnel.mk" and edit the line PKG_CONFIGURED_NOP to
 PKG_CONFIGURED_CONFIGURE:
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG_SOURCE_DOWNLOAD)
    $(PKG_UNPACKED)
@@ -314,7 +314,7 @@ Now it is time to call "``make menuconfig``" and to choose your new
 package from the "packages > unstable" section, where it should be
 available now for selection.
 
-.. code:: wiki
+.. code:: bash
 
    cd ~/freetz-trunk/
    make menuconfig
@@ -329,7 +329,7 @@ this may take some (longer) time.
 A successful FW build with your new package included should end with
 these lines:
 
-.. code:: wiki
+.. code:: bash
 
    STEP 3: PACK
      Checking for left over Subversion directories
@@ -352,7 +352,7 @@ Testing
 Lets see if "``make clean``" works as expected. This should bring the
 state back to like it was before the "``make``" command.
 
-.. code:: wiki
+.. code:: bash
 
    cd ~/freetz-trunk/
    make clean
@@ -371,7 +371,7 @@ Preparing New Package for Public Integration to Freetz Trunk
 In order to create a file which displays the changes which would be
 needed in freetz to add your package, issue the following commands:
 
-.. code:: wiki
+.. code:: bash
 
    svn add make/httptunnel
    svn diff ./make > patchfile
@@ -384,7 +384,7 @@ recognized as a valid file for upload.
 In addition you could even create a ready (and compressed) package of
 the two files which you had edited above:
 
-.. code:: wiki
+.. code:: bash
 
    tar cfz httptunnel.tar.gz make/httptunnel --exclude .svn
 

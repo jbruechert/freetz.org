@@ -15,7 +15,7 @@ Usage
 See the home page for detailed usage instructions. Be sure to specify
 the following options:
 
-.. code:: wiki
+.. code:: bash
 
    -o attr_cache=
    -o writeback_cache=
@@ -25,7 +25,7 @@ larger files (your box could crash and reboot).
 
 For example:
 
-.. code:: wiki
+.. code:: bash
 
    s3fs <bucket> <mount point> \
    -o attr_cache=/var/media/ftp/uStor01/... \
@@ -44,7 +44,7 @@ objects from internet: (for example for a static web site) 
 
 Using *rsync* to make backups:
 
-.. code:: wiki
+.. code:: bash
 
    rsync -avW --delete /source-folder/ /mount-point/
 

@@ -14,11 +14,11 @@ Memory usage
 It works, but it needs a lot of memory, so a swap file is advisable
 (about 32 MB will do in most cases).
 
-.. code:: wiki
+.. code:: bash
 
    -rwxr-xr-x    1 root     root       5036004 Apr 25 18:41 php-cgi
 
-.. code:: wiki
+.. code:: bash
 
    VmPeak:    10740 kB
    VmSize:    10740 kB The size of the virtual memory allocated to the process
@@ -33,7 +33,7 @@ Another thing is that *php.ini* will use valuable flash space and is
 quite big. A solution is to make a symbolic link to an USB storage
 device:
 
-.. code:: wiki
+.. code:: bash
 
    cp /tmp/flash/php.ini /var/media/ftp/uFlash/hiawatha/php.ini
    rm /tmp/flash/php.ini

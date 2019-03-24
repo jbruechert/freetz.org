@@ -35,7 +35,7 @@ Basic setup guide
    #. Fill in a **existing** directory for settings & storage, for
       example
 
-      .. code:: wiki
+      .. code:: bash
 
          /var/media/ftp/uStor01/XMail
 
@@ -67,7 +67,7 @@ Basic setup guide
       #. Enable and set *CustMapsList* to (see
          `​here <http://xmailforum.homelinux.net/index.php?showtopic=4620>`__):
 
-         .. code:: wiki
+         .. code:: bash
 
             zen.spamhaus.org.:0
 
@@ -120,7 +120,7 @@ Setup SSL
    `​here <http://www.iona.com/support/docs/orbix2000/2.0/tls/html/OpenSslUtils3.html>`__
 #. Enter the following commands:
 
-   .. code:: wiki
+   .. code:: bash
 
       openssl_genrsa 2048 > server.key
       openssl_req -new -x509 -key server.key -out server.cert -days 365 -config openssl.cnf

@@ -152,7 +152,7 @@ Konfiguration: Firmware erfolgreich erstellt und aufgespielt, so geht es weiter
 
 | Hier ein Beispiel - Script für das Laden der Module:
 
-.. code:: wiki
+.. code:: bash
 
    # Die wichtigsten Module, ohne die nichts geht:
    modprobe ip_tables
@@ -180,7 +180,7 @@ Konfiguration: Firmware erfolgreich erstellt und aufgespielt, so geht es weiter
 -  Danach werden die Regeln / Ketten erstellt (hier ein Beispiel für
    diverse Regeln):
 
-.. code:: wiki
+.. code:: bash
 
    # # # FIREWALL RULES
 
@@ -364,7 +364,7 @@ aus der Unzahl der Möglichkeiten kann hilfreich sein, firewall-cgi? zu
 aktivieren, auch wenn es dann nicht benutzt wird. Die wichtigsten
 iptables-Module werden dann automatisch einkompiliert.
 
-.. code:: wiki
+.. code:: bash
 
    host# scp ../ds-0.2.5/kernel/root/usr/lib/iptables/libipt_limit.so root@fritz:/mod/lib
    fritz# iptables -m limit -h
@@ -408,7 +408,7 @@ Verdacht. Aber hier müsste mal jemand weiterforschen… — olistudent
 |Warning| Ich habe festgestellt, dass es sich erheblich bessert, wenn man
 folgendes macht:
 
-.. code:: wiki
+.. code:: bash
 
    # 32MB RAM
    CONNTRACK_MAX=2048

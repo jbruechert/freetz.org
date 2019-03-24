@@ -23,14 +23,14 @@ Bedienung
 Erstellen einer neuen dtach-Session am Beispiel von
 `mcabber <mcabber.html>`__:
 
-.. code:: wiki
+.. code:: bash
 
    dtach -c /tmp/mcabber.dtach mcabber
 
 Erstellen einer neuen dtach-Session, aber direkt wieder die Session
 verlassen bzw. im Hintergrund starten:
 
-.. code:: wiki
+.. code:: bash
 
    dtach -n /tmp/mcabber.dtach mcabber
 
@@ -38,7 +38,7 @@ Mit "*Strg + \\*" kann man die Session verlassen.
 
 Wieder in die Session "einklinken":
 
-.. code:: wiki
+.. code:: bash
 
    dtach -a /tmp/mcabber.dtach
 

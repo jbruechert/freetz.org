@@ -59,7 +59,7 @@ Paket in die Firmware einbauen
 
 Das davfs2 Paket unter *menuconfig* auswählen:
 
-.. code:: wiki
+.. code:: bash
 
    make menuconfig
    Package selection -> Testing -> davfs auswählen
@@ -106,7 +106,7 @@ einige Zertifikate vor.
 Man kann das Zertifikat auch über folgenden Aufruf auf dem PC ausgeben
 lassen (Die Adresse in der ersten Zeile ist anzupassen):
 
-.. code:: wiki
+.. code:: bash
 
    TARGET=www.box.net:https
    openssl s_client -showcerts -connect $TARGET < /dev/null 2> /dev/null | sed -n '/^-----BEGIN CERTIFICATE-----$/,/^-----END CERTIFICATE-----$/{/BEGIN /h;/BEGIN /!H};${g;p}'

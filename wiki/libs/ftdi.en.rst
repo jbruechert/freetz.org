@@ -28,7 +28,7 @@ First of all you have to program the CBUS port lines for I/O using
 
 Example program to let a LED blink on port CBUS0:
 
-.. code:: wiki
+.. code:: bash
 
    #include <stdio.h>
    #include <ftdi.h>
@@ -63,7 +63,7 @@ Example program to let a LED blink on port CBUS0:
 
 It is possible to test in Ubuntu first:
 
-.. code:: wiki
+.. code:: bash
 
    sudo apt-get install libftdi-dev
    gcc blink.c -lftdi -Wall -oblink
@@ -71,13 +71,13 @@ It is possible to test in Ubuntu first:
 
 Compile for Freetz:
 
-.. code:: wiki
+.. code:: bash
 
    ~/freetz/toolchain/target/bin/mipsel-linux-gcc blink.c -lftdi -Wall -oblink
 
 Run on your box:
 
-.. code:: wiki
+.. code:: bash
 
    LD_LIBRARY_PATH=/mod/lib:/usr/lib/freetz
    export LD_LIBRARY_PATH

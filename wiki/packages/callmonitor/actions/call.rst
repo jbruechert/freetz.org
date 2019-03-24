@@ -6,13 +6,13 @@ Allgemeine Hinweise zu Funktionsaufrufen
 Der Aufruf von Funktionen, die auf `getmsg <getmsg.html>`__ oder
 `rawmsg <rawmsg.html>`__ basieren, sieht immer so aus:
 
-.. code:: wiki
+.. code:: bash
 
      foomessage [OPTION]... <host> [<message>]...
 
 Der einfachste und am meisten genutzte Fall ist dementsprechend
 
-.. code:: wiki
+.. code:: bash
 
      foomessage <host>
 
@@ -29,7 +29,7 @@ sorgt automatisch für die Kodierung der Umgebungsvariablen, die Text
 enthalten (z.B. ``XBOX_CAPTION`` und ``DREAM_CAPTION``). Man kann also
 einfach
 
-.. code:: wiki
+.. code:: bash
 
      FOO_CAPTION="Dies ist der zu 100% richtige Titel" foomessage <host>
 

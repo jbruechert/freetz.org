@@ -18,7 +18,7 @@ Am einfachsten ist es, Freetz als Infrastruktur zu benutzen, und zwar
 das Skript ``fwmod`` aus dem Freetz-Hauptverzeichnis. Wenn man es ohne
 Parameter aufruft, verrät es wie es benutzt werden möchte:
 
-.. code:: wiki
+.. code:: bash
 
    $ ./fwmod
 
@@ -68,7 +68,7 @@ auszuführen:
 #. Jetzt entpackt man das von AVM heruntergeladene Firmware-Image in ein
    Verzeichnis, das hier beispielhaft *unpacked_firmware* genannt wird:
 
-   .. code:: wiki
+   .. code:: bash
 
       ./fwmod -u -d unpacked_firmware FRITZ.Box_Fon_WLAN_7170.29.04.59.image
 
@@ -76,7 +76,7 @@ auszuführen:
    das Dateisystem der Firmware.
 #. | Zum guten Schluss packt man dann wieder das Firmware-Image:
 
-   .. code:: wiki
+   .. code:: bash
 
       ./fwmod -p -d unpacked_firmware FRITZ.Box_Fon_WLAN_7170.29.04.59.image
 
@@ -87,7 +87,7 @@ Skripts ``fwmod``.
 
 6. Nach einer Weile steht am Ende der Skript-Ausgabe so etwas wie
 
-   .. code:: wiki
+   .. code:: bash
 
       creating filesystem image
       merging kernel image
@@ -107,7 +107,7 @@ Skripts ``fwmod``.
    :literal:`fakeroot: preload library `libfakeroot.so' not found, aborting.`
    hilft ein vorangestelltes LD_PATH_PRELOAD:
 
-   .. code:: wiki
+   .. code:: bash
 
       LD_PATH_PRELOAD=tools/build/lib/libfakeroot.so tools/build/bin/fakeroot -- ./fwmod ...
 
@@ -147,7 +147,7 @@ wie folgt vor:
    fwmod_custom-modifizierte, wieder zusammengepackte und ggf. signierte
    Image ist unter ``images/`` zu finden.
 
-   .. code:: wiki
+   .. code:: bash
 
       STEP 1: UNPACK
       unpacking firmware image

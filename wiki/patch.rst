@@ -18,7 +18,7 @@ Patch auch noch angewendet werden kann falls an der zu patchenden Datei
 eine Änderung vorgenommen wurde und die Zeilennummern nicht mehr korrekt
 sind.
 
-.. code:: wiki
+.. code:: bash
 
    Dieser Patch ist ein Beispiel und fügt menuconfig einen neuen Eintrag hinzu.
 
@@ -56,20 +56,20 @@ Erzeugen eines Patches
 
 Man hat eine Datei (Config.in) geändert und difft sie gegen SVN:
 
-.. code:: wiki
+.. code:: bash
 
     svn diff Config.in > Config.patch
 
 Alle Änderungen im Verzeichnis + Unterverzeichnisse:
 
-.. code:: wiki
+.. code:: bash
 
    svn diff > all.patch
 
 Falls man neue Dateien angelegt hat müssen diese erst dem SVN
 hinzugefügt werden:
 
-.. code:: wiki
+.. code:: bash
 
    svn add Datei- oder Verzeichnisname
 
@@ -80,7 +80,7 @@ Patch anwenden oder rückgängig machen
 
 Patch anwenden:
 
-.. code:: wiki
+.. code:: bash
 
    $ patch -p0 < Config.patch
    patching file Config.in
@@ -88,7 +88,7 @@ Patch anwenden:
 
 Patch rückgängig machen:
 
-.. code:: wiki
+.. code:: bash
 
    $ patch -Rp0 < Config.patch
    patching file Config.in
@@ -96,7 +96,7 @@ Patch rückgängig machen:
 
 Falls ihr so etwas seht:
 
-.. code:: wiki
+.. code:: bash
 
    $ patch -p0 < Config.patch
    patching file Config.in
@@ -129,7 +129,7 @@ Im folgenden geht es darum, wie man die Web-Oberfläche von crontab
 nach einem Text sucht, der sonst hoffentlich selten vorkommt, "crontab"
 scheint hier ein guter Wert zu sein.
 
-.. code:: wiki
+.. code:: bash
 
    $ grep -r crontab make 2> /dev/null | fgrep -v /.svn/
    make/mod/files/root/etc/init.d/rc.crond:        cat /tmp/flash/mod/crontab /etc/cron.d/* /tmp/cron.d/* 2> /dev/null |
@@ -154,7 +154,7 @@ vor. Das sagt uns leider noch nicht, was man machen muss, um eine Hilfe
 auf die Seite zu bringen. Also suchen wir einmal nach "Hosts", weil auf
 der Hosts-Seite schon eine Hilfe da ist.
 
-.. code:: wiki
+.. code:: bash
 
    $ grep -r Hosts make 2> /dev/null | fgrep -v /.svn/
    ...
@@ -166,7 +166,7 @@ Die Definitionsdatei, aus der der Text "hosts" kommt, ist also
 make/mod/files/root/etc/default.mod/hosts.def. Schauen wir uns also mal
 die Datei an:
 
-.. code:: wiki
+.. code:: bash
 
    $ cat make/mod/files/root/etc/default.mod/hosts.def
    CAPTION='Freetz: hosts'
@@ -187,7 +187,7 @@ make/<Paket>/files.
 
 Die Datei sieht so aus:
 
-.. code:: wiki
+.. code:: bash
 
    $ cat .language
    languages

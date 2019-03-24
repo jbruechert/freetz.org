@@ -95,7 +95,7 @@ Dazu passend haben die Listeners eine zusätzliche erste Spalte bekommen,
 in der (mit Hilfe von Abkürzungen und Wildcards) das gewünschte Ereignis
 angegeben werden kann, auf das die betreffende Regel reagieren soll:
 
-.. code:: wiki
+.. code:: bash
 
    in:request  ^       ^1234$  xboxmessage xbox
    in:cancel   ^       ^       mailmessage -t test@example.com
@@ -256,7 +256,7 @@ seit Version 1.8:
 
 -  f_duration: zur Darstellung von Zeitdauern als "hh:mm:ss"
 
-   .. code:: wiki
+   .. code:: bash
 
       f_duration <ZEIT_IN_SEKUNDEN>
 
@@ -270,7 +270,7 @@ Beispiel:
 
 führt zu einer Ausgabe
 
-.. code:: wiki
+.. code:: bash
 
    Der Anruf dauerte 1:05:03
 
@@ -293,14 +293,14 @@ anzugeben, bei der eine Regel auslösen soll:
 
 -  Vollständige Ereignisnamen:
 
-   .. code:: wiki
+   .. code:: bash
 
       in:request
       out:disconnect
 
 -  Abkürzungen des vorderen und/oder hinteren Teils:
 
-   .. code:: wiki
+   .. code:: bash
 
       in:req
       out:disc
@@ -309,7 +309,7 @@ anzugeben, bei der eine Regel auslösen soll:
 
 -  Wildcards für den vorderen Teil (Richtung), den hinteren oder beide:
 
-   .. code:: wiki
+   .. code:: bash
 
       *:req
       ou:*
@@ -318,7 +318,7 @@ anzugeben, bei der eine Regel auslösen soll:
 -  Listen dieser Bestandteile (mit Komma getrennt (Vorsicht, kein
    Whitespace); die Regel passt, wenn einer der Teile passt):
 
-   .. code:: wiki
+   .. code:: bash
 
       in:req,out:*
 
@@ -330,26 +330,26 @@ Beispiele:
 Verpasster Anruf (in:cancel) mailmessage an mehrere Email Adressen
 versenden:
 
-.. code:: wiki
+.. code:: bash
 
    in:cancel ^ ^ mailmessage -t user1@example.com,user2@example.com
 
 Von einer bestimmten Rufnummer (0401234567) eine festgelegte Rufnummer
 (0401234568) anrufen und den PC über WOL (Wake on Lan) einschalten:
 
-.. code:: wiki
+.. code:: bash
 
    in:request ^0401234567 ^0401234568 ether-wake -i eth0 00:13:DE:01:A4:DE
 
 Benachrichtigungen über Dreambox mit Enigma2 auf Fernseher anzeigen:
 
-.. code:: wiki
+.. code:: bash
 
    in:request ^ ^ dream2message --user=root --pass=dreambox 192.168.178.104
 
 Benachrichtigung per Email bei Faxempfang:
 
-.. code:: wiki
+.. code:: bash
 
    in:disconnect ^ 0401234567$ mailmessage -s "Faxeingang von $SOURCE"
 

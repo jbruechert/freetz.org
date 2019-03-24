@@ -20,7 +20,7 @@ NFSD_CGI
 | My currect config allows 192.168.178.0/24 and localhost (for the local
   NFS Client).
 
-.. code:: wiki
+.. code:: bash
 
    /var/media/ndas/ext3 192.168.178.0/255.255.250.0(rw,no_subtree_check) localhost(rw)
 
@@ -30,7 +30,7 @@ NFSD_CGI
 | Looks only the first two lines are needed, but the others should not
   harm.
 
-.. code:: wiki
+.. code:: bash
 
    mountd,nfsd,portmap: 192.168.178.0/255.255.255.0 , localhost
    lockd: 192.168.178.0/255.255.255.0 , localhost
@@ -42,7 +42,7 @@ NFSD_CGI
 
 | Only deny the NFS related services
 
-.. code:: wiki
+.. code:: bash
 
    mountd,nfsd,portmap:ALL
    lockd:ALL
@@ -60,13 +60,13 @@ Verification on Server:
 
 List of kernel supported filesystems by the FB:
 
-.. code:: wiki
+.. code:: bash
 
    cat /proc/filesystems
 
 | Just look if the filesystems you are planning to use are listed.
 
-.. code:: wiki
+.. code:: bash
 
    /etc/init.d/rc.nfsd status
 
@@ -74,7 +74,7 @@ List of kernel supported filesystems by the FB:
   to see which processes are actually running before restarting the nfs
   server.
 
-.. code:: wiki
+.. code:: bash
 
    ps -wl | grep 'nfs\|portmap\|lockd\|statd\|mountd\|quota'
 
@@ -82,14 +82,14 @@ List of kernel supported filesystems by the FB:
 | You can use ``/etc/init.d/rc.nfsd stop`` and
   ``/etc/init.d/rc.nfsd start`` to stop and start the nfs server.
 
-.. code:: wiki
+.. code:: bash
 
    exportfs
 
 | Should show the hosts or subnets (incl. localhost if configured)
   configured in /etc/exports
 
-.. code:: wiki
+.. code:: bash
 
    mount
 
@@ -98,26 +98,26 @@ List of kernel supported filesystems by the FB:
 If you also have the `NFS Client </wiki/packages/nfs.en>`__ installed on
 the FB, the following verification is available:
 
-.. code:: wiki
+.. code:: bash
 
    mount -t nfs localhost:/<share-path> /<mount-point>
 
 To show from the server which nfs exports are in use:
 
-.. code:: wiki
+.. code:: bash
 
    showmount --all
    showmount --exports
 
 To verify layer-4 network information (e.g. used ports):
 
-.. code:: wiki
+.. code:: bash
 
    netstat -anp
 
 | 
 
-.. code:: wiki
+.. code:: bash
 
    logread
 
@@ -160,7 +160,7 @@ Bonnie++
 
 main script:
 
-.. code:: wiki
+.. code:: bash
 
    #!/bin/sh
 
@@ -189,7 +189,7 @@ main script:
 
 expect script:
 
-.. code:: wiki
+.. code:: bash
 
    #!/usr/bin/expect
 
@@ -210,7 +210,7 @@ expect script:
 
 You can obtain a nice html page of your results with:
 
-.. code:: wiki
+.. code:: bash
 
    cat results.txt | grep ,,, | bon_csv2html > /tmp/nfs_client_test.html
 

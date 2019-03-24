@@ -40,7 +40,7 @@ Anzeigen von fortunes beim Konsolen-Login
   */var/mod/root/.profile*
 | Folgendes reicht dafür aus:
 
-.. code:: wiki
+.. code:: bash
 
    echo
    /usr/bin/fortune
@@ -50,7 +50,7 @@ Anzeigen von fortunes beim Konsolen-Login
 | Nach erfolgtem Login auf der Box per telnet bzw. ssh begrüßt die Box
   euch mit einem zufällig gewählten Glückskeks:
 
-.. code:: wiki
+.. code:: bash
 
       __  _   __  __ ___ __
      |__ |_) |__ |__  |   /

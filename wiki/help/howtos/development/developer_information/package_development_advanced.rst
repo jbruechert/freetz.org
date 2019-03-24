@@ -29,7 +29,7 @@ simple straightforward solution might look like this:
 
 ``Config.in``
 
-.. code:: wiki
+.. code:: bash
 
    FREETZ_PACKAGE_FOO_BINARY1
        bool "include binary1"
@@ -53,7 +53,7 @@ simple straightforward solution might look like this:
 
 ``foo.mk``
 
-.. code:: wiki
+.. code:: bash
 
    $(call PKG_INIT_BIN, 0.0.1)
    $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
@@ -127,7 +127,7 @@ dosfstools package.
 
 `dosfstools.mk </browser/trunk/make/dosfstools/dosfstools.mk>`__\ `​ </export/HEAD/trunk/make/dosfstools/dosfstools.mk>`__
 
-.. code:: wiki
+.. code:: bash
 
    $(call PKG_INIT_BIN, 3.0.5)
    $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
@@ -171,7 +171,7 @@ dosfstools package.
 
 This line
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_BINARIES_ALL := dosfsck dosfslabel mkdosfs
 
@@ -180,7 +180,7 @@ full paths) of all binaries of the package.
 
 This next line
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_BINARIES := $(strip $(foreach binary,$($(PKG)_BINARIES_ALL),$(if $(FREETZ_PACKAGE_$(PKG)_$(shell echo $(binary) | tr [a-z] [A-Z])),$(binary))))
 
@@ -199,7 +199,7 @@ is added to the ``$(PKG)_BINARIES`` variable. For those of you who is
 familiar with other programming languages, this line is equivalent to
 the following pseudo-code:
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_BINARIES := {}; # {} represents an empty set
    for binary in $($(PKG)_BINARIES_ALL); do
@@ -223,7 +223,7 @@ without actually understanding how exactly it does what it does.
 
 The next two lines
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_BINARIES_BUILD_DIR := $($(PKG)_BINARIES:%=$($(PKG)_DIR)/%)
    $(PKG)_BINARIES_TARGET_DIR := $($(PKG)_BINARIES:%=$($(PKG)_DEST_DIR)/usr/sbin/%)
@@ -241,14 +241,14 @@ page for the explanations of what ``'%'``-sign means when used in
 **pattern** and what it means when used in **replacement**). Both lines
 could also be written this way:
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_BINARIES_BUILD_DIR := $(addprefix $($(PKG)_DIR)/,$($(PKG)_BINARIES))
    $(PKG)_BINARIES_TARGET_DIR := $(addprefix $($(PKG)_DEST_DIR)/,$($(PKG)_BINARIES))
 
 The next line
 
-.. code:: wiki
+.. code:: bash
 
    $(PKG)_NOT_INCLUDED := $(patsubst %,$($(PKG)_DEST_DIR)/usr/sbin/%,$(filter-out $($(PKG)_BINARIES),$($(PKG)_BINARIES_ALL)))
 
@@ -257,7 +257,7 @@ does absolutely the same as the line defining the
 contains the list of dosfstools-binaries not selected in menuconfig.
 This part of it
 
-.. code:: wiki
+.. code:: bash
 
    $(filter-out $($(PKG)_BINARIES),$($(PKG)_BINARIES_ALL))
 
@@ -273,7 +273,7 @@ build system will take care of removing unnecessary files.
 
 The last fragment we take a look at is the following one:
 
-.. code:: wiki
+.. code:: bash
 
    $($(PKG)_BINARIES_TARGET_DIR): $($(PKG)_DEST_DIR)/usr/sbin/%: $($(PKG)_DIR)/%
        $(INSTALL_BINARY_STRIP)
@@ -285,7 +285,7 @@ names for each target based on the target name. These two lines are
 \_absolutely\_ equivalent to the following ones from the 1st example,
 they are just a shorthand for them:
 
-.. code:: wiki
+.. code:: bash
 
    $($(PKG)_TARGET_BINARY1): $($(PKG)_BINARY1)
        $(INSTALL_BINARY_STRIP)

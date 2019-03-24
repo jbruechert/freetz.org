@@ -54,17 +54,17 @@ Creating a Feetz Image with Inadyn
 | After the following step you can configure the packages you want to
   have included in your image.
 
-.. code:: wiki
+.. code:: bash
 
    make menuconfig
 
 Make sure the following is selected:
 
-.. code:: wiki
+.. code:: bash
 
    [*] Show advanced options
 
-.. code:: wiki
+.. code:: bash
 
    Package selection  --->  Testing  --->    [*] Inadyn-mt 02.24.36
 
@@ -86,7 +86,7 @@ Setup in Freetz web-interface
 If you have enabled the syslog you can verify the syslog messages. E.g.
 via a telnet or ssh connection you can using the following command:
 
-.. code:: wiki
+.. code:: bash
 
    logread
 

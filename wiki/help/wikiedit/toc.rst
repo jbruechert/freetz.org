@@ -12,7 +12,7 @@ deutschsprachigen Seiten das Argument ``heading=Inhaltsverzeichnis`` -
 als Beispiel für ein einfaches Inhaltsverzeichnis für die aktuell
 bearbeitete Seite sähe das dann so aus:
 
-.. code:: wiki
+.. code:: bash
 
    [[TOC(heading=Inhaltsverzeichnis)]]
 
@@ -26,7 +26,7 @@ einbeziehen, sodass ein Inhaltsverzeichnis entsteht, welches mehrere
 Artikel überspannt. Hierzu gibt man die zu indizierenden Seiten explizit
 an:
 
-.. code:: wiki
+.. code:: bash
 
    [[TOC(help/wikiedit,help/wikiedit/toc,help/wikiedit/goodies,heading=Inhaltsverzeichnis)]]
 
@@ -35,7 +35,7 @@ einbeziehen. Da man auf diese Art allerdings jedesmal, wenn eine neue
 Unterseite angelegt wird, das TOC-Makro auf allen beteiligten Seiten
 wieder anpassen müsste, geht das auch einfacher:
 
-.. code:: wiki
+.. code:: bash
 
    [[TOC(help/wikiedit,help/wikiedit/*,heading=Inhaltsverzeichnis)]]
 
@@ -56,7 +56,7 @@ einschränken, wozu der Parameter ``depth`` herangezogen werden kann.
 Soll das TOC-Makro also beispielsweise nur die Überschriften der Ebenen
 1 und 2 anzeigen, sähe das so aus:
 
-.. code:: wiki
+.. code:: bash
 
    [[TOC(help/wikiedit,help/wikiedit/*,depth=2,heading=Inhaltsverzeichnis)]]
 
@@ -78,7 +78,7 @@ darum geht, die Überschriften aufzulisten - und es nicht unbedingt der
 "schöne gelbe Kasten da rechts" sein muss, bietet das Keyword ``inline``
 hier Abhilfe:
 
-.. code:: wiki
+.. code:: bash
 
    [[TOC(help/wikiedit,help/wikiedit/*,inline,noheading)]]
 

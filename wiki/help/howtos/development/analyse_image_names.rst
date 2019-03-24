@@ -166,7 +166,7 @@ So sehen aktuell die Firmware-Namen aus, welche sich in der
 `Config.in </browser/trunk/Config.in?rev=8531#L991>`__\ `​ </export/8531/trunk/Config.in#L991>`__
 befinden:
 
-.. code:: wiki
+.. code:: bash
 
    FRITZ.Box_2170.51.04.57.image
    FRITZ.Box_6840_LTE.105.05.09.image
@@ -237,7 +237,7 @@ Ausgabe grundlegender Informationen
 Das Ergebnis sieht für Fall 1 (grundlegende Informationen,
 tabellarisches Layout) so aus:
 
-.. code:: wiki
+.. code:: bash
 
    FRITZ!Box 2170                  51.04.57
    FRITZ!Box 6840 LTE              105.05.09
@@ -305,7 +305,7 @@ Ausgabe erweiterter Informationen
 Im zweiten Fall ist die Ausgabe wesentlich länger, ich gebe hier also
 nur exemplarische Ausschnitte wieder:
 
-.. code:: wiki
+.. code:: bash
 
    Firmware image: FRITZ.Box_6840_LTE.105.05.09.image
    Producer/OEM:   AVM

@@ -37,7 +37,7 @@ für diesen Tipp in
 bzw. `​diesem <http://www.ip-phone-forum.de/showthread.php?t=221189>`__
 Thread!):
 
-.. code:: wiki
+.. code:: bash
 
    # digitemp-Link erstellen (pl2303)
    USBNR=$(grep 2303 /proc/tty/driver/usbserial | cut -d ":" -f1)
@@ -48,7 +48,7 @@ Debug helpers → usbutils). Ein Blick nach */proc/tty/driver/usbserial*
 hilft auch weiter, z.B. könnte das Resultat so aussehen (bei 2 Adaptern
 mit je einem pl2303- bzw. einem ftdi-Chipsatz):
 
-.. code:: wiki
+.. code:: bash
 
    root@fb1 /var/mod/root $ cat /proc/tty/driver/usbserial
    usbserinfo:1.0 driver:v2.0
@@ -58,7 +58,7 @@ mit je einem pl2303- bzw. einem ftdi-Chipsatz):
 Falls man also statt eines pl2303-Chip Adapters einen mit FTDI-Chip fest
 verdrahten will, müsste obiger Code so aussehen:
 
-.. code:: wiki
+.. code:: bash
 
    # digitemp-Link erstellen (ftdi)
    USBNR=$(grep ftdi /proc/tty/driver/usbserial | cut -d ":" -f1)
@@ -80,7 +80,7 @@ Datenbank
 | Existierende rrd-Datenbanken kann man so neue RRAs hinzufügen (für
   experimentierfreudige):
 
-.. code:: wiki
+.. code:: bash
 
    ## box
    rc.rrdstats stop

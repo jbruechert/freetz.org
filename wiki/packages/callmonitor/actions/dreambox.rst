@@ -8,7 +8,7 @@ DreamBox
 Dreambox mit Enigma 1
 ---------------------
 
-.. code:: wiki
+.. code:: bash
 
      dreammessage [user[:password]@]host[:port] ["Alternative Nachricht"]
 
@@ -36,7 +36,7 @@ Desweiteren gibt es drei Umgebungsvariablen, die das Verhalten von
 ``dreammessage`` beeinflussen. Sie sind hier in einem typischen Aufruf
 mit ihren Standardwerten gezeigt:
 
-.. code:: wiki
+.. code:: bash
 
      DREAM_TIMEOUT=10 DREAM_CAPTION="Telefonanruf" DREAM_ICON=1 dreammessage box1
 
@@ -89,7 +89,7 @@ Thread <http://www.ip-phone-forum.de/showthread.php?t=100706&page=55>`__
 DreamBox mit Enigma 2
 ---------------------
 
-.. code:: wiki
+.. code:: bash
 
      dream2message (default_dream2message)
 
@@ -98,6 +98,6 @@ DreamBox mit Enigma 2
 | Beispiel für ein Popup das nur den Namen (sofern in der Callers
   vorhanden) und die Telefonnummer des Anrufers anzeigt:
 
-.. code:: wiki
+.. code:: bash
 
    in:request ^ ^ dream2message 192.168.178.25 "${SOURCE_NAME} ${SOURCE} ruft an."

@@ -59,7 +59,7 @@ Standard
 Mit dem Trac-Wiki Standard (in gepatchter Form |;)|) ist dies am
 einfachsten möglich:
 
-.. code:: wiki
+.. code:: bash
 
    |||   ||| 1 ||| 2 ||| 3 ||
    ||| A ||  X ||    ||  X ||
@@ -85,7 +85,7 @@ RST
 
 Hier sieht das ein wenig anders aus:
 
-.. code:: wiki
+.. code:: bash
 
    {{{
    #!rst
@@ -152,7 +152,7 @@ Einfaches Beispiel
 
 Gibt man folgendes ein:
 
-.. code:: wiki
+.. code:: bash
 
    {{{
    #!mediawiki
@@ -183,7 +183,7 @@ Zu guter Letzt ein leicht komplexeres Beispiel, bei dem einige
 Formatierungen (Hintergrund-Farbe etc.) explizit mit vorgegeben, und
 auch ein paar Zellen verbunden werden. Eingegeben wurde also:
 
-.. code:: wiki
+.. code:: bash
 
    {{{
    #!mediawiki

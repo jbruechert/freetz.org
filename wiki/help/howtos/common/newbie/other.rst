@@ -289,7 +289,7 @@ SWAP-File einrichten
 | 6.) Im nächsten Fenster sollte man jetzt sehen wie die SWAP-Datei
   angelegt wird.
 
-.. code:: wiki
+.. code:: bash
 
     Erstelle leere Datei ...
     20+0 records in
@@ -354,7 +354,7 @@ Erweitert
 
 | In das leere Feld kopiert man nun folgenden Text:
 
-.. code:: wiki
+.. code:: bash
 
    log level = 1
    socket options = TCP_NODELAY IPTOS_LOWDELAY
@@ -374,7 +374,7 @@ Freigaben
 
 | In das leere Feld kopiert man nun folgenden Text:
 
-.. code:: wiki
+.. code:: bash
 
    /var/media/ftp/USB USB-Stick 1 0 - USB-Stick
    /var/media/ftp/USB/data/gast Gast 1 0 - Gast
@@ -404,7 +404,7 @@ Wir haben nun 6 Windows-Freigaben für unserem USB-Stick erzeugt.
   auf 0 gesetzt ist bzw. wird.)
 | **Beispiel:**
 
-.. code:: wiki
+.. code:: bash
 
    /var/media/ftp/USB USB-Stick 1 0 - USB-Stick
 
@@ -422,7 +422,7 @@ Wir haben nun 6 Windows-Freigaben für unserem USB-Stick erzeugt.
 Da wir als Netbiosname **NAS** vergeben hatte, lautet der Zugriff von
 Windows auf die Freigabe nun:
 
-.. code:: wiki
+.. code:: bash
 
    \\NAS\USB-Stick
 
@@ -505,7 +505,7 @@ Zusätzliche Konfigurationsoptionen (für Experten)
 
 | In das leere Feld kopiert man nun folgenden Text:
 
-.. code:: wiki
+.. code:: bash
 
    user_config_dir=/var/media/ftp/USB/vsftp_user_conf
 
@@ -520,7 +520,7 @@ Logging
 -  Syslog = deaktiviert
 -  Datei = aktiviert mit folgendem Text:
 
-   .. code:: wiki
+   .. code:: bash
 
       /var/media/ftp/USB/logs/vsftpd.log
 
@@ -582,7 +582,7 @@ Inhalt der Datei :
   Benutzer zu verbieten. Hierzu fügt man folgende Zeile in die Datei ein
   und entfernt die Befehle die der User nicht ausführen darf:
 
-.. code:: wiki
+.. code:: bash
 
    cmds_allowed=ABOR,ACCT,ALLO,APPE,AUTH,CDUP,CWD,DELE,EPRT,EPSV,FEAT,HELP,LIST,MDTM,MKD,MODE,NLST,NOOP,OPTS,PASS,PASV,PBSZ,PORT,PROT,PWD,QUIT,REIN,REST,RETR,RMD,RNFR,RNTO,SITE,SMNT,STAT,STOR,STOU,STRU,SYST,TYPE,USER
 
@@ -590,7 +590,7 @@ So mit darf Paul Dateien auf den FTP kopieren und Verzeichnisse anlegen,
 jedoch diese nicht wieder löschen. Also muß folgendes in der Datei
 stehen:
 
-.. code:: wiki
+.. code:: bash
 
    cmds_allowed=ABOR,ACCT,ALLO,APPE,AUTH,CDUP,CWD,EPRT,EPSV,FEAT,HELP,LIST,MDTM,MKD,MODE,NLST,NOOP,OPTS,PASS,PASV,PBSZ,PORT,PROT,PWD,QUIT,REIN,REST,RETR,RNFR,RNTO,SITE,SMNT,STAT,STOR,STOU,STRU,SYST,TYPE,USER
 
@@ -659,34 +659,34 @@ und Kleinschreibung achten):
 admin
      
 
-.. code:: wiki
+.. code:: bash
 
    adduser -h /var/media/ftp/USB admin
 
 paul
     
 
-.. code:: wiki
+.. code:: bash
 
    adduser -h /var/media/ftp/USB/data paul
 
 mary
     
 
-.. code:: wiki
+.. code:: bash
 
    adduser -h /var/media/ftp/USB/data mary
 
 gast
     
 
-.. code:: wiki
+.. code:: bash
 
    adduser -h /var/media/ftp/USB/data/gast gast
 
 | So sollte z.B. die Meldung für admin im Putty-Fenster aussehen:
 
-.. code:: wiki
+.. code:: bash
 
    /var/mod/root # adduser -h /var/media/ftp/USB admin
    adduser: /var/media/ftp/USB: Operation not permitted
@@ -709,7 +709,7 @@ gast
 | Anzeigen kann man die Datei mit dem Befehl **cat /var/tmp/passwd**.
 | Nun melden wir uns noch mit folgendem Befehl von der Putty Konsole ab:
 
-.. code:: wiki
+.. code:: bash
 
    exit
 
@@ -852,7 +852,7 @@ keine weiteren Kosten!
 | Ihr benötigt die IP-Adresse Eures virtuellen Freetz-Linux, diese
   erfährt man durch
 
-.. code:: wiki
+.. code:: bash
 
    ifconfig
 

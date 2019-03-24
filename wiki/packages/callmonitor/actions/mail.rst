@@ -9,7 +9,7 @@ etwas anderes befiehlt (mailer-Optionen)). Der Push-Service selbst kann
 ruhig ausgeschaltet bleiben, wichtig sind die Einstellungen für
 Adressen, Mailserver & Co. Beispiele zum Einsatz in Listeners:
 
-.. code:: wiki
+.. code:: bash
 
    mailmessage
    mailmessage -t me@my.self
@@ -23,7 +23,7 @@ Adressen, Mailserver & Co. Beispiele zum Einsatz in Listeners:
    größtenteils an ``mailer``. Deswegen können folgende Optionen
    verwendet werden:
 
-   .. code:: wiki
+   .. code:: bash
 
         -s STRING          - Subject. ("FRITZ!Box")
         -f STRING          - From. (NULL)
@@ -64,7 +64,7 @@ E-Mail (``mailmessage``), die (auch) in Kombination mit dem Ereignis
 ``in:cancel`` genutzt werden kann, um bei verpassten Anrufen eine Mail
 zu verschicken:
 
-.. code:: wiki
+.. code:: bash
 
    in:cancel   ^   ^   mailmessage
 

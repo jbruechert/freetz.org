@@ -246,7 +246,7 @@ Netzwerkkonfiguration und prüft ob eure virtuelle Maschine eine
 IP-Adresse bekommen hat. Zum Überprüfen bitte folgenden Befehl in der VM
 eingeben: **ifconfig**
 
-.. code:: wiki
+.. code:: bash
 
    eth0      Link encap:Ethernet  Hardware Adresse xx:xx:xx:xx:xx:xx
              inet Adresse:192.168.XXX.203  Bcast:192.168.XXX.255  Maske:255.255.255.0
@@ -265,7 +265,7 @@ Freetz Sourcen auschecken
 
 | Als nächstes gebt ihr folgenden Befehl ein:
 
-.. code:: wiki
+.. code:: bash
 
    svn checkout http://svn.freetz.org/branches/freetz-stable-2.0
 

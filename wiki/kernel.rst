@@ -1278,7 +1278,7 @@ Tree like overview of all kernel sources published by AVM so far (as of
 2014-09-23) for 05.2x, 05.5x, 06.0x, and 06.2x firmwares (generated
 using ``tree -d -L 4 --noreport | grep -Ev "linux-2.6.(28|32)"``).
 
-.. code:: wiki
+.. code:: bash
 
    Legend:
     * listed directly under 0X.YZ => unique kernel-source-package not equal to any other

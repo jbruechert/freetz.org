@@ -12,7 +12,7 @@ Zuordnung gewährleistet.
 | Da der AVM-Printserver jeweils zwei Ports belegt (n+1), wird immer ein
   Port übersprungen:
 
-.. code:: wiki
+.. code:: bash
 
    phys. USB-Port 0 => Port 9100
    phys. USB-Port 1 => Port 9102

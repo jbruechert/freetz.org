@@ -30,7 +30,7 @@ Konfiguration
 
 #. Erzeugen der Keys auf dem PC (unter Linux):
 
-   .. code:: wiki
+   .. code:: bash
 
       openssl genrsa 1024 > host.key
       openssl req -new -x509 -nodes -sha1 -days 365 -key host.key > host.cert
@@ -41,7 +41,7 @@ Konfiguration
 
 3. Die gewünschten Services hinzufügen. Zum Beispiel:
 
-   .. code:: wiki
+   .. code:: bash
 
       [freetz https Web-Interface]
       client = no

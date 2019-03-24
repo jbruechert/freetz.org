@@ -50,19 +50,19 @@ die ADAM2 API, die je nach Kernel Version an verschiedenen Stellen in
 
 Um die Environment mtd Tabelle unter Kernel 2.4 zu lesen kann
 
-.. code:: wiki
+.. code:: bash
 
    cat /proc/sys/dev/adam2/environment | grep mtd
 
 abgerufen werden. Ab Kernel 2.6 muss es so aussehen:
 
-.. code:: wiki
+.. code:: bash
 
    cat /proc/sys/urlader/environment | grep mtd
 
 Die Liste aller Linux mtd Devices erhält man mit:
 
-.. code:: wiki
+.. code:: bash
 
    cat /proc/mtd
 

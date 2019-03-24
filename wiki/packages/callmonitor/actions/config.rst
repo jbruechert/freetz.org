@@ -14,7 +14,7 @@ Portforwarding
 
 Das Portforwarding kann aktiviert und deaktiviert werden.
 
-.. code:: wiki
+.. code:: bash
 
    Syntax:
      config forward <NUMMER> <on|off|toggle>
@@ -39,7 +39,7 @@ WLAN
 
 Das WLAN kann aktiviert und deaktiviert werden.
 
-.. code:: wiki
+.. code:: bash
 
    Syntax:
      config wlan [2.4|5|guest] <on|off>
@@ -67,7 +67,7 @@ DECT
 
 DECT kann aktiviert und deaktiviert werden.
 
-.. code:: wiki
+.. code:: bash
 
    Syntax:
      config dect <on|off>
@@ -88,7 +88,7 @@ SIP
 
 Die SIP-Accounts können aktiviert und deaktiviert werden.
 
-.. code:: wiki
+.. code:: bash
 
    Syntax:
      config sip <NUMMER> <on|off>
@@ -112,7 +112,7 @@ Rufumleitung
 werden momentan nur Rufumleitungen des Typs "Anrufe von Rufnummer xy",
 nicht aber "Alle Anrufe an Fon X".
 
-.. code:: wiki
+.. code:: bash
 
    Syntax
      config diversion <NUMMER> <on|off>

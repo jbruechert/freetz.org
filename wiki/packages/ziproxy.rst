@@ -27,7 +27,7 @@ Relatively heavy.
 It may be necessary to disable the watchdog by adding this line to for
 example *rc.custom*:
 
-.. code:: wiki
+.. code:: bash
 
    echo "disable">/dev/watchdog
 
@@ -48,7 +48,7 @@ URL no processing list
 
 You want probably at least:
 
-.. code:: wiki
+.. code:: bash
 
    http://mt*.google.com/*
    http://khm*.google.com/*
@@ -64,7 +64,7 @@ URL deny list
 
 Something like:
 
-.. code:: wiki
+.. code:: bash
 
    http://*.doubleclick.net/*
    http://*.googleadservices.com/*
@@ -79,7 +79,7 @@ Something like:
 
 and maybe:
 
-.. code:: wiki
+.. code:: bash
 
    http://*/*.swf
 

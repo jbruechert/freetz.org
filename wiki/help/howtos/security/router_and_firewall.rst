@@ -114,7 +114,7 @@ wählen wir *»Neue Route«*:
 
    Fritzbox: Route hinzufügen
 
-.. code:: wiki
+.. code:: bash
 
    Aktiv     Netzwerk    Subnetzmaske    Gateway
    X   192.168.181.0   255.255.255.0   192.168.178.14 #LANB
@@ -186,14 +186,14 @@ FIXME kopierter Post
    Port A, denn dann hat man nicht mehr die verschiedenen Netze.
 #. route hinzufügen:
 
-   .. code:: wiki
+   .. code:: bash
 
       Aktiv     Netzwerk    Subnetzmaske    Gateway
       X   0.0.0.0     0.0.0.0     192.168.178.1
 
    4a) routen **auf der Internet Fritzbox** hinzufügen
 
-   .. code:: wiki
+   .. code:: bash
 
       Aktiv     Netzwerk    Subnetzmaske    Gateway
       X   192.168.181.0   255.255.255.0   192.168.178.14 #LANB

@@ -7,7 +7,7 @@ einem Unterpunkt von "Freetz" bearbeitet werden.
 
 Damit können USB Geräte fest zugeordnet werden:
 
-.. code:: wiki
+.. code:: bash
 
    SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{serial}=="7CF6976", SYMLINK+="reader1"
    SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{serial}=="FDF4F0D", SYMLINK+="reader2"

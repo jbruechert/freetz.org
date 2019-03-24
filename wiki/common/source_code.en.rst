@@ -18,7 +18,7 @@ temporarily contain bugs or not work at all.
 
 Check out from SVN:
 
-.. code:: wiki
+.. code:: bash
 
    $ svn co http://svn.freetz.org/trunk                     <--- check out current trunk revision
    $ svn co http://svn.freetz.org/trunk trunk_7843 -r 7843  <--- check out specific trunk revision (here: 7843) into subdirectory
@@ -28,7 +28,7 @@ Check out from Git (|Warning| Git is not the leading system and is
 officially unsupported presently. We provide it "as is" for test
 purposes.):
 
-.. code:: wiki
+.. code:: bash
 
    $ git clone https://github.com/Freetz/freetz.git freetz-devel  <--- freetz-devel: local copy of Git repository
 
@@ -40,7 +40,7 @@ Updates
 How to update an existing local SVN repository (here: developer
 version):
 
-.. code:: wiki
+.. code:: bash
 
    $ cd trunk
    $ svn up         <--- update to current revision
@@ -49,7 +49,7 @@ version):
 How to update an existing local Git repository (here: developer
 version):
 
-.. code:: wiki
+.. code:: bash
 
    $ cd freetz-devel
    $ git pull
@@ -73,7 +73,7 @@ versions:
 **freetz-2.0**: current stable version (list of supported boxes and
 firmware versions)
 
-.. code:: wiki
+.. code:: bash
 
    $ svn co http://svn.freetz.org/branches/freetz-stable-2.0
 
@@ -81,7 +81,7 @@ firmware versions)
 firmware updates anymore (more
 `​info <http://www.ip-phone-forum.de/showthread.php?t=135253>`__)
 
-.. code:: wiki
+.. code:: bash
 
    $ svn co http://svn.freetz.org/tags/ds-0.2.9-p8
 

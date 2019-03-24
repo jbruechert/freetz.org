@@ -7,7 +7,7 @@ Alle Aktionen, die auf ``getmsg`` basieren, verstehen folgende Optionen,
 mit denen man Benutzername und Passwort für das Webinterface der Zielbox
 angeben kann:
 
-.. code:: wiki
+.. code:: bash
 
      -U USERNAME
      --user USERNAME
@@ -17,7 +17,7 @@ angeben kann:
 Außerdem können die Daten in einer Kurzschreibweise direkt beim
 Hostnamen angegeben werden:
 
-.. code:: wiki
+.. code:: bash
 
      USERNAME:PASSWORD@HOST:PORT
 
@@ -28,25 +28,25 @@ Beispiel
 
 Also zum Beispiel:
 
-.. code:: wiki
+.. code:: bash
 
      dboxmessage john:secret@mydbox
 
 Das bewirkt das gleiche wie
 
-.. code:: wiki
+.. code:: bash
 
      dboxmessage --user=john --password=secret mydbox
 
 oder
 
-.. code:: wiki
+.. code:: bash
 
      dboxmessage -U john -P secret mydbox
 
 Oder falls die D-Box auf einem anderen als dem Standardport lauscht:
 
-.. code:: wiki
+.. code:: bash
 
      dboxmessage john:secret@mydbox:3818
      dboxmessage --user=john --password=secret --port=3818 mydbox

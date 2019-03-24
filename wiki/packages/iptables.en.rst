@@ -177,7 +177,7 @@ Configuration: After successful firmware build and upload
 | Here an example script to load the necessary modules for the rules
   described in this wiki:
 
-.. code:: wiki
+.. code:: bash
 
    # the most common modules needed:
    modprobe ip_tables
@@ -205,7 +205,7 @@ Configuration: After successful firmware build and upload
 -  After registering / loading the modules we can start defining rules
    (here some rules for a strong basic protection):
 
-.. code:: wiki
+.. code:: bash
 
    # # # FIREWALL RULES
 
@@ -348,7 +348,7 @@ Isolate guest network from LAN
 These rules will prevent access to the local area network, including the
 box itself from the guest network:
 
-.. code:: wiki
+.. code:: bash
 
    iptables -A INPUT -d 192.168.178.0/24 -i guest -j DROP
    iptables -A FORWARD -i guest -o dsl -j ACCEPT

@@ -92,7 +92,7 @@ Die unter **Port** auswählbaren Services (Dienste) sind unter
 *Einstellungen → Iptables: Services* gespeichert und können beliebig
 erweitert werden. Dabei bitte den folgenden Syntax verwenden:
 
-.. code:: wiki
+.. code:: bash
 
    Service:Port   z.B. SSH:22
 

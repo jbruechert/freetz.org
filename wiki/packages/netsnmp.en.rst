@@ -21,13 +21,13 @@ Creating a Feetz Image with Net-SNMP
 | After the following step you can configure the packages you want to
   have included in your image.
 
-.. code:: wiki
+.. code:: bash
 
    make menuconfig
 
 Make sure the following is selected (so I have 1 out of 3 selected):
 
-.. code:: wiki
+.. code:: bash
 
    Package selection  ---> Standard packages  ---> [*] Net-SNMP 5.4.2.1 snmpd
    Package selection  ---> Standard packages  ---> [ ]   With openssl encryption (NEW)
@@ -52,7 +52,7 @@ conf
 
 If you would like to have a minimal config you can use the following:
 
-.. code:: wiki
+.. code:: bash
 
    rocommunity public
    rwcommunity private
@@ -65,7 +65,7 @@ If you would like to have a minimal config you can use the following:
 | This shows how to control access based on source IP address range with
   additional options to restrict access.
 
-.. code:: wiki
+.. code:: bash
 
    ##      sec.name  source          community
    ##      ========  ======          =========

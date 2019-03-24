@@ -12,7 +12,7 @@ Damit man die Pos1 und Home Tasten auch in Nano benutzen kann ist
 (zumindest bei mir in der Kombination putty / Windows) das Setzen der
 Umgebungsvariable TERM hilfreich:
 
-.. code:: wiki
+.. code:: bash
 
    export TERM=xterm
 

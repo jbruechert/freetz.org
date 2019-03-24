@@ -37,7 +37,7 @@ gespeichert, die fest im Bootloader selbst eingestellt ist.
 Aus Linux heraus hat diese Partition oft eine von ``2`` abweichende
 Nummer die man mit folgendem Befehl ausfindig macht:
 
-.. code:: wiki
+.. code:: bash
 
    cat /proc/mtd
 
@@ -45,7 +45,7 @@ Eine der dort genannten Partitionen nennt sich ``bootloader`` oder
 ``urlader``. Mit deren Nummer (hier z.B. ``3``) liesst man dann die
 zugehörige ``mtdblock`` Device aus:
 
-.. code:: wiki
+.. code:: bash
 
    cat /dev/mtdblock3 > bootloader.bin
 
@@ -97,7 +97,7 @@ Ohne RAM funktioniert auch ein intakter Bootloader nicht ⇒ Brick.
 Um die oben erstellte Sicherung \*auf genau die selbe Box\*
 zurückzuspielen \*wäre\* dies der Weg:
 
-.. code:: wiki
+.. code:: bash
 
    cat bootloader.bin > /dev/mtdblock3
 

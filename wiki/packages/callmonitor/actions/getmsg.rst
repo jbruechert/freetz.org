@@ -17,7 +17,7 @@ wird. ``getmsg`` sorgt selbst für die richtige Kodierung der Nachrichten
 Syntax:
 -------
 
-.. code:: wiki
+.. code:: bash
 
      Usage:  getmsg [OPTION]... <HOST> <url-template> [<message>]...
              getmsg [OPTION]... -t <url-template> <host> [<message>]...
@@ -46,7 +46,7 @@ und der Port (``-p``) schon vorbelegt.
 Beispiel:
 ---------
 
-.. code:: wiki
+.. code:: bash
 
    *:* ^ ^ getmsg 192.168.0.111 -p 222 -t "/home/phone?event=%s&id=%s&time=%s&source=%s&source_name=%s&destination=%s&destination_name=%s&extension=%s&duration=%s&provider=%s" "${EVENT}" "${ID}" "${TIMESTAMP}" "${SOURCE}" "${SOURCE_NAME}" "${DEST}" "${DEST_NAME}" "${EXT}" "${DURATION}" "${PROVIDER}"
 

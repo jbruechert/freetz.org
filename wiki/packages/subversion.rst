@@ -68,7 +68,7 @@ Konfiguration
 
 Ein Repository wird mit folgendem Befehl angelegt
 
-.. code:: wiki
+.. code:: bash
 
    svnadmin create --fs-type fsfs /PFAD_ZU_DEM_EXT2_TRAEGER/REPOSITORY_NAME
 
@@ -89,14 +89,14 @@ aussehen:
 
 **passwd**
 
-.. code:: wiki
+.. code:: bash
 
    [users]
    DeinName = DeinPasswort
 
 **svnserve.conf**
 
-.. code:: wiki
+.. code:: bash
 
    [general]
    anon-access = none

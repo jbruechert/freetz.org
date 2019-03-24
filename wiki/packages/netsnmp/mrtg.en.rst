@@ -63,7 +63,7 @@ MRTG Config file
   found
   `​here <http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages>`__.
 
-.. code:: wiki
+.. code:: bash
 
    # Created by
    # cfgmaker public@192.168.178.1 --global "WorkDir: c:\www\mrtg" --output mrtg.cfg
@@ -771,7 +771,7 @@ MRTG Config file
 
 For the 7390 I have the following config (not so much different).
 
-.. code:: wiki
+.. code:: bash
 
    # Created by
    # cfgmaker public@192.168.178.1 --global "WorkDir: c:\www\mrtg" --output mrtg_7390.cfg
@@ -1574,7 +1574,7 @@ Copy them to C:\Program Files (x86)\mrtg-2.17.4\bin\\ directory.
 
 I generated a service named mrtg_7390.
 
-.. code:: wiki
+.. code:: bash
 
    cd C:\Program Files (x86)\mrtg-2.17.4\bin\
    instsrv "MRTG_7390" "C:\Program Files (x86)\mrtg-2.17.4\bin\srvany.exe"
@@ -1583,7 +1583,7 @@ Create a registry file at the following location:
 
    C:\Program Files (x86)\mrtg-2.17.4\bin\mrtg_7390.reg
 
-   .. code:: wiki
+   .. code:: bash
 
       [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MRTG_7390\Parameters]
        "Application"="c:\\Program Files\\perl64\\bin\\wperl.exe"

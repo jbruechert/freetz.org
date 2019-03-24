@@ -32,7 +32,7 @@ Wer lieber auf "Nummer sicher" geht, und daher die Release
 Linux-PC weiter, auf dem man die benötigte Swap-Datei erstellt, um sie
 dann auf die Box zu kopieren. Das sieht z.B. so aus:
 
-.. code:: wiki
+.. code:: bash
 
    dd if=/dev/zero of=swapfile bs=1k count=64000
    mkswap swapfile

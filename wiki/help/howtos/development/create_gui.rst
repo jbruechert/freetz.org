@@ -89,7 +89,7 @@ Konfiguration
 Jedes Paket besitzt ein Konfigurationsdatei
 ``/mod/etc/conf/<paketname>.cfg``, welche wie folgt aufgebaut ist:
 
-.. code:: wiki
+.. code:: bash
 
      export <PAKETNAME>_OPTION1='bla'
      export <PAKETNAME>_OPTION2='blub'
@@ -99,7 +99,7 @@ Sie enthält alle Optionen, die auch übers Webinterface eingestellt
 werden können und ist in Shell Syntax. Damit kann die aktuelle
 Konfiguration mit
 
-.. code:: wiki
+.. code:: bash
 
      . /mod/etc/conf/<paketname>.cfg
 
@@ -129,7 +129,7 @@ hat den Paketnamen 'mod'. Die Befehle dazu sind:
 Das dauerhafte Abschalten des Webinterfaces geht damit so (Variable
 MOD_HTTPD in der Basis-Konfiguration 'mod'):
 
-.. code:: wiki
+.. code:: bash
 
      vi /mod/etc/conf/mod.cfg  # -> MOD_HTTPD='yes' durch MOD_HTTPD='no' ersetzen
      modconf save mod  # nun ist mod.diff up-to-date
@@ -142,7 +142,7 @@ MOD_HTTPD in der Basis-Konfiguration 'mod'):
 
 Soviel zur Veranschaulichung. Komfortabler ist folgendes:
 
-.. code:: wiki
+.. code:: bash
 
      modconf set mod MOD_HTTPD=no
      modconf save mod

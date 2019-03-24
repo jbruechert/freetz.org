@@ -74,7 +74,7 @@ In make menuconfig, select your hardware type (e.g. 7170), and after
 setting the Level of user competence to Expert you can look around in
 'Toolchain options', but no changes are normally needed.
 
-.. code:: wiki
+.. code:: bash
 
    $ make menuconfig
           Level of user competence (Expert)  --->
@@ -85,7 +85,7 @@ setting the Level of user competence to Expert you can look around in
 
 Then create your toolchain:
 
-.. code:: wiki
+.. code:: bash
 
    $ make toolchain
 
@@ -219,7 +219,7 @@ Configuration Handling
 | This is a static file containing a pre-defined value (can be empty)
   for each variable (config parameter) in the following format:
 
-.. code:: wiki
+.. code:: bash
 
    export <PACKAGE>_<VARIABLE1>=’<value1>’
    export <PACKAGE>_<VARIABLE2>=’<value2>’

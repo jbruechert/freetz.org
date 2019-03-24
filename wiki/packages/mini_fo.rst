@@ -27,7 +27,7 @@ Speicherort für die Änderungen ausgewählt werden. Entweder RAM
 muss genügend freier Speicherplatz verfügbar sein (die Daten werden gzip
 komprimiert abgespeichert):
 
-.. code:: wiki
+.. code:: bash
 
    root@fritz:/var/mod/root# df /dev/mtdblock5
    Filesystem           1K-blocks      Used Available Use% Mounted on
@@ -43,21 +43,21 @@ Konfiguration (per Hand)
 **mini_fo** ist ein Kernel-Modul, das man entweder ohne Argumente mit
 insmod lädt…
 
-.. code:: wiki
+.. code:: bash
 
     insmod mini_fo
 
 …oder in der Freetz-Oberfläche in Modules einträgt, damit es beim Start
 geladen wird:
 
-.. code:: wiki
+.. code:: bash
 
     mini_fo
 
 Ist es aktiv steht der mount-type 'mini_fo' zur Verfügung. Um /usr/www
 beschreibbar zu machen genügt diese Zeile in rc.custom:
 
-.. code:: wiki
+.. code:: bash
 
    mkdir -p /tmp/usrwww /tmp/usrwww-sto && \
     mount -o bind /usr/www /tmp/usrwww && \
@@ -103,7 +103,7 @@ Restore original file
 
 The modified files are stored here (trunk version):
 
-.. code:: wiki
+.. code:: bash
 
    /sto/mini_fo/...
 

@@ -9,7 +9,7 @@ trac-post-commit-hook
 The trac-post-commit-hook script searches commit messages for text in
 the form of:
 
-.. code:: wiki
+.. code:: bash
 
    command #1
    command #1, #2
@@ -20,14 +20,14 @@ You can have more then one command in a message. The following commands
 are supported. There is more then one spelling for each command, to make
 this as user-friendly as possible.
 
-.. code:: wiki
+.. code:: bash
 
    closes, fixes
 
 -  The specified issue numbers are closed with the contents of this
    commit message being added to it.
 
-.. code:: wiki
+.. code:: bash
 
    references, refs, addresses, re
 
@@ -37,7 +37,7 @@ this as user-friendly as possible.
 A fairly complicated example of what you can do is with a commit message
 of:
 
-.. code:: wiki
+.. code:: bash
 
    Changed blah and foo to do this or that. Fixes #10 and #12, and refs #12.
 
@@ -49,7 +49,7 @@ trac-post-revprop-change-hook
 With the trac-post-revprop-change-hook script one could change the
 svn:log property. The syntax is:
 
-.. code:: wiki
+.. code:: bash
 
    1. svn propset svn:log --revprop -r <REVISION> "My corrected log message" <URL>
    2. svn propset svn:log --revprop -r <REVISION> -F <file-with-corrected-log-message.txt> <URL>
@@ -57,13 +57,13 @@ svn:log property. The syntax is:
 
 For easy usage add a "svn comment edit" alias to your .bash_profile:
 
-.. code:: wiki
+.. code:: bash
 
    export SVN_EDITOR=vi (or whatever)
    alias svnceF='svn propedit svn:log --revprop http://svn.freetz.org/ -r'
 
 Your editor will start after
 
-.. code:: wiki
+.. code:: bash
 
    svnceF <REVISION>

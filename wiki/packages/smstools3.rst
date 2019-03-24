@@ -33,13 +33,13 @@ Senden und Empfangen mit dem Terminal
 Eine SMS kann man diesem Befehl versendet werden, der Parameter
 ``flash`` ist optional:
 
-.. code:: wiki
+.. code:: bash
 
    rc.smstools3 sendsms flash +497771234567 Text der Nachricht
 
 Empfangene SMS können so aufgelistet angezeigt:
 
-.. code:: wiki
+.. code:: bash
 
    rc.smstools3 listsms
 

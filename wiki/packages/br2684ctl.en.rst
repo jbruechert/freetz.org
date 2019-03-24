@@ -28,11 +28,11 @@ I used Freetz-1.2 for a FritzBox 7170.
 | After the following step you can configure the packages you want to
   have included in your image.
 
-.. code:: wiki
+.. code:: bash
 
    make menuconfig
 
-.. code:: wiki
+.. code:: bash
 
    Package selection  --->  Testing  --->    [*] br2684ctl (binary only)
 
@@ -40,7 +40,7 @@ I used Freetz-1.2 for a FritzBox 7170.
 | You can also add a script (default.script) to the image at compile
   time (see below for details).
 
-.. code:: wiki
+.. code:: bash
 
    Advanced options  ---> BusyBox options  --->    [*] udhcpc
 
@@ -54,7 +54,7 @@ Configuring br2684ctl
 There is no GUI interface for br2684ctl. There is only one executable
 with a number of mandatory and optional parameters.
 
-.. code:: wiki
+.. code:: bash
 
     br2684ctl [-c n -e 0|1 -b -s buf_size [-q qos] -a [itf.]vpi.vci ]
 
@@ -91,30 +91,30 @@ with a number of mandatory and optional parameters.
 | Creating ATM PvC 0/32 in the background with interface name nas0 using
   LLC encapsulation.
 
-.. code:: wiki
+.. code:: bash
 
     br2684ctl -b -e 0 -c 0 -a 0.32
 
-.. code:: wiki
+.. code:: bash
 
     br2684ctl -e 0 -c 0 -q ubr,aal5:max_pcr=5Mbps,min_pcr=320kbps,max_sdu=1524 -a 0.32
 
 | After the interface is created you can see it with the following
   command:
 
-.. code:: wiki
+.. code:: bash
 
     ifconfig -a
 
 | or
 
-.. code:: wiki
+.. code:: bash
 
     ifconfig nas0
 
 Some details can be viewed at:
 
-.. code:: wiki
+.. code:: bash
 
    cd /proc/net/atm/
    ls -la
@@ -141,7 +141,7 @@ Obtain IP configuration via DHCP
 | To include the script (default.script) at compile time follow the
   following steps:
 
-.. code:: wiki
+.. code:: bash
 
    cd ~/freetz-x.y/addon/
    echo default.script >> static.pkg
@@ -174,13 +174,13 @@ Obtain IP configuration via DHCP
 
 Enable the interface:
 
-.. code:: wiki
+.. code:: bash
 
     ifconfig nas0 up
 
 Obtain ip configuration info via DHCP:
 
-.. code:: wiki
+.. code:: bash
 
     udhcpc -i nas0 -s /etc/dhcp/default.script
 
@@ -192,34 +192,34 @@ Debuging the DHCP process
 To obtain additional debug information from the udhcpc package you need
 to enable this, and recompile a new image.
 
-.. code:: wiki
+.. code:: bash
 
    cd ~/freetz-x.y/source/target-mipsel_uClibc-0.9.29/ref-8mb/busybox-1.18.5
    vi .config
 
 In the .config file search for CONFIG_UDHCP_DEBUG=0 and change it to:
 
-.. code:: wiki
+.. code:: bash
 
    CONFIG_UDHCP_DEBUG=3
 
 Initiate recompile of the busybox packages during the next make:
 
-.. code:: wiki
+.. code:: bash
 
    cd ~/freetz-1.2/
    make busybox-clean
 
 Compile a new image with:
 
-.. code:: wiki
+.. code:: bash
 
    make
 
 After installing the new image on the FritzBox start the DHCP Client
 with:
 
-.. code:: wiki
+.. code:: bash
 
    udhcpc -i nas0 -s /etc/dhcp/default.script -vvv
 

@@ -2,7 +2,7 @@ If you need instant help you can try the fritzbox IRC channel. Some of
 the developers are known to sometimes hang out on there: ##fritzbox on
 Freenode.
 
-.. code:: wiki
+.. code:: bash
 
    Server="chat.freenode.net"
    Port="6667"

@@ -8,7 +8,7 @@ unterstützt — dient das in `Freetz <../../../index.html>`__ vorhandene
 Programm ``ether-wake``. Zur Benutzung sei auf dessen Online-Hilfe
 verwiesen:
 
-.. code:: wiki
+.. code:: bash
 
    Usage: ether-wake [-b] [-i iface] [-p aa:bb:cc:dd[:ee:ff]] MAC
 

@@ -21,7 +21,7 @@ NetDisk.
 
 If your NDAS ID (20 characters) and NDAS key (5 characters) are
 
-.. code:: wiki
+.. code:: bash
 
      ID: AF7R2-2MKK4-UHG9S-5RHTG
      KEY: 8QT6U
@@ -30,7 +30,7 @@ then execute the following commands as root (in most systems it will be
 sufficient to type ``# ndasadmin...`` rather than full
 ``# /usr/sbin/ndasadmin...``)
 
-.. code:: wiki
+.. code:: bash
 
    /usr/sbin/ndasadmin register <NDAS ID>-<NDAS key> --name <NetDisk Name to be>
    or
@@ -38,7 +38,7 @@ sufficient to type ``# ndasadmin...`` rather than full
 
 vis:
 
-.. code:: wiki
+.. code:: bash
 
    /usr/sbin/ndasadmin register AF7R2-2MKK4-UHG9S-5RHTG-8QT6U --name MyDisk
    or
@@ -50,14 +50,14 @@ vis:
 | You will get the numeric slot number(s) for each disk on the NetDisk
   by
 
-.. code:: wiki
+.. code:: bash
 
    cat /proc/ndas/devices/MyDisk/slots
 
 check the status of the NetDisks, if you can't get the slot number from
 commands above.
 
-.. code:: wiki
+.. code:: bash
 
    cat /proc/ndas/devs
    Name            ID                     Key Serial           Ver Status         Slots
@@ -79,7 +79,7 @@ Use the numeric slot number that you get from
 /proc/ndas/devices/MyDisk/slots then, execute one of the following
 command with root privilege.
 
-.. code:: wiki
+.. code:: bash
 
    /usr/sbin/ndasadmin enable -s 1 -o w   # exclusive write and read mode
 
@@ -90,7 +90,7 @@ command with root privilege.
 This command will print out the path of the block device file. For
 example,
 
-.. code:: wiki
+.. code:: bash
 
    /dev/nda, /dev/ndb, /dev/ndas-001000001-0.
 
@@ -109,7 +109,7 @@ WARNING: All data will be erased.
 partition
 ^^^^^^^^^
 
-.. code:: wiki
+.. code:: bash
 
    fdisk /dev/nda (fdisk <path of the block device file> see output of ndasadmin enable),
    * use p to show the current partition table
@@ -120,7 +120,7 @@ format
 
 use for example:
 
-.. code:: wiki
+.. code:: bash
 
    mkfs -t ext2 /dev/nda1
    or
@@ -141,7 +141,7 @@ Reading Partitions on already formatted NDAS device & mounting
 
 -  try
 
-.. code:: wiki
+.. code:: bash
 
    blkid
 
@@ -149,7 +149,7 @@ which should give all partition information for your entire Linux
 system, including the NDAS device. This is very useful if you already
 have multiple partitions on your NDAS device. You then need to
 
-.. code:: wiki
+.. code:: bash
 
    mount -t <filesystem> <device name> <mount directory>
 
@@ -172,7 +172,7 @@ These commands may differ slightly for your particular configuration.
 Once your Netdisk drivers are properly setup, create a mount point for
 the device:
 
-.. code:: wiki
+.. code:: bash
 
    # mkdir /mnt/netdisk
 
@@ -182,7 +182,7 @@ like.
 
 Next, locate the device.
 
-.. code:: wiki
+.. code:: bash
 
    $ ls /dev/ndas*
    /dev/ndas  /dev/ndas-00110749-0  /dev/ndas-00110749-0p1
@@ -192,7 +192,7 @@ primary (and only, in this case) partition is /dev/ndas-00110749-0p1.
 
 Determine the format of the disk
 
-.. code:: wiki
+.. code:: bash
 
    # fdisk -l /dev/ndas-00110749-0
 
@@ -207,7 +207,7 @@ In this example, it is a FAT32 drive.
 
 Next, back up and add this information to your /etc/fstab file
 
-.. code:: wiki
+.. code:: bash
 
    # cp /etc/fstab /etc/fstab.backup
    # nano /etc/fstab
@@ -222,7 +222,7 @@ to use the defaults, allow users to mount it, and to not mount it
 automatically at boot. We don't need dump or pass for anything. The line
 we'd add is:
 
-.. code:: wiki
+.. code:: bash
 
    /dev/ndas-00110749-0p1 /mnt/netdisk vfat defaults,user,noauto 0 0
 
@@ -231,7 +231,7 @@ Save the file, and exit your editor.
 Now, any user on this machine should be able to mount the netdisk with
 this command:
 
-.. code:: wiki
+.. code:: bash
 
    $ mount /mnt/netdisk
 
@@ -251,7 +251,7 @@ Additional Commands for the NDAS device
 
 To disable the NetDisk:
 
-.. code:: wiki
+.. code:: bash
 
    /usr/sbin/ndasadmin disable -s 1
 
@@ -264,7 +264,7 @@ To disable the NetDisk:
 
 To Unregister the NetDisk
 
-.. code:: wiki
+.. code:: bash
 
    /usr/sbin/ndasadmin unregister --name MyDisk
 
@@ -316,7 +316,7 @@ and Windows machines. This is so sad. |:-(|
 -  How to share the NDAS hard disk with OCFS2
 -  Add how to share the NDAS hard disk with NTFS
 
-.. code:: wiki
+.. code:: bash
 
    For example type on the command line:
 

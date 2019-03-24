@@ -13,7 +13,7 @@ Intro
 
 **Zugangsdaten:**
 
-.. code:: wiki
+.. code:: bash
 
    Server="chat.freenode.net"
    Port="6667"

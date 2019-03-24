@@ -251,7 +251,7 @@ wenn ``/sbin/makedevs`` sie beim Hochfahren anlegen würde. In
 ``/etc/device.table`` müßte dazu Folgendes geändert werden, um die
 Devices bis ``mtd15`` zu erhalten:
 
-.. code:: wiki
+.. code:: bash
 
    # Aktuelle Einstellung bei AVM und in Freetz
    /dev/mtd        c       640     0       0       90      0       0       1       11
@@ -359,7 +359,7 @@ Device Major/Minor (wer's braucht) und passenden Block-Device-Namen.
 
 Auf einer 7270 sieht das etwas anders aus:
 
-.. code:: wiki
+.. code:: bash
 
    $ cat /proc/partitions
 
@@ -377,7 +377,7 @@ Hier scheint mtdblock2 wirklich der Bootloader zu sein.
 /proc/mtd
 ~~~~~~~~~
 
-.. code:: wiki
+.. code:: bash
 
    $ cat /proc/mtd
 
@@ -398,7 +398,7 @@ tatsächlich vorgesehen sind. Sehr einfach, sehr praktisch.
 
 Und auch hier wieder die 7270:
 
-.. code:: wiki
+.. code:: bash
 
    $ cat /proc/mtd
 
@@ -435,13 +435,13 @@ im Menuconfig; getestet mit Freetz 1.2) integriert, läßt sich auf
 einfache Weise eine vollständige Sicherheitskopie ziehen und
 zurückspielen:
 
-.. code:: wiki
+.. code:: bash
 
    $ dd if=/dev/mtdblock5 of=/var/media/ftp/uStor00/mtd5.bak
 
 Wiederherstellen geht dann umgekehrt:
 
-.. code:: wiki
+.. code:: bash
 
    $ dd of=/dev/mtdblock5 if=/var/media/ftp/uStor00/mtd5.bak
 

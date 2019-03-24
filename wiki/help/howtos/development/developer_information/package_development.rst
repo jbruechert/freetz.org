@@ -18,7 +18,7 @@ files to use the framework:
    configuration settings as exported shell variables; each variable has
    to start with the capitalized package name. Example:
 
-   .. code:: wiki
+   .. code:: bash
 
       export PACKAGE_VAR1='var1'
       export PACKAGE_VAR2='var2'

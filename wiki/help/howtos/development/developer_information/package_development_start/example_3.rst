@@ -28,7 +28,7 @@ us.
 
 Compile an image with at least libxml2 selected:
 
-.. code:: wiki
+.. code:: bash
 
    cd ~/freetz-trunk/
    make menuconfig
@@ -37,7 +37,7 @@ Compile an image with at least libxml2 selected:
 
 Verify the library file and include files are available:
 
-.. code:: wiki
+.. code:: bash
 
    ls /home/freetz/freetz-trunk/toolchain/target/include/libxml2/
    ls -la /home/freetz/freetz-trunk/toolchain/target/lib/libxml2*
@@ -48,7 +48,7 @@ symlinks pointing to this file.
 
 Now lets manual compile this application.
 
-.. code:: wiki
+.. code:: bash
 
    mkdir nzbget
    cd ~/freetz-trunk-11230/nzbget/
@@ -97,7 +97,7 @@ Now lets manual compile this application.
   file to a save location, because make clean often will also delete
   this file. But this is not applicable for nzbget.)
 
-.. code:: wiki
+.. code:: bash
 
    cd ~/freetz-trunk/nzbget/nzbget-11.0/
    make clean
@@ -117,7 +117,7 @@ In this example we will create the directory and file structure ourself.
 For each new package a directory under ~/freetz-trunk/make/ should be
 created with a minimum of two files:
 
-.. code:: wiki
+.. code:: bash
 
    `--make
         `--<package-name>
@@ -129,13 +129,13 @@ needed.
 
 | Lets create the directory structure and the two files for NZBget:
 
-.. code:: wiki
+.. code:: bash
 
    cd /home/freetz/freetz-trunk/
    mkdir -p ~/freetz-trunk/make/nzbget/patches/
    vi ~/freetz-trunk/make/nzbget/Config.in
 
-.. code:: wiki
+.. code:: bash
 
    config FREETZ_PACKAGE_NZBGET
            bool "nzbget 11.0"
@@ -150,7 +150,7 @@ The indents should be replaced with tabs.
 
 ``vi ~/freetz-trunk/make/nzbget/nzbget.mk``
 
-.. code:: wiki
+.. code:: bash
 
    $(call PKG_INIT_BIN, 11.0)
    $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
@@ -199,7 +199,7 @@ We also need to add a small patch file to add the one missing include.
 
 ``vi make/nzbget/patches/100-ParCoordinator_ctype.h.patch``
 
-.. code:: wiki
+.. code:: bash
 
    diff -dur ParCoordinator.cpp.orig ParCoordinator.cpp
    --- ParCoordinator.cpp.orig 2013-11-18 23:46:41.720138807 +0100
@@ -240,7 +240,7 @@ Testing
 Lets see if "``make clean``" works as expected. This should bring the
 state back to like it was before the "``make``" command.
 
-.. code:: wiki
+.. code:: bash
 
    cd ~/freetz-trunk/
    make clean
@@ -253,7 +253,7 @@ Preparing New Package for Public Integration to Freetz Trunk
 In order to create a file which displays the changes which would be
 needed in freetz to add your package, issue the following commands:
 
-.. code:: wiki
+.. code:: bash
 
    svn add make/nzbget
    svn diff ./make > patchfile
@@ -266,7 +266,7 @@ recognized as a valid file for upload.
 In addition you could even create a ready (and compressed) package of
 the two files which you had edited above:
 
-.. code:: wiki
+.. code:: bash
 
    tar cfz nzbget.tar.gz make/nzbget --exclude .svn
    tar tfz nzbget.tar.gz
