@@ -129,7 +129,7 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
 
 .. toctree::
    :maxdepth: 1
-   :caption: Inhaltsverzeichnis
+   :caption: Generelles
    :name: sec-general
 
    wiki/packages_tagged
@@ -154,6 +154,13 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/FAQ.en
    wiki/common/source_code.en
    wiki/common/source_code
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Patches
+   :name: sec-patches
+
    wiki/patches/remove_myfritz
    wiki/patches/remove_tr069
    wiki/patches/remove_assistant
@@ -182,6 +189,13 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/patches/remove_ftpd
    wiki/patches/remove_aura_usb
    wiki/patches/custom_udev_rules
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Hilfe
+   :name: sec-help
+
    wiki/help/howtos
    wiki/help/trouble_shooting
    wiki/help/fritz_faq
@@ -262,6 +276,13 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/style/mounted
    wiki/libs/ftdi
    wiki/libs/ftdi.en
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Pakete
+   :name: sec-packages
+
    wiki/packages/bridge-utils
    wiki/packages/sispmctl
    wiki/packages/empty
@@ -430,43 +451,6 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/packages/virtualip
    wiki/packages/socat
    wiki/packages/transmission
-   wiki/packages/callmonitor/config
-   wiki/packages/callmonitor/reverse_search
-   wiki/packages/callmonitor/phonebook
-   wiki/packages/callmonitor/maintenance
-   wiki/packages/callmonitor/adapt_messages
-   wiki/packages/callmonitor/actions
-   wiki/packages/callmonitor/listeners
-   wiki/packages/callmonitor/testcall
-   wiki/packages/callmonitor/faq
-   wiki/packages/callmonitor/events
-   wiki/packages/callmonitor/actions/config
-   wiki/packages/callmonitor/actions/call
-   wiki/packages/callmonitor/actions/relook
-   wiki/packages/callmonitor/actions/rawmsg
-   wiki/packages/callmonitor/actions/snarl
-   wiki/packages/callmonitor/actions/dbox
-   wiki/packages/callmonitor/actions/xbox
-   wiki/packages/callmonitor/actions/getmsg
-   wiki/packages/callmonitor/actions/mail
-   wiki/packages/callmonitor/actions/samsung
-   wiki/packages/callmonitor/actions/self-defined
-   wiki/packages/callmonitor/actions/wol
-   wiki/packages/callmonitor/actions/yac
-   wiki/packages/callmonitor/actions/dial
-   wiki/packages/callmonitor/actions/vdr
-   wiki/packages/callmonitor/actions/dreambox
-   wiki/packages/callmonitor/actions/password
-   wiki/packages/callmonitor/actions/musicpal
-   wiki/packages/callmonitor/actions/soundbridge
    wiki/packages/netsnmp/mrtg.en
-   wiki/packages/pptpd/config
-   wiki/packages/pptpd/webif
-   wiki/packages/pptpd/install
-   wiki/packages/rudi-shell/tips
-   wiki/packages/rudi-shell/limits
-   wiki/packages/rudi-shell/install
-   wiki/packages/rudi-shell/usage
-   wiki/packages/rudi-shell/functions
 
 .. |Warning| image:: /chrome/wikiextras-icons-16/exclamation.png
