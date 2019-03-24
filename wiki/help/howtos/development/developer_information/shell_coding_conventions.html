@@ -1,0 +1,944 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shell Coding Conventions &mdash; Freetz master Dokumentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../../../../genindex.html" />
+    <link rel="search" title="Suche" href="../../../../../search.html" />
+    <link rel="next" title="Package Developing - Advanced Topics" href="package_development_advanced.html" />
+    <link rel="prev" title="Trac Hooks" href="post_commit_hook.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> Freetz
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Inhaltsverzeichnis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages_tagged.html">Pakete nach Anwendungsgebieten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Download.html">Stabile Versionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Download.html#entwickler-versionen">Entwickler Versionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Download.html#upload-und-statistik">Upload und Statistik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Download.html#veraltete-versionen">Veraltete Versionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../freetz.html">Freetz macht mehr aus der Box!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../FAQ.html">Freetz-FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Impressum.html">Impressum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../libs_tagged.html">Bibliotheken nach Anwendungsgebieten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ticket.html">Was sollte ich bei der Erstellung eines neuen Tickets beachten?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../style.html">Aussehen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages.html">Pakete, Addons und CGI-Erweiterungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../FreetzConf2011.html">FreetzConf 2011</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patch.html">Aufbau eines Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patch.html#erzeugen-eines-patches">Erzeugen eines Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patch.html#patch-anwenden-oder-ruckgangig-machen">Patch anwenden oder rückgängig machen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patch.html#wie-finde-ich-die-zu-patchende-stelle">Wie finde ich die zu patchende Stelle?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patch.html#links">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Press.en.html">Freetz in public press &amp; web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches.html">Freetz Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../help.html">Hilfe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../libs.html">Bibliotheken (libraries)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../costumscript_dublesyslog.html">Schritte zur Lösung, kann übersprungen werden…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../costumscript_dublesyslog.html#also-hier-die-anleitung-zur-editierung-der-rc-costum-ueber-die-shell">Also hier die Anleitung zur Editierung der rc.costum ueber die shell:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../costumscript_dublesyslog.html#weiter-durch-die-herleitung-schritte-zur-loesung-whatever">weiter durch die herleitung (schritte zur loesung, whatever)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../costumscript_dublesyslog.html#losung">…Lösung:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../kernel.html">Tree like overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Press.html">Freetz in Presse und Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../freetz.en.html">Freetz gets more from the Box!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../FAQ.en.html">Freetz-FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../common/source_code.en.html">Source code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../common/source_code.html">Quellcode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_myfritz.html">Remove MyFritz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_tr069.html">Remove tr069 stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_assistant.html">Remove assistant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_help.html">Remove help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_usermand.html">Remove usermand &amp; userman.ko</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_samba.html">Remove Samba daemon (smbd)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/signed.html">Patch Webmenu Signed Message</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_upnp.html">Remove uPnP daemon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/usb_names.html">Patch USB storage names, make FAT filesystems world-writable, automount feature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_mediasrv.html">Remove MediaServer daemon (mediasrv)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_dsld.html">Remove dsld</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/onlinechanged.html">Onlinechanged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/freetzmount.html">FREETZMOUNT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/replace_onlinechanged.html">Replace onlinechanged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_capi.html">Remove CapiOverTCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/exec_autorun.html">Execute autorun.sh/autoend.sh script on (un)mount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/exec_autorun.html#hinweis">Hinweis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/maxdevcount.html">MaxDevCount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_minid.html">Remove minid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/multpile_printers.html">FritzBox als Printserver für mehrere Drucker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/alarmclock.html">Patch third alarm-clock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/freetzmount.en.html">FREETZMOUNT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_vpn.html">Remove AVM vpn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_support.html">Remove the support-files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_ftpd.html">Remove FTP deamon (ftpd)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../patches/remove_aura_usb.html">Remove aura USB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howtos.html">HowTos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../trouble_shooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fritz_faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../irc.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../irc.html#irc-netiquette">IRC Netiquette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../irc.html#troubleshooting-irc">Troubleshooting IRC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../irc.html#konfiguration-chatzilla-plugin-in-firefox">Konfiguration Chatzilla-Plugin in Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../wikiedit.html">Wiki Bearbeitung - Tipps und Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common.html">Allgemeines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshoot.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Development Howtos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/freetz_linux.html">Freetz Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/shutdown.html">Rechner im Netz herunterfahren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/newbie.en.html">Freetz for beginners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/first_trunk.html">Wie baue ich meinen ersten trunk ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/install.en.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/install.en.html#aktualisierung">Aktualisierung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/install.en.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/install.en.html#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/external.html">External</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/external.html#konfiguration">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/external.html#auswahl">Auswahl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/external.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/external.html#automatisches-starten-stoppen-von-diensten">Automatisches starten/stoppen von Diensten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/external.html#firmware-build-prozess-und-update">Firmware-build-Prozess und Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/create_swap.html">Swap-File anlegen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/install.html#aktualisierung">Aktualisierung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/install.html#fehlerbehebung">Fehlerbehebung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/install.html#manuelles-einspielen-des-images">Manuelles einspielen des Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/install.html#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/newbie.html">Erste Schritte mit Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/wol.html">Wake on Lan (WoL) mit der Fritzbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/user.html">Benutzer dauerhaft in der passwd speichern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/busybox_httpd.html">Kleiner Webserver mit BusyBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/install/menuconfig.html">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/newbie/other.html">Sonstige Infos für Newbie’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/newbie/errors.html">Was mache ich, wenn sich meine Box nicht Freetzen lässt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshoot/repair_phonebook.html">Kaputtes Telefonbuch reparieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshoot/recover_firmware.html">Original Firmware wiederherstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshoot/reboots.html">Häufige selbständige Reboots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/switch_config.html">Konfiguration des eingebauten Switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/router_and_firewall.html">Freetz als interner Router mit Firewall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/user_management.html">Benutzerverwaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/split_wlan_lan.html">WLAN von LAN trennen mit iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sign_image.html">Signieren von Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sign_image.html#konkrete-anwendung-in-freetz">Konkrete Anwendung in Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrate_patches.html">Patches in Freetz einspielen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bandwidth_svg.html">Dynamische Bandbreitenanzeige per SVG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_cross-compiler_toolchain.html">Cross-Compiler / Toolchain erstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_cross-compiler_toolchain.html#eigene-download-toolchain-erstellen">Eigene Download-Toolchain erstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_cross-compiler_toolchain.html#target-native-compiler-toolchain-erstellen">Target/Native-Compiler-Toolchain erstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_management.html">Release Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../package_creation.html">Wie baue ich ein eigenes Paket für Freetz?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../save_mtd_2.html">Flash-Partitionen von außen mit FTP sichern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_information.html">Developer Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_gui.html">Erstellen einer GUI für Pakete in Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manipulation_detection.html">Wie die FritzBox Manipulationen erkennt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freetz_make.html">Freetz Build-Prozeß</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../urlader_flags.html">Einstellungen speichern im Urlader-Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flash.html">Flash Partitionierung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firmware_update_details.html">Ablauf eines Firmware-Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../repack_fw.html">Entpacken und Packen von Firmware-Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install_addon.html">Addon Paket installieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../make_busybox.html">Busybox konfigurieren und kompilieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adam2.html">ADAM2-Bootloader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../save_mtd_1.html">Flash-Partitionen im laufenden Betrieb sichern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrate_own_files.html">Eigene Dateien in die Firmware integrieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analyse_image_names.html">Firmware-Image-Namen analysieren und interpretieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../menuconfig.html">Menükonfiguration pflegen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compile_own_progs.html">Eigene Programme kompilieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../make_kernel.html">Kernel konfigurieren und kompilieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../make_room.html">Platz sparen im Dateisystem der FritzBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package_development.html">Package Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post_commit_hook.html">Trac Hooks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Shell Coding Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#table-of-contents">Table of contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shell-language">Shell Language</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-format">Basic Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if-for-and-while">If, For, and While</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-built-in">Test Built-in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#single-line-conditional-statements">Single-line conditional statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#infinite-loops">Infinite Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exit-status-and-if-while-statements">Exit Status and If/While Statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variable-references">Variable References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variable-naming">Variable Naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quoting">Quoting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variable-assignments">Variable Assignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-for-non-empty-strings">Testing for (Non-)Empty Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commenting">Commenting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pathnames">Pathnames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interpreter-magic">Interpreter Magic</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="package_development_advanced.html">Package Developing - Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package_development_dynamic.html">Paketverwaltung für Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package_development_start.html">First steps - How to start your first freetz package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package_development_start/example_2.html">Example 2: par2cmdline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package_development_start/example_1.html">Example 1: Httptunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package_development_start/.language.html">.language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package_development_start/webinterface_example_1.html">Web-interface HTTPTunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package_development_start/example_3.html">Example 3: NZBGet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webif/libmodcgi.html">libmodcgi.sh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../wikiedit/screenshots.html">Screenshots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../wikiedit/toc.html">Inhaltsverzeichnis erstellen (lassen)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../wikiedit/tagging.html">Tagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../wikiedit/tables.html">Tabellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../wikiedit/formatting_guide.html">Formatierungs-Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../wikiedit/goodies.html">Wiki Goodies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../style/tagging.html">Tagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../style/skins.html">Skins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../style/favicons.html">Favicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../style/mounted.html">Aussehen von mounted.cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../libs/ftdi.html">ftdi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../libs/ftdi.en.html">libftdi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/bridge-utils.html">bridge-utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/sispmctl.html">sispmctl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/empty.html">Empty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/apache.html">Apache Webserver mit PHP CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/polipo.en.html">Using with Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/polipo.en.html#using-at-your-office">Using at your office</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/polipo.en.html#security">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/polipo.en.html#blocking-domains">Blocking domains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/polipo.en.html#issues">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/polipo.en.html#links">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/autofs.html">autofs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/strace.html">strace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/syslogd.html">Syslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/lsof.html">lsof</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/dns2tcp.html">Dns2Tcp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/tinyproxy.html">Tinyproxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/davfs2.html">WebDAV mit davfs2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/s3fslite.html">s3fslite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/dropbear.en.html">Dropbear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ctorrent.html">CTorrent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/irssi.html">irssi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/hplip.html">HPLIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/lighttpd.html">lighttpd Webserver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/privoxy.html">Privoxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/radvd.en.html">RADVD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/usbroot.html">USB-Root</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/vim.html">vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/bluez-utils.html">Bluez-Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/sane-backends.html">SANE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/usbip.html">USB/IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/dropbear.html">Dropbear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/iptables-cgi.html">iptables-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/hd-idle.html">hd-idle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/fhem.html">FHEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/igmpproxy.html">igmpproxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/usbutils.html">usbutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/inotify-tools.html">Inotify-Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/authorized-keys.en.html">authorized-keys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/rrdstats.html">RRDstats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/mcabber.html">mcabber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/dtmfbox.html">DTMFBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/nfsd.en.html">NFSD_CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/espeak.html">eSpeak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/dnsd.html">dnsd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/tor.html">Tor Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/spindown.html">Spindown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ncftp.html">ncftp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/lynx.html">Lynx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/smstools3.html">SMStools3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/smstools3.html#weiteres">Weiteres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/debootstrap.html">Debootstrap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ppp.html">ppp-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ppp.html#allgemeine-konfiguration">Allgemeine Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ppp.html#konfiguration-fur-umts">Konfiguration für UMTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ppp.html#namensauflosung">Namensauflösung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ppp.html#firewall-routing-nat">Firewall, Routing &amp; NAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ppp.html#fallback">Fallback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ppp.html#treiberprobleme">Treiberprobleme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ppp.html#was-ist-noch-zu-beachten-2do-liste">Was ist noch zu beachten? (2do-Liste)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ppp.html#weiteres">Weiteres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/xmail.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/sundtek.html">Sundtek DVB Treiber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/iptables.html">iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/iptables.html#altere-beitrage-betreffen-fritzboxen-vor-der-72xx-serie">Ältere Beiträge (betreffen FritzBoxen vor der 72xx Serie)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/subversion.html">Subversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/dtach.html">dtach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/vsftpd.html">VSFTPd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ziproxy.html">ziproxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ntfs-3g.html">NTFS-3G</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ruby.html">Ruby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/aiccu.html">Aiccu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/mc.html">Midnight Commander</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/nfs.html">NFS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/streamripper.html">Streamripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/htpdate.html">htpdate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/lua.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/emailrelay.html">E-MailRelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/madplay.html">madplay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/nhipt.html">NHIPT - iptables firewall GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/netsnmp.html">Net-SNMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/transmission.en.html">Blocklist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/transmission.en.html#number-of-peers">Number of peers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/transmission.en.html#memory-usage">Memory usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/transmission.en.html#limit-memory-usage">Limit memory usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/transmission.en.html#watchdog">Watchdog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/transmission.en.html#links">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/imapproxy.en.html">ImapProxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/fuse.html">FUSE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/hiawatha.html">hiawatha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/cifsmount.html">cifsmount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/matrixtunnel.html">matrixtunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ndas.en.html">NDAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/nfs-utils.html">NFS-Utils / NFS-Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/vpnc.html">vpnc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/haserl.html">Haserl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/obexftp.html">ObexFTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/nmap.html">Nmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/httptunnel.html">httptunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/onlinechanged.html">Onlinechanged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/mini_fo.html">mini_fo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/mini_fo.html#konfiguration-webinterface">Konfiguration (Webinterface)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/mini_fo.html#konfiguration-per-hand">Konfiguration (per Hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/mini_fo.html#mogliche-nebeneffekte">Mögliche Nebeneffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/mini_fo.html#restore-original-file">Restore original file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/mini_fo.html#siehe-auch">Siehe auch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/pingtunnel.html">pingtunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/tcp_wrappers.html">TCP Wrapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/netsnmp.en.html">Net-SNMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/netsnmp.en.html#mrtg">MRTG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/wol.html">Wake on LAN (WoL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/cpmaccfg.html">cpmaccfg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/cpmaccfg.html#cpmaccfg-cgi">cpmaccfg-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/syslogd.en.html">Syslog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/checkmaild.html">checkmaild 0.4.7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/portmap.html">portmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/digitemp.html"><strong>Was ist digitemp?</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/digitemp.html#wichtiger-hinweis">Wichtiger Hinweis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/digitemp.html#tipp-bei-verwendung-mehrerer-usb-rs232-adapter-an-einer-fritzbox">Tipp bei Verwendung mehrerer USB-RS232-Adapter an einer Fritzbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/digitemp.html#datenbank">Datenbank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/digitemp.html#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/downloader.html">Downloader-CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/bip.html">BIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/fortune.html">fortune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/xrelayd.html">xrelayd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/tinc.html">Tinc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/bird.html">Bird</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/onlinechanged_cgi.html">Onlinechanged-CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/php.html">PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/phpxmail.en.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/phpxmail.en.html#basic-setup-guide">Basic setup guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/phpxmail.en.html#setup-ssl">Setup SSL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/phpxmail.en.html#useful-links">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/pptp.html">PPTP Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/mediatomb.html">MediaTomb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/inetd.html">inetd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/owfs.html">owfs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/unbound.html">Unbound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/fstyp.html">fstyp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/prosody.en.html">Prosody IM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/bftpd.html">Bftpd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/mod.html">(Freetz-) MOD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/br2684ctl.en.html">br2684ctl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/deco.html">Demos Commander</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/trickle.html">trickle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/radvd.html">Radvd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/opendd.html">OpenDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/pptpd.html">PoPTop - PPTP-VPN-Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/mediaserver.html">Mediaserver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/iptables.en.html">iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/dnsd.en.html">dnsd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/hp-utils.html">hp-utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/screen.html">screen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ndas.html">1. Using NDAS driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ndas.html#using-ndas-harddisk-array">2. Using NDAS harddisk array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ndas.html#share-the-data-files-on-the-ndas-hard-disks">3. Share the data/files on the NDAS hard disks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ndas.html#ndas-robustnes">4. NDAS robustnes?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ndas.html#referenzen">Referenzen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/dnsmasq.html">dnsmasq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/wget.html">wget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/e2fsprogs.html">e2fsprogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/bind.html">bind</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/tcpdump.html">tcpdump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/gw6.html">gw6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/nhipt.en.html">NHIPT - iptables firewall GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/openntpd.html">OpenNTPD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/rudi-shell.html">Rudi-Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/nano.html">nano</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/nfsd.html">NFSD_CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/stunnel.html">Stunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/rrdtool.html">RRDTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ldd.html">ldd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/prosody.html">Prosody IM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/fhzctrl.html">fhzctrl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/aiccu.en.html">AICCU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/authorized-keys.html">authorized_keys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/pciutils.html">pciutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/vtund.html">VTUN freetz Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/fritzload.html">FritzLoad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/jamvm.html">JamVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor.html">Callmonitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/br2684ctl.html">br2684ctl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/netcat.html">netcat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/quagga.html">Quagga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/samba.html">Samba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/iodine.html">iodine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/nagios.html">Nagios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/smartmontools.html">Smartmontools (smartctl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/mtr.html">mtr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/avm-firewall.html">AVM-firewall-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/bash.html#ash">Ash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/bash.html#bash-als-loginshell">Bash als Loginshell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/asterisk.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/microperl.html">microperl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/nano-shell.html">Nano-Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/m-i-t.html">module-init-tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/minidlna.html">MiniDLNA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/inadyn-mt.html">Inadyn-MT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/bluez.html">BlueZ 4.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/DemoPackageA.html">DemoPackageA „Hello World“</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/DemoPackageA.html#quellen">Quellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/openvpn.html">OpenVPN freetz Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/knock.html">knockd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/ltrace.html">ltrace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/curl.html">cURL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/inadyn-mt.en.html">Inadyn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/virtualip.html">Virtual IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/socat.html">socat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/transmission.html">Transmission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/config.html">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/reverse_search.html">Rückwärtssuche</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/phonebook.html">Telefonbuch (Callers)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/maintenance.html">Wartung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/adapt_messages.html">Anpassen der Benachrichtigungstexte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions.html">Aktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/listeners.html">Regeln (Listeners)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/testcall.html">Testanruf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/faq.html">Callmonitor-FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/events.html">Ereignisse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/config.html">FritzBox-Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/config.html#alternative">Alternative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/call.html">Allgemeine Hinweise zu Funktionsaufrufen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/relook.html">DGStation Relook 400S</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/rawmsg.html">Einfache TCP-Verbindungen (rawmsg)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/snarl.html">Listener-Eintrag:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/snarl.html#screenshots">Screenshots:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/dbox.html">DBox2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/xbox.html">XBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/getmsg.html">HTTP-Requests (getmsg)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/mail.html">E-Mail-Benachrichtigung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/samsung.html">Benachrichtigung auf einem Samsung TV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/self-defined.html">Selbstdefinierte Aktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/wol.html">Wake on LAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/yac.html">YAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/dial.html">Wählhilfe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/vdr.html">VDR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/dreambox.html">DreamBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/password.html">Benutzernamen und Passwörter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/musicpal.html">Freecom MusicPal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/callmonitor/actions/soundbridge.html">Roku SoundBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/netsnmp/mrtg.en.html">MRTG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/pptpd/config.html">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/pptpd/webif.html">Das Web-Frontend zum Paket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/pptpd/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/rudi-shell/tips.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/rudi-shell/limits.html">Grenzen &amp; Einschränkungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/rudi-shell/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/rudi-shell/usage.html">Illustrierte Anwendungsfälle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/rudi-shell/functions.html">Funktionsweise</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Freetz</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Shell Coding Conventions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../_sources/wiki/help/howtos/development/developer_information/shell_coding_conventions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shell-coding-conventions">
+<span id="shellcodingconventions"></span><h1>Shell Coding Conventions<a class="headerlink" href="#shell-coding-conventions" title="Link zu dieser Überschrift">¶</a></h1>
+<p>As many (if not most) functional parts of freetz are implemented using
+(bourne) shell scripts, a need for some shell coding conventions arose.
+Currently, this page has the draft status. Some parts seem to be quite
+settled, others are just a recommendation or <a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=163148&amp;highlight=coding+style">​need further
+discussion</a>.
+This style guide is based on
+<a class="reference external" href="http://web.archive.org/web/20070422195703/http://opensolaris.org/os/community/on/shellstyle/">​http://www.opensolaris.org/os/community/on/shellstyle/</a>
+(archive.org).</p>
+<div class="section" id="table-of-contents">
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="shell_coding_conventions.html#ShellLanguage">Shell Language</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#BasicFormat">Basic Format</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#IfForandWhile">If, For, and While</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#TestBuilt-in">Test Built-in</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#Single-lineconditionalstatements">Single-line conditional
+statements</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#InfiniteLoops">Infinite Loops</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#ExitStatusandIfWhileStatements">Exit Status and If/While
+Statements</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#VariableReferences">Variable
+References</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#VariableNaming">Variable Naming</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#Quoting">Quoting</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#VariableAssignments">Variable
+Assignments</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#TestingforNon-EmptyStrings">Testing for (Non-)Empty
+Strings</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#Commenting">Commenting</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#Pathnames">Pathnames</a></li>
+<li><a class="reference external" href="shell_coding_conventions.html#InterpreterMagic">Interpreter
+Magic</a></li>
+</ol>
+<div class="section" id="shell-language">
+<span id="shelllanguage"></span><h3>Shell Language<a class="headerlink" href="#shell-language" title="Link zu dieser Überschrift">¶</a></h3>
+<p>The shell language for any shell scripts is the bourne shell language.
+An adequate technical manual to the (posix) shell seems to be
+<a class="reference external" href="http://www.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html">​http://www.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html</a>.</p>
+</div>
+<div class="section" id="basic-format">
+<span id="basicformat"></span><h3>Basic Format<a class="headerlink" href="#basic-format" title="Link zu dieser Überschrift">¶</a></h3>
+<p>The basic format is that all lines are indented by TABs (4 spaces!), and
+continuation lines (which in the shell end with „“) are indented by an
+equivalent number of TABs and then an additional two spaces, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">foo</span> <span class="n">bar</span>
+<span class="n">cp</span> <span class="n">some_realllllllllllllllly_realllllllllllllly_long_path</span> \
+  <span class="n">to_another_really_long_path_with_er</span><span class="o">-</span><span class="n">ror</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="if-for-and-while">
+<span id="ifforandwhile"></span><h3>If, For, and While<a class="headerlink" href="#if-for-and-while" title="Link zu dieser Überschrift">¶</a></h3>
+<p>The sh token equivalent to the C „{“ should appear on the same line,
+separated by a „;“, as in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if [ &quot;$x&quot; = hello ]; then
+    echo $x
+fi
+
+for i in 1 2 3; do
+    echo $i
+done
+
+i=0
+while [ $i -le 20 ]; do
+    echo $i
+    i=$(($i + 1))
+done
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-built-in">
+<span id="testbuilt-in"></span><h3>Test Built-in<a class="headerlink" href="#test-built-in" title="Link zu dieser Überschrift">¶</a></h3>
+<p>DO NOT use the test built-in. Instead, use the [ builtin.</p>
+<p>So, instead of</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if test $1 -gt 0; then
+</pre></div>
+</div>
+<p>use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">[</span> <span class="s2">&quot;$1&quot;</span> <span class="o">-</span><span class="n">gt</span> <span class="mi">0</span> <span class="p">];</span> <span class="n">then</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="single-line-conditional-statements">
+<span id="single-lineconditionalstatements"></span><h3>Single-line conditional statements<a class="headerlink" href="#single-line-conditional-statements" title="Link zu dieser Überschrift">¶</a></h3>
+<p>It is permissible to use <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">||</span></code> to construct shorthand for an
+„if“ statement in the case where the if statement has a single
+consequent line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="s2">&quot;$1&quot;</span> <span class="o">-</span><span class="n">eq</span> <span class="mi">0</span> <span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">exit</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>instead of the longer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if [ $1 -eq 0 ]; then
+    exit 0
+fi
+</pre></div>
+</div>
+<p>DO NOT combine <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> with <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>, as in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="s2">&quot;$1&quot;</span> <span class="o">-</span><span class="n">eq</span> <span class="mi">0</span> <span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="p">{</span>
+    <span class="n">do</span> <span class="n">something</span>
+    <span class="n">do</span> <span class="n">something</span> <span class="k">else</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Use a complete „if-then-fi“ construct for this instead.</p>
+<p>Remark by kriegaex (2012-01-21): Nobody ever asked me for my opinion,
+yet I get bugged by one or two people whenever I do this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ $foo -eq 0 ] \
+    &amp;&amp; echo &quot;tea&quot;
+    || echo &quot;coffee&quot;
+
+[ $foo -eq 0 ] &amp;&amp; [ &quot;$bar&quot; != &quot;oops&quot; ] \
+    &amp;&amp; command1 | grep &quot;xxx&quot; \
+    || command2
+</pre></div>
+</div>
+<p>I will continue to use this as a shorthand for if-else as long as there
+are no nested <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">||</span></code> constructs or brackets involved. Whenever
+I use it, I indent it cleanly and use it exactly analogous to if-else,
+so it is always <code class="docutils literal notranslate"><span class="pre">condition</span> <span class="pre">&amp;&amp;</span> <span class="pre">true-case</span> <span class="pre">||</span> <span class="pre">false-case</span></code>, never anything
+more complicated. I am even putting <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">||</span></code> to the beginning of
+the indented lines on purpose so as to document the condition for
+executing the statements.</p>
+<p>I also think that this</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">;</span> <span class="n">do</span>
+    <span class="n">command1</span> <span class="o">&amp;&amp;</span>
+    <span class="n">command2</span> <span class="o">&amp;&amp;</span>
+    <span class="n">command3</span> <span class="o">&amp;&amp;</span>
+    <span class="n">command4</span> <span class="o">&amp;&amp;</span>
+    <span class="n">echo</span> <span class="s2">&quot;result&quot;</span>
+<span class="n">done</span>
+</pre></div>
+</div>
+<p>should be permitted because it is more readable than (and still trivial
+enough)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">;</span> <span class="n">do</span>
+    <span class="n">command1</span> <span class="o">||</span> <span class="k">continue</span>
+    <span class="n">command2</span> <span class="o">||</span> <span class="k">continue</span>
+    <span class="n">command3</span> <span class="o">||</span> <span class="k">continue</span>
+    <span class="n">command4</span> <span class="o">||</span> <span class="k">continue</span>
+    <span class="n">echo</span> <span class="s2">&quot;result&quot;</span>
+<span class="n">done</span>
+</pre></div>
+</div>
+<p>There is a reason why <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">||</span></code> were invented, and I believe
+that this case does not look obfuscated in any way.</p>
+</div>
+<div class="section" id="infinite-loops">
+<span id="infiniteloops"></span><h3>Infinite Loops<a class="headerlink" href="#infinite-loops" title="Link zu dieser Überschrift">¶</a></h3>
+<p><em>This should be discussed:</em> The original solaris sh style guide says not
+to use „true“, as this is normally not a shell builtin, and instead use
+:, which also evaluates to true. In the busybox sh used with freetz,
+„true“ is also a shell builtin, and as it is more readable, it should be
+prefered over „:“:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">true</span><span class="p">;</span> <span class="n">do</span>
+    <span class="n">echo</span> <span class="n">infinite</span> <span class="n">loop</span>
+<span class="n">done</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exit-status-and-if-while-statements">
+<span id="exitstatusandifwhilestatements"></span><h3>Exit Status and If/While Statements<a class="headerlink" href="#exit-status-and-if-while-statements" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Recall that „if“ and „while“ operate on the exit status of the statement
+to be executed. In the shell, zero (0) means true and non-zero means
+false. The exit status of the last command which was executed is
+available in the $? variable. When using „if“ and „while“, it is
+typically not necessary to use $? explicitly, as in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>grep foo /etc/passwd &gt;/dev/null 2&gt;&amp;1
+if [ $? -eq 0 ]; then
+    echo found
+fi
+</pre></div>
+</div>
+<p>Instead, you can more concisely write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">grep</span> <span class="n">foo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">passwd</span> <span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span><span class="p">;</span> <span class="n">then</span>
+    <span class="n">echo</span> <span class="n">found</span>
+<span class="n">fi</span>
+</pre></div>
+</div>
+<p>Or, when appropriate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grep</span> <span class="n">foo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">passwd</span> <span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">echo</span> <span class="n">found</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variable-references">
+<span id="variablereferences"></span><h3>Variable References<a class="headerlink" href="#variable-references" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Variable references begin with $ and *may* have their name enclosed in
+{}‘s. They should only be used when required.</p>
+<p>Braces are required around variable names in two specific cases:</p>
+<p>(1) when you are forming the string concatenation of your variable with
+another string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ &quot;$install&quot; = yes ] &amp;&amp; root=&quot;/a/&quot; || root=&quot;/&quot;
+hosts=${root}etc/inet/hosts
+</pre></div>
+</div>
+<p>and (2) when you are using one of the various substitution/assignment
+operators:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo ${BASEDIR:-/a}
+</pre></div>
+</div>
+</div>
+<div class="section" id="variable-naming">
+<span id="variablenaming"></span><h3>Variable Naming<a class="headerlink" href="#variable-naming" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Shell variables should usually be all lower case, except for a few
+exceptions, where CAPTITAL letters are to be used:</p>
+<ol class="arabic simple">
+<li>variables that are exported into the environment:</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BASEDIR</span><span class="o">=/</span><span class="n">a</span><span class="p">;</span> <span class="n">export</span> <span class="n">BASEDIR</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>variables that are used like constants</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>TMP=/var/tmp
+FLASH=$TMP/flash
+</pre></div>
+</div>
+<p>This helps your reader immediately understand the implication of
+modifying a given variable (i.e. whether it will be inherited by child
+processes).</p>
+</div>
+<div class="section" id="quoting">
+<span id="id1"></span><h3>Quoting<a class="headerlink" href="#quoting" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Quick review of the quoting basics:</p>
+<p>Use quotes wherever they <em>could</em> be necessary, even when knowing that
+for example a variable does only expand to one word at the moment. This
+can save us from possible side effects of later code changes.</p>
+<p>But please do not unnecessarily quote everything. Literals should
+usually not be quoted:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">some</span><span class="o">/</span><span class="n">file</span> <span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">rm</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">some</span><span class="o">/</span><span class="n">file</span>
+</pre></div>
+</div>
+<p>The usage of backquotes (``) is discouraged in favor of the „new“ form
+$().</p>
+</div>
+<div class="section" id="variable-assignments">
+<span id="variableassignments"></span><h3>Variable Assignments<a class="headerlink" href="#variable-assignments" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Variable assignments should not be quoted if unnecessary:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>variable=yes
+variable=$(ls)
+variable=&quot;some text&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="testing-for-non-empty-strings">
+<span id="testingfornon-emptystrings"></span><h3>Testing for (Non-)Empty Strings<a class="headerlink" href="#testing-for-non-empty-strings" title="Link zu dieser Überschrift">¶</a></h3>
+<p>DO NOT test for non-/empty strings by comparing to „“ or <em>. ALWAYS use
+the test operators -n (non-zero-length string) and -z (zero-length
+string):</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">[</span> <span class="o">-</span><span class="n">z</span> <span class="s2">&quot;$foo&quot;</span> <span class="p">];</span> <span class="n">then</span>
+    <span class="n">echo</span> <span class="s1">&#39;you forgot to set $foo&#39;</span>
+<span class="n">fi</span>
+
+<span class="k">if</span> <span class="p">[</span> <span class="o">-</span><span class="n">n</span> <span class="s2">&quot;$BASEDIR&quot;</span> <span class="p">];</span> <span class="n">then</span>
+    <span class="n">echo</span> <span class="s2">&quot;\$BASEDIR is set to $BASEDIR&quot;</span>
+<span class="n">fi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="commenting">
+<span id="id2"></span><h3>Commenting<a class="headerlink" href="#commenting" title="Link zu dieser Überschrift">¶</a></h3>
+<p><img alt="Warning" src="../../../../../_images/exclamation7.png" /> As usual, comments are mainly intended for maintainers of the
+files, that means probably not you but someone else. Comments should
+describe why something is done the way it is done, or explain
+complicated statements that are not obvious. A summary for a whole block
+of code or the synopsis of a function are also useful. Comments should
+<strong>not</strong> explain what a simple line of code does, as it should be assumed
+that the reader is familiar with the language.</p>
+<p>Shell comments are preceded by the ‚#‘ character. Both single and
+multi-line comments are to be placed at line begin. Use an extra ‚#‘
+above and below the comment in the case of multi-line comments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy foo to bar (this is an example of a useless comment, the purpose of cp should be known).</span>
+<span class="n">cp</span> <span class="n">foo</span> <span class="n">bar</span>
+
+<span class="c1">#</span>
+<span class="c1"># Modify the permissions on bar. (This is obvious from the code and not necessary.)</span>
+<span class="c1"># We need to set them to root/sys in order to match the package prototype.</span>
+<span class="c1"># (This information is useful because it is not contained in the code.)</span>
+<span class="c1">#</span>
+<span class="n">chown</span> <span class="n">root</span> <span class="n">bar</span>
+<span class="n">chgrp</span> <span class="n">sys</span> <span class="n">bar</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pathnames">
+<span id="id3"></span><h3>Pathnames<a class="headerlink" href="#pathnames" title="Link zu dieser Überschrift">¶</a></h3>
+<p>It is always a good idea to be careful about $PATH settings and
+pathnames when writing shell scripts. This allows them to function
+correctly even when the user invoking your script has some strange $PATH
+set in their environment.</p>
+<p>There are two acceptable ways to do this:</p>
+<ol class="arabic simple">
+<li>make <em>all</em> command references in your script use explicit pathnames:</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">chown</span> <span class="n">root</span> <span class="n">bar</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">chgrp</span> <span class="n">sys</span> <span class="n">bar</span>
+</pre></div>
+</div>
+<p>or (2) explicitly reset $PATH in your script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PATH</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="p">;</span> <span class="n">export</span> <span class="n">PATH</span>
+
+<span class="n">chown</span> <span class="n">root</span> <span class="n">bar</span>
+<span class="n">chgrp</span> <span class="n">sys</span> <span class="n">bar</span>
+</pre></div>
+</div>
+<p>DO NOT use a mixture of (1) and (2) in the same script. Pick one method
+and use it consistently.</p>
+</div>
+<div class="section" id="interpreter-magic">
+<span id="interpretermagic"></span><h3>Interpreter Magic<a class="headerlink" href="#interpreter-magic" title="Link zu dieser Überschrift">¶</a></h3>
+<p>The proper interpreter magic (aka shebang) for shell script is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="package_development_advanced.html" class="btn btn-neutral float-right" title="Package Developing - Advanced Topics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="post_commit_hook.html" class="btn btn-neutral float-left" title="Trac Hooks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Freetz Developers
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

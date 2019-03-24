@@ -1,0 +1,1851 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Freetz-FAQ &mdash; Freetz master Dokumentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
+    <link rel="search" title="Suche" href="../search.html" />
+    <link rel="next" title="Impressum" href="Impressum.html" />
+    <link rel="prev" title="Freetz macht mehr aus der Box!" href="freetz.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Freetz
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Inhaltsverzeichnis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="packages_tagged.html">Pakete nach Anwendungsgebieten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Download.html">Stabile Versionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Download.html#entwickler-versionen">Entwickler Versionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Download.html#upload-und-statistik">Upload und Statistik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Download.html#veraltete-versionen">Veraltete Versionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="freetz.html">Freetz macht mehr aus der Box!</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Freetz-FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#produktname-und-historisches">Produktname und Historisches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#was-ist-freetz">Was ist Freetz?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#woher-kommt-der-name-freetz">Woher kommt der Name Freetz?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wie-wird-freetz-ausgesprochen">Wie wird Freetz ausgesprochen?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wie-entstand-freetz">Wie entstand Freetz?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wozu-uberhaupt-ein-neuer-name-wo-doch-ds-mod-inzwischen-so-bekannt-ist">Wozu überhaupt ein neuer Name, wo doch DS-Mod inzwischen so bekannt ist?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#motivation">Motivation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#warum-firmware-modifizieren">Warum Firmware modifizieren?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#verbreitung">Verbreitung</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#warum-werden-keine-fertigen-modifizierten-images-angeboten">Warum werden keine fertigen modifizierten Images angeboten?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wo-kann-freetz-heruntergeladen-werden">Wo kann FREETZ heruntergeladen werden?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#welche-boxen-und-welche-firmwares-werden-durch-freetz-unterstutzt">Welche Boxen und welche Firmwares werden durch Freetz unterstützt:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#entwicklung">Entwicklung</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wann-kommt-version-xy">Wann kommt Version xy?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trunk-branches-tags">Trunk, Branches, Tags?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wann-ist-feature-xy-fertig">Wann ist Feature XY fertig?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#freetz-gefallt-mir-und-ich-mochte-die-weiterentwicklung-unterstutzen">Freetz gefällt mir und ich möchte die Weiterentwicklung unterstützen.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vorkonfiguration-menuconfig">Vorkonfiguration (menuconfig)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wie-erkennne-ich-welche-variante-der-7270-ich-besitze">Wie erkennne ich welche Variante der 7270 ich besitze?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#welche-pakete-sollte-man-ins-freetz-image-sinnvollerweise-einbauen">Welche Pakete sollte man ins Freetz Image sinnvollerweise einbauen?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#was-bedeutet-binary-only">Was bedeutet „binary only“?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#was-bedeutet-experimental-oder-die-kategorie-unstable">Was bedeutet „EXPERIMENTAL“ oder die Kategorie „unstable“?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#funktioniert-iptables-nat-conntrack">Funktioniert iptables/nat/conntrack?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#packet-accelerator-avm-pa">Packet Accelerator (AVM PA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#was-bedeutet-not-available-no-sources-by-avm">Was bedeutet „not available, no sources by AVM“?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#erstellen-von-firmware-images-make-build">Erstellen von Firmware-Images (make/Build)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#was-bedeuten-die-einzelnen-make-targets-z-b-dirclean-distclean-config-clean-deps-etc">Was bedeuten die einzelnen make-targets (z.B. dirclean, distclean, config-clean-deps etc.)?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#beim-erstellen-tritt-ein-fehler-auf-was-nun">Beim Erstellen tritt ein Fehler auf, was nun?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#you-must-have-either-have-gettext-support-in-your-c-library-or-use-the-gnu-gettext-library">You must have either have gettext support in your C library, or use the GNU gettext library.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#error-the-program-library-header-xy-was-not-found">ERROR: The program/library/header xy was not found…</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#warning-the-program-library-header-xy-was-not-found">WARNING: The program/library/header xy was not found…</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#could-not-download-firmware-image">Could not download firmware image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#please-copy-the-following-file-into-the-dl-fw-sub-directory-manually-fritz-box-aa-bb-cc-ddddd-image">Please copy the following file into the ‚dl/fw‘ sub-directory manually: fritz_box_aa_bb_cc-ddddd.image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ln-cannot-execute-binary-file">./ln: cannot execute binary file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filesystem-image-too-big">Filesystem image too big</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#warning-not-enough-free-flash-space-for-answering-machine">WARNING: Not enough free flash space for answering machine!</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#beim-erstellen-tritt-immer-noch-ein-fehler-auf">Beim Erstellen tritt immer noch ein Fehler auf…</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ich-kann-das-erzeugte-freetz-image-nicht-finden">Ich kann das erzeugte Freetz Image nicht finden?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wo-finde-ich-diese-beruhmte-config-datei">Wo finde ich diese berühmte .config-Datei?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wie-bekomme-ich-die-config-datei-auf-den-pc">Wie bekomme ich die .config-Datei auf den PC?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#flashen-des-firmware-images">Flashen des Firmware-Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wie-installiere-ich-das-freetz-image">Wie installiere ich das Freetz-Image?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#beim-flashen-meldet-das-avm-webinterface-dass-das-image-keine-passende-firmware-enthalt">Beim Flashen meldet das AVM-Webinterface, dass das Image keine passende Firmware enthält</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#freetz-trunk-wurde-per-avm-firmware-update-geflasht-nach-dem-neustart-scheint-sich-aber-nichts-geandert-zu-haben">Freetz-Trunk wurde per AVM Firmware-Update geflasht, nach dem Neustart scheint sich aber nichts geändert zu haben</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#probleme-nach-dem-erfolgreichen-flashen">Probleme nach dem (erfolgreichen) Flashen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wie-lautet-das-standard-passwort-fur-freetz">Wie lautet das Standard-Passwort für Freetz?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nach-dem-flashen-ist-das-avm-webinterface-nicht-mehr-erreichbar">Nach dem Flashen ist das AVM-Webinterface nicht mehr erreichbar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nach-dem-flashen-ist-die-box-nicht-mehr-erreichbar-und-oder-rebootet-standig">Nach dem Flashen ist die Box nicht mehr erreichbar und/oder rebootet ständig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#beim-aufruf-des-original-avm-webinterface-von-aussen-bekomme-ich-trotz-portweiterleitung-nur-eine-weisse-seite">Beim Aufruf des Original-AVM-Webinterface von aussen bekomme ich trotz Portweiterleitung nur eine weisse Seite?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#das-freetz-webinterface-akzeptiert-die-standardkombination-fur-benutzer-und-passwort-admin-freetz-nicht">Das Freetz-Webinterface akzeptiert die Standardkombination für Benutzer und Passwort (admin/freetz) nicht</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kann-man-pakete-patches-nachinstallieren-ohne-das-freetz-image-neu-zu-erstellen">Kann man Pakete/Patches nachinstallieren, ohne das FREETZ-Image neu zu erstellen?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nach-dem-flashen-ist-das-freetz-webinterface-nicht-mehr-erreichbar">Nach dem Flashen ist das Freetz-Webinterface nicht (mehr) erreichbar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#der-dynamische-teil-des-avm-webinterface-verhalt-sich-nicht-wie-erwartet">Der dynamische Teil des (AVM-)Webinterface verhält sich nicht wie erwartet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#freetz-aktualisieren">Freetz aktualisieren</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ich-habe-momentan-eine-laborversion-installiert-kann-ich-freetz-einfach-daruber-flashen">Ich habe momentan eine Laborversion installiert. Kann ich Freetz einfach darüber flashen?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ich-habe-eine-alte-freetz-firmware-auf-der-box">Ich habe eine alte Freetz-Firmware auf der Box</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#update-von-freetz-version-xy-auf-freetz-version-yz">Update von Freetz-Version XY auf Freetz-Version YZ:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wenn-avm-eine-neue-firmware-auf-den-markt-bringt">Wenn AVM eine neue Firmware auf den Markt bringt</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#konfiguration">Konfiguration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wo-landen-die-diversen-konfigurationen-auf-der-fritzbox">Wo landen die diversen Konfigurationen auf der Fritzbox?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#konfiguration-in-der-aktuellen-sicherheitsstufe-nicht-verfugbar">Konfiguration in der aktuellen Sicherheitsstufe nicht verfügbar!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wie-deaktiviere-ich-das-passwort-fur-die-freetz-webseite">Wie deaktiviere ich das Passwort für die Freetz-Webseite?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wie-andere-ich-das-passwort-fur-die-freetz-webseite">Wie ändere ich das Passwort für die Freetz-Webseite?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wie-andere-ich-das-passwort-fur-die-freetz-webseite-sofern-ich-es-vergessen-und-telnet-ssh-zugang-habe">Wie ändere ich das Passwort für die Freetz-Webseite sofern ich es vergessen und Telnet/SSH-Zugang habe?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wie-andere-ich-das-root-passwort">Wie ändere ich das root-Passwort?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#andern-des-root-passwortes-uber-die-rudi-shell">Ändern des root-Passwortes über die Rudi-Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#warum-kann-ich-mich-nach-einer-freetz-wiederherstellung-nicht-mehr-am-avm-webui-anmelden">Warum kann ich mich nach einer Freetz-Wiederherstellung nicht mehr am AVM-WebUI anmelden?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#probleme-im-betrieb">Probleme im Betrieb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#var-flash-freetz-too-big">/var/flash/freetz too big</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kein-ftp-zugriff-nach-freetz-moglich">Kein FTP-Zugriff nach Freetz möglich</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#entfernen-von-freetz-und-anderen-modifikationen">Entfernen von Freetz und anderen Modifikationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sonstiges">Sonstiges</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#andern-der-arbeitsgruppe-von-freetz-linux">Ändern der Arbeitsgruppe von „freetz-linux“</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wie-finde-ich-die-ip-meiner-virtuellen-maschine">Wie finde ich die IP meiner Virtuellen Maschine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#weiterfuhrende-links">Weiterführende Links</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Impressum.html">Impressum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libs_tagged.html">Bibliotheken nach Anwendungsgebieten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ticket.html">Was sollte ich bei der Erstellung eines neuen Tickets beachten?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style.html">Aussehen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Pakete, Addons und CGI-Erweiterungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FreetzConf2011.html">FreetzConf 2011</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patch.html">Aufbau eines Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patch.html#erzeugen-eines-patches">Erzeugen eines Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patch.html#patch-anwenden-oder-ruckgangig-machen">Patch anwenden oder rückgängig machen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patch.html#wie-finde-ich-die-zu-patchende-stelle">Wie finde ich die zu patchende Stelle?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patch.html#links">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Press.en.html">Freetz in public press &amp; web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches.html">Freetz Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Hilfe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libs.html">Bibliotheken (libraries)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="costumscript_dublesyslog.html">Schritte zur Lösung, kann übersprungen werden…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="costumscript_dublesyslog.html#also-hier-die-anleitung-zur-editierung-der-rc-costum-ueber-die-shell">Also hier die Anleitung zur Editierung der rc.costum ueber die shell:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="costumscript_dublesyslog.html#weiter-durch-die-herleitung-schritte-zur-loesung-whatever">weiter durch die herleitung (schritte zur loesung, whatever)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="costumscript_dublesyslog.html#losung">…Lösung:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">Tree like overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Press.html">Freetz in Presse und Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="freetz.en.html">Freetz gets more from the Box!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.en.html">Freetz-FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/source_code.en.html">Source code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/source_code.html">Quellcode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_myfritz.html">Remove MyFritz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_tr069.html">Remove tr069 stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_assistant.html">Remove assistant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_help.html">Remove help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_usermand.html">Remove usermand &amp; userman.ko</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_samba.html">Remove Samba daemon (smbd)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/signed.html">Patch Webmenu Signed Message</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_upnp.html">Remove uPnP daemon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/usb_names.html">Patch USB storage names, make FAT filesystems world-writable, automount feature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_mediasrv.html">Remove MediaServer daemon (mediasrv)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_dsld.html">Remove dsld</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/onlinechanged.html">Onlinechanged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/freetzmount.html">FREETZMOUNT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/replace_onlinechanged.html">Replace onlinechanged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_capi.html">Remove CapiOverTCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/exec_autorun.html">Execute autorun.sh/autoend.sh script on (un)mount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/exec_autorun.html#hinweis">Hinweis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/maxdevcount.html">MaxDevCount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_minid.html">Remove minid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/multpile_printers.html">FritzBox als Printserver für mehrere Drucker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/alarmclock.html">Patch third alarm-clock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/freetzmount.en.html">FREETZMOUNT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_vpn.html">Remove AVM vpn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_support.html">Remove the support-files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_ftpd.html">Remove FTP deamon (ftpd)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches/remove_aura_usb.html">Remove aura USB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos.html">HowTos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/trouble_shooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/fritz_faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/irc.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/irc.html#irc-netiquette">IRC Netiquette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/irc.html#troubleshooting-irc">Troubleshooting IRC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/irc.html#konfiguration-chatzilla-plugin-in-firefox">Konfiguration Chatzilla-Plugin in Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/wikiedit.html">Wiki Bearbeitung - Tipps und Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common.html">Allgemeines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/troubleshoot.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development.html">Development Howtos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/freetz_linux.html">Freetz Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/shutdown.html">Rechner im Netz herunterfahren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/newbie.en.html">Freetz for beginners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/first_trunk.html">Wie baue ich meinen ersten trunk ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/install.en.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/install.en.html#aktualisierung">Aktualisierung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/install.en.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/install.en.html#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/external.html">External</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/external.html#konfiguration">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/external.html#auswahl">Auswahl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/external.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/external.html#automatisches-starten-stoppen-von-diensten">Automatisches starten/stoppen von Diensten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/external.html#firmware-build-prozess-und-update">Firmware-build-Prozess und Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/create_swap.html">Swap-File anlegen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/install.html#aktualisierung">Aktualisierung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/install.html#fehlerbehebung">Fehlerbehebung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/install.html#manuelles-einspielen-des-images">Manuelles einspielen des Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/install.html#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/newbie.html">Erste Schritte mit Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/wol.html">Wake on Lan (WoL) mit der Fritzbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/user.html">Benutzer dauerhaft in der passwd speichern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/busybox_httpd.html">Kleiner Webserver mit BusyBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/install/menuconfig.html">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/newbie/other.html">Sonstige Infos für Newbie’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/common/newbie/errors.html">Was mache ich, wenn sich meine Box nicht Freetzen lässt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/troubleshoot/repair_phonebook.html">Kaputtes Telefonbuch reparieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/troubleshoot/recover_firmware.html">Original Firmware wiederherstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/troubleshoot/reboots.html">Häufige selbständige Reboots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/security/switch_config.html">Konfiguration des eingebauten Switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/security/router_and_firewall.html">Freetz als interner Router mit Firewall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/security/user_management.html">Benutzerverwaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/security/split_wlan_lan.html">WLAN von LAN trennen mit iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/sign_image.html">Signieren von Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/sign_image.html#konkrete-anwendung-in-freetz">Konkrete Anwendung in Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/integrate_patches.html">Patches in Freetz einspielen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/bandwidth_svg.html">Dynamische Bandbreitenanzeige per SVG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/create_cross-compiler_toolchain.html">Cross-Compiler / Toolchain erstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/create_cross-compiler_toolchain.html#eigene-download-toolchain-erstellen">Eigene Download-Toolchain erstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/create_cross-compiler_toolchain.html#target-native-compiler-toolchain-erstellen">Target/Native-Compiler-Toolchain erstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/release_management.html">Release Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/package_creation.html">Wie baue ich ein eigenes Paket für Freetz?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/save_mtd_2.html">Flash-Partitionen von außen mit FTP sichern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/developer_information.html">Developer Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/create_gui.html">Erstellen einer GUI für Pakete in Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/manipulation_detection.html">Wie die FritzBox Manipulationen erkennt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/freetz_make.html">Freetz Build-Prozeß</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/urlader_flags.html">Einstellungen speichern im Urlader-Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/flash.html">Flash Partitionierung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/firmware_update_details.html">Ablauf eines Firmware-Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/repack_fw.html">Entpacken und Packen von Firmware-Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/install_addon.html">Addon Paket installieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/make_busybox.html">Busybox konfigurieren und kompilieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/adam2.html">ADAM2-Bootloader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/save_mtd_1.html">Flash-Partitionen im laufenden Betrieb sichern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/integrate_own_files.html">Eigene Dateien in die Firmware integrieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/analyse_image_names.html">Firmware-Image-Namen analysieren und interpretieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/menuconfig.html">Menükonfiguration pflegen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/compile_own_progs.html">Eigene Programme kompilieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/make_kernel.html">Kernel konfigurieren und kompilieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/make_room.html">Platz sparen im Dateisystem der FritzBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/developer_information/package_development.html">Package Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/developer_information/post_commit_hook.html">Trac Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/developer_information/shell_coding_conventions.html">Shell Coding Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/developer_information/package_development_advanced.html">Package Developing - Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/developer_information/package_development_dynamic.html">Paketverwaltung für Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/developer_information/package_development_start.html">First steps - How to start your first freetz package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/developer_information/package_development_start/example_2.html">Example 2: par2cmdline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/developer_information/package_development_start/example_1.html">Example 1: Httptunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/developer_information/package_development_start/.language.html">.language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/developer_information/package_development_start/webinterface_example_1.html">Web-interface HTTPTunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/developer_information/package_development_start/example_3.html">Example 3: NZBGet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/howtos/development/developer_information/webif/libmodcgi.html">libmodcgi.sh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/wikiedit/screenshots.html">Screenshots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/wikiedit/toc.html">Inhaltsverzeichnis erstellen (lassen)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/wikiedit/tagging.html">Tagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/wikiedit/tables.html">Tabellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/wikiedit/formatting_guide.html">Formatierungs-Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/wikiedit/goodies.html">Wiki Goodies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style/tagging.html">Tagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style/skins.html">Skins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style/favicons.html">Favicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style/mounted.html">Aussehen von mounted.cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libs/ftdi.html">ftdi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libs/ftdi.en.html">libftdi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/bridge-utils.html">bridge-utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/sispmctl.html">sispmctl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/empty.html">Empty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/apache.html">Apache Webserver mit PHP CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/polipo.en.html">Using with Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/polipo.en.html#using-at-your-office">Using at your office</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/polipo.en.html#security">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/polipo.en.html#blocking-domains">Blocking domains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/polipo.en.html#issues">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/polipo.en.html#links">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/autofs.html">autofs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/strace.html">strace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/syslogd.html">Syslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/lsof.html">lsof</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/dns2tcp.html">Dns2Tcp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/tinyproxy.html">Tinyproxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/davfs2.html">WebDAV mit davfs2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/s3fslite.html">s3fslite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/dropbear.en.html">Dropbear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ctorrent.html">CTorrent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/irssi.html">irssi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/hplip.html">HPLIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/lighttpd.html">lighttpd Webserver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/privoxy.html">Privoxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/radvd.en.html">RADVD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/usbroot.html">USB-Root</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/vim.html">vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/bluez-utils.html">Bluez-Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/sane-backends.html">SANE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/usbip.html">USB/IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/dropbear.html">Dropbear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/iptables-cgi.html">iptables-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/hd-idle.html">hd-idle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/fhem.html">FHEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/igmpproxy.html">igmpproxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/usbutils.html">usbutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/inotify-tools.html">Inotify-Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/authorized-keys.en.html">authorized-keys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/rrdstats.html">RRDstats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/mcabber.html">mcabber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/dtmfbox.html">DTMFBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/nfsd.en.html">NFSD_CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/espeak.html">eSpeak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/dnsd.html">dnsd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/tor.html">Tor Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/spindown.html">Spindown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ncftp.html">ncftp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/lynx.html">Lynx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/smstools3.html">SMStools3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/smstools3.html#weiteres">Weiteres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/debootstrap.html">Debootstrap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html">ppp-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#allgemeine-konfiguration">Allgemeine Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#konfiguration-fur-umts">Konfiguration für UMTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#namensauflosung">Namensauflösung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#firewall-routing-nat">Firewall, Routing &amp; NAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#fallback">Fallback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#treiberprobleme">Treiberprobleme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#was-ist-noch-zu-beachten-2do-liste">Was ist noch zu beachten? (2do-Liste)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#weiteres">Weiteres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/xmail.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/sundtek.html">Sundtek DVB Treiber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/iptables.html">iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/iptables.html#altere-beitrage-betreffen-fritzboxen-vor-der-72xx-serie">Ältere Beiträge (betreffen FritzBoxen vor der 72xx Serie)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/subversion.html">Subversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/dtach.html">dtach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/vsftpd.html">VSFTPd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ziproxy.html">ziproxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ntfs-3g.html">NTFS-3G</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ruby.html">Ruby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/aiccu.html">Aiccu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/mc.html">Midnight Commander</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/nfs.html">NFS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/streamripper.html">Streamripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/htpdate.html">htpdate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/lua.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/emailrelay.html">E-MailRelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/madplay.html">madplay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/nhipt.html">NHIPT - iptables firewall GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/netsnmp.html">Net-SNMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/transmission.en.html">Blocklist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/transmission.en.html#number-of-peers">Number of peers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/transmission.en.html#memory-usage">Memory usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/transmission.en.html#limit-memory-usage">Limit memory usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/transmission.en.html#watchdog">Watchdog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/transmission.en.html#links">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/imapproxy.en.html">ImapProxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/fuse.html">FUSE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/hiawatha.html">hiawatha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/cifsmount.html">cifsmount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/matrixtunnel.html">matrixtunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ndas.en.html">NDAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/nfs-utils.html">NFS-Utils / NFS-Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/vpnc.html">vpnc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/haserl.html">Haserl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/obexftp.html">ObexFTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/nmap.html">Nmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/httptunnel.html">httptunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/onlinechanged.html">Onlinechanged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/mini_fo.html">mini_fo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/mini_fo.html#konfiguration-webinterface">Konfiguration (Webinterface)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/mini_fo.html#konfiguration-per-hand">Konfiguration (per Hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/mini_fo.html#mogliche-nebeneffekte">Mögliche Nebeneffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/mini_fo.html#restore-original-file">Restore original file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/mini_fo.html#siehe-auch">Siehe auch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/pingtunnel.html">pingtunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/tcp_wrappers.html">TCP Wrapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/netsnmp.en.html">Net-SNMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/netsnmp.en.html#mrtg">MRTG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/wol.html">Wake on LAN (WoL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/cpmaccfg.html">cpmaccfg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/cpmaccfg.html#cpmaccfg-cgi">cpmaccfg-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/syslogd.en.html">Syslog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/checkmaild.html">checkmaild 0.4.7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/portmap.html">portmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/digitemp.html"><strong>Was ist digitemp?</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/digitemp.html#wichtiger-hinweis">Wichtiger Hinweis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/digitemp.html#tipp-bei-verwendung-mehrerer-usb-rs232-adapter-an-einer-fritzbox">Tipp bei Verwendung mehrerer USB-RS232-Adapter an einer Fritzbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/digitemp.html#datenbank">Datenbank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/digitemp.html#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/downloader.html">Downloader-CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/bip.html">BIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/fortune.html">fortune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/xrelayd.html">xrelayd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/tinc.html">Tinc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/bird.html">Bird</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/onlinechanged_cgi.html">Onlinechanged-CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/php.html">PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/phpxmail.en.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/phpxmail.en.html#basic-setup-guide">Basic setup guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/phpxmail.en.html#setup-ssl">Setup SSL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/phpxmail.en.html#useful-links">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/pptp.html">PPTP Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/mediatomb.html">MediaTomb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/inetd.html">inetd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/owfs.html">owfs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/unbound.html">Unbound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/fstyp.html">fstyp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/prosody.en.html">Prosody IM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/bftpd.html">Bftpd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/mod.html">(Freetz-) MOD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/br2684ctl.en.html">br2684ctl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/deco.html">Demos Commander</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/trickle.html">trickle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/radvd.html">Radvd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/opendd.html">OpenDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/pptpd.html">PoPTop - PPTP-VPN-Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/mediaserver.html">Mediaserver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/iptables.en.html">iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/dnsd.en.html">dnsd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/hp-utils.html">hp-utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/screen.html">screen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ndas.html">1. Using NDAS driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ndas.html#using-ndas-harddisk-array">2. Using NDAS harddisk array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ndas.html#share-the-data-files-on-the-ndas-hard-disks">3. Share the data/files on the NDAS hard disks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ndas.html#ndas-robustnes">4. NDAS robustnes?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ndas.html#referenzen">Referenzen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/dnsmasq.html">dnsmasq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/wget.html">wget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/e2fsprogs.html">e2fsprogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/bind.html">bind</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/tcpdump.html">tcpdump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/gw6.html">gw6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/nhipt.en.html">NHIPT - iptables firewall GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/openntpd.html">OpenNTPD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/rudi-shell.html">Rudi-Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/nano.html">nano</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/nfsd.html">NFSD_CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/stunnel.html">Stunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/rrdtool.html">RRDTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ldd.html">ldd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/prosody.html">Prosody IM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/fhzctrl.html">fhzctrl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/aiccu.en.html">AICCU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/authorized-keys.html">authorized_keys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/pciutils.html">pciutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/vtund.html">VTUN freetz Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/fritzload.html">FritzLoad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/jamvm.html">JamVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor.html">Callmonitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/br2684ctl.html">br2684ctl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/netcat.html">netcat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/quagga.html">Quagga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/samba.html">Samba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/iodine.html">iodine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/nagios.html">Nagios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/smartmontools.html">Smartmontools (smartctl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/mtr.html">mtr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/avm-firewall.html">AVM-firewall-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/bash.html#ash">Ash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/bash.html#bash-als-loginshell">Bash als Loginshell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/asterisk.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/microperl.html">microperl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/nano-shell.html">Nano-Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/m-i-t.html">module-init-tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/minidlna.html">MiniDLNA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/inadyn-mt.html">Inadyn-MT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/bluez.html">BlueZ 4.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/DemoPackageA.html">DemoPackageA „Hello World“</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/DemoPackageA.html#quellen">Quellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/openvpn.html">OpenVPN freetz Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/knock.html">knockd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ltrace.html">ltrace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/curl.html">cURL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/inadyn-mt.en.html">Inadyn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/virtualip.html">Virtual IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/socat.html">socat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/transmission.html">Transmission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/config.html">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/reverse_search.html">Rückwärtssuche</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/phonebook.html">Telefonbuch (Callers)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/maintenance.html">Wartung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/adapt_messages.html">Anpassen der Benachrichtigungstexte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions.html">Aktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/listeners.html">Regeln (Listeners)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/testcall.html">Testanruf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/faq.html">Callmonitor-FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/events.html">Ereignisse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/config.html">FritzBox-Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/config.html#alternative">Alternative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/call.html">Allgemeine Hinweise zu Funktionsaufrufen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/relook.html">DGStation Relook 400S</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/rawmsg.html">Einfache TCP-Verbindungen (rawmsg)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/snarl.html">Listener-Eintrag:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/snarl.html#screenshots">Screenshots:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/dbox.html">DBox2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/xbox.html">XBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/getmsg.html">HTTP-Requests (getmsg)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/mail.html">E-Mail-Benachrichtigung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/samsung.html">Benachrichtigung auf einem Samsung TV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/self-defined.html">Selbstdefinierte Aktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/wol.html">Wake on LAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/yac.html">YAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/dial.html">Wählhilfe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/vdr.html">VDR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/dreambox.html">DreamBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/password.html">Benutzernamen und Passwörter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/musicpal.html">Freecom MusicPal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/soundbridge.html">Roku SoundBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/netsnmp/mrtg.en.html">MRTG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/pptpd/config.html">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/pptpd/webif.html">Das Web-Frontend zum Paket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/pptpd/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/rudi-shell/tips.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/rudi-shell/limits.html">Grenzen &amp; Einschränkungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/rudi-shell/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/rudi-shell/usage.html">Illustrierte Anwendungsfälle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/rudi-shell/functions.html">Funktionsweise</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Freetz</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Freetz-FAQ</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/wiki/FAQ.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="freetz-faq">
+<span id="id1"></span><h1>Freetz-FAQ<a class="headerlink" href="#freetz-faq" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Hier werden häufig gestellte Fragen (engl. <a class="reference external" href="FAQ.html">FAQ</a> =
+frequently asked questions) beantwortet. Diese Seite befindet sich noch
+im Aufbau.</p>
+<div class="section" id="produktname-und-historisches">
+<span id="produktnameundhistorisches"></span><h2>Produktname und Historisches<a class="headerlink" href="#produktname-und-historisches" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="was-ist-freetz">
+<span id="wasistfreetz"></span><h3>Was ist Freetz?<a class="headerlink" href="#was-ist-freetz" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div><em>Freetz</em> ist ein Werkzeugkasten für Entwickler und versierte
+Anwender, um sich für diverse DSL/LAN/WLAN/VoIP-Router der Serien
+<a class="reference external" href="http://www.avm.de/de/Produkte/FRITZBox/index.html">​AVM
+Fritz!Box</a> bzw.
+<a class="reference external" href="http://www.t-home.de/is-bin/INTERSHOP.enfinity/WFS/EKI-PK-Site/de_DE/-/EUR/ViewFAQTheme-Download;?ProductThemeId=theme-1000&amp;selaction=themen&amp;FaqId=theme-28565177&amp;pageNr=0&amp;bound=2&amp;itemLocator=downloads&amp;headerSelection=2&amp;SelectedTheme=theme-28565177&amp;SelectedTheme=theme-2001628">​T-Com
+Speedport</a>
+(baulich ähnlich) eine auf der Original-Firmware des Herstellers
+aufbauende, funktional modifizierte Firmware zu bauen und diese auf
+das Gerät zu transferieren. Es werden eine Vielzahl von
+Erweiterungspaketen angeboten, aber auch Möglichkeiten, nicht
+benötigte Funktionalität der Original-Firmware zu entfernen.</div></blockquote>
+</div>
+<div class="section" id="woher-kommt-der-name-freetz">
+<span id="woherkommtdernamefreetz"></span><h3>Woher kommt der Name Freetz?<a class="headerlink" href="#woher-kommt-der-name-freetz" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Es handelt sich um eine (verballhornte) Zusammensetzung aus dem
+englischen Wort „free“ (dt. frei) und dem Männernamen „Fritz“,
+welcher an den Gerätenamen des Herstellers
+<a class="reference external" href="http://www.avm.de">​AVM</a> erinnern soll. Wir wollen damit
+symbolisieren, dass es sich bei <em>Freetz</em> um freie Software handelt.
+Da wir marken- und urheberrechtlichen Problemen mit AVM, deren
+Schutzrechte auf die Marke „Fritz!“ (mit Ausrufezeichen) wir
+ausdrücklich anerkennen, aus dem Weg gehen möchten, haben wir uns für
+diese deutlich unterschiedliche Schreibweise entschieden. Die Idee
+für den Namen stammt von Alexander Kriegisch, der sich gemeinsam mit
+Oliver Metz überlegte, wie das Projekt heißen sollte, wenn das
+versionsverwaltete Quelltext-Repository der Öffentlichkeit übergeben
+werden würde. Aus der (nach unserem Empfinden bescheuert klingenden)
+Alliteration „Free Fritz“ wurde schließlich „Freetz“. (Auch
+„OpenFritz“ war im Rennen, aber wir wollten nicht
+<a class="reference external" href="http://openwrt.org">​OpenWrt</a> nachäffen.) Wir bilden uns nicht
+ein, der Name sei ein großer Wurf, aber er ist kurz und wir hoffen,
+er ist leicht zu merken. <img alt=":-)" src="../_images/smiley.png" /></div></blockquote>
+</div>
+<div class="section" id="wie-wird-freetz-ausgesprochen">
+<span id="wiewirdfreetzausgesprochen"></span><h3>Wie wird Freetz ausgesprochen?<a class="headerlink" href="#wie-wird-freetz-ausgesprochen" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Wie das englische Wort „free“ mit angehängtem deutschem „tz“,
+pseudo-deutsch geschrieben in etwa „Friez“, pseudo-englisch
+geschrieben in etwa „freets“. Anders gesagt, wie der Männername
+„Fritz“, aber mit langem „i“ und mit englisch ausgesprochenem „r“.</div></blockquote>
+</div>
+<div class="section" id="wie-entstand-freetz">
+<span id="wieentstandfreetz"></span><h3>Wie entstand Freetz?<a class="headerlink" href="#wie-entstand-freetz" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Es gibt einige Vorläufer von <em>Freetz</em>. Daniel Eiband (bekannt als
+„Danisahne“) hat vor einigen Jahren, aufbauend auf Vor- und
+Zuarbeiten anderer kreativer Köpfe (Erik Andersen, Christian
+Volkmann, Andreas Bühmann, Enrik Berkhan u.a.), den sog.
+<em>Danisahne-Mod</em> (kurz: <em>DS-Mod</em>) ins Leben gerufen. So wie heute mit
+<em>Freetz</em>, konnte und kann man auch damit Firmware-Modifikationen
+bauen, allerdings noch für ältere Firmware-Versionen mit Linux-Kernel
+2.4. Da einige Router noch immer auf Kernel 2.4 basierende Firmwares
+haben, ist Version
+<a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=135253">​ds-0.2.9-p8</a>
+des <em>DS-Mod</em> für jene Geräte immer noch aktuell. Für die Mehrzahl
+aktueller Geräte war der direkte Vorläufer zu <em>Freetz</em> jedoch die von
+Oliver Metz ins Leben gerufene Version <em>ds26</em> (zuletzt
+<a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=144646">​ds26-15.2</a>),
+welche ausschließlich für Firmwares mit Kernel 2.6 geeignet ist.
+Selbiges gilt auch für <em>Freetz</em>, denn <em>Freetz</em> ist Stand heute
+(20.01.2008) nichts anderes als die aktuelle Entwicklerversion von
+<em>ds26</em>, nur mit neuem Namen.</div></blockquote>
+</div>
+<div class="section" id="wozu-uberhaupt-ein-neuer-name-wo-doch-ds-mod-inzwischen-so-bekannt-ist">
+<span id="wozuuberhaupteinneuernamewodochds-modinzwischensobekanntist"></span><h3>Wozu überhaupt ein neuer Name, wo doch DS-Mod inzwischen so bekannt ist?<a class="headerlink" href="#wozu-uberhaupt-ein-neuer-name-wo-doch-ds-mod-inzwischen-so-bekannt-ist" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Es gibt mehrere Gründe dafür. Zum einen ist seit gut einem Jahr
+Daniel nicht mehr aktiv an der Weiterentwicklung von <em>ds26</em> beteiligt
+gewesen, zum anderen hat er bei
+<a class="reference external" href="http://sourceforge.net">​SourceForge</a> schon etwa ebenso lange
+begonnen, eine von Grund auf neue <em>DS-Mod</em>-Version - nennen wir sie
+mal inofiziell <em>DS-Mod NG (Next Generation)</em> - zu entwickeln, deren
+aktueller Stand in einem öffentlich zugänglichen Quellcode-Repository
+auf der <a class="reference external" href="http://ds-mod.sourceforge.net">​Projekt-Webseite</a>
+einzusehen ist. Wir wollen Daniel seinen Projektnamen nicht streitig
+machen und auch nicht in Konkurrenz zu ihm treten, sondern hoffen im
+Gegenteil, dass er eines Tages wieder mehr Zeit für sein Projekt
+haben wird und schlußendlich beide wieder in ein gemeinsames münden,
+um alle Vorteile in einem Produkt zu vereinen. Zurzeit ist es jedoch
+so, dass beide Projekte sich deutlich auseinander entwickelt haben:
+<em>DS-Mod NG</em> hat eine sehr saubere Struktur, ist jedoch noch lange
+nicht fertig, <em>Freetz</em> (bzw. bisher <em>ds26</em>) ist hundertfach im
+Einsatz und wird eher während der laufenden Entwicklung immer wieder
+mal Refactoring-Maßnahmen unterworfen. Wo zuletzt in der Presse (z.B.
+<a class="reference external" href="http://www.pcwelt.de/start/dsl_voip/dsl/praxis/98946/index3.html">​PC-Welt</a>)
+vom <em>DS-Mod</em> gesprochen wurde, war <em>Freetz</em> alias <em>ds26</em> gemeint.</div></blockquote>
+</div>
+</div>
+<div class="section" id="motivation">
+<span id="id2"></span><h2>Motivation<a class="headerlink" href="#motivation" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="warum-firmware-modifizieren">
+<span id="warumfirmwaremodifizieren"></span><h3>Warum Firmware modifizieren?<a class="headerlink" href="#warum-firmware-modifizieren" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Es können zwar einzelne spezielle Dateien (character devices) unter
+/var/flash/ bearbeitet werden und sie behalten den Inhalt auch über
+einen Reboot hinweg, jedoch trifft das nicht auf den Rest des
+Dateisystems zu. Der Inhalt dieser character devices landet in einer
+eigenen Flash Partition, die sehr klein ist. Der überwiegende Teil
+des Dateisystems ist ein read-only Squashfs Image, welches in einem
+Firmware Update enthalten ist. Um (größere) Dateien dauerhaft in die
+Firmware einzubinden müssen sie in dieses Squashfs Image gelangen,
+welches unter anderem in Freetz implementiert ist.</div></blockquote>
+</div>
+</div>
+<div class="section" id="verbreitung">
+<span id="id3"></span><h2>Verbreitung<a class="headerlink" href="#verbreitung" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="warum-werden-keine-fertigen-modifizierten-images-angeboten">
+<span id="warumwerdenkeinefertigenmodifiziertenimagesangeboten"></span><h3>Warum werden keine fertigen modifizierten Images angeboten?<a class="headerlink" href="#warum-werden-keine-fertigen-modifizierten-images-angeboten" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Die Lizenz, unter welcher die Firmwares von AVM bereitgestellt
+werden, untersagt dies.</div></blockquote>
+</div>
+<div class="section" id="wo-kann-freetz-heruntergeladen-werden">
+<span id="wokannfreetzheruntergeladenwerden"></span><h3>Wo kann FREETZ heruntergeladen werden?<a class="headerlink" href="#wo-kann-freetz-heruntergeladen-werden" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Auf der Startseite sind unter <a class="reference external" href="index.html#Quellcode">Quellcode</a>
+die Möglichkeiten zum <a class="reference external" href="Download.html">Download</a> von FREETZ
+aufgelistet. Es werden sowohl erprobte stabile Versionen von FREETZ
+als auch Entwicklerversionen angeboten. Zum Bauen eines
+FREETZ-Images wird LINUX zwingend vorausgesetzt. Es muss nicht
+unbedingt ein natives Linux-System auf dem PC bereits vorhanden
+sein. Auch eine Virtuelle Maschine eurer Wahl oder eine Live-CD mit
+Linux können zum Bauen von FREETZ benutzt werden.</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="welche-boxen-und-welche-firmwares-werden-durch-freetz-unterstutzt">
+<h3>Welche Boxen und welche Firmwares werden durch Freetz unterstützt:<a class="headerlink" href="#welche-boxen-und-welche-firmwares-werden-durch-freetz-unterstutzt" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">a.)
+<a class="reference external" href="/browser/tags/freetz-1.1.5/FIRMWARES">Freetz-1.1.5</a><a class="reference external" href="/export/HEAD/tags/freetz-1.1.5/FIRMWARES">​</a></div>
+<div class="line">b.)
+<a class="reference external" href="/browser/branches/freetz-stable-2.0/FIRMWARES">freetz-stable-2.0</a><a class="reference external" href="/export/HEAD/branches/freetz-stable-2.0/FIRMWARES">​</a></div>
+<div class="line">c.)
+<a class="reference external" href="/browser/trunk/FIRMWARES">Trunk</a><a class="reference external" href="/export/HEAD/trunk/FIRMWARES">​</a></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="entwicklung">
+<span id="id4"></span><h2>Entwicklung<a class="headerlink" href="#entwicklung" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="wann-kommt-version-xy">
+<span id="wannkommtversionxy"></span><h3>Wann kommt Version xy?<a class="headerlink" href="#wann-kommt-version-xy" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Grundsätzlich: It’s done when it’s done. Die Entwickler arbeiten in
+ihrer Freizeit, und Releases gibt es dann, wenn die beschlossenen
+Features fertig und release-kritische Bugs behoben sind.</div></blockquote>
+<blockquote>
+<div>Es gibt jedoch einen groben Plan für die Releases: 3-4 Monate nach
+einer stabilen Release gibt es einen Feature Freeze für die
+nachfolgende Release. Ab diesem Zeitpunkt werden nur noch Bugs
+behoben. Die Feature-Freeze-Termine werden in der
+<a class="reference external" href="/roadmap">Roadmap</a> angekündigt. Nach dem Feature Freeze kann grob
+nach 1 bis 1,5 Monaten mit dem Release gerechnet werden. Zwischen den
+stabilen Feature-Releases gibt es ggfs. weitere Maintenance-Releases,
+die nur neue Firmwareversionen von AVM unterstützen und Fehler
+beheben.</div></blockquote>
+</div>
+<div class="section" id="trunk-branches-tags">
+<span id="trunkbranchestags"></span><h3>Trunk, Branches, Tags?<a class="headerlink" href="#trunk-branches-tags" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="line-block">
+<div class="line">Der <a class="reference external" href="/browser/trunk">Trunk</a> ist der aktuelle Entwicklungszweig.
+Unter einem Branch versteht man ein Zweig, der zu einer bestimmten
+Zeit (z.B. <a class="reference external" href="/changeset/10373">r10373</a>) aus dem Trunk abgetrennt
+wurde. Hier gibt es derzeit den Branch
+<a class="reference external" href="/browser/branches/freetz-stable-2.0">freetz-stable-2.0</a>. Alle
+Releaseversionen bekommen einen Tag (z.B.
+<a class="reference external" href="/browser/tags/freetz-1.2">freetz-1.2</a>. Zukünftig wird das dann der
+Tag 2.0 werden.</div>
+<div class="line">Auschecken einer stabilen Version:</div>
+</div>
+<p>Auschecken eines Tags:</p>
+<p>Nach Erscheinen des neuen Tag 2.0 wird dieser dann wie folgt
+ausgecheckt:</p>
+<p>Auschecken einer Entwicklerversion (trunk):</p>
+<p>Achtung! Die Entwicklerversion (trunk) ist nur für fortgeschrittene
+Benutzer zu empfehlen, die mit Linux-Grundlagen vertraut sind, sich bei
+elementaren Problemen selbst helfen können und den Entwicklern einen
+qualitativen Feedback geben können. Da es sich hierbei um eine laufende
+Entwicklung handelt, ist die Stabilität der Entwicklerversion meist
+nicht so hoch, wie bei Branches und Tags.</p>
+</div>
+<div class="section" id="wann-ist-feature-xy-fertig">
+<span id="wannistfeaturexyfertig"></span><h3>Wann ist Feature XY fertig?<a class="headerlink" href="#wann-ist-feature-xy-fertig" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Der schnellste Weg zur Fertigstellung ist die Präsentation einer
+funktionierenden Lösung. Wir notieren uns jedes sinnvoll erscheinende
+Feature Request. Da wir Freetz aber in unserer Freizeit gestalten,
+muss man sich halt manchmal gedulden.</div></blockquote>
+</div>
+<div class="section" id="freetz-gefallt-mir-und-ich-mochte-die-weiterentwicklung-unterstutzen">
+<span id="freetzgefalltmirundichmochtedieweiterentwicklungunterstutzen"></span><h3>Freetz gefällt mir und ich möchte die Weiterentwicklung unterstützen.<a class="headerlink" href="#freetz-gefallt-mir-und-ich-mochte-die-weiterentwicklung-unterstutzen" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Hier gibt es einmal die Möglichkeit dem Entwicklerteam eine
+Geldspende zukommen zu lassen. Dazu ist in der rechten untern Ecke
+ein Paypal-Spendenbutton angebracht. Weiterhin kann eine Box
+natürlich besser unterstützt werden, wenn das Entwicklerteam
+„Testboxen“ besitzt. Im
+<a class="reference external" href="http://www.ip-phone-forum.de/showpost.php?p=959253&amp;postcount=1">​IPPF</a>
+existiert ein Thread zum Thema Spenden.</div></blockquote>
+</div>
+</div>
+<div class="section" id="vorkonfiguration-menuconfig">
+<span id="vorkonfigurationmenuconfig"></span><h2>Vorkonfiguration (menuconfig)<a class="headerlink" href="#vorkonfiguration-menuconfig" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="wie-erkennne-ich-welche-variante-der-7270-ich-besitze">
+<span id="wieerkennneichwelchevarianteder7270ichbesitze"></span><h3>Wie erkennne ich welche Variante der 7270 ich besitze?<a class="headerlink" href="#wie-erkennne-ich-welche-variante-der-7270-ich-besitze" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Siehe
+<a class="reference external" href="help/fritz_faq.html#WoranerkenneichdassicheineFB7270v3habe">hier</a>.</div></blockquote>
+</div>
+<div class="section" id="welche-pakete-sollte-man-ins-freetz-image-sinnvollerweise-einbauen">
+<span id="welchepaketesolltemaninsfreetzimagesinnvollerweiseeinbauen"></span><h3>Welche Pakete sollte man ins Freetz Image sinnvollerweise einbauen?<a class="headerlink" href="#welche-pakete-sollte-man-ins-freetz-image-sinnvollerweise-einbauen" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Sinnvoll ist Dropbear um später einen SSH Zugang zu haben, dnsmasq
+als DNS- und DHCP-Server Ersatz, sowie das Syslog-Webif um Fehler zu
+erkennen.</div></blockquote>
+</div>
+<div class="section" id="was-bedeutet-binary-only">
+<span id="wasbedeutetbinaryonly"></span><h3>Was bedeutet „binary only“?<a class="headerlink" href="#was-bedeutet-binary-only" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>„binary only“ heißt, dass für das ausgewählte Paket nur das Programm
+(„binary“) selbst erstellt wird, jedoch kein Webinterface,
+init-Skripte etc. vorhanden sind. Dies bedeutet, dass man sich selbst
+um die Konfiguration und das Starten des Programms kümmern muss.</div></blockquote>
+</div>
+<div class="section" id="was-bedeutet-experimental-oder-die-kategorie-unstable">
+<span id="wasbedeutetexperimentaloderdiekategorieunstable"></span><h3>Was bedeutet „EXPERIMENTAL“ oder die Kategorie „unstable“?<a class="headerlink" href="#was-bedeutet-experimental-oder-die-kategorie-unstable" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Die so gekennzeichneten Pakete haben bekannte Probleme und
+können/sollten nicht benutzt werden. Evtl gibt es dazu noch ein
+offenes <a class="reference external" href="/report/9">Ticket</a></div></blockquote>
+</div>
+<div class="section" id="funktioniert-iptables-nat-conntrack">
+<span id="funktioniertiptablesnatconntrack"></span><h3>Funktioniert iptables/nat/conntrack?<a class="headerlink" href="#funktioniert-iptables-nat-conntrack" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">IPtables funktioniert überall. Allerdings wird in Fritz!OS 05.2x
+und 05.5x von AVM der PacketAccelerator genutzt. Durch diesen
+funktioniert conntrack nicht mehr. Und damit
+nat/masquerading/state/transparenter Proxy und alles was sonst noch
+von conntrack abhängt.</div>
+<div class="line">Abhilft schafft ein Downgrade auf eine alte Firmware, zB bei der
+7270 ein „Alien“ mit 04.88 oder gleich Freetz-1.2.</div>
+<div class="line">Da AVM den Quellcode des PacketAccelerator veröffentlicht hat,
+könnte das Problem von jemandem mit viel Zeit und Wissen behoben
+werden.</div>
+<div class="line">Das Thema wird in Ticket <a class="reference external" href="/ticket/1605">#1605</a> behandelt, und so
+lange das Ticket noch nicht geschlossen ist besteht das Problem.</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="packet-accelerator-avm-pa">
+<span id="packetacceleratoravmpa"></span><h3>Packet Accelerator (AVM PA)<a class="headerlink" href="#packet-accelerator-avm-pa" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="line-block">
+<div class="line">Der Packet Accelerator bringt auch den Nachteil mit sich, dass tcpdump
+etc nicht mehr alle Pakete sehen. Um den PA bis zum nächsten Reboot
+temporär zu deaktivieren:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">disable</span> <span class="pre">&gt;</span> <span class="pre">/proc/net/avm_pa/control</span></code></div>
+<div class="line">Dies bringt den Nachteil mit sich, dass zB die 7390 keine 100 MBit/s
+mehr im ATA-Modues routen kann sondern nur noch ~ 40 MBit/s. Siehe
+auch <a class="reference external" href="FAQ.html#Funktioniertiptablesnatconntrack">Funktioniert
+iptables/nat/conntrack?</a></div>
+</div>
+</div>
+<div class="section" id="was-bedeutet-not-available-no-sources-by-avm">
+<span id="wasbedeutetnotavailablenosourcesbyavm"></span><h3>Was bedeutet „not available, no sources by AVM“?<a class="headerlink" href="#was-bedeutet-not-available-no-sources-by-avm" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Die für diese Firmware passenden Kernelquellen wurden noch nicht in
+Freetz integriert. Meist ist die Ursache dafür, dass AVM diese noch
+nicht veröffentlicht hat. Typischerweise dauert es wenige Tage bis
+mehrere Monate. Falls die Datei für die entsprechende FritzBox
+mittlerweile auf <a class="reference external" href="ftp://ftp.avm.de/">​ftp://ftp.avm.de/</a>
+veröffentlicht wurde, ein Ticket dafür öffnen. Um den Vorgang zu
+beschleunigen empfiehlt sich, wie in den
+<a class="reference external" href="ftp://ftp.avm.de/fritz.box/fritzbox.fon_wlan_7390/firmware/deutsch/info.txt">​info.txt</a>
+beschrieben, schriftlich an AVM zu wenden: <code class="docutils literal notranslate"><span class="pre">fritzbox_info&#64;avm.de</span></code>.</div></blockquote>
+</div>
+</div>
+<div class="section" id="erstellen-von-firmware-images-make-build">
+<span id="erstellenvonfirmware-imagesmakebuild"></span><h2>Erstellen von Firmware-Images (make/Build)<a class="headerlink" href="#erstellen-von-firmware-images-make-build" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="was-bedeuten-die-einzelnen-make-targets-z-b-dirclean-distclean-config-clean-deps-etc">
+<span id="wasbedeutendieeinzelnenmake-targetsz-b-dircleandistcleanconfig-clean-depsetc"></span><h3>Was bedeuten die einzelnen make-targets (z.B. dirclean, distclean, config-clean-deps etc.)?<a class="headerlink" href="#was-bedeuten-die-einzelnen-make-targets-z-b-dirclean-distclean-config-clean-deps-etc" title="Link zu dieser Überschrift">¶</a></h3>
+<p>A: Die make-targets beeinflussen den
+<a class="reference external" href="help/howtos/development/freetz_make.html">Build-Prozess</a> bei der
+FW-Erstellung. Viele der folgenden Infos entstammen (<a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?p=1185868">​diesem
+Thread</a>).</p>
+<p><strong>1. Aufräumen:</strong></p>
+<ul class="simple">
+<li><a href="#id5"><span class="problematic" id="id6">*</span></a>make clean
+<a href="#id7"><span class="problematic" id="id8">*</span></a>…</li>
+<li><em>make &lt;Paket&gt;-clean</em>:
+ruft normalerweise das clean-Target des Source-Makefiles auf. Dieses
+wird typischerweise alle generierten Dateien (vor allem
+Object-Dateien, Libraries und ausführbare Programme) löschen.
+Ein nachfolgendes <em>make</em> wendet keine geänderten Patches an, sondern
+erstellt nur die o.g. Object-Dateien, Libraries und ausführbare
+Programme neu (compilieren).
+Z.B. räumt <em>make mc-clean</em> so das Paket „Midnight Commander“ (mc)
+auf.</li>
+<li><em>make &lt;Paket&gt;-dirclean</em>:
+löscht das gesamte Verzeichnis des Pakets. Ein nachfolgendes <em>make</em>
+wird die Quellen neu auspacken, die Patches anwenden, das Paket
+konfigurieren und dann compilieren.
+Nur der letzte Schritt (compilieren) wird nach <em>make &lt;Paket&gt;-clean</em>
+(s.o.) ausgeführt.</li>
+<li><em>make dirclean</em>:
+führt, wie der Name schon sagt, ein „Verzeichnis-Aufräumen“ durch.
+Hierbei werden unter anderem die Verzeichnisse <em>/packages, /source,
+/build, /toolchain/build, toolchain/target</em> (und ein paar andere
+Sachen(?)) gelöscht, sodass bei erneutem Ausführen von <em>make</em> alles
+neu gebaut werden muss. Dies ist empfehlenswert, wenn sich Aufgrund
+eines <em>svn up</em> eine neu gebaute Firmware nicht so Verhält, wie man es
+erwartet. Alternativ kann man, wenn man weiß, an welchem Packet es
+liegt, dieses auch via <em>make &lt;Paket&gt;-dirclean</em> einzeln löschen (siehe
+oben).
+Zu erwähnen sei noch, dass nach einem <em>make dirclean</em> der Bau der
+Firmware natürlich länger dauert, da ja alles neu gebaut werden muss.</li>
+<li><em>make tools-distclean</em>:
+löscht die Tools (busybox, lzma, squashfs, usw.)</li>
+<li><em>make distclean</em>:
+Hier werden zusätzlich zum <em>make dirclean</em> auch noch die Downloads
+sowie die Tools gelöscht.</li>
+<li><em>make config-clean-deps</em>:
+Wenn bei <em>make menuconfig</em> Pakete abgewählt wurden, sind ggfs. noch
+Shared Libraries ausgewählt, die nicht mehr benötigt werden (dies
+kann <em>menuconfig</em> nicht automatisch erkennen). Diese kann man dann
+manuell unter ‚Advanced Options‘→‘Shared Libraries‘ abwählen - die
+benötigten lassen sich nicht deaktivieren. Alternativ kann man dies
+automatisch mittels <em>make config-clean-deps</em> erledigen lassen. Dabei
+werden übrigens auch manuell in <em>make menuconfig</em> ausgewählte
+Busybox-Applets deselektiert (<em>nicht* die in *make
+busybox-menuconfig</em>!), d.h. die Busybox-Einstellungen werden auf
+Standardwerte zurückgesetzt.</li>
+<li><em>make config-clean-deps-keep-busybox</em>:
+Wie <em>make menuconfig</em>, aber die Busybox-Einstellungen bleiben
+bestehen.</li>
+<li><em>make kernel-dirclean</em>:
+löscht den aktuell entpackten Source-Tree des Kernels, um von
+komplett sauberen Kernel Sourcen zu kompilieren (wichtig wenn was an
+den Patches geändert wird)</li>
+<li><em>make kernel-clean</em>:
+analog <em>make &lt;Paket&gt;-clean</em></li>
+<li><em>make kernel-toolchain-dirclean</em>:
+löscht den Kernel-Compiler</li>
+<li><em>make target-toolchain-dirclean</em>:
+löscht den Compiler für die uClibc und die Binaries (ausführbare
+Programme)</li>
+</ul>
+<p><strong>2. Vorbereitungen:</strong></p>
+<ul class="simple">
+<li><em>make world</em>:
+Vorraussetzung ist eine Toolchain (siehe <a class="reference external" href="help/howtos/development/create_cross-compiler_toolchain.html">Cross-Compiler / Toolchain
+erstellen</a>).
+Sollten jemals Probleme mit nicht vorhandenen Verzeichnissen
+auftauchen, so kann ein <em>make world</em> Abhilfe schaffen. In der Regel
+sollte das aber nicht nötig sein.</li>
+<li><em>make kernel-toolchain</em>:
+kompiliert den Kernel und auch für das target (Fritzbox)
+Aus historischen Gründen wurde die Bezeichnung als <em>kernel-toolchain</em>
+belassen, obwohl damit wie gesagt nicht nur der Kernel gebaut wird,
+sondern auch Pakete (s.u.).</li>
+<li><em>make target-toolchain</em>:
+kompiliert die Pakete für das target (Fritzbox)</li>
+<li><em>make kernel-menuconfig</em>:
+Die Konfiguration des Kernels wird danach wieder nach
+./make/linux/Config.&lt;kernel-ref&gt; zurückgespeichert.</li>
+<li><em>make kernel-precompiled</em>:
+Damit werden der Kernel und die Kernel Module kompiliert.</li>
+<li><em>make menuconfig</em>
+(<a class="reference external" href="help/howtos/common/install/menuconfig.html">Quelle</a>): Zum
+Konfigurieren von Freetz kommt das Programm <em>conf/mconf</em> zum Einsatz,
+welches dem ein oder anderen vielleicht von der Konfiguration des
+Linux Kernels bekannt ist. Die
+<a class="reference external" href="http://de.wikipedia.org/wiki/Ncurses">​ncurses</a> Variante <em>mconf</em>
+kann mit dem Kommando <em>make menuconfig</em> aufgerufen werden.
+Übrigens:
+Eine Hilfe zu den einzelnen Punkten kann direkt in <em>menuconfig</em> durch
+Eingabe von „?“ aufgerufen werden.
+Und nach Eingabe von „/“ kann man von allen Ebenen aus nach
+beliebigen Zeichenfolgen suchen - sehr praktisch.</li>
+</ul>
+</div>
+<div class="section" id="beim-erstellen-tritt-ein-fehler-auf-was-nun">
+<span id="beimerstellentritteinfehleraufwasnun"></span><h3>Beim Erstellen tritt ein Fehler auf, was nun?<a class="headerlink" href="#beim-erstellen-tritt-ein-fehler-auf-was-nun" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Zunächst einmal die folgende Liste der häufigen Fehler durchgehen:</div></blockquote>
+<div class="section" id="you-must-have-either-have-gettext-support-in-your-c-library-or-use-the-gnu-gettext-library">
+<span id="youmusthaveeitherhavegettextsupportinyourclibraryorusethegnugettextlibrary"></span><h4>You must have either have gettext support in your C library, or use the GNU gettext library.<a class="headerlink" href="#you-must-have-either-have-gettext-support-in-your-c-library-or-use-the-gnu-gettext-library" title="Link zu dieser Überschrift">¶</a></h4>
+<blockquote>
+<div>Hier ist wohl ein falscher Wert im Cache gelandet, den man löschen
+muss: „rm make/config.cache“ oder „rm
+source/target-mipsel_uClibc-<em>0.X.XX</em>/config.cache“ jenachdem, wo
+die Datei zu finden ist. Und danach wird der FW-Bau wieder mit „make“
+gestartet.</div></blockquote>
+</div>
+<div class="section" id="error-the-program-library-header-xy-was-not-found">
+<span id="error-theprogramlibraryheaderxywasnotfound"></span><h4>ERROR: The program/library/header xy was not found…<a class="headerlink" href="#error-the-program-library-header-xy-was-not-found" title="Link zu dieser Überschrift">¶</a></h4>
+<blockquote>
+<div>Wenn mit die ersten Meldungen so aussehen, fehlen für die Erstellung
+von Freetz unbedingt notwendige Pakete im Build-System und müssen
+zunächst installiert werden.</div></blockquote>
+</div>
+<div class="section" id="warning-the-program-library-header-xy-was-not-found">
+<span id="warning-theprogramlibraryheaderxywasnotfound"></span><h4>WARNING: The program/library/header xy was not found…<a class="headerlink" href="#warning-the-program-library-header-xy-was-not-found" title="Link zu dieser Überschrift">¶</a></h4>
+<blockquote>
+<div>Wenn die Erstellung mit einem Fehler abbricht, kann diese Warnung zu
+Beginn des Vorgangs darauf hindeuten, dass für bestimmte ausgewählte
+Optionen notwendige Pakete im Build-System fehlen.</div></blockquote>
+</div>
+<div class="section" id="could-not-download-firmware-image">
+<span id="couldnotdownloadfirmwareimage"></span><h4>Could not download firmware image<a class="headerlink" href="#could-not-download-firmware-image" title="Link zu dieser Überschrift">¶</a></h4>
+<div class="section" id="ehemals-no-such-file-fritz-box-xxxxxxxxx-aa-bb-cc-image">
+<span id="ehemals-nosuchfilefritz-box-xxxxxxxxx-aa-bb-cc-image"></span><h5>(ehemals: No such file `FRITZ.Box_xxxxxxxxx.aa.bb.cc.image‘)<a class="headerlink" href="#ehemals-no-such-file-fritz-box-xxxxxxxxx-aa-bb-cc-image" title="Link zu dieser Überschrift">¶</a></h5>
+<blockquote>
+<div><div class="line-block">
+<div class="line">AVM selbst stellt für einen Box-Typ meist nur das aktuellste
+Firmware-Image zum <a class="reference external" href="Download.html">Download</a> bereit. Jede
+Freetz-Version unterstützt lediglich nur die Versionen, die in der
+Datei <code class="docutils literal notranslate"><span class="pre">FIRMWARES</span></code> aufgelistet sind. Aus lizenzrechtlichen Gründen
+darf das Freetz-Projekt keine AVM-Firmwares bereitstellen.</div>
+<div class="line">Anbei Lösungsvorschläge:</div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Allgemeiner Hinweis: Im
+<a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=119856">​Suche-Firmware-Sammelthread</a>
+kann man nach älteren Firmware-Versionen fragen (das Firmware-Image
+manuell in den Ordner <code class="docutils literal notranslate"><span class="pre">'dl/fw/'</span></code> im Freetz-Verzeichnis kopieren).</li>
+<li>Einsteiger: Stets die aktuellste <a class="reference external" href="index.html#StabileVersion">stabile
+Version</a> benutzen oder die
+<a class="reference external" href="index.html#Vorabversion">Vorabversion</a> probieren!</li>
+<li>Fortgeschrittene/Entwickler: Die
+<a class="reference external" href="index.html#Entwicklerversion">Entwicklerversion</a> unterstützt
+(meist) alle aktuellen Firmware-Versionen.</li>
+<li>Experimentierfreudige User: In <a class="reference external" href="help/howtos/common/install/menuconfig.html">make
+menuconfig</a> unter
+<em>Advanced Options ⇒ Override firmware source</em> den Namen der
+herunterzuladenen Image Datei anpassen.
+<img alt="Warning" src="../_images/exclamation1.png" /> Vorsicht: Evtl. sind weitere Anpassungen im Quellcode
+notwendig und zur Sicherheit ein passendes Recover-Image bereit
+halten.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="please-copy-the-following-file-into-the-dl-fw-sub-directory-manually-fritz-box-aa-bb-cc-ddddd-image">
+<span id="pleasecopythefollowingfileintothedlfwsub-directorymanually-fritz-box-aa-bb-cc-ddddd-image"></span><h4>Please copy the following file into the ‚dl/fw‘ sub-directory manually: fritz_box_aa_bb_cc-ddddd.image<a class="headerlink" href="#please-copy-the-following-file-into-the-dl-fw-sub-directory-manually-fritz-box-aa-bb-cc-ddddd-image" title="Link zu dieser Überschrift">¶</a></h4>
+<blockquote>
+<div>Die Labor-Firmwares können nicht direkt vom AVM-FTP-Server
+heruntergeladen werden. Sie müssen manuell von der
+<a class="reference external" href="http://www.avm.de/Labor">​AVM-Labor-Seite</a> geladen werden, wobei
+die Nutzungsbedingungen zu bestätigen sind. Die Dateien müssen dann
+entpackt und das darin enthaltene Image in den Ordner ‚dl/fw‘ im
+Freetz-Verzeichnis kopiert werden. Hierbei gilt auch das zur vorigen
+Frage Gesagte.</div></blockquote>
+</div>
+<div class="section" id="ln-cannot-execute-binary-file">
+<span id="a-ln-cannotexecutebinaryfile"></span><h4>./ln: cannot execute binary file<a class="headerlink" href="#ln-cannot-execute-binary-file" title="Link zu dieser Überschrift">¶</a></h4>
+<blockquote>
+<div>Das aktuelle Verzeichnis ‚.‘ ist im Pfad (Variable PATH). Zum
+erfolgreichen Erstellen muss es entfernt werden.</div></blockquote>
+</div>
+<div class="section" id="filesystem-image-too-big">
+<span id="filesystemimagetoobig"></span><h4>Filesystem image too big<a class="headerlink" href="#filesystem-image-too-big" title="Link zu dieser Überschrift">¶</a></h4>
+<blockquote>
+<div>Das Firmware-Image passt nicht in den Flash-Speicher der ausgewählten
+Box.</div></blockquote>
+<ul class="simple">
+<li>Bei manchen Boxen kann dies bereits auftreten, wenn überhaupt keine
+zusätzlichen Pakete ausgewählt sind, da die grundlegende
+Freetz-Infrastruktur bereits einigen Platz belegt und die AVM-Images
+schon knapp unter dem Maximalwert liegen. In diesem Fall ist es
+notwendig, unter ‚Patches‘ einen oder mehrere der Remove-Patches
+auszuwählen, um nicht benötigte Komponenten der Original-Firmware zu
+entfernen. Näheres dazu im
+<a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=136974">​IPPF</a> und
+in
+<a class="reference external" href="http://wiki.ip-phone-forum.de/software:ds-mod:development:platz_sparen">​WIKI</a></li>
+<li>Wenn viele Pakete ausgewählt sind, sollte man sich beschränken oder
+versuchen per <a class="reference external" href="packages/usbroot.html">USBRoot</a> oder
+<a class="reference external" href="packages/nfs.html">NFSRoot</a> die Beschränkung des Flashs zu
+umgehen.</li>
+<li>Bei Boxen mit einem USB-Host (z.B. 7170,7270) kann man außer
+<a class="reference external" href="packages/usbroot.html">USBRoot</a> auch einzelne Pakete auf das
+externe USB-Medium (z.B. USB-Stick, USB-Festplatte) auslagern. Die
+Auslagerung wird nach dem make-Prozess automatisch von einem Skript
+namens <a class="reference external" href="help/howtos/common/external.html">external</a> ausgeführt. Im
+menuconfig finden sich die Optionen für die Auslagerung mittels
+external. Im Unterschied zum USB-Root wird hier nicht die gesamte
+Firmware, sondern nur ein Teil der Pakete ausgelagert.</li>
+<li>Wenn Pakete abgewählt wurden, sind ggfs. noch Shared Libraries
+ausgewählt, die nicht mehr benötigt werden (dies kann menuconfig
+nicht automatisch erkennen). Diese kann man dann manuell unter
+‚Advanced Options‘→‘Shared Libraries‘ abwählen - die auf benötigten
+lassen sich nicht deaktivieren. Alternativ kann man dies automatisch
+mittels <em>make config-clean-deps</em> bzw. <em>make
+config-clean-deps-keep-busybox</em> erledigen lassen.</li>
+</ul>
+</div>
+<div class="section" id="warning-not-enough-free-flash-space-for-answering-machine">
+<span id="warning-notenoughfreeflashspaceforansweringmachine"></span><h4>WARNING: Not enough free flash space for answering machine!<a class="headerlink" href="#warning-not-enough-free-flash-space-for-answering-machine" title="Link zu dieser Überschrift">¶</a></h4>
+<blockquote>
+<div>Im Gegensatz zur Meldung „Filesystem image too big“ passt das
+Firmware-Image in den Flash-Speicher der ausgewählten Box, der
+restliche Platz im Flash könnte aber für die Aufzeichnung von
+Nachrichten auf dem von AVM in der FW integrierten Anrufbeantworter
+zu klein sein oder komplett fehlen. Die Firmware sollte trotz dieser
+Warnung funktionieren, für Anrufbeantworter-Daten, FAX-Nachrichten
+und Sonstiges empfiehlt sich einen Stick mit einer FAT-Partition
+anzulegen und entsprechend in AVM-WebIF angeben, dass der
+Anrufbeantworter (oder andere Dienste) den externen Speicher nutzen
+sollten.</div></blockquote>
+<blockquote>
+<div>Hintergrundinformationen: Seit einigen Firmware-Versionen versucht
+AVM die restlichen Bytes im Flash dafür zu nutzen, eine
+jffs2-Partition anzulegen. Auf dieser Partition werden z.B.
+Anrufbeantworter-Nachrichten (TAM) und evtl. noch Faxe und Ähnliches
+abgespeichert. Bei älteren Boxen (z.B. 7170) kommt es fast immer
+dazu, dass im Image kaum mehr Platz frei ist, sodass die
+jffs2-Partition nicht angelegt wird und die Meldung nur als
+Warnhinweis angesehen werden sollte. Mehr dazu im
+<a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=186208">​IPPF-Thread</a>.
+In FREETZ seit Revision <a class="reference external" href="/changeset/3049">r3049</a>.</div></blockquote>
+</div>
+</div>
+<div class="section" id="beim-erstellen-tritt-immer-noch-ein-fehler-auf">
+<span id="beimerstellentrittimmernocheinfehlerauf"></span><h3>Beim Erstellen tritt immer noch ein Fehler auf…<a class="headerlink" href="#beim-erstellen-tritt-immer-noch-ein-fehler-auf" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Zunächst einmal im menuconfig unter ‚Advanced Options‘ das ‚Verbosity
+Level‘ auf 2 stellen und das make erneut ausführen. Danach im <a class="reference external" href="http://www.ip-phone-forum.de/forumdisplay.php?f=525">​IPPF
+Forum</a> nach
+der relevanten Fehlermeldung suchen und ggfs. einen passenden
+bestehenden oder neuen Thread aufmachen, wo dann unter Angabe der
+kompletten Fehlermeldung (bitte in Code-Tags), der Datei .config (als
+Attachment) und der verwendeten Version oder SVN-Revision um Hilfe
+bitten.</div></blockquote>
+</div>
+<div class="section" id="ich-kann-das-erzeugte-freetz-image-nicht-finden">
+<span id="ichkanndaserzeugtefreetzimagenichtfinden"></span><h3>Ich kann das erzeugte Freetz Image nicht finden?<a class="headerlink" href="#ich-kann-das-erzeugte-freetz-image-nicht-finden" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Freetz verschiebt alle fertigen Images in den Unterordner <em>images/</em>.</div></blockquote>
+<div class="figure">
+<img alt="" src="../_images/116.jpg" />
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="wo-finde-ich-diese-beruhmte-config-datei">
+<span id="wofindeichdieseberuhmte-config-datei"></span><h3>Wo finde ich diese berühmte .config-Datei?<a class="headerlink" href="#wo-finde-ich-diese-beruhmte-config-datei" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Die .config Datei beinhaltet die Hauptkonfiguration für den
+make-Aufruf beim Cross-Kompilieren der Firmware und liegt genau auf
+der Maschine die zur Erzeugung der Firmware verwendet wird und exakt
+im selben Hauptverzeichnis von FREETZ, von dem auch make ausgeführt
+wird. In der Datei steht z.B. welche Pakete/Branding/Libs usw. man
+ausgewählt hat. Die Datei .config ist eine reine Textdatei und wird
+typischerweise nach dem Aufruf von menuconfig automatisch angelegt
+bzw. aktualisiert. Bitte diese Datei nicht mit Config.in verwechseln!
+(häufiger Fehler) Wenn man die Datei nicht sehen kann, liegt es
+daran, dass sie ein „dot“ an der ersten Stelle hat und somit
+versteckt ist.</div></blockquote>
+<blockquote>
+<div><p>Alternativ kann man die Datei auch im selbsterzeugten Firmware-Image
+finden, denn .image-Dateien sind nichts anderes als gewöhnliche
+tar-Archive, die z.B. mit WinRAR oder 7Zip ausgepackt werden können.</p>
+<p>Neuerdings wird die .config-Datei auch mit ins Image genommen (wenn
+man es nicht explizit abwählt) und befindet sich in einer
+komprimierten Form auf der Box. Die Datei kann über das FREETZ-WebIF
+angesehen und sogar herunterladen werden. Zu finden ist die Datei
+unter Status→FREETZ-Info.</p>
+</div></blockquote>
+</div>
+<div class="section" id="wie-bekomme-ich-die-config-datei-auf-den-pc">
+<span id="wiebekommeichdie-config-dateiaufdenpc"></span><h3>Wie bekomme ich die .config-Datei auf den PC?<a class="headerlink" href="#wie-bekomme-ich-die-config-datei-auf-den-pc" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Die .config bekommt man sehr einfach mit der
+<a class="reference external" href="http://winscp.net/eng/download.php">​WinSCP-Software</a> auf den PC
+kopiert.</div></blockquote>
+<p>Zuerst müsst Ihr euch den
+<a class="reference external" href="http://winscp.net/eng/download.php">​WinSCP</a> auf den PC installieren
+und dann starten. In der Startmaske gebt Ihr folgende sachen ein (siehe
+Bild):</p>
+<div class="figure">
+<img alt="" src="../_images/110.jpg" />
+</div>
+<p>Die benötigte IP-Adresse eurer Freetz-Buildumgebung erhaltet Ihr wenn
+ihr folgenden Befehl in der Konsole eingebt: <strong>ifconfig</strong></p>
+<div class="figure">
+<img alt="" src="../_images/114.jpg" />
+</div>
+<p><strong>Benutzername</strong> und <strong>Kennwort</strong> sind wie gewohnt <strong>freetz freetz</strong> Als
+Protokoll nutzt ihr <strong>FTP (Keine Verschlüsselung)</strong> Wenn Ihr nun auf
+<strong>Anmelden</strong> drückt sollte folgendes Bild zu sehen sein:</p>
+<div class="figure">
+<img alt="" src="../_images/115.jpg" />
+</div>
+<p>Als nächstes wechseln wir in das Hauptverzeichnis von FREETZ (im
+Beispiel ist das <strong>freetz-trunk</strong>).</p>
+<div class="figure">
+<img alt="" src="../_images/111.jpg" />
+</div>
+<p>Dort makieren wir die gesuchte .config mit der Mause und öffnen das
+Kontext-Menu mit der rechten Maustaste und drücken auf kopieren:</p>
+<div class="figure">
+<img alt="" src="../_images/112.jpg" />
+</div>
+<p>Im nächsten Fenster wählen wir nur noch das Zielverzeichnis auf dem PC
+aus und drücken auf <strong>Kopieren</strong>.</p>
+<div class="figure">
+<img alt="" src="../_images/113.jpg" />
+</div>
+<p>Jetzt solltet Ihr die <strong>.config</strong> auf eurem PC finden.</p>
+</div>
+</div>
+<div class="section" id="flashen-des-firmware-images">
+<span id="flashendesfirmware-images"></span><h2>Flashen des Firmware-Images<a class="headerlink" href="#flashen-des-firmware-images" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="wie-installiere-ich-das-freetz-image">
+<span id="wieinstalliereichdasfreetz-image"></span><h3>Wie installiere ich das Freetz-Image?<a class="headerlink" href="#wie-installiere-ich-das-freetz-image" title="Link zu dieser Überschrift">¶</a></h3>
+<p><strong>Wenn noch eine Original-AVM-Firmware installiert ist, …</strong></p>
+<p>gibt es zwei Möglichkeiten:</p>
+<ul class="simple">
+<li>die normale Installation über das AVM-Webinterface (wie gewohnt beim
+Update)</li>
+<li>das Script tools/push_firmware.sh (befindet sich im Freetz
+Build-Verzeichnis - also z.B. unter „freetz-1.1.4“). Hiermit lässt
+sich auch bei den Speedports Freetz installieren, was über das
+Webinterface nicht so einfach möglich ist <a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=172137">​Unterpunkt: „Hochladen
+per
+Weboberfläche“</a></li>
+</ul>
+<p><strong>Wenn bereits Freetz auf der Box ist, …</strong></p>
+<ul class="simple">
+<li>ist die bequemste Variante das Firmware-Update über die
+Freetz-Webinterface-Startseite. Dabei können bei Bedarf auch die
+AVM-Dienste weiterlaufen (Internetverbindung bleibt somit bestehen)
+oder können Angehalten werden, um den zusätzlichen Platz im RAM zu
+gewinnen. Das Gute an dieser Methode ist, dass man nach dem Upload
+des Images einen ausführlichen Bericht zu sehen bekommt und
+anschließend den Zeitpunkt des Reboots (und somit des eigentlichen
+Updates) manuell festlegen kann.</li>
+</ul>
+<p><a href="#id9"><span class="problematic" id="id10">**</span></a>Flashen eines freetz-images + einer
+.<a href="#id11"><span class="problematic" id="id12">**</span></a><a class="reference external" href="help/howtos/common/external.html">external</a><a href="#id13"><span class="problematic" id="id14">**</span></a>:
+**</p>
+<p>Grundsätzlich sei gesagt, dass für diese Funktion freetz bereits auf der
+Box laufen muss.</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Sowohl die .image-datei als auch die .external-Datei, soweit diese
+erstellt wurde, lassen sich mit einem einzigen Rebootvorgang auf
+die Box laden.</div>
+<div class="line">Dabei ist folgendes Vorgehen zu empfehlen:</div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Die .external-Datei hochladen. Es wird automatisch versucht alle
+Programme die schon ausgelagert wurden zu beenden. Sollte ein Fehler
+auftreten, bitte vorher händisch alle Programme beenden. Hintergrund:
+Beim Upload-Vorgang wird der Inhalt der alten mit der neuen .external
+überschrieben.</li>
+<li>Die .image-Datei hochladen.</li>
+<li>Box-Reboot anstoßen</li>
+</ul>
+</div>
+<div class="section" id="beim-flashen-meldet-das-avm-webinterface-dass-das-image-keine-passende-firmware-enthalt">
+<span id="beimflashenmeldetdasavm-webinterfacedassdasimagekeinepassendefirmwareenthalt"></span><h3>Beim Flashen meldet das AVM-Webinterface, dass das Image keine passende Firmware enthält<a class="headerlink" href="#beim-flashen-meldet-das-avm-webinterface-dass-das-image-keine-passende-firmware-enthalt" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Das in der Box (im Urlader) eingestellte Branding muss auch in der
+verwendeten Firmware enthalten sein. Also bitte mal prüfen, ob das
+der Fall ist und ggfs. das Image mit dem richtigen Branding neu
+erstellen.</div></blockquote>
+</div>
+<div class="section" id="freetz-trunk-wurde-per-avm-firmware-update-geflasht-nach-dem-neustart-scheint-sich-aber-nichts-geandert-zu-haben">
+<span id="freetz-trunkwurdeperavmfirmware-updategeflashtnachdemneustartscheintsichabernichtsgeandertzuhaben"></span><h3>Freetz-Trunk wurde per AVM Firmware-Update geflasht, nach dem Neustart scheint sich aber nichts geändert zu haben<a class="headerlink" href="#freetz-trunk-wurde-per-avm-firmware-update-geflasht-nach-dem-neustart-scheint-sich-aber-nichts-geandert-zu-haben" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Sollte nach dem Flashen von Freetz per Firmware-Update über das
+AVM-Webinterface und dem nachfolgenden Neustart das
+Freetz-Webinterface auf Port 81 nicht zur Verfügung stehen und sich
+auch die Firmware-Version im AVM-Webinterface nicht geändert haben,
+so war vermutlich das Flashen nicht erfolgreich. Ein deutlicher
+Hinweis darauf ist, wenn der Neustart der Box sehr schnell geht. Je
+nach Modell der Box und Größe der Firmware kann das Flashen ein bis
+zwei Minuten dauern und in dieser Zeit blinkt eine Kontroll-LED an
+der Box, genauso wie bei einem normalen Firmware Update. Ursache
+hierfür ist vermutlich ein Mangel an freiem Arbeitsspeicher auf der
+Box während dem Update.</div></blockquote>
+<p>Dann können folgende Schritte ggf. Abhilfe schaffen:</p>
+<ul class="simple">
+<li>Zunächst ein Image ohne irgendwelche Pakete erstellen (was sowieso
+empfohlen wird) und ggf. durch Remove-Patches die Größe weiter
+reduzieren.</li>
+<li>Alternativ die letzte Stable-Version oder eine andere ältere (und
+hoffentlich kleinere) Version runterladen und kompilieren.</li>
+<li>Diese Version dann über das AVM-Webinterface flashen und die Box
+neustarten.</li>
+<li>Dann das gewünschte Image über das Freetz-Webinterface (Port 81)
+flashen und auswählen, dass die AVM Dienste heruntergefahren werden.</li>
+<li>Nach dem Flash-Vorgang im angezeigten Log überprüfen, ob der Vorgang
+erfolgreich war, und die Box über das Freetz-Webinterface neustarten.</li>
+<li>Danach sollte das gewünschte Image erfolgreich geflasht worden sein.</li>
+</ul>
+<blockquote>
+<div>Weitere Informationen gibt es
+<a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?p=1447104">​hier</a>
+und
+<a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=204328">​hier</a>.</div></blockquote>
+</div>
+</div>
+<div class="section" id="probleme-nach-dem-erfolgreichen-flashen">
+<span id="problemenachdemerfolgreichenflashen"></span><h2>Probleme nach dem (erfolgreichen) Flashen<a class="headerlink" href="#probleme-nach-dem-erfolgreichen-flashen" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="wie-lautet-das-standard-passwort-fur-freetz">
+<span id="wielautetdasstandard-passwortfurfreetz"></span><h3>Wie lautet das Standard-Passwort für Freetz?<a class="headerlink" href="#wie-lautet-das-standard-passwort-fur-freetz" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Das Standard-Passwort für Freetz(sowohl Konsolen- als auch
+Website-Login) lautet ‚freetz‘. Benutzername für die Konsole ist
+‚root‘, für das Freetz-Webinterface standardmäßig ‚admin‘. Beim
+ersten Einloggen per Telnet (user: root) muss das Passwort geändert
+werden. Im Webinterface erscheint ein Hinweis, falls das
+Standardpasswort gesetzt ist. Ändert das Passwort bitte zu eurer
+eigenen Sicherheit.</div></blockquote>
+</div>
+<div class="section" id="nach-dem-flashen-ist-das-avm-webinterface-nicht-mehr-erreichbar">
+<span id="nachdemflashenistdasavm-webinterfacenichtmehrerreichbar"></span><h3>Nach dem Flashen ist das AVM-Webinterface nicht mehr erreichbar<a class="headerlink" href="#nach-dem-flashen-ist-das-avm-webinterface-nicht-mehr-erreichbar" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Wenn im Image (z.B. wegen OpenVPN) die OpenSSL-Libraries eingebaut
+wurden, gibt es Probleme mit TR069. Es ist dann erforderlich entweder
+auf OpenSSL-Libs zu verzichten, sie statisch mit in die jeweiligen
+Pakete einzubauen (Speicherverschwendung), TR069 zu deaktivieren
+(funktioniert nur bei älterer Firmware) oder per patch <a class="reference external" href="patches/remove_tr069.html">TR069
+komplett zu entfernen</a> (funktioniert
+auch bei aktueller Firmware).</div></blockquote>
+<blockquote>
+<div><p>Zum Deaktivieren von TR069 muss die Datei /var/flash/tr069.cfg
+mittels nvi, nmcedit oder nnano editiert werden. So sollte es
+aussehen:</p>
+<p>Bei neueren Firmwares reicht es nicht mehr aus TR069 zu deaktivieren.
+Hier crasht der ctlmgr auch bei anderen Aktionen beim Zugriff auf die
+OpenSSL-Libs. Manchmal schafft das Ersetzen der libavmhmac (im
+menuconfig unter Advanced Options→Shared Libraries→Crypto &amp;
+SSL→Replace libavmhmac) Abhilfe, aber auch das reicht bei neuesten
+Firmwares nicht aus und führt eventuell zu Reboot Schleifen. Unter
+Umständen funktionieren danach auch nicht mehr alle Funktionen, wie
+z.B. die FritzMini Unterstützung, das Fritz-App von AVM, u.s.w.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Um heraus zu finden, ob die problematischen OpenSSL-Libs ins Image
+eingebunden werden, kann man folgenden Befehl ausführen:</p>
+<p>Es folgt eine Liste mit Paketen die die OpenSSL-Libs benötigen,
+manche auch nur optional: <em>bip, curl, dropbear mit sftp-Support,
+mcabber, netsnmp, OpenVPN, Tor, transmission, Vsftpd und wget</em></p>
+</div></blockquote>
+<blockquote>
+<div><p>Man kann die betroffenen Pakete statisch zu bauen (d.h. ohne externe
+OpenSSL-Libs). Dies ist bereits für einige Pakete möglich, wie z.B.
+OpenVPN und CURL. Man muss allerdings beachten, dass Binaries dadurch
+sehr gross werden, weil die OpenSSL-Libs dann ein Teil des statischen
+Binary sind. In diesem Fall ist es anzuraten solche Pakete mit
+<a class="reference external" href="help/howtos/common/external.html">external</a> auszulagern, was aber
+am höheren Speicherbedarf im Betrieb nichts ändert. Auch wenn
+eigentlich kein Paket mehr die OpenSSL-Libs benötigt, kann es sein,
+dass diese immer noch ins Image gepackt werden. Das kommt daher, dass
+menuconfig eine automatische Abwahl nicht unterstützt. Hierfür gibt
+es den Befehl <em>make config-clean-deps</em> bzw. <em>make
+config-clean-deps-keep-busybox</em>.</p>
+<p>Vorsicht: Wie im Beispiel zu sehen werden hierbei auch Optionen
+deaktiviert die absichtlich gewählt aber nicht per default aktiviert
+sind.</p>
+</div></blockquote>
+</div>
+<div class="section" id="nach-dem-flashen-ist-die-box-nicht-mehr-erreichbar-und-oder-rebootet-standig">
+<span id="nachdemflashenistdieboxnichtmehrerreichbarundoderrebootetstandig"></span><h3>Nach dem Flashen ist die Box nicht mehr erreichbar und/oder rebootet ständig<a class="headerlink" href="#nach-dem-flashen-ist-die-box-nicht-mehr-erreichbar-und-oder-rebootet-standig" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Dies kann unterschiedlichste Gründe haben. Zuerst sollte man die Box
+vom DSL trennen und neustarten. Tritt das Problem dann nicht mehr auf
+hat man höchst wahrscheinlich einen <a class="reference external" href="FAQ.html#NachdemFlashenistdasAVM-Webinterfacenichtmehrerreichbar">Konflikt mit
+TR069</a>.</div></blockquote>
+<blockquote>
+<div>Wenn das nicht half lässt sich das Problem durch Einspielen einer
+anderen Firmware in der die problematische Funktion nicht enthalten
+ist eingrenzen. Grundsätzlich wird dies natürlich bei den
+Original-Firmwares von AVM der Fall sein; man kann aber auch durch
+Deaktivieren von Optionen und Neuerstellen von Freetz ausprobieren,
+woran es liegt. Da das Webinterface nicht mehr erreichbar ist, muss
+ein Update auf andere Weg erfolgen. Hier gibt es drei Möglichkeiten:</div></blockquote>
+<ul class="simple">
+<li>Das Script tools/push_firmware.sh. Hiermit lassen sich beliebige
+Images einspielen.</li>
+<li>Ein Recover-Image von AVM. Dieses spielt wieder eine
+Original-Firmware von AVM ein.</li>
+<li>Update über das Freetz Interface falls nur das AVM Interface nicht
+erreichbar ist (häufig bei TR069 Konflikten).</li>
+</ul>
+</div>
+<div class="section" id="beim-aufruf-des-original-avm-webinterface-von-aussen-bekomme-ich-trotz-portweiterleitung-nur-eine-weisse-seite">
+<span id="beimaufrufdesoriginal-avm-webinterfacevonaussenbekommeichtrotzportweiterleitungnureineweisseseite"></span><h3>Beim Aufruf des Original-AVM-Webinterface von aussen bekomme ich trotz Portweiterleitung nur eine weisse Seite?<a class="headerlink" href="#beim-aufruf-des-original-avm-webinterface-von-aussen-bekomme-ich-trotz-portweiterleitung-nur-eine-weisse-seite" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Dies ist ein ‚Sicherheitsmechanismus‘ von AVM der offensichtlich
+überprüft ob der Hostname unter dem die Box aufgerufen wurde per
+Reverse-DNS Anfrage zur Box führt. Hierbei werden sowohl die internen
+Hostnamen akzepriert wie fritz.box oder fritz.fonwlan.box als auch
+der DynDNS Hostname oder eigene (zb mit dnsmasq) vergebene Namen.
+Löst der Name falsch auf wird eine leere Seite gezeigt. Dies ist z.B.
+grundsätzlich bei Remote Zugriff auf Boxen im IP-Client Modus der
+Fall da hier die Box den DynDNS Hostnamen und die externe IP nicht
+kennt. Das Problem tritt aber auch auf wenn die IP der Box und
+eventuelle Aliase in der exhosts Datei nicht übereinstimmen (manchmal
+ein nützlicher Hinweis).</div></blockquote>
+<blockquote>
+<div>Es gibt (mindestens) 2 Möglichkeiten diese Probleme zu umgehen:</div></blockquote>
+<ul class="simple">
+<li>Schnell: Man kann eine Browser Erweiterung installieren, welche es
+erlaubt, den ‚HTTP_REFERER‘ zu unterdrücken.</li>
+<li>Komfortabel: Man startet zb mit ‚Putty Portable‘ einen Dynamischen
+SSH Tunnel nach Hause (zu localhost) den man im Browser als Socks5
+Proxy mit entfernter DNS Auflösung einträgt und nutzt seine LAN
+internen Hostnamen (auch die von dnsmasq) und IPs. Dies hat den
+Vorteil das man nur einen SSH port nach aussen freigeben muss um
+Zugriff auf alle TCP basierten Dienste aller Geräte zu Hause zu haben
+- egal ob HTTP, HTTPS oder FTP und auf welchem Port. Auch
+funtionieren alle LAN internen Bookmarks wie zu Hause. Um bequem
+zwischen direktem und Proxy Zugriff umschalten zu können hilft zb.
+der Firefox Plugin ‚FoxyProxy‘ der sich auch auf ‚Firefox Portable‘
+installieren lässt. Wenn man dann noch über HTTPS seine Box(en)
+administriert ist die Verbindung auch lokal auf Gastsystemen nicht
+abhörbar. Dieses Verfahren funktioniert super mit dropbear als
+server. Der ssh client von dropbear unterstützt dagegen leider keine
+dynamischen Tunnels, wohl aber jeder Linux OpenSSH client.</li>
+</ul>
+</div>
+<div class="section" id="das-freetz-webinterface-akzeptiert-die-standardkombination-fur-benutzer-und-passwort-admin-freetz-nicht">
+<span id="dasfreetz-webinterfaceakzeptiertdiestandardkombinationfurbenutzerundpasswortadminfreetznicht"></span><h3>Das Freetz-Webinterface akzeptiert die Standardkombination für Benutzer und Passwort (admin/freetz) nicht<a class="headerlink" href="#das-freetz-webinterface-akzeptiert-die-standardkombination-fur-benutzer-und-passwort-admin-freetz-nicht" title="Link zu dieser Überschrift">¶</a></h3>
+<p>In den meisten Fällen hilft es, wenn man die Freetz-Konfiguration (und
+alle anderen Mods) löscht. Dies kann zum Beispiel über ein
+Pseudo-Firmware Update mit Hilfe des
+<a class="reference external" href="/browser/trunk/tools/images/uninstall.image">uninstall.image</a><a class="reference external" href="/export/HEAD/trunk/tools/images/uninstall.image">​</a>
+geschehen.</p>
+</div>
+<div class="section" id="kann-man-pakete-patches-nachinstallieren-ohne-das-freetz-image-neu-zu-erstellen">
+<span id="kannmanpaketepatchesnachinstallierenohnedasfreetz-imageneuzuerstellen"></span><h3>Kann man Pakete/Patches nachinstallieren, ohne das FREETZ-Image neu zu erstellen?<a class="headerlink" href="#kann-man-pakete-patches-nachinstallieren-ohne-das-freetz-image-neu-zu-erstellen" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Nein, das ist im Normalfall und ohne Weiteres nicht möglich. Nach
+einer Veränderung der Konfiguration unter „menuconfig“ sollte
+typischerweise ein „make“ ausgeführt werden, welches als Ergebnis ein
+neues Image liefern soll. Dieses Image muss dann über Firmware-Update
+auf die Box gebracht werden, wenn man seine Änderungen auf der Box
+haben will. Einer der Gründe dafür ist das spezielle Dateisystem im
+Flash-Speicher der Box. Dieses Dateisystem ähnelt einer Archivdatei,
+ist sehr stark komprimiert und speziell für Flash-Speicher optimiert.
+Änderungen in einem solchen Dateisystem sind jedoch immer mit einer
+neuen Rearchivierung verbunden und erfordern somit den Neuaufbau des
+kompletten Systems.</div></blockquote>
+<blockquote>
+<div>Es gibt jedoch Ausnahmen aus dieser Regelung:</div></blockquote>
+<ul class="simple">
+<li><a class="reference external" href="help/howtos/common/external.html">external</a>. Man kann nur die
+Binaries der ausgelagerten Pakete neu kompilieren. Somit kann man
+z.B. ein Paket updaten, ohne ein neues Image zu erstellen. Diese
+Methode ist allerdings sehr riskant, weil external typischerweise
+nicht alle Dateien auslagert. Somit läuft man immer Gefahr
+Versionsunterschiede zwischen den ausgelagerten und fest integrierten
+Inhalten desselben Pakets zu bekommen.</li>
+<li>USB-ROOT. Hier könnte man wenigstens theoretisch das komplette
+Dateisystem (typischerweise ext2) „on the fly“ ändern und braucht
+dafür kein Firmwareupdate. Allerdings wird auch hier dringend
+empfohlen das USB-ROOT-System grundsätzlich als „read-only“ zu
+mounten und nur bei Bedarf (z.B. fürs Update) es kurzzeitig
+beschreibbar zu machen.</li>
+</ul>
+</div>
+<div class="section" id="nach-dem-flashen-ist-das-freetz-webinterface-nicht-mehr-erreichbar">
+<span id="nachdemflashenistdasfreetz-webinterfacenichtmehrerreichbar"></span><h3>Nach dem Flashen ist das Freetz-Webinterface nicht (mehr) erreichbar<a class="headerlink" href="#nach-dem-flashen-ist-das-freetz-webinterface-nicht-mehr-erreichbar" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Bei der Firmware XX.05.05 (7240, 7270 V2, 7270 V3 und 7390) belegt
+ein AVM Daemon (contfiltd) den vom Freetz Webinterface verwendeten
+Port 81. Um wieder Zugriff auf das Freetz Webinterface zu erhalten
+ist die Kindersicherung im AVM Webinterface zu deaktivieren. Wer
+dieses Feature benötigt sollte das Freetz Webinterfaces auf einen
+anderen Port verlegen. Dies kann über das Webinterface
+(Freetz→Weboberfläche) oder per Kommandozeile (Telnet, SSH) erledigt
+werden.</div></blockquote>
+</div>
+<div class="section" id="der-dynamische-teil-des-avm-webinterface-verhalt-sich-nicht-wie-erwartet">
+<span id="derdynamischeteildesavm-webinterfaceverhaltsichnichtwieerwartet"></span><h3>Der dynamische Teil des (AVM-)Webinterface verhält sich nicht wie erwartet<a class="headerlink" href="#der-dynamische-teil-des-avm-webinterface-verhalt-sich-nicht-wie-erwartet" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Aktualisiert man die Firmware und macht dabei einen Versionssprung im
+AVM Teil (z.B. von 05.05 nach 05.21 bei der 7270v2 oder von einer
+Laborversion 05.06 nach 05.21 bei der 7390), kann es vorkommen, dass der
+dynamische Teil des Webinterfaces nicht ordnungsgemäß funktioniert (z.B.
+JavaScript Fehler „jxl.getFormElements is not a funtion“). Besonders
+auffällig ist das unter <em>Internet→Zugangsdaten</em>: Wechselt man zwischen
+den Zugangsmöglichkeiten, sollte sich die Seite eigentlich dynamisch
+(JavaScript) anpassen, tut sie aber nicht. Daher grundsätzlich <strong>nach
+einer Firmwareaktualisierung</strong>, und insbesondere wenn das Webinterface
+auffällig erscheint, <strong>den Browsercache löschen</strong>!</p>
+</div>
+</div>
+<div class="section" id="freetz-aktualisieren">
+<span id="freetzaktualisieren"></span><h2>Freetz aktualisieren<a class="headerlink" href="#freetz-aktualisieren" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ich-habe-momentan-eine-laborversion-installiert-kann-ich-freetz-einfach-daruber-flashen">
+<span id="ichhabemomentaneinelaborversioninstalliert-kannichfreetzeinfachdaruberflashen"></span><h3>Ich habe momentan eine Laborversion installiert. Kann ich Freetz einfach darüber flashen?<a class="headerlink" href="#ich-habe-momentan-eine-laborversion-installiert-kann-ich-freetz-einfach-daruber-flashen" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Es ist ratsam die Box zunächst zu recovern. Anschliessend den letzten
+Finalrelease aufspielen (falls es eine aktuellere Firmware gibt als das
+Recovery-Image). Außerdem sollte man insbesondere nach einer
+Aktualisierung von einer Laborversion den Browsercache löschen (auch
+wenn man die AVM Recovery auf die Box gespielt hat).</p>
+<p><strong>WICHTIG</strong>: Vor dem Recovern (mindestens) die aktuellen Zugangsdaten
+bereithalten (alternativ Start-Code). Zugangsdaten findet man als 1&amp;1
+Kunde beispielsweise im 1&amp;1 Controllcenter unter „Zugangsdaten“.</p>
+</div>
+<div class="section" id="ich-habe-eine-alte-freetz-firmware-auf-der-box">
+<span id="ichhabeeinealtefreetz-firmwareaufderbox"></span><h3>Ich habe eine alte Freetz-Firmware auf der Box<a class="headerlink" href="#ich-habe-eine-alte-freetz-firmware-auf-der-box" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="update-von-freetz-version-xy-auf-freetz-version-yz">
+<h4>Update von Freetz-Version XY auf Freetz-Version YZ:<a class="headerlink" href="#update-von-freetz-version-xy-auf-freetz-version-yz" title="Link zu dieser Überschrift">¶</a></h4>
+<div class="line-block">
+<div class="line">In diesem Fall muss <strong>nur</strong> ein neues Freetz kompiliert / gebaut
+werden. Wie das geht ist
+<a class="reference external" href="help/howtos/common/install.html#Durchführung">hier</a> oder <a class="reference external" href="help/howtos/common/newbie.html">hier für
+Newbies</a> beschrieben.</div>
+</div>
+</div>
+<div class="section" id="wenn-avm-eine-neue-firmware-auf-den-markt-bringt">
+<span id="wennavmeineneuefirmwareaufdenmarktbringt"></span><h4>Wenn AVM eine neue Firmware auf den Markt bringt<a class="headerlink" href="#wenn-avm-eine-neue-firmware-auf-den-markt-bringt" title="Link zu dieser Überschrift">¶</a></h4>
+<div class="line-block">
+<div class="line">In diesem Fall muss Freetz ebenfalls neu gebaut werden, jedoch muss
+man eine Freetz-Version benutzen die dieses neue AVM-Firmware bereits
+unterstützt. Welche Firmware-Versionen von welcher Freetz Version
+unterstützt wird kann man hier nachgelesen: <a class="reference external" href="FAQ.html#WelcheBoxenundwelcheFirmwareswerdendurchFreetzunterstützt:">Unterstützte Firmwares in
+den unterschiedlichen
+Freetz-Versionen</a></div>
+</div>
+<p>Es empfiehlt sich in diesem Fall, Freetz neu auszuchecken und für die
+neue AVM Firmware komplett neu zu kompilieren, anstatt eine „alte“
+Build-Umgebung wiederzuverwenden (auch <em>make distclean</em> oder <em>make
+dirclean</em> sind unter Umständen nicht so effektiv, wie von vorne
+anzufangen).</p>
+</div>
+</div>
+</div>
+<div class="section" id="konfiguration">
+<span id="id15"></span><h2>Konfiguration<a class="headerlink" href="#konfiguration" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="wo-landen-die-diversen-konfigurationen-auf-der-fritzbox">
+<span id="wolandendiediversenkonfigurationenaufderfritzbox"></span><h3>Wo landen die diversen Konfigurationen auf der Fritzbox?<a class="headerlink" href="#wo-landen-die-diversen-konfigurationen-auf-der-fritzbox" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Sämtliche Konfigurationen auf der Fritzbox liegen unter /tmp/flash.
+Dies ist zu beachten, wenn man eine Freetz-FW baut, da die
+Konfigurationen damit nicht im festen Firmware-Teil im Image liegen.
+Alles unter /tmp/flash wird daher beim FW-Update auch nicht
+verändert, so dass die diversen Konfigurationen nach einem FW-Update
+auch erhalten bleiben. Wichtig ist, dass man nach Änderungen an
+Konfigurationsdateien unter /tmp/flash noch das Kommando „modsave“ in
+der Konsole aufruft, damit sie auch gespeichert werden. Näheres dazu
+folgt weiter unten.</div></blockquote>
+</div>
+<div class="section" id="konfiguration-in-der-aktuellen-sicherheitsstufe-nicht-verfugbar">
+<span id="konfigurationinderaktuellensicherheitsstufenichtverfugbar"></span><h3>Konfiguration in der aktuellen Sicherheitsstufe nicht verfügbar!<a class="headerlink" href="#konfiguration-in-der-aktuellen-sicherheitsstufe-nicht-verfugbar" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Es gibt verschiedene Sicherheitsstufen. Je nach ausgewählter Stufe
+sind nicht alle Konfigurationsdateien änderbar. Um die
+Sicherheitsstufe zu ändern sind folgende Befehle direkt in der
+Konsole der Box per Telnet oder SSH auszuführen (geht leider nicht
+per Rudi-Shell, denn die benötigt selbst eine Sicherheitsstufe „0“).</div></blockquote>
+<blockquote>
+<div><p>Ermitteln der aktuellen Sicherheitsstufe (hier: Freetz-1.1.4):</p>
+<p><strong>Freetz-1.1.x und älter:</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Ab Freetz-1.2.x und SVN-trunk
+≥**`r3318 &lt;/changeset/3318&gt;`__**:</strong></p>
+<p>Erlaubte Werte mit Erläuterung (Default: 2):</p>
+</div></blockquote>
+</div>
+<div class="section" id="wie-deaktiviere-ich-das-passwort-fur-die-freetz-webseite">
+<span id="wiedeaktiviereichdaspasswortfurdiefreetz-webseite"></span><h3>Wie deaktiviere ich das Passwort für die Freetz-Webseite?<a class="headerlink" href="#wie-deaktiviere-ich-das-passwort-fur-die-freetz-webseite" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div><p>Folgende Befehle auf der Konsole ausführen:</p>
+<p>Hintergrund: Das Skript /tmp/flash/webcfg_conf wird gegenüber
+/etc/default.webcfg/webcfg_conf zum Erstellen der Konfigurationsdatei
+bevorzugt. Ein leeres Skript /tmp/flash/webcfg_conf erzeugt also eine
+leere Konfigurationsdatei ohne Passwort.</p>
+</div></blockquote>
+<p><img alt="Warning" src="../_images/exclamation1.png" /> Für Freetz-1.1.x ist <em>/tmp/flash/webcfg_conf</em> durch
+<em>/tmp/flash/httpd_conf</em> zu ersetzen.</p>
+</div>
+<div class="section" id="wie-andere-ich-das-passwort-fur-die-freetz-webseite">
+<span id="wieandereichdaspasswortfurdiefreetz-webseite"></span><h3>Wie ändere ich das Passwort für die Freetz-Webseite?<a class="headerlink" href="#wie-andere-ich-das-passwort-fur-die-freetz-webseite" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Das geht über das
+<a class="reference external" href="http://fritz.box:81/cgi-bin/passwd.cgi">​Webinterface</a> selbst:
+<code class="docutils literal notranslate"><span class="pre">http://fritz.box:81/cgi-bin/passwd.cgi</span></code></div></blockquote>
+</div>
+<div class="section" id="wie-andere-ich-das-passwort-fur-die-freetz-webseite-sofern-ich-es-vergessen-und-telnet-ssh-zugang-habe">
+<span id="wieandereichdaspasswortfurdiefreetz-webseitesofernichesvergessenundtelnetssh-zuganghabe"></span><h3>Wie ändere ich das Passwort für die Freetz-Webseite sofern ich es vergessen und Telnet/SSH-Zugang habe?<a class="headerlink" href="#wie-andere-ich-das-passwort-fur-die-freetz-webseite-sofern-ich-es-vergessen-und-telnet-ssh-zugang-habe" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div><p>Erstmal das Freetz-Webif stoppen:</p>
+<p>Dann mit vi in der Datei mod.cfg die Zeile, die mit export
+MOD_HTTPD_PASSWD beginnt, wie folgt abändern:</p>
+<div class="line-block">
+<div class="line">Speichern der Änderung: 1x ESC drücken und <code class="docutils literal notranslate"><span class="pre">:wq</span></code> eingeben.</div>
+<div class="line">Nun wieder das Freetz-Webif starten:</div>
+</div>
+<p>Jetzt kann man sich mit dem Passwort „freetz“ wieder einloggen.</p>
+</div></blockquote>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Bitte beachtet, dass diese Änderung <strong>NICHT</strong> reboot-resistent ist.
+Heißt, nach einem Reboot habt ihr wieder das vormalige, unbekannte
+Passwort.</div>
+<div class="line">Deshalb sollte man vor einem Neustart der Box im freetz-Menü unter
+<em>Einstellungen</em> das Passwort ändern/neu setzen.</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="wie-andere-ich-das-root-passwort">
+<span id="wieandereichdasroot-passwort"></span><h3>Wie ändere ich das root-Passwort?<a class="headerlink" href="#wie-andere-ich-das-root-passwort" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div><p>Folgende Befehle auf der Konsole ausführen:</p>
+<p>Nach Eingabe des Befehls ‚passwd‘ muss das Passwort eingegeben
+werden. Dabei wird das eingegebene Passwort ‚nicht‘ angezeigt. Zu
+einfache Passwörter werden nicht akzeptiert.</p>
+</div></blockquote>
+</div>
+<div class="section" id="andern-des-root-passwortes-uber-die-rudi-shell">
+<span id="anderndesroot-passwortesuberdierudi-shell"></span><h3>Ändern des root-Passwortes über die Rudi-Shell<a class="headerlink" href="#andern-des-root-passwortes-uber-die-rudi-shell" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="line-block">
+<div class="line">Wenn man das root-Passwort vergessen hat, aber noch Zugriff auf das
+Webinterface hat kann über die Rudi-Shell ein neues Passwort gesetzt
+werden:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(echo</span> <span class="pre">neuespasswort;</span> <span class="pre">sleep</span> <span class="pre">1;</span> <span class="pre">echo</span> <span class="pre">neuespasswort)</span> <span class="pre">|</span> <span class="pre">passwd</span></code></div>
+</div>
+</div>
+<div class="section" id="warum-kann-ich-mich-nach-einer-freetz-wiederherstellung-nicht-mehr-am-avm-webui-anmelden">
+<span id="warumkannichmichnacheinerfreetz-wiederherstellungnichtmehramavm-webuianmelden"></span><h3>Warum kann ich mich nach einer Freetz-Wiederherstellung nicht mehr am AVM-WebUI anmelden?<a class="headerlink" href="#warum-kann-ich-mich-nach-einer-freetz-wiederherstellung-nicht-mehr-am-avm-webui-anmelden" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Ist ein Passwort für das AVM-WebUI vergeben, wird dies als Hash in der
+ar7.cfg abgelegt und damit auch gesichert. Bei der Wiederherstellung
+setzt Freetz anstatt des ursprünglichen Passworts den Hash-String als
+Passwort. Im
+<a class="reference external" href="http://wiki.ip-phone-forum.de/gateways:avm:howtos:mods:password_auslesen">​IP-Phone-Forum-Wiki</a>
+ist beschrieben, wie man über einen Shell-Zugang die Passwort-Hashes
+auslesen kann.</p>
+</div>
+</div>
+<div class="section" id="probleme-im-betrieb">
+<span id="problemeimbetrieb"></span><h2>Probleme im Betrieb<a class="headerlink" href="#probleme-im-betrieb" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="var-flash-freetz-too-big">
+<span id="varflashfreetztoobig"></span><h3>/var/flash/freetz too big<a class="headerlink" href="#var-flash-freetz-too-big" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Das von Freetz vorgegebene Limit für die maximale Größe der
+Konfiguration wurde überschritten. Dieses Limit ist ein Schutz, um
+nicht unbeabsichtigt das TFFS volllaufen zu lassen. Das Limit kann
+folgendermaßen erhöht werden, man sollte aber den Füllstand des TFFS
+im Auge behalten:</div></blockquote>
+<p><img alt="Warning" src="../_images/exclamation1.png" /> Seit <a class="reference external" href="/changeset/5706">r5706</a> (trunk) wird das Setzen des
+Limits nicht mehr unterstützt.</p>
+</div>
+<div class="section" id="kein-ftp-zugriff-nach-freetz-moglich">
+<span id="keinftp-zugriffnachfreetzmoglich"></span><h3>Kein FTP-Zugriff nach Freetz möglich<a class="headerlink" href="#kein-ftp-zugriff-nach-freetz-moglich" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Hierbei handelt es sich um ein Problem das hauptsächlich in Freetz 1.1.x
+auftritt und wie im <a class="reference external" href="help/howtos/common/user.html">Howto</a> beschrieben
+gelöst werden kann.</p>
+</div>
+</div>
+<div class="section" id="entfernen-von-freetz-und-anderen-modifikationen">
+<span id="entfernenvonfreetzundanderenmodifikationen"></span><h2>Entfernen von Freetz und anderen Modifikationen<a class="headerlink" href="#entfernen-von-freetz-und-anderen-modifikationen" title="Link zu dieser Überschrift">¶</a></h2>
+<blockquote>
+<div>Im Ordner tools/images befindet sich ein uninstall image, das wie
+eine Firmware übers Webinterface geflasht wird und die
+Konfigurationsdateien entfernt. Da hiermit nur die
+Konfigurationsdateien entfernt werden ist natürlich auch noch eine
+original Firmware einzuspielen. Das „Update“ sollte vor einem
+Neustart erfolgen, da die Konfigurationsdateien ansonsten wieder
+angelegt werden. Am Einfachsten ist der Weg über ein AVM Recover
+(Dateien gibts für jede Box auf dem AVM-FTP). Auch hier werden
+sämtliche Konfigurationsdateien von Freetz gelöscht.</div></blockquote>
+</div>
+<div class="section" id="sonstiges">
+<span id="id16"></span><h2>Sonstiges<a class="headerlink" href="#sonstiges" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="andern-der-arbeitsgruppe-von-freetz-linux">
+<span id="andernderarbeitsgruppevonfreetz-linux"></span><h3>Ändern der Arbeitsgruppe von „freetz-linux“<a class="headerlink" href="#andern-der-arbeitsgruppe-von-freetz-linux" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="line-block">
+<div class="line">Damit unter Windows 7 und Vista der virtuelle PC „FREETZ-LINUX“ in der
+Netzwerkumgebung angezeigt wird, müssen der Client- und Host-PC in der
+gleichen „Arbeitsgruppe“ befinden:</div>
+</div>
+<ul class="simple">
+<li>Die erste Möglichkeit wäre, die Arbeitsgruppe des Host-PC in FREETZ
+zu ändern (und ist für Anfänger empfehlenswert).</li>
+<li>Die zweite und schönere Lösung ist es, die Arbeitsgruppe des
+virtuellen PC (also freetz-linux) anzupassen.
+Dazu geht man wie folgt vor:</li>
+</ul>
+<blockquote>
+<div><div class="line-block">
+<div class="line">An freetz-linux anmelden</div>
+<div class="line">Die smb.conf öffnen mit:</div>
+</div>
+<div class="line-block">
+<div class="line">Dann zur workgroup runterscrollen und dort den Namen ändern.</div>
+<div class="line">Die smb.conf speichern mit: „strg+x“</div>
+</div>
+<p>Und zum Schluss Samba neu starten:</p>
+</div></blockquote>
+</div>
+<div class="section" id="wie-finde-ich-die-ip-meiner-virtuellen-maschine">
+<span id="wiefindeichdieipmeinervirtuellenmaschine"></span><h3>Wie finde ich die IP meiner Virtuellen Maschine<a class="headerlink" href="#wie-finde-ich-die-ip-meiner-virtuellen-maschine" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="line-block">
+<div class="line">Die IP wird einem entweder beim Einloggen im Startbildschirm (Roter
+Kasten) oder mit folgendem Befehl : <strong>ifconfig</strong> in der VM angezeigt.</div>
+<div class="line">Nach Eingabe von <strong>ifconfig</strong> sollte folgende Anzeige in der VM zu
+sehen sein.</div>
+</div>
+<div class="line-block">
+<div class="line">Wie auf dem Auszug zu sehen hat die VM die <strong>192.168.XXX.203</strong> als IP
+bekommen. Die IP kann aber von System zu System anders lauten, das ist
+Abhängig vom IP-Bereich eures Systems. Sollte euch jedoch dort gar
+keine IP angezeigt werden, müsst ihr die Einstellungen eures PC’s bzw.
+eures VM-Players erneut überprüfen.</div>
+</div>
+</div>
+</div>
+<div class="section" id="weiterfuhrende-links">
+<span id="weiterfuhrendelinks"></span><h2>Weiterführende Links<a class="headerlink" href="#weiterfuhrende-links" title="Link zu dieser Überschrift">¶</a></h2>
+<p><a class="reference external" href="help/fritz_faq.html">Sonstige Tips und Tricks zur Fritzbox
+allgemein</a></p>
+<ul class="simple">
+<li>Tags</li>
+<li><a class="reference external" href="/tags/faq">faq</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Impressum.html" class="btn btn-neutral float-right" title="Impressum" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="freetz.html" class="btn btn-neutral float-left" title="Freetz macht mehr aus der Box!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Freetz Developers
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,987 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NHIPT - iptables firewall GUI &mdash; Freetz master Dokumentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="siproxd.html" />
+    <link rel="prev" title="madplay" href="madplay.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Freetz
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Inhaltsverzeichnis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../packages_tagged.html">Pakete nach Anwendungsgebieten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Download.html">Stabile Versionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Download.html#entwickler-versionen">Entwickler Versionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Download.html#upload-und-statistik">Upload und Statistik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Download.html#veraltete-versionen">Veraltete Versionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freetz.html">Freetz macht mehr aus der Box!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQ.html">Freetz-FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Impressum.html">Impressum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libs_tagged.html">Bibliotheken nach Anwendungsgebieten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ticket.html">Was sollte ich bei der Erstellung eines neuen Tickets beachten?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style.html">Aussehen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packages.html">Pakete, Addons und CGI-Erweiterungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FreetzConf2011.html">FreetzConf 2011</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patch.html">Aufbau eines Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patch.html#erzeugen-eines-patches">Erzeugen eines Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patch.html#patch-anwenden-oder-ruckgangig-machen">Patch anwenden oder rückgängig machen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patch.html#wie-finde-ich-die-zu-patchende-stelle">Wie finde ich die zu patchende Stelle?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patch.html#links">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Press.en.html">Freetz in public press &amp; web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches.html">Freetz Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help.html">Hilfe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libs.html">Bibliotheken (libraries)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../costumscript_dublesyslog.html">Schritte zur Lösung, kann übersprungen werden…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../costumscript_dublesyslog.html#also-hier-die-anleitung-zur-editierung-der-rc-costum-ueber-die-shell">Also hier die Anleitung zur Editierung der rc.costum ueber die shell:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../costumscript_dublesyslog.html#weiter-durch-die-herleitung-schritte-zur-loesung-whatever">weiter durch die herleitung (schritte zur loesung, whatever)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../costumscript_dublesyslog.html#losung">…Lösung:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel.html">Tree like overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Press.html">Freetz in Presse und Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freetz.en.html">Freetz gets more from the Box!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQ.en.html">Freetz-FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/source_code.en.html">Source code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/source_code.html">Quellcode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_myfritz.html">Remove MyFritz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_tr069.html">Remove tr069 stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_assistant.html">Remove assistant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_help.html">Remove help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_usermand.html">Remove usermand &amp; userman.ko</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_samba.html">Remove Samba daemon (smbd)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/signed.html">Patch Webmenu Signed Message</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_upnp.html">Remove uPnP daemon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/usb_names.html">Patch USB storage names, make FAT filesystems world-writable, automount feature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_mediasrv.html">Remove MediaServer daemon (mediasrv)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_dsld.html">Remove dsld</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/onlinechanged.html">Onlinechanged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/freetzmount.html">FREETZMOUNT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/replace_onlinechanged.html">Replace onlinechanged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_capi.html">Remove CapiOverTCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/exec_autorun.html">Execute autorun.sh/autoend.sh script on (un)mount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/exec_autorun.html#hinweis">Hinweis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/maxdevcount.html">MaxDevCount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_minid.html">Remove minid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/multpile_printers.html">FritzBox als Printserver für mehrere Drucker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/alarmclock.html">Patch third alarm-clock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/freetzmount.en.html">FREETZMOUNT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_vpn.html">Remove AVM vpn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_support.html">Remove the support-files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_ftpd.html">Remove FTP deamon (ftpd)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patches/remove_aura_usb.html">Remove aura USB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos.html">HowTos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/trouble_shooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/fritz_faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/irc.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/irc.html#irc-netiquette">IRC Netiquette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/irc.html#troubleshooting-irc">Troubleshooting IRC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/irc.html#konfiguration-chatzilla-plugin-in-firefox">Konfiguration Chatzilla-Plugin in Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/wikiedit.html">Wiki Bearbeitung - Tipps und Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common.html">Allgemeines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/troubleshoot.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development.html">Development Howtos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/freetz_linux.html">Freetz Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/shutdown.html">Rechner im Netz herunterfahren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/newbie.en.html">Freetz for beginners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/first_trunk.html">Wie baue ich meinen ersten trunk ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/install.en.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/install.en.html#aktualisierung">Aktualisierung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/install.en.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/install.en.html#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/external.html">External</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/external.html#konfiguration">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/external.html#auswahl">Auswahl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/external.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/external.html#automatisches-starten-stoppen-von-diensten">Automatisches starten/stoppen von Diensten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/external.html#firmware-build-prozess-und-update">Firmware-build-Prozess und Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/create_swap.html">Swap-File anlegen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/install.html#aktualisierung">Aktualisierung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/install.html#fehlerbehebung">Fehlerbehebung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/install.html#manuelles-einspielen-des-images">Manuelles einspielen des Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/install.html#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/newbie.html">Erste Schritte mit Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/wol.html">Wake on Lan (WoL) mit der Fritzbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/user.html">Benutzer dauerhaft in der passwd speichern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/busybox_httpd.html">Kleiner Webserver mit BusyBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/install/menuconfig.html">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/newbie/other.html">Sonstige Infos für Newbie’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/common/newbie/errors.html">Was mache ich, wenn sich meine Box nicht Freetzen lässt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/troubleshoot/repair_phonebook.html">Kaputtes Telefonbuch reparieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/troubleshoot/recover_firmware.html">Original Firmware wiederherstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/troubleshoot/reboots.html">Häufige selbständige Reboots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/security/switch_config.html">Konfiguration des eingebauten Switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/security/router_and_firewall.html">Freetz als interner Router mit Firewall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/security/user_management.html">Benutzerverwaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/security/split_wlan_lan.html">WLAN von LAN trennen mit iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/sign_image.html">Signieren von Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/sign_image.html#konkrete-anwendung-in-freetz">Konkrete Anwendung in Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/integrate_patches.html">Patches in Freetz einspielen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/bandwidth_svg.html">Dynamische Bandbreitenanzeige per SVG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/create_cross-compiler_toolchain.html">Cross-Compiler / Toolchain erstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/create_cross-compiler_toolchain.html#eigene-download-toolchain-erstellen">Eigene Download-Toolchain erstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/create_cross-compiler_toolchain.html#target-native-compiler-toolchain-erstellen">Target/Native-Compiler-Toolchain erstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/release_management.html">Release Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/package_creation.html">Wie baue ich ein eigenes Paket für Freetz?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/save_mtd_2.html">Flash-Partitionen von außen mit FTP sichern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/developer_information.html">Developer Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/create_gui.html">Erstellen einer GUI für Pakete in Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/manipulation_detection.html">Wie die FritzBox Manipulationen erkennt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/freetz_make.html">Freetz Build-Prozeß</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/urlader_flags.html">Einstellungen speichern im Urlader-Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/flash.html">Flash Partitionierung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/firmware_update_details.html">Ablauf eines Firmware-Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/repack_fw.html">Entpacken und Packen von Firmware-Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/install_addon.html">Addon Paket installieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/make_busybox.html">Busybox konfigurieren und kompilieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/adam2.html">ADAM2-Bootloader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/save_mtd_1.html">Flash-Partitionen im laufenden Betrieb sichern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/integrate_own_files.html">Eigene Dateien in die Firmware integrieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/analyse_image_names.html">Firmware-Image-Namen analysieren und interpretieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/menuconfig.html">Menükonfiguration pflegen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/compile_own_progs.html">Eigene Programme kompilieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/make_kernel.html">Kernel konfigurieren und kompilieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/make_room.html">Platz sparen im Dateisystem der FritzBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/developer_information/package_development.html">Package Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/developer_information/post_commit_hook.html">Trac Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/developer_information/shell_coding_conventions.html">Shell Coding Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/developer_information/package_development_advanced.html">Package Developing - Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/developer_information/package_development_dynamic.html">Paketverwaltung für Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/developer_information/package_development_start.html">First steps - How to start your first freetz package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/developer_information/package_development_start/example_2.html">Example 2: par2cmdline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/developer_information/package_development_start/example_1.html">Example 1: Httptunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/developer_information/package_development_start/.language.html">.language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/developer_information/package_development_start/webinterface_example_1.html">Web-interface HTTPTunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/developer_information/package_development_start/example_3.html">Example 3: NZBGet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/howtos/development/developer_information/webif/libmodcgi.html">libmodcgi.sh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/wikiedit/screenshots.html">Screenshots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/wikiedit/toc.html">Inhaltsverzeichnis erstellen (lassen)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/wikiedit/tagging.html">Tagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/wikiedit/tables.html">Tabellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/wikiedit/formatting_guide.html">Formatierungs-Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/wikiedit/goodies.html">Wiki Goodies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style/tagging.html">Tagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style/skins.html">Skins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style/favicons.html">Favicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style/mounted.html">Aussehen von mounted.cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libs/ftdi.html">ftdi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libs/ftdi.en.html">libftdi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bridge-utils.html">bridge-utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sispmctl.html">sispmctl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="empty.html">Empty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apache.html">Apache Webserver mit PHP CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polipo.en.html">Using with Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polipo.en.html#using-at-your-office">Using at your office</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polipo.en.html#security">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polipo.en.html#blocking-domains">Blocking domains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polipo.en.html#issues">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polipo.en.html#links">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autofs.html">autofs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strace.html">strace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syslogd.html">Syslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lsof.html">lsof</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns2tcp.html">Dns2Tcp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tinyproxy.html">Tinyproxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="davfs2.html">WebDAV mit davfs2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s3fslite.html">s3fslite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dropbear.en.html">Dropbear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ctorrent.html">CTorrent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="irssi.html">irssi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hplip.html">HPLIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lighttpd.html">lighttpd Webserver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="privoxy.html">Privoxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="radvd.en.html">RADVD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usbroot.html">USB-Root</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vim.html">vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bluez-utils.html">Bluez-Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sane-backends.html">SANE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usbip.html">USB/IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dropbear.html">Dropbear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iptables-cgi.html">iptables-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hd-idle.html">hd-idle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fhem.html">FHEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="igmpproxy.html">igmpproxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usbutils.html">usbutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inotify-tools.html">Inotify-Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorized-keys.en.html">authorized-keys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rrdstats.html">RRDstats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mcabber.html">mcabber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtmfbox.html">DTMFBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nfsd.en.html">NFSD_CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espeak.html">eSpeak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dnsd.html">dnsd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tor.html">Tor Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spindown.html">Spindown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ncftp.html">ncftp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lynx.html">Lynx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smstools3.html">SMStools3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smstools3.html#weiteres">Weiteres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debootstrap.html">Debootstrap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppp.html">ppp-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppp.html#allgemeine-konfiguration">Allgemeine Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppp.html#konfiguration-fur-umts">Konfiguration für UMTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppp.html#namensauflosung">Namensauflösung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppp.html#firewall-routing-nat">Firewall, Routing &amp; NAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppp.html#fallback">Fallback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppp.html#treiberprobleme">Treiberprobleme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppp.html#was-ist-noch-zu-beachten-2do-liste">Was ist noch zu beachten? (2do-Liste)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppp.html#weiteres">Weiteres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xmail.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sundtek.html">Sundtek DVB Treiber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iptables.html">iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iptables.html#altere-beitrage-betreffen-fritzboxen-vor-der-72xx-serie">Ältere Beiträge (betreffen FritzBoxen vor der 72xx Serie)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subversion.html">Subversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtach.html">dtach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vsftpd.html">VSFTPd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ziproxy.html">ziproxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ntfs-3g.html">NTFS-3G</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ruby.html">Ruby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aiccu.html">Aiccu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mc.html">Midnight Commander</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nfs.html">NFS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streamripper.html">Streamripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="htpdate.html">htpdate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emailrelay.html">E-MailRelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="madplay.html">madplay</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NHIPT - iptables firewall GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#motivation">MOTIVATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#voraussetzungen">VORAUSSETZUNGEN:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#es-stehen-3-pakete-zur-auswahl">ES STEHEN 3 PAKETE ZUR AUSWAHL:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#nhipt-cgi-version-tar-gz">nhipt.cgi.(version).tar.gz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ipt-version-tar-gz">ipt.(version).tar.gz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uber-make-menuconfig">Über <em>make menuconfig</em></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#arbeitsweise">ARBEITSWEISE:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tipps-literatur">Tipps &amp; Literatur:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bootprozess">Bootprozess</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#konfigurationsdatei">Konfigurationsdatei</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dateien-im-freetz-paket">Dateien im freetz Paket</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gut-gemeinte-ratschlage">GUT GEMEINTE RATSCHLÄGE:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#download">DOWNLOAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bekannte-probleme">BEKANNTE PROBLEME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#screenshots">SCREENSHOTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anhange-5">Anhänge (5)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="netsnmp.html">Net-SNMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transmission.en.html">Blocklist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transmission.en.html#number-of-peers">Number of peers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transmission.en.html#memory-usage">Memory usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transmission.en.html#limit-memory-usage">Limit memory usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transmission.en.html#watchdog">Watchdog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transmission.en.html#links">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="imapproxy.en.html">ImapProxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fuse.html">FUSE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hiawatha.html">hiawatha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cifsmount.html">cifsmount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrixtunnel.html">matrixtunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndas.en.html">NDAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nfs-utils.html">NFS-Utils / NFS-Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vpnc.html">vpnc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="haserl.html">Haserl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obexftp.html">ObexFTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nmap.html">Nmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httptunnel.html">httptunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="onlinechanged.html">Onlinechanged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mini_fo.html">mini_fo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mini_fo.html#konfiguration-webinterface">Konfiguration (Webinterface)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mini_fo.html#konfiguration-per-hand">Konfiguration (per Hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mini_fo.html#mogliche-nebeneffekte">Mögliche Nebeneffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mini_fo.html#restore-original-file">Restore original file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mini_fo.html#siehe-auch">Siehe auch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pingtunnel.html">pingtunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcp_wrappers.html">TCP Wrapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netsnmp.en.html">Net-SNMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netsnmp.en.html#mrtg">MRTG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wol.html">Wake on LAN (WoL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpmaccfg.html">cpmaccfg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpmaccfg.html#cpmaccfg-cgi">cpmaccfg-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syslogd.en.html">Syslog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkmaild.html">checkmaild 0.4.7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="portmap.html">portmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="digitemp.html"><strong>Was ist digitemp?</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="digitemp.html#wichtiger-hinweis">Wichtiger Hinweis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="digitemp.html#tipp-bei-verwendung-mehrerer-usb-rs232-adapter-an-einer-fritzbox">Tipp bei Verwendung mehrerer USB-RS232-Adapter an einer Fritzbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="digitemp.html#datenbank">Datenbank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="digitemp.html#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="downloader.html">Downloader-CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bip.html">BIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fortune.html">fortune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xrelayd.html">xrelayd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tinc.html">Tinc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bird.html">Bird</a></li>
+<li class="toctree-l1"><a class="reference internal" href="onlinechanged_cgi.html">Onlinechanged-CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="php.html">PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phpxmail.en.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phpxmail.en.html#basic-setup-guide">Basic setup guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phpxmail.en.html#setup-ssl">Setup SSL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phpxmail.en.html#useful-links">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pptp.html">PPTP Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mediatomb.html">MediaTomb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inetd.html">inetd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="owfs.html">owfs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unbound.html">Unbound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fstyp.html">fstyp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prosody.en.html">Prosody IM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bftpd.html">Bftpd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mod.html">(Freetz-) MOD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="br2684ctl.en.html">br2684ctl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deco.html">Demos Commander</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trickle.html">trickle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="radvd.html">Radvd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opendd.html">OpenDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pptpd.html">PoPTop - PPTP-VPN-Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mediaserver.html">Mediaserver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iptables.en.html">iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dnsd.en.html">dnsd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hp-utils.html">hp-utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen.html">screen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndas.html">1. Using NDAS driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndas.html#using-ndas-harddisk-array">2. Using NDAS harddisk array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndas.html#share-the-data-files-on-the-ndas-hard-disks">3. Share the data/files on the NDAS hard disks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndas.html#ndas-robustnes">4. NDAS robustnes?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndas.html#referenzen">Referenzen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dnsmasq.html">dnsmasq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wget.html">wget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="e2fsprogs.html">e2fsprogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bind.html">bind</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcpdump.html">tcpdump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gw6.html">gw6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nhipt.en.html">NHIPT - iptables firewall GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openntpd.html">OpenNTPD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rudi-shell.html">Rudi-Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nano.html">nano</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nfsd.html">NFSD_CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stunnel.html">Stunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rrdtool.html">RRDTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldd.html">ldd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prosody.html">Prosody IM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fhzctrl.html">fhzctrl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aiccu.en.html">AICCU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorized-keys.html">authorized_keys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pciutils.html">pciutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vtund.html">VTUN freetz Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fritzload.html">FritzLoad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jamvm.html">JamVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor.html">Callmonitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="br2684ctl.html">br2684ctl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netcat.html">netcat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quagga.html">Quagga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samba.html">Samba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodine.html">iodine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nagios.html">Nagios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smartmontools.html">Smartmontools (smartctl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mtr.html">mtr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="avm-firewall.html">AVM-firewall-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bash.html#ash">Ash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bash.html#bash-als-loginshell">Bash als Loginshell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asterisk.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="microperl.html">microperl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nano-shell.html">Nano-Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="m-i-t.html">module-init-tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minidlna.html">MiniDLNA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inadyn-mt.html">Inadyn-MT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bluez.html">BlueZ 4.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DemoPackageA.html">DemoPackageA „Hello World“</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DemoPackageA.html#quellen">Quellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openvpn.html">OpenVPN freetz Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="knock.html">knockd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ltrace.html">ltrace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="curl.html">cURL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inadyn-mt.en.html">Inadyn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualip.html">Virtual IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="socat.html">socat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transmission.html">Transmission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/config.html">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/reverse_search.html">Rückwärtssuche</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/phonebook.html">Telefonbuch (Callers)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/maintenance.html">Wartung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/adapt_messages.html">Anpassen der Benachrichtigungstexte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions.html">Aktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/listeners.html">Regeln (Listeners)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/testcall.html">Testanruf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/faq.html">Callmonitor-FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/events.html">Ereignisse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/config.html">FritzBox-Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/config.html#alternative">Alternative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/call.html">Allgemeine Hinweise zu Funktionsaufrufen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/relook.html">DGStation Relook 400S</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/rawmsg.html">Einfache TCP-Verbindungen (rawmsg)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/snarl.html">Listener-Eintrag:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/snarl.html#screenshots">Screenshots:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/dbox.html">DBox2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/xbox.html">XBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/getmsg.html">HTTP-Requests (getmsg)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/mail.html">E-Mail-Benachrichtigung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/samsung.html">Benachrichtigung auf einem Samsung TV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/self-defined.html">Selbstdefinierte Aktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/wol.html">Wake on LAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/yac.html">YAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/dial.html">Wählhilfe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/vdr.html">VDR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/dreambox.html">DreamBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/password.html">Benutzernamen und Passwörter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/musicpal.html">Freecom MusicPal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/soundbridge.html">Roku SoundBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netsnmp/mrtg.en.html">MRTG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pptpd/config.html">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pptpd/webif.html">Das Web-Frontend zum Paket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pptpd/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rudi-shell/tips.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rudi-shell/limits.html">Grenzen &amp; Einschränkungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rudi-shell/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rudi-shell/usage.html">Illustrierte Anwendungsfälle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rudi-shell/functions.html">Funktionsweise</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Freetz</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>NHIPT - iptables firewall GUI</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/wiki/packages/nhipt.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nhipt-iptables-firewall-gui">
+<span id="nhipt-iptablesfirewallgui"></span><h1>NHIPT - iptables firewall GUI<a class="headerlink" href="#nhipt-iptables-firewall-gui" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="figure" id="id6">
+<img alt="nhipt Seite im Freetz Webinterface" src="../../_images/178.jpg" />
+<p class="caption"><span class="caption-text">nhipt Seite im Freetz Webinterface</span></p>
+</div>
+<div class="section" id="motivation">
+<span id="id1"></span><h2>MOTIVATION<a class="headerlink" href="#motivation" title="Link zu dieser Überschrift">¶</a></h2>
+<blockquote>
+<div>iptables ist ein Kommandozeilen User Interface zur Konfiguration /
+Verwaltung der im jeweiligen Linux Kernel eingebauten sehr mächtigen
+<a class="reference external" href="http://de.wikipedia.org/wiki/Netfilter/iptables">​netfilter</a> -
+Firewall Funktionen. Mit dem nhipt - Web Interface kann man das
+gesamte Spektrum von iptables über eine benutzerfreundliche
+Oberfläche an der Fritz-Box nutzen. Das cgi kann als Paket sowohl in
+die Firmware integriert, als auch stand-alone als externes Paket
+genutzt werden.</div></blockquote>
+</div>
+<div class="section" id="voraussetzungen">
+<h2>VORAUSSETZUNGEN:<a class="headerlink" href="#voraussetzungen" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>nhipt wurde für die 7270 erstellt und läuft auf alle 72xx Boxen mit
+dem neuen Kernel problemlos, 71xx / 70xx Boxen mit dem alten Kernel
+können mit Einschränkungen ebenfalls genutzt werden</li>
+<li>Einschränkungen bei Verwendung von Boxen mit älterem Kernel
+(71xx/70xx):<ul>
+<li>Systemwarnungen beim Versuch (nichtexistierender) Kernelmodule zu
+laden</li>
+<li>Conntrack Regeln können Probleme bereiten</li>
+</ul>
+</li>
+<li>nhipt läuft auch auf der 7390 sehr gut, Voraussetzung ist allerdings
+das Einspielen des unten angehängten Patches, sonst sieht man nur
+einen weißen Bildschirm.</li>
+<li>iptables müssen <strong>vorhanden sein und laufen</strong>.
+Mindestens folgende Module sollten im Freetz-Image sein (wer Platz
+hat, lieber alle, dann kann das Interface sein Potential voll
+entfalten):</li>
+</ul>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="30%" />
+<col width="22%" />
+<col width="23%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>* ip_tables
+* x_tables
+* iptable_filter</td>
+<td>* ip_conntrack
+* ip_conntrack_ftp
+* ip_conntrack_tftp</td>
+<td>* ipt_log
+* ipt_REJECT
+* ipt_iprange</td>
+<td>* xt_state
+* xt_conntrack
+* xt_multiport
+* xt_tcpudp</td>
+</tr>
+</tbody>
+</table>
+<p><strong>!!! Bitte nicht vergessen, auch die zugehörigen shared libraries
+in die Firmware zu integrieren !!!</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>Ideal ist ein Build mit Replaced Kernel und eingeschalteter
+Autoload modules Funktion des Kernels:</p>
+<div class="line-block">
+<div class="line">Vor dem ersten Start <strong>iptables -S</strong> eingeben, um iptables zu
+laden <em>(bei Built mit replaced kernel und automatic kernel
+module loading)</em></div>
+<div class="line">Alternativ (ohne autoload Option) mit <strong>modprobe &lt;modulname&gt;</strong>
+die oben genannten iptables Module einzeln laden.</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="es-stehen-3-pakete-zur-auswahl">
+<h2>ES STEHEN 3 PAKETE ZUR AUSWAHL:<a class="headerlink" href="#es-stehen-3-pakete-zur-auswahl" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="nhipt-cgi-version-tar-gz">
+<h3>nhipt.cgi.(version).tar.gz<a class="headerlink" href="#nhipt-cgi-version-tar-gz" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Das ist das reine GUI, es läuft direkt vom Stick ohne Integration in
+freetz.</div></blockquote>
+<p><strong>Installation:</strong></p>
+<ul class="simple">
+<li>Datei <strong>nhipt.cgi</strong> z.B. im Verzeichnis (z.B.:
+/var/media/ftp/uStor01/<strong>ipt/cgi-bin</strong> auf dem stick auspacken</li>
+<li>execute Rechte darauf setzen.</li>
+<li>einen httpd-Dienst auf das übergeordnete Verzeichnis <strong>/ipt</strong> und
+einem freien port (z.B. 83) einrichten.</li>
+</ul>
+<blockquote>
+<div>Aufgerufen wird das Interface mit
+<a class="reference external" href="http://fritz.box:83/cgi-bin/nhipt.cgi">​http://fritz.box:83/cgi-bin/nhipt.cgi</a></div></blockquote>
+</div>
+<div class="section" id="ipt-version-tar-gz">
+<h3>ipt.(version).tar.gz<a class="headerlink" href="#ipt-version-tar-gz" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div>Das ist das Advanced-Comfort Paket mit dynamischer Freetz
+Integration.</div></blockquote>
+<p><strong>Installation:</strong></p>
+<ul class="simple">
+<li>auf <strong>/var/media/ftp/uStor01/</strong> entpacken.</li>
+<li>Datei <strong>register.sh</strong> mit execute rechten versehen</li>
+<li>Das Script <strong>register.sh</strong> ausführen</li>
+</ul>
+<blockquote>
+<div>Im Freetz ist nun ein neues Paket zu sehen. Dort kann man den Rest
+konfigurieren und das Interface starten.</div></blockquote>
+</div>
+<div class="section" id="uber-make-menuconfig">
+<span id="ubermakemenuconfig"></span><h3>Über <em>make menuconfig</em><a class="headerlink" href="#uber-make-menuconfig" title="Link zu dieser Überschrift">¶</a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Das GUI wird in den ROM der FritzBox über den Firmware build
+integriert, (z.Zt. nur im aktuellen trunk oder als patch)</div>
+</div>
+</div></blockquote>
+<p><strong>Installation:</strong></p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><em>Bei Verwendung des Patches</em> nhipt.patch(ver).tar.gz</div>
+</div>
+<blockquote>
+<div><div class="line-block">
+<div class="line">in den freetz ordner wechseln, patch hineinkopieren und
+anwenden: <em>patch -p0 &lt; nhipt.patch</em></div>
+<div class="line">in den Ordner <em>make/nhipt/files/root/…</em> wechseln und die execute
+Rechte auf alle Dateien setzen (Siehe DATEIEN IM FREETZ PAKET
+weiter unten)</div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><strong>make menuconfig</strong> aufrufen, im Bereich <strong>P</strong> ackage Selection —→
+<strong>W</strong> eb Interface —→ die Option <strong>NHIPT Iptables CGI</strong> anwählen.</div>
+<div class="line">Nun werden alle iptables Module als Untermenu sichtbar und können
+zusammengestellt werden. Danach die übliche Vorgehensweise zum
+Firmware Bauen….</div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="arbeitsweise">
+<h2>ARBEITSWEISE:<a class="headerlink" href="#arbeitsweise" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="tipps-literatur">
+<h3>Tipps &amp; Literatur:<a class="headerlink" href="#tipps-literatur" title="Link zu dieser Überschrift">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="iptables.html">Wiki zu iptables für Einsteiger</a></li>
+<li><a class="reference external" href="http://technet.microsoft.com/en-us/library/cc959833%28printer%29.aspx">​Von Windows verwendete Ports &amp;
+Services</a></li>
+</ul>
+<blockquote>
+<div><p>Es werden alle aktiven Regeln aufgelistet und können wie üblich
+sofort bearbeitet werden. Reboot-Fest werden die Regeln durch die
+Speicherfunktion <strong>[Persist rules]</strong> . Das erzeugte Start-Script
+kann entweder im Flash der Box oder extern abgelegt werden <strong>[BOOT
+FROM FLASH / USB] + [SET BOOT DIRECTORY]</strong> . Beim Start wird es
+von der debug.cfg automatisch zum Leben erweckt. Die Regeln können
+sowohl per Masken-Auswahl (die passenden Module werden für die
+meisten Regeln an Hand der Parameter automatisch ermittelt), als
+auch im Expert Mode (Kommandozeile mit iptables syntax) eingegeben
+werden, sie wirken stets sofort.</p>
+<p>Alle Tabellen, sowie die wichtigsten Erweiterungen von
+<strong>conntrack</strong> und <strong>nat</strong> kann man im User Interface anwählen, sie
+werden automatisch geladen oder beim Abwählen - wenn möglich -
+entladen, das Interface unterstützt sowohl IPv4 als auch IPv6
+Regelwerke (bei eingeschaltetem ipv6 auf der Box).</p>
+</div></blockquote>
+<blockquote>
+<div><p>Wenn man eine Admin Adresse oder Subnetz im Feld <strong>[CHANGE ADMIN
+IP]</strong> einträgt, kann man die Konfiguration nur noch von dieser IP
+aus ausführen, die Sperre bleibt auch über eine Reboot hinaus
+wirksam.</p>
+<p>Zusätzlich besitzt das CGI eine eigene Log-Funktion für die DECT
+Boxen. Das cgi übernimmt auf Wunsch hierfür alle nötigen
+Einstellungen, das Log-Verzeichnis ist frei wählbar.</p>
+</div></blockquote>
+<blockquote>
+<div>Die Fehlermeldungen, Systemmeldungen etc. von iptables und dem UI
+werden in die Status - Zeilen unterhalb des Regelwerkes
+ausgegeben, Status 0 ist immer OK.</div></blockquote>
+</div>
+<div class="section" id="bootprozess">
+<span id="id2"></span><h3>Bootprozess<a class="headerlink" href="#bootprozess" title="Link zu dieser Überschrift">¶</a></h3>
+<ul class="simple">
+<li><strong>debug.cfg</strong> kann die Einstellungen in die RAM-Disk kopieren und die
+Initialisierung starten.</li>
+<li><strong>rc.nhipt load</strong> wird von <strong>rc.mod</strong> / <strong>run level 20</strong> aufgerufen
+und prüft, ob die Settings bereits in der RAM Disk sind (durch
+vorherigen boot mit <strong>debug.cfg</strong>). Sind sie es nicht, wird
+<em>/tmp/flash/nhiptboot.cfg</em> aufgerufen (die an Stelle der <em>debug.cfg</em>
+die Initialisierung übernimmt)</li>
+<li><strong>debug.cfg</strong> und <strong>nhiptboot.cfg</strong> sind inhaltlich identisch
+aufgebaut<ul>
+<li>sie warten bei Bedarf auf USB Stick</li>
+<li>kopieren von bekannter Stelle (flash / USB) die Settings
+<strong>nhipt.par</strong> in die RAM Disk</li>
+<li>kopieren Start Script <strong>nhipt.cfg</strong> in die RAM Disk</li>
+<li>starten Firewall Start Script <strong>nhipt.cfg</strong> und schicken es in den
+Hintergrund.</li>
+</ul>
+</li>
+<li><strong>nhipt.cfg</strong>:<ul>
+<li>dsld (wenn eingestellt) stoppen</li>
+<li>Verzögeriungstimer (wenn eingestellt) abwarten</li>
+<li>dsld (wenn eingestellt) starten</li>
+<li>Web-Server für UI starten,</li>
+<li>Interner Log Service (wenn eingestellt) starten,</li>
+<li>Firewall Rules laden</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p><strong>Szenario 1:</strong> Standalone CGI - bootet immer von <em>debug.cfg</em> ,
+Regeln im flash / stick</p>
+<p><strong>Szenario 2:</strong> dynamisches freetz - bootet entweder von der
+<em>debug.cfg</em> oder verspätet über <em>freetz rc.custom</em> beim
+Integrieren der cgi in freetz (install script für freetz
+Integration trägt sich in die rc.custom automatisch ein für reboot
+Fähigkeit)</p>
+</div></blockquote>
+<blockquote>
+<div><strong>Szenario 3:</strong> Integration in die <em>Runlevel von Freetz</em> ,
+optional weiterhin über <em>debug.cfg</em> .</div></blockquote>
+</div>
+<div class="section" id="konfigurationsdatei">
+<span id="id3"></span><h3>Konfigurationsdatei<a class="headerlink" href="#konfigurationsdatei" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="line-block">
+<div class="line">Die Konfigurationsdatei ist zur Laufzeit unter <em>/var/tmp/nhipt.par</em> zu
+finden, reboot-fest wird sie in BOOTDIR zusammen mit der <em>nhipt.cfg</em>
+abgelegt</div>
+</div>
+</div>
+<div class="section" id="dateien-im-freetz-paket">
+<span id="dateienimfreetzpaket"></span><h3>Dateien im freetz Paket<a class="headerlink" href="#dateien-im-freetz-paket" title="Link zu dieser Überschrift">¶</a></h3>
+</div>
+</div>
+<div class="section" id="gut-gemeinte-ratschlage">
+<h2>GUT GEMEINTE RATSCHLÄGE:<a class="headerlink" href="#gut-gemeinte-ratschlage" title="Link zu dieser Überschrift">¶</a></h2>
+<blockquote>
+<div>Noch eins zum Thema Aussperren, für alle, die noch nie eine Firewall
+installiert haben.</div></blockquote>
+<blockquote>
+<div><p>Firewalls schützen Systeme vor unbefugtem Zugriff auf der Basis von
+Regeln, diese werden stur und kosequent ausgeführt. Das kann dazu
+führen, dass jemand, der sich vorher nicht ausreichend Gedanken über
+seine Regeln gemacht hat, sich vom System selbst aussperrt. Das
+passiert Laien oft, und auch Profis sind nicht immer davor sicher.</p>
+<p>Damit die Konsequenzen nicht zu drastisch sind, hier ein paar
+Empfehlungen / Regeln für den Anfänger:</p>
+</div></blockquote>
+<ul class="simple">
+<li>Schauen ist OK, manuelles Ändern an Scripten ist tabu , wenn man
+nicht vorzeitig graue Haare bekommen will.</li>
+<li>Regelwerke erst dauerhaft speichern <strong>[Persist rules]</strong>, wenn alles
+funktioniert, wie es soll. Ein Reboot lädt das letzte gespeicherte
+Regelwerk, und alles ist wieder OK, ältere Versionen werden als
+Backup mit Zeitstempel im <strong>[SET BACKUP DIRECTORY]</strong> Verzeichnis
+abgelegt.</li>
+<li>Am Anfang lieber den Stick zum Speichern verwenden. Im Notfall kann
+man den vor dem Booten abziehen und die Box startet ohne iptables
+Firewall.</li>
+<li>Das UI hat eine Anfänger <strong>[safe]</strong> und eine Profi-Betriebsart
+<strong>[advanced]</strong>, Umschaltbar über <strong>[Admin Level]</strong>. Im Safe - Modus
+wehrt sich die Firewall sehr erfolgreich gegen alle Aussperrversuche
+des Administrators. Er bewirkt, dass in allen für den Adminzugang
+wichtigen Chains eine ACCEPT Regel für diese spezielle IP Adresse
+eingetragen wird. Nach Umschalten in <strong>[advanced]</strong> kann man wie
+gewohnt alle Regeln editieren oder Löschen.</li>
+<li>Ein <strong>[Boot-Delay]</strong> , (wählbar von <strong>[Aus]</strong> bis <strong>[10 Min]</strong>) kann
+auch gegen Aussperren eingestellt werden. Während dieser Zeit ist
+nach einem Kaltstart der Box ungehinderter Zugriff möglich. Zur
+Sicherheit kann der Internetzugang während dieser Zeit automatisch
+verhindert werden <strong>[stop dsld on delay]</strong></li>
+<li>Ausgesperrt aus der Admin Oberfläche durch Eingabe einer falschen IP
+Adresse: Datei: <strong>/var/tmp/nhipt.par</strong> enthällt die falsche Eingabe.
+Zeile ADMINIP=… löschen und GUI neu aufrufen. <em>Tipp: Man kann auch
+ein Subnetz für die AdminIP eintragen - z.B. 192.168.0.10/30 - das
+erlaubt den Zugriff von den Adressen
+192.168.0.8..192.168.0.11</em><a class="reference external" href="http://www.csgnetwork.com/ipinfocalc.html">​Online IP
+Rechner</a>.</li>
+<li>Wenn man das alles ignoriert und wider besseren Wissens sich trotzdem
+aussperrt, hilft nur noch ein erneutes Flashen der Firmware.</li>
+</ul>
+</div>
+<div class="section" id="download">
+<span id="id4"></span><h2>DOWNLOAD<a class="headerlink" href="#download" title="Link zu dieser Überschrift">¶</a></h2>
+<blockquote>
+<div>Die aktuelle Version, sowie Anmerkungen, Tipps &amp; Tricks und
+weiterführende Links finden sich hier: <a class="reference external" href="http://www.ip-phone-forum.de/showpost.php?p=1420252&amp;postcount=1">​IPPF
+Forum</a></div></blockquote>
+</div>
+<div class="section" id="bekannte-probleme">
+<span id="bekannteprobleme"></span><h2>BEKANNTE PROBLEME<a class="headerlink" href="#bekannte-probleme" title="Link zu dieser Überschrift">¶</a></h2>
+<blockquote>
+<div><em>Bei der 7390 wird nur eine leere Seite angezeigt, Regeln lassen sich
+nicht anzeigen / hinzufügen.</em></div></blockquote>
+<blockquote>
+<div>Der angefügte Patch beseitigt dieses Problem und ähnliche bei anderen
+Boxen. Außerdem erweitert der Patch die Möglichkeiten des UI, auch
+Log Informationen zur Firewall und zum System aus dem Syslog der Box
+auszugeben, wenn in einer Datei gelogt wird (ausgewertet werden die
+letzten 50 Einträge aus bis zu 4 Logfiles <em>filename</em> , <em>filename</em> .0,
+<em>filename</em> .1, <em>filename</em> .2, der Pfad und Dateiname werden
+automatisch anhand der Parameter des laufenden syslogd Prozesses
+ermittelt).</div></blockquote>
+</div>
+<div class="section" id="screenshots">
+<span id="id5"></span><h2>SCREENSHOTS<a class="headerlink" href="#screenshots" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="figure" id="id7">
+<img alt="nhipt Webinterface" src="../../_images/179.jpg" />
+<p class="caption"><span class="caption-text">nhipt Webinterface</span></p>
+</div>
+<ul class="simple">
+<li>Tags</li>
+<li><a class="reference external" href="/tags/cgi">cgi</a></li>
+<li><a class="reference external" href="/tags/firewall">firewall</a></li>
+<li><a class="reference external" href="/tags/network">network</a></li>
+<li><a class="reference external" href="../packages.html">packages</a></li>
+<li><a class="reference external" href="/tags/routing">routing</a></li>
+<li><a class="reference external" href="/tags/security">security</a></li>
+</ul>
+<div class="section" id="anhange-5">
+<h3>Anhänge (5)<a class="headerlink" href="#anhange-5" title="Link zu dieser Überschrift">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="/attachment/wiki/packages/nhipt/nhipt.cgi(0.8.2).tar.gz">nhipt.cgi(0.8.2).tar.gz</a><a class="reference external" href="/raw-attachment/wiki/packages/nhipt/nhipt.cgi(0.8.2).tar.gz">​</a>
+(13.7 KB) - hinzugefügt von <em>cando</em> <a class="reference external" href="/timeline?from=2009-11-19T10%3A27%3A09Z&amp;precision=second">vor 8
+Jahren</a>.
+“Stand-Alone Web GUI”</li>
+<li><a class="reference external" href="/attachment/wiki/packages/nhipt/ipt(0.8.2).tar.gz">ipt(0.8.2).tar.gz</a><a class="reference external" href="/raw-attachment/wiki/packages/nhipt/ipt(0.8.2).tar.gz">​</a>
+(17.1 KB) - hinzugefügt von <em>cando</em> <a class="reference external" href="/timeline?from=2009-11-19T10%3A28%3A16Z&amp;precision=second">vor 8
+Jahren</a>.
+“Dynamic freetz integration Package (for external USB device)”</li>
+<li><a class="reference external" href="/attachment/wiki/packages/nhipt/Iptables_Tutorial_1.2.pdf">Iptables_Tutorial_1.2.pdf</a><a class="reference external" href="/raw-attachment/wiki/packages/nhipt/Iptables_Tutorial_1.2.pdf">​</a>
+(1.9 MB) - hinzugefügt von <em>cando</em> <a class="reference external" href="/timeline?from=2009-11-19T10%3A34%3A57Z&amp;precision=second">vor 8
+Jahren</a>.
+“extended iptables tutorial v1.2.2 Copyright © 2001-2006 Oskar
+Andreasson”</li>
+<li><a class="reference external" href="/attachment/wiki/packages/nhipt/nhipt.patch(0.8.2).tar.gz">nhipt.patch(0.8.2).tar.gz</a><a class="reference external" href="/raw-attachment/wiki/packages/nhipt/nhipt.patch(0.8.2).tar.gz">​</a>
+(27.1 KB) - hinzugefügt von <em>cando</em> <a class="reference external" href="/timeline?from=2009-11-19T11%3A48%3A04Z&amp;precision=second">vor 8
+Jahren</a>.
+“Patch zur manuellen Integration in die Firmware (ROM)”</li>
+<li><a class="reference external" href="/attachment/wiki/packages/nhipt/nhipt.patch.tar.gz">nhipt.patch.tar.gz</a><a class="reference external" href="/raw-attachment/wiki/packages/nhipt/nhipt.patch.tar.gz">​</a>
+(3.4 KB) - hinzugefügt von <em>cando</em> <a class="reference external" href="/timeline?from=2010-08-19T09%3A52%3A31Z&amp;precision=second">vor 8
+Jahren</a>.
+“Patch nhipt für andere Boxen (7390, 71xx), funktioniert auch mit der
+7270”</li>
+</ul>
+<p>Alle Anhänge herunterladen als:
+<a class="reference external" href="/zip-attachment/wiki/packages/nhipt/">.zip</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="siproxd.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="madplay.html" class="btn btn-neutral float-left" title="madplay" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Freetz Developers
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

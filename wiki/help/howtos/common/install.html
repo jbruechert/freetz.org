@@ -1,0 +1,1246 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; Freetz master Dokumentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../../../genindex.html" />
+    <link rel="search" title="Suche" href="../../../../search.html" />
+    <link rel="next" title="Erste Schritte mit Freetz" href="newbie.html" />
+    <link rel="prev" title="Swap-File anlegen" href="create_swap.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Freetz
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Inhaltsverzeichnis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../packages_tagged.html">Pakete nach Anwendungsgebieten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Download.html">Stabile Versionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Download.html#entwickler-versionen">Entwickler Versionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Download.html#upload-und-statistik">Upload und Statistik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Download.html#veraltete-versionen">Veraltete Versionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../freetz.html">Freetz macht mehr aus der Box!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../FAQ.html">Freetz-FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Impressum.html">Impressum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../libs_tagged.html">Bibliotheken nach Anwendungsgebieten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ticket.html">Was sollte ich bei der Erstellung eines neuen Tickets beachten?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../style.html">Aussehen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages.html">Pakete, Addons und CGI-Erweiterungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../FreetzConf2011.html">FreetzConf 2011</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patch.html">Aufbau eines Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patch.html#erzeugen-eines-patches">Erzeugen eines Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patch.html#patch-anwenden-oder-ruckgangig-machen">Patch anwenden oder rückgängig machen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patch.html#wie-finde-ich-die-zu-patchende-stelle">Wie finde ich die zu patchende Stelle?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patch.html#links">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Press.en.html">Freetz in public press &amp; web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches.html">Freetz Patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Hilfe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../libs.html">Bibliotheken (libraries)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../costumscript_dublesyslog.html">Schritte zur Lösung, kann übersprungen werden…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../costumscript_dublesyslog.html#also-hier-die-anleitung-zur-editierung-der-rc-costum-ueber-die-shell">Also hier die Anleitung zur Editierung der rc.costum ueber die shell:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../costumscript_dublesyslog.html#weiter-durch-die-herleitung-schritte-zur-loesung-whatever">weiter durch die herleitung (schritte zur loesung, whatever)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../costumscript_dublesyslog.html#losung">…Lösung:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../kernel.html">Tree like overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Press.html">Freetz in Presse und Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../freetz.en.html">Freetz gets more from the Box!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../FAQ.en.html">Freetz-FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/source_code.en.html">Source code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/source_code.html">Quellcode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_myfritz.html">Remove MyFritz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_tr069.html">Remove tr069 stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_assistant.html">Remove assistant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_help.html">Remove help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_usermand.html">Remove usermand &amp; userman.ko</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_samba.html">Remove Samba daemon (smbd)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/signed.html">Patch Webmenu Signed Message</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_upnp.html">Remove uPnP daemon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/usb_names.html">Patch USB storage names, make FAT filesystems world-writable, automount feature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_mediasrv.html">Remove MediaServer daemon (mediasrv)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_dsld.html">Remove dsld</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/onlinechanged.html">Onlinechanged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/freetzmount.html">FREETZMOUNT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/replace_onlinechanged.html">Replace onlinechanged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_capi.html">Remove CapiOverTCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/exec_autorun.html">Execute autorun.sh/autoend.sh script on (un)mount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/exec_autorun.html#hinweis">Hinweis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/maxdevcount.html">MaxDevCount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_minid.html">Remove minid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/multpile_printers.html">FritzBox als Printserver für mehrere Drucker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/alarmclock.html">Patch third alarm-clock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/freetzmount.en.html">FREETZMOUNT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_vpn.html">Remove AVM vpn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_support.html">Remove the support-files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_ftpd.html">Remove FTP deamon (ftpd)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../patches/remove_aura_usb.html">Remove aura USB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos.html">HowTos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trouble_shooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fritz_faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../irc.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../irc.html#irc-netiquette">IRC Netiquette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../irc.html#troubleshooting-irc">Troubleshooting IRC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../irc.html#konfiguration-chatzilla-plugin-in-firefox">Konfiguration Chatzilla-Plugin in Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wikiedit.html">Wiki Bearbeitung - Tipps und Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common.html">Allgemeines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshoot.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development Howtos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="freetz_linux.html">Freetz Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shutdown.html">Rechner im Netz herunterfahren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newbie.en.html">Freetz for beginners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first_trunk.html">Wie baue ich meinen ersten trunk ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.en.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.en.html#aktualisierung">Aktualisierung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.en.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.en.html#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html">External</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html#konfiguration">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html#auswahl">Auswahl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html#automatisches-starten-stoppen-von-diensten">Automatisches starten/stoppen von Diensten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external.html#firmware-build-prozess-und-update">Firmware-build-Prozess und Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create_swap.html">Swap-File anlegen</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#virtuelles-linux-freetz-linux-fur-vmware-player">Virtuelles Linux: Freetz-Linux für VMware-Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vorbereitung">Vorbereitung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#durchfuhrung-mit-windows-os">Durchführung mit Windows OS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#durchfuhrung-mit-linux-os">Durchführung mit Linux OS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#notwendige-pakete">Notwendige Pakete</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#freetz-2-x-stabile-version">freetz-2.x (stabile Version)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aktuelle-entwicklerversion-und-spezielle-pakete">aktuelle Entwicklerversion und spezielle Pakete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#alte-entwicklerversionen">alte Entwicklerversionen</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-der-benotigten-pakete-ubuntu">Installation der benötigten Pakete (Ubuntu)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-der-benotigten-pakete-fedora">Installation der benötigten Pakete (Fedora)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#erstellung-installation">Erstellung &amp; Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#colinux-andlinux-speedlinux">coLinux / andLinux / speedLinux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cygwin">Cygwin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mac-os-x">Mac OS X</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#aktualisierung">Aktualisierung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#fehlerbehebung">Fehlerbehebung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#manuelles-einspielen-des-images">Manuelles einspielen des Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newbie.html">Erste Schritte mit Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wol.html">Wake on Lan (WoL) mit der Fritzbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">Benutzer dauerhaft in der passwd speichern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="busybox_httpd.html">Kleiner Webserver mit BusyBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install/menuconfig.html">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newbie/other.html">Sonstige Infos für Newbie’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newbie/errors.html">Was mache ich, wenn sich meine Box nicht Freetzen lässt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshoot/repair_phonebook.html">Kaputtes Telefonbuch reparieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshoot/recover_firmware.html">Original Firmware wiederherstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshoot/reboots.html">Häufige selbständige Reboots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/switch_config.html">Konfiguration des eingebauten Switches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/router_and_firewall.html">Freetz als interner Router mit Firewall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/user_management.html">Benutzerverwaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/split_wlan_lan.html">WLAN von LAN trennen mit iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/sign_image.html">Signieren von Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/sign_image.html#konkrete-anwendung-in-freetz">Konkrete Anwendung in Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/integrate_patches.html">Patches in Freetz einspielen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/bandwidth_svg.html">Dynamische Bandbreitenanzeige per SVG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/create_cross-compiler_toolchain.html">Cross-Compiler / Toolchain erstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/create_cross-compiler_toolchain.html#eigene-download-toolchain-erstellen">Eigene Download-Toolchain erstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/create_cross-compiler_toolchain.html#target-native-compiler-toolchain-erstellen">Target/Native-Compiler-Toolchain erstellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/release_management.html">Release Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/package_creation.html">Wie baue ich ein eigenes Paket für Freetz?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/save_mtd_2.html">Flash-Partitionen von außen mit FTP sichern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/developer_information.html">Developer Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/create_gui.html">Erstellen einer GUI für Pakete in Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/manipulation_detection.html">Wie die FritzBox Manipulationen erkennt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/freetz_make.html">Freetz Build-Prozeß</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/urlader_flags.html">Einstellungen speichern im Urlader-Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/flash.html">Flash Partitionierung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/firmware_update_details.html">Ablauf eines Firmware-Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/repack_fw.html">Entpacken und Packen von Firmware-Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/install_addon.html">Addon Paket installieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/make_busybox.html">Busybox konfigurieren und kompilieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/adam2.html">ADAM2-Bootloader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/save_mtd_1.html">Flash-Partitionen im laufenden Betrieb sichern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/integrate_own_files.html">Eigene Dateien in die Firmware integrieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/analyse_image_names.html">Firmware-Image-Namen analysieren und interpretieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/menuconfig.html">Menükonfiguration pflegen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/compile_own_progs.html">Eigene Programme kompilieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/make_kernel.html">Kernel konfigurieren und kompilieren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/make_room.html">Platz sparen im Dateisystem der FritzBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/developer_information/package_development.html">Package Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/developer_information/post_commit_hook.html">Trac Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/developer_information/shell_coding_conventions.html">Shell Coding Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/developer_information/package_development_advanced.html">Package Developing - Advanced Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/developer_information/package_development_dynamic.html">Paketverwaltung für Freetz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/developer_information/package_development_start.html">First steps - How to start your first freetz package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/developer_information/package_development_start/example_2.html">Example 2: par2cmdline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/developer_information/package_development_start/example_1.html">Example 1: Httptunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/developer_information/package_development_start/.language.html">.language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/developer_information/package_development_start/webinterface_example_1.html">Web-interface HTTPTunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/developer_information/package_development_start/example_3.html">Example 3: NZBGet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/developer_information/webif/libmodcgi.html">libmodcgi.sh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wikiedit/screenshots.html">Screenshots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wikiedit/toc.html">Inhaltsverzeichnis erstellen (lassen)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wikiedit/tagging.html">Tagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wikiedit/tables.html">Tabellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wikiedit/formatting_guide.html">Formatierungs-Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wikiedit/goodies.html">Wiki Goodies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../style/tagging.html">Tagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../style/skins.html">Skins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../style/favicons.html">Favicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../style/mounted.html">Aussehen von mounted.cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../libs/ftdi.html">ftdi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../libs/ftdi.en.html">libftdi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/bridge-utils.html">bridge-utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/sispmctl.html">sispmctl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/empty.html">Empty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/apache.html">Apache Webserver mit PHP CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/polipo.en.html">Using with Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/polipo.en.html#using-at-your-office">Using at your office</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/polipo.en.html#security">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/polipo.en.html#blocking-domains">Blocking domains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/polipo.en.html#issues">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/polipo.en.html#links">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/autofs.html">autofs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/strace.html">strace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/syslogd.html">Syslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/lsof.html">lsof</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/dns2tcp.html">Dns2Tcp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/tinyproxy.html">Tinyproxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/davfs2.html">WebDAV mit davfs2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/s3fslite.html">s3fslite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/dropbear.en.html">Dropbear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ctorrent.html">CTorrent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/irssi.html">irssi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/hplip.html">HPLIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/lighttpd.html">lighttpd Webserver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/privoxy.html">Privoxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/radvd.en.html">RADVD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/usbroot.html">USB-Root</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/vim.html">vim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/bluez-utils.html">Bluez-Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/sane-backends.html">SANE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/usbip.html">USB/IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/dropbear.html">Dropbear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/iptables-cgi.html">iptables-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/hd-idle.html">hd-idle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/fhem.html">FHEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/igmpproxy.html">igmpproxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/usbutils.html">usbutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/inotify-tools.html">Inotify-Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/authorized-keys.en.html">authorized-keys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/rrdstats.html">RRDstats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/mcabber.html">mcabber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/dtmfbox.html">DTMFBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/nfsd.en.html">NFSD_CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/espeak.html">eSpeak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/dnsd.html">dnsd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/tor.html">Tor Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/spindown.html">Spindown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ncftp.html">ncftp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/lynx.html">Lynx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/smstools3.html">SMStools3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/smstools3.html#weiteres">Weiteres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/debootstrap.html">Debootstrap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ppp.html">ppp-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ppp.html#allgemeine-konfiguration">Allgemeine Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ppp.html#konfiguration-fur-umts">Konfiguration für UMTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ppp.html#namensauflosung">Namensauflösung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ppp.html#firewall-routing-nat">Firewall, Routing &amp; NAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ppp.html#fallback">Fallback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ppp.html#treiberprobleme">Treiberprobleme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ppp.html#was-ist-noch-zu-beachten-2do-liste">Was ist noch zu beachten? (2do-Liste)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ppp.html#weiteres">Weiteres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/xmail.html">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/sundtek.html">Sundtek DVB Treiber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/iptables.html">iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/iptables.html#altere-beitrage-betreffen-fritzboxen-vor-der-72xx-serie">Ältere Beiträge (betreffen FritzBoxen vor der 72xx Serie)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/subversion.html">Subversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/dtach.html">dtach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/vsftpd.html">VSFTPd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ziproxy.html">ziproxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ntfs-3g.html">NTFS-3G</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ruby.html">Ruby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/aiccu.html">Aiccu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/mc.html">Midnight Commander</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/nfs.html">NFS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/streamripper.html">Streamripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/htpdate.html">htpdate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/lua.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/emailrelay.html">E-MailRelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/madplay.html">madplay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/nhipt.html">NHIPT - iptables firewall GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/netsnmp.html">Net-SNMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/transmission.en.html">Blocklist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/transmission.en.html#number-of-peers">Number of peers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/transmission.en.html#memory-usage">Memory usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/transmission.en.html#limit-memory-usage">Limit memory usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/transmission.en.html#watchdog">Watchdog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/transmission.en.html#links">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/imapproxy.en.html">ImapProxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/fuse.html">FUSE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/hiawatha.html">hiawatha</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/cifsmount.html">cifsmount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/matrixtunnel.html">matrixtunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ndas.en.html">NDAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/nfs-utils.html">NFS-Utils / NFS-Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/vpnc.html">vpnc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/haserl.html">Haserl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/obexftp.html">ObexFTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/nmap.html">Nmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/httptunnel.html">httptunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/onlinechanged.html">Onlinechanged</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/mini_fo.html">mini_fo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/mini_fo.html#konfiguration-webinterface">Konfiguration (Webinterface)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/mini_fo.html#konfiguration-per-hand">Konfiguration (per Hand)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/mini_fo.html#mogliche-nebeneffekte">Mögliche Nebeneffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/mini_fo.html#restore-original-file">Restore original file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/mini_fo.html#siehe-auch">Siehe auch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/pingtunnel.html">pingtunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/tcp_wrappers.html">TCP Wrapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/netsnmp.en.html">Net-SNMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/netsnmp.en.html#mrtg">MRTG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/wol.html">Wake on LAN (WoL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/cpmaccfg.html">cpmaccfg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/cpmaccfg.html#cpmaccfg-cgi">cpmaccfg-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/syslogd.en.html">Syslog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/checkmaild.html">checkmaild 0.4.7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/portmap.html">portmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/digitemp.html"><strong>Was ist digitemp?</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/digitemp.html#wichtiger-hinweis">Wichtiger Hinweis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/digitemp.html#tipp-bei-verwendung-mehrerer-usb-rs232-adapter-an-einer-fritzbox">Tipp bei Verwendung mehrerer USB-RS232-Adapter an einer Fritzbox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/digitemp.html#datenbank">Datenbank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/digitemp.html#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/downloader.html">Downloader-CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/bip.html">BIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/fortune.html">fortune</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/xrelayd.html">xrelayd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/tinc.html">Tinc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/bird.html">Bird</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/onlinechanged_cgi.html">Onlinechanged-CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/php.html">PHP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/phpxmail.en.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/phpxmail.en.html#basic-setup-guide">Basic setup guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/phpxmail.en.html#setup-ssl">Setup SSL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/phpxmail.en.html#useful-links">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/pptp.html">PPTP Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/mediatomb.html">MediaTomb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/inetd.html">inetd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/owfs.html">owfs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/unbound.html">Unbound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/fstyp.html">fstyp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/prosody.en.html">Prosody IM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/bftpd.html">Bftpd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/mod.html">(Freetz-) MOD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/br2684ctl.en.html">br2684ctl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/deco.html">Demos Commander</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/trickle.html">trickle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/radvd.html">Radvd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/opendd.html">OpenDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/pptpd.html">PoPTop - PPTP-VPN-Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/mediaserver.html">Mediaserver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/iptables.en.html">iptables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/dnsd.en.html">dnsd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/hp-utils.html">hp-utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/screen.html">screen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ndas.html">1. Using NDAS driver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ndas.html#using-ndas-harddisk-array">2. Using NDAS harddisk array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ndas.html#share-the-data-files-on-the-ndas-hard-disks">3. Share the data/files on the NDAS hard disks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ndas.html#ndas-robustnes">4. NDAS robustnes?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ndas.html#referenzen">Referenzen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/dnsmasq.html">dnsmasq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/wget.html">wget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/e2fsprogs.html">e2fsprogs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/bind.html">bind</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/tcpdump.html">tcpdump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/gw6.html">gw6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/nhipt.en.html">NHIPT - iptables firewall GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/openntpd.html">OpenNTPD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/rudi-shell.html">Rudi-Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/nano.html">nano</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/nfsd.html">NFSD_CGI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/stunnel.html">Stunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/rrdtool.html">RRDTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ldd.html">ldd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/prosody.html">Prosody IM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/fhzctrl.html">fhzctrl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/aiccu.en.html">AICCU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/authorized-keys.html">authorized_keys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/pciutils.html">pciutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/vtund.html">VTUN freetz Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/fritzload.html">FritzLoad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/jamvm.html">JamVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor.html">Callmonitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/br2684ctl.html">br2684ctl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/netcat.html">netcat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/quagga.html">Quagga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/samba.html">Samba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/iodine.html">iodine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/nagios.html">Nagios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/smartmontools.html">Smartmontools (smartctl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/mtr.html">mtr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/avm-firewall.html">AVM-firewall-cgi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/bash.html#ash">Ash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/bash.html#bash-als-loginshell">Bash als Loginshell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/asterisk.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/microperl.html">microperl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/nano-shell.html">Nano-Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/m-i-t.html">module-init-tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/minidlna.html">MiniDLNA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/inadyn-mt.html">Inadyn-MT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/bluez.html">BlueZ 4.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/DemoPackageA.html">DemoPackageA „Hello World“</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/DemoPackageA.html#quellen">Quellen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/openvpn.html">OpenVPN freetz Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/knock.html">knockd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/ltrace.html">ltrace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/curl.html">cURL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/inadyn-mt.en.html">Inadyn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/virtualip.html">Virtual IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/socat.html">socat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/transmission.html">Transmission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/config.html">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/reverse_search.html">Rückwärtssuche</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/phonebook.html">Telefonbuch (Callers)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/maintenance.html">Wartung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/adapt_messages.html">Anpassen der Benachrichtigungstexte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions.html">Aktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/listeners.html">Regeln (Listeners)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/testcall.html">Testanruf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/faq.html">Callmonitor-FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/events.html">Ereignisse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/config.html">FritzBox-Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/config.html#alternative">Alternative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/call.html">Allgemeine Hinweise zu Funktionsaufrufen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/relook.html">DGStation Relook 400S</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/rawmsg.html">Einfache TCP-Verbindungen (rawmsg)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/snarl.html">Listener-Eintrag:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/snarl.html#screenshots">Screenshots:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/dbox.html">DBox2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/xbox.html">XBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/getmsg.html">HTTP-Requests (getmsg)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/mail.html">E-Mail-Benachrichtigung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/samsung.html">Benachrichtigung auf einem Samsung TV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/self-defined.html">Selbstdefinierte Aktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/wol.html">Wake on LAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/yac.html">YAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/dial.html">Wählhilfe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/vdr.html">VDR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/dreambox.html">DreamBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/password.html">Benutzernamen und Passwörter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/musicpal.html">Freecom MusicPal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/callmonitor/actions/soundbridge.html">Roku SoundBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/netsnmp/mrtg.en.html">MRTG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/pptpd/config.html">Konfiguration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/pptpd/webif.html">Das Web-Frontend zum Paket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/pptpd/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/rudi-shell/tips.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/rudi-shell/limits.html">Grenzen &amp; Einschränkungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/rudi-shell/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/rudi-shell/usage.html">Illustrierte Anwendungsfälle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/rudi-shell/functions.html">Funktionsweise</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Freetz</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/wiki/help/howtos/common/install.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Link zu dieser Überschrift">¶</a></h1>
+<p><a class="reference external" href="../../../freetz.html">Freetz</a> stellt Skripte zum Modifizieren einer
+originalen Firmware bereit. Aus Lizenzgründen ist die Verbreitung sowohl
+originaler als auch modifizierter Firmware Images untersagt!</p>
+<p><img alt="Warning" src="../../../../_images/exclamation4.png" /> Achtung: Das Aufspielen einer modifizierten Firmware geht mit dem
+Verlust der Garantie einher. Wendet euch bei Problemen mit einer
+modifizierten Firmware daher <strong>NICHT</strong> an den AVM Support.</p>
+<p><strong>Anfänger</strong>: Bitte zuerst ‚<a class="reference external" href="newbie.html">Erste Schritte für
+Anfänger</a>‘ lesen!</p>
+<div class="section" id="virtuelles-linux-freetz-linux-fur-vmware-player">
+<span id="virtuelleslinux-freetz-linuxfurvmware-player"></span><h2>Virtuelles Linux: Freetz-Linux für VMware-Player<a class="headerlink" href="#virtuelles-linux-freetz-linux-fur-vmware-player" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Wenn kein natives Linux zur Verfügung steht wird von uns
+<a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=194433">​Freetz-Linux</a>
+als Buildumgebung empfohlen. Das von Silent-Tears (cinereous) zur
+Verfügung gestellte Image wird bei Problemen supported.</p>
+<p>Die unten stehende Anleitung wurde anfangs teilweise von
+<a class="reference external" href="http://www.ip-phone-forum.de/member.php?u=118161">​Saphir</a>
+übernommen, ist aber über die Zeit historisch gewachsen und wurde nach
+und nach von mehreren Benutzer erweitert und überarbeitet. Wir bemühen
+uns diese Anleitung möglichst aktuell zu halten und der jeweils
+aktuellen Version der aktuell zu empfehlenden virtuellen Maschine
+anzupassen. Grundsätzlich gelten jedoch die hier empfohlene Schritte mit
+gewissen Einschränkungen für jede FREETZ-tauglich konfigurierte
+virtuelle Linux-Maschine.</p>
+</div>
+<div class="section" id="vorbereitung">
+<span id="id2"></span><h2>Vorbereitung<a class="headerlink" href="#vorbereitung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Siehe auch:</p>
+<p><a class="reference external" href="http://www.ip-phone-forum.de/showpost.php?p=1400234&amp;postcount=1">​Buildumgebung Freetz-Linux
+Installieren</a></p>
+<p><a class="reference external" href="http://wiki.ip-phone-forum.de/skript:freetz_und_speed-to-fritz">​Freetz und Speed-to-Fritz
+Installation</a>
+(relevant nur für SpeedPort Benutzer)</p>
+</div>
+<div class="section" id="durchfuhrung-mit-windows-os">
+<span id="durchfuhrungmitwindowsos"></span><h2>Durchführung mit Windows OS<a class="headerlink" href="#durchfuhrung-mit-windows-os" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Benötigte Dateien:</p>
+<ul class="simple">
+<li>VMWare Player
+<a class="reference external" href="http://www.vmware.com/de/download/player/">​http://www.vmware.com/de/download/player/</a></li>
+<li>VMware Image für Freetz-Linux
+<a class="reference external" href="http://www.ip-phone-forum.de/showpost.php?p=1400234&amp;postcount=1">​Forumpost</a>
+<a class="reference external" href="http://sourceforge.net/projects/freetz-linux/files/freetz-linux-1.1.1/">​Download</a></li>
+<li>Freetz (aktuelle und ältere Versionen)
+<a class="reference external" href="../../../Download.html">Download</a>
+(Muss man nicht direkt downloaden, wenn man sich das Paket wie
+unten empfohlen per svn lädt)</li>
+<li>Evtl. vorhandene Patches für Freetz <a class="reference external" href="http://www.ip-phone-forum.de/forumdisplay.php?f=525">​Freetz
+Forum</a></li>
+</ul>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=194433">​Freetz-Linux</a>
+unter Windows mit
+<a class="reference external" href="http://downloads.sourceforge.net/sevenzip/7z442.exe">​7-Zip</a> oder
+<a class="reference external" href="http://www.rarlab.com/rar/wrar380d.exe">​WinRAR</a> entpacken.</p>
+</li>
+<li><p class="first">VMWare Player starten und keine Einstellungen ändern, da sich die
+virutelle Maschine eine IP per DHCP holt. Sollte dieses nicht der
+Fall sein kann die IP-Adresse mit folgendem Befehl auch per Hand
+gesetzt werden:</p>
+<div class="line-block">
+<div class="line">(Wobei die Netzwerkkarte „eth0“ evtl. durch eine eine andere
+ersetzt werden muss. Eine Auflistung aller Netzwerkkarten erhält
+man mit <strong>„ifconfig -a“</strong>)</div>
+</div>
+</li>
+<li><p class="first">Im VMWare Player mit dem Benutzernamen <strong>freetz</strong> und dem Passwort
+<strong>freetz</strong> anmelden.
+Jetzt gibt es mehrere Alternativen, wie man mit Freetz-Linux arbeiten
+kann und die Dateien zwischen Freetz-Linux und dem Rest der Welt
+bewegen kann.</p>
+<ul class="simple">
+<li><strong>Freetz-Linux Konsole</strong> im VMware Player (am einfachsten)</li>
+<li><strong>SSH/SCP</strong>: Zu anderen Möglichkeiten gehört z.B. eine
+SSH/SCP-Verbindung mit
+<a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">​putty</a>
+oder/und mit
+<a class="reference external" href="http://winscp.net/eng/download.php#download2">​WinSCP</a> (beide
+nur als Beispiel). Als Servernamen für putty/WinSCP trägt man die
+IP-Adresse von Freetz-Linux. Benutzername und Passwort s. oben</li>
+<li><strong>SAMBA</strong>: Außerdem gibt es die Möglichkeit Daten zwischen Windows
+und Freetz-Linux über SAMBA auszutauschen. Dafür gibt man in der
+Adressenleiste von WindowsExplorer “
+Freetz-Linux“ oder “
+IP-Adresse-von-Freetz-Linux“ an und schon kann man die Dateien
+zwischen Windows und Freetz-Linux hin und her schieben. Allerdings
+stimmen dann die Linux Benutzerrechte nicht automtisch wie sie
+sollten.</li>
+<li><strong>FTP</strong>: Funktioniert ähnlich wie SAMBA
+Alle diese Verbindungsmöglichkeiten sind unter Freetz-Linux
+voreingestellt und sollten von Anfang an funktionieren. Bei
+Problemen bitte Netzwerkverbindung, Firewall, etc. überprüfen.
+Ebenso sollten die Netzwerkeinstellungen vom VMWare-Player
+überprüft werden. Standardmäßig ist hier <strong>Bridged-Mode</strong>
+eingestellt. Anfangen mit den Tests sollte man mit „ping
+IP-Adresse-von-Freetz-Linux“ unter Eingabeaufforderung.</li>
+</ul>
+</li>
+<li><p class="first">Je nachdem, für welche Methode man sich entschieden hat, macht man
+folgendes:</p>
+<ul class="simple">
+<li>Mit <strong>SSH/TELNET</strong> oder <strong>Freetz-Linux Konsole</strong> (bevorzugt)
+folgendes eingeben: (Anstatt freetz-2.0.x kann auch eine andere,
+z.B. Entwicklerversion genommen werden.)</li>
+</ul>
+</li>
+</ol>
+<p>Aktuell:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Achtung:</strong> Kleiner Tip für Vista und Windows 7 User:</div>
+<div class="line">Solltet Ihr eine IP-Adresse in der VM-Ware erhalten (ifconfig),
+aber trotzdem folgende Fehlermeldung bekommen :<strong>hostname konnte
+nicht aufgelöst werden</strong>, dann kontrolliert bitte Folgendes in
+Eurer Systemsteuerung:</div>
+<div class="line">1.) ob Euer Netzwerk ein Heimnetzwerk ist:</div>
+</div>
+<div class="figure">
+<img alt="" src="../../../../_images/124.jpg" />
+</div>
+<div class="line-block">
+<div class="line">2.) ob Eure Netzwerkkennung eingeschaltet ist:</div>
+</div>
+<div class="figure">
+<img alt="" src="../../../../_images/123.jpg" />
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div></blockquote>
+<ol class="arabic">
+<li><p class="first"><em>Optional</em>: Patch einspielen (siehe
+<a class="reference external" href="../development/integrate_patches.html">Howto</a>)</p>
+</li>
+<li><p class="first">In das Verzeichnis des ausgecheckten/entpackten Freetz wechseln:</p>
+</li>
+<li><p class="first">Einstellungen wie Boxtyp, Pakete usw. konfigurieren. Dies ist über
+ein <a class="reference external" href="http://de.wikipedia.org/wiki/Ncurses">​ncurses</a> Interface
+möglich, welches z.B. aus der Konfiguration des Linux Kernels bekannt
+ist. Details und Beschreibungen zu den Optionen gibt es in der
+Beschreibung zum <a class="reference external" href="install/menuconfig.html">menuconfig</a>.</p>
+<div class="line-block">
+<div class="line">Es empfiehlt sich beim ersten Mal nicht zu viele Einstellungen zu
+verändern und das erste FritzBox Firmware Image mit den
+Standardvorgaben zu erstellen.</div>
+</div>
+</li>
+<li><p class="first">Firmware modifizieren. In diesem Schritt werden die zu der gewählten
+Konfiguration passenden Originalfirmware, Pakete, sowie Sourcen für
+die benötigten Tools vollautomatisch heruntergeladen und die
+modifizierte Firmware in drei Schritten erzeugt. Beim ersten Mal
+dauert es etwas länger. Die Zeit ist abhängig von den ausgewählten
+Paketen und dem benutzten Rechner. Man kann also ruhig eine
+Kaffeepause einlegen.</p>
+</li>
+<li><p class="first">Wenn der Build ohne Fehler durchgelaufen ist, dann findet sich jetzt
+unter <code class="docutils literal notranslate"><span class="pre">~/freetz-2.0.*/images</span></code> die neue FritzBox Firmware (z.B.
+<code class="docutils literal notranslate"><span class="pre">7170_04.76freetz-devel-10390.de_20130421-180742.image</span></code>).</p>
+</li>
+<li><p class="first">Diese Datei kann ganz normal als Firmware Update auf die Box
+hochladen werden. Dazu muss die FritzBox aber mit einem Passwort
+gesichert sein, da sie fremde Images sonst nicht akzeptiert. (Falls
+Freetz schon auf der Box ist sollte bevorzugt die Update Funktion des
+Freetz Webinterfaces genutzt werden.) Nach einem erfolgreichen Upload
+ist nun auf Port 81 ein weiteres Webinterface verfügbar, welches
+Instruktionen zum Abschluss der Installation enthält. Sollte die Box
+nach dem Hochladen der Firmware auch Minuten nachdem die Info LED
+aufgehört hat zu blinken nicht mehr erreichbar sein (typischerweise
+leuchten <strong>periodisch</strong> immer wieder alle LEDs auf), so kann die
+originale Firmware bei den meisten Box-Typen, wie in diesem
+<a class="reference external" href="../troubleshoot/recover_firmware.html">Howto</a> beschrieben,
+wiederhergestellt werden.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="durchfuhrung-mit-linux-os">
+<span id="durchfuhrungmitlinuxos"></span><h2>Durchführung mit Linux OS<a class="headerlink" href="#durchfuhrung-mit-linux-os" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="notwendige-pakete">
+<span id="notwendigepakete"></span><h3>Notwendige Pakete<a class="headerlink" href="#notwendige-pakete" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Für das Erstellen der Firmware kann auch Knoppix verwendet werden, wozu
+keine Linux-Installation erforderlich ist. Wichtig ist, dass zum
+Kompilieren des Mods unter Linux keine FAT oder NTFS Partition verwendet
+wird. Die folgende Anleitung benötigt für</p>
+<div class="section" id="freetz-2-x-stabile-version">
+<span id="freetz-2-xstabileversion"></span><h4>freetz-2.x (stabile Version)<a class="headerlink" href="#freetz-2-x-stabile-version" title="Link zu dieser Überschrift">¶</a></h4>
+<ul class="simple">
+<li><strong>gcc</strong> - GNU C Compiler</li>
+<li><strong>g++</strong> - GNU C++ Compiler</li>
+<li><strong>binutils</strong> - GNU Assembler, Linker und Binary-Werkzeuge</li>
+<li><strong>autoconf</strong> - dem Make vorgeschalteter Generator für
+Konfigurationsskripten nach GNU-Standard; hilft dabei,
+plattformunabhängig programmierte Software letztendlich für einen
+plattformspezifischen Build vorzubereiten</li>
+<li><strong>automake</strong> ab Version 1.10 - Makefile-Generator nach GNU-Standard;
+wird nur für manche Pakete benötigt, aber z.B. für
+<a class="reference external" href="../../../packages/privoxy.html">privoxy</a>; Paketmanager
+installiert normalerweise <em>autoconf</em> als abhängiges Paket gleich mit</li>
+<li><strong>libtool</strong> - hilft beim Erstellen von statischen und dynamischen
+Bibliotheken; kann z.B. beim aufruf von <em>autoreconf</em> notwendig werden</li>
+<li><strong>GNU make</strong> ab Version 3.81 - skriptgesteuertes Build-System</li>
+<li><strong>bzip2</strong> - (Ent)packen von Software-Archiven</li>
+<li><strong>libncurses5-dev</strong> - Entwickler-Bibliothek für ncurses (Erzeugung
+komfortabler textbasierter Benutzerschnittstellen, vgl.
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code>)</li>
+<li><strong>zlib1g-dev</strong> - Entwickler-Bibliothek für gzip-Kompression</li>
+<li><strong>flex</strong> - lex-kompatibler Generator für lexikalische Analyse</li>
+<li><strong>bison</strong> - YACC-kompatibler Parser-Generator</li>
+<li><strong>patch</strong> - Programm, um Patches anzuwenden</li>
+<li><strong>texinfo</strong> - Online-/Druck-Doku aus gemeinsamer Quelle erzeugen</li>
+<li><strong>tofrodos</strong> - Dateiumwandlung DOS ↔ UNIX (für was wird das
+benötigt?)</li>
+<li><strong>gettext</strong> - Texte in Programmen internationalisieren</li>
+<li><strong>pkg-config</strong> - Hilfstool welches zum Bauen von Binaries und
+Libraries nötig ist</li>
+<li><strong>ecj-bootstrap</strong> - Eclipse Java Compiler (evtl. auch libecj-java und
+ecj in neueren Distributionen); nur notwendig für Package <em>classpath</em>
+ab 0.95</li>
+<li><strong>perl</strong> - Perl-Interpreter; notwendig für <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">recover</span></code></li>
+<li><strong>libstring-crc32-perl</strong> - Perl-Modul zur Berechnung von
+CRC32-Prüfsummen; notwendig für <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">recover</span></code></li>
+<li><strong>xz-utils</strong> - (Ent)packen von Software-Archiven im XZ-Format (strace
+seit freetz-stable-1.2)</li>
+</ul>
+</div>
+<div class="section" id="aktuelle-entwicklerversion-und-spezielle-pakete">
+<span id="aktuelleentwicklerversionundspeziellepakete"></span><h4>aktuelle Entwicklerversion und spezielle Pakete<a class="headerlink" href="#aktuelle-entwicklerversion-und-spezielle-pakete" title="Link zu dieser Überschrift">¶</a></h4>
+<p>Diese benötigen zusätzlich zu bereits unter <em>freetz-2.x</em> genannten noch
+folgende Pakete:</p>
+<ul class="simple">
+<li><strong>svn</strong> - Subversion zum Auschecken der aktuellen Freetz-Versionen</li>
+<li><strong>ruby1.8</strong> - objektorientierte Skriptsprache (Version 1.8.6); nur
+notwendig für Package <em>ruby</em> (ab freetz-devel) - seltsamerweise
+benötigt der Crosscompile für <em>ruby-1.8.6</em> eine installierte Version
+seiner selbst als Voraussetzung. Zu allem Überfluß könnte es sein,
+daß Sie im Paket zwar <code class="docutils literal notranslate"><span class="pre">/usr/bin/ruby1.8</span></code> o.ä. haben, aber nicht das
+vom Makefile benötigte Binary Namens <em>ruby</em>. Da hilft im o.g.
+Beispiel <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">ruby1.8</span> <span class="pre">/usr/bin/ruby</span></code> bzw. die Ausführung des
+<code class="docutils literal notranslate"><span class="pre">ln</span></code>-Befehls als Benutzer <em>root</em>.</li>
+<li><strong>gawk</strong> - GNU awk; notwendig für das Skript <code class="docutils literal notranslate"><span class="pre">tools/extract-images</span></code>
+(ab freetz-devel), wenn man z.B. ein Recover-EXE zerlegen, also
+<em>urlader.image</em> und <em>kernel.image</em> extrahieren möchte. Die in anderen
+<em>awk</em>-Varianten nicht vorhandene Funktion <em>strtonum</em> wird an einer
+Stelle verwendet.</li>
+<li><strong>python</strong> - Python-Interpreter; notwendig, um via
+<code class="docutils literal notranslate"><span class="pre">tools/mklibs.py</span></code> unbenutzte Symbole aus Bibliotheken zu entfernen,
+um Platz zu sparen</li>
+<li><strong>libusb-dev</strong> - Entwicklungs-Bibliothek für USB-Anwendungen im
+Userspace; nur notwendig für SANE, wenn bspw.
+Multifunktionsdrucker/-scanner an die FritzBox angebunden werden
+sollen. Siehe auch
+<a class="reference external" href="http://www.ip-phone-forum.de/showpost.php?p=1075181&amp;postcount=199">​Forums-Beitrag</a>
+dazu.</li>
+<li><strong>realpath</strong> - wird nur von Entwicklern benötigt, die innerhalb von
+<em>fwmod</em> beim Build das Patch-Auto-Fixing verwenden
+(AUTO_FIX_PATCHES=y im Environment). Wer nicht weiß, wovon die Rede
+ist, braucht es auch nicht. Unter Fedora nicht verfügbar, man kann es
+aber selbst kompilieren
+<a class="reference external" href="http://forums.fedoraforum.org/archive/index.php/t-143199.html">​http://forums.fedoraforum.org/archive/index.php/t-143199.html</a>.
+<strong>TODO</strong> nicht mehr notwendig in Trunk und freetz-stable-1.2, Eintrag
+löschen nach Release.</li>
+<li><strong>fastjar</strong> - Implementation des Java jar utils; nur notwendig für
+Package <em>classpath</em></li>
+<li><strong>git</strong> - GIT Tool zum auschecken von GIT Repositories (benötigt für
+freetz_download)</li>
+<li><strong>imagemagick</strong> (bzw <strong>ImageMagick</strong>) - enthält <code class="docutils literal notranslate"><span class="pre">composite</span></code> mit dem
+Bilder kombiniert werden können; nur notwendig wenn man das
+AVM-Webinterface „taggen“ möchte</li>
+<li><strong>patchutils</strong> - Tools zum Umgang mit Patches; notwendig für
+<code class="docutils literal notranslate"><span class="pre">tools/freetz_patch</span></code> (Auto-Fix-Modus)</li>
+<li><strong>mktemp</strong> - Erzeugen temporärer Dateien mit Zufallsnamen; notwendig
+für <code class="docutils literal notranslate"><span class="pre">tools/freetz_patch</span></code> (Auto-Fix-Modus)</li>
+</ul>
+</div>
+<div class="section" id="alte-entwicklerversionen">
+<span id="alteentwicklerversionen"></span><h4>alte Entwicklerversionen<a class="headerlink" href="#alte-entwicklerversionen" title="Link zu dieser Überschrift">¶</a></h4>
+<p>Hier wird zusätzlich folgendes benötigt:</p>
+<ul class="simple">
+<li><strong>automake-1.8</strong> - Version, die zusätzlich speziell von <em>libid3tag</em>
+benötigt wird. Nicht mehr erforderlich ab Freetz 1.0.</li>
+<li><strong>jikes</strong> - Java Byte Code Compiler; nur notwendig für Package
+<em>classpath</em> bis 0.93 bzw. ds26-14.4</li>
+</ul>
+</div>
+</div>
+<div class="section" id="installation-der-benotigten-pakete-ubuntu">
+<span id="installationderbenotigtenpaketeubuntu"></span><h3>Installation der benötigten Pakete (Ubuntu)<a class="headerlink" href="#installation-der-benotigten-pakete-ubuntu" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Eine einfache Möglichkeit die benötigten Pakete zu installieren besteht
+darin, diesen Code per Copy and Paste auf der Konsole auszuführen.</p>
+<p>(Falls du eine US-Tastaturbelegung hast → „sudo locale-gen de_DE“ und
+„sudo dpkg-reconfigure console-data“ ausführen.
+<a class="reference external" href="https://help.ubuntu.com/community/LocaleConf">​Details</a> )</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">upgrade</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span>
+
+<span class="c1"># Angepasst z.B. auf Ubuntu 9.04 (kein automake 1.8, &quot;ecj&quot; statt &quot;ecj-bootstrap&quot;):</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">imagemagick</span> <span class="n">subversion</span> <span class="n">gcc</span> <span class="n">g</span><span class="o">++</span> <span class="n">binutils</span> <span class="n">autoconf</span> <span class="n">automake</span> <span class="n">automake1</span><span class="o">.</span><span class="mi">9</span> <span class="n">libtool</span> <span class="n">make</span> <span class="n">bzip2</span> <span class="n">libncurses5</span><span class="o">-</span><span class="n">dev</span> <span class="n">libreadline</span><span class="o">-</span><span class="n">dev</span> <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span> <span class="n">flex</span> <span class="n">bison</span> <span class="n">patch</span> <span class="n">texinfo</span> <span class="n">tofrodos</span> <span class="n">gettext</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span> <span class="n">jikes</span> <span class="n">ecj</span> <span class="n">fastjar</span> <span class="n">realpath</span> <span class="n">perl</span> <span class="n">libstring</span><span class="o">-</span><span class="n">crc32</span><span class="o">-</span><span class="n">perl</span> <span class="n">ruby</span> <span class="n">ruby1</span><span class="o">.</span><span class="mi">8</span> <span class="n">gawk</span> <span class="n">python</span> <span class="n">libusb</span><span class="o">-</span><span class="n">dev</span> <span class="n">unzip</span> <span class="n">intltool</span> <span class="n">libglib2</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">dev</span> <span class="n">xz</span><span class="o">-</span><span class="n">utils</span> <span class="n">git</span><span class="o">-</span><span class="n">core</span> <span class="n">libacl1</span><span class="o">-</span><span class="n">dev</span> <span class="n">libattr1</span><span class="o">-</span><span class="n">dev</span> <span class="n">libcap</span><span class="o">-</span><span class="n">dev</span>
+
+<span class="c1"># Ubuntu 9.10, 10.xx, 11.xx und 12.04</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">imagemagick</span> <span class="n">subversion</span> <span class="n">gcc</span> <span class="n">g</span><span class="o">++</span> <span class="n">bzip2</span> <span class="n">binutils</span> <span class="n">automake</span> <span class="n">patch</span> <span class="n">autoconf</span> <span class="n">libtool</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span> <span class="n">make</span> <span class="n">libncurses5</span><span class="o">-</span><span class="n">dev</span> <span class="n">libreadline</span><span class="o">-</span><span class="n">dev</span> <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span> <span class="n">flex</span> <span class="n">bison</span> <span class="n">patch</span> <span class="n">texinfo</span> <span class="n">tofrodos</span> <span class="n">gettext</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span> <span class="n">ecj</span> <span class="n">fastjar</span> <span class="n">realpath</span> <span class="n">perl</span> <span class="n">libstring</span><span class="o">-</span><span class="n">crc32</span><span class="o">-</span><span class="n">perl</span> <span class="n">ruby</span> <span class="n">ruby1</span><span class="o">.</span><span class="mi">8</span> <span class="n">gawk</span> <span class="n">python</span> <span class="n">libusb</span><span class="o">-</span><span class="n">dev</span> <span class="n">unzip</span> <span class="n">intltool</span> <span class="n">libglib2</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">dev</span> <span class="n">xz</span><span class="o">-</span><span class="n">utils</span> <span class="n">git</span><span class="o">-</span><span class="n">core</span> <span class="n">libacl1</span><span class="o">-</span><span class="n">dev</span> <span class="n">libattr1</span><span class="o">-</span><span class="n">dev</span> <span class="n">libcap</span><span class="o">-</span><span class="n">dev</span>
+
+<span class="c1">#Ubuntu 13.04 und 14.04</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">graphicsmagick</span> <span class="n">subversion</span> <span class="n">gcc</span> <span class="n">g</span><span class="o">++</span> <span class="n">binutils</span> <span class="n">autoconf</span> <span class="n">automake</span> <span class="n">automake1</span><span class="o">.</span><span class="mi">9</span> <span class="n">libtool</span> <span class="n">make</span> <span class="n">bzip2</span> <span class="n">libncurses5</span><span class="o">-</span><span class="n">dev</span> <span class="n">libreadline</span><span class="o">-</span><span class="n">dev</span> <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span> <span class="n">flex</span> <span class="n">bison</span> <span class="n">patch</span> <span class="n">texinfo</span> <span class="n">tofrodos</span> <span class="n">gettext</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span> <span class="n">ecj</span> <span class="n">fastjar</span> <span class="n">realpath</span> <span class="n">perl</span> <span class="n">libstring</span><span class="o">-</span><span class="n">crc32</span><span class="o">-</span><span class="n">perl</span> <span class="n">ruby</span> <span class="n">ruby1</span><span class="o">.</span><span class="mi">8</span> <span class="n">gawk</span> <span class="n">python</span> <span class="n">libusb</span><span class="o">-</span><span class="n">dev</span> <span class="n">unzip</span> <span class="n">intltool</span> <span class="n">libacl1</span><span class="o">-</span><span class="n">dev</span> <span class="n">libcap</span><span class="o">-</span><span class="n">dev</span>
+
+<span class="c1"># Seit Debian Jessie bzw. Ubuntu 15.04 (vivid) wird zusätzlich das Paket libtool-bin benötigt:</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">libtool</span><span class="o">-</span><span class="nb">bin</span>
+
+<span class="c1"># Auf 64-Bit Systemen sind zusätzlich folgende Pakete zu installieren:</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">libc6</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">i386</span> <span class="n">lib32ncurses5</span><span class="o">-</span><span class="n">dev</span> <span class="n">gcc</span><span class="o">-</span><span class="n">multilib</span> <span class="n">lib32stdc</span><span class="o">++</span><span class="mi">6</span>
+
+<span class="c1"># Ubuntu 15.10 x64:</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">imagemagick</span> <span class="n">subversion</span> <span class="n">git</span> <span class="n">gcc</span> <span class="n">g</span><span class="o">++</span> <span class="n">binutils</span> <span class="n">autoconf</span> <span class="n">automake</span> <span class="n">autopoint</span> <span class="n">libtool</span><span class="o">-</span><span class="nb">bin</span> <span class="n">make</span> <span class="n">bzip2</span> <span class="n">libncurses5</span><span class="o">-</span><span class="n">dev</span> <span class="n">libreadline</span><span class="o">-</span><span class="n">dev</span> <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span> <span class="n">flex</span> <span class="n">bison</span> <span class="n">patch</span> <span class="n">texinfo</span> <span class="n">tofrodos</span> <span class="n">gettext</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span> <span class="n">ecj</span> <span class="n">fastjar</span> <span class="n">realpath</span> <span class="n">perl</span> <span class="n">libstring</span><span class="o">-</span><span class="n">crc32</span><span class="o">-</span><span class="n">perl</span> <span class="n">ruby</span> <span class="n">ruby1</span><span class="o">.</span><span class="mi">8</span> <span class="n">gawk</span> <span class="n">python</span> <span class="n">libusb</span><span class="o">-</span><span class="n">dev</span> <span class="n">unzip</span> <span class="n">intltool</span> <span class="n">libacl1</span><span class="o">-</span><span class="n">dev</span> <span class="n">libcap</span><span class="o">-</span><span class="n">dev</span> <span class="n">libc6</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">i386</span> <span class="n">lib32ncurses5</span><span class="o">-</span><span class="n">dev</span> <span class="n">gcc</span><span class="o">-</span><span class="n">multilib</span> <span class="n">lib32stdc</span><span class="o">++</span><span class="mi">6</span> <span class="n">libglib2</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+</div>
+<p>Wer vergessen hat welche Ubuntu Version er installierte kann dies mit
+folgenden Befehlen prüfen:</p>
+</div>
+<div class="section" id="installation-der-benotigten-pakete-fedora">
+<span id="installationderbenotigtenpaketefedora"></span><h3>Installation der benötigten Pakete (Fedora)<a class="headerlink" href="#installation-der-benotigten-pakete-fedora" title="Link zu dieser Überschrift">¶</a></h3>
+</div>
+<div class="section" id="erstellung-installation">
+<span id="erstellunginstallation"></span><h3>Erstellung &amp; Installation<a class="headerlink" href="#erstellung-installation" title="Link zu dieser Überschrift">¶</a></h3>
+<ol class="arabic simple">
+<li>Shell öffnen, ins Verzeichnis von <code class="docutils literal notranslate"><span class="pre">freetz-xxx.tar.bz2</span></code> wechseln und
+diesen mit <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-xvjf</span> <span class="pre">freetz-x.y.z.tar.bz2</span></code> entpacken</li>
+<li><em>Optional</em>: Patch einspielen (siehe
+<a class="reference external" href="../development/integrate_patches.html">Howto</a>)</li>
+<li>Mit <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">freetz-xxx/</span></code> in das Verzeichnis des entpackten Freetz
+wechseln</li>
+<li>Konfiguration wählen. Dies ist über ein ncurses Interface möglich,
+welches z.B. aus der Konfiguration des Linux Kernels bekannt ist.
+Details und Beschreibungen zu den Optionen gibt es in der
+Beschreibung zum <a class="reference external" href="install/menuconfig.html">make menuconfig</a>.</li>
+<li>Firmware modifizieren. In diesem Schritt werden die zu der gewählten
+Konfiguration passenden original Firmware und Pakete, sowie Sourcen
+für die benötigten Tools vollautomatisch heruntergeladen und die
+modifizierte Firmware in drei Schritten erzeugt. Dies erledigt ein
+simples <code class="docutils literal notranslate"><span class="pre">make</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">*.image</span></code> als Firmware Update auf die Box hochladen. Nach einem
+erfolgreichen Upload ist nun auf Port 81 ein weiteres Webinterface
+verfügbar, welches Instruktionen zum Abschluss der Installation
+enthält. Sollte die Box nach dem Hochladen der Firmware auch Minuten
+nachdem die Info LED aufgehört hat zu blinken nicht mehr erreichbar
+sein (typischerweise leuchten <strong>periodisch</strong> immer wieder alle LEDs
+auf), so kann die originale Firmware bei den meisten Box-Typen, wie
+in diesem <a class="reference external" href="../troubleshoot/recover_firmware.html">Howto</a>
+beschrieben, wiederhergestellt werden.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="colinux-andlinux-speedlinux">
+<span id="colinuxandlinuxspeedlinux"></span><h2>coLinux / andLinux / speedLinux<a class="headerlink" href="#colinux-andlinux-speedlinux" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Siehe auch: <a class="reference external" href="http://wiki.ip-phone-forum.de/skript:andlinux">​andlinux unter Vista
+installieren</a></p>
+<p>Alternativ kann auch <a class="reference external" href="http://colinux.org">​coLinux</a> benutzt werden,
+ist etwas resourcenschonender als der vmware player. Mit speedLinux ist
+alles vorbereitet für freetz oder speed-to-fritz. Mit ./freetz werden
+alle notwendigen Vorbereitungen und Installationen durchgeführt.
+aktueller Stand 25.10.2009</p>
+<p>Anmerkung von Alexander Kriegisch (kriegaex), 24.02.2008: Ja, das
+benutze ich auch seit gestern, und zwar speziell die mit Ubuntu Gutsy
+und XFCE (wahlweise auch KDE) vorkonfigurierte Variante
+<a class="reference external" href="http://www.andlinux.org">​andLinux</a>, die man wahlweise als Dienst
+oder als Anwendung starten kann und mit einem einfachen Installer
+ausgeliefert wird. Scheint etwas langsamer zu sein als ein reines Linux,
+aber es ist schon cool, Linux-Fenster nativ neben Windows-Fenstern zu
+haben. <em>:-)</em> Der mitgelieferte X-Server Xming (für Windows) macht’s
+möglich. Ich verwende übrigens nicht mal ein X-Terminal, sondern logge
+mich sozusagen „headless“ über SSH ein (Putty). Ab und zu lasse ich mal
+Synaptic oder als X-Editor SciTE laufen, den ich nachinstalliert habe.
+Ich baue gerade sämtliche Freetz-Pakete „from scratch“ inkl.
+<a class="reference external" href="../../../Download.html">Download</a>, es geht genauso wie in VMware
+oder nativem Linux, also Linux-Paketliste siehe oben.</p>
+<p>Nachteile von coLinux/andLinux/speedLinux:</p>
+<ul class="simple">
+<li>bei Multicore-Prozessoren wird nur ein Kern benutzt</li>
+<li>keine 64bit Unterstützung</li>
+<li>gravierende Systemanpassungen (spezieller Kernel, etc) bei Updates
+des Systems notwendig.</li>
+</ul>
+<p>Vorteile von coLinux/andLinux/speedLinux:</p>
+<ul class="simple">
+<li>kommt mit weniger RAM aus als VMWare (geringerer Ressourcenbedarf)</li>
+<li>native Windowsfenster</li>
+</ul>
+<p>Bei andLinux - Beta 2 minimal ist nicht ausreichend Platz für ein Build
+vorhanden. Ein Lösungsansatz: Den andLinux Dienst stoppen
+(Startmenü-andLinux-Stop andLinux) In das andLinux
+Installationsverzeichnis wechseln und die Datei „ImageResizeTool.zip“
+nach „Drives“ entpacken. Dort die Datei „toporesize.bat“ ausführen.</p>
+<p>Leider hat das bei mir nicht funktioniert.</p>
+<p>Alternative Möglichkeit:</p>
+<ol class="arabic simple">
+<li>cmd.exe ausführen (ggf. als Admin)</li>
+<li>in das andLinux Installationsverzeichnis wechseln</li>
+<li>Dienst Stoppen (siehe oben) oder srvstop.bat ausführen</li>
+<li>in das „Drives“ Verzeichnis wechseln</li>
+<li>tfile base.vdi 4096 : vergrößert das Filesystem auf 4 GB</li>
+<li>e2fsck.exe -f base.vdi</li>
+<li>resize2fs.exe base.vdi</li>
+<li>Dienst wieder starten (via Startmenü oder srvstart.bat)</li>
+</ol>
+<p>Eine weitere Partition für Feetz anlegen.</p>
+<p>Das bietet auch den Vorteil das bei Updates diese Partition nicht
+berührt wird und so wie diese ist weiter verwendet werden kann.</p>
+<blockquote>
+<div>Wie macht man das?</div></blockquote>
+<blockquote>
+<div><p>Beispiel:</p>
+<blockquote>
+<div>Eine Kopie von Drivesbase.vdi auf Drivescopyofbase.vdi machen,
+der Inhalt kann später nach Einbindung gelöscht werden.</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><p>Im File settings.txt die folgende Zeile zusätzlich eintragen:</p>
+<p>cobd2=Drivescopyofbase.vdi</p>
+</div></blockquote>
+<blockquote>
+<div><p>Im gestartenten LINUX vorher Verzeichnis <em>/mnt/freetz</em> anlegen und
+in der Datei <em>/etc/fstab</em> folgende Zeile eintragen:</p>
+<p><em>/dev/cobd2 /mnt/freetz ext3 defaults 1 1</em></p>
+</div></blockquote>
+<p>SpeedLinux hat eine Option zum vergrößern der Partition.</p>
+</div>
+<div class="section" id="cygwin">
+<span id="id3"></span><h2>Cygwin<a class="headerlink" href="#cygwin" title="Link zu dieser Überschrift">¶</a></h2>
+<p><img alt="Warning" src="../../../../_images/exclamation4.png" /> <strong>Unter Cygwin funktioniert Freetz definitiv nicht, und auch für
+ds-0.2.9 (Kernel 2.4) wird Linux empfohlen, weil es mit Cygwin Probleme
+geben kann und es außerdem einen riesigen Geschwindigkeitsverlust beim
+Bauen (mehrfache Build-Dauer) bedeutet, Cygwin zu verwenden.</strong> <img alt="Warning" src="../../../../_images/exclamation4.png" /></p>
+<p>Da Freetz sich unter Cygwin ohnehin nicht bauen lässt, folgt hier
+lediglich die Beschreibung für ds-mod:</p>
+<p>Ein Howto von dsl123 zum Kompilieren des ds-mod’s unter Cygwin gibt es
+<a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=98657">​hier</a>. Zum
+Entpacken der Datei <code class="docutils literal notranslate"><span class="pre">ds-*.tar.bz2</span></code> unter Windows <strong>ausschließlich</strong>
+das Cygwin-tar — wie in der Anleitung beschrieben — verwenden:</p>
+<ol class="arabic simple">
+<li>Cygwin Installer von
+<a class="reference external" href="http://www.cygwin.com/">​http://www.cygwin.com/</a> herunterladen
+und ausführen</li>
+<li>Cygwin mit den folgenden Paketen installieren:<ul>
+<li>Archive &gt; unzip</li>
+<li>Devel &gt; gcc, libncurses-devel, make, patchutils</li>
+<li>Interpreters &gt; perl</li>
+<li>Web &gt; wget</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">ds-*.tar.bz2</span></code> in das Cygwin Home-Verzeichnis herunterladen (je
+nach Installation z.B. <code class="docutils literal notranslate"><span class="pre">C:/Cygwin/home/&lt;Windows-Benutzername&gt;/</span></code>)</li>
+<li>Cygwin Shell öffnen und den ds-mod entpacken
+<code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-xvjf</span> <span class="pre">ds-x.y.z.tar.bz2</span></code></li>
+<li><em>Optional</em>: Patch einspielen (siehe
+<a class="reference external" href="../development/integrate_patches.html">Howto</a>)</li>
+<li>In das Verzeichnis des entpackten ds-mod wechseln <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">ds-*/</span></code></li>
+<li>Konfiguration wählen. Dies ist über ein
+<a class="reference external" href="http://de.wikipedia.org/wiki/Ncurses">​ncurses</a> Interface
+möglich, welches z.B. aus der Konfiguration des Linux Kernels bekannt
+ist. Details und Beschreibungen zu den Optionen gibt es in der
+Beschreibung zum <a class="reference external" href="install/menuconfig.html">menuconfig</a>.
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">menuconfig</span></code></li>
+<li>Firmware modifizieren. In diesem Schritt werden die zu der gewählten
+Konfiguration passenden original Firmware und Pakete, sowie Sourcen
+für die benötigten Tools vollautomatisch heruntergeladen und die
+modifizierte Firmware in drei Schritten erzeugt. <code class="docutils literal notranslate"><span class="pre">make</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">firmware_*.image</span></code> als Firmware Update auf die Box hochladen. Nach
+einem erfolgreichen Upload ist nun auf Port 81 ein weiteres
+Webinterface verfügbar, welches Instruktionen zum Abschluss der
+Installation enthält. Sollte die Box nach dem Hochladen der Firmware
+auch Minuten nachdem die Info LED aufgehört hat zu blinken nicht mehr
+erreichbar sein (typischerweise leuchten <strong>periodisch</strong> immer wieder
+alle LEDs auf), so kann die original Firmware mit Hilfe der
+<code class="docutils literal notranslate"><span class="pre">recover.exe</span></code> von AVM wiederhergestellt werden.</li>
+</ol>
+</div>
+<div class="section" id="mac-os-x">
+<span id="macosx"></span><h2>Mac OS X<a class="headerlink" href="#mac-os-x" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Im Prinzip und mit ein paar Patches funktioniert ein aktuelles ds-mod
+auch unter Mac OS X. Zumindest ist mir gelungen, ds-0.2.9_26-14.2 unter
+Mac OS X zum Funktionieren zu überreden.</p>
+<p>Zunächst sind folgende Voraussetzungen zu erfüllen:</p>
+<ol class="arabic simple">
+<li>Datenpartition erstellen, bei der das HFS+ case sensitive
+konfiguriert ist.</li>
+<li>Xcode installieren. Dadurch erhält man geeignete Versionen von u. a.<ul>
+<li>gcc</li>
+<li>g++</li>
+<li>autoconf</li>
+<li>automake</li>
+<li>make</li>
+<li><a class="reference external" href="http://de.wikipedia.org/wiki/Ncurses">​ncurses</a></li>
+<li>zlib</li>
+<li>flex</li>
+<li>bison</li>
+</ul>
+</li>
+</ol>
+<p>Außerdem sind einige (GNU) Utilities nötig, die z.B. über Darwin Ports
+installiert werden können:</p>
+<ul class="simple">
+<li>gettext</li>
+<li>texinfo</li>
+<li>dos2unix</li>
+<li>gawk</li>
+<li>coreutils</li>
+<li>findutils</li>
+<li>gsed</li>
+</ul>
+<p>Und vermutlich ein paar weitere, wenn man die entsprechenden Packages
+anwählt.</p>
+<p>Die zusätzlichen Utilities werden in der Regel unter Namen installiert,
+die mit g beginnen, um nicht mit den nativen Utilities von Mac OS X in
+Konflikt zu geraten. Manche Konfigurationsskripte setzen aber die
+Eigenschaften von GNU-Utilities voraus, auch wenn sie unter dem
+Standardnamen aufgerufen werden. Daher habe ich mir ein Verzeichnis
+erstellt, in dem Symlinks der Standardnamen auf die GNU Utilities
+zeigen. Zum Arbeiten mit ds-mod ist dieses Verzeichnis in den Suchpfad
+aufzunehmen:</p>
+<p>Die Pseudebefehle <code class="docutils literal notranslate"><span class="pre">as</span></code> und <code class="docutils literal notranslate"><span class="pre">ld</span></code> dienen hier nur dazu, der glibc für
+den Kernel-Compiler, die über crosstool erstellt wird, geeignete
+binutils vorzugaukeln. Die beiden Dateien sehen so aus:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/gnubin $ cat as
+#! /bin/sh
+
+# fake as version for crosstool
+
+[ &quot;$1&quot; = -v ] &amp;&amp; echo GNU assembler 2.13 || /usr/bin/as &quot;$@&quot;
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/gnubin $ cat ld
+#! /bin/sh
+
+# fake ld version for crosstool
+
+[ &quot;$1&quot; = --version ] &amp;&amp; echo GNU ld 2.13 || /usr/bin/ld &quot;$@&quot;
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/gnubin $ PATH=$HOME/gnubin:$PATH
+</pre></div>
+</div>
+<p>Außerdem wird ein Patch für ds-mod benötigt, den man hier herunterladen
+kann:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.akk.org/~enrik/fbox/ds-mod/ds-0.2.9_26-14.2-macosx.patch.gz">​ds-0.2.9_26-14.2-macosx.patch.gz</a></li>
+</ul>
+<p>Das ganze ist wenig getestet, insbesondere habe ich noch kein so
+erstelltes Image ausprobiert.</p>
+</div>
+</div>
+<div class="section" id="aktualisierung">
+<span id="id4"></span><h1>Aktualisierung<a class="headerlink" href="#aktualisierung" title="Link zu dieser Überschrift">¶</a></h1>
+<p><em>Freetz</em> läuft nun also super auf der Box, und das schon seit längererm.
+Da kommt es vor, dass AVM eine neue Firmware-Version herausbringt, und
+auch die <em>Freetz</em>-Entwicklung weitergegangen ist. Kurzum: Man möchte nun
+natürlich auch von den neuen Features und Bugfixes profitieren. Wie
+bringt man also <em>Freetz</em> auf der Box auf den neuesten Stand?</p>
+<p>Die Antwort ist recht einfach: „Siehe oben“. Eine Aktualisierung geht
+genau so vonstatten, wie auch die Erst-Installation: Man baut sich ein
+neues <em>Freetz</em>-Image und nutzt dann das „Firmware-Update“ der Box.</p>
+<p>Hat man für die Installation eine Repository-Version verwendet, bringt
+man selbiges zuvor auf den aktuellen Stand, indem man in das
+Quellverzeichnis wechselt und…</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># In das Verzeichnis wechseln, in dem sich das &quot;ausgecheckte&quot; Freetz befindet:</span>
+<span class="n">cd</span> <span class="n">freetz</span>
+<span class="c1"># Quelldateien aktualisieren</span>
+<span class="n">svn</span> <span class="n">up</span>
+<span class="c1"># ggf. die Paketauswahl überprüfen, verändern, neue Patches aktivieren, etc.</span>
+<span class="n">make</span> <span class="n">menuconfig</span>
+<span class="c1"># Image bauen</span>
+<span class="n">make</span>
+</pre></div>
+</div>
+<p>Und jetzt das fertige Image auf die Box.</p>
+</div>
+<div class="section" id="fehlerbehebung">
+<span id="id5"></span><h1>Fehlerbehebung<a class="headerlink" href="#fehlerbehebung" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="line-block">
+<div class="line">Falls bei der Erstellung des Images ein Fehler auftreten sollte,
+findet man die Lösung dazu wahrscheinlich in den
+<a class="reference external" href="../../../FAQ.html">FAQ</a>.</div>
+</div>
+<p><strong>Achtung:</strong> Die <a class="reference external" href="../../../FAQ.html">FAQ</a> sollten in Deutsch
+angezeigt werden. Sollte das nicht der Fall sein, dann bitte diesen
+<a class="reference external" href="http://www.ip-phone-forum.de/showpost.php?p=1415087&amp;postcount=11">​Tipp</a>
+beachten.</p>
+</div>
+<div class="section" id="manuelles-einspielen-des-images">
+<span id="manuelleseinspielendesimages"></span><h1>Manuelles einspielen des Images<a class="headerlink" href="#manuelles-einspielen-des-images" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Wenn das Hochladen des Images partout nicht klappen will hat man noch
+die Möglichkeit es manuell auf die Fritzbox zu bringen. Hierfür sollten
+bevorzugt die Helfer recover-eva und push_firmware aus dem
+tools/-Verzeichnis genutzt werden. Aber auch ein Einspieln per Hand ist
+möglich und wir im folgenden kurz beschrieben. Voraussetzung ist, daß
+wir ein fertig erstelltes Image besitzen und in einer Linuxumgebung
+arbeiten! Wir entpacken nun aus dem fertigen Image die kernel.image
+Datei und wechseln wenn nötig in das Verzeichnis in welchem die
+kernel.image Datei liegt. Jetzt wird es etwas trickreich, da die
+Fritzbox nur in den ersten 5-10 Sekunden nach Neustart per ftp zu
+erreichen ist. Wir geben also in unserer Linuxkonsole schon einmal den
+ersten Befehl ein <strong>ftp 192.168.178.1</strong> und gehen dann zur Fritzbox, um
+sie über den Stromstecker zu resetten, eilen schnell wieder zurück und
+drücken die Enter-Taste. Wenn es geklappt hat wird man nach Benutzername
+und Passwort gefragt, er lautet für beides <strong>adam2</strong>. Weiter gehen wir
+wie folgt vor:</p>
+<p>Es klappt meistens nicht beim ersten Versuch. Es hilft dann, ftp
+abzubrechen und es direkt nochmal neu zu versuchen.</p>
+</div>
+<div class="section" id="weiterfuhrende-links">
+<span id="weiterfuhrendelinks"></span><h1>Weiterführende Links<a class="headerlink" href="#weiterfuhrende-links" title="Link zu dieser Überschrift">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?t=175564">​IPPF
+Thread</a> zum
+Thema</li>
+<li>Speedports: (siehe
+<a class="reference external" href="http://wiki.ip-phone-forum.de/skript:speedport2fritz#was_mach_ich_mit_dem_fertigen_kernel.image">​sp2fritz</a>).
+Ab Skriptversion 2.2.2008 ist das speed2fritz möglich.</li>
+<li>Tags</li>
+<li><a class="reference external" href="/tags/howtos">howtos</a></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="newbie.html" class="btn btn-neutral float-right" title="Erste Schritte mit Freetz" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="create_swap.html" class="btn btn-neutral float-left" title="Swap-File anlegen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Freetz Developers
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
