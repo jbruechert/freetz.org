@@ -138,7 +138,6 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/FAQ
    wiki/Impressum
    wiki/libs_tagged
-   wiki/WikiStart.en
    wiki/ticket
    wiki/style
    wiki/packages
@@ -147,7 +146,6 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/Press.en
    wiki/patches
    wiki/help
-   wiki/Freetz
    wiki/libs
    wiki/costumscript_dublesyslog
    wiki/kernel
@@ -480,6 +478,5 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/packages/rudi-shell/install
    wiki/packages/rudi-shell/usage
    wiki/packages/rudi-shell/functions
-   wiki/Freetz
 
 .. |Warning| image:: /chrome/wikiextras-icons-16/exclamation.png
