@@ -1,7 +1,7 @@
 .. _DemoPackageAHelloWorld:
 
 DemoPackageA "Hello World"
---------------------------
+==========================
 
 Dieses Paket von
 `​snowyrain <http://www.ip-phone-forum.de/member.php?u=106238>`__ zeigt

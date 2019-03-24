@@ -19,7 +19,7 @@ Eindruck eines einzelnen, beschreibbaren Mediums hat.
 .. _KonfigurationWebinterface:
 
 Konfiguration (Webinterface)
-============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Das Paket wird über das Webinterface konfiguriert. Hierbei kann der
 Speicherort für die Änderungen ausgewählt werden. Entweder RAM
@@ -38,7 +38,7 @@ Das Paket kann nur durch einen Reboot de-/aktiviert werden.
 .. _KonfigurationperHand:
 
 Konfiguration (per Hand)
-========================
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **mini_fo** ist ein Kernel-Modul, das man entweder ohne Argumente mit
 insmod lädt…
@@ -68,7 +68,7 @@ Im Pfad /tmp/usrwww-sto befinden sich dann jegliche Änderungen.
 .. _MöglicheNebeneffekte:
 
 Mögliche Nebeneffekte
-=====================
+~~~~~~~~~~~~~~~~~~~~~
 
 Ein Firmware-Update kann evtl. mit geladenem mini_fo Modul scheitern
 (getestet mit 7170 4.8x). Es gibt dann keine Fehlermeldung aber die Box
@@ -99,7 +99,7 @@ gestört.
 .. _Restoreoriginalfile:
 
 Restore original file
-=====================
+~~~~~~~~~~~~~~~~~~~~~
 
 The modified files are stored here (trunk version):
 
@@ -116,7 +116,7 @@ file system.
 .. _Sieheauch:
 
 Siehe auch
-==========
+~~~~~~~~~~
 
 -  `​diesen
    Thread <http://www.ip-phone-forum.de/showthread.php?t=111226>`__ im

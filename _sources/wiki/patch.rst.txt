@@ -1,5 +1,8 @@
 .. _AufbaueinesPatches:
 
+Patches
+=======
+
 Aufbau eines Patches
 --------------------
 

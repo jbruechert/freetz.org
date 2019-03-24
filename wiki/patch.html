@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Aufbau eines Patches &mdash; Freetz master Dokumentation</title>
+  <title>Patches &mdash; Freetz master Dokumentation</title>
   
 
   
@@ -84,7 +84,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Inhaltsverzeichnis</span></p>
+              <p class="caption"><span class="caption-text">Generelles</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="packages_tagged.html">Pakete nach Anwendungsgebieten</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Download.html">Stabile Versionen</a></li>
@@ -99,11 +99,14 @@
 <li class="toctree-l1"><a class="reference internal" href="style.html">Aussehen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages.html">Pakete, Addons und CGI-Erweiterungen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FreetzConf2011.html">FreetzConf 2011</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Aufbau eines Patches</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#erzeugen-eines-patches">Erzeugen eines Patches</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#patch-anwenden-oder-ruckgangig-machen">Patch anwenden oder rückgängig machen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#wie-finde-ich-die-zu-patchende-stelle">Wie finde ich die zu patchende Stelle?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#links">Links</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Patches</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aufbau-eines-patches">Aufbau eines Patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#erzeugen-eines-patches">Erzeugen eines Patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#patch-anwenden-oder-ruckgangig-machen">Patch anwenden oder rückgängig machen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wie-finde-ich-die-zu-patchende-stelle">Wie finde ich die zu patchende Stelle?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#links">Links</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Press.en.html">Freetz in public press &amp; web</a></li>
 <li class="toctree-l1"><a class="reference internal" href="patches.html">Freetz Patches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="help.html">Hilfe</a></li>
@@ -118,6 +121,9 @@
 <li class="toctree-l1"><a class="reference internal" href="FAQ.en.html">Freetz-FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/source_code.en.html">Source code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/source_code.html">Quellcode</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Patches</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="patches/remove_myfritz.html">Remove MyFritz</a></li>
 <li class="toctree-l1"><a class="reference internal" href="patches/remove_tr069.html">Remove tr069 stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="patches/remove_assistant.html">Remove assistant</a></li>
@@ -144,6 +150,9 @@
 <li class="toctree-l1"><a class="reference internal" href="patches/remove_support.html">Remove the support-files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="patches/remove_ftpd.html">Remove FTP deamon (ftpd)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="patches/remove_aura_usb.html">Remove aura USB</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Hilfe</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="help/howtos.html">HowTos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="help/trouble_shooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="help/fritz_faq.html">FAQ</a></li>
@@ -242,6 +251,9 @@
 <li class="toctree-l1"><a class="reference internal" href="style/mounted.html">Aussehen von mounted.cgi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="libs/ftdi.html">ftdi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="libs/ftdi.en.html">libftdi</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Pakete</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="packages/bridge-utils.html">bridge-utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/sispmctl.html">sispmctl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/empty.html">Empty</a></li>
@@ -294,14 +306,6 @@
 <li class="toctree-l1"><a class="reference internal" href="packages/smstools3.html#weiteres">Weiteres</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/debootstrap.html">Debootstrap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/ppp.html">ppp-cgi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#allgemeine-konfiguration">Allgemeine Konfiguration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#konfiguration-fur-umts">Konfiguration für UMTS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#namensauflosung">Namensauflösung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#firewall-routing-nat">Firewall, Routing &amp; NAT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#fallback">Fallback</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#treiberprobleme">Treiberprobleme</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#was-ist-noch-zu-beachten-2do-liste">Was ist noch zu beachten? (2do-Liste)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/ppp.html#weiteres">Weiteres</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/xmail.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/sundtek.html">Sundtek DVB Treiber</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/iptables.html">iptables</a></li>
@@ -342,11 +346,6 @@
 <li class="toctree-l1"><a class="reference internal" href="packages/httptunnel.html">httptunnel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/onlinechanged.html">Onlinechanged</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/mini_fo.html">mini_fo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/mini_fo.html#konfiguration-webinterface">Konfiguration (Webinterface)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/mini_fo.html#konfiguration-per-hand">Konfiguration (per Hand)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/mini_fo.html#mogliche-nebeneffekte">Mögliche Nebeneffekte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/mini_fo.html#restore-original-file">Restore original file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/mini_fo.html#siehe-auch">Siehe auch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/pingtunnel.html">pingtunnel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/tcp_wrappers.html">TCP Wrapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/netsnmp.en.html">Net-SNMP</a></li>
@@ -357,11 +356,7 @@
 <li class="toctree-l1"><a class="reference internal" href="packages/syslogd.en.html">Syslog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/checkmaild.html">checkmaild 0.4.7</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/portmap.html">portmap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/digitemp.html"><strong>Was ist digitemp?</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/digitemp.html#wichtiger-hinweis">Wichtiger Hinweis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/digitemp.html#tipp-bei-verwendung-mehrerer-usb-rs232-adapter-an-einer-fritzbox">Tipp bei Verwendung mehrerer USB-RS232-Adapter an einer Fritzbox</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/digitemp.html#datenbank">Datenbank</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/digitemp.html#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/digitemp.html">Digitemp</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/downloader.html">Downloader-CGI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/bip.html">BIP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/fortune.html">fortune</a></li>
@@ -390,11 +385,7 @@
 <li class="toctree-l1"><a class="reference internal" href="packages/dnsd.en.html">dnsd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/hp-utils.html">hp-utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/screen.html">screen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/ndas.html">1. Using NDAS driver</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/ndas.html#using-ndas-harddisk-array">2. Using NDAS harddisk array</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/ndas.html#share-the-data-files-on-the-ndas-hard-disks">3. Share the data/files on the NDAS hard disks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/ndas.html#ndas-robustnes">4. NDAS robustnes?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/ndas.html#referenzen">Referenzen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/ndas.html">NDAS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/dnsmasq.html">dnsmasq</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/wget.html">wget</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/e2fsprogs.html">e2fsprogs</a></li>
@@ -438,7 +429,6 @@
 <li class="toctree-l1"><a class="reference internal" href="packages/inadyn-mt.html">Inadyn-MT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/bluez.html">BlueZ 4.x</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/DemoPackageA.html">DemoPackageA „Hello World“</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/DemoPackageA.html#quellen">Quellen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/openvpn.html">OpenVPN freetz Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/knock.html">knockd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/ltrace.html">ltrace</a></li>
@@ -447,46 +437,7 @@
 <li class="toctree-l1"><a class="reference internal" href="packages/virtualip.html">Virtual IP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/socat.html">socat</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/transmission.html">Transmission</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/config.html">Konfiguration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/reverse_search.html">Rückwärtssuche</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/phonebook.html">Telefonbuch (Callers)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/maintenance.html">Wartung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/adapt_messages.html">Anpassen der Benachrichtigungstexte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions.html">Aktionen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/listeners.html">Regeln (Listeners)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/testcall.html">Testanruf</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/faq.html">Callmonitor-FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/events.html">Ereignisse</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/config.html">FritzBox-Konfiguration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/config.html#alternative">Alternative</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/call.html">Allgemeine Hinweise zu Funktionsaufrufen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/relook.html">DGStation Relook 400S</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/rawmsg.html">Einfache TCP-Verbindungen (rawmsg)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/snarl.html">Listener-Eintrag:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/snarl.html#screenshots">Screenshots:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/dbox.html">DBox2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/xbox.html">XBox</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/getmsg.html">HTTP-Requests (getmsg)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/mail.html">E-Mail-Benachrichtigung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/samsung.html">Benachrichtigung auf einem Samsung TV</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/self-defined.html">Selbstdefinierte Aktionen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/wol.html">Wake on LAN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/yac.html">YAC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/dial.html">Wählhilfe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/vdr.html">VDR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/dreambox.html">DreamBox</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/password.html">Benutzernamen und Passwörter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/musicpal.html">Freecom MusicPal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/callmonitor/actions/soundbridge.html">Roku SoundBridge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/netsnmp/mrtg.en.html">MRTG</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/pptpd/config.html">Konfiguration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/pptpd/webif.html">Das Web-Frontend zum Paket</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/pptpd/install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/rudi-shell/tips.html">Tips &amp; Tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/rudi-shell/limits.html">Grenzen &amp; Einschränkungen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/rudi-shell/install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/rudi-shell/usage.html">Illustrierte Anwendungsfälle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages/rudi-shell/functions.html">Funktionsweise</a></li>
 </ul>
 
             
@@ -532,7 +483,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Aufbau eines Patches</li>
+      <li>Patches</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -551,8 +502,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="aufbau-eines-patches">
-<span id="aufbaueinespatches"></span><h1>Aufbau eines Patches<a class="headerlink" href="#aufbau-eines-patches" title="Link zu dieser Überschrift">¶</a></h1>
+  <div class="section" id="patches">
+<span id="aufbaueinespatches"></span><h1>Patches<a class="headerlink" href="#patches" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="aufbau-eines-patches">
+<h2>Aufbau eines Patches<a class="headerlink" href="#aufbau-eines-patches" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Ein Patch ist eine Datei im Textformat, die für gewöhnlich die Endung
 .patch (manchmal auf .diff) hat und eine Liste von Unterschieden
 zwischen zwei Version einer Datei enthält. Patches enthalten nur
@@ -597,7 +550,7 @@ Datei make/Config.in in einem Texteditor öffnet und die Zeile
 hinzufügt.</p>
 </div>
 <div class="section" id="erzeugen-eines-patches">
-<span id="erzeugeneinespatches"></span><h1>Erzeugen eines Patches<a class="headerlink" href="#erzeugen-eines-patches" title="Link zu dieser Überschrift">¶</a></h1>
+<span id="erzeugeneinespatches"></span><h2>Erzeugen eines Patches<a class="headerlink" href="#erzeugen-eines-patches" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Man hat eine Datei (Config.in) geändert und difft sie gegen SVN:</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">diff</span> <span class="n">Config</span><span class="o">.</span><span class="ow">in</span> <span class="o">&gt;</span> <span class="n">Config</span><span class="o">.</span><span class="n">patch</span>
 </pre></div>
@@ -613,7 +566,7 @@ hinzugefügt werden:</p>
 </div>
 </div>
 <div class="section" id="patch-anwenden-oder-ruckgangig-machen">
-<span id="patchanwendenoderruckgangigmachen"></span><h1>Patch anwenden oder rückgängig machen<a class="headerlink" href="#patch-anwenden-oder-ruckgangig-machen" title="Link zu dieser Überschrift">¶</a></h1>
+<span id="patchanwendenoderruckgangigmachen"></span><h2>Patch anwenden oder rückgängig machen<a class="headerlink" href="#patch-anwenden-oder-ruckgangig-machen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Patch anwenden:</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ patch -p0 &lt; Config.patch
 patching file Config.in
@@ -641,7 +594,7 @@ kopieren)</li>
 </ul>
 </div>
 <div class="section" id="wie-finde-ich-die-zu-patchende-stelle">
-<span id="wiefindeichdiezupatchendestelle"></span><h1>Wie finde ich die zu patchende Stelle?<a class="headerlink" href="#wie-finde-ich-die-zu-patchende-stelle" title="Link zu dieser Überschrift">¶</a></h1>
+<span id="wiefindeichdiezupatchendestelle"></span><h2>Wie finde ich die zu patchende Stelle?<a class="headerlink" href="#wie-finde-ich-die-zu-patchende-stelle" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Auf diese Frage muss man primär antworten: Es kommt darauf an, worum es
 geht. Weil das aber hier im Wiki natürlich nicht so befriedigend ist,
 folgen ein paar Tipps von RalfFriedl am konkreten Beispiel von crond
@@ -725,10 +678,11 @@ unten beschrieben.</p>
 <a class="reference external" href="http://www.ip-phone-forum.de/showthread.php?p=1274104#post1274104">​IPPF-Thread</a>.</p>
 </div>
 <div class="section" id="links">
-<span id="id3"></span><h1>Links<a class="headerlink" href="#links" title="Link zu dieser Überschrift">¶</a></h1>
+<span id="id3"></span><h2>Links<a class="headerlink" href="#links" title="Link zu dieser Überschrift">¶</a></h2>
 <p><a class="reference external" href="http://en.wikipedia.org/wiki/Diff">​Wikipedia Artikel zu diff
 (Englisch)</a> <a class="reference external" href="http://en.wikipedia.org/wiki/Patch_(Unix)">​Wikipedia Artikel zu
 patch (Englisch)</a></p>
+</div>
 </div>
 
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. Using NDAS driver &mdash; Freetz master Dokumentation</title>
+  <title>NDAS &mdash; Freetz master Dokumentation</title>
   
 
   
@@ -84,8 +84,8 @@
               
             
             
-              <p class="caption"><span class="caption-text">Inhaltsverzeichnis</span></p>
-<ul class="current">
+              <p class="caption"><span class="caption-text">Generelles</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../packages_tagged.html">Pakete nach Anwendungsgebieten</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Download.html">Stabile Versionen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Download.html#entwickler-versionen">Entwickler Versionen</a></li>
@@ -99,11 +99,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../style.html">Aussehen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../packages.html">Pakete, Addons und CGI-Erweiterungen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../FreetzConf2011.html">FreetzConf 2011</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../patch.html">Aufbau eines Patches</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../patch.html#erzeugen-eines-patches">Erzeugen eines Patches</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../patch.html#patch-anwenden-oder-ruckgangig-machen">Patch anwenden oder rückgängig machen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../patch.html#wie-finde-ich-die-zu-patchende-stelle">Wie finde ich die zu patchende Stelle?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../patch.html#links">Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../patch.html">Patches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Press.en.html">Freetz in public press &amp; web</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../patches.html">Freetz Patches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../help.html">Hilfe</a></li>
@@ -118,6 +114,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../FAQ.en.html">Freetz-FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../common/source_code.en.html">Source code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../common/source_code.html">Quellcode</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Patches</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../patches/remove_myfritz.html">Remove MyFritz</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../patches/remove_tr069.html">Remove tr069 stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../patches/remove_assistant.html">Remove assistant</a></li>
@@ -144,6 +143,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../patches/remove_support.html">Remove the support-files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../patches/remove_ftpd.html">Remove FTP deamon (ftpd)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../patches/remove_aura_usb.html">Remove aura USB</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Hilfe</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../help/howtos.html">HowTos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../help/trouble_shooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../help/fritz_faq.html">FAQ</a></li>
@@ -242,6 +244,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../style/mounted.html">Aussehen von mounted.cgi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libs/ftdi.html">ftdi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libs/ftdi.en.html">libftdi</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Pakete</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="bridge-utils.html">bridge-utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sispmctl.html">sispmctl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="empty.html">Empty</a></li>
@@ -294,14 +299,6 @@
 <li class="toctree-l1"><a class="reference internal" href="smstools3.html#weiteres">Weiteres</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debootstrap.html">Debootstrap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ppp.html">ppp-cgi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ppp.html#allgemeine-konfiguration">Allgemeine Konfiguration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ppp.html#konfiguration-fur-umts">Konfiguration für UMTS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ppp.html#namensauflosung">Namensauflösung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ppp.html#firewall-routing-nat">Firewall, Routing &amp; NAT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ppp.html#fallback">Fallback</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ppp.html#treiberprobleme">Treiberprobleme</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ppp.html#was-ist-noch-zu-beachten-2do-liste">Was ist noch zu beachten? (2do-Liste)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ppp.html#weiteres">Weiteres</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xmail.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sundtek.html">Sundtek DVB Treiber</a></li>
 <li class="toctree-l1"><a class="reference internal" href="iptables.html">iptables</a></li>
@@ -342,11 +339,6 @@
 <li class="toctree-l1"><a class="reference internal" href="httptunnel.html">httptunnel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="onlinechanged.html">Onlinechanged</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mini_fo.html">mini_fo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mini_fo.html#konfiguration-webinterface">Konfiguration (Webinterface)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mini_fo.html#konfiguration-per-hand">Konfiguration (per Hand)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mini_fo.html#mogliche-nebeneffekte">Mögliche Nebeneffekte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mini_fo.html#restore-original-file">Restore original file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mini_fo.html#siehe-auch">Siehe auch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pingtunnel.html">pingtunnel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tcp_wrappers.html">TCP Wrapper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="netsnmp.en.html">Net-SNMP</a></li>
@@ -357,11 +349,7 @@
 <li class="toctree-l1"><a class="reference internal" href="syslogd.en.html">Syslog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="checkmaild.html">checkmaild 0.4.7</a></li>
 <li class="toctree-l1"><a class="reference internal" href="portmap.html">portmap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="digitemp.html"><strong>Was ist digitemp?</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="digitemp.html#wichtiger-hinweis">Wichtiger Hinweis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="digitemp.html#tipp-bei-verwendung-mehrerer-usb-rs232-adapter-an-einer-fritzbox">Tipp bei Verwendung mehrerer USB-RS232-Adapter an einer Fritzbox</a></li>
-<li class="toctree-l1"><a class="reference internal" href="digitemp.html#datenbank">Datenbank</a></li>
-<li class="toctree-l1"><a class="reference internal" href="digitemp.html#weiterfuhrende-links">Weiterführende Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="digitemp.html">Digitemp</a></li>
 <li class="toctree-l1"><a class="reference internal" href="downloader.html">Downloader-CGI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bip.html">BIP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fortune.html">fortune</a></li>
@@ -390,23 +378,26 @@
 <li class="toctree-l1"><a class="reference internal" href="dnsd.en.html">dnsd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hp-utils.html">hp-utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="screen.html">screen</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Using NDAS driver</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#register-the-ndas-device">Register the NDAS device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#enable-the-ndas-device">Enable the NDAS device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#partition-and-file-system-on-the-ndas-device">Partition and file system on the NDAS device</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#partition">partition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#format">format</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NDAS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-ndas-driver">1. Using NDAS driver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#register-the-ndas-device">Register the NDAS device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enable-the-ndas-device">Enable the NDAS device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partition-and-file-system-on-the-ndas-device">Partition and file system on the NDAS device</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#partition">partition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#format">format</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#reading-partitions-on-already-formatted-ndas-device-mounting">Reading Partitions on already formatted NDAS device &amp; mounting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#automatic-user-mounting">Automatic User Mounting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#additional-commands-for-the-ndas-device">Additional Commands for the NDAS device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reading-partitions-on-already-formatted-ndas-device-mounting">Reading Partitions on already formatted NDAS device &amp; mounting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-user-mounting">Automatic User Mounting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-commands-for-the-ndas-device">Additional Commands for the NDAS device</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#using-ndas-harddisk-array">2. Using NDAS harddisk array</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#share-the-data-files-on-the-ndas-hard-disks">3. Share the data/files on the NDAS hard disks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#ndas-robustnes">4. NDAS robustnes?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#referenzen">Referenzen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-ndas-harddisk-array">2. Using NDAS harddisk array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#share-the-data-files-on-the-ndas-hard-disks">3. Share the data/files on the NDAS hard disks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ndas-robustnes">4. NDAS robustnes?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#referenzen">Referenzen</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="dnsmasq.html">dnsmasq</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wget.html">wget</a></li>
 <li class="toctree-l1"><a class="reference internal" href="e2fsprogs.html">e2fsprogs</a></li>
@@ -450,7 +441,6 @@
 <li class="toctree-l1"><a class="reference internal" href="inadyn-mt.html">Inadyn-MT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bluez.html">BlueZ 4.x</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DemoPackageA.html">DemoPackageA „Hello World“</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DemoPackageA.html#quellen">Quellen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="openvpn.html">OpenVPN freetz Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="knock.html">knockd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltrace.html">ltrace</a></li>
@@ -459,46 +449,7 @@
 <li class="toctree-l1"><a class="reference internal" href="virtualip.html">Virtual IP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="socat.html">socat</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transmission.html">Transmission</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/config.html">Konfiguration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/reverse_search.html">Rückwärtssuche</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/phonebook.html">Telefonbuch (Callers)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/maintenance.html">Wartung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/adapt_messages.html">Anpassen der Benachrichtigungstexte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions.html">Aktionen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/listeners.html">Regeln (Listeners)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/testcall.html">Testanruf</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/faq.html">Callmonitor-FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/events.html">Ereignisse</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/config.html">FritzBox-Konfiguration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/config.html#alternative">Alternative</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/call.html">Allgemeine Hinweise zu Funktionsaufrufen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/relook.html">DGStation Relook 400S</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/rawmsg.html">Einfache TCP-Verbindungen (rawmsg)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/snarl.html">Listener-Eintrag:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/snarl.html#screenshots">Screenshots:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/dbox.html">DBox2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/xbox.html">XBox</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/getmsg.html">HTTP-Requests (getmsg)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/mail.html">E-Mail-Benachrichtigung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/samsung.html">Benachrichtigung auf einem Samsung TV</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/self-defined.html">Selbstdefinierte Aktionen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/wol.html">Wake on LAN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/yac.html">YAC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/dial.html">Wählhilfe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/vdr.html">VDR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/dreambox.html">DreamBox</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/password.html">Benutzernamen und Passwörter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/musicpal.html">Freecom MusicPal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="callmonitor/actions/soundbridge.html">Roku SoundBridge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="netsnmp/mrtg.en.html">MRTG</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pptpd/config.html">Konfiguration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pptpd/webif.html">Das Web-Frontend zum Paket</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pptpd/install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rudi-shell/tips.html">Tips &amp; Tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rudi-shell/limits.html">Grenzen &amp; Einschränkungen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rudi-shell/install.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rudi-shell/usage.html">Illustrierte Anwendungsfälle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rudi-shell/functions.html">Funktionsweise</a></li>
 </ul>
 
             
@@ -544,7 +495,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>1. Using NDAS driver</li>
+      <li>NDAS</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -563,16 +514,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p>Network Direct Attached Storage (NDAS) ist ein proprietäres System zur
+  <div class="section" id="ndas">
+<h1>NDAS<a class="headerlink" href="#ndas" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Network Direct Attached Storage (NDAS) ist ein proprietäres System zur
 Anbindung externer Speichermedien wie Festplatten, Flash-Speicher oder
 Bandlaufwerke an ein Netzwerk. Die Patente für NDAS hält die
 amerikanische Firma Ximeta. [1]</p>
 <p>Da Ximeta seinen Linux Support eingestellt hat hier die original
 Anleitung. Die Links darin funktionieren nicht mehr.</p>
 <div class="section" id="using-ndas-driver">
-<span id="a1-usingndasdriver"></span><h1>1. Using NDAS driver<a class="headerlink" href="#using-ndas-driver" title="Link zu dieser Überschrift">¶</a></h1>
+<span id="a1-usingndasdriver"></span><h2>1. Using NDAS driver<a class="headerlink" href="#using-ndas-driver" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="register-the-ndas-device">
-<span id="registerthendasdevice"></span><h2>Register the NDAS device<a class="headerlink" href="#register-the-ndas-device" title="Link zu dieser Überschrift">¶</a></h2>
+<span id="registerthendasdevice"></span><h3>Register the NDAS device<a class="headerlink" href="#register-the-ndas-device" title="Link zu dieser Überschrift">¶</a></h3>
 <p>You can find NDAS „ID“ and NDAS „key“ from the the bottom of the
 NetDisk.</p>
 <p>If your NDAS ID (20 characters) and NDAS key (5 characters) are</p>
@@ -616,7 +569,7 @@ commands above.</p>
 attached in the same network.</p>
 </div>
 <div class="section" id="enable-the-ndas-device">
-<span id="enablethendasdevice"></span><h2>Enable the NDAS device<a class="headerlink" href="#enable-the-ndas-device" title="Link zu dieser Überschrift">¶</a></h2>
+<span id="enablethendasdevice"></span><h3>Enable the NDAS device<a class="headerlink" href="#enable-the-ndas-device" title="Link zu dieser Überschrift">¶</a></h3>
 <p>To enable the NetDisk, please type the following commands:</p>
 <p>Use the numeric slot number that you get from
 /proc/ndas/devices/MyDisk/slots. If you get ‚1‘ as the slot number from
@@ -638,11 +591,11 @@ example,</p>
 already.</p>
 </div>
 <div class="section" id="partition-and-file-system-on-the-ndas-device">
-<span id="partitionandfilesystemonthendasdevice"></span><h2>Partition and file system on the NDAS device<a class="headerlink" href="#partition-and-file-system-on-the-ndas-device" title="Link zu dieser Überschrift">¶</a></h2>
+<span id="partitionandfilesystemonthendasdevice"></span><h3>Partition and file system on the NDAS device<a class="headerlink" href="#partition-and-file-system-on-the-ndas-device" title="Link zu dieser Überschrift">¶</a></h3>
 <p>To partition or format, please do the following:</p>
 <p>WARNING: All data will be erased.</p>
 <div class="section" id="partition">
-<h3>partition<a class="headerlink" href="#partition" title="Link zu dieser Überschrift">¶</a></h3>
+<h4>partition<a class="headerlink" href="#partition" title="Link zu dieser Überschrift">¶</a></h4>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fdisk</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">nda</span> <span class="p">(</span><span class="n">fdisk</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">of</span> <span class="n">the</span> <span class="n">block</span> <span class="n">device</span> <span class="n">file</span><span class="o">&gt;</span> <span class="n">see</span> <span class="n">output</span> <span class="n">of</span> <span class="n">ndasadmin</span> <span class="n">enable</span><span class="p">),</span>
 <span class="o">*</span> <span class="n">use</span> <span class="n">p</span> <span class="n">to</span> <span class="n">show</span> <span class="n">the</span> <span class="n">current</span> <span class="n">partition</span> <span class="n">table</span>
 <span class="o">*</span> <span class="n">use</span> <span class="n">n</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">partion</span>
@@ -650,7 +603,7 @@ already.</p>
 </div>
 </div>
 <div class="section" id="format">
-<h3>format<a class="headerlink" href="#format" title="Link zu dieser Überschrift">¶</a></h3>
+<h4>format<a class="headerlink" href="#format" title="Link zu dieser Überschrift">¶</a></h4>
 <p>use for example:</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkfs</span> <span class="o">-</span><span class="n">t</span> <span class="n">ext2</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">nda1</span>
 <span class="ow">or</span>
@@ -668,7 +621,7 @@ stands for <em>partion 1</em></div>
 </div>
 </div>
 <div class="section" id="reading-partitions-on-already-formatted-ndas-device-mounting">
-<span id="readingpartitionsonalreadyformattedndasdevicemounting"></span><h2>Reading Partitions on already formatted NDAS device &amp; mounting<a class="headerlink" href="#reading-partitions-on-already-formatted-ndas-device-mounting" title="Link zu dieser Überschrift">¶</a></h2>
+<span id="readingpartitionsonalreadyformattedndasdevicemounting"></span><h3>Reading Partitions on already formatted NDAS device &amp; mounting<a class="headerlink" href="#reading-partitions-on-already-formatted-ndas-device-mounting" title="Link zu dieser Überschrift">¶</a></h3>
 <ul class="simple">
 <li>try</li>
 </ul>
@@ -692,7 +645,7 @@ NDAS mode.</strong></li>
 </ul>
 </div>
 <div class="section" id="automatic-user-mounting">
-<span id="automaticusermounting"></span><h2>Automatic User Mounting<a class="headerlink" href="#automatic-user-mounting" title="Link zu dieser Überschrift">¶</a></h2>
+<span id="automaticusermounting"></span><h3>Automatic User Mounting<a class="headerlink" href="#automatic-user-mounting" title="Link zu dieser Überschrift">¶</a></h3>
 <p>These commands may differ slightly for your particular configuration.</p>
 <p>Once your Netdisk drivers are properly setup, create a mount point for
 the device:</p>
@@ -752,7 +705,7 @@ startup, etc. This is outside the scope of this wiki, please see your
 system documentation for further information on this.</p>
 </div>
 <div class="section" id="additional-commands-for-the-ndas-device">
-<span id="additionalcommandsforthendasdevice"></span><h2>Additional Commands for the NDAS device<a class="headerlink" href="#additional-commands-for-the-ndas-device" title="Link zu dieser Überschrift">¶</a></h2>
+<span id="additionalcommandsforthendasdevice"></span><h3>Additional Commands for the NDAS device<a class="headerlink" href="#additional-commands-for-the-ndas-device" title="Link zu dieser Überschrift">¶</a></h3>
 <p>To disable the NetDisk:</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">ndasadmin</span> <span class="n">disable</span> <span class="o">-</span><span class="n">s</span> <span class="mi">1</span>
 </pre></div>
@@ -776,7 +729,7 @@ command.</p>
 </div>
 </div>
 <div class="section" id="using-ndas-harddisk-array">
-<span id="a2-usingndasharddiskarray"></span><h1>2. Using NDAS harddisk array<a class="headerlink" href="#using-ndas-harddisk-array" title="Link zu dieser Überschrift">¶</a></h1>
+<span id="a2-usingndasharddiskarray"></span><h2>2. Using NDAS harddisk array<a class="headerlink" href="#using-ndas-harddisk-array" title="Link zu dieser Überschrift">¶</a></h2>
 <ul class="simple">
 <li>Add how to use the NDAS harddisks with Linux Software RAID</li>
 <li>Add how to use the NDAS hard disks with XIMETA RAID</li>
@@ -784,7 +737,7 @@ command.</p>
 </ul>
 </div>
 <div class="section" id="share-the-data-files-on-the-ndas-hard-disks">
-<span id="a3-sharethedatafilesonthendasharddisks"></span><h1>3. Share the data/files on the NDAS hard disks<a class="headerlink" href="#share-the-data-files-on-the-ndas-hard-disks" title="Link zu dieser Überschrift">¶</a></h1>
+<span id="a3-sharethedatafilesonthendasharddisks"></span><h2>3. Share the data/files on the NDAS hard disks<a class="headerlink" href="#share-the-data-files-on-the-ndas-hard-disks" title="Link zu dieser Überschrift">¶</a></h2>
 <p>NDAS on WINDOWS apparently supports simultaneous r/w from multiple
 machines on the LAN. I could not find any documentation explaining if
 this is only true for partitions formated as FAT or NTFS, or for any
@@ -822,7 +775,7 @@ and Windows machines. This is so sad. <img alt=":-(" src="../../_images/smiley-s
 </ul>
 </div>
 <div class="section" id="ndas-robustnes">
-<span id="a4-ndasrobustnes"></span><h1>4. NDAS robustnes?<a class="headerlink" href="#ndas-robustnes" title="Link zu dieser Überschrift">¶</a></h1>
+<span id="a4-ndasrobustnes"></span><h2>4. NDAS robustnes?<a class="headerlink" href="#ndas-robustnes" title="Link zu dieser Überschrift">¶</a></h2>
 <p>I wondered how robust the NDAS protocol, host device and linux driver
 are… The result of the small test I just did is not so good as I hoped:</p>
 <ul class="simple">
@@ -837,9 +790,10 @@ Unfortunately, <strong>the file was corrupted</strong> in the end. On a bright s
 this is still better than linux hangup.</p>
 </div>
 <div class="section" id="referenzen">
-<span id="id1"></span><h1>Referenzen<a class="headerlink" href="#referenzen" title="Link zu dieser Überschrift">¶</a></h1>
+<span id="id1"></span><h2>Referenzen<a class="headerlink" href="#referenzen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>[1] <a class="reference external" href="http://de.wikipedia.org/wiki/Network_Direct_Attached_Storage">​Wikipedia Seite zu
 NDAS</a></p>
+</div>
 </div>
 
 

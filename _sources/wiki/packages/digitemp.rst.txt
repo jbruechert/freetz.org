@@ -1,3 +1,6 @@
+Digitemp
+========
+
 .. _Wasistdigitemp:
 
 **Was ist digitemp?**
