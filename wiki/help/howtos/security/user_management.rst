@@ -1,50 +1,5 @@
 help/howtos/security/user_management
 ====================================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Konfiguration des eingebauten
-   Switches <switch_config.html#KonfigurationdeseingebautenSwitches>`__
-
-   #. `Vorwort <switch_config.html#Vorwort>`__
-   #. `Vordefinierte
-      Switch-Konfigurationen <switch_config.html#VordefinierteSwitch-Konfigurationen>`__
-   #. `Anpassungen in der
-      ar7.cfg <switch_config.html#Anpassungeninderar7.cfg>`__
-   #. `Beispiel <switch_config.html#Beispiel>`__
-   #. `Sicherheits-Warnung <switch_config.html#Sicherheits-Warnung>`__
-   #. `Kompatibilität <switch_config.html#Kompatibilität>`__
-
-#. `Benutzerverwaltung <user_management.html#Benutzerverwaltung>`__
-
-   #. `Benutzer anlegen <user_management.html#Benutzeranlegen>`__
-   #. `Benutzer löschen <user_management.html#Benutzerlöschen>`__
-   #. `Manuelle
-      Anpassungen <user_management.html#ManuelleAnpassungen>`__
-   #. `Besonderheiten <user_management.html#Besonderheiten>`__
-
-#. `WLAN von LAN trennen mit
-   iptables <split_wlan_lan.html#WLANvonLANtrennenmitiptables>`__
-
-   #. `FRITZBox Einstellung <split_wlan_lan.html#FRITZBoxEinstellung>`__
-   #. `iptables <split_wlan_lan.html#iptables>`__
-
-#. `Freetz als interner Router mit
-   Firewall <router_and_firewall.html#FreetzalsinternerRoutermitFirewall>`__
-
-   #. `Zielgruppe <router_and_firewall.html#Zielgruppe>`__
-   #. `Beispielszenario <router_and_firewall.html#Beispielszenario>`__
-   #. `Die Fritzbox
-      modden <router_and_firewall.html#DieFritzboxmodden>`__
-   #. `Die Fritzbox auf getrennte Netze
-      umstellen <router_and_firewall.html#DieFritzboxaufgetrennteNetzeumstellen>`__
-   #. `Erstellen der
-      Routen <router_and_firewall.html#ErstellenderRouten>`__
-   #. `Die Rückrouten <router_and_firewall.html#DieRückrouten>`__
-   #. `Firewall <router_and_firewall.html#Firewall>`__
-   #. `FIXME kopierter
-      Post <router_and_firewall.html#FIXMEkopierterPost>`__
-
 .. _Benutzerverwaltung:
 
 Benutzerverwaltung

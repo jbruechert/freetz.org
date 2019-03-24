@@ -1,11 +1,5 @@
 packages/callmonitor/actions/xbox
 =================================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Anpassungen auf der XBox <xbox.html#AnpassungenaufderXBox>`__
-#. `Weitere Möglichkeiten <xbox.html#WeitereMöglichkeiten>`__
-
 .. _XBox:
 
 XBox

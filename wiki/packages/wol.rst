@@ -1,14 +1,5 @@
 packages/wol
 ============
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Wake on LAN
-   WebInterface(wol-cgi) <wol.html#WakeonLANWebInterfacewol-cgi>`__
-
-   #. `Konfiguration auf der
-      Fritzbox <wol.html#KonfigurationaufderFritzbox>`__
-
 .. _WakeonLANWoL:
 
 Wake on LAN (WoL)

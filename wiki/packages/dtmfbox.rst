@@ -1,19 +1,5 @@
 packages/dtmfbox
 ================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Features <dtmfbox.html#Features>`__
-#. `Einrichtung <dtmfbox.html#Einrichtung>`__
-#. `Konfiguration <dtmfbox.html#Konfiguration>`__
-
-   #. `Accounts <dtmfbox.html#Accounts>`__
-   #. `Internes Menü <dtmfbox.html#InternesMenü>`__
-   #. `Menü/Skripte bearbeiten <dtmfbox.html#MenüSkriptebearbeiten>`__
-   #. `eSpeak anpassen <dtmfbox.html#eSpeakanpassen>`__
-
-#. `Weiterführende Links <dtmfbox.html#WeiterführendeLinks>`__
-
 .. _DTMFBox:
 
 DTMFBox

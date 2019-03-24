@@ -1,14 +1,5 @@
 help/irc
 ========
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Intro <irc.html#Intro>`__
-#. `IRC Netiquette <irc.html#IRCNetiquette>`__
-#. `Troubleshooting IRC <irc.html#TroubleshootingIRC>`__
-#. `Konfiguration Chatzilla-Plugin in
-   Firefox <irc.html#KonfigurationChatzilla-PlugininFirefox>`__
-
 .. _Intro:
 
 Intro

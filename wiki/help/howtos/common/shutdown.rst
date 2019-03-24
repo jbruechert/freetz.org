@@ -1,25 +1,5 @@
 help/howtos/common/shutdown
 ===========================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Voraussetzungen <shutdown.html#Voraussetzungen>`__
-#. `Konfiguration der
-   Fritzbox <shutdown.html#KonfigurationderFritzbox>`__
-
-   #. `Keys erzeugen <shutdown.html#Keyserzeugen>`__
-   #. `Konfiguration der Fritzbox für herunterzufahrenden
-      Linux-Rechner <shutdown.html#KonfigurationderFritzboxfürherunterzufahrendenLinux-Rechner>`__
-   #. `Konfiguration der Fritzbox für herunterzufahrenden
-      Windows-Rechner <shutdown.html#KonfigurationderFritzboxfürherunterzufahrendenWindows-Rechner>`__
-
-#. `Konfiguration des herunterzufahrenden
-   Linux-Rechners <shutdown.html#KonfigurationdesherunterzufahrendenLinux-Rechners>`__
-#. `Konfiguration des herunterzufahrenden Windows-Rechners (getestet
-   unter
-   … <shutdown.html#KonfigurationdesherunterzufahrendenWindows-RechnersgetestetunterWindowsXP>`__
-#. `Bemerkungen <shutdown.html#Bemerkungen>`__
-
 .. _RechnerimNetzherunterfahren:
 
 Rechner im Netz herunterfahren

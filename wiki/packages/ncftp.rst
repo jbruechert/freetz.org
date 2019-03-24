@@ -6,21 +6,6 @@ ncftp
 *"NcFTP Client (also known as just NcFTP) is a set of FREE application
 programs implementing the File Transfer Protocol (FTP)."*
 
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Was ist NcFTP? <ncftp.html#WasistNcFTP>`__
-#. `Wozu kann NcFTP benutzt
-   werden? <ncftp.html#WozukannNcFTPbenutztwerden>`__
-#. `Wie installiere ich NcFTP? <ncftp.html#WieinstalliereichNcFTP>`__
-#. `Wie starte ich NcFTP? <ncftp.html#WiestarteichNcFTP>`__
-#. `Wie ist der Befehl im upload.sh-Skript
-   aufgebaut? <ncftp.html#WieistderBefehlimupload.sh-Skriptaufgebaut>`__
-#. `Wie sieht der Befehl für ein download.sh Skript
-   aus? <ncftp.html#WiesiehtderBefehlfüreindownload.shSkriptaus>`__
-#. `Wie kann ich einen abweichenden Port
-   nutzen? <ncftp.html#WiekannicheinenabweichendenPortnutzen>`__
-
 .. _WasistNcFTP:
 
 Was ist NcFTP?

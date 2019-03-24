@@ -1,40 +1,9 @@
 Freetz
 ======
+.. _WillkommenbeiFreetz:
 
-.. raw:: html
-
-   <div id="content" class="wiki">
-
-.. raw:: html
-
-   <div class="wikipage searchable">
-
-.. raw:: html
-
-   <div id="wikipage" class="trac-content">
-
-.. raw:: html
-
-   <div class="wiki-toc">
-
-.. rubric:: Inhaltsverzeichnis
-   :name: inhaltsverzeichnis
-
-#. `Download <wiki/index.html#Download>`__
-#. `Erste Schritte <wiki/index.html#ErsteSchritte>`__
-#. `Installation <wiki/index.html#Installation>`__
-#. `Hilfe und Support <wiki/index.html#HilfeundSupport>`__
-#. `Presse und Berichte <wiki/index.html#PresseundBerichte>`__
-#. `Mach mit! <wiki/index.html#Machmit>`__
-#. `Quellcode <wiki/index.html#Quellcode>`__
-#. `Trac-Links <wiki/index.html#Trac-Links>`__
-
-.. raw:: html
-
-   </div>
-
-.. rubric:: Willkommen bei Freetz
-   :name: WillkommenbeiFreetz
+Willkommen bei Freetz
+=====================
 
 | `Freetz <wiki/freetz.html>`__ ist eine Firmware-Erweiterung und
   Modifikation für `​Fritz!Box <http://www.avm.de>`__ Router und
@@ -50,8 +19,10 @@ Freetz
 |/!\\| **WARNUNG:** Die Installation einer modifizierten Firmware führt
 zum Verlust der Gewährleistung des Herstellers!
 
-.. rubric:: Download
-   :name: Download
+.. _Download:
+
+Download
+--------
 
 Das letzte Release ist Version 2.0. Bitte folge den Anweisungen unter
 `Quellcode <wiki/common/source_code.html>`__, um es zu downloaden.
@@ -68,8 +39,10 @@ Diese Versionen unterscheiden sich in der unterstützen AVM-Firmware
 Eine komplette Liste aller Releases befindet sich auf der `Download
 Seite <wiki/Download.html>`__.
 
-.. rubric:: Erste Schritte
-   :name: ErsteSchritte
+.. _ErsteSchritte:
+
+Erste Schritte
+--------------
 
 Diese Anleitung richtet sich in erster Linie an neue Benutzer, welche
 sich erst mit Freetz vertraut machen wollen. Der Benutzer wird
@@ -78,8 +51,10 @@ Firmware-Images.
 
 -  `Erste Schritte mit Freetz <wiki/help/howtos/common/newbie.html>`__
 
-.. rubric:: Installation
-   :name: Installation
+.. _Installation:
+
+Installation
+------------
 
 Für die Freetz-Installation wird Linux als Betriebssystem empfohlen. Wer
 kein Linux dauerhaft auf seinem Rechner installieren will, kann sich mit
@@ -89,8 +64,10 @@ Maschine" (VM) seiner Wahl behelfen.
 -  `Voraussetzungen, notwendige Pakete und sonstige Informationen zur
    Freetz-Installation <wiki/help/howtos/common/install.html>`__
 
-.. rubric:: Hilfe und Support
-   :name: HilfeundSupport
+.. _HilfeundSupport:
+
+Hilfe und Support
+-----------------
 
 -  `Wiki <wiki/freetz.html>`__:
 
@@ -107,15 +84,19 @@ Maschine" (VM) seiner Wahl behelfen.
 
 Hier findest du mehr zu `Hilfe und Support <wiki/help.html>`__.
 
-.. rubric:: Presse und Berichte
-   :name: PresseundBerichte
+.. _PresseundBerichte:
+
+Presse und Berichte
+-------------------
 
 -  `Liste von Berichten über Freetz <wiki/Press.html>`__
 -  `Ankündigung Entwicklertreffen Freetz-Conf
    2011 <wiki/FreetzConf2011.html>`__
 
-.. rubric:: Mach mit!
-   :name: Machmit
+.. _Machmit:
+
+Mach mit!
+---------
 
 Interessierte Benutzer und potentielle Entwickler, die aktiv an der
 Verbesserung von Freetz und deren Entwicklung mitwirken wollen, werden
@@ -140,8 +121,10 @@ allen Beteiligten!
 Das Bearbeiten des Wikis und Eröffnen von Tickets ist zur Vermeidung von
 Spam nur nach vorheriger **Registrierung** möglich.
 
-.. rubric:: Quellcode
-   :name: Quellcode
+.. _Quellcode:
+
+Quellcode
+---------
 
 Anleitung zum `Auschecken und Aktualisieren des
 Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
@@ -501,18 +484,4 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/packages/rudi-shell/functions
    wiki/Freetz
 
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
 .. |/!\\| image:: /chrome/wikiextras-icons-16/exclamation.png
-

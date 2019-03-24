@@ -5,16 +5,6 @@ help/howtos/common/newbie/errors
 Was mache ich, wenn sich meine Box nicht Freetzen lässt
 =======================================================
 
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `FAQ's lesen und Tickets
-   durchsuchen <errors.html#FAQslesenundTicketsdurchsuchen>`__
-#. `Suchfunktion des IPPF
-   benutzen <errors.html#SuchfunktiondesIPPFbenutzen>`__
-#. `Einen neuen Thread im IPPF
-   eröffnen <errors.html#EinenneuenThreadimIPPFeröffnen>`__
-
 | 
 | Falls etwas schief gegangen ist bitte nicht verzweifeln und ganz in
   Ruhe die folgenden Punkte abarbeiten. Denn durch Freetz kann man eine

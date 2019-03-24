@@ -1,17 +1,5 @@
 packages/usbroot
 ================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Vorteile <usbroot.html#Vorteile>`__
-#. `Konfiguration und
-   Kompilierung <usbroot.html#KonfigurationundKompilierung>`__
-#. `Packen, kopieren auf die Fritz!Box und
-   entpacken <usbroot.html#PackenkopierenaufdieFritzBoxundentpacken>`__
-#. `Einbinden von Partitionen <usbroot.html#EinbindenvonPartitionen>`__
-#. `Mögliche Nebenwirkungen <usbroot.html#MöglicheNebenwirkungen>`__
-#. `Verbesserungsmöglichkeiten <usbroot.html#Verbesserungsmöglichkeiten>`__
-
 .. _USB-Root:
 
 USB-Root

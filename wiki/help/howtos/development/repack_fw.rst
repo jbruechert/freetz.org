@@ -1,13 +1,5 @@
 help/howtos/development/repack_fw
 =================================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Tools und Syntax <repack_fw.html#ToolsundSyntax>`__
-#. `Vorgehensweise <repack_fw.html#Vorgehensweise>`__
-#. `Verwendung von fwmod im "no
-   freetz"-Modus <repack_fw.html#Verwendungvonfwmodimnofreetz-Modus>`__
-
 .. _EntpackenundPackenvonFirmware-Images:
 
 Entpacken und Packen von Firmware-Images

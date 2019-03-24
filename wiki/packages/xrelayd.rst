@@ -1,12 +1,5 @@
 packages/xrelayd
 ================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Konfiguration <xrelayd.html#Konfiguration>`__
-#. `Zertifikate auf der Box
-   erzeugen <xrelayd.html#ZertifikateaufderBoxerzeugen>`__
-
 xrelayd
 =======
 

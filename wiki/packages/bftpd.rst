@@ -1,13 +1,5 @@
 packages/bftpd
 ==============
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Zusätzliche Benutzer
-   einrichten <bftpd.html#ZusätzlicheBenutzereinrichten>`__
-#. `Bestehende (persistente) Benutzer
-   modifizieren <bftpd.html#BestehendepersistenteBenutzermodifizieren>`__
-
 .. _Bftpd:
 
 Bftpd

@@ -1,11 +1,5 @@
 packages/dtach
 ==============
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Bedienung <dtach.html#Bedienung>`__
-#. `Weiterführende Links <dtach.html#WeiterführendeLinks>`__
-
 dtach
 =====
 

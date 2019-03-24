@@ -1,29 +1,5 @@
 packages/nhipt
 ==============
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `MOTIVATION <nhipt.html#MOTIVATION>`__
-#. `VORAUSSETZUNGEN: <nhipt.html#VORAUSSETZUNGEN:>`__
-#. `ES STEHEN 3 PAKETE ZUR
-   AUSWAHL: <nhipt.html#ESSTEHEN3PAKETEZURAUSWAHL:>`__
-
-   #. `nhipt.cgi.(version).tar.gz <nhipt.html#nhipt.cgi.version.tar.gz>`__
-   #. `ipt.(version).tar.gz <nhipt.html#ipt.version.tar.gz>`__
-   #. `Über make menuconfig <nhipt.html#Übermakemenuconfig>`__
-
-#. `ARBEITSWEISE: <nhipt.html#ARBEITSWEISE:>`__
-
-   #. `Tipps & Literatur: <nhipt.html#TippsLiteratur:>`__
-   #. `Bootprozess <nhipt.html#Bootprozess>`__
-   #. `Konfigurationsdatei <nhipt.html#Konfigurationsdatei>`__
-   #. `Dateien im freetz Paket <nhipt.html#DateienimfreetzPaket>`__
-
-#. `GUT GEMEINTE RATSCHLÄGE: <nhipt.html#GUTGEMEINTERATSCHLÄGE:>`__
-#. `DOWNLOAD <nhipt.html#DOWNLOAD>`__
-#. `BEKANNTE PROBLEME <nhipt.html#BEKANNTEPROBLEME>`__
-#. `SCREENSHOTS <nhipt.html#SCREENSHOTS>`__
-
 .. _NHIPT-iptablesfirewallGUI:
 
 NHIPT - iptables firewall GUI

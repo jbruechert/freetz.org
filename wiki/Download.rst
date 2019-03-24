@@ -1,35 +1,5 @@
 Download
 ========
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Stabile Versionen <Download.html#StabileVersionen>`__
-
-   #. `Freetz 1.2 (01.07.2012) <Download.html#Freetz1.201.07.2012>`__
-
-#. `Entwickler Versionen <Download.html#EntwicklerVersionen>`__
-#. `Upload und Statistik <Download.html#UploadundStatistik>`__
-#. `Veraltete Versionen <Download.html#VeralteteVersionen>`__
-
-   #. `Freetz 1.1.5
-      (22.01.2012) <Download.html#Freetz1.1.522.01.2012>`__
-   #. `Freetz 1.1.4
-      (11.02.2011) <Download.html#Freetz1.1.411.02.2011>`__
-   #. `Freetz 1.1.3
-      (29.04.2010) <Download.html#Freetz1.1.329.04.2010>`__
-   #. `Freetz 1.1.2
-      (30.12.2009) <Download.html#Freetz1.1.230.12.2009>`__
-   #. `Freetz 1.1.1
-      (17.10.2009) <Download.html#Freetz1.1.117.10.2009>`__
-   #. `Freetz 1.1 (12.06.2009) <Download.html#Freetz1.112.06.2009>`__
-   #. `Freetz 1.0.3
-      (18.03.2009) <Download.html#Freetz1.0.318.03.2009>`__
-   #. `Freetz 1.0.2
-      (15.02.2009) <Download.html#Freetz1.0.215.02.2009>`__
-   #. `Freetz 1.0.1
-      (22.11.2008) <Download.html#Freetz1.0.122.11.2008>`__
-   #. `Freetz 1.0 (06.06.2008) <Download.html#Freetz1.006.06.2008>`__
-
 .. _StabileVersionen:
 
 Stabile Versionen

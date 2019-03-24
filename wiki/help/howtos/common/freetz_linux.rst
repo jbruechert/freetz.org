@@ -5,23 +5,6 @@ help/howtos/common/freetz_linux
 Freetz Linux
 ============
 
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Freetz Linux unter
-   VirtualBox <freetz_linux.html#FreetzLinuxunterVirtualBox>`__
-#. `Freetz Linux unter
-   VMWare <freetz_linux.html#FreetzLinuxunterVMWare>`__
-
-   #. `Freetz Linux unter VMware ESXi V4.1 Hypervisor (funktioniert auch
-      mit
-      … <freetz_linux.html#FreetzLinuxunterVMwareESXiV4.1HypervisorfunktioniertauchmitvSphereHypervisor5.5>`__
-   #. `Freetz Linux unter VMware Player
-      V2.5 <freetz_linux.html#FreetzLinuxunterVMwarePlayerV2.5>`__
-
-#. `Freetz Linux unter Virtual
-   PC <freetz_linux.html#FreetzLinuxunterVirtualPC>`__
-
 .. _FreetzLinuxunterVirtualBox:
 
 Freetz Linux unter VirtualBox

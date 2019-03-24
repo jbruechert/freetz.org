@@ -1,19 +1,5 @@
 packages/inotify-tools
 ======================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Inotify und Inotify-Tools
-   allgemein <inotify-tools.html#InotifyundInotify-Toolsallgemein>`__
-#. `Dateizugriffe der FritzBox ab dem Start
-   beobachten <inotify-tools.html#DateizugriffederFritzBoxabdemStartbeobachten>`__
-#. `Was wird von rc.inotify_tools
-   protokolliert? <inotify-tools.html#Waswirdvonrc.inotify_toolsprotokolliert>`__
-#. `Ausgabeformat <inotify-tools.html#Ausgabeformat>`__
-#. `Log-Datei regelmäßig konsolidieren, um Platz zu
-   sparen <inotify-tools.html#Log-DateiregelmäßigkonsolidierenumPlatzzusparen>`__
-#. `Schlußwort <inotify-tools.html#Schlußwort>`__
-
 .. _Inotify-Tools:
 
 Inotify-Tools

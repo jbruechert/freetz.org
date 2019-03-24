@@ -1,20 +1,5 @@
 help/howtos/development/menuconfig
 ==================================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Einstieg <menuconfig.html#Einstieg>`__
-#. `Beispiel-Konfiguration für ein neues
-   Paket <menuconfig.html#Beispiel-KonfigurationfüreinneuesPaket>`__
-#. `Menuconfig-Warnungen
-   beheben <menuconfig.html#Menuconfig-Warnungenbeheben>`__
-#. `Erklärung und Anwendung der erweiterten
-   MK-Targets <menuconfig.html#ErklärungundAnwendungdererweitertenMK-Targets>`__
-#. `Syntax-Fehler in MK-Dateien
-   finden <menuconfig.html#Syntax-FehlerinMK-Dateienfinden>`__
-#. `Syntax-Hervorhebung für
-   MK-Dateien <menuconfig.html#Syntax-HervorhebungfürMK-Dateien>`__
-
 .. _Menükonfigurationpflegen:
 
 Menükonfiguration pflegen

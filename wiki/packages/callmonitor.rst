@@ -1,55 +1,5 @@
 packages/callmonitor
 ====================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Callmonitor <callmonitor.html#Callmonitor>`__
-
-   #. `Installation <callmonitor.html#Installation>`__
-
-      #. `Installation neuer
-         Versionen <callmonitor.html#InstallationneuerVersionen>`__
-
-   #. `Konfiguration <callmonitor.html#Konfiguration>`__
-   #. `Weiterführende Links <callmonitor.html#WeiterführendeLinks>`__
-
-#. `Konfiguration <callmonitor/config.html#Konfiguration>`__
-
-   #. `Basiskonfiguration <callmonitor/config.html#Basiskonfiguration>`__
-   #. `Listeners
-      definieren <callmonitor/config.html#Listenersdefinieren>`__
-   #. `Testanruf <callmonitor/config.html#Testanruf>`__
-   #. `Fehlersuche <callmonitor/config.html#Fehlersuche>`__
-
-#. `Regeln (Listeners) <callmonitor/listeners.html#RegelnListeners>`__
-
-   #. `Format <callmonitor/listeners.html#Format>`__
-   #. `Ereignis-Informationen für
-      Aktionen <callmonitor/listeners.html#Ereignis-InformationenfürAktionen>`__
-   #. `Formatierung der
-      Ausgaben <callmonitor/listeners.html#FormatierungderAusgaben>`__
-   #. `Muster für
-      Ereignisse <callmonitor/listeners.html#MusterfürEreignisse>`__
-   #. `Beispiele: <callmonitor/listeners.html#Beispiele:>`__
-
-#. `Ereignisse <callmonitor/events.html#Ereignisse>`__
-#. `Aktionen <callmonitor/actions.html#Aktionen>`__
-
-   #. `Benachrichtigen <callmonitor/actions.html#Benachrichtigen>`__
-   #. `Wählen, Wecken,
-      Konfigurieren <callmonitor/actions.html#WählenWeckenKonfigurieren>`__
-   #. `Eigene Aktionen <callmonitor/actions.html#EigeneAktionen>`__
-   #. `Liste verfügbarer
-      Aktionen <callmonitor/actions.html#ListeverfügbarerAktionen>`__
-   #. `Third-Party
-      Software <callmonitor/actions.html#Third-PartySoftware>`__
-
-#. `Telefonbuch
-   (Callers) <callmonitor/phonebook.html#TelefonbuchCallers>`__
-#. `Wartung <callmonitor/maintenance.html#Wartung>`__
-#. `Rückwärtssuche <callmonitor/reverse_search.html#Rückwärtssuche>`__
-#. `Testanruf <callmonitor/testcall.html#Testanruf>`__
-
 .. _Callmonitor:
 
 Callmonitor

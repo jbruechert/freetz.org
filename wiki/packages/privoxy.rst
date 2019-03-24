@@ -1,16 +1,5 @@
 packages/privoxy
 ================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Filter und Aktionen <privoxy.html#FilterundAktionen>`__
-#. `Zugriffskontrolle <privoxy.html#Zugriffskontrolle>`__
-#. `Privoxy und Tor <privoxy.html#PrivoxyundTor>`__
-#. `Transparenter Proxy <privoxy.html#TransparenterProxy>`__
-#. `Werbefilter <privoxy.html#Werbefilter>`__
-#. `Installation <privoxy.html#Installation>`__
-#. `Diskussion <privoxy.html#Diskussion>`__
-
 .. _Privoxy:
 
 Privoxy

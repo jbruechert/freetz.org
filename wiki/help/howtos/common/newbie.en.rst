@@ -5,36 +5,6 @@ help/howtos/common/newbie.en
 Freetz for beginners
 ====================
 
-Table of contents
-^^^^^^^^^^^^^^^^^
-
-#. `Some questions <newbie.en.html#Somequestions>`__
-
-   #. `What is Freetz? <newbie.en.html#WhatisFreetz>`__
-   #. `What do I need to create a Freetz
-      image? <newbie.en.html#WhatdoIneedtocreateaFreetzimage>`__
-   #. `What should I take into
-      consideration? <newbie.en.html#WhatshouldItakeintoconsideration>`__
-   #. `What's my first Freetz-image supposed to
-      do? <newbie.en.html#WhatsmyfirstFreetz-imagesupposedtodo>`__
-   #. `Why should I start with a minimal
-      image? <newbie.en.html#WhyshouldIstartwithaminimalimage>`__
-
-#. `Do I need to adjust my computer in any way to create an
-   image? <newbie.en.html#DoIneedtoadjustmycomputerinanywaytocreateanimage>`__
-#. `How do I create my first minimal
-   image <newbie.en.html#HowdoIcreatemyfirstminimalimage>`__
-
-   #. `Starting Freetz <newbie.en.html#StartingFreetz>`__
-   #. `Starting PuTTY <newbie.en.html#StartingPuTTY>`__
-   #. `Settings in menuconfig <newbie.en.html#Settingsinmenuconfig>`__
-   #. `Copying the image to your
-      computer <newbie.en.html#Copyingtheimagetoyourcomputer>`__
-   #. `Shutdown Freetz-Linux <newbie.en.html#ShutdownFreetz-Linux>`__
-
-#. `The flashing process <newbie.en.html#Theflashingprocess>`__
-#. `Links <newbie.en.html#Links>`__
-
 | 
 
 .. _Somequestions:

@@ -1,13 +1,5 @@
 packages/espeak
 ===============
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Installation <espeak.html#Installation>`__
-#. `Aufruf <espeak.html#Aufruf>`__
-#. `Hinweis <espeak.html#Hinweis>`__
-#. `Weiterführende Links <espeak.html#WeiterführendeLinks>`__
-
 .. _eSpeak:
 
 eSpeak

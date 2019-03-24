@@ -1,13 +1,5 @@
 common/source_code
 ==================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Entwicklerversion
-   (Trunk) <source_code.html#EntwicklerversionTrunk>`__
-#. `Updates <source_code.html#Updates>`__
-#. `Stabile Version <source_code.html#StabileVersion>`__
-
 .. _Quellcode:
 
 Quellcode

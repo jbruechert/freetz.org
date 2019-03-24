@@ -1,17 +1,5 @@
 help/howtos/common/wol
 ======================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Möglichkeiten der Nutzung von
-   WoL <wol.html#MöglichkeitenderNutzungvonWoL>`__
-#. `Callmonitor <wol.html#Callmonitor>`__
-#. `Shellscripte <wol.html#Shellscripte>`__
-
-   #. `Wake on LAN-Skript <wol.html#WakeonLAN-Skript>`__
-   #. `Wake on LAN automatisieren (über
-      SSH) <wol.html#WakeonLANautomatisierenüberSSH>`__
-
 |<!>| **In Überarbeitung**
 
 .. _WakeonLanWoLmitderFritzbox:

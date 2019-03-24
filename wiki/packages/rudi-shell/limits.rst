@@ -1,40 +1,5 @@
 packages/rudi-shell/limits
 ==========================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Rudi-Shell <../rudi-shell.html#Rudi-Shell>`__
-
-   #. `Feature-Übersicht <../rudi-shell.html#Feature-Übersicht>`__
-   #. `Systemvoraussetzungen <../rudi-shell.html#Systemvoraussetzungen>`__
-
-      #. `Server <../rudi-shell.html#Server>`__
-      #. `Client <../rudi-shell.html#Client>`__
-      #. `Was NICHT gebraucht
-         wird <../rudi-shell.html#WasNICHTgebrauchtwird>`__
-      #. `Platzbedarf der
-         Rudi-Shell <../rudi-shell.html#PlatzbedarfderRudi-Shell>`__
-
-#. `Installation <install.html#Installation>`__
-#. `Funktionsweise <functions.html#Funktionsweise>`__
-#. `Illustrierte
-   Anwendungsfälle <usage.html#IllustrierteAnwendungsfälle>`__
-
-   #. `Shell-Skript ausführen <usage.html#Shell-Skriptausführen>`__
-   #. `Historie verwenden <usage.html#Historieverwenden>`__
-   #. `Download Tar-Archiv <usage.html#DownloadTar-Archiv>`__
-   #. `Download langer
-      Konsolenausgabe <usage.html#DownloadlangerKonsolenausgabe>`__
-   #. `Datei-Upload <usage.html#Datei-Upload>`__
-
-#. `Grenzen & Einschränkungen <limits.html#GrenzenEinschränkungen>`__
-#. `Tips & Tricks <tips.html#TipsTricks>`__
-
-   #. `Sicherer Zugriff via HTTPS <tips.html#SichererZugriffviaHTTPS>`__
-   #. `HTTPS-Zugriff reloaded &
-      improved <tips.html#HTTPS-Zugriffreloadedimproved>`__
-   #. `Firmware remote flashen <tips.html#Firmwareremoteflashen>`__
-
 .. _GrenzenEinschränkungen:
 
 Grenzen & Einschränkungen

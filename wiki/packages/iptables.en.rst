@@ -1,31 +1,5 @@
 packages/iptables.en
 ====================
-Table of contents
-^^^^^^^^^^^^^^^^^
-
-#. `Current state (largely
-   broken) <iptables.en.html#Currentstatelargelybroken>`__
-#. `What is iptables and who needs
-   it? <iptables.en.html#Whatisiptablesandwhoneedsit>`__
-#. `What is the difference between AVM Firewall and iptables, can they
-   … <iptables.en.html#WhatisthedifferencebetweenAVMFirewallandiptablescantheyco-existonthesamesystem>`__
-#. `How to build iptables for
-   Freetz? <iptables.en.html#HowtobuildiptablesforFreetz>`__
-
-   #. `Configuration: After successful firmware build and
-      upload <iptables.en.html#Configuration:Aftersuccessfulfirmwarebuildandupload>`__
-   #. `Hints regarding FritzBox
-      7270: <iptables.en.html#HintsregardingFritzBox7270:>`__
-   #. `What is the difference of INPUT, OUTPUT and FORWARD
-      chains <iptables.en.html#WhatisthedifferenceofINPUTOUTPUTandFORWARDchains>`__
-   #. `Hints regarding the example
-      code <iptables.en.html#Hintsregardingtheexamplecode>`__
-   #. `Isolate guest network from
-      LAN <iptables.en.html#IsolateguestnetworkfromLAN>`__
-
-#. `More Links <iptables.en.html#MoreLinks>`__
-#. `Questions <iptables.en.html#Questions>`__
-
 iptables
 ========
 

@@ -32,6 +32,9 @@ bar = Bar('Converting pages', max=numPages)
 for count, page in enumerate(pages):
 	pageFile = open(page, "r")
 	pageSoup = BeautifulSoup(pageFile, 'html.parser')
+	for div in pageSoup.find_all("div", {'class':'wiki-toc'}):
+		div.decompose()
+
 	pageFile.close()
 
 	content = pageSoup.find(id="content")

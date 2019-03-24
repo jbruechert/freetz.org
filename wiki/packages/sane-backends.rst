@@ -5,29 +5,6 @@ packages/sane-backends
 SANE
 ====
 
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Beschreibung <sane-backends.html#Beschreibung>`__
-#. `Schnellstart <sane-backends.html#Schnellstart>`__
-
-   #. `Vorbemerkung <sane-backends.html#Vorbemerkung>`__
-   #. `Installation und
-      Konfiguration <sane-backends.html#InstallationundKonfiguration>`__
-   #. `Nutzung vom PC unter
-      Linux/Windows <sane-backends.html#NutzungvomPCunterLinuxWindows>`__
-   #. `Scannen funktioniert
-      nicht <sane-backends.html#Scannenfunktioniertnicht>`__
-
-#. `Probleme und Lösungen <sane-backends.html#ProblemeundLösungen>`__
-#. `Einschränkungen und
-   Hinweise <sane-backends.html#EinschränkungenundHinweise>`__
-
-   #. `Hinweise zu speziellen
-      Geräten <sane-backends.html#HinweisezuspeziellenGeräten>`__
-
-#. `Weiterführende Links <sane-backends.html#WeiterführendeLinks>`__
-
 .. _Beschreibung:
 
 Beschreibung

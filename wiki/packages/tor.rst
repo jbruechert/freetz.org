@@ -1,19 +1,5 @@
 packages/tor
 ============
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Tor als Proxy benutzen <tor.html#ToralsProxybenutzen>`__
-#. `Tor und Privoxy <tor.html#TorundPrivoxy>`__
-#. `Installation <tor.html#Installation>`__
-#. `Geschwindigkeit optimieren <tor.html#Geschwindigkeitoptimieren>`__
-#. `Tor als Server einrichten <tor.html#ToralsServereinrichten>`__
-#. `Remote Control <tor.html#RemoteControl>`__
-#. `obfsproxy <tor.html#obfsproxy>`__
-#. `Memory Usage <tor.html#MemoryUsage>`__
-#. `Abhängigkeiten <tor.html#Abhängigkeiten>`__
-#. `Diskussion <tor.html#Diskussion>`__
-
 .. _TorProxy:
 
 Tor Proxy

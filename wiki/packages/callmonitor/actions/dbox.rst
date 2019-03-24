@@ -1,11 +1,5 @@
 packages/callmonitor/actions/dbox
 =================================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `DBox2 mit Neutrino Image <dbox.html#DBox2mitNeutrinoImage>`__
-#. `DBox2 mit Enigma Image <dbox.html#DBox2mitEnigmaImage>`__
-
 .. _DBox2:
 
 DBox2

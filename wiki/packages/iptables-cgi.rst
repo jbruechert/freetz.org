@@ -1,20 +1,5 @@
 packages/iptables-cgi
 =====================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Installation <iptables-cgi.html#Installation>`__
-#. `Häufige Fragen / Howto <iptables-cgi.html#HäufigeFragenHowto>`__
-
-   #. `Activation <iptables-cgi.html#Activation>`__
-   #. `iptables add/remove
-      rule <iptables-cgi.html#iptablesaddremoverule>`__
-   #. `Services <iptables-cgi.html#Services>`__
-   #. `Rules <iptables-cgi.html#Rules>`__
-   #. `Löschen von Regeln <iptables-cgi.html#LöschenvonRegeln>`__
-
-#. `Zu Beachten <iptables-cgi.html#ZuBeachten>`__
-
 iptables-cgi
 ============
 

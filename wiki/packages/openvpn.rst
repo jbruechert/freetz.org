@@ -1,29 +1,5 @@
 packages/openvpn
 ================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Version <openvpn.html#Version>`__
-#. `Häufige Fragen / Howto <openvpn.html#HäufigeFragenHowto>`__
-#. `Konfigurationsanleitung <openvpn.html#Konfigurationsanleitung>`__
-
-   #. `Portweiterleitung <openvpn.html#Portweiterleitung>`__
-   #. `Static Key <openvpn.html#StaticKey>`__
-   #. `Zertifikate <openvpn.html#Zertifikate>`__
-
-#. `Routing vs. Bridging <openvpn.html#Routingvs.Bridging>`__
-#. `CRL <openvpn.html#CRL>`__
-#. `Fehlersuche: Ein paar Tips wenn es nicht gleich so
-   klappt <openvpn.html#Fehlersuche:EinpaarTipswennesnichtgleichsoklappt>`__
-#. `Verschlüsselung: Welcher "Cipher"
-   ? <openvpn.html#Verschlüsselung:WelcherCipher>`__
-#. `DNS & Redirect all clients'
-   traffic <openvpn.html#DNSRedirectallclientstraffic>`__
-#. `Diskussion <openvpn.html#Diskussion>`__
-#. `Neue, simple GUI (GUI2) <openvpn.html#NeuesimpleGUIGUI2>`__
-
-   #. `Weitere Konfigs anlegen <openvpn.html#WeitereKonfigsanlegen>`__
-
 .. _OpenVPNfreetzPackage:
 
 OpenVPN freetz Package

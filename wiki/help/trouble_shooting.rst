@@ -1,15 +1,5 @@
 help/trouble_shooting
 =====================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Troubleshooting <trouble_shooting.html#Troubleshooting>`__
-
-   #. `Troubleshooting
-      .config <trouble_shooting.html#Troubleshooting.config>`__
-   #. `Troubleshooting
-      Build-Abbruch <trouble_shooting.html#TroubleshootingBuild-Abbruch>`__
-
 .. _Troubleshooting:
 
 Troubleshooting

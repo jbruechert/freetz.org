@@ -1,18 +1,5 @@
 WikiStart.en
 ============
-Table of Contents
-^^^^^^^^^^^^^^^^^
-
-#. `Download <index.en.html#Download>`__
-#. `First steps <index.en.html#Firststeps>`__
-#. `Website for developers <index.en.html#Websitefordevelopers>`__
-#. `Wiki and Forum <index.en.html#WikiandForum>`__
-#. `Freetz in public press &
-   web <index.en.html#Freetzinpublicpressweb>`__
-#. `Source code <index.en.html#Sourcecode>`__
-#. `Building and using <index.en.html#Buildingandusing>`__
-#. `Trac links <index.en.html#Traclinks>`__
-
 .. _WelcometoFreetz:
 
 Welcome to Freetz

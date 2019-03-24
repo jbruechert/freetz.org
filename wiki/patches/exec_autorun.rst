@@ -1,11 +1,5 @@
 patches/exec_autorun
 ====================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Vorteile <exec_autorun.html#Vorteile>`__
-#. `Nachteile <exec_autorun.html#Nachteile>`__
-
 .. _Executeautorun.shautoend.shscriptonunmount:
 
 Execute autorun.sh/autoend.sh script on (un)mount

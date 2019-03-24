@@ -1,13 +1,5 @@
 packages/vtund
 ==============
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Version <vtund.html#Version>`__
-#. `Konfigurationsanleitung <vtund.html#Konfigurationsanleitung>`__
-
-   #. `Portweiterleitung <vtund.html#Portweiterleitung>`__
-
 .. _VTUNfreetzPackage:
 
 VTUN freetz Package

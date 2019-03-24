@@ -1,24 +1,5 @@
 packages/davfs2
 ===============
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Einführung <davfs2.html#Einführung>`__
-
-   #. `Was ist WebDAV? <davfs2.html#WasistWebDAV>`__
-   #. `Was ist davfs2? <davfs2.html#Wasistdavfs2>`__
-   #. `Anwendungen <davfs2.html#Anwendungen>`__
-
-#. `Paket in die Firmware
-   einbauen <davfs2.html#PaketindieFirmwareeinbauen>`__
-
-   #. `Verschlüsselung mit
-      Zertifikaten <davfs2.html#VerschlüsselungmitZertifikaten>`__
-   #. `Einstellungen/ Optionen <davfs2.html#EinstellungenOptionen>`__
-
-#. `Weiterführende Threads im
-   IPPF <davfs2.html#WeiterführendeThreadsimIPPF>`__
-
 .. figure:: /screenshots/62.jpg
    :alt: WebDAV: Konfiguration
 

@@ -5,37 +5,6 @@ help/howtos/common/newbie
 Erste Schritte mit Freetz
 =========================
 
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Fragen im Vorfeld <newbie.html#FragenimVorfeld>`__
-
-   #. `Was ist Freetz? <newbie.html#WasistFreetz>`__
-   #. `Was brauche ich um ein Freetz-Image erstellen zu
-      können? <newbie.html#WasbraucheichumeinFreetz-Imageerstellenzukönnen>`__
-   #. `Was sollte ich bedenken? <newbie.html#Wassollteichbedenken>`__
-   #. `Was soll mein erstes Freetz-Image
-      können? <newbie.html#WassollmeinerstesFreetz-Imagekönnen>`__
-   #. `Warum sollte ich mit einem Minimal-Image am Anfang
-      starten? <newbie.html#WarumsollteichmiteinemMinimal-ImageamAnfangstarten>`__
-
-#. `Wie muß ich meinen PC einstellen damit ich ein Image bauen
-   kann? <newbie.html#WiemußichmeinenPCeinstellendamiticheinImagebauenkann>`__
-#. `Wie baue ich mein erstes eigenes Image
-   (Minimal-Image) <newbie.html#WiebaueichmeinersteseigenesImageMinimal-Image>`__
-
-   #. `Starten von Freetz <newbie.html#StartenvonFreetz>`__
-   #. `PuTTY starten <newbie.html#PuTTYstarten>`__
-   #. `Freetz Sourcen
-      auschecken <newbie.html#FreetzSourcenauschecken>`__
-   #. `Einstellungen im
-      menuconfig <newbie.html#Einstellungenimmenuconfig>`__
-   #. `Image auf den PC kopieren <newbie.html#ImageaufdenPCkopieren>`__
-   #. `Freetz-Linux beenden <newbie.html#Freetz-Linuxbeenden>`__
-
-#. `Der Flashvorgang <newbie.html#DerFlashvorgang>`__
-#. `Weiterführende Links <newbie.html#WeiterführendeLinks>`__
-
 | 
 
 .. _FragenimVorfeld:

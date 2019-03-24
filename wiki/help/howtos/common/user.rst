@@ -5,17 +5,6 @@ help/howtos/common/user
 Benutzer dauerhaft in der passwd speichern
 ==========================================
 
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Beschreibung (Freetz-1.2.x) <user.html#BeschreibungFreetz-1.2.x>`__
-#. `Beschreibung (Freetz-1.1.x) <user.html#BeschreibungFreetz-1.1.x>`__
-
-   #. `Originalbeiträge zum
-      HowTo <user.html#OriginalbeiträgezumHowTo>`__
-   #. `Vorgehen <user.html#Vorgehen>`__
-   #. `Alternative <user.html#Alternative>`__
-
 .. _BeschreibungFreetz-1.2.x:
 
 Beschreibung (Freetz-1.2.x)

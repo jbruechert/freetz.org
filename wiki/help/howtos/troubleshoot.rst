@@ -1,24 +1,5 @@
 help/howtos/troubleshoot
 ========================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Kaputtes Telefonbuch
-   reparieren <troubleshoot/repair_phonebook.html#KaputtesTelefonbuchreparieren>`__
-
-   #. `Symptom <troubleshoot/repair_phonebook.html#Symptom>`__
-   #. `Ursache <troubleshoot/repair_phonebook.html#Ursache>`__
-   #. `Lösung <troubleshoot/repair_phonebook.html#Lösung>`__
-
-#. `Häufige selbständige
-   Reboots <troubleshoot/reboots.html#HäufigeselbständigeReboots>`__
-
-   #. `Weiterführende
-      Links <troubleshoot/reboots.html#WeiterführendeLinks>`__
-
-#. `Original Firmware
-   wiederherstellen <troubleshoot/recover_firmware.html#OriginalFirmwarewiederherstellen>`__
-
 .. _Troubleshooting:
 
 Troubleshooting

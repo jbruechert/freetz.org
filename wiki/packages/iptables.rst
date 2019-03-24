@@ -1,27 +1,5 @@
 packages/iptables
 =================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Was ist iptables und wer braucht es
-   überhaupt? <iptables.html#Wasistiptablesundwerbrauchtesüberhaupt>`__
-#. `Was ist der Unterschied zur AVM Firewall, wie vertragen sich
-   beide? <iptables.html#WasistderUnterschiedzurAVMFirewallwievertragensichbeide>`__
-#. `Wie baut man iptables? <iptables.html#Wiebautmaniptables>`__
-
-   #. `Konfiguration: Firmware erfolgreich erstellt und aufgespielt, so
-      geht es
-      … <iptables.html#Konfiguration:Firmwareerfolgreicherstelltundaufgespieltsogehtesweiter>`__
-   #. `Anmerkung zu Kernel Logs <iptables.html#AnmerkungzuKernelLogs>`__
-   #. `Was ist der Unterschied von INPUT, OUTPUT und
-      FORWARD <iptables.html#WasistderUnterschiedvonINPUTOUTPUTundFORWARD>`__
-   #. `Hinweise zum Code
-      Beispiel <iptables.html#HinweisezumCodeBeispiel>`__
-
-#. `Weiterführende Links <iptables.html#WeiterführendeLinks>`__
-#. `Known Bug (FritzBox vor
-   7270) <iptables.html#KnownBugFritzBoxvor7270>`__
-
 iptables
 ========
 

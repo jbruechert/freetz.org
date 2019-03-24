@@ -1,12 +1,5 @@
 patches/remove_upnp
 ===================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Was wird entfernt? <remove_upnp.html#Waswirdentfernt>`__
-#. `Was ist zu beachten? <remove_upnp.html#Wasistzubeachten>`__
-#. `Weiterführende Links <remove_upnp.html#WeiterführendeLinks>`__
-
 .. _RemoveuPnPdaemon:
 
 Remove uPnP daemon

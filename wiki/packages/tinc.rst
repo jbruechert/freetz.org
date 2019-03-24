@@ -1,12 +1,5 @@
 packages/tinc
 =============
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Features <tinc.html#Features>`__
-#. `Verwendete Bibliotheken <tinc.html#VerwendeteBibliotheken>`__
-#. `Weiterführende Links <tinc.html#WeiterführendeLinks>`__
-
 .. _Tinc:
 
 Tinc

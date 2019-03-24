@@ -1,11 +1,5 @@
 packages/nano-shell
 ===================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Sicherheitshinweis <nano-shell.html#Sicherheitshinweis>`__
-#. `Benutzung <nano-shell.html#Benutzung>`__
-
 .. _Nano-Shell:
 
 Nano-Shell

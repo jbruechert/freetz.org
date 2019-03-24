@@ -1,52 +1,5 @@
 packages_tagged
 ===============
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Pakete, Addons und
-   CGI-Erweiterungen <packages.html#PaketeAddonsundCGI-Erweiterungen>`__
-
-   #. `Pakete <packages.html#Pakete>`__
-   #. `Addons <packages.html#Addons>`__
-   #. `CGI-Erweiterungen <packages.html#CGI-Erweiterungen>`__
-   #. `Apps <packages.html#Apps>`__
-   #. `Weiteres <packages.html#Weiteres>`__
-
-#. `Pakete nach
-   Anwendungsgebieten <packages_tagged.html#PaketenachAnwendungsgebieten>`__
-
-   #. `Audio <packages_tagged.html#Audio>`__
-   #. `Home Automation <packages_tagged.html#HomeAutomation>`__
-   #. `Konsole <packages_tagged.html#Konsole>`__
-   #. `Monitoring <packages_tagged.html#Monitoring>`__
-   #. `Netzwerk <packages_tagged.html#Netzwerk>`__
-
-      #. `DynDNS <packages_tagged.html#DynDNS>`__
-      #. `File Transfer <packages_tagged.html#FileTransfer>`__
-      #. `Internet
-         Messenging <packages_tagged.html#InternetMessenging>`__
-      #. `Konsole <packages_tagged.html#Konsole1>`__
-      #. `Proxies <packages_tagged.html#Proxies>`__
-      #. `Routing <packages_tagged.html#Routing>`__
-      #. `Security <packages_tagged.html#Security>`__
-      #. `Tunneling <packages_tagged.html#Tunneling>`__
-      #. `VPN <packages_tagged.html#VPN>`__
-      #. `Web-Anwendungen <packages_tagged.html#Web-Anwendungen>`__
-      #. `Sonstiges <packages_tagged.html#Sonstiges>`__
-
-   #. `Privacy <packages_tagged.html#Privacy>`__
-   #. `Programmiersprachen und
-      -hilfen <packages_tagged.html#Programmiersprachenund-hilfen>`__
-   #. `Security <packages_tagged.html#Security1>`__
-   #. `System <packages_tagged.html#System>`__
-
-      #. `Dateisystem <packages_tagged.html#Dateisystem>`__
-      #. `Hardware an der Box <packages_tagged.html#HardwareanderBox>`__
-      #. `Verschiedenes <packages_tagged.html#Verschiedenes>`__
-
-   #. `Telefonie <packages_tagged.html#Telefonie>`__
-   #. `verschiedene Tools <packages_tagged.html#verschiedeneTools>`__
-
 .. _PaketenachAnwendungsgebieten:
 
 Pakete nach Anwendungsgebieten

@@ -1,16 +1,5 @@
 packages/callmonitor/actions/config
 ===================================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Portforwarding <config.html#Portforwarding>`__
-#. `WLAN <config.html#WLAN>`__
-#. `DECT <config.html#DECT>`__
-#. `SIP <config.html#SIP>`__
-#. `Rufumleitung <config.html#Rufumleitung>`__
-#. `Abfragen von
-   Konfigurationswerten <config.html#AbfragenvonKonfigurationswerten>`__
-
 .. _FritzBox-Konfiguration:
 
 FritzBox-Konfiguration

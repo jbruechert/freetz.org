@@ -1,17 +1,5 @@
 packages/screen
 ===============
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Bedienung <screen.html#Bedienung>`__
-
-   #. `aushängen/detach <screen.html#aushängendetach>`__
-   #. `einhängen/attach <screen.html#einhängenattach>`__
-
-#. `PuTTY-Tip: Änderung der Fensterbreite beim Screen-Start
-   verhindern <screen.html#PuTTY-Tip:ÄnderungderFensterbreitebeimScreen-Startverhindern>`__
-#. `Weiterführende Links <screen.html#WeiterführendeLinks>`__
-
 screen
 ======
 

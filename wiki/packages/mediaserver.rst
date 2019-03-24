@@ -1,18 +1,5 @@
 packages/mediaserver
 ====================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Funktionsweise <mediaserver.html#Funktionsweise>`__
-#. `Dateien <mediaserver.html#Dateien>`__
-#. `Kompatible Clients
-   (Auswahl) <mediaserver.html#KompatibleClientsAuswahl>`__
-
-   #. `Software <mediaserver.html#Software>`__
-   #. `Hardware <mediaserver.html#Hardware>`__
-
-#. `Firmware-Kompatibilität <mediaserver.html#Firmware-Kompatibilität>`__
-
 **This package was removed in**\ `r1823 </changeset/1823>`__\ **!**
 
 .. _Mediaserver:

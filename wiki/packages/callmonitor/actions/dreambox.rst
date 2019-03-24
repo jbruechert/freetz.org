@@ -1,14 +1,5 @@
 packages/callmonitor/actions/dreambox
 =====================================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Dreambox mit Enigma 1 <dreambox.html#DreamboxmitEnigma1>`__
-
-   #. `StandBy Check <dreambox.html#StandByCheck>`__
-
-#. `DreamBox mit Enigma 2 <dreambox.html#DreamBoxmitEnigma2>`__
-
 .. _DreamBox:
 
 DreamBox

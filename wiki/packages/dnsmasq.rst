@@ -1,35 +1,5 @@
 packages/dnsmasq
 ================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Installation <dnsmasq.html#Installation>`__
-#. `Konfiguration <dnsmasq.html#Konfiguration>`__
-#. `DNS Server <dnsmasq.html#DNSServer>`__
-
-   #. `mit iptables den DNS-Port
-      umleiten <dnsmasq.html#mitiptablesdenDNS-Portumleiten>`__
-
-#. `Kommandozeilen-Optionen <dnsmasq.html#Kommandozeilen-Optionen>`__
-
-   #. `Beispiel 1 <dnsmasq.html#Beispiel1>`__
-   #. `Beispiel 2 <dnsmasq.html#Beispiel2>`__
-
-#. `DHCP Server <dnsmasq.html#DHCPServer>`__
-
-   #. `Beispiel <dnsmasq.html#Beispiel>`__
-
-#. `Einträge in der
-   Hosts-Liste <dnsmasq.html#EinträgeinderHosts-Liste>`__
-#. `DHCP Boot <dnsmasq.html#DHCPBoot>`__
-#. `TFTP Server <dnsmasq.html#TFTPServer>`__
-
-   #. `Beispiel <dnsmasq.html#Beispiel3>`__
-
-#. `Komplett eigene
-   Konfiguration <dnsmasq.html#KompletteigeneKonfiguration>`__
-#. `Weiterführende Links <dnsmasq.html#WeiterführendeLinks>`__
-
 dnsmasq
 =======
 

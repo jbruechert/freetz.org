@@ -5,22 +5,6 @@ help/howtos/development/release_management
 Release Management
 ==================
 
-Table of Contents
-^^^^^^^^^^^^^^^^^
-
-#. `Subversion
-   Repository <release_management.html#SubversionRepository>`__
-#. `Checklists <release_management.html#Checklists>`__
-
-   #. `Creating a new stable
-      branch <release_management.html#Creatinganewstablebranch>`__
-   #. `Tagging a new
-      release <release_management.html#Tagginganewrelease>`__
-
-#. `GIT <release_management.html#GIT>`__
-#. `Downloads <release_management.html#Downloads>`__
-#. `References <release_management.html#References>`__
-
 **/!\\ Work In Progress /!\\**
 
 .. _SubversionRepository:

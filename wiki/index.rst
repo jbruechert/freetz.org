@@ -1,17 +1,5 @@
 Freetz
 ======
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Download <index.html#Download>`__
-#. `Erste Schritte <index.html#ErsteSchritte>`__
-#. `Installation <index.html#Installation>`__
-#. `Hilfe und Support <index.html#HilfeundSupport>`__
-#. `Presse und Berichte <index.html#PresseundBerichte>`__
-#. `Mach mit! <index.html#Machmit>`__
-#. `Quellcode <index.html#Quellcode>`__
-#. `Trac-Links <index.html#Trac-Links>`__
-
 .. _WillkommenbeiFreetz:
 
 Willkommen bei Freetz

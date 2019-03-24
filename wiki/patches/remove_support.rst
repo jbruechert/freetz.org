@@ -1,10 +1,5 @@
 patches/remove_support
 ======================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Was wird entfernt? <remove_support.html#Waswirdentfernt>`__
-
 .. _Removethesupport-files:
 
 Remove the support-files

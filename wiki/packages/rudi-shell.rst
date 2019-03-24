@@ -1,44 +1,5 @@
 packages/rudi-shell
 ===================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Rudi-Shell <rudi-shell.html#Rudi-Shell>`__
-
-   #. `Feature-Übersicht <rudi-shell.html#Feature-Übersicht>`__
-   #. `Systemvoraussetzungen <rudi-shell.html#Systemvoraussetzungen>`__
-
-      #. `Server <rudi-shell.html#Server>`__
-      #. `Client <rudi-shell.html#Client>`__
-      #. `Was NICHT gebraucht
-         wird <rudi-shell.html#WasNICHTgebrauchtwird>`__
-      #. `Platzbedarf der
-         Rudi-Shell <rudi-shell.html#PlatzbedarfderRudi-Shell>`__
-
-#. `Installation <rudi-shell/install.html#Installation>`__
-#. `Funktionsweise <rudi-shell/functions.html#Funktionsweise>`__
-#. `Illustrierte
-   Anwendungsfälle <rudi-shell/usage.html#IllustrierteAnwendungsfälle>`__
-
-   #. `Shell-Skript
-      ausführen <rudi-shell/usage.html#Shell-Skriptausführen>`__
-   #. `Historie verwenden <rudi-shell/usage.html#Historieverwenden>`__
-   #. `Download Tar-Archiv <rudi-shell/usage.html#DownloadTar-Archiv>`__
-   #. `Download langer
-      Konsolenausgabe <rudi-shell/usage.html#DownloadlangerKonsolenausgabe>`__
-   #. `Datei-Upload <rudi-shell/usage.html#Datei-Upload>`__
-
-#. `Grenzen &
-   Einschränkungen <rudi-shell/limits.html#GrenzenEinschränkungen>`__
-#. `Tips & Tricks <rudi-shell/tips.html#TipsTricks>`__
-
-   #. `Sicherer Zugriff via
-      HTTPS <rudi-shell/tips.html#SichererZugriffviaHTTPS>`__
-   #. `HTTPS-Zugriff reloaded &
-      improved <rudi-shell/tips.html#HTTPS-Zugriffreloadedimproved>`__
-   #. `Firmware remote
-      flashen <rudi-shell/tips.html#Firmwareremoteflashen>`__
-
 .. _Rudi-Shell:
 
 Rudi-Shell

@@ -1,55 +1,5 @@
 help/howtos/common/install.en
 =============================
-Index
-^^^^^
-
-#. `Installation <install.en.html#Installation>`__
-
-   #. `Virtual LINUX: FriBoLi / StinkyLinux /
-      Freetz-Linux <install.en.html#VirtualLINUX:FriBoLiStinkyLinuxFreetz-Linux>`__
-
-      #. `Preparation <install.en.html#Preparation>`__
-      #. `Execution <install.en.html#Execution>`__
-
-   #. `Linux <install.en.html#Linux>`__
-
-      #. `Notwendige Pakete <install.en.html#NotwendigePakete>`__
-
-         #. `freetz-1.0 <install.en.html#freetz-1.0>`__
-
-      #. `freetz-1.3 <install.en.html#freetz-1.3>`__
-
-         #. `aktuelle Entwicker Version und spezielle
-            Pakete <install.en.html#aktuelleEntwickerVersionundspeziellePakete>`__
-         #. `alte Entwicker
-            Versionen <install.en.html#alteEntwickerVersionen>`__
-
-      #. `Installation der benötigten
-         Pakete <install.en.html#InstallationderbenötigtenPakete>`__
-      #. `Erstellung &
-         Installation <install.en.html#ErstellungInstallation>`__
-
-   #. `coLinux / andLinux /
-      speedLinux <install.en.html#coLinuxandLinuxspeedLinux>`__
-   #. `Cygwin <install.en.html#Cygwin>`__
-   #. `Mac OS X <install.en.html#MacOSX>`__
-
-#. `Aktualisierung <install.en.html#Aktualisierung>`__
-#. `Troubleshooting <install.en.html#Troubleshooting>`__
-
-   #. `AVM Firmware wird nicht
-      gefunden <install.en.html#AVMFirmwarewirdnichtgefunden>`__
-   #. `Image too big <install.en.html#Imagetoobig>`__
-   #. `Sonstige Probleme oder
-      Fehlermeldungen <install.en.html#SonstigeProblemeoderFehlermeldungen>`__
-
-#. `Weiterführende Links <install.en.html#WeiterführendeLinks>`__
-#. `Konfiguration <install/menuconfig.html#Konfiguration>`__
-
-   #. `General <install/menuconfig.html#General>`__
-   #. `Brandings <install/menuconfig.html#Brandings>`__
-   #. `Mod <install/menuconfig.html#Mod>`__
-
 .. _Installation:
 
 Installation

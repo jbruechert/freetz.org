@@ -1,16 +1,5 @@
 patch
 =====
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Aufbau eines Patches <patch.html#AufbaueinesPatches>`__
-#. `Erzeugen eines Patches <patch.html#ErzeugeneinesPatches>`__
-#. `Patch anwenden oder rückgängig
-   machen <patch.html#Patchanwendenoderrückgängigmachen>`__
-#. `Wie finde ich die zu patchende
-   Stelle? <patch.html#WiefindeichdiezupatchendeStelle>`__
-#. `Links <patch.html#Links>`__
-
 .. _AufbaueinesPatches:
 
 Aufbau eines Patches

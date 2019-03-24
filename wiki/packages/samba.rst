@@ -1,21 +1,5 @@
 packages/samba
 ==============
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Package ins Image einbinden <samba.html#PackageinsImageeinbinden>`__
-#. `Verwandte Themen <samba.html#VerwandteThemen>`__
-#. `Konfigurieren des Pakets <samba.html#KonfigurierendesPakets>`__
-
-   #. `AVM Konfiguration <samba.html#AVMKonfiguration>`__
-   #. `Freetz Konfiguration <samba.html#FreetzKonfiguration>`__
-
-      #. `Pakete → Samba <samba.html#PaketeSamba>`__
-      #. `Einstellungen → Samba
-         Freigaben <samba.html#EinstellungenSambaFreigaben>`__
-      #. `Einstellungen → Samba
-         Erweitert <samba.html#EinstellungenSambaErweitert>`__
-
 .. _Samba:
 
 Samba

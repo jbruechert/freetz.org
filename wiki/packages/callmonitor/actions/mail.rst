@@ -1,11 +1,5 @@
 packages/callmonitor/actions/mail
 =================================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `mail <mail.html#mail>`__
-#. `Ersatz für mail_missed_call <mail.html#Ersatzfürmail_missed_call>`__
-
 .. _E-Mail-Benachrichtigung:
 
 E-Mail-Benachrichtigung

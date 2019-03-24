@@ -1,41 +1,5 @@
 packages/pptpd/install
 ======================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `PoPTop - PPTP-VPN-Server <../pptpd.html#PoPTop-PPTP-VPN-Server>`__
-
-   #. `What is PPTP? <../pptpd.html#WhatisPPTP>`__
-   #. `What is Poptop? <../pptpd.html#WhatisPoptop>`__
-
-#. `Installation <install.html#Installation>`__
-
-   #. `Kernel 2.6 (Freetz) <install.html#Kernel2.6Freetz>`__
-   #. `Kernel 2.4 (ds-mod) <install.html#Kernel2.4ds-mod>`__
-
-      #. 
-
-         #. `Vorbereitungen <install.html#Vorbereitungen>`__
-
-      #. `Patch einspielen <install.html#Patcheinspielen>`__
-      #. `Kernel konfigurieren und
-         kompilieren <install.html#Kernelkonfigurierenundkompilieren>`__
-      #. `Kompilieren des Images vorbereiten und
-         durchführen <install.html#KompilierendesImagesvorbereitenunddurchführen>`__
-
-#. `Das Web-Frontend zum Paket <webif.html#DasWeb-FrontendzumPaket>`__
-
-   #. `Portweiterleitung <webif.html#Portweiterleitung>`__
-
-#. `Konfiguration <config.html#Konfiguration>`__
-
-   #. `pptpd.conf <config.html#pptpd.conf>`__
-   #. `options.pptpd <config.html#options.pptpd>`__
-   #. `chap-secrets <config.html#chap-secrets>`__
-   #. `Troubleshooting <config.html#Troubleshooting>`__
-   #. `Troubleshooting keine
-      Fehlermeldung <config.html#TroubleshootingkeineFehlermeldung>`__
-
 .. _Installation:
 
 Installation

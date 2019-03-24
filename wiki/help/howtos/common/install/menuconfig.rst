@@ -1,50 +1,5 @@
 help/howtos/common/install/menuconfig
 =====================================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Installation <../install.html#Installation>`__
-
-   #. `Virtuelles Linux: Freetz-Linux für
-      VMware-Player <../install.html#VirtuellesLinux:Freetz-LinuxfürVMware-Player>`__
-   #. `Vorbereitung <../install.html#Vorbereitung>`__
-   #. `Durchführung mit Windows
-      OS <../install.html#DurchführungmitWindowsOS>`__
-   #. `Durchführung mit Linux
-      OS <../install.html#DurchführungmitLinuxOS>`__
-
-      #. `Notwendige Pakete <../install.html#NotwendigePakete>`__
-
-         #. `freetz-2.x (stabile
-            Version) <../install.html#freetz-2.xstabileVersion>`__
-         #. `aktuelle Entwicklerversion und spezielle
-            Pakete <../install.html#aktuelleEntwicklerversionundspeziellePakete>`__
-         #. `alte
-            Entwicklerversionen <../install.html#alteEntwicklerversionen>`__
-
-      #. `Installation der benötigten Pakete
-         (Ubuntu) <../install.html#InstallationderbenötigtenPaketeUbuntu>`__
-      #. `Installation der benötigten Pakete
-         (Fedora) <../install.html#InstallationderbenötigtenPaketeFedora>`__
-      #. `Erstellung &
-         Installation <../install.html#ErstellungInstallation>`__
-
-   #. `coLinux / andLinux /
-      speedLinux <../install.html#coLinuxandLinuxspeedLinux>`__
-   #. `Cygwin <../install.html#Cygwin>`__
-   #. `Mac OS X <../install.html#MacOSX>`__
-
-#. `Aktualisierung <../install.html#Aktualisierung>`__
-#. `Fehlerbehebung <../install.html#Fehlerbehebung>`__
-#. `Manuelles einspielen des
-   Images <../install.html#ManuelleseinspielendesImages>`__
-#. `Weiterführende Links <../install.html#WeiterführendeLinks>`__
-#. `Konfiguration <menuconfig.html#Konfiguration>`__
-
-   #. `General <menuconfig.html#General>`__
-   #. `Brandings <menuconfig.html#Brandings>`__
-   #. `Mod <menuconfig.html#Mod>`__
-
 .. _Konfiguration:
 
 Konfiguration

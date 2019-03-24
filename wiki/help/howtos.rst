@@ -1,13 +1,5 @@
 help/howtos
 ===========
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Allgemeines <howtos.html#Allgemeines>`__
-#. `Development <howtos.html#Development>`__
-#. `Security <howtos.html#Security>`__
-#. `Troubleshooting <howtos.html#Troubleshooting>`__
-
 .. _HowTos:
 
 HowTos

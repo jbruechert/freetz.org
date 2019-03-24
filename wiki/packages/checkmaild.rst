@@ -1,17 +1,5 @@
 packages/checkmaild
 ===================
-Inhaltsverzeichnis
-^^^^^^^^^^^^^^^^^^
-
-#. `Konfiguration <checkmaild.html#Konfiguration>`__
-#. `Skript-Funktion <checkmaild.html#Skript-Funktion>`__
-
-   #. `LED-Signalisierung <checkmaild.html#LED-Signalisierung>`__
-   #. `Telefon-Benachrichtigung <checkmaild.html#Telefon-Benachrichtigung>`__
-   #. `Beispiel-Skripte <checkmaild.html#Beispiel-Skripte>`__
-
-#. `Weiterführende Links <checkmaild.html#WeiterführendeLinks>`__
-
 .. _checkmaild0.4.7:
 
 checkmaild 0.4.7

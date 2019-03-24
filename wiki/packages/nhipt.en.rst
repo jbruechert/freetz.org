@@ -1,28 +1,5 @@
 packages/nhipt.en
 =================
-Table of contents
-^^^^^^^^^^^^^^^^^
-
-#. `MOTIVATION <nhipt.en.html#MOTIVATION>`__
-#. `PREREQUISITES: <nhipt.en.html#PREREQUISITES:>`__
-#. `YOU HAVE THE CHOICE OF 3 INSTALL
-   OPTIONS: <nhipt.en.html#YOUHAVETHECHOICEOF3INSTALLOPTIONS:>`__
-
-   #. `nhipt.cgi.(version).tar.gz <nhipt.en.html#nhipt.cgi.version.tar.gz>`__
-   #. `ipt.(version).tar.gz <nhipt.en.html#ipt.version.tar.gz>`__
-   #. `use make menuconfig <nhipt.en.html#usemakemenuconfig>`__
-
-#. `BEHIND THE SCENES: <nhipt.en.html#BEHINDTHESCENES:>`__
-
-   #. `Further information: <nhipt.en.html#Furtherinformation:>`__
-   #. `Boot process <nhipt.en.html#Bootprocess>`__
-   #. `config file <nhipt.en.html#configfile>`__
-   #. `files contained in the freetz
-      package <nhipt.en.html#filescontainedinthefreetzpackage>`__
-
-#. `RECOMMENDATIONS: <nhipt.en.html#RECOMMENDATIONS:>`__
-#. `DOWNLOAD <nhipt.en.html#DOWNLOAD>`__
-
 .. _NHIPT-iptablesfirewallGUI:
 
 NHIPT - iptables firewall GUI

@@ -5,29 +5,6 @@ help/fritz_faq
 FAQ
 ===
 
-FAQ
-^^^
-
-#. 
-
-   #. `Wie kann ich einen eigenen/anderen DNS-Server für alle
-      angeschlossenen PCs
-      … <fritz_faq.html#WiekannicheineneigenenanderenDNS-ServerfüralleangeschlossenenPCsundFritzboxverwenden>`__
-   #. `Wie kann man character devices
-      erstellen? <fritz_faq.html#Wiekannmancharacterdeviceserstellen>`__
-   #. `Was für ein Netzwerkkabel benötige ich für das recovern
-      ? <fritz_faq.html#WasfüreinNetzwerkkabelbenötigeichfürdasrecovern>`__
-   #. `Woran erkenne ich, dass ich eine FB 7270v3 habe
-      ? <fritz_faq.html#WoranerkenneichdassicheineFB7270v3habe>`__
-   #. `Wie alt ist meine FritzBox
-      ? <fritz_faq.html#WiealtistmeineFritzBox>`__
-   #. `Wie viel Flash hat meine FritzBox 7270
-      ? <fritz_faq.html#WievielFlashhatmeineFritzBox7270>`__
-   #. `Steuercodes für die
-      Fritzbox <fritz_faq.html#SteuercodesfürdieFritzbox>`__
-   #. `Hilfe, die Box ist total verkonfiguriert / Freetz
-      "Not-AUS" <fritz_faq.html#HilfedieBoxisttotalverkonfiguriertFreetzNot-AUS>`__
-
 Während das FAQ zu Freetz spezifischen Fragen `hier <../FAQ.html>`__ zu
 finden ist sollen hier allgemeine Fragen und Antworten zur FritzBox
 gesammelt werden.
