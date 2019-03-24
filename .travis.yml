@@ -4,8 +4,17 @@ cache: pip
 python:
   - "2.7"
 
-install: 
+install:
   - pip install -r requirements.txt
 
 script:
   - sphinx-build -Wa . _build/html
+
+deploy:
+  provider: pages
+  local-dir: _build/html/
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  on:
+    branch: master
