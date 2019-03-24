@@ -185,7 +185,6 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/help/howtos
    wiki/help/trouble_shooting
    wiki/help/fritz_faq
-   wiki/help/irc.en
    wiki/help/irc
    wiki/help/wikiedit
    wiki/help/howtos/common
@@ -245,8 +244,6 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/help/howtos/development/developer_information/package_development_advanced
    wiki/help/howtos/development/developer_information/package_development_dynamic
    wiki/help/howtos/development/developer_information/package_development_start
-   wiki/help/howtos/development/developer_information/package_development_start/example_config_handling
-   wiki/help/howtos/development/developer_information/package_development_start/webinterface_example_1.en
    wiki/help/howtos/development/developer_information/package_development_start/example_2
    wiki/help/howtos/development/developer_information/package_development_start/example_1
    wiki/help/howtos/development/developer_information/package_development_start/.language
@@ -309,7 +306,6 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/packages/ncftp
    wiki/packages/lynx
    wiki/packages/smstools3
-   wiki/packages/hol
    wiki/packages/debootstrap
    wiki/packages/ppp
    wiki/packages/xmail
@@ -330,19 +326,16 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/packages/emailrelay
    wiki/packages/madplay
    wiki/packages/nhipt
-   wiki/packages/siproxd
    wiki/packages/wput
    wiki/packages/netsnmp
    wiki/packages/transmission.en
    wiki/packages/imapproxy.en
    wiki/packages/fuse
    wiki/packages/hiawatha
-   wiki/packages/netatalk
    wiki/packages/cifsmount
    wiki/packages/matrixtunnel
    wiki/packages/ndas.en
    wiki/packages/nfs-utils
-   wiki/packages/ser2net
    wiki/packages/vpnc
    wiki/packages/haserl
    wiki/packages/obexftp
@@ -367,7 +360,6 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/packages/bird
    wiki/packages/onlinechanged_cgi
    wiki/packages/php
-   wiki/packages/phpxmail.en
    wiki/packages/pptp
    wiki/packages/mediatomb
    wiki/packages/inetd
@@ -423,14 +415,12 @@ Quellcodes <wiki/common/source_code.html>`__ aus dem Freetz-Repository
    wiki/packages/avm-firewall
    wiki/packages/bash
    wiki/packages/asterisk
-   wiki/packages/xyssl
    wiki/packages/microperl
    wiki/packages/nano-shell
    wiki/packages/m-i-t
    wiki/packages/minidlna
    wiki/packages/inadyn-mt
    wiki/packages/bluez
-   wiki/packages/phpxmail
    wiki/packages/DemoPackageA
    wiki/packages/openvpn
    wiki/packages/knock
